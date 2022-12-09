@@ -21,7 +21,7 @@
 		590194BF293F715D00055C24 /* textField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590194BD293F715D00055C24 /* textField.swift */; };
 		590194C0293F715D00055C24 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590194BE293F715D00055C24 /* ButtonView.swift */; };
 		590194C6293F717300055C24 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590194C5293F717300055C24 /* LandingViewController.swift */; };
-		CF416BBD2942DCCA00A27462 /* class customCourseCategoryLable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF416BBA2942DCCA00A27462 /* class customCourseCategoryLable.swift */; };
+		CF416BBD2942DCCA00A27462 /* customCourseCategoryLable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF416BBA2942DCCA00A27462 /* customCourseCategoryLable.swift */; };
 		CF416BBF2942DCCA00A27462 /* customChooseCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF416BBC2942DCCA00A27462 /* customChooseCourseView.swift */; };
 		CF416BC62942DCF200A27462 /* MyCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF416BC32942DCF200A27462 /* MyCourseTableViewCell.swift */; };
 		CF416BC72942DCF200A27462 /* MyCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF416BC42942DCF200A27462 /* MyCourseViewController.swift */; };
@@ -89,7 +89,7 @@
 		590194BD293F715D00055C24 /* textField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = textField.swift; sourceTree = "<group>"; };
 		590194BE293F715D00055C24 /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		590194C5293F717300055C24 /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
-		CF416BBA2942DCCA00A27462 /* class customCourseCategoryLable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "class customCourseCategoryLable.swift"; path = "../../../../../../Users/manishrt/Downloads/VLMyCourseVc/VLMyCourseVc/class customCourseCategoryLable.swift"; sourceTree = "<group>"; };
+		CF416BBA2942DCCA00A27462 /* customCourseCategoryLable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = customCourseCategoryLable.swift; path = ../../../../../Users/manishrt/Downloads/VLMyCourseVc/VLMyCourseVc/customCourseCategoryLable.swift; sourceTree = "<group>"; };
 		CF416BBC2942DCCA00A27462 /* customChooseCourseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customChooseCourseView.swift; sourceTree = "<group>"; };
 		CF416BC32942DCF200A27462 /* MyCourseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCourseTableViewCell.swift; sourceTree = "<group>"; };
 		CF416BC42942DCF200A27462 /* MyCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCourseViewController.swift; sourceTree = "<group>"; };
@@ -262,7 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				CF416BBC2942DCCA00A27462 /* customChooseCourseView.swift */,
-				CF416BBA2942DCCA00A27462 /* class customCourseCategoryLable.swift */,
+				CF416BBA2942DCCA00A27462 /* customCourseCategoryLable.swift */,
 				1BD41649294094BD00E5334B /* CustomCategoryView.swift */,
 				1BF0C86029408D93009D9030 /* customHamburgerButtons.swift */,
 				1BF0C85D29408D92009D9030 /* customHamLable.swift */,
@@ -516,7 +516,7 @@
 				1BD41653294095CC00E5334B /* CategoryViewController.swift in Sources */,
 				CF416C4D294361B300A27462 /* TopCourseSectionCollectionViewCell.swift in Sources */,
 				CFF19645293F5C4F00802396 /* NetworkManager.swift in Sources */,
-				CF416BBD2942DCCA00A27462 /* class customCourseCategoryLable.swift in Sources */,
+				CF416BBD2942DCCA00A27462 /* customCourseCategoryLable.swift in Sources */,
 				1B3635EC29409E2500D07243 /* ForgotPasswordViewController.swift in Sources */,
 				CFAFC9A3293EFAA700F84288 /* OnboardingViewController.swift in Sources */,
 				1BF0C86129408D93009D9030 /* customHamLable.swift in Sources */,
