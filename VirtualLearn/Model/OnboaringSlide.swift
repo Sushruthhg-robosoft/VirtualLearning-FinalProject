@@ -14,4 +14,5 @@ struct OnboardingSlide {
     let onboardingImage: UIImage
     
     //onboarding
+    
 }
