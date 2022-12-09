@@ -581,7 +581,7 @@
                                 <rect key="frame" x="0.0" y="222.5" width="375" height="444.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="K7Z-QP-Xc0" customClass="MyCourseTableViewCell" customModule="VLMyCourseVc" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="K7Z-QP-Xc0" customClass="MyCourseTableViewCell" customModule="VirtualLearn" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="176"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K7Z-QP-Xc0" id="Coj-6q-jPA">
@@ -707,7 +707,7 @@
             <objects>
                 <viewController storyboardIdentifier="NewUserMyCourseViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xN5-0k-xZF" customClass="NewUserMyCourseViewController" customModule="VirtualLearn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3lO-QP-sOL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="509"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="509.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="18f-l1-gKm">
@@ -744,7 +744,7 @@
                                                         <color key="textColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RRG-1m-AHq" customClass="HomeCategoriesCustomButton" customModule="VLMyCourseVc" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RRG-1m-AHq" customClass="HomeCategoriesCustomButton" customModule="VirtualLearn" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="35" width="83" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="83" id="Tb0-Zy-gxM"/>
@@ -758,7 +758,7 @@
                                                             <action selector="onClickDesign:" destination="xN5-0k-xZF" eventType="touchUpInside" id="JV0-Jf-jHk"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5e3-ye-djO" customClass="HomeCategoriesCustomButton" customModule="VLMyCourseVc" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5e3-ye-djO" customClass="HomeCategoriesCustomButton" customModule="VirtualLearn" customModuleProvider="target">
                                                         <rect key="frame" x="91" y="35" width="117" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="117" id="Kej-mD-2QN"/>
@@ -772,7 +772,7 @@
                                                             <action selector="onClickDevelopment:" destination="xN5-0k-xZF" eventType="touchUpInside" id="dPe-e2-NOb"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iKw-ei-eyx" customClass="HomeCategoriesCustomButton" customModule="VLMyCourseVc" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iKw-ei-eyx" customClass="HomeCategoriesCustomButton" customModule="VirtualLearn" customModuleProvider="target">
                                                         <rect key="frame" x="216" y="35" width="93" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="93" id="EdX-jD-hKw"/>
@@ -786,7 +786,7 @@
                                                             <action selector="onClickBusiness:" destination="xN5-0k-xZF" eventType="touchUpInside" id="lDe-TH-Wri"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2N-j9-7nU" customClass="HomeCategoriesCustomButton" customModule="VLMyCourseVc" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2N-j9-7nU" customClass="HomeCategoriesCustomButton" customModule="VirtualLearn" customModuleProvider="target">
                                                         <rect key="frame" x="235" y="73" width="76" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="BvF-95-SuA"/>
@@ -800,7 +800,7 @@
                                                             <action selector="onClickMusic:" destination="xN5-0k-xZF" eventType="touchUpInside" id="uIX-Y5-IyR"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Qg-Kh-dvC" customClass="HomeCategoriesCustomButton" customModule="VLMyCourseVc" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Qg-Kh-dvC" customClass="HomeCategoriesCustomButton" customModule="VirtualLearn" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="73" width="87" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="87" id="JWT-km-tKq"/>
@@ -814,7 +814,7 @@
                                                             <action selector="onClickFinance:" destination="xN5-0k-xZF" eventType="touchUpInside" id="3C1-DR-dqI"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9W-P6-DWZ" customClass="HomeCategoriesCustomButton" customModule="VLMyCourseVc" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9W-P6-DWZ" customClass="HomeCategoriesCustomButton" customModule="VirtualLearn" customModuleProvider="target">
                                                         <rect key="frame" x="95" y="73" width="132" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="132" id="ED0-Eu-Yby"/>
@@ -828,7 +828,7 @@
                                                             <action selector="onClickFitness:" destination="xN5-0k-xZF" eventType="touchUpInside" id="XZf-3D-y6B"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUa-Lh-Far" customClass="HomeCategoriesCustomButton" customModule="VLMyCourseVc" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUa-Lh-Far" customClass="HomeCategoriesCustomButton" customModule="VirtualLearn" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="111" width="117" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="117" id="8ll-aU-mot"/>
@@ -842,7 +842,7 @@
                                                             <action selector="onClickIT:" destination="xN5-0k-xZF" eventType="touchUpInside" id="9RH-B6-NQk"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IkZ-bH-Am7" customClass="HomeCategoriesCustomButton" customModule="VLMyCourseVc" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IkZ-bH-Am7" customClass="HomeCategoriesCustomButton" customModule="VirtualLearn" customModuleProvider="target">
                                                         <rect key="frame" x="125" y="111" width="117" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="117" id="Q33-LF-YEs"/>
@@ -856,7 +856,7 @@
                                                             <action selector="OnClickMarketing:" destination="xN5-0k-xZF" eventType="touchUpInside" id="gc1-4z-wLs"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDb-fI-cCO" customClass="HomeCategoriesCustomButton" customModule="VLMyCourseVc" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDb-fI-cCO" customClass="HomeCategoriesCustomButton" customModule="VirtualLearn" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="149" width="117" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="117" id="Ian-Is-gvT"/>
@@ -870,7 +870,7 @@
                                                             <action selector="onClickPhotography:" destination="xN5-0k-xZF" eventType="touchUpInside" id="nq6-OH-hwv"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4S-2l-NWp" customClass="HomeCategoriesCustomButton" customModule="VLMyCourseVc" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4S-2l-NWp" customClass="HomeCategoriesCustomButton" customModule="VirtualLearn" customModuleProvider="target">
                                                         <rect key="frame" x="250" y="111" width="117" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="117" id="5Us-Rk-vHF"/>
@@ -884,7 +884,7 @@
                                                             <action selector="onClickLifestyle:" destination="xN5-0k-xZF" eventType="touchUpInside" id="xdE-FG-Ibg"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtR-PV-jrz" customClass="HomeCategoriesCustomButton" customModule="VLMyCourseVc" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtR-PV-jrz" customClass="HomeCategoriesCustomButton" customModule="VirtualLearn" customModuleProvider="target">
                                                         <rect key="frame" x="125" y="149" width="117" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="H7D-8A-HHO"/>
@@ -2369,6 +2369,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KgT-sB-3v0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2596" y="427.73613193403304"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="RiV-LU-ycg">
+            <objects>
+                <viewController id="mnL-Rd-aKA" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ncc-eu-ZUK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="j8V-97-I7D"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xSY-Lf-1p2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3711" y="381"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="K79-1o-tEY">
