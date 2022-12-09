@@ -2384,10 +2384,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6mF-7Y-0gl">
+                                <rect key="frame" x="166" y="40" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="j8V-97-I7D"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="j8V-97-I7D" firstAttribute="trailing" secondItem="6mF-7Y-0gl" secondAttribute="trailing" constant="167" id="0Il-JC-oI9"/>
+                            <constraint firstItem="6mF-7Y-0gl" firstAttribute="leading" secondItem="j8V-97-I7D" secondAttribute="leading" constant="166" id="GIf-yW-kXi"/>
+                            <constraint firstItem="6mF-7Y-0gl" firstAttribute="top" secondItem="j8V-97-I7D" secondAttribute="top" constant="40" id="RKQ-R8-RQE"/>
                             <constraint firstItem="YGm-De-v7D" firstAttribute="centerX" secondItem="ncc-eu-ZUK" secondAttribute="centerX" id="RvJ-61-IGH"/>
                             <constraint firstItem="YGm-De-v7D" firstAttribute="centerY" secondItem="ncc-eu-ZUK" secondAttribute="centerY" id="Ryb-v0-JTH"/>
                         </constraints>
