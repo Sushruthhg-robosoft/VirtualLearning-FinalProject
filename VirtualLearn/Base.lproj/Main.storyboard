@@ -2390,21 +2390,29 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3v-xa-kAc">
+                                <rect key="frame" x="142" y="195" width="113" height="81"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="j8V-97-I7D"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="j8V-97-I7D" firstAttribute="trailing" secondItem="6mF-7Y-0gl" secondAttribute="trailing" constant="167" id="0Il-JC-oI9"/>
+                            <constraint firstItem="YGm-De-v7D" firstAttribute="top" secondItem="F3v-xa-kAc" secondAttribute="bottom" constant="47" id="9st-mz-AJU"/>
                             <constraint firstItem="6mF-7Y-0gl" firstAttribute="leading" secondItem="j8V-97-I7D" secondAttribute="leading" constant="166" id="GIf-yW-kXi"/>
                             <constraint firstItem="6mF-7Y-0gl" firstAttribute="top" secondItem="j8V-97-I7D" secondAttribute="top" constant="40" id="RKQ-R8-RQE"/>
                             <constraint firstItem="YGm-De-v7D" firstAttribute="centerX" secondItem="ncc-eu-ZUK" secondAttribute="centerX" id="RvJ-61-IGH"/>
                             <constraint firstItem="YGm-De-v7D" firstAttribute="centerY" secondItem="ncc-eu-ZUK" secondAttribute="centerY" id="Ryb-v0-JTH"/>
+                            <constraint firstItem="F3v-xa-kAc" firstAttribute="leading" secondItem="j8V-97-I7D" secondAttribute="leading" constant="142" id="Vo8-7F-Jyw"/>
+                            <constraint firstItem="F3v-xa-kAc" firstAttribute="top" secondItem="6mF-7Y-0gl" secondAttribute="bottom" constant="134" id="Xau-nu-PSw"/>
+                            <constraint firstItem="j8V-97-I7D" firstAttribute="trailing" secondItem="F3v-xa-kAc" secondAttribute="trailing" constant="120" id="o6Y-4S-HD5"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xSY-Lf-1p2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3711" y="381"/>
+            <point key="canvasLocation" x="3709.5999999999999" y="380.95952023988008"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="K79-1o-tEY">
