@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="choiceCell" translatesAutoresizingMaskIntoConstraints="NO" id="gTV-IL-0wX" customClass="ChoiceOfYourCourseCollectionViewCell" customModule="VirtualLearn" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="142" height="138"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="142" height="138"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ocj-sv-hpP">
+                        <rect key="frame" x="0.0" y="0.0" width="142" height="138"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_course1_bg" translatesAutoresizingMaskIntoConstraints="NO" id="koP-DI-0WE">
+                                <rect key="frame" x="0.0" y="0.0" width="142" height="82"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="82" id="0y3-dV-vpb"/>
+                                    <constraint firstAttribute="width" constant="142" id="ZdE-NA-Gql"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Design" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdS-2w-yM4">
+                                <rect key="frame" x="99" y="64" width="37" height="12"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="37" id="Hfc-8Q-vPB"/>
+                                    <constraint firstAttribute="height" constant="12" id="vRh-1M-NPW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Learn Figma - UI/UX Design Essential Training" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qH-Fa-ta9">
+                                <rect key="frame" x="8" y="90" width="128" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="Hec-jH-VcW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7 Chapter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIg-j0-xP1">
+                                <rect key="frame" x="8" y="122" width="39" height="10"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                <color key="textColor" red="0.47843137254901957" green="0.47843137254901957" blue="0.47843137254901957" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="7qH-Fa-ta9" secondAttribute="trailing" constant="6" id="0WF-h3-MB9"/>
+                            <constraint firstItem="koP-DI-0WE" firstAttribute="leading" secondItem="ocj-sv-hpP" secondAttribute="leading" id="BAX-TK-Ui1"/>
+                            <constraint firstItem="koP-DI-0WE" firstAttribute="top" secondItem="ocj-sv-hpP" secondAttribute="top" id="LX9-Nx-l59"/>
+                            <constraint firstItem="vdS-2w-yM4" firstAttribute="top" secondItem="ocj-sv-hpP" secondAttribute="top" constant="64" id="Qhe-jP-uLg"/>
+                            <constraint firstItem="LIg-j0-xP1" firstAttribute="leading" secondItem="ocj-sv-hpP" secondAttribute="leading" constant="8" id="Thb-pF-daw"/>
+                            <constraint firstItem="LIg-j0-xP1" firstAttribute="top" secondItem="7qH-Fa-ta9" secondAttribute="bottom" constant="8" id="bZJ-OE-bbU"/>
+                            <constraint firstAttribute="trailing" secondItem="koP-DI-0WE" secondAttribute="trailing" id="cyn-8U-J08"/>
+                            <constraint firstItem="7qH-Fa-ta9" firstAttribute="leading" secondItem="ocj-sv-hpP" secondAttribute="leading" constant="8" id="pqj-no-8Ia"/>
+                            <constraint firstAttribute="trailing" secondItem="vdS-2w-yM4" secondAttribute="trailing" constant="6" id="qUt-is-ZOT"/>
+                            <constraint firstItem="7qH-Fa-ta9" firstAttribute="top" secondItem="koP-DI-0WE" secondAttribute="bottom" constant="8" id="yIg-Nn-HCH"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="ocj-sv-hpP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="eQV-Rd-Rfs"/>
+                <constraint firstAttribute="bottom" secondItem="ocj-sv-hpP" secondAttribute="bottom" id="mWR-i3-YM1"/>
+                <constraint firstAttribute="trailing" secondItem="ocj-sv-hpP" secondAttribute="trailing" id="pOq-7r-p0k"/>
+                <constraint firstItem="ocj-sv-hpP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ygq-AL-C1E"/>
+            </constraints>
+            <connections>
+                <outlet property="cardTitle" destination="vdS-2w-yM4" id="bf8-pN-WJA"/>
+                <outlet property="cardView" destination="ocj-sv-hpP" id="dpO-kg-Cj3"/>
+                <outlet property="lessonImage" destination="koP-DI-0WE" id="Dkw-4q-c6c"/>
+                <outlet property="lessonName" destination="7qH-Fa-ta9" id="xoR-16-sUt"/>
+                <outlet property="numberOfChapters" destination="LIg-j0-xP1" id="hfD-z5-MIs"/>
+            </connections>
+            <point key="canvasLocation" x="21.739130434782609" y="123.88392857142857"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="img_course1_bg" width="160" height="100"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

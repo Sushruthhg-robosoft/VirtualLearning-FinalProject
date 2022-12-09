@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TopCourseSectionCell" id="gTV-IL-0wX" customClass="TopCourseSectionCollectionViewCell" customModule="VirtualLearn" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="288" height="190"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="288" height="190"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lgB-gn-nC2">
+                        <rect key="frame" x="0.0" y="0.0" width="288" height="190"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_course1_business" translatesAutoresizingMaskIntoConstraints="NO" id="3ao-pI-hJ6">
+                                <rect key="frame" x="0.0" y="0.0" width="288" height="134"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="134" id="ojz-Kg-DD4"/>
+                                    <constraint firstAttribute="width" constant="288" id="zz5-Rm-dL3"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Complete Communication Skill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGo-0e-lUr">
+                                <rect key="frame" x="0.0" y="142" width="288" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="Y2Y-SG-pRd"/>
+                                    <constraint firstAttribute="width" constant="288" id="urw-9k-qoq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 Chapter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VM5-CL-Nar">
+                                <rect key="frame" x="0.0" y="168" width="74" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="74" id="1Um-j3-Xeg"/>
+                                    <constraint firstAttribute="height" constant="15" id="Wop-Vj-zJb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_courseduration" translatesAutoresizingMaskIntoConstraints="NO" id="cyr-La-lR4">
+                                <rect key="frame" x="78" y="168" width="10" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="k5e-0j-L8o"/>
+                                    <constraint firstAttribute="width" constant="10" id="o3z-Og-xhf"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1:30:20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSj-px-QI7">
+                                <rect key="frame" x="90" y="168" width="50" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="V3i-wp-5Lo"/>
+                                    <constraint firstAttribute="width" constant="50" id="iw8-Ra-qNi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VM5-CL-Nar" firstAttribute="top" secondItem="ZGo-0e-lUr" secondAttribute="bottom" constant="8" id="AJI-Sn-6Oy"/>
+                            <constraint firstItem="3ao-pI-hJ6" firstAttribute="leading" secondItem="lgB-gn-nC2" secondAttribute="leading" id="DLl-5X-XN5"/>
+                            <constraint firstItem="VM5-CL-Nar" firstAttribute="leading" secondItem="lgB-gn-nC2" secondAttribute="leading" id="H1L-p0-WY2"/>
+                            <constraint firstItem="ZGo-0e-lUr" firstAttribute="top" secondItem="3ao-pI-hJ6" secondAttribute="bottom" constant="8" id="MfT-Ar-dj8"/>
+                            <constraint firstItem="cyr-La-lR4" firstAttribute="leading" secondItem="VM5-CL-Nar" secondAttribute="trailing" constant="4" id="b6q-qy-a5T"/>
+                            <constraint firstAttribute="trailing" secondItem="3ao-pI-hJ6" secondAttribute="trailing" id="bG7-Uw-kjG"/>
+                            <constraint firstItem="PSj-px-QI7" firstAttribute="top" secondItem="ZGo-0e-lUr" secondAttribute="bottom" constant="8" id="dGd-zA-fTg"/>
+                            <constraint firstAttribute="width" constant="288" id="drV-ms-1go"/>
+                            <constraint firstItem="PSj-px-QI7" firstAttribute="leading" secondItem="cyr-La-lR4" secondAttribute="trailing" constant="2" id="eCZ-bP-c5M"/>
+                            <constraint firstItem="cyr-La-lR4" firstAttribute="top" secondItem="ZGo-0e-lUr" secondAttribute="bottom" constant="8" id="gQv-cN-Nxn"/>
+                            <constraint firstAttribute="height" constant="190" id="koH-sT-BgL"/>
+                            <constraint firstItem="ZGo-0e-lUr" firstAttribute="leading" secondItem="lgB-gn-nC2" secondAttribute="leading" id="oNT-Hr-z1t"/>
+                            <constraint firstItem="3ao-pI-hJ6" firstAttribute="top" secondItem="lgB-gn-nC2" secondAttribute="top" id="vL0-ZA-rF4"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="lgB-gn-nC2" secondAttribute="bottom" id="JQg-FT-6ip"/>
+                <constraint firstAttribute="trailing" secondItem="lgB-gn-nC2" secondAttribute="trailing" id="SXw-8R-VRG"/>
+                <constraint firstItem="lgB-gn-nC2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="sOj-a2-AeJ"/>
+                <constraint firstItem="lgB-gn-nC2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="vKi-4c-EuG"/>
+            </constraints>
+            <point key="canvasLocation" x="142" y="104"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="icn_courseduration" width="12" height="12"/>
+        <image name="img_course1_business" width="324" height="170"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
