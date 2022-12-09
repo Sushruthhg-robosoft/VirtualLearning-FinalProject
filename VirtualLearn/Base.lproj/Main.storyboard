@@ -2377,8 +2377,20 @@
                     <view key="view" contentMode="scaleToFill" id="ncc-eu-ZUK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGm-De-v7D">
+                                <rect key="frame" x="166.5" y="323" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="j8V-97-I7D"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YGm-De-v7D" firstAttribute="centerX" secondItem="ncc-eu-ZUK" secondAttribute="centerX" id="RvJ-61-IGH"/>
+                            <constraint firstItem="YGm-De-v7D" firstAttribute="centerY" secondItem="ncc-eu-ZUK" secondAttribute="centerY" id="Ryb-v0-JTH"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xSY-Lf-1p2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
