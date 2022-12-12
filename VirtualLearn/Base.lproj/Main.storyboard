@@ -1971,7 +1971,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="onClickLogin:" destination="yEG-9w-pHZ" eventType="touchUpInside" id="65W-uk-mo4"/>
+                                                    <action selector="onClickLogin:" destination="yEG-9w-pHZ" eventType="touchUpInside" id="qb3-ks-lva"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUd-qR-L2D">
@@ -2000,7 +2000,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="onClickRegister:" destination="yEG-9w-pHZ" eventType="touchUpInside" id="DWM-Zc-JnU"/>
+                                                    <action selector="onClickRegister:" destination="yEG-9w-pHZ" eventType="touchUpInside" id="Opo-dI-H7f"/>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BYM-MM-vjR">
@@ -2099,7 +2099,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="registerBtn" destination="tSS-Fw-p6f" id="gvX-8y-Hse"/>
+                        <outlet property="registerBtn" destination="tSS-Fw-p6f" id="iU3-nC-lUx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="92B-aG-JqZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2223,6 +2223,9 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="userNameTextChangeOutlet:" destination="Cr0-fg-m9I" eventType="editingChanged" id="Spy-hn-4Jx"/>
+                                                </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPu-VC-Qvr">
                                                 <rect key="frame" x="22" y="400" width="70" height="19.5"/>
@@ -2237,6 +2240,9 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="passwordTextChangeOutlet:" destination="Cr0-fg-m9I" eventType="editingChanged" id="dky-7b-2cJ"/>
+                                                </connections>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xoj-CF-Dcy">
                                                 <rect key="frame" x="22" y="459.5" width="327" height="1"/>
@@ -2274,6 +2280,9 @@
                                                         <integer key="value" value="6"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="loginClick:" destination="Cr0-fg-m9I" eventType="touchUpInside" id="mEn-Hv-URq"/>
+                                                </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="5lz-d6-3yN">
                                                 <rect key="frame" x="69" y="611.5" width="233" height="20"/>
@@ -2372,6 +2381,11 @@
                             <constraint firstItem="zLd-oG-1xq" firstAttribute="trailing" secondItem="oqi-sg-k9z" secondAttribute="trailing" id="wbT-Sr-rZE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="kmY-xu-mw1" id="3AD-p4-b5f"/>
+                        <outlet property="passwordTextfield" destination="IOP-Ct-WNK" id="YcB-er-Xzw"/>
+                        <outlet property="userNameTextField" destination="Q4H-PI-icA" id="2yj-Ee-1J3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KgT-sB-3v0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

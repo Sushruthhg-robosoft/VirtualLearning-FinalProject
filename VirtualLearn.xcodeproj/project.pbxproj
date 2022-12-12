@@ -13,6 +13,8 @@
 		1BA47D38294700170012B8C3 /* personalDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA47D37294700170012B8C3 /* personalDetails.swift */; };
 		1BA47D3D294700740012B8C3 /* loginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA47D3C294700740012B8C3 /* loginVM.swift */; };
 		1BA47D42294700900012B8C3 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA47D41294700900012B8C3 /* KeyChain.swift */; };
+		1BA47D47294704870012B8C3 /* customChooseCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA47D46294704870012B8C3 /* customChooseCourseView.swift */; };
+		1BA47D4F294704AF0012B8C3 /* RegisterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA47D4E294704AF0012B8C3 /* RegisterUser.swift */; };
 		1BD4164A294094BD00E5334B /* CustomCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD41649294094BD00E5334B /* CustomCategoryView.swift */; };
 		1BD41653294095CC00E5334B /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD41652294095CC00E5334B /* CategoryViewController.swift */; };
 		1BDC5F4C293F771B00BE877F /* PersonalDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC5F4B293F771B00BE877F /* PersonalDetailsViewController.swift */; };
@@ -51,7 +53,6 @@
 		CFAFC9C1293EFAAA00F84288 /* VirtualLearnUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFC9C0293EFAAA00F84288 /* VirtualLearnUITests.swift */; };
 		CFBA05622946F60300763342 /* CourseDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA05612946F60300763342 /* CourseDetailsViewController.swift */; };
 		CFBA056D2946F79100763342 /* CourseDetailseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA056C2946F79100763342 /* CourseDetailseTableViewCell.swift */; };
-		CFBA05742946FB4900763342 /* customChooseCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA05722946FB4900763342 /* customChooseCourseView.swift */; };
 		CFBA05752946FB4900763342 /* customCourseCategoryLable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA05732946FB4900763342 /* customCourseCategoryLable.swift */; };
 		CFBA057B2946FB9800763342 /* ChooseYourCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA05792946FB9800763342 /* ChooseYourCourseTableViewCell.swift */; };
 		CFBA057C2946FB9800763342 /* ChooseYourCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA057A2946FB9800763342 /* ChooseYourCourseViewController.swift */; };
@@ -89,6 +90,8 @@
 		1BA47D37294700170012B8C3 /* personalDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = personalDetails.swift; sourceTree = "<group>"; };
 		1BA47D3C294700740012B8C3 /* loginVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginVM.swift; sourceTree = "<group>"; };
 		1BA47D41294700900012B8C3 /* KeyChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
+		1BA47D46294704870012B8C3 /* customChooseCourseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customChooseCourseView.swift; sourceTree = "<group>"; };
+		1BA47D4E294704AF0012B8C3 /* RegisterUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterUser.swift; sourceTree = "<group>"; };
 		1BD41649294094BD00E5334B /* CustomCategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCategoryView.swift; sourceTree = "<group>"; };
 		1BD41652294095CC00E5334B /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		1BDC5F4B293F771B00BE877F /* PersonalDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDetailsViewController.swift; sourceTree = "<group>"; };
@@ -133,7 +136,6 @@
 		CFAFC9C2293EFAAA00F84288 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFBA05612946F60300763342 /* CourseDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsViewController.swift; sourceTree = "<group>"; };
 		CFBA056C2946F79100763342 /* CourseDetailseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailseTableViewCell.swift; sourceTree = "<group>"; };
-		CFBA05722946FB4900763342 /* customChooseCourseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = customChooseCourseView.swift; path = ../../../../../Users/manishrt/Downloads/customChooseCourseView.swift; sourceTree = "<group>"; };
 		CFBA05732946FB4900763342 /* customCourseCategoryLable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customCourseCategoryLable.swift; sourceTree = "<group>"; };
 		CFBA05792946FB9800763342 /* ChooseYourCourseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseYourCourseTableViewCell.swift; sourceTree = "<group>"; };
 		CFBA057A2946FB9800763342 /* ChooseYourCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseYourCourseViewController.swift; sourceTree = "<group>"; };
@@ -279,7 +281,7 @@
 		CF523198293F044A00C56B7F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CFBA05722946FB4900763342 /* customChooseCourseView.swift */,
+				1BA47D46294704870012B8C3 /* customChooseCourseView.swift */,
 				CFBA05732946FB4900763342 /* customCourseCategoryLable.swift */,
 				1BD41649294094BD00E5334B /* CustomCategoryView.swift */,
 				1BF0C86029408D93009D9030 /* customHamburgerButtons.swift */,
@@ -308,6 +310,7 @@
 		CF52319A293F046700C56B7F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1BA47D4E294704AF0012B8C3 /* RegisterUser.swift */,
 				CF5231A2293F214600C56B7F /* OnboaringSlide.swift */,
 			);
 			path = Model;
@@ -563,12 +566,14 @@
 				1BF0C86329408D93009D9030 /* HomeViewController.swift in Sources */,
 				590194BF293F715D00055C24 /* textField.swift in Sources */,
 				CF416BC62942DCF200A27462 /* MyCourseTableViewCell.swift in Sources */,
+				1BA47D4F294704AF0012B8C3 /* RegisterUser.swift in Sources */,
 				CF79F1DA2941BBB600EEC920 /* NewUserBottomView.swift in Sources */,
 				1BF0C86229408D93009D9030 /* HamburgerViewController.swift in Sources */,
 				CF79F1CF2941AAD000EEC920 /* SuggestionsCollectionViewCell.swift in Sources */,
 				CFBA05752946FB4900763342 /* customCourseCategoryLable.swift in Sources */,
 				CFAFC99F293EFAA700F84288 /* AppDelegate.swift in Sources */,
 				CF416BC72942DCF200A27462 /* MyCourseViewController.swift in Sources */,
+				1BA47D47294704870012B8C3 /* customChooseCourseView.swift in Sources */,
 				CFEC20772941A5C500A171DA /* SuggestionsTopView.swift in Sources */,
 				CFBA057C2946FB9800763342 /* ChooseYourCourseViewController.swift in Sources */,
 				590194C0293F715D00055C24 /* ButtonView.swift in Sources */,
@@ -582,7 +587,6 @@
 				1B3635E729409E1000D07243 /* LoginPageViewController.swift in Sources */,
 				CFF5C2722940B747008818EB /* HomeCategoriescustomButton.swift in Sources */,
 				CF79F1E8294217C800EEC920 /* ChoiceOfYourCourseCollectionViewCell.swift in Sources */,
-				CFBA05742946FB4900763342 /* customChooseCourseView.swift in Sources */,
 				CF416BC82942DCF200A27462 /* NewUserMyCourseViewController.swift in Sources */,
 				CF79F1DF2942118600EEC920 /* ChoiceOfCourseCustomButton.swift in Sources */,
 				CFAFC9A1293EFAA700F84288 /* SceneDelegate.swift in Sources */,

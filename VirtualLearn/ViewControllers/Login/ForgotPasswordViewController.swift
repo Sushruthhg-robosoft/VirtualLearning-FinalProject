@@ -10,10 +10,9 @@ import UIKit
 class ForgotPasswordViewController: UIViewController {
 
 
+    let viewmodel = LoginViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
 
         // Do any additional setup after loading the view.
     }
@@ -26,6 +25,11 @@ class ForgotPasswordViewController: UIViewController {
     
     @IBAction func onClickSend(_ sender: Any) {
         
+        viewmodel.resetPassword(mobileNumber: "+917022011412", password: "Hellllo1234"){
+            
+        } fail: {
+            
+        }
         let vc = storyboard?.instantiateViewController(identifier: "VerifyAccountViewController") as! VerifyAccountViewController
         
         vc.isForgotPassword = true

@@ -12,7 +12,7 @@ class NewAccountViewController: UIViewController {
     @IBOutlet weak var enteredMobileNumber: UITextField!
     
     @IBOutlet weak var viewHeight: NSLayoutConstraint!
-    
+    let verificationOTP = VerificationOTP()
     override func viewDidLoad() {
         super.viewDidLoad()
         if(view.bounds.height > 500) {
@@ -27,9 +27,14 @@ class NewAccountViewController: UIViewController {
 
     
     @IBAction func continueButton(_ sender: Any) {
-        let vc = storyboard?.instantiateViewController(identifier: "VerifyAccountViewController") as! VerifyAccountViewController
+        guard let mobileNumber = enteredMobileNumber.text else {return}
+        print(mobileNumber)
         
+        let vc = storyboard?.instantiateViewController(identifier: "VerifyAccountViewController") as! VerifyAccountViewController
+        vc.mobileNumber = mobileNumber
         navigationController?.pushViewController(vc, animated: true)
+        
+        verificationOTP.getOTP(mobileNumber: "+91"+mobileNumber)
         
     }
    
