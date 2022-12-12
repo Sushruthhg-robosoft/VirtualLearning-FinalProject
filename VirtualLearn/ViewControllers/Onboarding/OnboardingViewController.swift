@@ -56,6 +56,8 @@ class OnboardingViewController: UIViewController {
             
             currentPage += 1
             pageControl.currentPage = currentPage
+           
+        
             self.onboardingCollectionView.contentOffset.x += onboardingCollectionView.frame.width
 
             UIView.animate(withDuration: 0.2, delay: 0, options: UIView.AnimationOptions.curveEaseOut, animations: {

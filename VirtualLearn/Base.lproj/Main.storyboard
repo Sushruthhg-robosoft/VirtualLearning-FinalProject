@@ -100,13 +100,16 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_onboarding_illustration1" translatesAutoresizingMaskIntoConstraints="NO" id="UaH-lD-gPD">
-                                                                    <rect key="frame" x="0.0" y="78" width="375" height="186"/>
+                                                                    <rect key="frame" x="0.0" y="78" width="375" height="156"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="282" id="ZQY-ay-79p"/>
+                                                                    </constraints>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwU-oR-hw5">
-                                                                    <rect key="frame" x="24" y="359" width="268" height="79"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwU-oR-hw5">
+                                                                    <rect key="frame" x="24" y="329" width="243" height="79"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="79" id="D0z-jp-DYM"/>
-                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="243" id="zeH-u1-JTh"/>
+                                                                        <constraint firstAttribute="width" constant="243" id="zeH-u1-JTh"/>
                                                                     </constraints>
                                                                     <string key="text">Learner Engagement
 </string>
@@ -115,7 +118,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oik-SF-LyQ">
-                                                                    <rect key="frame" x="24" y="442" width="331" height="80"/>
+                                                                    <rect key="frame" x="24" y="412" width="331" height="80"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="80" id="g66-pH-UkA"/>
                                                                     </constraints>
@@ -126,6 +129,7 @@
                                                                 </label>
                                                             </subviews>
                                                             <constraints>
+                                                                <constraint firstAttribute="bottom" secondItem="Oik-SF-LyQ" secondAttribute="bottom" constant="30" id="5p7-VW-Jib"/>
                                                                 <constraint firstItem="UaH-lD-gPD" firstAttribute="leading" secondItem="2L2-Gb-W0O" secondAttribute="leading" id="Gw7-2H-TAO"/>
                                                                 <constraint firstItem="UaH-lD-gPD" firstAttribute="top" secondItem="2L2-Gb-W0O" secondAttribute="top" constant="78" id="LvE-jq-RMH"/>
                                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vwU-oR-hw5" secondAttribute="trailing" constant="20" symbolic="YES" id="MXe-gd-W6C"/>
@@ -135,7 +139,7 @@
                                                                 <constraint firstItem="Oik-SF-LyQ" firstAttribute="leading" secondItem="2L2-Gb-W0O" secondAttribute="leading" constant="24" id="fGO-xV-F7T"/>
                                                                 <constraint firstItem="Oik-SF-LyQ" firstAttribute="top" secondItem="vwU-oR-hw5" secondAttribute="bottom" constant="4" id="z48-a9-W07"/>
                                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Oik-SF-LyQ" secondAttribute="trailing" constant="20" symbolic="YES" id="zLU-lo-NAY"/>
-                                                                <constraint firstItem="vwU-oR-hw5" firstAttribute="top" secondItem="UaH-lD-gPD" secondAttribute="bottom" constant="94.799999999999997" id="zqp-9k-CnX"/>
+                                                                <constraint firstItem="vwU-oR-hw5" firstAttribute="top" secondItem="UaH-lD-gPD" secondAttribute="bottom" constant="95" id="zqp-9k-CnX"/>
                                                             </constraints>
                                                         </collectionViewCellContentView>
                                                         <size key="customSize" width="375" height="522"/>
@@ -481,7 +485,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLn-o0-rZb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="64" y="1109"/>
+            <point key="canvasLocation" x="-88" y="1136"/>
         </scene>
         <!--My Course View Controller-->
         <scene sceneID="beP-2Q-Umx">
