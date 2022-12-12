@@ -25,9 +25,11 @@ class VerifyAccountViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var invalidVerificationView: UIView!
     
     @IBOutlet weak var verifylabel: UILabel!
+    var mobileNumber = ""
     var isForgotPassword : Bool = false
     var verificationText: String = ""
     @IBOutlet weak var verifyScreen: UIView!
+    let verificationOTP = VerificationOTP()
     
     override func viewDidLoad() {
         invalidVerificationView.isHidden = true
@@ -74,29 +76,42 @@ class VerifyAccountViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func onClickVerify(_ sender: Any) {
         
-        firstDigitUnderView.backgroundColor = UIColor(red: 255, green: 0, blue: 0, alpha: 1)
-        secondDigitUnderView.backgroundColor = UIColor(red: 255, green: 0, blue: 0, alpha: 1)
-        thirdDigitUnderView.backgroundColor = UIColor(red: 255, green: 0, blue: 0, alpha: 1)
-        fourthDigitUnderView.backgroundColor = UIColor(red: 255, green: 0, blue: 0, alpha: 1)
+        guard let firstNumber = firstTextField.text else {return}
+        guard let secondNumber = secondTextField.text else {return}
+        guard let thirdNumber = thirdTextField.text else {return}
+        guard let fourthNumber = fourthTextField.text else {return}
         
-        invalidVerificationView.isHidden = false
-        
-        verifyScreen.isHidden = true
-        successScreen.isHidden = false
-        view.bringSubviewToFront(successScreen)
+        let otp = firstNumber + secondNumber + thirdNumber + fourthNumber
 
-
-        if isForgotPassword {
-            let vc = storyboard?.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
-
-            navigationController?.pushViewController(vc, animated: true)
-        }
-
-        else{
-
-        let vc = storyboard?.instantiateViewController(identifier: "PersonalDetailsViewController") as! PersonalDetailsViewController
-
-        navigationController?.pushViewController(vc, animated: true)
+        verificationOTP.verifyOTP(mobileNumber: "+91"+mobileNumber, otp: otp){ sucess in
+            
+            DispatchQueue.main.async {
+                
+            if self.isForgotPassword {
+                
+                let vc = self.storyboard?.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            
+            else{
+                let vc = self.storyboard?.instantiateViewController(identifier: "PersonalDetailsViewController") as! PersonalDetailsViewController
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            }
+            
+        } fail: {fail in
+            DispatchQueue.main.async {
+                self.invalidVerificationView.isHidden = false
+                self.firstDigitUnderView.backgroundColor = UIColor(red: 255, green: 0, blue: 0, alpha: 1)
+                self.secondDigitUnderView.backgroundColor = UIColor(red: 255, green: 0, blue: 0, alpha: 1)
+                self.thirdDigitUnderView.backgroundColor = UIColor(red: 255, green: 0, blue: 0, alpha: 1)
+                self.fourthDigitUnderView.backgroundColor = UIColor(red: 255, green: 0, blue: 0, alpha: 1)
+                
+                self.firstTextField.text = ""
+                self.secondTextField.text = ""
+                self.thirdTextField.text = ""
+                self.fourthTextField.text = ""
+            }
         }
     }
     

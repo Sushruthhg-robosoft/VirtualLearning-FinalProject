@@ -28,11 +28,11 @@ class PersonalDetailsViewController: UIViewController {
     @IBOutlet weak var RegistrayionButtonOutlet: UIButton!
     
     @IBOutlet weak var successScreen: UIView!
-    
+    let personalData = PersonalData()
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        RegistrayionButtonOutlet.isEnabled = false
         successScreen.isHidden = true
         
         
@@ -52,7 +52,8 @@ class PersonalDetailsViewController: UIViewController {
         confirmPasswordTextField.lineheight()
         
         passwordView.isHidden = true
-        
+        RegistrayionButtonOutlet.isEnabled = false
+        RegistrayionButtonOutlet.alpha = 0.5
         passwordIButton.layer.cornerRadius = self.passwordIButton.frame.height/2
         fullNameLabel.isHidden = true
         userNameLabel.isHidden = true
@@ -96,6 +97,40 @@ class PersonalDetailsViewController: UIViewController {
         passwordIButton.isHidden = true
         passwordView.isHidden = false
     }
+    @IBAction func firstNameChanged(_ sender: Any) {
+        guard fullNameTextField != nil else {
+            return
+        }
+        checAllField()
+    }
+    
+    @IBAction func userNameChanged(_ sender: Any) {
+        guard let userName = userNameTextField.text else {
+            return
+        }
+        personalData.validatingUserName(userName: userName) { sucess in
+            DispatchQueue.main.async {
+                self.checAllField()
+            }
+        } fail: { fail in
+            
+        }
+        
+    }
+    
+    @IBAction func emailChanged(_ sender: Any) {
+        guard emailTextField != nil else {
+            return
+        }
+        checAllField()
+    }
+    
+    @IBAction func confirmPasswordChanged(_ sender: Any) {
+        guard confirmPasswordTextField != nil else {
+            return
+        }
+        checAllField()
+    }
     
     @IBAction func passwordTextEditing(_ sender: Any) {
         if let password = passwordTextField.text {
@@ -117,9 +152,18 @@ class PersonalDetailsViewController: UIViewController {
     }
     
     @IBAction func RegistrationButtonClick(_ sender: Any) {
-        let vc = storyboard?.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
-        
-        navigationController?.pushViewController(vc, animated: true)
+        let currentUser =  personalData.assignCurrentRegisterValue(fullName: fullNameTextField.text!, userName: userNameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!)
+         personalData.registeringUser(user: currentUser) { sucess in
+             print("sucessfull")
+            DispatchQueue.main.async {
+                let vc = self.storyboard?.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+         } fail: { fail in
+             print(fail)
+         }
+
+         
     }
     
     // endTextField
@@ -178,6 +222,18 @@ class PersonalDetailsViewController: UIViewController {
         let predicate = NSPredicate(format: "SELF MATCHES %@", regular)
         
         return predicate.evaluate(with: value)
+    }
+    func checAllField() {
+        if( fullNameTextField.text != "" && userNameTextField.text != "" && emailTextField.text != "" && passwordTextField.text != "" && confirmPasswordTextField.text != "" && passwordTextField.text! == confirmPasswordTextField.text!)
+        {
+            RegistrayionButtonOutlet.isEnabled = true
+            RegistrayionButtonOutlet.alpha = 1
+        }
+        else
+        {
+            RegistrayionButtonOutlet.isEnabled = false
+            RegistrayionButtonOutlet.alpha = 0.5
+        }
     }
     
     @IBAction func onClickLetsGetStarted(_ sender: Any) {
