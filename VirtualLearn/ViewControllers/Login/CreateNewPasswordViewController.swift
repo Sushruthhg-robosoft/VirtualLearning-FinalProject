@@ -26,15 +26,14 @@ class CreateNewPasswordViewController: UIViewController {
     @IBAction func passwordChangedBegin(_ sender: Any) {
         newPasswordline.backgroundColor = #colorLiteral(red: 0.01568627451, green: 0.1725490196, blue: 0.3607843137, alpha: 1)
         passwordView.isHidden = true
-
     }
     
+
     @IBAction func confirmPasswordChangedBegin(_ sender: Any) {
         confirmPasswordLine.backgroundColor = #colorLiteral(red: 0.01568627451, green: 0.1725490196, blue: 0.3607843137, alpha: 1)
     }
     
     @IBAction func passwordEditing(_ sender: Any) {
-        
         if let password = newPasswordTextField.text {
             if(password.count > 5)
             {
@@ -46,7 +45,6 @@ class CreateNewPasswordViewController: UIViewController {
                 passwordView.isHidden = false
             }
         }
-        
     }
 
     func passwordMatched(_ value: String) -> Bool {
