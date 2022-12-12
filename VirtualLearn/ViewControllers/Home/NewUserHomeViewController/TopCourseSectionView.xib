@@ -34,12 +34,13 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSl-YV-Xpc">
-                            <rect key="frame" x="364" y="15" width="39" height="27"/>
+                            <rect key="frame" x="364" y="15" width="39" height="22"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="27" id="ZdF-cS-Uh5"/>
+                                <constraint firstAttribute="height" constant="22" id="ZdF-cS-Uh5"/>
                                 <constraint firstAttribute="width" constant="39" id="dKd-Hs-RgW"/>
                             </constraints>
-                            <state key="normal" title="Skip">
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="See All">
                                 <color key="titleColor" red="0.47843137254901957" green="0.47843137254901957" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                         </button>

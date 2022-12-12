@@ -34,4 +34,9 @@ class HamburgerViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func onClickMyProfile(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(identifier: "CourseDetailsViewController") as! CourseDetailsViewController
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
