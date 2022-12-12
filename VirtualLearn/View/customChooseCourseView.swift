@@ -21,5 +21,6 @@ class customChooseCourseView: UIView {
         self.layer.cornerRadius = 5
         self.layer.borderColor = #colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
         //customChooseCourseView
+        //customView
     }
 }
