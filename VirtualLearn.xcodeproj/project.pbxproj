@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B12FEBF29458F0100612DB1 /* VerificationOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B12FEBE29458F0100612DB1 /* VerificationOTP.swift */; };
 		1B3635E729409E1000D07243 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3635E629409E1000D07243 /* LoginPageViewController.swift */; };
 		1B3635EC29409E2500D07243 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3635EB29409E2500D07243 /* ForgotPasswordViewController.swift */; };
 		1BD4164A294094BD00E5334B /* CustomCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD41649294094BD00E5334B /* CustomCategoryView.swift */; };
@@ -21,7 +22,6 @@
 		590194BF293F715D00055C24 /* textField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590194BD293F715D00055C24 /* textField.swift */; };
 		590194C0293F715D00055C24 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590194BE293F715D00055C24 /* ButtonView.swift */; };
 		590194C6293F717300055C24 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590194C5293F717300055C24 /* LandingViewController.swift */; };
-		CF416BBD2942DCCA00A27462 /* customCategoryLable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF416BBA2942DCCA00A27462 /* customCategoryLable.swift */; };
 		CF416BBF2942DCCA00A27462 /* customChooseCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF416BBC2942DCCA00A27462 /* customChooseCourseView.swift */; };
 		CF416BC62942DCF200A27462 /* MyCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF416BC32942DCF200A27462 /* MyCourseTableViewCell.swift */; };
 		CF416BC72942DCF200A27462 /* MyCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF416BC42942DCF200A27462 /* MyCourseViewController.swift */; };
@@ -75,6 +75,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B12FEBE29458F0100612DB1 /* VerificationOTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationOTP.swift; sourceTree = "<group>"; };
 		1B3635E629409E1000D07243 /* LoginPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 		1B3635EB29409E2500D07243 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		1BD41649294094BD00E5334B /* CustomCategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCategoryView.swift; sourceTree = "<group>"; };
@@ -89,7 +90,6 @@
 		590194BD293F715D00055C24 /* textField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = textField.swift; sourceTree = "<group>"; };
 		590194BE293F715D00055C24 /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		590194C5293F717300055C24 /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
-		CF416BBA2942DCCA00A27462 /* customCategoryLable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = customCategoryLable.swift; path = ../../../../../Users/manishrt/Downloads/VLMyCourseVc/VLMyCourseVc/customCategoryLable.swift; sourceTree = "<group>"; };
 		CF416BBC2942DCCA00A27462 /* customChooseCourseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customChooseCourseView.swift; sourceTree = "<group>"; };
 		CF416BC32942DCF200A27462 /* MyCourseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCourseTableViewCell.swift; sourceTree = "<group>"; };
 		CF416BC42942DCF200A27462 /* MyCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCourseViewController.swift; sourceTree = "<group>"; };
@@ -262,7 +262,6 @@
 			isa = PBXGroup;
 			children = (
 				CF416BBC2942DCCA00A27462 /* customChooseCourseView.swift */,
-				CF416BBA2942DCCA00A27462 /* customCategoryLable.swift */,
 				1BD41649294094BD00E5334B /* CustomCategoryView.swift */,
 				1BF0C86029408D93009D9030 /* customHamburgerButtons.swift */,
 				1BF0C85D29408D92009D9030 /* customHamLable.swift */,
@@ -278,6 +277,7 @@
 		CF523199293F045C00C56B7F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				1B12FEBE29458F0100612DB1 /* VerificationOTP.swift */,
 				CFF1963F293F5C3F00802396 /* viewModel.swift */,
 			);
 			path = ViewModel;
@@ -516,7 +516,6 @@
 				1BD41653294095CC00E5334B /* CategoryViewController.swift in Sources */,
 				CF416C4D294361B300A27462 /* TopCourseSectionCollectionViewCell.swift in Sources */,
 				CFF19645293F5C4F00802396 /* NetworkManager.swift in Sources */,
-				CF416BBD2942DCCA00A27462 /* customCategoryLable.swift in Sources */,
 				1B3635EC29409E2500D07243 /* ForgotPasswordViewController.swift in Sources */,
 				CFAFC9A3293EFAA700F84288 /* OnboardingViewController.swift in Sources */,
 				1BF0C86129408D93009D9030 /* customHamLable.swift in Sources */,
@@ -530,6 +529,7 @@
 				CF416BC72942DCF200A27462 /* MyCourseViewController.swift in Sources */,
 				CFEC20772941A5C500A171DA /* SuggestionsTopView.swift in Sources */,
 				590194C0293F715D00055C24 /* ButtonView.swift in Sources */,
+				1B12FEBF29458F0100612DB1 /* VerificationOTP.swift in Sources */,
 				CFF1963B293F500800802396 /* pagecontrolExtension.swift in Sources */,
 				590194B8293F714300055C24 /* NewAccountViewController.swift in Sources */,
 				1BF0C86429408D93009D9030 /* customHamburgerButtons.swift in Sources */,
