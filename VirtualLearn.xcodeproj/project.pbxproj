@@ -11,6 +11,7 @@
 		1B3635E729409E1000D07243 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3635E629409E1000D07243 /* LoginPageViewController.swift */; };
 		1B3635EC29409E2500D07243 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3635EB29409E2500D07243 /* ForgotPasswordViewController.swift */; };
 		1BA47D38294700170012B8C3 /* personalDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA47D37294700170012B8C3 /* personalDetails.swift */; };
+		1BA47D3D294700740012B8C3 /* loginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA47D3C294700740012B8C3 /* loginVM.swift */; };
 		1BD4164A294094BD00E5334B /* CustomCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD41649294094BD00E5334B /* CustomCategoryView.swift */; };
 		1BD41653294095CC00E5334B /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD41652294095CC00E5334B /* CategoryViewController.swift */; };
 		1BDC5F4C293F771B00BE877F /* PersonalDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC5F4B293F771B00BE877F /* PersonalDetailsViewController.swift */; };
@@ -85,6 +86,7 @@
 		1B3635E629409E1000D07243 /* LoginPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 		1B3635EB29409E2500D07243 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		1BA47D37294700170012B8C3 /* personalDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = personalDetails.swift; sourceTree = "<group>"; };
+		1BA47D3C294700740012B8C3 /* loginVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginVM.swift; sourceTree = "<group>"; };
 		1BD41649294094BD00E5334B /* CustomCategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCategoryView.swift; sourceTree = "<group>"; };
 		1BD41652294095CC00E5334B /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		1BDC5F4B293F771B00BE877F /* PersonalDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDetailsViewController.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				1BA47D37294700170012B8C3 /* personalDetails.swift */,
+				1BA47D3C294700740012B8C3 /* loginVM.swift */,
 				1B12FEBE29458F0100612DB1 /* VerificationOTP.swift */,
 				CFF1963F293F5C3F00802396 /* viewModel.swift */,
 			);
@@ -569,6 +572,7 @@
 				1B12FEBF29458F0100612DB1 /* VerificationOTP.swift in Sources */,
 				CFF1963B293F500800802396 /* pagecontrolExtension.swift in Sources */,
 				590194B8293F714300055C24 /* NewAccountViewController.swift in Sources */,
+				1BA47D3D294700740012B8C3 /* loginVM.swift in Sources */,
 				CFBA056D2946F79100763342 /* CourseDetailseTableViewCell.swift in Sources */,
 				CFBA05622946F60300763342 /* CourseDetailsViewController.swift in Sources */,
 				1BF0C86429408D93009D9030 /* customHamburgerButtons.swift in Sources */,
