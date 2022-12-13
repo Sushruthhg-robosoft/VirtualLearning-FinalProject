@@ -29,6 +29,12 @@
 		590194C6293F717300055C24 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590194C5293F717300055C24 /* LandingViewController.swift */; };
 		C25014C22947218D004A6711 /* CreateNewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25014C12947218D004A6711 /* CreateNewPasswordViewController.swift */; };
 		C25014C7294721B6004A6711 /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25014C6294721B6004A6711 /* Shadow.swift */; };
+		CF032A452948332400D6B6D3 /* CustomContinueChapterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF032A3F2948332400D6B6D3 /* CustomContinueChapterView.swift */; };
+		CF032A462948332400D6B6D3 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF032A402948332400D6B6D3 /* HeaderView.swift */; };
+		CF032A472948332400D6B6D3 /* ChaptersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF032A412948332400D6B6D3 /* ChaptersViewController.swift */; };
+		CF032A482948332400D6B6D3 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF032A422948332400D6B6D3 /* Chapter.swift */; };
+		CF032A492948332400D6B6D3 /* CustomChaptersCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF032A432948332400D6B6D3 /* CustomChaptersCellView.swift */; };
+		CF032A4A2948332400D6B6D3 /* CustomChapterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF032A442948332400D6B6D3 /* CustomChapterTableViewCell.swift */; };
 		CF416BC62942DCF200A27462 /* MyCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF416BC32942DCF200A27462 /* MyCourseTableViewCell.swift */; };
 		CF416BC72942DCF200A27462 /* MyCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF416BC42942DCF200A27462 /* MyCourseViewController.swift */; };
 		CF416BC82942DCF200A27462 /* NewUserMyCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF416BC52942DCF200A27462 /* NewUserMyCourseViewController.swift */; };
@@ -108,6 +114,12 @@
 		590194C5293F717300055C24 /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		C25014C12947218D004A6711 /* CreateNewPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewPasswordViewController.swift; sourceTree = "<group>"; };
 		C25014C6294721B6004A6711 /* Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
+		CF032A3F2948332400D6B6D3 /* CustomContinueChapterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomContinueChapterView.swift; sourceTree = "<group>"; };
+		CF032A402948332400D6B6D3 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		CF032A412948332400D6B6D3 /* ChaptersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChaptersViewController.swift; sourceTree = "<group>"; };
+		CF032A422948332400D6B6D3 /* Chapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
+		CF032A432948332400D6B6D3 /* CustomChaptersCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomChaptersCellView.swift; sourceTree = "<group>"; };
+		CF032A442948332400D6B6D3 /* CustomChapterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomChapterTableViewCell.swift; sourceTree = "<group>"; };
 		CF416BC32942DCF200A27462 /* MyCourseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCourseTableViewCell.swift; sourceTree = "<group>"; };
 		CF416BC42942DCF200A27462 /* MyCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCourseViewController.swift; sourceTree = "<group>"; };
 		CF416BC52942DCF200A27462 /* NewUserMyCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserMyCourseViewController.swift; sourceTree = "<group>"; };
@@ -260,6 +272,19 @@
 			path = Landing;
 			sourceTree = "<group>";
 		};
+		CF032A3E2948332400D6B6D3 /* CourseChapters */ = {
+			isa = PBXGroup;
+			children = (
+				CF032A3F2948332400D6B6D3 /* CustomContinueChapterView.swift */,
+				CF032A402948332400D6B6D3 /* HeaderView.swift */,
+				CF032A412948332400D6B6D3 /* ChaptersViewController.swift */,
+				CF032A422948332400D6B6D3 /* Chapter.swift */,
+				CF032A432948332400D6B6D3 /* CustomChaptersCellView.swift */,
+				CF032A442948332400D6B6D3 /* CustomChapterTableViewCell.swift */,
+			);
+			path = CourseChapters;
+			sourceTree = "<group>";
+		};
 		CF523184293F02BA00C56B7F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -389,6 +414,7 @@
 		CFBA05602946F5E100763342 /* CourseDetails */ = {
 			isa = PBXGroup;
 			children = (
+				CF032A3E2948332400D6B6D3 /* CourseChapters */,
 				CFBA05612946F60300763342 /* CourseDetailsViewController.swift */,
 				CFBA056C2946F79100763342 /* CourseDetailseTableViewCell.swift */,
 			);
@@ -565,6 +591,7 @@
 				1BD41653294095CC00E5334B /* CategoryViewController.swift in Sources */,
 				CF416C4D294361B300A27462 /* TopCourseSectionCollectionViewCell.swift in Sources */,
 				CFF19645293F5C4F00802396 /* NetworkManager.swift in Sources */,
+				CF032A492948332400D6B6D3 /* CustomChaptersCellView.swift in Sources */,
 				1B3635EC29409E2500D07243 /* ForgotPasswordViewController.swift in Sources */,
 				CFBA057B2946FB9800763342 /* ChooseYourCourseTableViewCell.swift in Sources */,
 				CFAFC9A3293EFAA700F84288 /* OnboardingViewController.swift in Sources */,
@@ -580,8 +607,10 @@
 				CFBA05752946FB4900763342 /* customCourseCategoryLable.swift in Sources */,
 				CFAFC99F293EFAA700F84288 /* AppDelegate.swift in Sources */,
 				CF416BC72942DCF200A27462 /* MyCourseViewController.swift in Sources */,
+				CF032A482948332400D6B6D3 /* Chapter.swift in Sources */,
 				1BA47D47294704870012B8C3 /* customChooseCourseView.swift in Sources */,
 				CFEC20772941A5C500A171DA /* SuggestionsTopView.swift in Sources */,
+				CF032A462948332400D6B6D3 /* HeaderView.swift in Sources */,
 				CFBA057C2946FB9800763342 /* ChooseYourCourseViewController.swift in Sources */,
 				590194C0293F715D00055C24 /* ButtonView.swift in Sources */,
 				1B12FEBF29458F0100612DB1 /* VerificationOTP.swift in Sources */,
@@ -589,7 +618,9 @@
 				590194B8293F714300055C24 /* NewAccountViewController.swift in Sources */,
 				1BA47D3D294700740012B8C3 /* loginVM.swift in Sources */,
 				CFBA056D2946F79100763342 /* CourseDetailseTableViewCell.swift in Sources */,
+				CF032A472948332400D6B6D3 /* ChaptersViewController.swift in Sources */,
 				CFBA05622946F60300763342 /* CourseDetailsViewController.swift in Sources */,
+				CF032A452948332400D6B6D3 /* CustomContinueChapterView.swift in Sources */,
 				1BF0C86429408D93009D9030 /* customHamburgerButtons.swift in Sources */,
 				1B3635E729409E1000D07243 /* LoginPageViewController.swift in Sources */,
 				CFF5C2722940B747008818EB /* HomeCategoriescustomButton.swift in Sources */,
@@ -598,6 +629,7 @@
 				CF79F1DF2942118600EEC920 /* ChoiceOfCourseCustomButton.swift in Sources */,
 				CFAFC9A1293EFAA700F84288 /* SceneDelegate.swift in Sources */,
 				1BA47D42294700900012B8C3 /* KeyChain.swift in Sources */,
+				CF032A4A2948332400D6B6D3 /* CustomChapterTableViewCell.swift in Sources */,
 				CF416C4229435E0E00A27462 /* TopCourseSectionView.swift in Sources */,
 				C25014C22947218D004A6711 /* CreateNewPasswordViewController.swift in Sources */,
 				590194AF293F711F00055C24 /* VerifyAccountViewController.swift in Sources */,
