@@ -2391,7 +2391,6 @@
             </objects>
             <point key="canvasLocation" x="2596" y="427.73613193403304"/>
         </scene>
-
         <!--Create New Password View Controller-->
         <scene sceneID="jEw-DM-1cD">
             <objects>
@@ -2494,8 +2493,7 @@
                                                     <constraint firstAttribute="height" constant="1" id="ed3-2e-CV3"/>
                                                 </constraints>
                                             </view>
-
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KfJ-x3-yKU" customClass="customPasswordView" customModule="CreatePasswordScreens" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KfJ-x3-yKU" customClass="customPasswordView" customModule="VirtualLearn" customModuleProvider="target">
                                                 <rect key="frame" x="24" y="299" width="335" height="70"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Our minimum Requirment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjb-Yh-GW0">
@@ -2601,7 +2599,6 @@
             </objects>
             <point key="canvasLocation" x="4118" y="439"/>
         </scene>
-
         <!--Course Details View Controller-->
         <scene sceneID="RiV-LU-ycg">
             <objects>
