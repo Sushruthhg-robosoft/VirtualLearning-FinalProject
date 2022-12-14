@@ -64,4 +64,9 @@ class SettingViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
         
     }
+    
+    @IBAction func onClickBack(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
 }

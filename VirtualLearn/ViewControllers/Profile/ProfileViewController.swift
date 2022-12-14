@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+
 class ProfileViewController: UIViewController {
     
     @IBOutlet weak var profilePicture: UIImageView!
@@ -28,6 +30,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var chaptersView: UIView!
     @IBOutlet weak var testView: UIView!
     @IBOutlet weak var changeYourPasswordButton: UIButton!
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +51,12 @@ class ProfileViewController: UIViewController {
         let vc = storyboard?.instantiateViewController(identifier: "EditProfileViewController") as! EditProfileViewController
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+    
+    @IBAction func onClickHamburger(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     
 }
 

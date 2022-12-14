@@ -17,7 +17,8 @@ class myCourseViewModel{
     
     
     func getMycourseDetails(completion: @escaping() -> Void, fail: @escaping () -> Void){
-        
+        ongoingCourses.removeAll()
+        completedCourses.removeAll()
         
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/myCourses")!
         

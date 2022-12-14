@@ -67,6 +67,10 @@ class MyCourseViewController: UIViewController {
         }
     }
 
+    @IBAction func onClickBack(_ sender: Any) {
+        
+        navigationController?.popViewController(animated: true)
+    }
     
     @IBAction func onClickOngoingBtn(_ sender: Any) {
         completedBtn.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)

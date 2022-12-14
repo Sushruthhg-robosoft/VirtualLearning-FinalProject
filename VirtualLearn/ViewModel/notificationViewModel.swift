@@ -40,6 +40,7 @@ class NotificationViewModel{
         
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/notification?limit=\(limit)&page=\(page)")!
         
+        notifications.removeAll()
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
@@ -69,7 +70,7 @@ class NotificationViewModel{
                 }
                 
                 let notification = Notification(id: String(reciever), notificationImage: notificationImage, notificationMessage: notificationMessage, readStatus: read!, notificationTime: String(notificationTime))
-                
+               
                 notifications.append(notification)
                 //print(notifications.count)
                 

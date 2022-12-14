@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var NewUserView: NewUserHomeView!
     var test = NewUserHomeView()
     var newUserDelegate = NewUserBottomView()
+    var profileDelegate = ProfileViewController()
     @IBOutlet weak var existingUserView: UIView!
     
     var shared = ViewModel.shared
@@ -35,8 +36,14 @@ class HomeViewController: UIViewController {
         
         shared.delegate = self
         
+        
     }
-
+    @IBAction func onClickSearch(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(identifier: "SearchViewController") as? SearchViewController
+        
+        navigationController?.pushViewController(vc!, animated: true)
+    }
+    
     @IBAction func showHamburger(_ sender: Any) {
         self.hamburgerView.isHidden = false
         
@@ -99,6 +106,12 @@ extension HomeViewController: HamburgerViewControllerDelegate{
 
 
 extension HomeViewController: clickButtons{
+    func onClickChoiceofYourCourse() {
+        
+        let vc = storyboard?.instantiateViewController(identifier: "CourseDetailsViewController") as! CourseDetailsViewController
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func onClickSeeAllCategories() {
        
        // newUserDelegate.delegate = self
@@ -106,6 +119,7 @@ extension HomeViewController: clickButtons{
         navigationController?.pushViewController(vc, animated: true)
     }
     
+
     
 }
 
@@ -118,5 +132,7 @@ extension HomeViewController: test{
     
     
 }
+
+
 
 

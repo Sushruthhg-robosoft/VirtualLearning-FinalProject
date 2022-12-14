@@ -9,7 +9,7 @@ import UIKit
 
 protocol clickButtons {
     func onClickSeeAllCategories()
-    
+    func onClickChoiceofYourCourse()
 }
 
 class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -99,9 +99,15 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
             
         }
         
+        
+        
         //cell.lessonImage.image = courseSet[indexPath.row]
         //topCourseView2.topCourseTitle.text = "Top courses in Design"
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        shared.delegate?.onClickChoiceofYourCourse()
     }
     
 

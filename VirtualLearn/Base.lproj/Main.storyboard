@@ -229,6 +229,9 @@
                                             <constraint firstAttribute="height" constant="20" id="oC1-Yk-u2C"/>
                                         </constraints>
                                         <state key="normal" image="icn_search-Search"/>
+                                        <connections>
+                                            <action selector="onClickSearch:" destination="4FE-TF-MIM" eventType="touchUpInside" id="POC-dS-Tca"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -472,19 +475,22 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mvs-C6-vHA">
-                                                <rect key="frame" x="24" y="32.5" width="19.5" height="15"/>
-                                                <state key="normal" backgroundImage="arrow.backward" catalog="system"/>
+                                                <rect key="frame" x="24" y="30" width="22" height="14"/>
+                                                <state key="normal" backgroundImage="icn_back_header"/>
+                                                <connections>
+                                                    <action selector="onClickBack:" destination="UYo-Eu-7OW" eventType="touchUpInside" id="DUV-Cb-mA7"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L21-8e-FBC" customClass="customChooseCourseView" customModule="VirtualLearn" customModuleProvider="target">
                                                 <rect key="frame" x="24" y="88" width="275" height="40"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="60E-tG-TLW">
-                                                        <rect key="frame" x="14" y="10" width="18" height="20"/>
+                                                        <rect key="frame" x="14" y="9" width="18" height="22"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="22" id="Gf6-ta-AAq"/>
                                                             <constraint firstAttribute="width" constant="18" id="eA9-Me-WVO"/>
                                                         </constraints>
-                                                        <state key="normal" backgroundImage="magnifyingglass" catalog="system"/>
+                                                        <state key="normal" backgroundImage="icn_search-Search"/>
                                                     </button>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select course" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V4E-la-IoS">
                                                         <rect key="frame" x="46" y="3" width="228" height="34"/>
@@ -508,7 +514,7 @@
                                                     <constraint firstAttribute="height" constant="40" id="FCc-g3-UYe"/>
                                                     <constraint firstAttribute="width" constant="40" id="r6k-nv-Zfy"/>
                                                 </constraints>
-                                                <state key="normal" image="square.and.arrow.up" catalog="system"/>
+                                                <state key="normal" image="icn_filter_search"/>
                                                 <connections>
                                                     <action selector="filterButton:" destination="UYo-Eu-7OW" eventType="touchUpInside" id="91K-Lh-epr"/>
                                                     <segue destination="I7r-tc-w1J" kind="presentation" id="8Et-ew-jMJ"/>
@@ -996,6 +1002,9 @@
                                 <rect key="frame" x="24" y="24" width="19.5" height="22"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="arrow.left" catalog="system"/>
+                                <connections>
+                                    <action selector="onClickBack:" destination="Tma-e6-fKJ" eventType="touchUpInside" id="Ich-PL-ztu"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4O-qw-1UL">
                                 <rect key="frame" x="20" y="66" width="93" height="31.5"/>
@@ -1225,6 +1234,9 @@
                                                 <rect key="frame" x="24" y="30" width="20" height="40"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="arrow.left" catalog="system"/>
+                                                <connections>
+                                                    <action selector="onClickBack:" destination="Yie-ey-AJ0" eventType="touchUpInside" id="naA-aL-IT3"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms and Services" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jEM-jC-U2u">
                                                 <rect key="frame" x="20" y="90" width="217.5" height="31.5"/>
@@ -1830,6 +1842,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                         </constraints>
                                         <state key="normal" image="icn_hamburgermenu"/>
                                         <connections>
+                                            <action selector="onClickBack:" destination="B2g-aP-rjb" eventType="touchUpInside" id="glO-fY-jOn"/>
                                             <action selector="onClickBurger:" destination="B2g-aP-rjb" eventType="touchUpInside" id="Dov-fx-dSh"/>
                                         </connections>
                                     </button>
@@ -2752,6 +2765,9 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMK-HC-TZ8">
                                                         <rect key="frame" x="24" y="74" width="22" height="13"/>
                                                         <state key="normal" image="icn_hamburgermenu_white"/>
+                                                        <connections>
+                                                            <action selector="onClickHamburger:" destination="38c-ap-YXU" eventType="touchUpInside" id="u1x-oL-ZfY"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkO-m3-R0P">
                                                         <rect key="frame" x="20" y="108" width="79" height="35"/>
@@ -3094,9 +3110,9 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whE-B1-UBm">
-                                                        <rect key="frame" x="65" y="29" width="174.5" height="16"/>
+                                                        <rect key="frame" x="65" y="29" width="174.5" height="20"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="16" id="WRJ-1V-zua"/>
+                                                            <constraint firstAttribute="height" constant="20" id="WRJ-1V-zua"/>
                                                         </constraints>
                                                         <string key="text">Change your password
 
@@ -4662,7 +4678,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                     <constraint firstAttribute="height" constant="472" id="MVZ-2D-MnQ"/>
                                                 </constraints>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="81.5" id="M9k-XZ-AvZ" customClass="QuestionListTableViewCell" customModule="TestResultScreen" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="81.5" id="M9k-XZ-AvZ" customClass="QuestionListTableViewCell" customModule="VirtualLearn" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="327" height="81.5"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="M9k-XZ-AvZ" id="Wbg-N2-vpb">
@@ -8089,7 +8105,6 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
         <image name="Left" width="23" height="18"/>
         <image name="Locked" width="16" height="16"/>
         <image name="Right" width="23" height="18"/>
-        <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="btn_SM_facebook" width="157" height="42"/>
         <image name="btn_SM_google" width="157" height="42"/>
@@ -8156,9 +8171,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
         <image name="img_profilepic" width="64" height="64"/>
         <image name="img_search no result" width="201" height="228"/>
         <image name="img_virtuallearn_logo" width="182" height="37"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="no-profile-picture-icon" width="256" height="256"/>
-        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

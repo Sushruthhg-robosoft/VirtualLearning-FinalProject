@@ -16,5 +16,8 @@ class TermConditionViewController: UIViewController {
     }
     
 
-
+    @IBAction func onClickBack(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
 }

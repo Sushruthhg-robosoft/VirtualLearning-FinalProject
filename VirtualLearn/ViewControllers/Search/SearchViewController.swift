@@ -30,6 +30,11 @@ class SearchViewController: UIViewController {
         //resizeView.isHidden = false
     }
     
+    @IBAction func onClickBack(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    
 }
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
