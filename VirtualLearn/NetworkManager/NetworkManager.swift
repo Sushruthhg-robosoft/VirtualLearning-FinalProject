@@ -7,7 +7,7 @@
 
 import Foundation
 
-class NetWorkManage {
+class NetWorkManager {
     
     func fetchData(request: URLRequest, completion: @escaping (Any) -> (), failure: @escaping (Any) -> ()) {
     
@@ -15,7 +15,7 @@ class NetWorkManage {
             if error == nil{
                           let httpResponse = response as! HTTPURLResponse
                           guard let responsedata = data else { return }
-                
+                          print(httpResponse.statusCode)
                           if(httpResponse.statusCode == 200){
                             let data = String(data: responsedata, encoding: .utf8)!.components(separatedBy: .newlines)
                             completion(data)
@@ -27,6 +27,7 @@ class NetWorkManage {
                           }
                       }
                       else{
+                          failure("Failed to register")
                           print(error!.localizedDescription)
 
                       }
@@ -100,6 +101,30 @@ class NetWorkManage {
         }.resume()
         
     }
+    
+    func fetchDataJson(request: URLRequest, completion: @escaping (Any) -> (), failure: @escaping (Any) -> ()) {
+    
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if error == nil{
+                          let httpResponse = response as! HTTPURLResponse
+                          guard let responsedata = data else { return }
+                
+                          if(httpResponse.statusCode == 200){
+                            let data = try! JSONSerialization.jsonObject(with: data!, options: .allowFragments)
+                            completion(data)
+                          }
+                          else{
+                            
+                            failure(String(data: responsedata, encoding: .utf8)!.components(separatedBy: .newlines))
+                            print(httpResponse.statusCode)
+                          }
+                      }
+                      else{
+                          print(error!.localizedDescription)
+
+                      }
+            }.resume()
+        }
    }
 
    extension NSMutableData {
@@ -118,6 +143,8 @@ class NetWorkManage {
            }
            .joined(separator: "&")
        }
+    
+
 
    }
 

@@ -13,36 +13,40 @@ class PersonalData {
     
     func validatingUserName(userName: String, completion: @escaping (Bool) -> (), fail: @escaping (Bool) ->()) {
         
-        let network = NetWorkManage()
-        let url = "https://app-virtuallearning-221207091853.azurewebsites.net/auth/check/userName"
-        let parameter = ["userName": userName]
-        network.postData(url: url,requestMethod: "POST", parameters: parameter, headers: nil) { (data, error) in
-            if(error == nil)
+        let network = NetWorkManager()
+        let url = URL(string:"https://app-virtuallearning-221207091853.azurewebsites.net/auth/register/check/userName")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue(userName, forHTTPHeaderField: "userName")
+        
+        network.fetchData(request: request){ data in
+            
+            let responseData = data as? [String]
+            guard let response = responseData?[0]  else {
+                return
+            }
+            print("sdfghjk",response)
+            if(response == "true")
             {
-                guard let response = data as? String  else {
-                    return
-                }
-                print(response)
-                if(response == "true")
-                {
-                   completion(true)
-                }
-                else
-                {
-                    fail(false)
-                }
+                
+                completion(true)
             }
             else
             {
+                //alertmessage "User Already Exist"
                 fail(false)
             }
-           
+            
+            
+        } failure: { data in
+            fail(false)
+            print(data)
         }
     }
     
     func registeringUser(user: NewUser, completion: @escaping (Bool) -> (), fail: @escaping (Bool) ->()) {
         
-        let network = NetWorkManage()
+        let network = NetWorkManager()
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/auth/register")!
 //        let parameter = ["userName": userName]
         var request = URLRequest(url: url)
@@ -52,7 +56,7 @@ class PersonalData {
 
         let parameters: [String : Any] = [
             "emailId":user.email,
-             "phoneNumber":"+917022011412",
+             "phoneNumber":"+918152041105",
              "authentication": [
                 "userName" : user.userName,
                 "password":user.password
@@ -64,10 +68,11 @@ class PersonalData {
         
         network.fetchData(request: request){ result in
             print(result)
-            
+            completion(true)
         }
         failure : { a in
           print(a)
+            fail(false)
         }
     }
     
@@ -81,3 +86,4 @@ class PersonalData {
     }
     
 }
+

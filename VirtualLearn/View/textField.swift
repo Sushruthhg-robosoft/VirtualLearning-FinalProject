@@ -9,6 +9,22 @@ import Foundation
 
 import UIKit
 
+class borderlessTextField: UITextField{
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        noBorder()
+    }
+    
+    func noBorder() {
+        self.borderStyle = .none
+    }
+}
+
 extension UITextField {
     
     func removeBorder() {
