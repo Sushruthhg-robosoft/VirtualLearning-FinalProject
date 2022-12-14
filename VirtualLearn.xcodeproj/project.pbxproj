@@ -733,6 +733,7 @@
 				CF032A94294897DB00D6B6D3 /* activityLoader.swift in Sources */,
 				1B9289BC2949E50900C66D9E /* SettingViewController.swift in Sources */,
 				CF032A472948332400D6B6D3 /* ChaptersViewController.swift in Sources */,
+				5950949E294839B3006C23DE /* ChaptersViewController.swift in Sources */,
 				CFBA05622946F60300763342 /* CourseDetailsViewController.swift in Sources */,
 				CF032A452948332400D6B6D3 /* CustomContinueChapterView.swift in Sources */,
 				1BF0C86429408D93009D9030 /* customHamburgerButtons.swift in Sources */,
