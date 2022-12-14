@@ -12,4 +12,8 @@ class mainViewModel{
     static var mainShared = mainViewModel()
     var notificationViewModelShared = NotificationViewModel()
     var myCourseViewModelShared = myCourseViewModel()
+    
+    let token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdW1hbnRocHJhYmh1IiwiZXhwIjoxNjcxMDM2Mjg1LCJpYXQiOjE2NzEwMDAyODV9.r_-6vPg-9s8WrbcYQdIN9kInYJdUtQCv8NKtFw4nzEgCCTfGRMGTWpXmx3qQCXlEQ7I-Pid1htCLyQ3bR1cKbQ"
+    
+    
 }
