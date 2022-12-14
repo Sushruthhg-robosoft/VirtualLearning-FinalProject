@@ -2624,6 +2624,7 @@
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES"/>
                                                 <connections>
                                                     <action selector="confirmPasswordChangedBegin:" destination="QyW-hu-a1H" eventType="editingDidBegin" id="zIE-ET-K6f"/>
+                                                    <action selector="confirmPasswordEditChanged:" destination="QyW-hu-a1H" eventType="editingChanged" id="1cL-Ic-aKg"/>
                                                 </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="heB-bX-Ixg">
@@ -2749,6 +2750,7 @@
                         <outlet property="newPasswordTextField" destination="jhs-Zn-tGK" id="nKE-YQ-843"/>
                         <outlet property="newPasswordline" destination="eKQ-nY-SGe" id="QP8-YN-bvY"/>
                         <outlet property="passwordView" destination="KfJ-x3-yKU" id="eCK-6x-S0S"/>
+                        <outlet property="resetPasswordBtn" destination="heB-bX-Ixg" id="yML-aF-dpq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3GH-Op-axo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -3272,7 +3274,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xSY-Lf-1p2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4813.6000000000004" y="438.53073463268368"/>
+            <point key="canvasLocation" x="5198" y="439"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="K79-1o-tEY">
@@ -3798,7 +3800,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vu5-oj-wx9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5606" y="439"/>
+            <point key="canvasLocation" x="5951" y="471"/>
         </scene>
         <!--Personal Details View Controller-->
         <scene sceneID="2uH-JH-fja">
@@ -4217,7 +4219,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3iU-qK-2hl">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="741"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZBS-Tf-qGu">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
