@@ -13,6 +13,8 @@ class CreateNewPasswordViewController: UIViewController {
     @IBOutlet weak var resetPasswordBtn: UIButton!
     @IBOutlet weak var newPasswordline: UIView!
     @IBOutlet weak var confirmPasswordLine: UIView!
+    
+    var mobileNumber = ""
     override func viewDidLoad() {
  
         super.viewDidLoad()
@@ -74,6 +76,15 @@ class CreateNewPasswordViewController: UIViewController {
     }
 }
 
+    @IBAction func resetPasswordButtonClicked(_ sender: Any) {
+        let viewmodel = LoginViewModel()
+        viewmodel.resetPassword(mobileNumber: "+91"+mobileNumber, password: "Hellllo1234"){
+
+        } fail: {
+
+        }
+    }
+    
     func passwordMatched(_ value: String) -> Bool {
         let regular = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{6,}$"
         let predicate = NSPredicate(format: "SELF MATCHES %@", regular)

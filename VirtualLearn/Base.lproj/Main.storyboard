@@ -5405,6 +5405,9 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                         <state key="normal" title="Resend">
                                                             <color key="titleColor" red="0.93333333330000001" green="0.36078431370000003" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="resendOTPButtonClicked:" destination="Q9b-HA-03P" eventType="touchUpInside" id="Fk2-sc-eGR"/>
+                                                        </connections>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fK1-QN-xHP">
                                                         <rect key="frame" x="81" y="240.5" width="200" height="0.5"/>
@@ -6138,6 +6141,9 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                         <integer key="value" value="6"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="resetPasswordButtonClicked:" destination="QyW-hu-a1H" eventType="touchUpInside" id="A8Y-dk-YaC"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DTo-UC-aS9">
                                                 <rect key="frame" x="24" y="413" width="327" height="1"/>
@@ -6960,6 +6966,9 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                             <constraint firstItem="w8C-k5-j68" firstAttribute="leading" secondItem="1id-YH-5rj" secondAttribute="leading" id="nTm-PA-0LE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="enteredMobileNumber" destination="SUv-I0-V8N" id="r0T-BO-r1J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZjH-Gu-m81" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -7383,8 +7392,8 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                         <color key="textColor" red="0.47843137254901957" green="0.47843137254901957" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="+919876543211" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8I8-Hg-n9y">
-                                                        <rect key="frame" x="24" y="158.5" width="124" height="21"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" misplaced="YES" text="+919876543211" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8I8-Hg-n9y">
+                                                        <rect key="frame" x="25" y="158.5" width="124" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.16862745098039217" green="0.70980392156862748" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -7675,6 +7684,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                         <outlet property="emailTextField" destination="0ga-Du-kQz" id="KiG-IT-c8B"/>
                         <outlet property="fullNameLabel" destination="y7Y-r8-BAP" id="whI-yy-mVI"/>
                         <outlet property="fullNameTextField" destination="Vti-05-j60" id="BuQ-id-1s0"/>
+                        <outlet property="mobileNumber" destination="8I8-Hg-n9y" id="hGa-lL-tey"/>
                         <outlet property="passwordIButton" destination="4YM-Er-s6S" id="j5c-Ki-C0O"/>
                         <outlet property="passwordLabel" destination="6BV-Wv-R5j" id="Apw-b5-jcA"/>
                         <outlet property="passwordTextField" destination="7ZB-IV-te7" id="eei-Ld-mqc"/>
