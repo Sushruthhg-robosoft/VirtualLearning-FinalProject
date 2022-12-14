@@ -25,20 +25,19 @@ class PersonalDetailsViewController: UIViewController {
     @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var confirmPasswordLabel: UILabel!
     
+    @IBOutlet weak var mobileNumber: UILabel!
     @IBOutlet weak var RegistrayionButtonOutlet: UIButton!
     
     @IBOutlet weak var successScreen: UIView!
     let personalData = PersonalData()
-    
+    var enterdMobileNumber = ""
     var usernameStatus = false
     override func viewDidLoad() {
         super.viewDidLoad()
         
         RegistrayionButtonOutlet.isEnabled = false
         successScreen.isHidden = true
-        
-        
-        
+        mobileNumber.text = enterdMobileNumber
         
         fullNameTextField.removeBorder()
         userNameTextField.removeBorder()
