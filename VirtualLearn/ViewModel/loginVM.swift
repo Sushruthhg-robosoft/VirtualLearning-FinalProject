@@ -12,7 +12,7 @@ import UIKit
 class LoginViewModel {
     
     func loginUser(userName: String, password: String, completion: @escaping () -> Void, fail: @escaping () -> Void) {
-        let network = NetWorkManage()
+        let network = NetWorkManager()
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/auth/login")!
         
         var request = URLRequest(url: url)
@@ -39,7 +39,7 @@ class LoginViewModel {
     }
     
     func resetPassword(mobileNumber: String, password: String, completion: @escaping () ->Void, fail: @escaping() -> Void) {
-        let network = NetWorkManage()
+        let network = NetWorkManager()
         let url = URL(string:"https://app-virtuallearning-221207091853.azurewebsites.net/auth/forgot-password")!
         var request = URLRequest(url: url)
         request.httpMethod = "PATCH"

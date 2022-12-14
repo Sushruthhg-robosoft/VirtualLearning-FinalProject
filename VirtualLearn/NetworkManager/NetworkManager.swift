@@ -7,7 +7,7 @@
 
 import Foundation
 
-class NetWorkManage {
+class NetWorkManager {
     
     func fetchData(request: URLRequest, completion: @escaping (Any) -> (), failure: @escaping (Any) -> ()) {
     

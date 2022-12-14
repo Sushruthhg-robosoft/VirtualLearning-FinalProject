@@ -9,7 +9,7 @@ import Foundation
 class NotificationViewModel{
     
     static var shared = NotificationViewModel()
-    let networkManeger = NetWorkManage()
+    let networkManeger = NetWorkManager()
     var notifications = [Notification]()
     
     let token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdW1hbnRocHJhYmh1IiwiZXhwIjoxNjcxMDI3MDAxLCJpYXQiOjE2NzA5OTEwMDF9.eD99V-Mat-m3XbiIdt6y_Bm0IGTYYcVsNz2HXRcPomd4CeZwdmBlmlZxxl_gvyzSS6U34GYPIm8D4AxypeefSg"

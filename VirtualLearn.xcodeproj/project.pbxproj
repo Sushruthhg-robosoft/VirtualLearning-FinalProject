@@ -41,6 +41,8 @@
 		CF032A8A2948966000D6B6D3 /* mainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF032A892948966000D6B6D3 /* mainViewModel.swift */; };
 		CF032A8F2948972000D6B6D3 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF032A8E2948972000D6B6D3 /* NotificationTableViewCell.swift */; };
 		CF032A94294897DB00D6B6D3 /* activityLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF032A93294897DB00D6B6D3 /* activityLoader.swift */; };
+		CF2EFB182949A7B800A7D585 /* myCourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EFB172949A7B800A7D585 /* myCourseViewModel.swift */; };
+		CF2EFB1D2949ADC200A7D585 /* myCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EFB1C2949ADC200A7D585 /* myCourse.swift */; };
 		CF416BC62942DCF200A27462 /* MyCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF416BC32942DCF200A27462 /* MyCourseTableViewCell.swift */; };
 		CF416BC72942DCF200A27462 /* MyCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF416BC42942DCF200A27462 /* MyCourseViewController.swift */; };
 		CF416BC82942DCF200A27462 /* NewUserMyCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF416BC52942DCF200A27462 /* NewUserMyCourseViewController.swift */; };
@@ -132,6 +134,8 @@
 		CF032A892948966000D6B6D3 /* mainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewModel.swift; sourceTree = "<group>"; };
 		CF032A8E2948972000D6B6D3 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		CF032A93294897DB00D6B6D3 /* activityLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = activityLoader.swift; sourceTree = "<group>"; };
+		CF2EFB172949A7B800A7D585 /* myCourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCourseViewModel.swift; sourceTree = "<group>"; };
+		CF2EFB1C2949ADC200A7D585 /* myCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCourse.swift; sourceTree = "<group>"; };
 		CF416BC32942DCF200A27462 /* MyCourseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCourseTableViewCell.swift; sourceTree = "<group>"; };
 		CF416BC42942DCF200A27462 /* MyCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCourseViewController.swift; sourceTree = "<group>"; };
 		CF416BC52942DCF200A27462 /* NewUserMyCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserMyCourseViewController.swift; sourceTree = "<group>"; };
@@ -351,6 +355,7 @@
 				CFF1963F293F5C3F00802396 /* viewModel.swift */,
 				CF032A7F2948955F00D6B6D3 /* notificationViewModel.swift */,
 				CF032A892948966000D6B6D3 /* mainViewModel.swift */,
+				CF2EFB172949A7B800A7D585 /* myCourseViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -361,6 +366,7 @@
 				1BA47D4E294704AF0012B8C3 /* RegisterUser.swift */,
 				CF5231A2293F214600C56B7F /* OnboaringSlide.swift */,
 				CF032A842948958F00D6B6D3 /* Notification.swift */,
+				CF2EFB1C2949ADC200A7D585 /* myCourse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -619,6 +625,7 @@
 				590194BF293F715D00055C24 /* textField.swift in Sources */,
 				CF416BC62942DCF200A27462 /* MyCourseTableViewCell.swift in Sources */,
 				CF032A802948955F00D6B6D3 /* notificationViewModel.swift in Sources */,
+				CF2EFB182949A7B800A7D585 /* myCourseViewModel.swift in Sources */,
 				1BA47D4F294704AF0012B8C3 /* RegisterUser.swift in Sources */,
 				CF79F1DA2941BBB600EEC920 /* NewUserBottomView.swift in Sources */,
 				1BF0C86229408D93009D9030 /* HamburgerViewController.swift in Sources */,
@@ -661,6 +668,7 @@
 				1BDC5F4C293F771B00BE877F /* PersonalDetailsViewController.swift in Sources */,
 				CFEC206C29419AD200A171DA /* NewUserHomeView.swift in Sources */,
 				CF032A7B2948951500D6B6D3 /* NotificationViewController.swift in Sources */,
+				CF2EFB1D2949ADC200A7D585 /* myCourse.swift in Sources */,
 				CF032A852948958F00D6B6D3 /* Notification.swift in Sources */,
 				590194C6293F717300055C24 /* LandingViewController.swift in Sources */,
 				1BA47D38294700170012B8C3 /* personalDetails.swift in Sources */,

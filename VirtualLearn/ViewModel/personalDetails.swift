@@ -13,7 +13,7 @@ class PersonalData {
     
     func validatingUserName(userName: String, completion: @escaping (Bool) -> (), fail: @escaping (Bool) ->()) {
         
-        let network = NetWorkManage()
+        let network = NetWorkManager()
         let url = URL(string:"https://app-virtuallearning-221207091853.azurewebsites.net/auth/register/check/userName")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -46,7 +46,7 @@ class PersonalData {
     
     func registeringUser(user: NewUser, completion: @escaping (Bool) -> (), fail: @escaping (Bool) ->()) {
         
-        let network = NetWorkManage()
+        let network = NetWorkManager()
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/auth/register")!
 //        let parameter = ["userName": userName]
         var request = URLRequest(url: url)

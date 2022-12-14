@@ -10,5 +10,6 @@ import Foundation
 class mainViewModel{
     
     static var mainShared = mainViewModel()
-    var notificationViewModelShared = NotificationViewModel.shared
+    var notificationViewModelShared = NotificationViewModel()
+    var myCourseViewModelShared = myCourseViewModel()
 }

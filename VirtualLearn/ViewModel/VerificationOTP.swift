@@ -10,7 +10,7 @@ import Foundation
 class VerificationOTP {
     
     func getOTP(mobileNumber: String) {
-        let network = NetWorkManage()
+        let network = NetWorkManager()
         
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/auth/verify-phone-number")!
         var request = URLRequest(url: url)
@@ -28,7 +28,7 @@ class VerificationOTP {
     
     func verifyOTP(mobileNumber: String, otp: String, completion:@escaping (Bool) -> (), fail: @escaping (Bool) -> ()) {
         
-        let network = NetWorkManage()
+        let network = NetWorkManager()
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/auth/validate-otp")!
         var request = URLRequest(url: url)
         request.httpMethod = "PUT"
