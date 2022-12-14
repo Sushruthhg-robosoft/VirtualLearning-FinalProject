@@ -32,6 +32,10 @@ class CourseDetailsViewController: UIViewController {
     
     @IBOutlet weak var instructorDescription: UITextView!
     
+    @IBOutlet weak var CourseOverViewView: UIView!
+    
+    @IBOutlet weak var CourseChapterView: UIView!
+    
     
     
     override func viewDidLoad() {
@@ -43,27 +47,36 @@ class CourseDetailsViewController: UIViewController {
         tableView2.dataSource = self
         tableView3.delegate = self
         tableView3.dataSource = self
+        
+        CourseOverViewView.isHidden = false
+        CourseChapterView.isHidden = true
+        overViewBtn.setTitleColor(#colorLiteral(red: 0.9333333333, green: 0.3607843137, blue: 0.3019607843, alpha: 1), for: .normal)
+        overViewUnderLineView.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.3607843137, blue: 0.3019607843, alpha: 1)
+        chaptersBtn.setTitleColor(#colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1), for: .normal)
+        chaptersUnderLineView.backgroundColor = #colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
       
     }
     
     @IBAction func onClickOverView(_ sender: Any) {
         
-        overViewBtn.setTitleColor(#colorLiteral(red: 0.9333333333, green: 0.3607843137, blue: 0.3019607843, alpha: 1), for: .normal)
-        overViewUnderLineView.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.3607843137, blue: 0.3019607843, alpha: 1)
-        chaptersBtn.setTitleColor(#colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1), for: .normal)
-        chaptersUnderLineView.backgroundColor = #colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
-        
+       
+        CourseChapterView.isHidden = true
+        CourseOverViewView.isHidden = false
+        view.bringSubviewToFront(CourseOverViewView)
         
     }
     
     
     @IBAction func onClickChapters(_ sender: Any) {
         
-        chaptersBtn.setTitleColor(#colorLiteral(red: 0.9333333333, green: 0.3607843137, blue: 0.3019607843, alpha: 1), for: .normal)
-        chaptersUnderLineView.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.3607843137, blue: 0.3019607843, alpha: 1)
-        overViewBtn.setTitleColor(#colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1), for: .normal)
-        overViewUnderLineView.backgroundColor = #colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
+//        chaptersBtn.setTitleColor(#colorLiteral(red: 0.9333333333, green: 0.3607843137, blue: 0.3019607843, alpha: 1), for: .normal)
+//        chaptersUnderLineView.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.3607843137, blue: 0.3019607843, alpha: 1)
+//        overViewBtn.setTitleColor(#colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1), for: .normal)
+//        overViewUnderLineView.backgroundColor = #colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
         
+        CourseChapterView.isHidden = false
+        CourseOverViewView.isHidden = true
+        view.bringSubviewToFront(CourseChapterView)
         
     }
     
@@ -116,4 +129,22 @@ extension CourseDetailsViewController: UITableViewDelegate, UITableViewDataSourc
         }
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           if segue.identifier == "switch" {
+               guard let vc = segue.destination as? ChaptersViewController else { return }
+            vc.delegate = self
+           }
+       }
+}
+
+extension CourseDetailsViewController: switchVc{
+    func switchVc() {
+        CourseChapterView.isHidden = true
+        CourseOverViewView.isHidden = false
+        view.bringSubviewToFront(CourseOverViewView)
+    }
+    
+    
+    
 }

@@ -7,17 +7,28 @@
 
 import UIKit
 
+protocol switchVc{
+    
+    func switchVc()
+}
+
 class ChaptersViewController: UIViewController {
 
     
     
     //make This constraint 0 while not displaying Course Content lable top constraint = 30
     
+    @IBOutlet weak var overViewBtn: UIButton!
+    @IBOutlet weak var overViewUnderLineView: UIView!
+    @IBOutlet weak var chaptersUnderLineView: UIView!
+    @IBOutlet weak var chaptersBtn: UIButton!
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var CourseContentConstraint: NSLayoutConstraint!
     @IBOutlet weak var ContinuationLabelconstraint: NSLayoutConstraint!
     @IBOutlet weak var ContinuationLabelHeightContraint: NSLayoutConstraint!
     
+    var delegate : switchVc?
     var data = [Chapter(chapterName: "Chapter 1 - Introduction to the course", lessonNames: ["Introduction", "Using the Exercise Files"], isExpandable: false),Chapter(chapterName: "Chapter 2 - Learning the Figma Interface", lessonNames: ["Introduction", "Using the Exercise Files"], isExpandable: false),Chapter(chapterName: "Chapter 3 - Setting up a new project", lessonNames: ["Introduction", "Using the Exercise Files"], isExpandable: false),Chapter(chapterName: "Chapter 4 - Adding and Editing Content", lessonNames: ["Introduction", "Using the Exercise Files"], isExpandable: false),Chapter(chapterName: "Chapter 5 - Completing the Design", lessonNames: ["Introduction", "Using the Exercise Files"], isExpandable: false)]
     
     override func viewDidLoad() {
@@ -29,14 +40,32 @@ class ChaptersViewController: UIViewController {
         tableView.register(HeaderView.self, forHeaderFooterViewReuseIdentifier: "HeaderView")
         tableView.delegate = self
         tableView.dataSource = self
+        chaptersBtn.setTitleColor(#colorLiteral(red: 0.9333333333, green: 0.3607843137, blue: 0.3019607843, alpha: 1), for: .normal)
+        chaptersUnderLineView.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.3607843137, blue: 0.3019607843, alpha: 1)
+        overViewBtn.setTitleColor(#colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1), for: .normal)
+        overViewUnderLineView.backgroundColor = #colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
     }
     
     @IBAction func onClickOverview(_ sender: Any) {
-//        
-//        let vc = storyboard?.instantiateViewController(identifier: "CourseDetailsViewController") as! CourseDetailsViewController
-//        
-//        vc.chaptersContainerView.isHidden = true
-//        vc.CourseoverviewView.isHidden = false
+        
+//        overViewBtn.setTitleColor(#colorLiteral(red: 0.9333333333, green: 0.3607843137, blue: 0.3019607843, alpha: 1), for: .normal)
+//        overViewUnderLineView.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.3607843137, blue: 0.3019607843, alpha: 1)
+//        chaptersBtn.setTitleColor(#colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1), for: .normal)
+//        chaptersUnderLineView.backgroundColor = #colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
+        delegate?.switchVc()
+
+        
+    }
+    
+    @IBAction func onClickChapter(_ sender: Any) {
+        
+        
+    }
+    
+    
+    @IBAction func onClickClose(_ sender: Any) {
+       
+        navigationController?.popViewController(animated: true)
     }
     
 
@@ -90,5 +119,5 @@ extension ChaptersViewController: headerDelegate{
         tableView.reloadSections([idx], with: .automatic)
     }
     
-    
+
 }

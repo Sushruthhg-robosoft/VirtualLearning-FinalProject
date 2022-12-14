@@ -13,6 +13,7 @@ protocol HamburgerViewControllerDelegate {
 
 class HamburgerViewController: UIViewController {
 
+    @IBOutlet weak var notificationCount: customHamLable!
     var delegate: HamburgerViewControllerDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,4 +40,14 @@ class HamburgerViewController: UIViewController {
         
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+    @IBAction func onClickNotifications(_ sender: Any) {
+        
+        print("clicked notification")
+        let vc = storyboard?.instantiateViewController(identifier: "NotificationViewController") as! NotificationViewController
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
 }

@@ -29,6 +29,8 @@ class PersonalDetailsViewController: UIViewController {
     
     @IBOutlet weak var successScreen: UIView!
     let personalData = PersonalData()
+    
+    var usernameStatus = false
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -105,17 +107,26 @@ class PersonalDetailsViewController: UIViewController {
     }
     
     @IBAction func userNameChanged(_ sender: Any) {
+        
         guard let userName = userNameTextField.text else {
             return
         }
+        if (userName.count > 4) {
         personalData.validatingUserName(userName: userName) { sucess in
             DispatchQueue.main.async {
+                self.usernameStatus = true
                 self.checAllField()
             }
         } fail: { fail in
+            //alertMessage
+            print("change userName")
+            self.usernameStatus = false
+            DispatchQueue.main.async {
+                self.alertPopup(message: "Username Already exist.")
+            }
             
         }
-        
+        }
     }
     
     @IBAction func emailChanged(_ sender: Any) {
@@ -152,10 +163,14 @@ class PersonalDetailsViewController: UIViewController {
     }
     
     @IBAction func RegistrationButtonClick(_ sender: Any) {
+        
+        let loader = self.loader()
         let currentUser =  personalData.assignCurrentRegisterValue(fullName: fullNameTextField.text!, userName: userNameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!)
          personalData.registeringUser(user: currentUser) { sucess in
              print("sucessfull")
             DispatchQueue.main.async {
+                
+                self.stopLoader(loader: loader)
                 let vc = self.storyboard?.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
                 self.navigationController?.pushViewController(vc, animated: true)
             }
@@ -224,7 +239,8 @@ class PersonalDetailsViewController: UIViewController {
         return predicate.evaluate(with: value)
     }
     func checAllField() {
-        if( fullNameTextField.text != "" && userNameTextField.text != "" && emailTextField.text != "" && passwordTextField.text != "" && confirmPasswordTextField.text != "" && passwordTextField.text! == confirmPasswordTextField.text!)
+    
+        if( fullNameTextField.text != "" && usernameStatus == true && emailTextField.text != "" && passwordTextField.text != "" && confirmPasswordTextField.text != "" && passwordTextField.text! == confirmPasswordTextField.text!)
         {
             RegistrayionButtonOutlet.isEnabled = true
             RegistrayionButtonOutlet.alpha = 1
@@ -241,5 +257,19 @@ class PersonalDetailsViewController: UIViewController {
         let vc = storyboard?.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
         
         navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension PersonalDetailsViewController{
+    
+    func alertPopup(message: String){
+        
+        let dialogMessage = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+            self.dismiss(animated: true, completion: nil)
+         })
+        dialogMessage.addAction(ok)
+
+        self.present(dialogMessage, animated: true, completion: nil)
     }
 }

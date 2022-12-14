@@ -37,6 +37,8 @@ class VerifyAccountViewController: UIViewController, UITextFieldDelegate {
         secondTextField.removeBorder()
         thirdTextField.removeBorder()
         fourthTextField.removeBorder()
+        
+        firstTextField.becomeFirstResponder()
 
         super.viewDidLoad()
         
@@ -76,6 +78,7 @@ class VerifyAccountViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func onClickVerify(_ sender: Any) {
         
+        let loader = self.loader()
         guard let firstNumber = firstTextField.text else {return}
         guard let secondNumber = secondTextField.text else {return}
         guard let thirdNumber = thirdTextField.text else {return}
@@ -86,7 +89,8 @@ class VerifyAccountViewController: UIViewController, UITextFieldDelegate {
         verificationOTP.verifyOTP(mobileNumber: "+91"+mobileNumber, otp: otp){ sucess in
             
             DispatchQueue.main.async {
-                
+                self.correctOtp()
+                self.stopLoader(loader: loader)
             if self.isForgotPassword {
                 
                 let vc = self.storyboard?.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
@@ -101,6 +105,7 @@ class VerifyAccountViewController: UIViewController, UITextFieldDelegate {
             
         } fail: {fail in
             DispatchQueue.main.async {
+                self.stopLoader(loader: loader)
                 self.invalidVerificationView.isHidden = false
                 self.firstDigitUnderView.backgroundColor = UIColor(red: 255, green: 0, blue: 0, alpha: 1)
                 self.secondDigitUnderView.backgroundColor = UIColor(red: 255, green: 0, blue: 0, alpha: 1)
@@ -113,6 +118,14 @@ class VerifyAccountViewController: UIViewController, UITextFieldDelegate {
                 self.fourthTextField.text = ""
             }
         }
+    }
+    
+    func correctOtp(){
+        self.invalidVerificationView.isHidden = false
+        self.firstDigitUnderView.backgroundColor = UIColor(red: 0, green: 255, blue: 0, alpha: 1)
+        self.secondDigitUnderView.backgroundColor = UIColor(red: 0, green: 255, blue: 0, alpha: 1)
+        self.thirdDigitUnderView.backgroundColor = UIColor(red: 0, green: 255, blue: 0, alpha: 1)
+        self.fourthDigitUnderView.backgroundColor = UIColor(red: 0, green: 255, blue: 0, alpha: 1)
     }
     
     @IBAction func onClickLogin(_ sender: Any) {

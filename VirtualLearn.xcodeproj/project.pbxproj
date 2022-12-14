@@ -35,6 +35,12 @@
 		CF032A482948332400D6B6D3 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF032A422948332400D6B6D3 /* Chapter.swift */; };
 		CF032A492948332400D6B6D3 /* CustomChaptersCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF032A432948332400D6B6D3 /* CustomChaptersCellView.swift */; };
 		CF032A4A2948332400D6B6D3 /* CustomChapterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF032A442948332400D6B6D3 /* CustomChapterTableViewCell.swift */; };
+		CF032A7B2948951500D6B6D3 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF032A7A2948951500D6B6D3 /* NotificationViewController.swift */; };
+		CF032A802948955F00D6B6D3 /* notificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF032A7F2948955F00D6B6D3 /* notificationViewModel.swift */; };
+		CF032A852948958F00D6B6D3 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF032A842948958F00D6B6D3 /* Notification.swift */; };
+		CF032A8A2948966000D6B6D3 /* mainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF032A892948966000D6B6D3 /* mainViewModel.swift */; };
+		CF032A8F2948972000D6B6D3 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF032A8E2948972000D6B6D3 /* NotificationTableViewCell.swift */; };
+		CF032A94294897DB00D6B6D3 /* activityLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF032A93294897DB00D6B6D3 /* activityLoader.swift */; };
 		CF416BC62942DCF200A27462 /* MyCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF416BC32942DCF200A27462 /* MyCourseTableViewCell.swift */; };
 		CF416BC72942DCF200A27462 /* MyCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF416BC42942DCF200A27462 /* MyCourseViewController.swift */; };
 		CF416BC82942DCF200A27462 /* NewUserMyCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF416BC52942DCF200A27462 /* NewUserMyCourseViewController.swift */; };
@@ -120,6 +126,12 @@
 		CF032A422948332400D6B6D3 /* Chapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
 		CF032A432948332400D6B6D3 /* CustomChaptersCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomChaptersCellView.swift; sourceTree = "<group>"; };
 		CF032A442948332400D6B6D3 /* CustomChapterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomChapterTableViewCell.swift; sourceTree = "<group>"; };
+		CF032A7A2948951500D6B6D3 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		CF032A7F2948955F00D6B6D3 /* notificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notificationViewModel.swift; sourceTree = "<group>"; };
+		CF032A842948958F00D6B6D3 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		CF032A892948966000D6B6D3 /* mainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewModel.swift; sourceTree = "<group>"; };
+		CF032A8E2948972000D6B6D3 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		CF032A93294897DB00D6B6D3 /* activityLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = activityLoader.swift; sourceTree = "<group>"; };
 		CF416BC32942DCF200A27462 /* MyCourseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCourseTableViewCell.swift; sourceTree = "<group>"; };
 		CF416BC42942DCF200A27462 /* MyCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCourseViewController.swift; sourceTree = "<group>"; };
 		CF416BC52942DCF200A27462 /* NewUserMyCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserMyCourseViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +210,8 @@
 				CF416BC52942DCF200A27462 /* NewUserMyCourseViewController.swift */,
 				1BF0C85E29408D92009D9030 /* HamburgerViewController.swift */,
 				1BF0C85F29408D93009D9030 /* HomeViewController.swift */,
+				CF032A7A2948951500D6B6D3 /* NotificationViewController.swift */,
+				CF032A8E2948972000D6B6D3 /* NotificationTableViewCell.swift */,
 			);
 			path = Hamburger;
 			sourceTree = "<group>";
@@ -322,6 +336,7 @@
 				CFF1963A293F500800802396 /* pagecontrolExtension.swift */,
 				CFF5C2712940B747008818EB /* HomeCategoriescustomButton.swift */,
 				CF79F1DE2942118600EEC920 /* ChoiceOfCourseCustomButton.swift */,
+				CF032A93294897DB00D6B6D3 /* activityLoader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -334,6 +349,8 @@
 				1B12FEBE29458F0100612DB1 /* VerificationOTP.swift */,
 				1BA47D41294700900012B8C3 /* KeyChain.swift */,
 				CFF1963F293F5C3F00802396 /* viewModel.swift */,
+				CF032A7F2948955F00D6B6D3 /* notificationViewModel.swift */,
+				CF032A892948966000D6B6D3 /* mainViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -343,6 +360,7 @@
 			children = (
 				1BA47D4E294704AF0012B8C3 /* RegisterUser.swift */,
 				CF5231A2293F214600C56B7F /* OnboaringSlide.swift */,
+				CF032A842948958F00D6B6D3 /* Notification.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -600,6 +618,7 @@
 				1BF0C86329408D93009D9030 /* HomeViewController.swift in Sources */,
 				590194BF293F715D00055C24 /* textField.swift in Sources */,
 				CF416BC62942DCF200A27462 /* MyCourseTableViewCell.swift in Sources */,
+				CF032A802948955F00D6B6D3 /* notificationViewModel.swift in Sources */,
 				1BA47D4F294704AF0012B8C3 /* RegisterUser.swift in Sources */,
 				CF79F1DA2941BBB600EEC920 /* NewUserBottomView.swift in Sources */,
 				1BF0C86229408D93009D9030 /* HamburgerViewController.swift in Sources */,
@@ -609,6 +628,7 @@
 				CF416BC72942DCF200A27462 /* MyCourseViewController.swift in Sources */,
 				CF032A482948332400D6B6D3 /* Chapter.swift in Sources */,
 				1BA47D47294704870012B8C3 /* customChooseCourseView.swift in Sources */,
+				CF032A8F2948972000D6B6D3 /* NotificationTableViewCell.swift in Sources */,
 				CFEC20772941A5C500A171DA /* SuggestionsTopView.swift in Sources */,
 				CF032A462948332400D6B6D3 /* HeaderView.swift in Sources */,
 				CFBA057C2946FB9800763342 /* ChooseYourCourseViewController.swift in Sources */,
@@ -618,11 +638,13 @@
 				590194B8293F714300055C24 /* NewAccountViewController.swift in Sources */,
 				1BA47D3D294700740012B8C3 /* loginVM.swift in Sources */,
 				CFBA056D2946F79100763342 /* CourseDetailseTableViewCell.swift in Sources */,
+				CF032A94294897DB00D6B6D3 /* activityLoader.swift in Sources */,
 				CF032A472948332400D6B6D3 /* ChaptersViewController.swift in Sources */,
 				CFBA05622946F60300763342 /* CourseDetailsViewController.swift in Sources */,
 				CF032A452948332400D6B6D3 /* CustomContinueChapterView.swift in Sources */,
 				1BF0C86429408D93009D9030 /* customHamburgerButtons.swift in Sources */,
 				1B3635E729409E1000D07243 /* LoginPageViewController.swift in Sources */,
+				CF032A8A2948966000D6B6D3 /* mainViewModel.swift in Sources */,
 				CFF5C2722940B747008818EB /* HomeCategoriescustomButton.swift in Sources */,
 				CF79F1E8294217C800EEC920 /* ChoiceOfYourCourseCollectionViewCell.swift in Sources */,
 				CF416BC82942DCF200A27462 /* NewUserMyCourseViewController.swift in Sources */,
@@ -638,6 +660,8 @@
 				1BD4164A294094BD00E5334B /* CustomCategoryView.swift in Sources */,
 				1BDC5F4C293F771B00BE877F /* PersonalDetailsViewController.swift in Sources */,
 				CFEC206C29419AD200A171DA /* NewUserHomeView.swift in Sources */,
+				CF032A7B2948951500D6B6D3 /* NotificationViewController.swift in Sources */,
+				CF032A852948958F00D6B6D3 /* Notification.swift in Sources */,
 				590194C6293F717300055C24 /* LandingViewController.swift in Sources */,
 				1BA47D38294700170012B8C3 /* personalDetails.swift in Sources */,
 				CF5231A8293F287A00C56B7F /* OnboardingCollectionViewCell.swift in Sources */,
