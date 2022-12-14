@@ -48,7 +48,6 @@ class PersonalData {
         
         let network = NetWorkManager()
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/auth/register")!
-//        let parameter = ["userName": userName]
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
