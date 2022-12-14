@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="8px" viewBox="0 0 14 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>6F0070BF-C824-4D14-B316-67C37A021440@1.5x</title>
+    <defs>
+        <path d="M314.07937,402.845607 C314.30583,403.066461 314.306747,403.432688 314.082867,403.651469 L308.718094,409.077907 C308.499647,409.307082 308.138036,409.307082 307.91314,409.079598 C307.695119,408.859582 307.696006,408.491785 307.915008,408.262547 L312.432331,403.701889 L312.852205,403.249982 L312.435688,402.801431 L307.91314,398.226812 C307.695636,398.007318 307.695636,397.640413 307.913041,397.420507 C308.137781,397.193181 308.498303,397.192917 308.717234,397.421199 L314.07937,402.845607 Z" id="path-1"></path>
+    </defs>
+    <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="14.1_VirtualLearn_Menu_profile_edit-profile" transform="translate(-328.000000, -752.000000)">
+            <g id="profile_personal-details" transform="translate(24.000000, 353.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="icn_dropdown" stroke="#042C5C" fill="#042C5C" fill-rule="nonzero" transform="translate(311.000000, 403.250000) rotate(90.000000) translate(-311.000000, -403.250000) " xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>
