@@ -12,4 +12,6 @@ class mainViewModel{
     static var mainShared = mainViewModel()
     var notificationViewModelShared = NotificationViewModel()
     var myCourseViewModelShared = myCourseViewModel()
+    
+    var isExisting = false
 }

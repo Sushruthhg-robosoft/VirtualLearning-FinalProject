@@ -58,6 +58,12 @@
 		CF2EFB372949F07200A7D585 /* TestResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EFB362949F07200A7D585 /* TestResultViewController.swift */; };
 		CF2EFB3D2949F0B700A7D585 /* QuestionListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EFB3B2949F0B600A7D585 /* QuestionListTableViewCell.swift */; };
 		CF2EFB3E2949F0B700A7D585 /* showQuestionResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EFB3C2949F0B600A7D585 /* showQuestionResultViewController.swift */; };
+		CF2EFB4D294A042F00A7D585 /* ExistingUserBottomview.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF2EFB4C294A042F00A7D585 /* ExistingUserBottomview.xib */; };
+		CF2EFB52294A045A00A7D585 /* ExistingUserBottomview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EFB51294A045A00A7D585 /* ExistingUserBottomview.swift */; };
+		CF2EFB58294A060B00A7D585 /* ExistingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EFB56294A060B00A7D585 /* ExistingCollectionViewCell.swift */; };
+		CF2EFB59294A060B00A7D585 /* ExistingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF2EFB57294A060B00A7D585 /* ExistingCollectionViewCell.xib */; };
+		CF2EFB64294A125800A7D585 /* OngoingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF2EFB63294A125800A7D585 /* OngoingView.xib */; };
+		CF2EFB69294A12B000A7D585 /* OngoingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EFB68294A12B000A7D585 /* OngoingView.swift */; };
 		CF416BC62942DCF200A27462 /* MyCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF416BC32942DCF200A27462 /* MyCourseTableViewCell.swift */; };
 		CF416BC72942DCF200A27462 /* MyCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF416BC42942DCF200A27462 /* MyCourseViewController.swift */; };
 		CF416BC82942DCF200A27462 /* NewUserMyCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF416BC52942DCF200A27462 /* NewUserMyCourseViewController.swift */; };
@@ -166,6 +172,12 @@
 		CF2EFB362949F07200A7D585 /* TestResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestResultViewController.swift; sourceTree = "<group>"; };
 		CF2EFB3B2949F0B600A7D585 /* QuestionListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionListTableViewCell.swift; sourceTree = "<group>"; };
 		CF2EFB3C2949F0B600A7D585 /* showQuestionResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = showQuestionResultViewController.swift; sourceTree = "<group>"; };
+		CF2EFB4C294A042F00A7D585 /* ExistingUserBottomview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExistingUserBottomview.xib; sourceTree = "<group>"; };
+		CF2EFB51294A045A00A7D585 /* ExistingUserBottomview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistingUserBottomview.swift; sourceTree = "<group>"; };
+		CF2EFB56294A060B00A7D585 /* ExistingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistingCollectionViewCell.swift; sourceTree = "<group>"; };
+		CF2EFB57294A060B00A7D585 /* ExistingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExistingCollectionViewCell.xib; sourceTree = "<group>"; };
+		CF2EFB63294A125800A7D585 /* OngoingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OngoingView.xib; sourceTree = "<group>"; };
+		CF2EFB68294A12B000A7D585 /* OngoingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OngoingView.swift; sourceTree = "<group>"; };
 		CF416BC32942DCF200A27462 /* MyCourseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCourseTableViewCell.swift; sourceTree = "<group>"; };
 		CF416BC42942DCF200A27462 /* MyCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCourseViewController.swift; sourceTree = "<group>"; };
 		CF416BC52942DCF200A27462 /* NewUserMyCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserMyCourseViewController.swift; sourceTree = "<group>"; };
@@ -308,6 +320,7 @@
 		1BF0C85C29408D66009D9030 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CF2EFB4B294A03AE00A7D585 /* ExistingUserViewcontroller */,
 				CFEC20702941A54900A171DA /* NewUserHomeViewController */,
 				1B3635DD29409D8F00D07243 /* Hamburger */,
 				1BD41651294095B900E5334B /* Categories */,
@@ -372,6 +385,19 @@
 				CF032A442948332400D6B6D3 /* CustomChapterTableViewCell.swift */,
 			);
 			path = CourseChapters;
+			sourceTree = "<group>";
+		};
+		CF2EFB4B294A03AE00A7D585 /* ExistingUserViewcontroller */ = {
+			isa = PBXGroup;
+			children = (
+				CF2EFB4C294A042F00A7D585 /* ExistingUserBottomview.xib */,
+				CF2EFB51294A045A00A7D585 /* ExistingUserBottomview.swift */,
+				CF2EFB56294A060B00A7D585 /* ExistingCollectionViewCell.swift */,
+				CF2EFB57294A060B00A7D585 /* ExistingCollectionViewCell.xib */,
+				CF2EFB63294A125800A7D585 /* OngoingView.xib */,
+				CF2EFB68294A12B000A7D585 /* OngoingView.swift */,
+			);
+			path = ExistingUserViewcontroller;
 			sourceTree = "<group>";
 		};
 		CF523184293F02BA00C56B7F /* ViewControllers */ = {
@@ -659,8 +685,11 @@
 				CFAFC9AB293EFAA900F84288 /* LaunchScreen.storyboard in Resources */,
 				CFEC206729419A6D00A171DA /* NewUserHomeView.xib in Resources */,
 				CF79F1D52941BB4400EEC920 /* NewUserBottomView.xib in Resources */,
+				CF2EFB4D294A042F00A7D585 /* ExistingUserBottomview.xib in Resources */,
+				CF2EFB59294A060B00A7D585 /* ExistingCollectionViewCell.xib in Resources */,
 				CFAFC9A8293EFAA900F84288 /* Assets.xcassets in Resources */,
 				CFEC20722941A57A00A171DA /* SuggestionsTopView.xib in Resources */,
+				CF2EFB64294A125800A7D585 /* OngoingView.xib in Resources */,
 				CF79F1D02941AAD000EEC920 /* SuggestionsCollectionViewCell.xib in Resources */,
 				CFAFC9A6293EFAA700F84288 /* Main.storyboard in Resources */,
 				CF416C4729435E2A00A27462 /* TopCourseSectionView.xib in Resources */,
@@ -707,6 +736,7 @@
 				C2ED75032949D40B00562970 /* ProfileViewController.swift in Sources */,
 				CF032A802948955F00D6B6D3 /* notificationViewModel.swift in Sources */,
 				CF2EFB182949A7B800A7D585 /* myCourseViewModel.swift in Sources */,
+				CF2EFB69294A12B000A7D585 /* OngoingView.swift in Sources */,
 				1BA47D4F294704AF0012B8C3 /* RegisterUser.swift in Sources */,
 				C2ED75052949D40B00562970 /* EditProfileViewController.swift in Sources */,
 				CF79F1DA2941BBB600EEC920 /* NewUserBottomView.swift in Sources */,
@@ -733,7 +763,6 @@
 				CF032A94294897DB00D6B6D3 /* activityLoader.swift in Sources */,
 				1B9289BC2949E50900C66D9E /* SettingViewController.swift in Sources */,
 				CF032A472948332400D6B6D3 /* ChaptersViewController.swift in Sources */,
-				5950949E294839B3006C23DE /* ChaptersViewController.swift in Sources */,
 				CFBA05622946F60300763342 /* CourseDetailsViewController.swift in Sources */,
 				CF032A452948332400D6B6D3 /* CustomContinueChapterView.swift in Sources */,
 				1BF0C86429408D93009D9030 /* customHamburgerButtons.swift in Sources */,
@@ -750,6 +779,7 @@
 				CFAFC9A1293EFAA700F84288 /* SceneDelegate.swift in Sources */,
 				1BA47D42294700900012B8C3 /* KeyChain.swift in Sources */,
 				1B9289D02949E6E500C66D9E /* ModallyViewController.swift in Sources */,
+				CF2EFB58294A060B00A7D585 /* ExistingCollectionViewCell.swift in Sources */,
 				CF032A4A2948332400D6B6D3 /* CustomChapterTableViewCell.swift in Sources */,
 				CF416C4229435E0E00A27462 /* TopCourseSectionView.swift in Sources */,
 				C25014C22947218D004A6711 /* CreateNewPasswordViewController.swift in Sources */,
@@ -758,6 +788,7 @@
 				CFF19640293F5C3F00802396 /* viewModel.swift in Sources */,
 				1BD4164A294094BD00E5334B /* CustomCategoryView.swift in Sources */,
 				1BDC5F4C293F771B00BE877F /* PersonalDetailsViewController.swift in Sources */,
+				CF2EFB52294A045A00A7D585 /* ExistingUserBottomview.swift in Sources */,
 				CFEC206C29419AD200A171DA /* NewUserHomeView.swift in Sources */,
 				CF032A7B2948951500D6B6D3 /* NotificationViewController.swift in Sources */,
 				CF2EFB1D2949ADC200A7D585 /* myCourse.swift in Sources */,
