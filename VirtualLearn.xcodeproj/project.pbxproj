@@ -10,6 +10,12 @@
 		1B12FEBF29458F0100612DB1 /* VerificationOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B12FEBE29458F0100612DB1 /* VerificationOTP.swift */; };
 		1B3635E729409E1000D07243 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3635E629409E1000D07243 /* LoginPageViewController.swift */; };
 		1B3635EC29409E2500D07243 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3635EB29409E2500D07243 /* ForgotPasswordViewController.swift */; };
+		1B9289BC2949E50900C66D9E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9289BB2949E50900C66D9E /* SettingViewController.swift */; };
+		1B9289C12949E52500C66D9E /* TermConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9289C02949E52500C66D9E /* TermConditionViewController.swift */; };
+		1B9289CB2949E66800C66D9E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9289CA2949E66800C66D9E /* SearchViewController.swift */; };
+		1B9289D02949E6E500C66D9E /* ModallyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9289CF2949E6E500C66D9E /* ModallyViewController.swift */; };
+		1B9289D52949E75300C66D9E /* BorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9289D42949E75300C66D9E /* BorderButton.swift */; };
+		1B9289DA2949E76200C66D9E /* CourseDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9289D92949E76200C66D9E /* CourseDataTableViewCell.swift */; };
 		1BA47D38294700170012B8C3 /* personalDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA47D37294700170012B8C3 /* personalDetails.swift */; };
 		1BA47D3D294700740012B8C3 /* loginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA47D3C294700740012B8C3 /* loginVM.swift */; };
 		1BA47D42294700900012B8C3 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA47D41294700900012B8C3 /* KeyChain.swift */; };
@@ -29,6 +35,12 @@
 		590194C6293F717300055C24 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590194C5293F717300055C24 /* LandingViewController.swift */; };
 		C25014C22947218D004A6711 /* CreateNewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25014C12947218D004A6711 /* CreateNewPasswordViewController.swift */; };
 		C25014C7294721B6004A6711 /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25014C6294721B6004A6711 /* Shadow.swift */; };
+		C2ED75032949D40B00562970 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ED75002949D40B00562970 /* ProfileViewController.swift */; };
+		C2ED75042949D40B00562970 /* ChangeYourPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ED75012949D40B00562970 /* ChangeYourPasswordViewController.swift */; };
+		C2ED75052949D40B00562970 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ED75022949D40B00562970 /* EditProfileViewController.swift */; };
+		C2ED750D2949D6A900562970 /* customProfilePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ED750C2949D6A900562970 /* customProfilePageView.swift */; };
+		C2ED75142949DF6300562970 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ED75122949DF6300562970 /* AlertMessage.swift */; };
+		C2ED75152949DF6300562970 /* ModuleTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ED75132949DF6300562970 /* ModuleTestViewController.swift */; };
 		CF032A452948332400D6B6D3 /* CustomContinueChapterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF032A3F2948332400D6B6D3 /* CustomContinueChapterView.swift */; };
 		CF032A462948332400D6B6D3 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF032A402948332400D6B6D3 /* HeaderView.swift */; };
 		CF032A472948332400D6B6D3 /* ChaptersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF032A412948332400D6B6D3 /* ChaptersViewController.swift */; };
@@ -43,6 +55,9 @@
 		CF032A94294897DB00D6B6D3 /* activityLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF032A93294897DB00D6B6D3 /* activityLoader.swift */; };
 		CF2EFB182949A7B800A7D585 /* myCourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EFB172949A7B800A7D585 /* myCourseViewModel.swift */; };
 		CF2EFB1D2949ADC200A7D585 /* myCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EFB1C2949ADC200A7D585 /* myCourse.swift */; };
+		CF2EFB372949F07200A7D585 /* TestResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EFB362949F07200A7D585 /* TestResultViewController.swift */; };
+		CF2EFB3D2949F0B700A7D585 /* QuestionListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EFB3B2949F0B600A7D585 /* QuestionListTableViewCell.swift */; };
+		CF2EFB3E2949F0B700A7D585 /* showQuestionResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EFB3C2949F0B600A7D585 /* showQuestionResultViewController.swift */; };
 		CF416BC62942DCF200A27462 /* MyCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF416BC32942DCF200A27462 /* MyCourseTableViewCell.swift */; };
 		CF416BC72942DCF200A27462 /* MyCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF416BC42942DCF200A27462 /* MyCourseViewController.swift */; };
 		CF416BC82942DCF200A27462 /* NewUserMyCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF416BC52942DCF200A27462 /* NewUserMyCourseViewController.swift */; };
@@ -103,6 +118,12 @@
 		1B12FEBE29458F0100612DB1 /* VerificationOTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationOTP.swift; sourceTree = "<group>"; };
 		1B3635E629409E1000D07243 /* LoginPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 		1B3635EB29409E2500D07243 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		1B9289BB2949E50900C66D9E /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		1B9289C02949E52500C66D9E /* TermConditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermConditionViewController.swift; sourceTree = "<group>"; };
+		1B9289CA2949E66800C66D9E /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		1B9289CF2949E6E500C66D9E /* ModallyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModallyViewController.swift; sourceTree = "<group>"; };
+		1B9289D42949E75300C66D9E /* BorderButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderButton.swift; sourceTree = "<group>"; };
+		1B9289D92949E76200C66D9E /* CourseDataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseDataTableViewCell.swift; sourceTree = "<group>"; };
 		1BA47D37294700170012B8C3 /* personalDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = personalDetails.swift; sourceTree = "<group>"; };
 		1BA47D3C294700740012B8C3 /* loginVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginVM.swift; sourceTree = "<group>"; };
 		1BA47D41294700900012B8C3 /* KeyChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
@@ -122,6 +143,12 @@
 		590194C5293F717300055C24 /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		C25014C12947218D004A6711 /* CreateNewPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewPasswordViewController.swift; sourceTree = "<group>"; };
 		C25014C6294721B6004A6711 /* Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
+		C2ED75002949D40B00562970 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C2ED75012949D40B00562970 /* ChangeYourPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeYourPasswordViewController.swift; sourceTree = "<group>"; };
+		C2ED75022949D40B00562970 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		C2ED750C2949D6A900562970 /* customProfilePageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customProfilePageView.swift; sourceTree = "<group>"; };
+		C2ED75122949DF6300562970 /* AlertMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
+		C2ED75132949DF6300562970 /* ModuleTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleTestViewController.swift; sourceTree = "<group>"; };
 		CF032A3F2948332400D6B6D3 /* CustomContinueChapterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomContinueChapterView.swift; sourceTree = "<group>"; };
 		CF032A402948332400D6B6D3 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		CF032A412948332400D6B6D3 /* ChaptersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChaptersViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +163,9 @@
 		CF032A93294897DB00D6B6D3 /* activityLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = activityLoader.swift; sourceTree = "<group>"; };
 		CF2EFB172949A7B800A7D585 /* myCourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCourseViewModel.swift; sourceTree = "<group>"; };
 		CF2EFB1C2949ADC200A7D585 /* myCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCourse.swift; sourceTree = "<group>"; };
+		CF2EFB362949F07200A7D585 /* TestResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestResultViewController.swift; sourceTree = "<group>"; };
+		CF2EFB3B2949F0B600A7D585 /* QuestionListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionListTableViewCell.swift; sourceTree = "<group>"; };
+		CF2EFB3C2949F0B600A7D585 /* showQuestionResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = showQuestionResultViewController.swift; sourceTree = "<group>"; };
 		CF416BC32942DCF200A27462 /* MyCourseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCourseTableViewCell.swift; sourceTree = "<group>"; };
 		CF416BC42942DCF200A27462 /* MyCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCourseViewController.swift; sourceTree = "<group>"; };
 		CF416BC52942DCF200A27462 /* NewUserMyCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserMyCourseViewController.swift; sourceTree = "<group>"; };
@@ -240,6 +270,25 @@
 			path = Register;
 			sourceTree = "<group>";
 		};
+		1B9289B72949E39400C66D9E /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				1B9289BB2949E50900C66D9E /* SettingViewController.swift */,
+				1B9289C02949E52500C66D9E /* TermConditionViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		1B9289C52949E60300C66D9E /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				1B9289CF2949E6E500C66D9E /* ModallyViewController.swift */,
+				1B9289CA2949E66800C66D9E /* SearchViewController.swift */,
+				1B9289D92949E76200C66D9E /* CourseDataTableViewCell.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		1BD41651294095B900E5334B /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +339,28 @@
 			path = Landing;
 			sourceTree = "<group>";
 		};
+		C2ED74FC2949D38C00562970 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				C2ED75012949D40B00562970 /* ChangeYourPasswordViewController.swift */,
+				C2ED75022949D40B00562970 /* EditProfileViewController.swift */,
+				C2ED75002949D40B00562970 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		C2ED75112949DF5100562970 /* ModuleTest */ = {
+			isa = PBXGroup;
+			children = (
+				CF2EFB362949F07200A7D585 /* TestResultViewController.swift */,
+				C2ED75122949DF6300562970 /* AlertMessage.swift */,
+				C2ED75132949DF6300562970 /* ModuleTestViewController.swift */,
+				CF2EFB3B2949F0B600A7D585 /* QuestionListTableViewCell.swift */,
+				CF2EFB3C2949F0B600A7D585 /* showQuestionResultViewController.swift */,
+			);
+			path = ModuleTest;
+			sourceTree = "<group>";
+		};
 		CF032A3E2948332400D6B6D3 /* CourseChapters */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,6 +377,10 @@
 		CF523184293F02BA00C56B7F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				1B9289C52949E60300C66D9E /* Search */,
+				1B9289B72949E39400C66D9E /* Settings */,
+				C2ED75112949DF5100562970 /* ModuleTest */,
+				C2ED74FC2949D38C00562970 /* Profile */,
 				CFBA05712946FADA00763342 /* ChooseYourCourse */,
 				CFBA05602946F5E100763342 /* CourseDetails */,
 				1B3635E229409DDF00D07243 /* Register */,
@@ -329,6 +404,8 @@
 		CF523198293F044A00C56B7F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1B9289D42949E75300C66D9E /* BorderButton.swift */,
+				C2ED750C2949D6A900562970 /* customProfilePageView.swift */,
 				C25014C6294721B6004A6711 /* Shadow.swift */,
 				1BA47D46294704870012B8C3 /* customChooseCourseView.swift */,
 				CFBA05732946FB4900763342 /* customCourseCategoryLable.swift */,
@@ -616,6 +693,7 @@
 				CF416C4D294361B300A27462 /* TopCourseSectionCollectionViewCell.swift in Sources */,
 				CFF19645293F5C4F00802396 /* NetworkManager.swift in Sources */,
 				CF032A492948332400D6B6D3 /* CustomChaptersCellView.swift in Sources */,
+				C2ED75142949DF6300562970 /* AlertMessage.swift in Sources */,
 				1B3635EC29409E2500D07243 /* ForgotPasswordViewController.swift in Sources */,
 				CFBA057B2946FB9800763342 /* ChooseYourCourseTableViewCell.swift in Sources */,
 				CFAFC9A3293EFAA700F84288 /* OnboardingViewController.swift in Sources */,
@@ -624,9 +702,13 @@
 				1BF0C86329408D93009D9030 /* HomeViewController.swift in Sources */,
 				590194BF293F715D00055C24 /* textField.swift in Sources */,
 				CF416BC62942DCF200A27462 /* MyCourseTableViewCell.swift in Sources */,
+				CF2EFB372949F07200A7D585 /* TestResultViewController.swift in Sources */,
+				1B9289DA2949E76200C66D9E /* CourseDataTableViewCell.swift in Sources */,
+				C2ED75032949D40B00562970 /* ProfileViewController.swift in Sources */,
 				CF032A802948955F00D6B6D3 /* notificationViewModel.swift in Sources */,
 				CF2EFB182949A7B800A7D585 /* myCourseViewModel.swift in Sources */,
 				1BA47D4F294704AF0012B8C3 /* RegisterUser.swift in Sources */,
+				C2ED75052949D40B00562970 /* EditProfileViewController.swift in Sources */,
 				CF79F1DA2941BBB600EEC920 /* NewUserBottomView.swift in Sources */,
 				1BF0C86229408D93009D9030 /* HamburgerViewController.swift in Sources */,
 				CF79F1CF2941AAD000EEC920 /* SuggestionsCollectionViewCell.swift in Sources */,
@@ -637,28 +719,37 @@
 				1BA47D47294704870012B8C3 /* customChooseCourseView.swift in Sources */,
 				CF032A8F2948972000D6B6D3 /* NotificationTableViewCell.swift in Sources */,
 				CFEC20772941A5C500A171DA /* SuggestionsTopView.swift in Sources */,
+				1B9289C12949E52500C66D9E /* TermConditionViewController.swift in Sources */,
 				CF032A462948332400D6B6D3 /* HeaderView.swift in Sources */,
 				CFBA057C2946FB9800763342 /* ChooseYourCourseViewController.swift in Sources */,
 				590194C0293F715D00055C24 /* ButtonView.swift in Sources */,
 				1B12FEBF29458F0100612DB1 /* VerificationOTP.swift in Sources */,
 				CFF1963B293F500800802396 /* pagecontrolExtension.swift in Sources */,
+				C2ED75042949D40B00562970 /* ChangeYourPasswordViewController.swift in Sources */,
 				590194B8293F714300055C24 /* NewAccountViewController.swift in Sources */,
 				1BA47D3D294700740012B8C3 /* loginVM.swift in Sources */,
 				CFBA056D2946F79100763342 /* CourseDetailseTableViewCell.swift in Sources */,
+				C2ED750D2949D6A900562970 /* customProfilePageView.swift in Sources */,
 				CF032A94294897DB00D6B6D3 /* activityLoader.swift in Sources */,
+				1B9289BC2949E50900C66D9E /* SettingViewController.swift in Sources */,
 				CF032A472948332400D6B6D3 /* ChaptersViewController.swift in Sources */,
 				5950949E294839B3006C23DE /* ChaptersViewController.swift in Sources */,
 				CFBA05622946F60300763342 /* CourseDetailsViewController.swift in Sources */,
 				CF032A452948332400D6B6D3 /* CustomContinueChapterView.swift in Sources */,
 				1BF0C86429408D93009D9030 /* customHamburgerButtons.swift in Sources */,
 				1B3635E729409E1000D07243 /* LoginPageViewController.swift in Sources */,
+				CF2EFB3E2949F0B700A7D585 /* showQuestionResultViewController.swift in Sources */,
 				CF032A8A2948966000D6B6D3 /* mainViewModel.swift in Sources */,
+				1B9289D52949E75300C66D9E /* BorderButton.swift in Sources */,
 				CFF5C2722940B747008818EB /* HomeCategoriescustomButton.swift in Sources */,
 				CF79F1E8294217C800EEC920 /* ChoiceOfYourCourseCollectionViewCell.swift in Sources */,
 				CF416BC82942DCF200A27462 /* NewUserMyCourseViewController.swift in Sources */,
+				1B9289CB2949E66800C66D9E /* SearchViewController.swift in Sources */,
+				C2ED75152949DF6300562970 /* ModuleTestViewController.swift in Sources */,
 				CF79F1DF2942118600EEC920 /* ChoiceOfCourseCustomButton.swift in Sources */,
 				CFAFC9A1293EFAA700F84288 /* SceneDelegate.swift in Sources */,
 				1BA47D42294700900012B8C3 /* KeyChain.swift in Sources */,
+				1B9289D02949E6E500C66D9E /* ModallyViewController.swift in Sources */,
 				CF032A4A2948332400D6B6D3 /* CustomChapterTableViewCell.swift in Sources */,
 				CF416C4229435E0E00A27462 /* TopCourseSectionView.swift in Sources */,
 				C25014C22947218D004A6711 /* CreateNewPasswordViewController.swift in Sources */,
@@ -674,6 +765,7 @@
 				590194C6293F717300055C24 /* LandingViewController.swift in Sources */,
 				1BA47D38294700170012B8C3 /* personalDetails.swift in Sources */,
 				CF5231A8293F287A00C56B7F /* OnboardingCollectionViewCell.swift in Sources */,
+				CF2EFB3D2949F0B700A7D585 /* QuestionListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

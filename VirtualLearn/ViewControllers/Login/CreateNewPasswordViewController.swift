@@ -10,7 +10,7 @@ class CreateNewPasswordViewController: UIViewController {
     @IBOutlet weak var newPasswordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var passwordView: UIView!
-    
+    @IBOutlet weak var resetPasswordBtn: UIButton!
     @IBOutlet weak var newPasswordline: UIView!
     @IBOutlet weak var confirmPasswordLine: UIView!
     override func viewDidLoad() {
@@ -19,8 +19,8 @@ class CreateNewPasswordViewController: UIViewController {
         passwordView.isHidden = true
         passwordView.layer.cornerRadius = 10
         passwordView.layer.borderWidth = 1
-        
-
+        resetPasswordBtn.isEnabled = false
+        resetPasswordBtn.backgroundColor = #colorLiteral(red: 0.9553547502, green: 0.4519486427, blue: 0.372556448, alpha: 1)
     }
     
     @IBAction func passwordChangedBegin(_ sender: Any) {
@@ -34,6 +34,17 @@ class CreateNewPasswordViewController: UIViewController {
     }
     
     @IBAction func passwordEditing(_ sender: Any) {
+        if newPasswordTextField.text == confirmPasswordTextField.text {
+                   resetPasswordBtn.isEnabled = true
+                   resetPasswordBtn.backgroundColor =  #colorLiteral(red: 0.9553547502, green: 0.4519486427, blue: 0.372556448, alpha: 1)
+                   resetPasswordBtn.alpha = 1
+               }
+        else {
+            resetPasswordBtn.isEnabled = false
+            resetPasswordBtn.backgroundColor = #colorLiteral(red: 0.9553547502, green: 0.4519486427, blue: 0.372556448, alpha: 1)
+            resetPasswordBtn.alpha = 0.7
+        }
+
         if let password = newPasswordTextField.text {
             if(password.count > 5)
             {
@@ -46,6 +57,22 @@ class CreateNewPasswordViewController: UIViewController {
             }
         }
     }
+    
+    
+    @IBAction func confirmPasswordEditChanged(_ sender: Any) {
+    
+    
+    if newPasswordTextField.text == confirmPasswordTextField.text {
+               resetPasswordBtn.isEnabled = true
+               resetPasswordBtn.backgroundColor =  #colorLiteral(red: 0.9553547502, green: 0.4519486427, blue: 0.372556448, alpha: 1)
+               resetPasswordBtn.alpha = 1
+           }
+    else {
+        resetPasswordBtn.isEnabled = false
+        resetPasswordBtn.backgroundColor = #colorLiteral(red: 0.9553547502, green: 0.4519486427, blue: 0.372556448, alpha: 1)
+        resetPasswordBtn.alpha = 0.7
+    }
+}
 
     func passwordMatched(_ value: String) -> Bool {
         let regular = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{6,}$"
