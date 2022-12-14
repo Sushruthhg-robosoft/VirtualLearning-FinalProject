@@ -55,6 +55,9 @@
 		CF032A94294897DB00D6B6D3 /* activityLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF032A93294897DB00D6B6D3 /* activityLoader.swift */; };
 		CF2EFB182949A7B800A7D585 /* myCourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EFB172949A7B800A7D585 /* myCourseViewModel.swift */; };
 		CF2EFB1D2949ADC200A7D585 /* myCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EFB1C2949ADC200A7D585 /* myCourse.swift */; };
+		CF2EFB372949F07200A7D585 /* TestResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EFB362949F07200A7D585 /* TestResultViewController.swift */; };
+		CF2EFB3D2949F0B700A7D585 /* QuestionListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EFB3B2949F0B600A7D585 /* QuestionListTableViewCell.swift */; };
+		CF2EFB3E2949F0B700A7D585 /* showQuestionResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EFB3C2949F0B600A7D585 /* showQuestionResultViewController.swift */; };
 		CF416BC62942DCF200A27462 /* MyCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF416BC32942DCF200A27462 /* MyCourseTableViewCell.swift */; };
 		CF416BC72942DCF200A27462 /* MyCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF416BC42942DCF200A27462 /* MyCourseViewController.swift */; };
 		CF416BC82942DCF200A27462 /* NewUserMyCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF416BC52942DCF200A27462 /* NewUserMyCourseViewController.swift */; };
@@ -160,6 +163,9 @@
 		CF032A93294897DB00D6B6D3 /* activityLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = activityLoader.swift; sourceTree = "<group>"; };
 		CF2EFB172949A7B800A7D585 /* myCourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCourseViewModel.swift; sourceTree = "<group>"; };
 		CF2EFB1C2949ADC200A7D585 /* myCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCourse.swift; sourceTree = "<group>"; };
+		CF2EFB362949F07200A7D585 /* TestResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestResultViewController.swift; sourceTree = "<group>"; };
+		CF2EFB3B2949F0B600A7D585 /* QuestionListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionListTableViewCell.swift; sourceTree = "<group>"; };
+		CF2EFB3C2949F0B600A7D585 /* showQuestionResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = showQuestionResultViewController.swift; sourceTree = "<group>"; };
 		CF416BC32942DCF200A27462 /* MyCourseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCourseTableViewCell.swift; sourceTree = "<group>"; };
 		CF416BC42942DCF200A27462 /* MyCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCourseViewController.swift; sourceTree = "<group>"; };
 		CF416BC52942DCF200A27462 /* NewUserMyCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserMyCourseViewController.swift; sourceTree = "<group>"; };
@@ -346,8 +352,11 @@
 		C2ED75112949DF5100562970 /* ModuleTest */ = {
 			isa = PBXGroup;
 			children = (
+				CF2EFB362949F07200A7D585 /* TestResultViewController.swift */,
 				C2ED75122949DF6300562970 /* AlertMessage.swift */,
 				C2ED75132949DF6300562970 /* ModuleTestViewController.swift */,
+				CF2EFB3B2949F0B600A7D585 /* QuestionListTableViewCell.swift */,
+				CF2EFB3C2949F0B600A7D585 /* showQuestionResultViewController.swift */,
 			);
 			path = ModuleTest;
 			sourceTree = "<group>";
@@ -693,6 +702,7 @@
 				1BF0C86329408D93009D9030 /* HomeViewController.swift in Sources */,
 				590194BF293F715D00055C24 /* textField.swift in Sources */,
 				CF416BC62942DCF200A27462 /* MyCourseTableViewCell.swift in Sources */,
+				CF2EFB372949F07200A7D585 /* TestResultViewController.swift in Sources */,
 				1B9289DA2949E76200C66D9E /* CourseDataTableViewCell.swift in Sources */,
 				C2ED75032949D40B00562970 /* ProfileViewController.swift in Sources */,
 				CF032A802948955F00D6B6D3 /* notificationViewModel.swift in Sources */,
@@ -727,6 +737,7 @@
 				CF032A452948332400D6B6D3 /* CustomContinueChapterView.swift in Sources */,
 				1BF0C86429408D93009D9030 /* customHamburgerButtons.swift in Sources */,
 				1B3635E729409E1000D07243 /* LoginPageViewController.swift in Sources */,
+				CF2EFB3E2949F0B700A7D585 /* showQuestionResultViewController.swift in Sources */,
 				CF032A8A2948966000D6B6D3 /* mainViewModel.swift in Sources */,
 				1B9289D52949E75300C66D9E /* BorderButton.swift in Sources */,
 				CFF5C2722940B747008818EB /* HomeCategoriescustomButton.swift in Sources */,
@@ -753,6 +764,7 @@
 				590194C6293F717300055C24 /* LandingViewController.swift in Sources */,
 				1BA47D38294700170012B8C3 /* personalDetails.swift in Sources */,
 				CF5231A8293F287A00C56B7F /* OnboardingCollectionViewCell.swift in Sources */,
+				CF2EFB3D2949F0B700A7D585 /* QuestionListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
