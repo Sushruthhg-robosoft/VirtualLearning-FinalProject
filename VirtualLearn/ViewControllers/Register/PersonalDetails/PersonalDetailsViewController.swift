@@ -37,7 +37,7 @@ class PersonalDetailsViewController: UIViewController {
         
         RegistrayionButtonOutlet.isEnabled = false
         successScreen.isHidden = true
-        mobileNumber.text = enterdMobileNumber
+        mobileNumber.text = "+91"+enterdMobileNumber
         
         fullNameTextField.removeBorder()
         userNameTextField.removeBorder()

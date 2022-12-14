@@ -45,11 +45,7 @@ class ForgotPasswordViewController: UIViewController {
             }
 
         }
-//        viewmodel.resetPassword(mobileNumber: "+917022011412", password: "Hellllo1234"){
-//
-//        } fail: {
-//
-//        }
+
        
         
     }

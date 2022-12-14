@@ -94,7 +94,8 @@ class VerifyAccountViewController: UIViewController, UITextFieldDelegate {
                 self.stopLoader(loader: loader)
             if self.isForgotPassword {
                 
-                let vc = self.storyboard?.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
+                let vc = self.storyboard?.instantiateViewController(identifier: "CreateNewPasswordViewController") as! CreateNewPasswordViewController
+                vc.mobileNumber = self.mobileNumber
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             
@@ -130,7 +131,7 @@ class VerifyAccountViewController: UIViewController, UITextFieldDelegate {
         self.fourthDigitUnderView.backgroundColor = UIColor(red: 0, green: 255, blue: 0, alpha: 1)
     }
     @IBAction func resendOTPButtonClicked(_ sender: Any) {
-        
+        verificationOTP.getOTP(mobileNumber: "+917022011412")
     }
     
     @IBAction func onClickLogin(_ sender: Any) {
