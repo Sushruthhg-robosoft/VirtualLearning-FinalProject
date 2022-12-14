@@ -18,8 +18,9 @@ class ProfileViewModel {
         request.httpMethod = "GET"
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         networkManager.fetchDataJson(request: request) { data in
-            guard let profileData = data as? [[String: Any]] else { print("apiDataerr"); return }
+            guard let profileData = data as? [[String: Any]] else { print("Error"); return }
             print(profileData)
+            
         
         } failure: { error in
             print(error)
