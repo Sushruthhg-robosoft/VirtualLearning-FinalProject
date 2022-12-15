@@ -1455,12 +1455,15 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                             </button>
                                                         </subviews>
                                                         <constraints>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="OtU-dC-75T" secondAttribute="trailing" constant="20" symbolic="YES" id="0Ua-fx-XPJ"/>
                                                             <constraint firstItem="2rT-7b-9hX" firstAttribute="top" secondItem="Oux-5u-R2Q" secondAttribute="bottom" constant="8" id="1Se-3s-YsP"/>
                                                             <constraint firstItem="Z3e-SR-bai" firstAttribute="top" secondItem="KmG-8F-Ddn" secondAttribute="bottom" constant="14" id="3PA-Rm-a8s"/>
                                                             <constraint firstItem="KmG-8F-Ddn" firstAttribute="leading" secondItem="sZ2-9o-rSF" secondAttribute="leading" id="4Rv-Kt-cNb"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1Ws-3x-m6c" secondAttribute="trailing" constant="12" id="5DR-aQ-Gw6"/>
                                                             <constraint firstItem="Oux-5u-R2Q" firstAttribute="leading" secondItem="Fpb-A2-5o3" secondAttribute="trailing" constant="8" id="8ht-hv-4bV"/>
                                                             <constraint firstItem="0J3-Qs-Xeg" firstAttribute="leading" secondItem="sZ2-9o-rSF" secondAttribute="leading" id="DJr-iC-Zqa"/>
                                                             <constraint firstItem="WkB-V0-CQ4" firstAttribute="leading" secondItem="sZ2-9o-rSF" secondAttribute="leading" id="E0R-Mj-ENE"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="t8H-6u-vlA" secondAttribute="trailing" constant="10" id="GOz-XL-UtH"/>
                                                             <constraint firstItem="OtU-dC-75T" firstAttribute="top" secondItem="2rT-7b-9hX" secondAttribute="bottom" constant="8" id="IRN-xi-Tbo"/>
                                                             <constraint firstItem="1Ws-3x-m6c" firstAttribute="top" secondItem="KmG-8F-Ddn" secondAttribute="bottom" constant="14" id="Jh7-VU-nzH"/>
                                                             <constraint firstItem="0J3-Qs-Xeg" firstAttribute="top" secondItem="b6k-lD-Zmi" secondAttribute="bottom" constant="8" id="MUr-xx-W7R"/>
@@ -1469,6 +1472,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                             <constraint firstItem="2rT-7b-9hX" firstAttribute="leading" secondItem="b6k-lD-Zmi" secondAttribute="trailing" constant="8" id="RNJ-zD-BuT"/>
                                                             <constraint firstItem="OtU-dC-75T" firstAttribute="leading" secondItem="0J3-Qs-Xeg" secondAttribute="trailing" constant="8" id="So6-sW-iaM"/>
                                                             <constraint firstItem="b6k-lD-Zmi" firstAttribute="leading" secondItem="sZ2-9o-rSF" secondAttribute="leading" id="aVo-5B-wG0"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KmG-8F-Ddn" secondAttribute="trailing" constant="20" symbolic="YES" id="arm-Cj-XgE"/>
                                                             <constraint firstItem="t8H-6u-vlA" firstAttribute="leading" secondItem="Oux-5u-R2Q" secondAttribute="trailing" constant="8" id="dUq-1U-ecS"/>
                                                             <constraint firstItem="Fpb-A2-5o3" firstAttribute="leading" secondItem="sZ2-9o-rSF" secondAttribute="leading" id="f8T-Sf-8uc"/>
                                                             <constraint firstItem="b6k-lD-Zmi" firstAttribute="top" secondItem="Fpb-A2-5o3" secondAttribute="bottom" constant="8" id="kWr-Kp-JFU"/>
@@ -1479,6 +1483,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                             <constraint firstItem="Z3e-SR-bai" firstAttribute="leading" secondItem="WkB-V0-CQ4" secondAttribute="trailing" constant="8" id="qMe-NJ-rSN"/>
                                                             <constraint firstAttribute="height" constant="180" id="tcm-s8-aB7"/>
                                                             <constraint firstItem="KmG-8F-Ddn" firstAttribute="top" secondItem="sZ2-9o-rSF" secondAttribute="top" id="xxJ-4A-R97"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="UuW-72-6Pu" secondAttribute="trailing" constant="-2" id="yE3-i5-mJO"/>
                                                             <constraint firstItem="UuW-72-6Pu" firstAttribute="leading" secondItem="2rT-7b-9hX" secondAttribute="trailing" constant="8" id="zPJ-Up-qPN"/>
                                                             <constraint firstItem="UuW-72-6Pu" firstAttribute="top" secondItem="t8H-6u-vlA" secondAttribute="bottom" constant="8" id="zax-UZ-REi"/>
                                                         </constraints>
@@ -1495,7 +1500,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d51-Vz-H0y" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="26" width="101" height="30"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="101" id="A3G-WP-0St"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="101" id="A3G-WP-0St"/>
                                                                     <constraint firstAttribute="height" constant="30" id="OeJ-0H-znH"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -1506,7 +1511,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D66-Aa-ZFC" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="64" width="101" height="30"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="101" id="4vx-Q3-ft4"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="101" id="4vx-Q3-ft4"/>
                                                                     <constraint firstAttribute="height" constant="30" id="sPC-SD-7xZ"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -1518,7 +1523,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                                 <rect key="frame" x="109" y="26" width="101" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="bXD-kQ-Jgk"/>
-                                                                    <constraint firstAttribute="width" constant="101" id="lr0-oN-BAV"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="101" id="lr0-oN-BAV"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <state key="normal" title="10/20chapters">
@@ -1529,7 +1534,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                                 <rect key="frame" x="218" y="26" width="101" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="1n5-ug-vML"/>
-                                                                    <constraint firstAttribute="width" constant="101" id="dCW-Z3-VLj"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="101" id="dCW-Z3-VLj"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <state key="normal" title="20/30 chapters">
@@ -1539,7 +1544,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhK-uz-R5b" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
                                                                 <rect key="frame" x="109" y="64" width="101" height="30"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="101" id="AT7-Iv-q6B"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="101" id="AT7-Iv-q6B"/>
                                                                     <constraint firstAttribute="height" constant="30" id="vY1-zq-7pv"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -1557,9 +1562,12 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                             <constraint firstItem="D66-Aa-ZFC" firstAttribute="top" secondItem="d51-Vz-H0y" secondAttribute="bottom" constant="8" id="MaH-sB-USl"/>
                                                             <constraint firstItem="U3G-us-gRf" firstAttribute="top" secondItem="LUL-ve-bPp" secondAttribute="bottom" constant="5" id="Odu-p8-83y"/>
                                                             <constraint firstItem="bhK-uz-R5b" firstAttribute="top" secondItem="BrZ-cA-BrG" secondAttribute="bottom" constant="8" id="d71-U8-INS"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="LUL-ve-bPp" secondAttribute="trailing" constant="20" symbolic="YES" id="eIZ-9M-N0H"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="U3G-us-gRf" secondAttribute="trailing" id="iGO-xr-uLg"/>
                                                             <constraint firstItem="d51-Vz-H0y" firstAttribute="top" secondItem="LUL-ve-bPp" secondAttribute="bottom" constant="5" id="k03-hP-OAb"/>
                                                             <constraint firstItem="LUL-ve-bPp" firstAttribute="leading" secondItem="muS-OO-Mas" secondAttribute="leading" id="pUg-hY-9hQ"/>
                                                             <constraint firstItem="BrZ-cA-BrG" firstAttribute="top" secondItem="LUL-ve-bPp" secondAttribute="bottom" constant="5" id="sVy-kP-CYD"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bhK-uz-R5b" secondAttribute="trailing" constant="20" symbolic="YES" id="sny-3g-bzp"/>
                                                             <constraint firstItem="U3G-us-gRf" firstAttribute="leading" secondItem="BrZ-cA-BrG" secondAttribute="trailing" constant="8" id="w8g-xl-fHR"/>
                                                             <constraint firstItem="bhK-uz-R5b" firstAttribute="leading" secondItem="D66-Aa-ZFC" secondAttribute="trailing" constant="8" id="wie-wp-snr"/>
                                                             <constraint firstAttribute="height" constant="95" id="xJI-a5-VPg"/>
@@ -1583,7 +1591,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mdW-me-RhE" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
                                                         <rect key="frame" x="24" y="468" width="327" height="46"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="327" id="n9J-FG-tTh"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="327" id="n9J-FG-tTh"/>
                                                             <constraint firstAttribute="height" constant="46" id="p43-VY-lAi"/>
                                                         </constraints>
                                                         <state key="normal" title="Clear All">
