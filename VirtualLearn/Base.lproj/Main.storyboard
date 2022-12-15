@@ -2610,7 +2610,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NKn-kK-hcl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2128.8000000000002" y="2244.8275862068967"/>
+            <point key="canvasLocation" x="6921" y="3041"/>
         </scene>
         <!--Category View Controller-->
         <scene sceneID="b4q-7S-bKu">
