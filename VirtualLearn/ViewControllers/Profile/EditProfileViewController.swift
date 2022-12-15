@@ -13,6 +13,7 @@ class EditProfileViewController: UIViewController {
     
     
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var mobileNoLabel: UILabel!
     @IBOutlet weak var occupationLabel: UILabel!
@@ -24,6 +25,7 @@ class EditProfileViewController: UIViewController {
     
     
     @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var mobileNoField: UITextField!
     @IBOutlet weak var occupationField: UITextField!
@@ -31,16 +33,13 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var dateOfBirthField: UITextField!
     @IBOutlet weak var twitterField: UITextField!
     @IBOutlet weak var facebookField: UITextField!
-    var dummyname = ""
-    var dummyEmail = ""
-    var dummyMobileNo = 0
-    var dummydateofbirth = ""
-    var dummyusername = ""
+    
     
     
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var nameView: UIView!
+    @IBOutlet weak var userNameView: UIView!
     @IBOutlet weak var emailView: UIView!
     @IBOutlet weak var mobileNoView: UIView!
     @IBOutlet weak var occupationView: UIView!
@@ -54,7 +53,14 @@ class EditProfileViewController: UIViewController {
     
     @IBOutlet weak var femaleGender: UIButton!
     @IBOutlet weak var otherGender: UIButton!
+    
     var isdropDown = false
+    var dummyname = ""
+    var dummyUsername = ""
+    var dummyEmail = ""
+    var dummyMobileNo = ""
+    var dummydateofbirth = ""
+    var dummyusername = ""
     
     
     
@@ -62,14 +68,12 @@ class EditProfileViewController: UIViewController {
         
         emailField.text = dummyEmail
         nameField.text = dummyname
-//        mobileNoField.text = dummyMobileNo
+        userNameTextField.text = dummyusername
+        mobileNoField.text = dummyMobileNo
         
-        
-        
+
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
-        
-        
         
         dropDownView.isHidden = true
         genderField.isEnabled = false

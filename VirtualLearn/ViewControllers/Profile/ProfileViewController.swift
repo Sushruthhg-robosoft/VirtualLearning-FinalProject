@@ -77,7 +77,8 @@ class ProfileViewController: UIViewController {
         vc.dummyEmail = email.text!
         vc.dummyname = name.text!
         vc.dummyusername = userName.text!
-//        vc.dummyMobileNo = mobileNumber.text!
+        vc.dummyusername = userName.text!
+        vc.dummyMobileNo = mobileNumber.text!
         
     }
     
