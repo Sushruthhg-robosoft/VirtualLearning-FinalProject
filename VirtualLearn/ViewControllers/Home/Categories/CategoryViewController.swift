@@ -11,15 +11,35 @@ class CategoryViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var shared = mainViewModel.mainShared
+    
     override func viewDidLoad() {
 
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        
 
         
         super.viewDidLoad()
+       
+       
+
         
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        let loader = self.loader()
+        shared.categoriesViewModelShared.getCategories {
+            DispatchQueue.main.async {
+                self.stopLoader(loader: loader)
+                self.collectionView.reloadData()
+            }
+        } fail: {
+            print("error")
+        }
     }
 
     @IBAction func onClickBack(_ sender: Any) {
@@ -33,24 +53,33 @@ class CategoryViewController: UIViewController {
 
 extension CategoryViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 11
+        return shared.categoriesViewModelShared.listofCategories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let item = collectionView.dequeueReusableCell(withReuseIdentifier: "item", for: indexPath)
-        
-        return item
+        let item = collectionView.dequeueReusableCell(withReuseIdentifier: "item", for: indexPath) as? CategoryCollectionViewCell
+        item?.courseName.text = shared.categoriesViewModelShared.listofCategories[indexPath.row].categotyName
+        let url = URL(string: shared.categoriesViewModelShared.listofCategories[indexPath.row].categoryImage)
+        let data = try? Data(contentsOf: url!)
+        item?.courseImage.image = UIImage(data: data!)
+        return item!
     }
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 14
+        return 12
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let columns = 3
+        let width = 110
+        let side = 88
+        let rem = width % columns
+        let addOne = indexPath.row % columns < rem
+        let ceilWidth = addOne ? side + 1 : side
+        return CGSize(width: ceilWidth, height: side)
     }
-    
     
 }
 

@@ -2378,10 +2378,9 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                 <state key="normal" image="icn_search-Search"/>
                                             </button>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Faw-cN-05F">
-                                                <rect key="frame" x="29" y="228.5" width="317" height="388"/>
+                                                <rect key="frame" x="29" y="228.5" width="317" height="421.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="388" id="9YL-uk-8zi"/>
                                                     <constraint firstAttribute="width" constant="317" id="hZ7-pA-ChI"/>
                                                 </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mTv-WI-EpY">
@@ -2401,9 +2400,9 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cy7-gX-Tk9" customClass="customCategoryView" customModule="VirtualLearn" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="110.5" height="88"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAP-Wd-jUq">
-                                                                            <rect key="frame" x="30" y="65.5" width="50.5" height="14.5"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAP-Wd-jUq">
+                                                                            <rect key="frame" x="1" y="62" width="108.5" height="12"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -2420,11 +2419,11 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                                         <constraint firstAttribute="trailing" secondItem="eNK-mH-4eo" secondAttribute="trailing" id="7nV-TW-74B"/>
                                                                         <constraint firstAttribute="height" constant="88" id="AJo-fz-ZJ7"/>
                                                                         <constraint firstItem="eNK-mH-4eo" firstAttribute="leading" secondItem="Cy7-gX-Tk9" secondAttribute="leading" id="Bwr-HN-PM3"/>
-                                                                        <constraint firstItem="wAP-Wd-jUq" firstAttribute="top" secondItem="eNK-mH-4eo" secondAttribute="bottom" constant="13.5" id="TbG-f0-oSF"/>
+                                                                        <constraint firstItem="wAP-Wd-jUq" firstAttribute="top" secondItem="eNK-mH-4eo" secondAttribute="bottom" constant="10" id="TbG-f0-oSF"/>
                                                                         <constraint firstAttribute="width" constant="110.67" id="ehd-U3-Gf1"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="wAP-Wd-jUq" secondAttribute="bottom" constant="8" id="wde-Nt-X8K"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="wAP-Wd-jUq" secondAttribute="trailing" constant="1" id="wN4-xY-zLu"/>
                                                                         <constraint firstItem="eNK-mH-4eo" firstAttribute="top" secondItem="Cy7-gX-Tk9" secondAttribute="top" id="yPb-88-Ue2"/>
-                                                                        <constraint firstItem="wAP-Wd-jUq" firstAttribute="centerX" secondItem="Cy7-gX-Tk9" secondAttribute="centerX" id="zdc-sJ-QmN"/>
+                                                                        <constraint firstItem="wAP-Wd-jUq" firstAttribute="leading" secondItem="Cy7-gX-Tk9" secondAttribute="leading" constant="1" id="yVm-cO-yZw"/>
                                                                     </constraints>
                                                                 </view>
                                                             </subviews>
@@ -2441,22 +2440,6 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                             <outlet property="courseName" destination="wAP-Wd-jUq" id="KLL-QF-0YR"/>
                                                         </connections>
                                                     </collectionViewCell>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yTW-kP-kQ8">
-                                                        <rect key="frame" x="206.5" y="0.0" width="110.5" height="88"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
-                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3Ee-hx-PED">
-                                                            <rect key="frame" x="0.0" y="0.0" width="110.5" height="88"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                        </collectionViewCellContentView>
-                                                    </collectionViewCell>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="OzJ-hb-wkr">
-                                                        <rect key="frame" x="0.0" y="98" width="110.5" height="88"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
-                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="HJd-au-3To">
-                                                            <rect key="frame" x="0.0" y="0.0" width="110.5" height="88"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                        </collectionViewCellContentView>
-                                                    </collectionViewCell>
                                                 </cells>
                                             </collectionView>
                                         </subviews>
@@ -2466,6 +2449,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                             <constraint firstAttribute="height" constant="700" id="AI6-CI-18m"/>
                                             <constraint firstItem="xEq-Zh-Qfb" firstAttribute="top" secondItem="lKT-7b-8lQ" secondAttribute="bottom" constant="10" id="Q1s-j2-2OJ"/>
                                             <constraint firstItem="Faw-cN-05F" firstAttribute="centerX" secondItem="upb-Vi-nA9" secondAttribute="centerX" id="SW8-8M-p6G"/>
+                                            <constraint firstAttribute="bottom" secondItem="Faw-cN-05F" secondAttribute="bottom" constant="50" id="Twx-mQ-Ads"/>
                                             <constraint firstItem="lKT-7b-8lQ" firstAttribute="top" secondItem="hTI-NA-L4D" secondAttribute="bottom" constant="20" id="Xen-yg-413"/>
                                             <constraint firstAttribute="trailing" secondItem="xEq-Zh-Qfb" secondAttribute="trailing" constant="24" id="afB-8x-PT1"/>
                                             <constraint firstItem="xEq-Zh-Qfb" firstAttribute="leading" secondItem="upb-Vi-nA9" secondAttribute="leading" constant="24" id="bNi-eD-ibZ"/>
