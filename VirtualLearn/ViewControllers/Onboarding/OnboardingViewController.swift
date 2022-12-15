@@ -30,6 +30,7 @@ class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         navigationController?.navigationBar.isHidden = true
         //titleTxt.lineBreakMode = .byWordWrapping
         //titleTxt.numberOfLines = 2

@@ -1561,14 +1561,17 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="260"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMK-HC-TZ8">
-                                                        <rect key="frame" x="24" y="74" width="22" height="13"/>
+                                                        <rect key="frame" x="24" y="74" width="20" height="13"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="13" id="A31-ee-kwq"/>
+                                                            <constraint firstAttribute="width" constant="20" id="HGK-46-Dou"/>
+                                                        </constraints>
                                                         <state key="normal" image="icn_hamburgermenu_white"/>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkO-m3-R0P">
-                                                        <rect key="frame" x="20" y="108" width="79" height="35"/>
+                                                        <rect key="frame" x="20" y="107" width="79" height="36"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="gUQ-9b-icv"/>
-                                                            <constraint firstAttribute="height" constant="35" id="oLw-tM-Vng"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1582,7 +1585,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ria-qV-Dv3">
-                                                        <rect key="frame" x="333" y="116.5" width="18" height="18"/>
+                                                        <rect key="frame" x="333" y="116" width="18" height="18"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="18" id="64U-Lz-RFd"/>
                                                             <constraint firstAttribute="width" constant="18" id="F5e-Ue-OTy"/>
@@ -1612,8 +1615,8 @@
                                                 <color key="backgroundColor" red="0.015686274510000001" green="0.17254901959999999" blue="0.36078431370000003" alpha="0.86306117959999995" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="ria-qV-Dv3" secondAttribute="trailing" constant="24" id="1ya-dN-fyZ"/>
-                                                    <constraint firstItem="xMK-HC-TZ8" firstAttribute="top" secondItem="gbT-wS-SY4" secondAttribute="top" constant="74" id="4X1-wC-IBT"/>
                                                     <constraint firstItem="8wt-kY-AJs" firstAttribute="top" secondItem="gyT-2d-ImS" secondAttribute="top" id="54a-H6-2RY"/>
+                                                    <constraint firstItem="vkO-m3-R0P" firstAttribute="top" secondItem="xMK-HC-TZ8" secondAttribute="bottom" constant="20" id="A2f-Cz-VOp"/>
                                                     <constraint firstAttribute="height" constant="260" id="DFN-Es-XDy"/>
                                                     <constraint firstItem="xMK-HC-TZ8" firstAttribute="leading" secondItem="gbT-wS-SY4" secondAttribute="leading" constant="24" id="I7M-pk-D81"/>
                                                     <constraint firstAttribute="bottom" secondItem="gyT-2d-ImS" secondAttribute="bottom" constant="28" id="L75-aW-ZGa"/>
@@ -1621,12 +1624,12 @@
                                                     <constraint firstItem="k0n-IZ-m0g" firstAttribute="top" secondItem="8wt-kY-AJs" secondAttribute="bottom" constant="7" id="Rqt-hf-VXa"/>
                                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="k0n-IZ-m0g" secondAttribute="trailing" constant="20" symbolic="YES" id="Sm1-tT-Rsy"/>
                                                     <constraint firstItem="ria-qV-Dv3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vkO-m3-R0P" secondAttribute="trailing" constant="8" symbolic="YES" id="TBm-TT-xJa"/>
-                                                    <constraint firstItem="vkO-m3-R0P" firstAttribute="top" secondItem="xMK-HC-TZ8" secondAttribute="bottom" constant="21" id="UOY-43-9ux"/>
                                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8wt-kY-AJs" secondAttribute="trailing" constant="20" symbolic="YES" id="ZXk-0F-oe5"/>
                                                     <constraint firstItem="gyT-2d-ImS" firstAttribute="top" secondItem="vkO-m3-R0P" secondAttribute="bottom" constant="31" id="c2s-jt-cRY"/>
                                                     <constraint firstItem="8wt-kY-AJs" firstAttribute="leading" secondItem="gyT-2d-ImS" secondAttribute="trailing" constant="22" id="dCM-4y-Ovx"/>
                                                     <constraint firstItem="k0n-IZ-m0g" firstAttribute="leading" secondItem="gyT-2d-ImS" secondAttribute="trailing" constant="22" id="kuH-YX-eeR"/>
                                                     <constraint firstItem="ria-qV-Dv3" firstAttribute="centerY" secondItem="vkO-m3-R0P" secondAttribute="centerY" id="ofg-du-1DD"/>
+                                                    <constraint firstItem="xMK-HC-TZ8" firstAttribute="top" secondItem="gbT-wS-SY4" secondAttribute="top" constant="74" id="s4s-yC-8sE"/>
                                                     <constraint firstItem="gyT-2d-ImS" firstAttribute="leading" secondItem="gbT-wS-SY4" secondAttribute="leading" constant="26" id="tai-XL-QUi"/>
                                                 </constraints>
                                             </view>
@@ -1643,7 +1646,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="ehE-4L-Ka1">
                                                 <rect key="frame" x="24" y="321" width="327" height="85"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QIR-8B-AXz" customClass="customProfilePageView" customModule="ProfileScreen" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QIR-8B-AXz" customClass="customProfilePageView" customModule="VirtualLearn" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="95" height="85"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Courses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F12-Nw-SEN">
@@ -1676,7 +1679,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wda-pU-vTS" customClass="customProfilePageView" customModule="ProfileScreen" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wda-pU-vTS" customClass="customProfilePageView" customModule="VirtualLearn" customModuleProvider="target">
                                                         <rect key="frame" x="116" y="0.0" width="95" height="85"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="102" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tza-rg-pRq">
@@ -1708,7 +1711,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ohe-ST-TNs" customClass="customProfilePageView" customModule="ProfileScreen" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ohe-ST-TNs" customClass="customProfilePageView" customModule="VirtualLearn" customModuleProvider="target">
                                                         <rect key="frame" x="232" y="0.0" width="95" height="85"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HmA-r9-ozO">
@@ -1996,7 +1999,7 @@
                         <outlet property="hamburgerMenu" destination="xMK-HC-TZ8" id="o3r-1N-PIV"/>
                         <outlet property="mobileNumber" destination="6Fa-Sy-Ydb" id="aUI-my-q1D"/>
                         <outlet property="name" destination="WT8-hB-9b3" id="jEa-mH-SOQ"/>
-                        <outlet property="noOfChapters" destination="Wda-pU-vTS" id="Qi5-iv-Xn7"/>
+                        <outlet property="noOfChapters" destination="Tza-rg-pRq" id="Ust-WQ-coF"/>
                         <outlet property="noOfCourses" destination="tgM-Gc-ToW" id="1fv-lb-gRS"/>
                         <outlet property="noOfTests" destination="HmA-r9-ozO" id="qAk-jg-OMc"/>
                         <outlet property="occupation" destination="EZV-m3-mMN" id="az4-cA-Pyv"/>

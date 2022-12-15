@@ -36,6 +36,7 @@
 		C2ED75142949DF6300562970 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ED75122949DF6300562970 /* AlertMessage.swift */; };
 		C2ED75152949DF6300562970 /* ModuleTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ED75132949DF6300562970 /* ModuleTestViewController.swift */; };
 		C2ED752E2949EFC900562970 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ED752D2949EFC900562970 /* ProfileViewModel.swift */; };
+		C2ED75E4294B0A8D00562970 /* ProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ED75E3294B0A8D00562970 /* ProfileData.swift */; };
 		CF032A452948332400D6B6D3 /* CustomContinueChapterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF032A3F2948332400D6B6D3 /* CustomContinueChapterView.swift */; };
 		CF032A462948332400D6B6D3 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF032A402948332400D6B6D3 /* HeaderView.swift */; };
 		CF032A472948332400D6B6D3 /* ChaptersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF032A412948332400D6B6D3 /* ChaptersViewController.swift */; };
@@ -136,6 +137,7 @@
 		C2ED75122949DF6300562970 /* AlertMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
 		C2ED75132949DF6300562970 /* ModuleTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleTestViewController.swift; sourceTree = "<group>"; };
 		C2ED752D2949EFC900562970 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		C2ED75E3294B0A8D00562970 /* ProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileData.swift; sourceTree = "<group>"; };
 		CF032A3F2948332400D6B6D3 /* CustomContinueChapterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomContinueChapterView.swift; sourceTree = "<group>"; };
 		CF032A402948332400D6B6D3 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		CF032A412948332400D6B6D3 /* ChaptersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChaptersViewController.swift; sourceTree = "<group>"; };
@@ -404,6 +406,7 @@
 				CF5231A2293F214600C56B7F /* OnboaringSlide.swift */,
 				CF032A842948958F00D6B6D3 /* Notification.swift */,
 				CF2EFB1C2949ADC200A7D585 /* myCourse.swift */,
+				C2ED75E3294B0A8D00562970 /* ProfileData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -666,6 +669,7 @@
 				CF032A802948955F00D6B6D3 /* notificationViewModel.swift in Sources */,
 				CF2EFB182949A7B800A7D585 /* myCourseViewModel.swift in Sources */,
 				1BA47D4F294704AF0012B8C3 /* RegisterUser.swift in Sources */,
+				C2ED75E4294B0A8D00562970 /* ProfileData.swift in Sources */,
 				C2ED75052949D40B00562970 /* EditProfileViewController.swift in Sources */,
 				CF79F1DA2941BBB600EEC920 /* NewUserBottomView.swift in Sources */,
 				1BF0C86229408D93009D9030 /* HamburgerViewController.swift in Sources */,

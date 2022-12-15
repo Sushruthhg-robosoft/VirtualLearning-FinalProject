@@ -31,6 +31,11 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var dateOfBirthField: UITextField!
     @IBOutlet weak var twitterField: UITextField!
     @IBOutlet weak var facebookField: UITextField!
+    var dummyname = ""
+    var dummyEmail = ""
+    var dummyMobileNo = 0
+    var dummydateofbirth = ""
+    var dummyusername = ""
     
     
     @IBOutlet weak var saveButton: UIButton!
@@ -50,7 +55,17 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var femaleGender: UIButton!
     @IBOutlet weak var otherGender: UIButton!
     var isdropDown = false
+    
+    
+    
     override func viewDidLoad() {
+        
+        emailField.text = dummyEmail
+        nameField.text = dummyname
+//        mobileNoField.text = dummyMobileNo
+        
+        
+        
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
         

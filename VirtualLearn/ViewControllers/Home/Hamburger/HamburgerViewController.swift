@@ -15,10 +15,10 @@ class HamburgerViewController: UIViewController {
 
     @IBOutlet weak var notificationCount: customHamLable!
     var delegate: HamburgerViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+    
     }
     
     @IBAction func onClickHome(_ sender: Any) {
@@ -36,7 +36,7 @@ class HamburgerViewController: UIViewController {
     }
     
     @IBAction func onClickMyProfile(_ sender: Any) {
-        let vc = storyboard?.instantiateViewController(identifier: "CourseDetailsViewController") as! CourseDetailsViewController
+        let vc = storyboard?.instantiateViewController(identifier: "ProfileViewController") as! ProfileViewController
         
         navigationController?.pushViewController(vc, animated: true)
     }

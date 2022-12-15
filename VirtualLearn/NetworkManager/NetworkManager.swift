@@ -107,7 +107,9 @@ class NetWorkManager {
         URLSession.shared.dataTask(with: request) { data, response, error in
             if error == nil{
                           let httpResponse = response as! HTTPURLResponse
+                
                           guard let responsedata = data else { return }
+                print(httpResponse.statusCode)
                 
                           if(httpResponse.statusCode == 200){
                             let data = try! JSONSerialization.jsonObject(with: data!, options: .allowFragments)
