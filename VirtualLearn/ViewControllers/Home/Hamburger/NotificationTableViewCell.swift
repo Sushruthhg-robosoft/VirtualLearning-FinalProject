@@ -13,6 +13,7 @@ class NotificationTableViewCell: UITableViewCell {
     @IBOutlet weak var notification: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var seenView: UIView!
+    @IBOutlet weak var backGroundView: UIView!
     
     var isSeen: Bool = false
     override func awakeFromNib() {

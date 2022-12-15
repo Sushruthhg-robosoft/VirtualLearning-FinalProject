@@ -342,7 +342,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNf-1k-b6a">
                                 <rect key="frame" x="24" y="72" width="200" height="33"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="5XL-5c-dbX"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="5XL-5c-dbX"/>
                                     <constraint firstAttribute="height" constant="33" id="a7Z-fb-fG0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
@@ -421,6 +421,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="backGroundView" destination="Zsk-K6-MA2" id="U6a-Cx-rFr"/>
                                             <outlet property="notification" destination="msh-Yn-xb0" id="KKY-w8-2Up"/>
                                             <outlet property="notificationImage" destination="Ol7-Qv-igK" id="h19-EI-lAg"/>
                                             <outlet property="seenView" destination="1Y4-vq-NWX" id="2fx-qT-rhU"/>
@@ -434,6 +435,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="mNf-1k-b6a" firstAttribute="top" secondItem="vRy-9v-JJf" secondAttribute="top" constant="72" id="Exg-yZ-PCA"/>
+                            <constraint firstItem="vRy-9v-JJf" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mNf-1k-b6a" secondAttribute="trailing" symbolic="YES" id="NCH-uC-cY0"/>
                             <constraint firstItem="PUV-Iq-Isz" firstAttribute="bottom" secondItem="vRy-9v-JJf" secondAttribute="bottom" id="PDP-8U-bmM"/>
                             <constraint firstItem="PUV-Iq-Isz" firstAttribute="trailing" secondItem="vRy-9v-JJf" secondAttribute="trailing" id="UJv-xF-AtE"/>
                             <constraint firstItem="G5g-Ed-9Tf" firstAttribute="top" secondItem="vRy-9v-JJf" secondAttribute="top" constant="30" id="Vol-H9-tS7"/>
@@ -2636,320 +2638,6 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="bhZ-8G-chq">
-                                                <rect key="frame" x="8.5" y="228.5" width="358" height="88"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zH8-Xh-2Nz" customClass="customCategoryView" customModule="VirtualLearn" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="110.5" height="88"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bha-bh-naK">
-                                                                <rect key="frame" x="0.0" y="2" width="110.5" height="52"/>
-                                                                <state key="normal" image="icn_categories_design"/>
-                                                            </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Design" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8a-d8-c4w">
-                                                                <rect key="frame" x="35.5" y="65.5" width="39.5" height="14.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstItem="bha-bh-naK" firstAttribute="top" secondItem="zH8-Xh-2Nz" secondAttribute="top" constant="2" id="Cg9-LC-V6u"/>
-                                                            <constraint firstAttribute="bottom" secondItem="bha-bh-naK" secondAttribute="bottom" constant="34" id="MOQ-lc-ff6"/>
-                                                            <constraint firstAttribute="trailing" secondItem="bha-bh-naK" secondAttribute="trailing" id="NFB-Lk-J0P"/>
-                                                            <constraint firstItem="bha-bh-naK" firstAttribute="leading" secondItem="zH8-Xh-2Nz" secondAttribute="leading" id="Nbw-Jw-msW"/>
-                                                            <constraint firstAttribute="width" constant="110.67" id="Vx5-Rw-F1X"/>
-                                                            <constraint firstItem="Q8a-d8-c4w" firstAttribute="centerX" secondItem="zH8-Xh-2Nz" secondAttribute="centerX" id="bFe-1t-C3h"/>
-                                                            <constraint firstAttribute="bottom" secondItem="Q8a-d8-c4w" secondAttribute="bottom" constant="8" id="gfZ-DD-2Pa"/>
-                                                            <constraint firstAttribute="height" constant="88" id="lKh-cd-Rpu"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oVU-3g-XCt" customClass="customCategoryView" customModule="VirtualLearn" customModuleProvider="target">
-                                                        <rect key="frame" x="123.5" y="0.0" width="111" height="88"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNN-7c-YNa">
-                                                                <rect key="frame" x="0.0" y="2" width="111" height="52"/>
-                                                                <state key="normal" image="icn_categories_developer"/>
-                                                            </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iiQ-MF-M7s">
-                                                                <rect key="frame" x="27" y="65.5" width="57.5" height="14.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="110.67" id="E5Z-D2-Wfd"/>
-                                                            <constraint firstAttribute="bottom" secondItem="PNN-7c-YNa" secondAttribute="bottom" constant="34" id="OPo-nf-myM"/>
-                                                            <constraint firstAttribute="height" constant="88" id="Ocw-a3-8fa"/>
-                                                            <constraint firstItem="PNN-7c-YNa" firstAttribute="top" secondItem="oVU-3g-XCt" secondAttribute="top" constant="2" id="OlS-yt-vhh"/>
-                                                            <constraint firstItem="iiQ-MF-M7s" firstAttribute="centerX" secondItem="oVU-3g-XCt" secondAttribute="centerX" id="UBH-O4-cfA"/>
-                                                            <constraint firstItem="PNN-7c-YNa" firstAttribute="leading" secondItem="oVU-3g-XCt" secondAttribute="leading" id="Xm2-ov-qM1"/>
-                                                            <constraint firstAttribute="trailing" secondItem="PNN-7c-YNa" secondAttribute="trailing" id="cfN-11-lS8"/>
-                                                            <constraint firstAttribute="bottom" secondItem="iiQ-MF-M7s" secondAttribute="bottom" constant="8" id="vJ5-tm-a2Z"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cy7-gX-Tk9" customClass="customCategoryView" customModule="VirtualLearn" customModuleProvider="target">
-                                                        <rect key="frame" x="247.5" y="0.0" width="110.5" height="88"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YjB-DU-zWG">
-                                                                <rect key="frame" x="0.0" y="2" width="110.5" height="52"/>
-                                                                <state key="normal" image="icn_categories_business"/>
-                                                            </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAP-Wd-jUq">
-                                                                <rect key="frame" x="30" y="65.5" width="50.5" height="14.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstItem="YjB-DU-zWG" firstAttribute="top" secondItem="Cy7-gX-Tk9" secondAttribute="top" constant="2" id="9nA-wf-EXW"/>
-                                                            <constraint firstItem="YjB-DU-zWG" firstAttribute="leading" secondItem="Cy7-gX-Tk9" secondAttribute="leading" id="A3M-yo-JoP"/>
-                                                            <constraint firstAttribute="height" constant="88" id="AJo-fz-ZJ7"/>
-                                                            <constraint firstAttribute="width" constant="110.67" id="ehd-U3-Gf1"/>
-                                                            <constraint firstAttribute="bottom" secondItem="YjB-DU-zWG" secondAttribute="bottom" constant="34" id="s4o-xz-bKg"/>
-                                                            <constraint firstAttribute="trailing" secondItem="YjB-DU-zWG" secondAttribute="trailing" id="t95-3D-kde"/>
-                                                            <constraint firstAttribute="bottom" secondItem="wAP-Wd-jUq" secondAttribute="bottom" constant="8" id="wde-Nt-X8K"/>
-                                                            <constraint firstItem="wAP-Wd-jUq" firstAttribute="centerX" secondItem="Cy7-gX-Tk9" secondAttribute="centerX" id="zdc-sJ-QmN"/>
-                                                        </constraints>
-                                                    </view>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="fyC-rb-gi8">
-                                                <rect key="frame" x="8.5" y="330.5" width="358" height="88"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yWj-de-o35" customClass="customCategoryView" customModule="VirtualLearn" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="110.5" height="88"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vb9-aj-1pm">
-                                                                <rect key="frame" x="0.0" y="2" width="110.5" height="52"/>
-                                                                <state key="normal" image="icn_categories_marketing"/>
-                                                            </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marketing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="km5-Rd-bRM">
-                                                                <rect key="frame" x="27" y="65.5" width="56.5" height="14.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="bottom" secondItem="Vb9-aj-1pm" secondAttribute="bottom" constant="34" id="2pg-Da-EMz"/>
-                                                            <constraint firstAttribute="width" constant="110.67" id="3Zs-Gn-gDp"/>
-                                                            <constraint firstItem="km5-Rd-bRM" firstAttribute="centerX" secondItem="yWj-de-o35" secondAttribute="centerX" id="70V-6e-YgB"/>
-                                                            <constraint firstItem="Vb9-aj-1pm" firstAttribute="top" secondItem="yWj-de-o35" secondAttribute="top" constant="2" id="EdM-o3-PIs"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Vb9-aj-1pm" secondAttribute="trailing" id="IeO-PD-eg8"/>
-                                                            <constraint firstItem="Vb9-aj-1pm" firstAttribute="leading" secondItem="yWj-de-o35" secondAttribute="leading" id="ZFN-1f-vGz"/>
-                                                            <constraint firstAttribute="height" constant="88" id="dP9-pj-Pwp"/>
-                                                            <constraint firstAttribute="bottom" secondItem="km5-Rd-bRM" secondAttribute="bottom" constant="8" id="tSj-QC-pje"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="60k-cM-Yba" customClass="customCategoryView" customModule="VirtualLearn" customModuleProvider="target">
-                                                        <rect key="frame" x="123.5" y="0.0" width="111" height="88"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrs-v4-rT0">
-                                                                <rect key="frame" x="0.0" y="2" width="111" height="52"/>
-                                                                <state key="normal" image="icn_categories_photography"/>
-                                                            </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photography" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HVA-fE-m1A">
-                                                                <rect key="frame" x="19.5" y="65.5" width="72.5" height="14.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstItem="mrs-v4-rT0" firstAttribute="top" secondItem="60k-cM-Yba" secondAttribute="top" constant="2" id="4el-oO-L5n"/>
-                                                            <constraint firstAttribute="width" constant="110.67" id="XAK-cp-uh9"/>
-                                                            <constraint firstItem="mrs-v4-rT0" firstAttribute="leading" secondItem="60k-cM-Yba" secondAttribute="leading" id="YlM-ot-3KN"/>
-                                                            <constraint firstAttribute="trailing" secondItem="mrs-v4-rT0" secondAttribute="trailing" id="duk-hJ-f02"/>
-                                                            <constraint firstAttribute="bottom" secondItem="HVA-fE-m1A" secondAttribute="bottom" constant="8" id="eFu-1w-7ZN"/>
-                                                            <constraint firstAttribute="bottom" secondItem="mrs-v4-rT0" secondAttribute="bottom" constant="34" id="eTH-so-lBk"/>
-                                                            <constraint firstAttribute="height" constant="88" id="fcG-Ka-213"/>
-                                                            <constraint firstItem="HVA-fE-m1A" firstAttribute="centerX" secondItem="60k-cM-Yba" secondAttribute="centerX" id="wyg-Cd-CVx"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="91z-Ry-Fyw" customClass="customCategoryView" customModule="VirtualLearn" customModuleProvider="target">
-                                                        <rect key="frame" x="247.5" y="0.0" width="110.5" height="88"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBD-hn-4xR">
-                                                                <rect key="frame" x="0.0" y="2" width="110.5" height="52"/>
-                                                                <state key="normal" image="icn_categories_finance"/>
-                                                            </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1F-Bz-ERp">
-                                                                <rect key="frame" x="33" y="65.5" width="44.5" height="14.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstItem="bBD-hn-4xR" firstAttribute="top" secondItem="91z-Ry-Fyw" secondAttribute="top" constant="2" id="7n6-T6-TOa"/>
-                                                            <constraint firstItem="bBD-hn-4xR" firstAttribute="leading" secondItem="91z-Ry-Fyw" secondAttribute="leading" id="BeJ-cW-EAM"/>
-                                                            <constraint firstAttribute="bottom" secondItem="T1F-Bz-ERp" secondAttribute="bottom" constant="8" id="KtW-Uw-81b"/>
-                                                            <constraint firstAttribute="bottom" secondItem="bBD-hn-4xR" secondAttribute="bottom" constant="34" id="Pfw-eG-Hxm"/>
-                                                            <constraint firstAttribute="width" constant="110.67" id="Y4H-Hj-0yA"/>
-                                                            <constraint firstAttribute="height" constant="88" id="inO-fI-rLy"/>
-                                                            <constraint firstItem="T1F-Bz-ERp" firstAttribute="centerX" secondItem="91z-Ry-Fyw" secondAttribute="centerX" id="lb4-j3-EhU"/>
-                                                            <constraint firstAttribute="trailing" secondItem="bBD-hn-4xR" secondAttribute="trailing" id="n6I-n5-1ZV"/>
-                                                        </constraints>
-                                                    </view>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="CP4-Da-J5E">
-                                                <rect key="frame" x="8.5" y="432.5" width="358" height="88"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="srj-ky-r7g" customClass="customCategoryView" customModule="VirtualLearn" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="110.5" height="88"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PMW-MN-vv6">
-                                                                <rect key="frame" x="0.0" y="2" width="110.5" height="52"/>
-                                                                <state key="normal" image="icn_categories_IT"/>
-                                                            </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IT &amp; Software" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pru-kI-6Oo">
-                                                                <rect key="frame" x="17" y="65.5" width="77" height="14.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstItem="pru-kI-6Oo" firstAttribute="centerX" secondItem="srj-ky-r7g" secondAttribute="centerX" id="AON-8Q-esI"/>
-                                                            <constraint firstItem="PMW-MN-vv6" firstAttribute="leading" secondItem="srj-ky-r7g" secondAttribute="leading" id="Bnm-ib-P8h"/>
-                                                            <constraint firstAttribute="trailing" secondItem="PMW-MN-vv6" secondAttribute="trailing" id="CkW-xk-51J"/>
-                                                            <constraint firstItem="PMW-MN-vv6" firstAttribute="top" secondItem="srj-ky-r7g" secondAttribute="top" constant="2" id="EZr-Ks-4zI"/>
-                                                            <constraint firstAttribute="width" constant="110.67" id="KU9-5p-Vdi"/>
-                                                            <constraint firstAttribute="bottom" secondItem="PMW-MN-vv6" secondAttribute="bottom" constant="34" id="vxX-JO-sol"/>
-                                                            <constraint firstAttribute="bottom" secondItem="pru-kI-6Oo" secondAttribute="bottom" constant="8" id="yab-Rt-5at"/>
-                                                            <constraint firstAttribute="height" constant="88" id="z0O-Jx-p4M"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gAX-cU-VPv" customClass="customCategoryView" customModule="VirtualLearn" customModuleProvider="target">
-                                                        <rect key="frame" x="123.5" y="0.0" width="111" height="88"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dj5-Dv-WCB">
-                                                                <rect key="frame" x="0.0" y="2" width="111" height="52"/>
-                                                                <state key="normal" image="icn_categories_lifestyle"/>
-                                                            </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lifestyle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSx-pH-sNv">
-                                                                <rect key="frame" x="31.5" y="65.5" width="48" height="14.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstItem="bSx-pH-sNv" firstAttribute="centerX" secondItem="gAX-cU-VPv" secondAttribute="centerX" id="F4P-4p-c0o"/>
-                                                            <constraint firstItem="dj5-Dv-WCB" firstAttribute="top" secondItem="gAX-cU-VPv" secondAttribute="top" constant="2" id="OtJ-uf-Uat"/>
-                                                            <constraint firstAttribute="trailing" secondItem="dj5-Dv-WCB" secondAttribute="trailing" id="P8E-vT-hmJ"/>
-                                                            <constraint firstItem="dj5-Dv-WCB" firstAttribute="leading" secondItem="gAX-cU-VPv" secondAttribute="leading" id="PDk-wQ-4wa"/>
-                                                            <constraint firstAttribute="bottom" secondItem="dj5-Dv-WCB" secondAttribute="bottom" constant="34" id="PV1-8E-kYg"/>
-                                                            <constraint firstAttribute="width" constant="110.67" id="doB-Xd-8zw"/>
-                                                            <constraint firstAttribute="height" constant="88" id="gJ5-4E-1pf"/>
-                                                            <constraint firstAttribute="bottom" secondItem="bSx-pH-sNv" secondAttribute="bottom" constant="8" id="qed-ns-nqF"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oBX-TF-QzG" customClass="customCategoryView" customModule="VirtualLearn" customModuleProvider="target">
-                                                        <rect key="frame" x="247.5" y="0.0" width="110.5" height="88"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZBh-gn-NHO">
-                                                                <rect key="frame" x="0.0" y="2" width="110.5" height="52"/>
-                                                                <state key="normal" image="icn_categories_music"/>
-                                                            </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vyy-xm-SzC">
-                                                                <rect key="frame" x="38.5" y="65.5" width="33.5" height="14.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="bottom" secondItem="ZBh-gn-NHO" secondAttribute="bottom" constant="34" id="7cq-T1-NvZ"/>
-                                                            <constraint firstAttribute="trailing" secondItem="ZBh-gn-NHO" secondAttribute="trailing" id="U5M-s3-N2f"/>
-                                                            <constraint firstItem="Vyy-xm-SzC" firstAttribute="centerX" secondItem="oBX-TF-QzG" secondAttribute="centerX" id="chW-XS-769"/>
-                                                            <constraint firstItem="ZBh-gn-NHO" firstAttribute="top" secondItem="oBX-TF-QzG" secondAttribute="top" constant="2" id="cyM-g6-Tt6"/>
-                                                            <constraint firstAttribute="bottom" secondItem="Vyy-xm-SzC" secondAttribute="bottom" constant="8" id="lYd-ae-JIe"/>
-                                                            <constraint firstAttribute="height" constant="88" id="osQ-Kh-mVf"/>
-                                                            <constraint firstAttribute="width" constant="110.67" id="sJT-W9-qfW"/>
-                                                            <constraint firstItem="ZBh-gn-NHO" firstAttribute="leading" secondItem="oBX-TF-QzG" secondAttribute="leading" id="xzc-it-xRw"/>
-                                                        </constraints>
-                                                    </view>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="x9B-Wb-yDr">
-                                                <rect key="frame" x="8.5" y="528" width="358" height="88"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jy9-WK-sZe" customClass="customCategoryView" customModule="VirtualLearn" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="110.5" height="88"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34I-l9-Siw">
-                                                                <rect key="frame" x="0.0" y="2" width="110.5" height="52"/>
-                                                                <state key="normal" image="icn_categories_teaching"/>
-                                                            </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teaching" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Sm-8b-GcH">
-                                                                <rect key="frame" x="30" y="65.5" width="51" height="14.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="34I-l9-Siw" secondAttribute="trailing" id="0vI-14-p1i"/>
-                                                            <constraint firstAttribute="bottom" secondItem="3Sm-8b-GcH" secondAttribute="bottom" constant="8" id="E22-e5-fDU"/>
-                                                            <constraint firstAttribute="height" constant="88" id="KBx-IF-JcW"/>
-                                                            <constraint firstItem="3Sm-8b-GcH" firstAttribute="centerX" secondItem="Jy9-WK-sZe" secondAttribute="centerX" id="P4n-Bx-NiT"/>
-                                                            <constraint firstItem="34I-l9-Siw" firstAttribute="top" secondItem="Jy9-WK-sZe" secondAttribute="top" constant="2" id="Yny-4I-gyN"/>
-                                                            <constraint firstAttribute="width" constant="110.67" id="iUA-Vz-TSe"/>
-                                                            <constraint firstAttribute="bottom" secondItem="34I-l9-Siw" secondAttribute="bottom" constant="34" id="piN-rK-N0B"/>
-                                                            <constraint firstItem="34I-l9-Siw" firstAttribute="leading" secondItem="Jy9-WK-sZe" secondAttribute="leading" id="rIk-LA-X7x"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gqH-e2-jLq" customClass="customCategoryView" customModule="VirtualLearn" customModuleProvider="target">
-                                                        <rect key="frame" x="123.5" y="0.0" width="111" height="88"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSx-Yo-XSr">
-                                                                <rect key="frame" x="0.0" y="2" width="111" height="52"/>
-                                                                <state key="normal" image="icn_categories_fitness"/>
-                                                            </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Health &amp; Fitness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vw7-NB-O1R">
-                                                                <rect key="frame" x="9" y="65.5" width="93" height="14.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="bottom" secondItem="QSx-Yo-XSr" secondAttribute="bottom" constant="34" id="0km-5O-ITX"/>
-                                                            <constraint firstAttribute="bottom" secondItem="Vw7-NB-O1R" secondAttribute="bottom" constant="8" id="5n0-AE-5Fm"/>
-                                                            <constraint firstItem="QSx-Yo-XSr" firstAttribute="leading" secondItem="gqH-e2-jLq" secondAttribute="leading" id="6Qa-LX-ZKb"/>
-                                                            <constraint firstAttribute="width" constant="110.67" id="8QG-yP-e8L"/>
-                                                            <constraint firstItem="Vw7-NB-O1R" firstAttribute="centerX" secondItem="gqH-e2-jLq" secondAttribute="centerX" id="KB5-Ut-5Wd"/>
-                                                            <constraint firstItem="QSx-Yo-XSr" firstAttribute="top" secondItem="gqH-e2-jLq" secondAttribute="top" constant="2" id="ZUR-ye-zRz"/>
-                                                            <constraint firstAttribute="height" constant="88" id="gjE-xi-z0N"/>
-                                                            <constraint firstAttribute="trailing" secondItem="QSx-Yo-XSr" secondAttribute="trailing" id="sxd-7d-7I1"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S0o-po-cfr">
-                                                        <rect key="frame" x="247.5" y="0.0" width="110.5" height="88"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="110.67" id="Bet-s1-A5Q"/>
-                                                            <constraint firstAttribute="height" constant="88" id="hDr-Wp-u6h"/>
-                                                        </constraints>
-                                                    </view>
-                                                </subviews>
-                                            </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose a topic on which you want to start a course." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEq-Zh-Qfb">
                                                 <rect key="frame" x="24" y="157.5" width="327" height="41"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -2967,25 +2655,85 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                 <rect key="frame" x="333" y="74" width="18" height="22"/>
                                                 <state key="normal" image="icn_search-Search"/>
                                             </button>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Faw-cN-05F">
+                                                <rect key="frame" x="29" y="228.5" width="317" height="421.5"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="317" id="hZ7-pA-ChI"/>
+                                                </constraints>
+                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mTv-WI-EpY">
+                                                    <size key="itemSize" width="110.5" height="88"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="item" id="fWv-gK-Jik" customClass="CategoryCollectionViewCell" customModule="VirtualLearn" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="110.5" height="88"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ITw-i7-Pj9">
+                                                            <rect key="frame" x="0.0" y="0.0" width="110.5" height="88"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cy7-gX-Tk9" customClass="customCategoryView" customModule="VirtualLearn" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="110.5" height="88"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAP-Wd-jUq">
+                                                                            <rect key="frame" x="1" y="62" width="108.5" height="12"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_categories_business" translatesAutoresizingMaskIntoConstraints="NO" id="eNK-mH-4eo">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="110.5" height="52"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="height" constant="52" id="bpR-qR-nmn"/>
+                                                                                <constraint firstAttribute="width" constant="110.5" id="ogo-sm-cbN"/>
+                                                                            </constraints>
+                                                                        </imageView>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="trailing" secondItem="eNK-mH-4eo" secondAttribute="trailing" id="7nV-TW-74B"/>
+                                                                        <constraint firstAttribute="height" constant="88" id="AJo-fz-ZJ7"/>
+                                                                        <constraint firstItem="eNK-mH-4eo" firstAttribute="leading" secondItem="Cy7-gX-Tk9" secondAttribute="leading" id="Bwr-HN-PM3"/>
+                                                                        <constraint firstItem="wAP-Wd-jUq" firstAttribute="top" secondItem="eNK-mH-4eo" secondAttribute="bottom" constant="10" id="TbG-f0-oSF"/>
+                                                                        <constraint firstAttribute="width" constant="110.67" id="ehd-U3-Gf1"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="wAP-Wd-jUq" secondAttribute="trailing" constant="1" id="wN4-xY-zLu"/>
+                                                                        <constraint firstItem="eNK-mH-4eo" firstAttribute="top" secondItem="Cy7-gX-Tk9" secondAttribute="top" id="yPb-88-Ue2"/>
+                                                                        <constraint firstItem="wAP-Wd-jUq" firstAttribute="leading" secondItem="Cy7-gX-Tk9" secondAttribute="leading" constant="1" id="yVm-cO-yZw"/>
+                                                                    </constraints>
+                                                                </view>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="Cy7-gX-Tk9" secondAttribute="trailing" id="1Tr-Kc-ccC"/>
+                                                                <constraint firstItem="Cy7-gX-Tk9" firstAttribute="leading" secondItem="ITw-i7-Pj9" secondAttribute="leading" id="5GX-fq-pGi"/>
+                                                                <constraint firstAttribute="bottom" secondItem="Cy7-gX-Tk9" secondAttribute="bottom" id="LbY-tY-n4E"/>
+                                                                <constraint firstItem="Cy7-gX-Tk9" firstAttribute="top" secondItem="ITw-i7-Pj9" secondAttribute="top" id="VnW-QH-5qb"/>
+                                                            </constraints>
+                                                        </collectionViewCellContentView>
+                                                        <size key="customSize" width="110.5" height="88"/>
+                                                        <connections>
+                                                            <outlet property="courseImage" destination="eNK-mH-4eo" id="49i-UM-wmt"/>
+                                                            <outlet property="courseName" destination="wAP-Wd-jUq" id="KLL-QF-0YR"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                </cells>
+                                            </collectionView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="hTI-NA-L4D" firstAttribute="leading" secondItem="upb-Vi-nA9" secondAttribute="leading" constant="24" id="0Ch-vZ-zLa"/>
-                                            <constraint firstItem="fyC-rb-gi8" firstAttribute="centerX" secondItem="upb-Vi-nA9" secondAttribute="centerX" id="5Y0-p9-qWa"/>
                                             <constraint firstAttribute="height" constant="700" id="AI6-CI-18m"/>
-                                            <constraint firstItem="CP4-Da-J5E" firstAttribute="top" secondItem="fyC-rb-gi8" secondAttribute="bottom" constant="14" id="ECB-7f-chW"/>
-                                            <constraint firstItem="bhZ-8G-chq" firstAttribute="centerX" secondItem="upb-Vi-nA9" secondAttribute="centerX" id="EVk-CB-zD1"/>
-                                            <constraint firstItem="fyC-rb-gi8" firstAttribute="top" secondItem="bhZ-8G-chq" secondAttribute="bottom" constant="14" id="G1t-Hm-wbo"/>
-                                            <constraint firstItem="CP4-Da-J5E" firstAttribute="centerX" secondItem="upb-Vi-nA9" secondAttribute="centerX" id="Npy-OO-sEA"/>
                                             <constraint firstItem="xEq-Zh-Qfb" firstAttribute="top" secondItem="lKT-7b-8lQ" secondAttribute="bottom" constant="10" id="Q1s-j2-2OJ"/>
+                                            <constraint firstItem="Faw-cN-05F" firstAttribute="centerX" secondItem="upb-Vi-nA9" secondAttribute="centerX" id="SW8-8M-p6G"/>
+                                            <constraint firstAttribute="bottom" secondItem="Faw-cN-05F" secondAttribute="bottom" constant="50" id="Twx-mQ-Ads"/>
                                             <constraint firstItem="lKT-7b-8lQ" firstAttribute="top" secondItem="hTI-NA-L4D" secondAttribute="bottom" constant="20" id="Xen-yg-413"/>
                                             <constraint firstAttribute="trailing" secondItem="xEq-Zh-Qfb" secondAttribute="trailing" constant="24" id="afB-8x-PT1"/>
                                             <constraint firstItem="xEq-Zh-Qfb" firstAttribute="leading" secondItem="upb-Vi-nA9" secondAttribute="leading" constant="24" id="bNi-eD-ibZ"/>
-                                            <constraint firstItem="x9B-Wb-yDr" firstAttribute="centerX" secondItem="upb-Vi-nA9" secondAttribute="centerX" id="cEP-bn-tq5"/>
                                             <constraint firstItem="IAu-cQ-dgD" firstAttribute="top" secondItem="upb-Vi-nA9" secondAttribute="top" constant="74" id="feS-Sc-sA0"/>
                                             <constraint firstItem="hTI-NA-L4D" firstAttribute="top" secondItem="upb-Vi-nA9" secondAttribute="top" constant="74" id="kxk-6B-1mx"/>
-                                            <constraint firstItem="x9B-Wb-yDr" firstAttribute="top" secondItem="CP4-Da-J5E" secondAttribute="bottom" constant="7.5" id="mBM-mB-7Rg"/>
-                                            <constraint firstItem="bhZ-8G-chq" firstAttribute="top" secondItem="xEq-Zh-Qfb" secondAttribute="bottom" constant="30" id="nL0-Wt-w6l"/>
+                                            <constraint firstItem="Faw-cN-05F" firstAttribute="top" secondItem="xEq-Zh-Qfb" secondAttribute="bottom" constant="30" id="t0b-Xu-DqF"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lKT-7b-8lQ" secondAttribute="trailing" constant="20" symbolic="YES" id="ttM-9X-ZDp"/>
                                             <constraint firstItem="lKT-7b-8lQ" firstAttribute="leading" secondItem="upb-Vi-nA9" secondAttribute="leading" constant="24" id="vqJ-O0-yXa"/>
                                             <constraint firstAttribute="trailing" secondItem="IAu-cQ-dgD" secondAttribute="trailing" constant="24" id="xWW-1L-nr9"/>
@@ -3012,10 +2760,13 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                             <constraint firstItem="jQM-bu-JoJ" firstAttribute="top" secondItem="4cO-NL-Dyf" secondAttribute="top" id="vYO-5O-Mt6"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="Faw-cN-05F" id="pfX-Qg-L66"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ck1-Vf-gVZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2129" y="1530"/>
+            <point key="canvasLocation" x="2036" y="1549"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="IlK-0w-EfO">
@@ -5394,6 +5145,9 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                         <state key="normal" title="Login">
                                                             <color key="titleColor" red="0.93333333330000001" green="0.36078431370000003" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="loginButton:" destination="pWI-a2-OKe" eventType="touchUpInside" id="QOh-W2-aMp"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -6138,10 +5892,10 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lY8-Lc-pgM">
-                                                <rect key="frame" x="22" y="357" width="327" height="2"/>
-                                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                <rect key="frame" x="22" y="357" width="327" height="0.5"/>
+                                                <color key="backgroundColor" red="0.47843137254901957" green="0.47843137254901957" blue="0.47843137254901957" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="2" id="hu5-B7-Rr5"/>
+                                                    <constraint firstAttribute="height" constant="0.5" id="hu5-B7-Rr5"/>
                                                 </constraints>
                                             </view>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q4H-PI-icA" customClass="borderlessTextField" customModule="VirtualLearn" customModuleProvider="target">
@@ -6156,13 +5910,13 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPu-VC-Qvr">
-                                                <rect key="frame" x="22" y="400" width="70" height="19.5"/>
+                                                <rect key="frame" x="22" y="398.5" width="70" height="19.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IOP-Ct-WNK" customClass="borderlessTextField" customModule="VirtualLearn" customModuleProvider="target">
-                                                <rect key="frame" x="22" y="430.5" width="289" height="20"/>
+                                                <rect key="frame" x="22" y="429" width="289" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="Pof-9w-6np"/>
                                                 </constraints>
@@ -6172,15 +5926,8 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                     <action selector="passwordTextChangeOutlet:" destination="Cr0-fg-m9I" eventType="editingChanged" id="dky-7b-2cJ"/>
                                                 </connections>
                                             </textField>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xoj-CF-Dcy">
-                                                <rect key="frame" x="22" y="459.5" width="327" height="1"/>
-                                                <color key="backgroundColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="1" id="czm-sT-ap9"/>
-                                                </constraints>
-                                            </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kob-wE-0Ko">
-                                                <rect key="frame" x="222" y="484.5" width="132" height="17"/>
+                                                <rect key="frame" x="222" y="482.5" width="132" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="17" id="in1-pk-eIw"/>
                                                 </constraints>
@@ -6193,10 +5940,10 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmY-xu-mw1">
-                                                <rect key="frame" x="26" y="541.5" width="323" height="46"/>
+                                                <rect key="frame" x="26" y="539.5" width="323" height="46"/>
                                                 <color key="backgroundColor" red="0.93333333330000001" green="0.36078431370000003" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="323" id="1tM-e8-gIf"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="323" id="1tM-e8-gIf"/>
                                                     <constraint firstAttribute="height" constant="46" id="Xeg-iI-GGB"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="Zff-Vx-TQS"/>
                                                 </constraints>
@@ -6213,7 +5960,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="5lz-d6-3yN">
-                                                <rect key="frame" x="69" y="611.5" width="233" height="20"/>
+                                                <rect key="frame" x="69" y="609.5" width="233" height="20"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don’t have a account? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rno-Hq-isV">
                                                         <rect key="frame" x="0.0" y="0.0" width="170" height="20"/>
@@ -6232,6 +5979,9 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                         <state key="normal" title="Register">
                                                             <color key="titleColor" red="0.93333333330000001" green="0.36078431370000003" blue="0.30196078430000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="onClickRegister:" destination="Cr0-fg-m9I" eventType="touchUpInside" id="B6D-HH-yhe"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -6242,6 +5992,14 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                     <constraint firstAttribute="width" constant="20" id="bwE-m9-Nnl"/>
                                                 </constraints>
                                             </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qnJ-Ka-XRU">
+                                                <rect key="frame" x="22" y="458" width="327" height="0.5"/>
+                                                <color key="backgroundColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="0.5" id="T56-bv-6vG"/>
+                                                    <constraint firstAttribute="height" constant="0.5" id="yJ2-c5-xmP"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -6250,7 +6008,6 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                             <constraint firstItem="IOP-Ct-WNK" firstAttribute="top" secondItem="YPu-VC-Qvr" secondAttribute="bottom" constant="11" id="284-su-566"/>
                                             <constraint firstItem="g7Z-25-wxD" firstAttribute="top" secondItem="BHm-No-l1A" secondAttribute="bottom" constant="60" id="88x-82-Aux"/>
                                             <constraint firstItem="nhB-ZV-1Q0" firstAttribute="top" secondItem="4Rr-Em-eq3" secondAttribute="top" constant="70" id="Bt1-J6-1xj"/>
-                                            <constraint firstItem="xoj-CF-Dcy" firstAttribute="top" secondItem="IOP-Ct-WNK" secondAttribute="bottom" constant="9" id="EJE-xV-wR6"/>
                                             <constraint firstItem="lY8-Lc-pgM" firstAttribute="top" secondItem="Q4H-PI-icA" secondAttribute="bottom" constant="9" id="G5f-ua-uri"/>
                                             <constraint firstItem="Q4H-PI-icA" firstAttribute="leading" secondItem="4Rr-Em-eq3" secondAttribute="leading" constant="22" id="GRK-Kn-44f"/>
                                             <constraint firstItem="kmY-xu-mw1" firstAttribute="centerX" secondItem="4Rr-Em-eq3" secondAttribute="centerX" id="GeL-WI-qvk"/>
@@ -6260,27 +6017,27 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                             <constraint firstAttribute="trailing" secondItem="Q4H-PI-icA" secondAttribute="trailing" constant="64" id="LPW-u4-Zwx"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="35Y-bA-Cho" secondAttribute="trailing" constant="20" symbolic="YES" id="MpG-eJ-HYc"/>
                                             <constraint firstItem="YPu-VC-Qvr" firstAttribute="leading" secondItem="4Rr-Em-eq3" secondAttribute="leading" constant="22" id="NVi-TB-i0p"/>
+                                            <constraint firstItem="qnJ-Ka-XRU" firstAttribute="leading" secondItem="4Rr-Em-eq3" secondAttribute="leading" constant="22" id="PsV-oo-Uwf"/>
                                             <constraint firstAttribute="trailing" secondItem="IOP-Ct-WNK" secondAttribute="trailing" constant="64" id="TT8-jC-hSd"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nhB-ZV-1Q0" secondAttribute="trailing" constant="20" symbolic="YES" id="Ta4-qC-E5S"/>
                                             <constraint firstItem="rut-34-fqc" firstAttribute="centerY" secondItem="Q4H-PI-icA" secondAttribute="centerY" id="UpA-jG-g83"/>
-                                            <constraint firstItem="xoj-CF-Dcy" firstAttribute="leading" secondItem="4Rr-Em-eq3" secondAttribute="leading" constant="22" id="YhB-nY-VeU"/>
                                             <constraint firstItem="lY8-Lc-pgM" firstAttribute="leading" secondItem="4Rr-Em-eq3" secondAttribute="leading" constant="22" id="ZnJ-Xf-W6p"/>
                                             <constraint firstItem="kob-wE-0Ko" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4Rr-Em-eq3" secondAttribute="leading" constant="20" symbolic="YES" id="ZqT-gv-Rbi"/>
+                                            <constraint firstItem="kob-wE-0Ko" firstAttribute="top" secondItem="qnJ-Ka-XRU" secondAttribute="bottom" constant="24" id="aiu-30-4dx"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YPu-VC-Qvr" secondAttribute="trailing" constant="20" symbolic="YES" id="bRB-He-Ajb"/>
                                             <constraint firstItem="35Y-bA-Cho" firstAttribute="leading" secondItem="4Rr-Em-eq3" secondAttribute="leading" constant="22" id="bha-yF-PcK"/>
                                             <constraint firstItem="YPu-VC-Qvr" firstAttribute="top" secondItem="lY8-Lc-pgM" secondAttribute="bottom" constant="41" id="crD-Qw-f1g"/>
                                             <constraint firstAttribute="trailing" secondItem="5lz-d6-3yN" secondAttribute="trailing" constant="73" id="crX-SV-ZSE"/>
                                             <constraint firstItem="BHm-No-l1A" firstAttribute="leading" secondItem="4Rr-Em-eq3" secondAttribute="leading" constant="22" id="dtW-ld-uk7"/>
                                             <constraint firstItem="35Y-bA-Cho" firstAttribute="top" secondItem="g7Z-25-wxD" secondAttribute="bottom" constant="44" id="g89-BU-6yg"/>
-                                            <constraint firstItem="kob-wE-0Ko" firstAttribute="top" secondItem="xoj-CF-Dcy" secondAttribute="bottom" constant="24" id="oCY-cI-kwM"/>
+                                            <constraint firstItem="qnJ-Ka-XRU" firstAttribute="top" secondItem="IOP-Ct-WNK" secondAttribute="bottom" constant="9" id="oDE-7v-Dmk"/>
                                             <constraint firstItem="Q4H-PI-icA" firstAttribute="top" secondItem="35Y-bA-Cho" secondAttribute="bottom" constant="11" id="pBs-25-CWZ"/>
-                                            <constraint firstAttribute="trailing" secondItem="xoj-CF-Dcy" secondAttribute="trailing" constant="26" id="pcA-b0-hLY"/>
                                             <constraint firstAttribute="trailing" secondItem="kob-wE-0Ko" secondAttribute="trailing" constant="21" id="qh5-Ff-o7E"/>
                                             <constraint firstAttribute="trailing" secondItem="rut-34-fqc" secondAttribute="trailing" constant="24" id="sSh-6m-B7l"/>
+                                            <constraint firstAttribute="trailing" secondItem="qnJ-Ka-XRU" secondAttribute="trailing" constant="26" id="vC6-xR-7z8"/>
                                             <constraint firstItem="5lz-d6-3yN" firstAttribute="top" secondItem="kmY-xu-mw1" secondAttribute="bottom" constant="24" id="wJn-EP-K03"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BHm-No-l1A" secondAttribute="trailing" symbolic="YES" id="wqg-GL-2UC"/>
                                             <constraint firstItem="nhB-ZV-1Q0" firstAttribute="leading" secondItem="4Rr-Em-eq3" secondAttribute="leading" constant="22" id="xXc-TL-Cg8"/>
-                                            <constraint firstItem="IOP-Ct-WNK" firstAttribute="leading" secondItem="xoj-CF-Dcy" secondAttribute="leading" id="yJX-pb-fDf"/>
                                             <constraint firstItem="5lz-d6-3yN" firstAttribute="leading" secondItem="4Rr-Em-eq3" secondAttribute="leading" constant="69" id="yL5-cp-7JW"/>
                                             <constraint firstItem="BHm-No-l1A" firstAttribute="top" secondItem="nhB-ZV-1Q0" secondAttribute="bottom" constant="10" id="zB3-Sp-JuP"/>
                                         </constraints>
@@ -6314,7 +6071,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                         <outlet property="invalidPopup" destination="vlW-sW-oBf" id="gpp-hG-K7A"/>
                         <outlet property="loginButton" destination="kmY-xu-mw1" id="3AD-p4-b5f"/>
                         <outlet property="passwordTextfield" destination="IOP-Ct-WNK" id="YcB-er-Xzw"/>
-                        <outlet property="passwordUnderLineView" destination="xoj-CF-Dcy" id="VNL-9t-GTh"/>
+                        <outlet property="passwordUnderLineView" destination="qnJ-Ka-XRU" id="yLF-xi-fDq"/>
                         <outlet property="userNameTextField" destination="Q4H-PI-icA" id="2yj-Ee-1J3"/>
                         <outlet property="userNameUnderLineView" destination="lY8-Lc-pgM" id="ffB-C8-JIw"/>
                         <outlet property="verifiedImg" destination="rut-34-fqc" id="OXP-0X-FGH"/>
@@ -7102,7 +6859,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+91" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Vi-vE-4vE">
-                                                <rect key="frame" x="24" y="254" width="28.5" height="20"/>
+                                                <rect key="frame" x="24" y="258.5" width="28.5" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="8dL-Yc-84v"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="hIX-CE-PbH"/>
@@ -7112,12 +6869,18 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your mobile number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SUv-I0-V8N" customClass="borderlessTextField" customModule="VirtualLearn" customModuleProvider="target">
-                                                <rect key="frame" x="70.5" y="247" width="195" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <rect key="frame" x="70.5" y="258.5" width="224.5" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="OjK-b4-YNO"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                                                <connections>
+                                                    <action selector="phoneNumberTextField:" destination="CF5-ZC-HfV" eventType="editingChanged" id="20D-ma-ljL"/>
+                                                </connections>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0dB-EJ-jgc">
-                                                <rect key="frame" x="24" y="284" width="327" height="1"/>
+                                                <rect key="frame" x="24" y="288.5" width="327" height="1"/>
                                                 <color key="backgroundColor" systemColor="systemPinkColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="HF0-kL-1wo"/>
@@ -7127,7 +6890,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2gl-pQ-srW">
-                                                <rect key="frame" x="24" y="338" width="327" height="46"/>
+                                                <rect key="frame" x="24" y="342.5" width="327" height="46"/>
                                                 <color key="backgroundColor" red="0.93333333330000001" green="0.36078431370000003" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="46" id="yKk-0s-hDv"/>
@@ -7146,7 +6909,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIy-kk-MvP">
-                                                <rect key="frame" x="24" y="223" width="114" height="16"/>
+                                                <rect key="frame" x="24" y="223" width="114" height="20.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="97" id="Iea-nF-Obg"/>
                                                 </constraints>
@@ -7155,7 +6918,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_textfield_right" translatesAutoresizingMaskIntoConstraints="NO" id="yqx-4M-zQu">
-                                                <rect key="frame" x="331" y="254" width="20" height="20"/>
+                                                <rect key="frame" x="331" y="258.5" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="A0M-q0-Bbu"/>
                                                     <constraint firstAttribute="width" constant="20" id="u1I-nk-x21"/>
@@ -7170,14 +6933,13 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                             <constraint firstItem="yqx-4M-zQu" firstAttribute="centerY" secondItem="SUv-I0-V8N" secondAttribute="centerY" id="79I-2T-K30"/>
                                             <constraint firstAttribute="trailing" secondItem="Q22-k5-i91" secondAttribute="trailing" constant="24" id="9WO-Yk-meM"/>
                                             <constraint firstItem="yyD-se-rsO" firstAttribute="top" secondItem="gXt-ml-d6P" secondAttribute="bottom" constant="20" id="BCW-o2-Nds"/>
+                                            <constraint firstItem="0Vi-vE-4vE" firstAttribute="top" secondItem="jIy-kk-MvP" secondAttribute="bottom" constant="15" id="COA-ln-jCa"/>
                                             <constraint firstAttribute="trailing" secondItem="yqx-4M-zQu" secondAttribute="trailing" constant="24" id="ED4-Xt-ykR"/>
-                                            <constraint firstItem="0Vi-vE-4vE" firstAttribute="top" secondItem="Q22-k5-i91" secondAttribute="bottom" constant="61" id="G0d-P7-3E3"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yyD-se-rsO" secondAttribute="trailing" constant="20" symbolic="YES" id="H8I-39-xtQ"/>
-                                            <constraint firstItem="SUv-I0-V8N" firstAttribute="top" secondItem="jIy-kk-MvP" secondAttribute="bottom" constant="8" id="Kgg-9Z-xoH"/>
+                                            <constraint firstItem="SUv-I0-V8N" firstAttribute="top" secondItem="jIy-kk-MvP" secondAttribute="bottom" constant="15" id="Kgg-9Z-xoH"/>
                                             <constraint firstItem="0dB-EJ-jgc" firstAttribute="leading" secondItem="d8P-jV-fc7" secondAttribute="leading" constant="24" id="LfS-wu-EIQ"/>
                                             <constraint firstItem="Q22-k5-i91" firstAttribute="leading" secondItem="d8P-jV-fc7" secondAttribute="leading" constant="24" id="OHz-pE-xdU"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gXt-ml-d6P" secondAttribute="trailing" constant="329" id="RzQ-cf-Krm"/>
-                                            <constraint firstItem="SUv-I0-V8N" firstAttribute="top" secondItem="Q22-k5-i91" secondAttribute="bottom" constant="54" id="ai5-cV-eG7"/>
                                             <constraint firstItem="jIy-kk-MvP" firstAttribute="top" secondItem="Q22-k5-i91" secondAttribute="bottom" constant="30" id="bVj-60-RKh"/>
                                             <constraint firstItem="SUv-I0-V8N" firstAttribute="leading" secondItem="0Vi-vE-4vE" secondAttribute="trailing" constant="18" id="dYy-PI-2bb"/>
                                             <constraint firstAttribute="trailing" secondItem="2gl-pQ-srW" secondAttribute="trailing" constant="24" id="dxG-1b-339"/>
@@ -7187,6 +6949,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                             <constraint firstAttribute="height" constant="710" id="qf0-xj-S0n"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jIy-kk-MvP" secondAttribute="trailing" constant="20" symbolic="YES" id="rsW-FV-QeI"/>
                                             <constraint firstItem="jIy-kk-MvP" firstAttribute="leading" secondItem="d8P-jV-fc7" secondAttribute="leading" constant="24" id="uwe-U3-NhQ"/>
+                                            <constraint firstItem="SUv-I0-V8N" firstAttribute="centerY" secondItem="0Vi-vE-4vE" secondAttribute="centerY" id="vUw-hY-mtK"/>
                                             <constraint firstItem="yyD-se-rsO" firstAttribute="leading" secondItem="d8P-jV-fc7" secondAttribute="leading" constant="24" id="w0b-t6-I5x"/>
                                             <constraint firstItem="0Vi-vE-4vE" firstAttribute="leading" secondItem="d8P-jV-fc7" secondAttribute="leading" constant="24" id="ws6-XF-u0x"/>
                                             <constraint firstItem="yqx-4M-zQu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="SUv-I0-V8N" secondAttribute="trailing" constant="8" symbolic="YES" id="xvW-c3-tRG"/>
@@ -7246,6 +7009,9 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                     </view>
                     <connections>
                         <outlet property="enteredMobileNumber" destination="SUv-I0-V8N" id="r0T-BO-r1J"/>
+                        <outlet property="errorView" destination="qEu-Fo-lAz" id="a0p-TA-FRb"/>
+                        <outlet property="phoneNumberUnderLineView" destination="0dB-EJ-jgc" id="Orx-gk-kzz"/>
+                        <outlet property="virificationIcon" destination="yqx-4M-zQu" id="mn0-p2-hw5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZjH-Gu-m81" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -7670,7 +7436,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                         <color key="textColor" red="0.47843137254901957" green="0.47843137254901957" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" misplaced="YES" text="+919876543211" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8I8-Hg-n9y">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="+919876543211" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8I8-Hg-n9y">
                                                         <rect key="frame" x="25" y="158.5" width="124" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.16862745098039217" green="0.70980392156862748" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
@@ -7692,8 +7458,8 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                             <action selector="fullnameTextEnd:" destination="o5Y-FY-a79" eventType="editingDidEnd" id="YGI-Xc-uTm"/>
                                                         </connections>
                                                     </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="759" text="User name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPy-J7-kDT">
-                                                        <rect key="frame" x="24" y="301.5" width="70" height="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="759" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPy-J7-kDT">
+                                                        <rect key="frame" x="24" y="301.5" width="66" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.47843137254901957" green="0.47843137254901957" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -7716,7 +7482,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                         <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="753" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User name" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="M1r-vq-iz7">
+                                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="753" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="M1r-vq-iz7">
                                                         <rect key="frame" x="24" y="331.5" width="327" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES"/>
@@ -7884,7 +7650,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                     <constraint firstItem="OAx-Ci-rFK" firstAttribute="leading" secondItem="Xvv-p9-Oka" secondAttribute="leading" constant="24" id="Lal-Nq-dSp"/>
                                                     <constraint firstItem="7a6-sS-X7u" firstAttribute="top" secondItem="2Gs-lt-YtT" secondAttribute="bottom" constant="10" id="LdQ-UL-INA"/>
                                                     <constraint firstItem="a6O-PQ-lyh" firstAttribute="top" secondItem="7a6-sS-X7u" secondAttribute="bottom" constant="81" id="NKU-Kv-TEU"/>
-                                                    <constraint firstItem="8I8-Hg-n9y" firstAttribute="leading" secondItem="Xvv-p9-Oka" secondAttribute="leading" constant="24" id="NLK-KY-erT"/>
+                                                    <constraint firstItem="8I8-Hg-n9y" firstAttribute="leading" secondItem="Xvv-p9-Oka" secondAttribute="leading" constant="25" id="NLK-KY-erT"/>
                                                     <constraint firstAttribute="trailing" secondItem="7ZB-IV-te7" secondAttribute="trailing" constant="24" id="PdT-Ra-03i"/>
                                                     <constraint firstItem="SrZ-L2-zGR" firstAttribute="top" secondItem="Vti-05-j60" secondAttribute="bottom" constant="10" id="PeW-Fj-4Gz"/>
                                                     <constraint firstItem="meJ-PJ-g3o" firstAttribute="leading" secondItem="Xvv-p9-Oka" secondAttribute="leading" constant="24" id="PoH-V3-CrC"/>

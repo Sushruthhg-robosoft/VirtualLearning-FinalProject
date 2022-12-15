@@ -12,7 +12,7 @@ class NotificationViewModel{
     let networkManeger = NetWorkManager()
     var notifications = [Notification]()
     
-    let token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdW1hbnRocHJhYmh1IiwiZXhwIjoxNjcxMDI3MDAxLCJpYXQiOjE2NzA5OTEwMDF9.eD99V-Mat-m3XbiIdt6y_Bm0IGTYYcVsNz2HXRcPomd4CeZwdmBlmlZxxl_gvyzSS6U34GYPIm8D4AxypeefSg"
+   // let token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdW1hbnRocHJhYmh1IiwiZXhwIjoxNjcxMDI3MDAxLCJpYXQiOjE2NzA5OTEwMDF9.eD99V-Mat-m3XbiIdt6y_Bm0IGTYYcVsNz2HXRcPomd4CeZwdmBlmlZxxl_gvyzSS6U34GYPIm8D4AxypeefSg"
     
     
     func getNotificationCount(completion: @escaping() -> Void, fail: @escaping () -> Void){
@@ -93,6 +93,29 @@ class NotificationViewModel{
     func fetchDataToNotificationCell(index:Int) -> Notification{
         
         return notifications[index]
+    }
+    
+    
+    func readNotification(notificationId: String, completion: @escaping(String) -> Void, fail: @escaping () -> Void){
+        
+        
+        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/notification?notificationId=\(notificationId)")!
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        networkManeger.fetchData(request: request){ data in
+            
+            print(data)
+            guard let status = data as? [String] else{return}
+            completion(status[0])
+            
+            
+            
+        } failure: {error in
+            print(error)
+        }
+        
     }
     
 }

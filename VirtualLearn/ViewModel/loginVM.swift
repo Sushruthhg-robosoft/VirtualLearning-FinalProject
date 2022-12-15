@@ -58,7 +58,7 @@ class LoginViewModel {
     
     func checkphoneNumberForExsistingUser(mobileNumber: String, completion: @escaping () ->Void, fail: @escaping() -> Void) {
         let network = NetWorkManager()
-        let url = URL(string:"https://app-virtuallearning-221207091853.azurewebsites.net/auth/register/check/userName")!
+        let url = URL(string:"https://app-virtuallearning-221207091853.azurewebsites.net/auth/check/phoneNumber")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue(mobileNumber, forHTTPHeaderField: "phoneNumber")
@@ -80,4 +80,30 @@ class LoginViewModel {
             }
         
     }
+    
+    func checkUserNameForExsistingUser(userName: String, completion: @escaping () ->Void, fail: @escaping() -> Void) {
+        let network = NetWorkManager()
+        let url = URL(string:"https://app-virtuallearning-221207091853.azurewebsites.net/auth/login/check/userName")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue(userName, forHTTPHeaderField: "userName")
+            network.fetchData(request: request as URLRequest) { result in
+                
+                guard let response = result as? [String] else {return}
+                
+                if(response[0] == "true")
+                {
+                    completion()
+                }
+                else
+                {
+                    fail()
+                }
+            } failure: { failResult in
+                print(failResult)
+                fail()
+            }
+        
+    }
+    
 }
