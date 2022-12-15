@@ -164,7 +164,7 @@ class PersonalDetailsViewController: UIViewController {
     @IBAction func RegistrationButtonClick(_ sender: Any) {
         
         let loader = self.loader()
-        let currentUser =  personalData.assignCurrentRegisterValue(fullName: fullNameTextField.text!, userName: userNameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!)
+        let currentUser =  personalData.assignCurrentRegisterValue(fullName: fullNameTextField.text!, userName: userNameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, mobileNumber: mobileNumber.text!)
          personalData.registeringUser(user: currentUser) { sucess in
              print("sucessfull")
             DispatchQueue.main.async {
