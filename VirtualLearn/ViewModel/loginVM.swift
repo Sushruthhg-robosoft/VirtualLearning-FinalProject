@@ -58,7 +58,7 @@ class LoginViewModel {
     
     func checkphoneNumberForExsistingUser(mobileNumber: String, completion: @escaping () ->Void, fail: @escaping() -> Void) {
         let network = NetWorkManager()
-        let url = URL(string:"https://app-virtuallearning-221207091853.azurewebsites.net/auth/register/check/userName")!
+        let url = URL(string:"https://app-virtuallearning-221207091853.azurewebsites.net/auth/check/phoneNumber")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue(mobileNumber, forHTTPHeaderField: "phoneNumber")
