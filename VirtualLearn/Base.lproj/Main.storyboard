@@ -7815,23 +7815,30 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QBA-10-vhg">
                                                 <rect key="frame" x="24" y="280.5" width="327" height="1"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U7G-DD-Jbq" userLabel="chaptersunderline">
+                                                        <rect key="frame" x="164" y="0.0" width="160" height="1"/>
+                                                        <color key="backgroundColor" red="0.93333333330000001" green="0.36078431370000003" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="rbX-0h-atO"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d1i-CN-0eo" userLabel="overviewunderline">
+                                                        <rect key="frame" x="0.0" y="0.0" width="168" height="1"/>
+                                                        <color key="backgroundColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="pOR-e5-IVd"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
                                                 <color key="backgroundColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                                                 <constraints>
+                                                    <constraint firstItem="d1i-CN-0eo" firstAttribute="top" secondItem="U7G-DD-Jbq" secondAttribute="bottom" constant="-1" id="B0p-O8-9ZH"/>
+                                                    <constraint firstItem="d1i-CN-0eo" firstAttribute="leading" secondItem="QBA-10-vhg" secondAttribute="leading" id="HFs-x1-I7O"/>
                                                     <constraint firstAttribute="height" constant="1" id="Hok-8Q-6I6"/>
-                                                </constraints>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d1i-CN-0eo" userLabel="overviewunderline">
-                                                <rect key="frame" x="23.5" y="280.5" width="159.5" height="1"/>
-                                                <color key="backgroundColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="1" id="pOR-e5-IVd"/>
-                                                </constraints>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U7G-DD-Jbq" userLabel="chaptersunderline">
-                                                <rect key="frame" x="192" y="280.5" width="154.5" height="1"/>
-                                                <color key="backgroundColor" red="0.93333333330000001" green="0.36078431370000003" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="1" id="rbX-0h-atO"/>
+                                                    <constraint firstItem="U7G-DD-Jbq" firstAttribute="top" secondItem="d1i-CN-0eo" secondAttribute="top" id="hfD-8a-1z7"/>
+                                                    <constraint firstItem="d1i-CN-0eo" firstAttribute="top" secondItem="U7G-DD-Jbq" secondAttribute="bottom" constant="-1" id="oC7-Fj-MPR"/>
+                                                    <constraint firstAttribute="trailing" secondItem="U7G-DD-Jbq" secondAttribute="trailing" constant="3" id="zWC-iF-KLJ"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nKk-Yn-KY8" customClass="CustomContinueChapterView" customModule="VirtualLearn" customModuleProvider="target">
@@ -7909,7 +7916,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Introduction" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KdC-kf-pLd">
                                                                             <rect key="frame" x="75" y="10" width="127" height="36"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="179" id="i1T-we-h8W"/>
+                                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="127" id="i1T-we-h8W"/>
                                                                                 <constraint firstAttribute="height" constant="36" id="qMc-we-88Z"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
@@ -8043,14 +8050,13 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                             <constraint firstAttribute="trailing" secondItem="97k-ge-eLi" secondAttribute="trailing" id="3i8-tb-8DF"/>
                                             <constraint firstAttribute="trailing" secondItem="nKk-Yn-KY8" secondAttribute="trailing" constant="24" id="5No-T6-pKV"/>
                                             <constraint firstItem="Chv-25-5C5" firstAttribute="leading" secondItem="YNn-04-TzE" secondAttribute="trailing" constant="12" id="75f-II-15U"/>
-                                            <constraint firstItem="QBA-10-vhg" firstAttribute="leading" secondItem="ZBS-Tf-qGu" secondAttribute="leading" constant="24" id="8AH-rQ-EYj"/>
                                             <constraint firstAttribute="height" constant="900" id="8LR-1u-fXX"/>
-                                            <constraint firstItem="U7G-DD-Jbq" firstAttribute="centerX" secondItem="VKp-tl-qyn" secondAttribute="centerX" id="9rk-al-Cuh"/>
                                             <constraint firstAttribute="trailing" secondItem="scn-zY-K9i" secondAttribute="trailing" constant="24" id="9xQ-ua-wxT"/>
+                                            <constraint firstItem="d1i-CN-0eo" firstAttribute="centerX" secondItem="9vI-2J-QnP" secondAttribute="centerX" constant="2.25" id="Bth-bA-o4X"/>
+                                            <constraint firstItem="QBA-10-vhg" firstAttribute="leading" secondItem="ZBS-Tf-qGu" secondAttribute="leading" constant="24" id="Gcc-tX-pWl"/>
                                             <constraint firstAttribute="trailing" secondItem="7fJ-uA-ljs" secondAttribute="trailing" constant="20" id="JPi-Dj-0aY"/>
                                             <constraint firstItem="7fJ-uA-ljs" firstAttribute="leading" secondItem="ZBS-Tf-qGu" secondAttribute="leading" constant="24" id="JRh-Ev-mii"/>
                                             <constraint firstItem="Chv-25-5C5" firstAttribute="top" secondItem="7fJ-uA-ljs" secondAttribute="bottom" constant="4" id="KQE-Gu-ZjL"/>
-                                            <constraint firstItem="d1i-CN-0eo" firstAttribute="width" secondItem="9vI-2J-QnP" secondAttribute="width" multiplier="0.945355" constant="5" id="NID-Mc-aHN"/>
                                             <constraint firstItem="b6O-M6-j0d" firstAttribute="leading" secondItem="ZBS-Tf-qGu" secondAttribute="leading" constant="24" id="O0S-fa-RJ2"/>
                                             <constraint firstItem="scn-zY-K9i" firstAttribute="top" secondItem="nKk-Yn-KY8" secondAttribute="bottom" constant="30" id="Qa4-41-sjn"/>
                                             <constraint firstAttribute="trailing" secondItem="C03-4d-vNx" secondAttribute="trailing" id="S3f-au-BeU"/>
@@ -8059,8 +8065,6 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                             <constraint firstItem="Bzz-aX-8pf" firstAttribute="top" secondItem="C03-4d-vNx" secondAttribute="bottom" constant="30" id="W3j-qg-5T9"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Chv-25-5C5" secondAttribute="trailing" constant="20" symbolic="YES" id="YTb-R1-Ukm"/>
                                             <constraint firstItem="iTM-07-o90" firstAttribute="leading" secondItem="ZBS-Tf-qGu" secondAttribute="leading" id="Z5a-Fe-CCc"/>
-                                            <constraint firstItem="U7G-DD-Jbq" firstAttribute="top" secondItem="Bzz-aX-8pf" secondAttribute="bottom" constant="8.5" id="ZCa-9E-dqU"/>
-                                            <constraint firstItem="d1i-CN-0eo" firstAttribute="top" secondItem="Bzz-aX-8pf" secondAttribute="bottom" constant="8.5" id="b8b-8d-SlV"/>
                                             <constraint firstItem="scn-zY-K9i" firstAttribute="leading" secondItem="ZBS-Tf-qGu" secondAttribute="leading" constant="24" id="cyy-UO-Upk"/>
                                             <constraint firstItem="YNn-04-TzE" firstAttribute="top" secondItem="7fJ-uA-ljs" secondAttribute="bottom" constant="4" id="ddI-SZ-Ip8"/>
                                             <constraint firstAttribute="trailing" secondItem="Bzz-aX-8pf" secondAttribute="trailing" constant="24" id="dkV-DD-Ybb"/>
@@ -8069,23 +8073,23 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                             <constraint firstItem="YNn-04-TzE" firstAttribute="leading" secondItem="ZBS-Tf-qGu" secondAttribute="leading" constant="24" id="gSU-Bu-loK"/>
                                             <constraint firstItem="C03-4d-vNx" firstAttribute="top" secondItem="ZBS-Tf-qGu" secondAttribute="top" id="igj-Uc-9ee"/>
                                             <constraint firstAttribute="bottom" secondItem="iTM-07-o90" secondAttribute="bottom" id="jIl-VG-hB0"/>
+                                            <constraint firstItem="U7G-DD-Jbq" firstAttribute="centerX" secondItem="VKp-tl-qyn" secondAttribute="centerX" constant="-1.25" id="k4W-Me-pb8"/>
                                             <constraint firstItem="nKk-Yn-KY8" firstAttribute="leading" secondItem="ZBS-Tf-qGu" secondAttribute="leading" constant="24" id="kIK-6u-fSG"/>
-                                            <constraint firstItem="d1i-CN-0eo" firstAttribute="centerX" secondItem="9vI-2J-QnP" secondAttribute="centerX" constant="-2.5" id="m6d-3O-jcY"/>
                                             <constraint firstItem="nKk-Yn-KY8" firstAttribute="top" secondItem="QBA-10-vhg" secondAttribute="bottom" constant="29.5" id="nwu-xl-5Cc"/>
-                                            <constraint firstItem="U7G-DD-Jbq" firstAttribute="width" secondItem="VKp-tl-qyn" secondAttribute="width" multiplier="0.945355" id="oDZ-hj-7VO"/>
                                             <constraint firstItem="97k-ge-eLi" firstAttribute="top" secondItem="scn-zY-K9i" secondAttribute="bottom" constant="36" id="p6V-Ol-Ez5"/>
                                             <constraint firstItem="C03-4d-vNx" firstAttribute="top" secondItem="ZBS-Tf-qGu" secondAttribute="top" id="rhu-Nf-5MP"/>
                                             <constraint firstItem="C03-4d-vNx" firstAttribute="top" secondItem="ZBS-Tf-qGu" secondAttribute="top" id="rlR-P7-5EM"/>
                                             <constraint firstItem="97k-ge-eLi" firstAttribute="leading" secondItem="ZBS-Tf-qGu" secondAttribute="leading" id="sIP-Hi-sFl"/>
                                             <constraint firstAttribute="trailing" secondItem="C03-4d-vNx" secondAttribute="trailing" id="uh1-I0-BmD"/>
                                             <constraint firstItem="Bzz-aX-8pf" firstAttribute="leading" secondItem="ZBS-Tf-qGu" secondAttribute="leading" constant="24" id="wBs-tu-eaE"/>
+                                            <constraint firstItem="nKk-Yn-KY8" firstAttribute="top" secondItem="d1i-CN-0eo" secondAttribute="bottom" constant="29.5" id="yAx-dC-hwF"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="ZBS-Tf-qGu" firstAttribute="top" secondItem="3iU-qK-2hl" secondAttribute="top" id="0cN-Hf-itc"/>
                                     <constraint firstItem="ZBS-Tf-qGu" firstAttribute="leading" secondItem="3iU-qK-2hl" secondAttribute="leading" id="hbx-05-Drm"/>
-                                    <constraint firstAttribute="bottom" secondItem="ZBS-Tf-qGu" secondAttribute="bottom" constant="13" id="m1h-ad-oLL"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZBS-Tf-qGu" secondAttribute="bottom" constant="-233" id="m1h-ad-oLL"/>
                                     <constraint firstItem="ZBS-Tf-qGu" firstAttribute="width" secondItem="3iU-qK-2hl" secondAttribute="width" id="vV6-aC-pzJ"/>
                                     <constraint firstAttribute="trailing" secondItem="ZBS-Tf-qGu" secondAttribute="trailing" id="vpn-2d-tiO"/>
                                 </constraints>
@@ -8115,7 +8119,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nGe-hV-Woi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5529" y="1530"/>
+            <point key="canvasLocation" x="5528.8000000000002" y="1529.6851574212894"/>
         </scene>
     </scenes>
     <resources>
