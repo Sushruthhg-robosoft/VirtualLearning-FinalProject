@@ -95,4 +95,27 @@ class NotificationViewModel{
         return notifications[index]
     }
     
+    
+    func readNotification(notificationId: String, completion: @escaping(String) -> Void, fail: @escaping () -> Void){
+        
+        
+        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/notification?notificationId=\(notificationId)")!
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        networkManeger.fetchData(request: request){ data in
+            
+            print(data)
+            guard let status = data as? [String] else{return}
+            completion(status[0])
+            
+            
+            
+        } failure: {error in
+            print(error)
+        }
+        
+    }
+    
 }

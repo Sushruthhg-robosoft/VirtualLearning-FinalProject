@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Cr0-fg-m9I">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gNg-9K-ofU">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -342,7 +342,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNf-1k-b6a">
                                 <rect key="frame" x="24" y="72" width="200" height="33"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="5XL-5c-dbX"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="5XL-5c-dbX"/>
                                     <constraint firstAttribute="height" constant="33" id="a7Z-fb-fG0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
@@ -421,6 +421,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="backGroundView" destination="Zsk-K6-MA2" id="U6a-Cx-rFr"/>
                                             <outlet property="notification" destination="msh-Yn-xb0" id="KKY-w8-2Up"/>
                                             <outlet property="notificationImage" destination="Ol7-Qv-igK" id="h19-EI-lAg"/>
                                             <outlet property="seenView" destination="1Y4-vq-NWX" id="2fx-qT-rhU"/>
@@ -434,6 +435,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="mNf-1k-b6a" firstAttribute="top" secondItem="vRy-9v-JJf" secondAttribute="top" constant="72" id="Exg-yZ-PCA"/>
+                            <constraint firstItem="vRy-9v-JJf" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mNf-1k-b6a" secondAttribute="trailing" symbolic="YES" id="NCH-uC-cY0"/>
                             <constraint firstItem="PUV-Iq-Isz" firstAttribute="bottom" secondItem="vRy-9v-JJf" secondAttribute="bottom" id="PDP-8U-bmM"/>
                             <constraint firstItem="PUV-Iq-Isz" firstAttribute="trailing" secondItem="vRy-9v-JJf" secondAttribute="trailing" id="UJv-xF-AtE"/>
                             <constraint firstItem="G5g-Ed-9Tf" firstAttribute="top" secondItem="vRy-9v-JJf" secondAttribute="top" constant="30" id="Vol-H9-tS7"/>
@@ -2067,7 +2069,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
             <objects>
                 <viewController storyboardIdentifier="NewUserMyCourseViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xN5-0k-xZF" customClass="NewUserMyCourseViewController" customModule="VirtualLearn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3lO-QP-sOL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="509"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="509.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="18f-l1-gKm">
