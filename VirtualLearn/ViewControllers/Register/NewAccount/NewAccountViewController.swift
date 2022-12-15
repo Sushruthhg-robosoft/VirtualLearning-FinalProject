@@ -49,6 +49,10 @@ class NewAccountViewController: UIViewController {
    
     @IBAction func loginButton(_ sender: Any) {
         
+        let vc = storyboard?.instantiateViewController(identifier: "LoginPageViewController") as! LoginPageViewController
+     
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }

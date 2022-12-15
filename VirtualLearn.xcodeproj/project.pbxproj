@@ -456,13 +456,13 @@
 		CF523199293F045C00C56B7F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				1BA47D41294700900012B8C3 /* KeyChain.swift */,
+				CF032A892948966000D6B6D3 /* mainViewModel.swift */,
+				CFF1963F293F5C3F00802396 /* viewModel.swift */,
 				1BA47D37294700170012B8C3 /* personalDetails.swift */,
 				1BA47D3C294700740012B8C3 /* loginVM.swift */,
 				1B12FEBE29458F0100612DB1 /* VerificationOTP.swift */,
-				1BA47D41294700900012B8C3 /* KeyChain.swift */,
-				CFF1963F293F5C3F00802396 /* viewModel.swift */,
 				CF032A7F2948955F00D6B6D3 /* notificationViewModel.swift */,
-				CF032A892948966000D6B6D3 /* mainViewModel.swift */,
 				CF2EFB172949A7B800A7D585 /* myCourseViewModel.swift */,
 				CFA58400294AD84700EAE53B /* categoriesViewModel.swift */,
 			);

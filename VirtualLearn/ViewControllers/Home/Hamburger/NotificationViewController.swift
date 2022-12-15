@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class NotificationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     
@@ -16,6 +17,7 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview.dataSource = self
+        tableview.delegate = self
     
     }
     
@@ -50,12 +52,48 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
         //print(shared.notifications.count)
         return shared.notificationViewModelShared.notifications.count
     }
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier: "cell") as? NotificationTableViewCell
         cell?.notification.text = shared.notificationViewModelShared.fetchDataToNotificationCell(index: indexPath.row).notificationMessage
         let url = URL(string: shared.notificationViewModelShared.fetchDataToNotificationCell(index: indexPath.row).notificationImage)
         let data = try? Data(contentsOf: url!)
         cell?.notificationImage.image = UIImage(data: data!)
+        
+        if shared.notificationViewModelShared.fetchDataToNotificationCell(index: indexPath.row).readStatus{
+            cell?.seenView.isHidden = true
+            cell?.backGroundView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        }else{
+            cell?.seenView.isHidden = false
+            cell?.backGroundView.backgroundColor = #colorLiteral(red: 0.9411764706, green: 0.9647058824, blue: 0.9843137255, alpha: 1)
+        }
+        
         return cell!
+    }
+    
+
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        shared.notificationViewModelShared.readNotification(notificationId: shared.notificationViewModelShared.fetchDataToNotificationCell(index: indexPath.row).id) { (data) in
+            
+            DispatchQueue.main.async {
+                if data == "true"{
+                    if let cell = tableView.cellForRow(at: indexPath) as? NotificationTableViewCell {
+                        print("asfsedfsdf")
+                        cell.seenView.isHidden = true
+                        cell.backGroundView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                        //cell.contentView.backgroundColor = .black
+                    }
+                }
+            }
+            
+        } fail: {
+            print("fail")
+        }
+
+
+
     }
 }
