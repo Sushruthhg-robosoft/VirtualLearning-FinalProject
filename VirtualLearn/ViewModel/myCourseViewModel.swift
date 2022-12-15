@@ -10,8 +10,8 @@ import Foundation
 class myCourseViewModel{
 
     var netowkManeger = NetWorkManager()
-    var ongoingCourses = [myCourse]()
-    var completedCourses = [myCourse]()
+    var ongoingCourses = [Course]()
+    var completedCourses = [Course]()
     
     let token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdW1hbnRocHJhYmh1IiwiZXhwIjoxNjcxMDI3MDAxLCJpYXQiOjE2NzA5OTEwMDF9.eD99V-Mat-m3XbiIdt6y_Bm0IGTYYcVsNz2HXRcPomd4CeZwdmBlmlZxxl_gvyzSS6U34GYPIm8D4AxypeefSg"
     
@@ -44,7 +44,7 @@ class myCourseViewModel{
                 ongoingStatus = false
             }
             
-            let myCourseDetails = myCourse(courseId: String(courseId), courseImage: courseImage, courseName: courseName, completedCount: String(completedChapter), totalNumberOfChapters: String(totalChapters), ongoingStatus: ongoingStatus!)
+            let myCourseDetails = Course(courseId: String(courseId), courseImage: courseImage, courseName: courseName, completedCount: String(completedChapter), totalNumberOfChapters: String(totalChapters), ongoingStatus: ongoingStatus!)
             
             if ongoingStatus!{
                 self.ongoingCourses.append(myCourseDetails)

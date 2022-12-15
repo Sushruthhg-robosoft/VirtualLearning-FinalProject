@@ -7,7 +7,7 @@
 
 import Foundation
 
-class myCourse{
+class Course{
     
     var courseId: String
     var courseImage: String

@@ -54,7 +54,7 @@
 		CF032A8F2948972000D6B6D3 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF032A8E2948972000D6B6D3 /* NotificationTableViewCell.swift */; };
 		CF032A94294897DB00D6B6D3 /* activityLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF032A93294897DB00D6B6D3 /* activityLoader.swift */; };
 		CF2EFB182949A7B800A7D585 /* myCourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EFB172949A7B800A7D585 /* myCourseViewModel.swift */; };
-		CF2EFB1D2949ADC200A7D585 /* myCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EFB1C2949ADC200A7D585 /* myCourse.swift */; };
+		CF2EFB1D2949ADC200A7D585 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EFB1C2949ADC200A7D585 /* Course.swift */; };
 		CF2EFB372949F07200A7D585 /* TestResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EFB362949F07200A7D585 /* TestResultViewController.swift */; };
 		CF2EFB3D2949F0B700A7D585 /* QuestionListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EFB3B2949F0B600A7D585 /* QuestionListTableViewCell.swift */; };
 		CF2EFB3E2949F0B700A7D585 /* showQuestionResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EFB3C2949F0B600A7D585 /* showQuestionResultViewController.swift */; };
@@ -168,7 +168,7 @@
 		CF032A8E2948972000D6B6D3 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		CF032A93294897DB00D6B6D3 /* activityLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = activityLoader.swift; sourceTree = "<group>"; };
 		CF2EFB172949A7B800A7D585 /* myCourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCourseViewModel.swift; sourceTree = "<group>"; };
-		CF2EFB1C2949ADC200A7D585 /* myCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCourse.swift; sourceTree = "<group>"; };
+		CF2EFB1C2949ADC200A7D585 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		CF2EFB362949F07200A7D585 /* TestResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestResultViewController.swift; sourceTree = "<group>"; };
 		CF2EFB3B2949F0B600A7D585 /* QuestionListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionListTableViewCell.swift; sourceTree = "<group>"; };
 		CF2EFB3C2949F0B600A7D585 /* showQuestionResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = showQuestionResultViewController.swift; sourceTree = "<group>"; };
@@ -469,7 +469,7 @@
 				1BA47D4E294704AF0012B8C3 /* RegisterUser.swift */,
 				CF5231A2293F214600C56B7F /* OnboaringSlide.swift */,
 				CF032A842948958F00D6B6D3 /* Notification.swift */,
-				CF2EFB1C2949ADC200A7D585 /* myCourse.swift */,
+				CF2EFB1C2949ADC200A7D585 /* Course.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -791,7 +791,7 @@
 				CF2EFB52294A045A00A7D585 /* ExistingUserBottomview.swift in Sources */,
 				CFEC206C29419AD200A171DA /* NewUserHomeView.swift in Sources */,
 				CF032A7B2948951500D6B6D3 /* NotificationViewController.swift in Sources */,
-				CF2EFB1D2949ADC200A7D585 /* myCourse.swift in Sources */,
+				CF2EFB1D2949ADC200A7D585 /* Course.swift in Sources */,
 				CF032A852948958F00D6B6D3 /* Notification.swift in Sources */,
 				590194C6293F717300055C24 /* LandingViewController.swift in Sources */,
 				1BA47D38294700170012B8C3 /* personalDetails.swift in Sources */,
