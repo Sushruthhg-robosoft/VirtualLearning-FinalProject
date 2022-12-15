@@ -10,12 +10,19 @@ import UIKit
 class ForgotPasswordViewController: UIViewController {
 
     @IBOutlet weak var enteredMobileNumber: borderlessTextField!
+    @IBOutlet weak var virificationIcon: UIImageView!
+    @IBOutlet weak var phoneNumberUnderLineView: UIView!
+    @IBOutlet weak var errorView: UIView!
     
     let viewmodel = LoginViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        virificationIcon.isHidden = true
         // Do any additional setup after loading the view.
+        phoneNumberUnderLineView.backgroundColor = #colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
+        errorView.isHidden = true
+        enteredMobileNumber.becomeFirstResponder()
     }
     
     @IBAction func onClickBack(_ sender: Any) {
@@ -49,4 +56,23 @@ class ForgotPasswordViewController: UIViewController {
        
         
     }
+    
+    @IBAction func phoneNumberTextField(_ sender: Any) {
+        
+        if enteredMobileNumber.text?.count == 10{
+            
+            virificationIcon.isHidden = false
+            phoneNumberUnderLineView.backgroundColor = #colorLiteral(red: 0.07058823529, green: 0.6549019608, blue: 0.231372549, alpha: 1)
+            virificationIcon.image = #imageLiteral(resourceName: "icn_textfield_right-1")
+            
+        }
+        else{
+            
+            virificationIcon.isHidden = false
+            phoneNumberUnderLineView.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
+            virificationIcon.image = #imageLiteral(resourceName: "icn_textfield_wrong")
+        }
+    }
+    
+    
 }

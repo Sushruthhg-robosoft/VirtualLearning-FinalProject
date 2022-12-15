@@ -21,6 +21,8 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
     @IBOutlet weak var popularBtn: ChoiceOfCourseCustomButton!
     @IBOutlet weak var newestBtn: ChoiceOfCourseCustomButton!
     
+    var mainshared = mainViewModel.mainShared
+    
 
 
     @IBOutlet weak var choiceOfUrCourseCollectionView: UICollectionView!
@@ -60,6 +62,8 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
        // print(shared.delegate)
    
         shared.delegate?.onClickSeeAllCategories()
+        
+
         
     }
     

@@ -80,6 +80,8 @@
 		CF79F1DF2942118600EEC920 /* ChoiceOfCourseCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF79F1DE2942118600EEC920 /* ChoiceOfCourseCustomButton.swift */; };
 		CF79F1E8294217C800EEC920 /* ChoiceOfYourCourseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF79F1E6294217C800EEC920 /* ChoiceOfYourCourseCollectionViewCell.swift */; };
 		CF79F1E9294217C800EEC920 /* ChoiceOfYourCourseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF79F1E7294217C800EEC920 /* ChoiceOfYourCourseCollectionViewCell.xib */; };
+		CF9E07EF294B282900F90B49 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E07EE294B282900F90B49 /* CategoryCollectionViewCell.swift */; };
+		CF9E0800294B38D200F90B49 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E07FF294B38D200F90B49 /* Category.swift */; };
 		CFA58401294AD84700EAE53B /* categoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA58400294AD84700EAE53B /* categoriesViewModel.swift */; };
 		CFAFC99F293EFAA700F84288 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFC99E293EFAA700F84288 /* AppDelegate.swift */; };
 		CFAFC9A1293EFAA700F84288 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFC9A0293EFAA700F84288 /* SceneDelegate.swift */; };
@@ -195,6 +197,8 @@
 		CF79F1DE2942118600EEC920 /* ChoiceOfCourseCustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceOfCourseCustomButton.swift; sourceTree = "<group>"; };
 		CF79F1E6294217C800EEC920 /* ChoiceOfYourCourseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceOfYourCourseCollectionViewCell.swift; sourceTree = "<group>"; };
 		CF79F1E7294217C800EEC920 /* ChoiceOfYourCourseCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChoiceOfYourCourseCollectionViewCell.xib; sourceTree = "<group>"; };
+		CF9E07EE294B282900F90B49 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		CF9E07FF294B38D200F90B49 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		CFA58400294AD84700EAE53B /* categoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoriesViewModel.swift; sourceTree = "<group>"; };
 		CFAFC99B293EFAA700F84288 /* VirtualLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFAFC99E293EFAA700F84288 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -307,6 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				1BD41652294095CC00E5334B /* CategoryViewController.swift */,
+				CF9E07EE294B282900F90B49 /* CategoryCollectionViewCell.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -473,6 +478,7 @@
 				CF5231A2293F214600C56B7F /* OnboaringSlide.swift */,
 				CF032A842948958F00D6B6D3 /* Notification.swift */,
 				CF2EFB1C2949ADC200A7D585 /* Course.swift */,
+				CF9E07FF294B38D200F90B49 /* Category.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -725,6 +731,7 @@
 				CF416C4D294361B300A27462 /* TopCourseSectionCollectionViewCell.swift in Sources */,
 				CFF19645293F5C4F00802396 /* NetworkManager.swift in Sources */,
 				CF032A492948332400D6B6D3 /* CustomChaptersCellView.swift in Sources */,
+				CF9E07EF294B282900F90B49 /* CategoryCollectionViewCell.swift in Sources */,
 				C2ED75142949DF6300562970 /* AlertMessage.swift in Sources */,
 				1B3635EC29409E2500D07243 /* ForgotPasswordViewController.swift in Sources */,
 				CFBA057B2946FB9800763342 /* ChooseYourCourseTableViewCell.swift in Sources */,
@@ -755,6 +762,7 @@
 				1B9289C12949E52500C66D9E /* TermConditionViewController.swift in Sources */,
 				CF032A462948332400D6B6D3 /* HeaderView.swift in Sources */,
 				CFBA057C2946FB9800763342 /* ChooseYourCourseViewController.swift in Sources */,
+				CF9E0800294B38D200F90B49 /* Category.swift in Sources */,
 				590194C0293F715D00055C24 /* ButtonView.swift in Sources */,
 				1B12FEBF29458F0100612DB1 /* VerificationOTP.swift in Sources */,
 				CFF1963B293F500800802396 /* pagecontrolExtension.swift in Sources */,
