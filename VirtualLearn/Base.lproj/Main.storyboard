@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4FE-TF-MIM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Cr0-fg-m9I">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -2067,7 +2067,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
             <objects>
                 <viewController storyboardIdentifier="NewUserMyCourseViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xN5-0k-xZF" customClass="NewUserMyCourseViewController" customModule="VirtualLearn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3lO-QP-sOL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="509.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="509"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="18f-l1-gKm">
@@ -5860,10 +5860,10 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lY8-Lc-pgM">
-                                                <rect key="frame" x="22" y="357" width="327" height="2"/>
-                                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                <rect key="frame" x="22" y="357" width="327" height="0.5"/>
+                                                <color key="backgroundColor" red="0.47843137254901957" green="0.47843137254901957" blue="0.47843137254901957" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="2" id="hu5-B7-Rr5"/>
+                                                    <constraint firstAttribute="height" constant="0.5" id="hu5-B7-Rr5"/>
                                                 </constraints>
                                             </view>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q4H-PI-icA" customClass="borderlessTextField" customModule="VirtualLearn" customModuleProvider="target">
@@ -5878,13 +5878,13 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPu-VC-Qvr">
-                                                <rect key="frame" x="22" y="400" width="70" height="19.5"/>
+                                                <rect key="frame" x="22" y="398.5" width="70" height="19.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IOP-Ct-WNK" customClass="borderlessTextField" customModule="VirtualLearn" customModuleProvider="target">
-                                                <rect key="frame" x="22" y="430.5" width="289" height="20"/>
+                                                <rect key="frame" x="22" y="429" width="289" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="Pof-9w-6np"/>
                                                 </constraints>
@@ -5894,15 +5894,8 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                     <action selector="passwordTextChangeOutlet:" destination="Cr0-fg-m9I" eventType="editingChanged" id="dky-7b-2cJ"/>
                                                 </connections>
                                             </textField>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xoj-CF-Dcy">
-                                                <rect key="frame" x="22" y="459.5" width="327" height="1"/>
-                                                <color key="backgroundColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="1" id="czm-sT-ap9"/>
-                                                </constraints>
-                                            </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kob-wE-0Ko">
-                                                <rect key="frame" x="222" y="484.5" width="132" height="17"/>
+                                                <rect key="frame" x="222" y="482.5" width="132" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="17" id="in1-pk-eIw"/>
                                                 </constraints>
@@ -5915,10 +5908,10 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmY-xu-mw1">
-                                                <rect key="frame" x="26" y="541.5" width="323" height="46"/>
+                                                <rect key="frame" x="26" y="539.5" width="323" height="46"/>
                                                 <color key="backgroundColor" red="0.93333333330000001" green="0.36078431370000003" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="323" id="1tM-e8-gIf"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="323" id="1tM-e8-gIf"/>
                                                     <constraint firstAttribute="height" constant="46" id="Xeg-iI-GGB"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="Zff-Vx-TQS"/>
                                                 </constraints>
@@ -5935,7 +5928,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="5lz-d6-3yN">
-                                                <rect key="frame" x="69" y="611.5" width="233" height="20"/>
+                                                <rect key="frame" x="69" y="609.5" width="233" height="20"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don’t have a account? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rno-Hq-isV">
                                                         <rect key="frame" x="0.0" y="0.0" width="170" height="20"/>
@@ -5954,6 +5947,9 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                         <state key="normal" title="Register">
                                                             <color key="titleColor" red="0.93333333330000001" green="0.36078431370000003" blue="0.30196078430000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="onClickRegister:" destination="Cr0-fg-m9I" eventType="touchUpInside" id="B6D-HH-yhe"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -5964,6 +5960,14 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                     <constraint firstAttribute="width" constant="20" id="bwE-m9-Nnl"/>
                                                 </constraints>
                                             </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qnJ-Ka-XRU">
+                                                <rect key="frame" x="22" y="458" width="327" height="0.5"/>
+                                                <color key="backgroundColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="0.5" id="T56-bv-6vG"/>
+                                                    <constraint firstAttribute="height" constant="0.5" id="yJ2-c5-xmP"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -5972,7 +5976,6 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                             <constraint firstItem="IOP-Ct-WNK" firstAttribute="top" secondItem="YPu-VC-Qvr" secondAttribute="bottom" constant="11" id="284-su-566"/>
                                             <constraint firstItem="g7Z-25-wxD" firstAttribute="top" secondItem="BHm-No-l1A" secondAttribute="bottom" constant="60" id="88x-82-Aux"/>
                                             <constraint firstItem="nhB-ZV-1Q0" firstAttribute="top" secondItem="4Rr-Em-eq3" secondAttribute="top" constant="70" id="Bt1-J6-1xj"/>
-                                            <constraint firstItem="xoj-CF-Dcy" firstAttribute="top" secondItem="IOP-Ct-WNK" secondAttribute="bottom" constant="9" id="EJE-xV-wR6"/>
                                             <constraint firstItem="lY8-Lc-pgM" firstAttribute="top" secondItem="Q4H-PI-icA" secondAttribute="bottom" constant="9" id="G5f-ua-uri"/>
                                             <constraint firstItem="Q4H-PI-icA" firstAttribute="leading" secondItem="4Rr-Em-eq3" secondAttribute="leading" constant="22" id="GRK-Kn-44f"/>
                                             <constraint firstItem="kmY-xu-mw1" firstAttribute="centerX" secondItem="4Rr-Em-eq3" secondAttribute="centerX" id="GeL-WI-qvk"/>
@@ -5982,27 +5985,27 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                             <constraint firstAttribute="trailing" secondItem="Q4H-PI-icA" secondAttribute="trailing" constant="64" id="LPW-u4-Zwx"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="35Y-bA-Cho" secondAttribute="trailing" constant="20" symbolic="YES" id="MpG-eJ-HYc"/>
                                             <constraint firstItem="YPu-VC-Qvr" firstAttribute="leading" secondItem="4Rr-Em-eq3" secondAttribute="leading" constant="22" id="NVi-TB-i0p"/>
+                                            <constraint firstItem="qnJ-Ka-XRU" firstAttribute="leading" secondItem="4Rr-Em-eq3" secondAttribute="leading" constant="22" id="PsV-oo-Uwf"/>
                                             <constraint firstAttribute="trailing" secondItem="IOP-Ct-WNK" secondAttribute="trailing" constant="64" id="TT8-jC-hSd"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nhB-ZV-1Q0" secondAttribute="trailing" constant="20" symbolic="YES" id="Ta4-qC-E5S"/>
                                             <constraint firstItem="rut-34-fqc" firstAttribute="centerY" secondItem="Q4H-PI-icA" secondAttribute="centerY" id="UpA-jG-g83"/>
-                                            <constraint firstItem="xoj-CF-Dcy" firstAttribute="leading" secondItem="4Rr-Em-eq3" secondAttribute="leading" constant="22" id="YhB-nY-VeU"/>
                                             <constraint firstItem="lY8-Lc-pgM" firstAttribute="leading" secondItem="4Rr-Em-eq3" secondAttribute="leading" constant="22" id="ZnJ-Xf-W6p"/>
                                             <constraint firstItem="kob-wE-0Ko" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4Rr-Em-eq3" secondAttribute="leading" constant="20" symbolic="YES" id="ZqT-gv-Rbi"/>
+                                            <constraint firstItem="kob-wE-0Ko" firstAttribute="top" secondItem="qnJ-Ka-XRU" secondAttribute="bottom" constant="24" id="aiu-30-4dx"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YPu-VC-Qvr" secondAttribute="trailing" constant="20" symbolic="YES" id="bRB-He-Ajb"/>
                                             <constraint firstItem="35Y-bA-Cho" firstAttribute="leading" secondItem="4Rr-Em-eq3" secondAttribute="leading" constant="22" id="bha-yF-PcK"/>
                                             <constraint firstItem="YPu-VC-Qvr" firstAttribute="top" secondItem="lY8-Lc-pgM" secondAttribute="bottom" constant="41" id="crD-Qw-f1g"/>
                                             <constraint firstAttribute="trailing" secondItem="5lz-d6-3yN" secondAttribute="trailing" constant="73" id="crX-SV-ZSE"/>
                                             <constraint firstItem="BHm-No-l1A" firstAttribute="leading" secondItem="4Rr-Em-eq3" secondAttribute="leading" constant="22" id="dtW-ld-uk7"/>
                                             <constraint firstItem="35Y-bA-Cho" firstAttribute="top" secondItem="g7Z-25-wxD" secondAttribute="bottom" constant="44" id="g89-BU-6yg"/>
-                                            <constraint firstItem="kob-wE-0Ko" firstAttribute="top" secondItem="xoj-CF-Dcy" secondAttribute="bottom" constant="24" id="oCY-cI-kwM"/>
+                                            <constraint firstItem="qnJ-Ka-XRU" firstAttribute="top" secondItem="IOP-Ct-WNK" secondAttribute="bottom" constant="9" id="oDE-7v-Dmk"/>
                                             <constraint firstItem="Q4H-PI-icA" firstAttribute="top" secondItem="35Y-bA-Cho" secondAttribute="bottom" constant="11" id="pBs-25-CWZ"/>
-                                            <constraint firstAttribute="trailing" secondItem="xoj-CF-Dcy" secondAttribute="trailing" constant="26" id="pcA-b0-hLY"/>
                                             <constraint firstAttribute="trailing" secondItem="kob-wE-0Ko" secondAttribute="trailing" constant="21" id="qh5-Ff-o7E"/>
                                             <constraint firstAttribute="trailing" secondItem="rut-34-fqc" secondAttribute="trailing" constant="24" id="sSh-6m-B7l"/>
+                                            <constraint firstAttribute="trailing" secondItem="qnJ-Ka-XRU" secondAttribute="trailing" constant="26" id="vC6-xR-7z8"/>
                                             <constraint firstItem="5lz-d6-3yN" firstAttribute="top" secondItem="kmY-xu-mw1" secondAttribute="bottom" constant="24" id="wJn-EP-K03"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BHm-No-l1A" secondAttribute="trailing" symbolic="YES" id="wqg-GL-2UC"/>
                                             <constraint firstItem="nhB-ZV-1Q0" firstAttribute="leading" secondItem="4Rr-Em-eq3" secondAttribute="leading" constant="22" id="xXc-TL-Cg8"/>
-                                            <constraint firstItem="IOP-Ct-WNK" firstAttribute="leading" secondItem="xoj-CF-Dcy" secondAttribute="leading" id="yJX-pb-fDf"/>
                                             <constraint firstItem="5lz-d6-3yN" firstAttribute="leading" secondItem="4Rr-Em-eq3" secondAttribute="leading" constant="69" id="yL5-cp-7JW"/>
                                             <constraint firstItem="BHm-No-l1A" firstAttribute="top" secondItem="nhB-ZV-1Q0" secondAttribute="bottom" constant="10" id="zB3-Sp-JuP"/>
                                         </constraints>
@@ -6036,7 +6039,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                         <outlet property="invalidPopup" destination="vlW-sW-oBf" id="gpp-hG-K7A"/>
                         <outlet property="loginButton" destination="kmY-xu-mw1" id="3AD-p4-b5f"/>
                         <outlet property="passwordTextfield" destination="IOP-Ct-WNK" id="YcB-er-Xzw"/>
-                        <outlet property="passwordUnderLineView" destination="xoj-CF-Dcy" id="VNL-9t-GTh"/>
+                        <outlet property="passwordUnderLineView" destination="qnJ-Ka-XRU" id="yLF-xi-fDq"/>
                         <outlet property="userNameTextField" destination="Q4H-PI-icA" id="2yj-Ee-1J3"/>
                         <outlet property="userNameUnderLineView" destination="lY8-Lc-pgM" id="ffB-C8-JIw"/>
                         <outlet property="verifiedImg" destination="rut-34-fqc" id="OXP-0X-FGH"/>

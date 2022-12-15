@@ -6,6 +6,7 @@
 //
 
 import Foundation
+let token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdW1hbnRocHJhYmh1IiwiZXhwIjoxNjcxMTEzMDE0LCJpYXQiOjE2NzEwNzcwMTR9.4Cq9ludokduxgI1okeaC9XrkcGMTXXlpZFmu4apfs929QYwcnpCeA9h8W02YI-U772dX58BMobrpClBvGA_CtA"
 
 class myCourseViewModel{
 
@@ -13,7 +14,7 @@ class myCourseViewModel{
     var ongoingCourses = [Course]()
     var completedCourses = [Course]()
     
-    let token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdW1hbnRocHJhYmh1IiwiZXhwIjoxNjcxMDI3MDAxLCJpYXQiOjE2NzA5OTEwMDF9.eD99V-Mat-m3XbiIdt6y_Bm0IGTYYcVsNz2HXRcPomd4CeZwdmBlmlZxxl_gvyzSS6U34GYPIm8D4AxypeefSg"
+
     
     
     func getMycourseDetails(completion: @escaping() -> Void, fail: @escaping () -> Void){
