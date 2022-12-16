@@ -10,7 +10,6 @@ import UIKit
 
 class courseDetailsViewModel {
     
-    static var shared = courseDetailsViewModel()
     let networkManeger = NetWorkManager()
     
     func joinCourse(courseId: String, completion: @escaping(String) -> Void, fail: @escaping () -> Void){
@@ -33,6 +32,26 @@ class courseDetailsViewModel {
             print(error)
         }
         
+    }
+    
+    func courseOverView(courseId: String, completion: @escaping(String) -> Void, fail: @escaping () -> Void) {
+        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/courseOverview?courseId=\(courseId)")!
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        networkManeger.fetchDataJson(request: request){ data in
+            guard let courseData = data as? [String: Any] else {return}
+            
+            guard let courseHeader = courseData["courseHeader"] as? [String: Any] else {return}
+            
+            
+        
+            
+            
+        } failure: {error in
+            print(error)
+        }
     }
 
     
