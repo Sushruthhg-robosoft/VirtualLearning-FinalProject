@@ -19,6 +19,7 @@ class LoginPageViewController: UIViewController {
     @IBOutlet weak var verifiedImg: UIImageView!
     
     let loginviewModel = LoginViewModel()
+    let shared = mainViewModel.mainShared
     override func viewDidLoad() {
         super.viewDidLoad()
         
