@@ -8159,7 +8159,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
         <image name="Left" width="23" height="18"/>
         <image name="Locked" width="16" height="16"/>
         <image name="Right" width="23" height="18"/>
-        <image name="arrow.left" catalog="system" width="128" height="98"/>
+        <image name="arrow.left" catalog="system" width="32" height="32"/>
         <image name="btn_SM_facebook" width="157" height="42"/>
         <image name="btn_SM_google" width="157" height="42"/>
         <image name="btn_next" width="46" height="46"/>
