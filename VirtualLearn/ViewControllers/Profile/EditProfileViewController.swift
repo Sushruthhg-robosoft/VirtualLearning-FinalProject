@@ -87,6 +87,11 @@ class EditProfileViewController: UIViewController {
         nameView.backgroundColor = #colorLiteral(red: 0.001148699783, green: 0.2356859446, blue: 0.4366979599, alpha: 1)
     }
     
+    
+    @IBAction func userNameEdit(_ sender: Any) {
+        userNameView.backgroundColor = #colorLiteral(red: 0.01568627451, green: 0.1725490196, blue: 0.3607843137, alpha: 1)
+    }
+    
     @IBAction func emailEdit(_ sender: Any) {
         emailView.backgroundColor = #colorLiteral(red: 0.001148699783, green: 0.2356859446, blue: 0.4366979599, alpha: 1)
     }
