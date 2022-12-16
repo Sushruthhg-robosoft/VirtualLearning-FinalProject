@@ -28,18 +28,31 @@ class NewAccountViewController: UIViewController {
     
     @IBAction func continueButton(_ sender: Any) {
         guard let mobileNumber = enteredMobileNumber.text else {return}
-        print(mobileNumber)
+//        print(mobileNumber)
+        verificationOTP.checkphoneNumberForNewUser(mobileNumber: "+91"+mobileNumber) {
+            DispatchQueue.main.async {
+                let vc = self.storyboard?.instantiateViewController(identifier: "VerifyAccountViewController") as! VerifyAccountViewController
+                vc.mobileNumber = mobileNumber
+                self.navigationController?.pushViewController(vc, animated: true)
+                
+                self.verificationOTP.getOTP(mobileNumber: "+917022011412")
+            }
+        } fail: {
+            DispatchQueue.main.async {
+                self.okAlertMessagePopup(message: "Your already registered, Please Login")
+            }
+        }
+
         
-        let vc = storyboard?.instantiateViewController(identifier: "VerifyAccountViewController") as! VerifyAccountViewController
-        vc.mobileNumber = mobileNumber
-        navigationController?.pushViewController(vc, animated: true)
-        
-        verificationOTP.getOTP(mobileNumber: "+91"+mobileNumber)
         
     }
    
     @IBAction func loginButton(_ sender: Any) {
         
+        let vc = storyboard?.instantiateViewController(identifier: "LoginPageViewController") as! LoginPageViewController
+     
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }

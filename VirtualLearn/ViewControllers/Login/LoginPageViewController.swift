@@ -26,12 +26,44 @@ class LoginPageViewController: UIViewController {
         loginButton.alpha = 0.5
         invalidPopup.isHidden = true
         userNameTextField.becomeFirstResponder()
+        verifiedImg.isHidden = true
+        userNameUnderLineView.backgroundColor = #colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
+        passwordUnderLineView.backgroundColor = #colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
+        
+        loginviewModel.checkUserNameForExsistingUser(userName: "santhosh") {
+            
+        } fail: {
+            
+        }
+
 
     }
     
     @IBAction func userNameTextChangeOutlet(_ sender: Any) {
         invalidPopup.isHidden = true
         checkAllFileds()
+        if let username = userNameTextField.text{
+            if username.count >= 3 && username.count <= 20{
+                loginviewModel.checkUserNameForExsistingUser(userName: username) {
+                    
+                    DispatchQueue.main.async {
+                        self.userNameUnderLineView.backgroundColor = #colorLiteral(red: 0.07058823529, green: 0.6549019608, blue: 0.231372549, alpha: 1)
+                        self.verifiedImg.isHidden = false
+                        self.verifiedImg.image = #imageLiteral(resourceName: "icn_textfield_right-1")
+                    }
+                    
+                } fail: {
+                    DispatchQueue.main.async {
+                        self.verifiedImg.isHidden = false
+                        self.userNameUnderLineView.backgroundColor = #colorLiteral(red: 0.9176470588, green: 0.1490196078, blue: 0.1490196078, alpha: 1)
+                        self.verifiedImg.image = #imageLiteral(resourceName: "icn_textfield_wrong-1")
+                    }
+                    
+                    
+                }
+
+            }
+        }
     }
    
     
@@ -80,4 +112,11 @@ class LoginPageViewController: UIViewController {
         loginButton.alpha = 1
     }
     
+    @IBAction func onClickRegister(_ sender: Any) {
+        
+        
+        let vc = storyboard?.instantiateViewController(identifier: "NewAccountViewController") as! NewAccountViewController
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

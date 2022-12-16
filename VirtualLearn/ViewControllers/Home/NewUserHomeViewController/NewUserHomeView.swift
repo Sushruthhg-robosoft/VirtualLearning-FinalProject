@@ -19,6 +19,8 @@ class NewUserHomeView: UIView {
     @IBOutlet weak var topView: SuggestionsTopView!
     var testDelegate : test?
     
+    var shared = mainViewModel.mainShared
+    @IBOutlet weak var existingUserBottomView: ExistingUserBottomview!
     
     override init(frame: CGRect) {
         
@@ -26,6 +28,8 @@ class NewUserHomeView: UIView {
        // bottomView.delegate = delegate
         
 //        testDelegate?.printHome()
+//        bottomView.isHidden = true
+//        existingUserBottomView.isHidden = false
     }
     
     required init?(coder: NSCoder) {
@@ -33,7 +37,24 @@ class NewUserHomeView: UIView {
         UINib(nibName: "NewUserHomeView", bundle: nil).instantiate(withOwner: self, options: nil)
         addSubview(BackView)
         BackView.frame = self.bounds
+        if shared.isExisting{
+            existingUser()
+        }
+        else{
+            newUser()
+        }
+        
 //        testDelegate?.printHome()
     }
     
+    
+    func existingUser(){
+        bottomView.isHidden = true
+        existingUserBottomView.isHidden = false
+    }
+    
+    func newUser(){
+        bottomView.isHidden = false
+        existingUserBottomView.isHidden = true
+    }
 }

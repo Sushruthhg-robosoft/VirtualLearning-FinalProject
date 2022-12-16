@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+
 class ProfileViewController: UIViewController {
     
     @IBOutlet weak var profilePicture: UIImageView!
@@ -28,6 +30,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var chaptersView: UIView!
     @IBOutlet weak var testView: UIView!
     @IBOutlet weak var changeYourPasswordButton: UIButton!
+
+    
     
     let profileViewModel = ProfileViewModel()
     
@@ -81,6 +85,12 @@ class ProfileViewController: UIViewController {
         vc.dummyMobileNo = mobileNumber.text!
         
     }
+    
+    
+    @IBAction func onClickHamburger(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     
 }
 

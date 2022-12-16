@@ -71,6 +71,7 @@ class VerifyAccountViewController: UIViewController, UITextFieldDelegate {
 
     }
     
+    
     @IBAction func onClickBack(_ sender: Any) {
         
         navigationController?.popViewController(animated: true)
@@ -86,19 +87,21 @@ class VerifyAccountViewController: UIViewController, UITextFieldDelegate {
         
         let otp = firstNumber + secondNumber + thirdNumber + fourthNumber
 
-        verificationOTP.verifyOTP(mobileNumber: "+91"+mobileNumber, otp: otp){ sucess in
+        verificationOTP.verifyOTP(mobileNumber: "+917022011412", otp: otp){ sucess in
             
             DispatchQueue.main.async {
                 self.correctOtp()
                 self.stopLoader(loader: loader)
             if self.isForgotPassword {
                 
-                let vc = self.storyboard?.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
+                let vc = self.storyboard?.instantiateViewController(identifier: "CreateNewPasswordViewController") as! CreateNewPasswordViewController
+                vc.mobileNumber = self.mobileNumber
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             
             else{
                 let vc = self.storyboard?.instantiateViewController(identifier: "PersonalDetailsViewController") as! PersonalDetailsViewController
+                vc.enterdMobileNumber = self.mobileNumber
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             }
@@ -126,6 +129,9 @@ class VerifyAccountViewController: UIViewController, UITextFieldDelegate {
         self.secondDigitUnderView.backgroundColor = UIColor(red: 0, green: 255, blue: 0, alpha: 1)
         self.thirdDigitUnderView.backgroundColor = UIColor(red: 0, green: 255, blue: 0, alpha: 1)
         self.fourthDigitUnderView.backgroundColor = UIColor(red: 0, green: 255, blue: 0, alpha: 1)
+    }
+    @IBAction func resendOTPButtonClicked(_ sender: Any) {
+        verificationOTP.getOTP(mobileNumber: "+917022011412")
     }
     
     @IBAction func onClickLogin(_ sender: Any) {

@@ -48,7 +48,6 @@ class PersonalData {
         
         let network = NetWorkManager()
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/auth/register")!
-//        let parameter = ["userName": userName]
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -56,7 +55,7 @@ class PersonalData {
 
         let parameters: [String : Any] = [
             "emailId":user.email,
-             "phoneNumber":"+918152041105",
+            "phoneNumber": user.mobileNumber,
              "authentication": [
                 "userName" : user.userName,
                 "password":user.password
@@ -76,12 +75,13 @@ class PersonalData {
         }
     }
     
-    func assignCurrentRegisterValue(fullName: String, userName: String, email: String, password: String) -> NewUser {
+    func assignCurrentRegisterValue(fullName: String, userName: String, email: String, password: String, mobileNumber: String) -> NewUser {
         let currentUser = NewUser()
         currentUser.fullName = fullName
         currentUser.userName = userName
         currentUser.email = email
         currentUser.password = password
+        currentUser.mobileNumber = mobileNumber
         return currentUser
     }
     

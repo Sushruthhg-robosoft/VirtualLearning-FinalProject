@@ -64,6 +64,14 @@
                                 <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjk-Lc-qds">
+                                <rect key="frame" x="120" y="43" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Efe-7N-j6h"/>
+                                    <constraint firstAttribute="width" constant="48" id="oPj-ab-w1f"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="icn_play-play-button2"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
@@ -71,9 +79,11 @@
                             <constraint firstItem="3ao-pI-hJ6" firstAttribute="leading" secondItem="lgB-gn-nC2" secondAttribute="leading" id="DLl-5X-XN5"/>
                             <constraint firstItem="VM5-CL-Nar" firstAttribute="leading" secondItem="lgB-gn-nC2" secondAttribute="leading" id="H1L-p0-WY2"/>
                             <constraint firstItem="ZGo-0e-lUr" firstAttribute="top" secondItem="3ao-pI-hJ6" secondAttribute="bottom" constant="8" id="MfT-Ar-dj8"/>
+                            <constraint firstItem="bjk-Lc-qds" firstAttribute="centerX" secondItem="3ao-pI-hJ6" secondAttribute="centerX" id="Otk-zr-Ef4"/>
                             <constraint firstItem="cyr-La-lR4" firstAttribute="leading" secondItem="VM5-CL-Nar" secondAttribute="trailing" constant="4" id="b6q-qy-a5T"/>
                             <constraint firstAttribute="trailing" secondItem="3ao-pI-hJ6" secondAttribute="trailing" id="bG7-Uw-kjG"/>
                             <constraint firstItem="PSj-px-QI7" firstAttribute="top" secondItem="ZGo-0e-lUr" secondAttribute="bottom" constant="8" id="dGd-zA-fTg"/>
+                            <constraint firstItem="bjk-Lc-qds" firstAttribute="centerY" secondItem="3ao-pI-hJ6" secondAttribute="centerY" id="djC-ue-47w"/>
                             <constraint firstAttribute="width" constant="288" id="drV-ms-1go"/>
                             <constraint firstItem="PSj-px-QI7" firstAttribute="leading" secondItem="cyr-La-lR4" secondAttribute="trailing" constant="2" id="eCZ-bP-c5M"/>
                             <constraint firstItem="cyr-La-lR4" firstAttribute="top" secondItem="ZGo-0e-lUr" secondAttribute="bottom" constant="8" id="gQv-cN-Nxn"/>
@@ -96,6 +106,7 @@
     </objects>
     <resources>
         <image name="icn_courseduration" width="12" height="12"/>
+        <image name="icn_play-play-button2" width="48" height="48"/>
         <image name="img_course1_business" width="324" height="170"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

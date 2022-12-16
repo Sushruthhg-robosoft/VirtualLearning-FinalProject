@@ -32,7 +32,7 @@ class VerificationOTP {
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/auth/validate-otp")!
         var request = URLRequest(url: url)
         request.httpMethod = "PUT"
-        request.setValue(mobileNumber, forHTTPHeaderField: "phoneNumber")
+        request.setValue(mobileNumber, forHTTPHeaderField: "source")
         request.setValue(otp, forHTTPHeaderField: "otp")
         
             network.fetchData(request: request as URLRequest) { result in
@@ -41,6 +41,31 @@ class VerificationOTP {
                 fail(false)
                 print(failResult)
             }
+    }
+    
+    func checkphoneNumberForNewUser(mobileNumber: String, completion: @escaping () ->Void, fail: @escaping() -> Void) {
+        let network = NetWorkManager()
+        let url = URL(string:"https://app-virtuallearning-221207091853.azurewebsites.net/auth/register/check/phoneNumber")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue(mobileNumber, forHTTPHeaderField: "phoneNumber")
+            network.fetchData(request: request as URLRequest) { result in
+                
+                guard let response = result as? [String] else {return}
+                
+                if(response[0] == "true")
+                {
+                    completion()
+                }
+                else
+                {
+                    fail()
+                }
+            } failure: { failResult in
+                print(failResult)
+                fail()
+            }
+        
     }
     
     

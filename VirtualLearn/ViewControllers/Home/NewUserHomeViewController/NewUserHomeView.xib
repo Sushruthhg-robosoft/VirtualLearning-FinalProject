@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="BackView" destination="iN0-l3-epB" id="xKC-vq-owL"/>
                 <outlet property="bottomView" destination="FhD-R4-xgJ" id="qvy-8X-5sA"/>
+                <outlet property="existingUserBottomView" destination="IYl-d3-rEX" id="Ep1-R2-bS8"/>
                 <outlet property="topView" destination="AFW-5H-BQk" id="x8g-7i-ztL"/>
             </connections>
         </placeholder>
@@ -20,6 +21,10 @@
             <rect key="frame" x="0.0" y="0.0" width="427" height="1450"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IYl-d3-rEX" customClass="ExistingUserBottomview" customModule="VirtualLearn" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="233" width="427" height="1217"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AFW-5H-BQk" customClass="SuggestionsTopView" customModule="VirtualLearn" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="427" height="225"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -35,13 +40,17 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="IYl-d3-rEX" firstAttribute="top" secondItem="FhD-R4-xgJ" secondAttribute="top" id="2Qi-OW-Ba6"/>
                 <constraint firstItem="FhD-R4-xgJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="2rn-1z-bcU"/>
                 <constraint firstItem="AFW-5H-BQk" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="7JK-1B-pzT"/>
                 <constraint firstItem="FhD-R4-xgJ" firstAttribute="top" secondItem="AFW-5H-BQk" secondAttribute="bottom" constant="8" id="Cgw-3s-5ck"/>
                 <constraint firstAttribute="bottom" secondItem="FhD-R4-xgJ" secondAttribute="bottom" id="Fmn-gc-8V8"/>
                 <constraint firstItem="AFW-5H-BQk" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="GJS-yj-fyD"/>
+                <constraint firstItem="IYl-d3-rEX" firstAttribute="leading" secondItem="FhD-R4-xgJ" secondAttribute="leading" id="Zwj-sV-6tL"/>
                 <constraint firstItem="AFW-5H-BQk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="arn-sq-6aA"/>
+                <constraint firstItem="IYl-d3-rEX" firstAttribute="bottom" secondItem="FhD-R4-xgJ" secondAttribute="bottom" id="lcm-eB-P3j"/>
                 <constraint firstItem="FhD-R4-xgJ" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="vTI-hi-I94"/>
+                <constraint firstItem="IYl-d3-rEX" firstAttribute="trailing" secondItem="FhD-R4-xgJ" secondAttribute="trailing" id="z1L-Mg-z4o"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="150" y="186.83035714285714"/>

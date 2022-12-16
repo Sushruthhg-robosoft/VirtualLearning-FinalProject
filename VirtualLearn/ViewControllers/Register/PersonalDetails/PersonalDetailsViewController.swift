@@ -25,20 +25,19 @@ class PersonalDetailsViewController: UIViewController {
     @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var confirmPasswordLabel: UILabel!
     
+    @IBOutlet weak var mobileNumber: UILabel!
     @IBOutlet weak var RegistrayionButtonOutlet: UIButton!
     
     @IBOutlet weak var successScreen: UIView!
     let personalData = PersonalData()
-    
+    var enterdMobileNumber = ""
     var usernameStatus = false
     override func viewDidLoad() {
         super.viewDidLoad()
         
         RegistrayionButtonOutlet.isEnabled = false
         successScreen.isHidden = true
-        
-        
-        
+        mobileNumber.text = "+91"+enterdMobileNumber
         
         fullNameTextField.removeBorder()
         userNameTextField.removeBorder()
@@ -165,7 +164,7 @@ class PersonalDetailsViewController: UIViewController {
     @IBAction func RegistrationButtonClick(_ sender: Any) {
         
         let loader = self.loader()
-        let currentUser =  personalData.assignCurrentRegisterValue(fullName: fullNameTextField.text!, userName: userNameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!)
+        let currentUser =  personalData.assignCurrentRegisterValue(fullName: fullNameTextField.text!, userName: userNameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, mobileNumber: mobileNumber.text!)
          personalData.registeringUser(user: currentUser) { sucess in
              print("sucessfull")
             DispatchQueue.main.async {
