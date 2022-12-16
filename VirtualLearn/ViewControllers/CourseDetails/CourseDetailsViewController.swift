@@ -58,7 +58,9 @@ class CourseDetailsViewController: UIViewController {
         chaptersBtn.setTitleColor(#colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1), for: .normal)
         chaptersUnderLineView.backgroundColor = #colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
         
-        shared.courseDetailsViewModelShared.courseOverView(courseId: "16") { result in
+        shared.courseDetailsViewModelShared.courseOverView(courseId: "16") { courseDataOverView in
+            
+            print(courseDataOverView)
             
         } fail: {
             
