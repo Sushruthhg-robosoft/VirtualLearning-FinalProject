@@ -7,7 +7,7 @@
 
 import Foundation
 class ProfileViewModel {
-    static var shared = ProfileViewModel()
+//    static var shared = ProfileViewModel()
     let networkManager = NetWorkManager()
     var profileDataDetails = [ProfileData]()
     
@@ -43,12 +43,14 @@ class ProfileViewModel {
             
                 } failure: { error in
             print(error)
+                }
         }
     
     func changePasswordForExistingUser(password: String, oldpassword: String, completion: @escaping () -> Void, fail: @escaping () -> Void) {
        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/auth/reset-password")!
         var request = URLRequest(url: url)
         request.httpMethod = "PATCH"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         request.setValue(password, forHTTPHeaderField: "password")
         request.setValue(oldpassword, forHTTPHeaderField: "oldPassword")
         networkManager.fetchData(request: request as URLRequest) { result in
@@ -61,6 +63,6 @@ class ProfileViewModel {
     }
 }
     
-}
+
 
 

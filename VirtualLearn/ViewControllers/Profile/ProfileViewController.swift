@@ -30,6 +30,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var chaptersView: UIView!
     @IBOutlet weak var testView: UIView!
     @IBOutlet weak var changeYourPasswordButton: UIButton!
+    var password = ""
+    var oldpassword = ""
 
     let profileViewModel = ProfileViewModel()
     
@@ -55,7 +57,6 @@ class ProfileViewController: UIViewController {
                 self.noOfCourses.text = String(profiledata.numberOfCoursesCompleted)
                 self.noOfTests.text = String(profiledata.numberOfTestsAttempted)
             
-                
             }
             
             
@@ -66,13 +67,21 @@ class ProfileViewController: UIViewController {
     
     
     @IBAction func onClickChangePassword(_ sender: Any) {
+//        let profileViewModel = ProfileViewModel()
+//        profileViewModel.changePasswordForExistingUser(password: "password", oldpassword: "oldpassword") {
+//      
         
         
         let vc = storyboard?.instantiateViewController(identifier: "ChangeYourPasswordViewController") as! ChangeYourPasswordViewController
         navigationController?.pushViewController(vc, animated: true)
+//        profileViewModel.changePasswordForExistingUser(password: "password", oldpassword: "oldpassword") {
+//        } fail: {
+//            
+//        }
+        }
         
-        
-    }
+    
+    
     
     
     @IBAction func onClickEditProfile(_ sender: Any) {
@@ -90,7 +99,6 @@ class ProfileViewController: UIViewController {
     @IBAction func onClickHamburger(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
-    
-    
+  
 }
 

@@ -20,6 +20,9 @@ class ChangeYourPasswordViewController: UIViewController {
     
     @IBOutlet weak var newpasswordUnderLine: UIView!
     @IBOutlet weak var confirmPasswordUnderLine: UIView!
+    
+    let profileViewModel = ProfileViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
@@ -62,6 +65,11 @@ class ChangeYourPasswordViewController: UIViewController {
     }
     
     @IBAction func onClickResetButton(_ sender: Any) {
+        
+        profileViewModel.changePasswordForExistingUser(password: "password", oldpassword: "oldpassword") {
+        } fail: {
+            
+        }
         
     }
     
