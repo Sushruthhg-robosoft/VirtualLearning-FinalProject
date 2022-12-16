@@ -82,6 +82,7 @@
 		CF416C4E294361B300A27462 /* TopCourseSectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF416C4C294361B300A27462 /* TopCourseSectionCollectionViewCell.xib */; };
 		CF5231A3293F214600C56B7F /* OnboaringSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5231A2293F214600C56B7F /* OnboaringSlide.swift */; };
 		CF5231A8293F287A00C56B7F /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5231A7293F287A00C56B7F /* OnboardingCollectionViewCell.swift */; };
+		CF65D6DF294C488000B2852A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65D6DE294C488000B2852A /* HomeViewModel.swift */; };
 		CF79F1CF2941AAD000EEC920 /* SuggestionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF79F1CD2941AAD000EEC920 /* SuggestionsCollectionViewCell.swift */; };
 		CF79F1D02941AAD000EEC920 /* SuggestionsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF79F1CE2941AAD000EEC920 /* SuggestionsCollectionViewCell.xib */; };
 		CF79F1D52941BB4400EEC920 /* NewUserBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF79F1D42941BB4400EEC920 /* NewUserBottomView.xib */; };
@@ -208,6 +209,7 @@
 		CF416C4C294361B300A27462 /* TopCourseSectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopCourseSectionCollectionViewCell.xib; sourceTree = "<group>"; };
 		CF5231A2293F214600C56B7F /* OnboaringSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboaringSlide.swift; sourceTree = "<group>"; };
 		CF5231A7293F287A00C56B7F /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		CF65D6DE294C488000B2852A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		CF79F1CD2941AAD000EEC920 /* SuggestionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsCollectionViewCell.swift; sourceTree = "<group>"; };
 		CF79F1CE2941AAD000EEC920 /* SuggestionsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestionsCollectionViewCell.xib; sourceTree = "<group>"; };
 		CF79F1D42941BB4400EEC920 /* NewUserBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewUserBottomView.xib; sourceTree = "<group>"; };
@@ -492,6 +494,7 @@
 				CFA58400294AD84700EAE53B /* categoriesViewModel.swift */,
 				59055E25294C22B400608DE8 /* courseDetailsViewModel.swift */,
 				C2ED752D2949EFC900562970 /* ProfileViewModel.swift */,
+				CF65D6DE294C488000B2852A /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -829,6 +832,7 @@
 				CF2EFB58294A060B00A7D585 /* ExistingCollectionViewCell.swift in Sources */,
 				CF032A4A2948332400D6B6D3 /* CustomChapterTableViewCell.swift in Sources */,
 				CF416C4229435E0E00A27462 /* TopCourseSectionView.swift in Sources */,
+				CF65D6DF294C488000B2852A /* HomeViewModel.swift in Sources */,
 				C25014C22947218D004A6711 /* CreateNewPasswordViewController.swift in Sources */,
 				590194AF293F711F00055C24 /* VerifyAccountViewController.swift in Sources */,
 				CF5231A3293F214600C56B7F /* OnboaringSlide.swift in Sources */,

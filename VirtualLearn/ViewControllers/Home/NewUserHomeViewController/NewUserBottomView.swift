@@ -36,6 +36,8 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
     
     var courseSet: [UIImage] = [#imageLiteral(resourceName: "img_course1_bg"), #imageLiteral(resourceName: "img_course2_bg")]
     var delegate: clickButtons?
+    var toCourse1Obj: UIView?
+    var toCourse2Obj: UIView?
     var shared = ViewModel.shared
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -51,8 +53,13 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
         popularBtn.notSelected()
         newestBtn.notSelected()
         initCollectionView()
-       // topCourse2.topCourseTitle.text = "Top courses in Design"
-        topCourse2.topCourseLabel.text = "Top courses in Design"
+        topCourse2.topCourseLabel.text = "Design"
+        //topCourse2.topCourseLabel.text =
+//        toCourse1Obj=topCourse1.TopCourseSectionViewObj() as? TopCourseSectionView
+//        toCourse2Obj = topCourse2.TopCourseSectionViewObj() as? TopCourseSectionView
+//
+//        topCourse1.addSubview(toCourse1Obj!)
+//        topCourse2.addSubview(toCourse2Obj!)
         
     }
     @IBAction func design(_ sender: Any) {

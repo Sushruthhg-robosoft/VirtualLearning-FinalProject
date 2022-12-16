@@ -14,6 +14,7 @@ class LoginViewModel {
     func loginUser(userName: String, password: String, completion: @escaping () -> Void, fail: @escaping () -> Void) {
         let network = NetWorkManager()
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/auth/login")!
+        let shared = mainViewModel.mainShared
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -21,10 +22,14 @@ class LoginViewModel {
         request.setValue(password, forHTTPHeaderField: "password")
             network.requestData(request: request as URLRequest) { result in
                 
-                let tokenData = result as? [String:Any]
-                guard let token = tokenData?["token"] as? String else {return}
-                guard let  tokenInfo =  token.data(using: .utf8) else {return}
                 
+                let tokenData = result as? [String:Any]
+                
+                guard let name = tokenData?["name"] as? String else {print("tokenData error1");return}
+                guard let token = tokenData?["token"] as? String else {print("tokenData error2");return}
+                guard let  tokenInfo =  token.data(using: .utf8) else {print("tokenData error3");return}
+                
+                shared.loginUserName = name
                 let keychain = KeyChain()
                 keychain.saveData(userName: userName, data: tokenInfo)
                 
