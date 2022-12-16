@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-class EditProfileViewController: UIViewController {
+class EditProfileViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     @IBOutlet weak var backgroundProfile: UIView!
     @IBOutlet weak var profilePhoto: UIImageView!
     
@@ -83,6 +83,22 @@ class EditProfileViewController: UIViewController {
        
     }
     
+    
+    @IBAction func onClickCameraButton(_ sender: Any) {
+        let imageController = UIImagePickerController()
+                imageController.delegate = self
+                imageController.sourceType = .photoLibrary
+                self.present(imageController, animated: true, completion: nil)
+        
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+        profilePhoto.image = info[.originalImage] as? UIImage
+
+            self.dismiss(animated: true, completion: nil)
+
+        }
+   
     @IBAction func nameEdit(_ sender: Any) {
         nameView.backgroundColor = #colorLiteral(red: 0.001148699783, green: 0.2356859446, blue: 0.4366979599, alpha: 1)
     }
