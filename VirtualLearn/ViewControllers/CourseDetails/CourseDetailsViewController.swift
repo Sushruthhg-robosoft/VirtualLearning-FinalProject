@@ -8,6 +8,9 @@
 import UIKit
 
 class CourseDetailsViewController: UIViewController {
+    
+    var shared = mainViewModel.mainShared
+
 
     @IBOutlet weak var CourseHeading: UILabel!
     @IBOutlet weak var courseType: UILabel!
@@ -87,6 +90,15 @@ class CourseDetailsViewController: UIViewController {
     
     
     @IBAction func onClickJoinCourse(_ sender: Any) {
+        
+        shared.courseDetailsViewModelShared.joinCourse(courseId: "19"){ data in
+            
+            print(data)
+            
+        }fail: {
+            self.okAlertMessagePopup(message: "Failed to join course")
+            print("fail")
+        }
     }
     
 
