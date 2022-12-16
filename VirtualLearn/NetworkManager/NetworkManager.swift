@@ -19,6 +19,10 @@ class NetWorkManager {
                           if(httpResponse.statusCode == 200){
                             let data = String(data: responsedata, encoding: .utf8)!.components(separatedBy: .newlines)
                             completion(data)
+                          }else if httpResponse.statusCode == 304 {
+                            print("already joined the course")
+                          }else if httpResponse.statusCode == 404 {
+                            print("course does not exist")
                           }
                           else{
                             
