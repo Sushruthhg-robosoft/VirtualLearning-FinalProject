@@ -45,18 +45,12 @@ class NotificationViewModel{
         request.httpMethod = "GET"
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         networkManeger.fetchDataJson(request: request) { [self] data in
-           //print(data)
             guard let apiData = data as? [Any] else {print("apiDataerr");return}
-            //print(apiData)
-            //print(apiData)
             guard let allData = apiData as? [[String:Any]] else {print("allDataerr");return}
-           // print(allData)
             
             
             for notificationData in allData{
-                
-                //print(type(of: notificationData["notification_id"] as! Int) )
-                
+                                
                 var read:Bool?
                 guard let reciever = notificationData["notification_id"] as? Int else{print("notification data parsing error1");return}
                 guard let notificationImage = notificationData["notification_image"] as? String else{print("notification data parsing error2");return}
