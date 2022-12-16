@@ -54,6 +54,7 @@ class LoginPageViewController: UIViewController {
                     
                 } fail: {
                     DispatchQueue.main.async {
+                        self.verifiedImg.isHidden = false
                         self.userNameUnderLineView.backgroundColor = #colorLiteral(red: 0.9176470588, green: 0.1490196078, blue: 0.1490196078, alpha: 1)
                         self.verifiedImg.image = #imageLiteral(resourceName: "icn_textfield_wrong-1")
                     }
