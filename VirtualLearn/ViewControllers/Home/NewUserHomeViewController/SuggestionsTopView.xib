@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SuggestionsTopView" customModule="VirtualLearn" customModuleProvider="target">
             <connections>
                 <outlet property="suggestionsCollectionView" destination="sZy-WM-lao" id="DzJ-VT-cyq"/>
+                <outlet property="userNameLabel" destination="8CY-ju-WWF" id="VgQ-wn-LSr"/>
                 <outlet property="view" destination="iN0-l3-epB" id="UzM-sb-XC5"/>
             </connections>
         </placeholder>

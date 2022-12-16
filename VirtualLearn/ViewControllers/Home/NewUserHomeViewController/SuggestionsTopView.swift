@@ -11,11 +11,14 @@ class SuggestionsTopView: UIView {
     
     
     var arrImages : [UIImage] = [#imageLiteral(resourceName: "img_banner1_home"), #imageLiteral(resourceName: "img_mycourse_completed3")]
+    var bannerImage: [String] = []
     @IBOutlet var view: UIView!
+    @IBOutlet weak var userNameLabel: UILabel!
     
     @IBOutlet weak var suggestionsCollectionView: UICollectionView!
+    var shared = mainViewModel.mainShared
     
-    
+    var userName: String?
     override init(frame: CGRect) {
         super.init(frame: frame)
         initCollectionView()
@@ -27,6 +30,9 @@ class SuggestionsTopView: UIView {
         addSubview(view)
         view.frame = self.bounds
         initCollectionView()
+        userNameLabel.text = shared.loginUserName?.capitalized
+        
+        
     }
 }
 
@@ -34,14 +40,19 @@ class SuggestionsTopView: UIView {
 extension SuggestionsTopView : UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return arrImages.count
+        print(bannerImage.count)
+        return bannerImage.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = suggestionsCollectionView.dequeueReusableCell(withReuseIdentifier: "suggestionCell", for: indexPath) as? SuggestionsCollectionViewCell else {
             fatalError("can't dequeue CustomCell")
         }
-        cell.cellImage.image = arrImages[indexPath.row]
+        
+        let url = URL(string: bannerImage[indexPath.row])
+        let data = try? Data(contentsOf: url!)
+        //cell.courseImage.image = UIImage(data: data!)
+        cell.cellImage.image = UIImage(data: data!)
         return cell
     }
     
@@ -61,5 +72,9 @@ extension SuggestionsTopView : UICollectionViewDelegate,UICollectionViewDataSour
         suggestionsCollectionView.delegate = self
     }
     
+    func returnObj() -> UIView {
+        
+        return view
+    }
     
 }

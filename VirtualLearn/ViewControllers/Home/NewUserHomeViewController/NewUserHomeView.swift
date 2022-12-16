@@ -13,12 +13,13 @@ protocol test {
 
 class NewUserHomeView: UIView {
 
+    
     @IBOutlet var BackView: UIView!
     @IBOutlet weak var bottomView: NewUserBottomView!
     var delegate: clickButtons?
     @IBOutlet weak var topView: SuggestionsTopView!
     var testDelegate : test?
-    
+    var bannerImages = [String]()
     var shared = mainViewModel.mainShared
     @IBOutlet weak var existingUserBottomView: ExistingUserBottomview!
     
@@ -44,7 +45,12 @@ class NewUserHomeView: UIView {
             newUser()
         }
         
+        DispatchQueue.main.async {
+            print("dsmjfhbiuhfdsfuj",self.bannerImages.count)
+        }
+        
 //        testDelegate?.printHome()
+        print("c1 address: \(Unmanaged.passUnretained(BackView).toOpaque())")
     }
     
     
@@ -56,5 +62,10 @@ class NewUserHomeView: UIView {
     func newUser(){
         bottomView.isHidden = false
         existingUserBottomView.isHidden = true
+    }
+    
+    func returnObj() -> UIView{
+        
+        return BackView
     }
 }
