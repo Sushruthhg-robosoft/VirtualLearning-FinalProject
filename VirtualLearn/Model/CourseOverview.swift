@@ -84,12 +84,12 @@ class OverView {
 class Instructor {
     var instructorName: String
     var occupation: String
-    var about: String
-    var emailId: String
-    var phoneNumber: String
+    var about: String?
+    var emailId: String?
+    var phoneNumber: String?
     var profilePic: String
     
-    init(instructorName: String, occupation: String, about: String, emailId:String, phoneNumber: String, profilePic: String) {
+    init(instructorName: String, occupation: String, about: String?, emailId:String?, phoneNumber: String?, profilePic: String) {
         
         self.instructorName = instructorName
         self.occupation = occupation

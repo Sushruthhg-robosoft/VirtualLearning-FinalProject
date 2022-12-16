@@ -79,12 +79,12 @@ class courseDetailsViewModel {
             
             guard let instructorName = courseInstructor["instructorName"] as? String else {return}
             guard let occupation = courseInstructor["occupation"] as? String else {return}
-            guard let about = courseInstructor["about"] as? String else {return}
+            let about = courseInstructor["about"] as? String 
             let emailId = courseInstructor["emailId"] as? String
             let phoneNumber = courseInstructor["phoneNumber"] as? String
             guard let profilepic = courseInstructor["profile_pic"] as? String else {return}
           
-            let instructor = Instructor(instructorName: instructorName, occupation: occupation, about: about, emailId: emailId ?? "", phoneNumber: phoneNumber ?? "", profilePic: profilepic)
+            let instructor = Instructor(instructorName: instructorName, occupation: occupation, about: about, emailId: emailId, phoneNumber: phoneNumber, profilePic: profilepic)
             guard let joinedCourse = courseData["joined_course"] as? Bool else {return}
             
             let courseOverViewData = CourseOverview(courseHeader: courseHeaderObject, courseIncludes: courseIncludesObject, overView: newOverView, Instructor: instructor, joinedCourse: joinedCourse)
