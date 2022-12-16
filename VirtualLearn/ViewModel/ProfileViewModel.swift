@@ -9,9 +9,9 @@ import Foundation
 class ProfileViewModel {
     static var shared = ProfileViewModel()
     let networkManager = NetWorkManager()
-//    var profileDataDetails = [ProfileData]()
+    var profileDataDetails = [ProfileData]()
     
-    //let token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdW1hbnRocHJhYmh1IiwiZXhwIjoxNjcxMTcxMTM3LCJpYXQiOjE2NzEwODQ3Mzd9.Mp328Yamdr0jE7qsnj7vsb_dKdMjI1TLws0Hozo9XJP8smtVvz6WLyeeQnpP7a1awyU9xsDXHAbTVjj5DQ5pIg"
+    let token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdW1hbnRocHJhYmh1IiwiZXhwIjoxNjcxMjU5MzkzLCJpYXQiOjE2NzExNzI5OTN9.LjkrVfJZfR50BHOf7FY6gdEZGcp3zMN-sqyxxorTfbJWK_M452aXqrBOTfgBDIi9xQqzrIbXyi29wsWEuskX7A"
     
     func getProfileData(completion: @escaping(ProfileData) -> Void, fail: @escaping () -> Void) {
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/profile")!
@@ -38,18 +38,29 @@ class ProfileViewModel {
             let twitterLink = profileData["twitterLink"] as? String
         
             let profiledata = ProfileData(userId: userId, profilePic: profilePicture, fullName: name, userName: userName, emailId: emailId, phoneNumber: phoneNumber, occupation: occupation, dateOfBirth: dateOfBirth, numberOfCoursesCompleted: coursesCompleted, numberOfChaptersCompleted: chaptersCompleted, numberOfTestsAttempted: testsAttempted, facebookLink: facebookLink, twitterLink: twitterLink)
-//            self.profileDataDetails.append(profiledata)
-            
-//            let profiledata =
-//            let profiledata = ProfileData(userId: userId, profilePic: profilePicture, fullName: name, userName: userName, emailId: emailId, phoneNumber: phoneNumber, occupation: occupation, dateOfBirth: dateOfBirth, numberOfCoursesCompleted: coursesCompleted, numberOfChaptersCompleted: chaptersCompleted, numberOfTestsCompleted: testsAttempted, facebookLink: facebookLink, twitterLink: twitterLink)
-//            profileDataDetails.append(profiledata)
             
             completion(profiledata)
-        
-      
-        } failure: { error in
+            
+                } failure: { error in
             print(error)
+        }
+    
+    func changePasswordForExistingUser(password: String, oldpassword: String, completion: @escaping () -> Void, fail: @escaping () -> Void) {
+       let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/auth/reset-password")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "PATCH"
+        request.setValue(password, forHTTPHeaderField: "password")
+        request.setValue(oldpassword, forHTTPHeaderField: "oldPassword")
+        networkManager.fetchData(request: request as URLRequest) { result in
+            guard let response = result as? String else{return}
+            print(response)
+            
+        } failure: { failResult in
+            print(failResult)
         }
     }
 }
+    
+}
+
 

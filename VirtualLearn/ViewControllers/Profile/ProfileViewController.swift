@@ -31,8 +31,6 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var testView: UIView!
     @IBOutlet weak var changeYourPasswordButton: UIButton!
 
-    
-    
     let profileViewModel = ProfileViewModel()
     
     override func viewDidLoad() {
@@ -68,6 +66,8 @@ class ProfileViewController: UIViewController {
     
     
     @IBAction func onClickChangePassword(_ sender: Any) {
+        
+        
         let vc = storyboard?.instantiateViewController(identifier: "ChangeYourPasswordViewController") as! ChangeYourPasswordViewController
         navigationController?.pushViewController(vc, animated: true)
         
