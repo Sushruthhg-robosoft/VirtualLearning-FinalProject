@@ -199,6 +199,9 @@
                             <state key="normal" title="See All">
                                 <color key="titleColor" red="0.47843137254901957" green="0.47843137254901957" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
+                            <connections>
+                                <action selector="onclickChooseInAllCourse:" destination="-1" eventType="touchUpInside" id="m97-IM-jqz"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7In-dH-CBv" customClass="ChoiceOfCourseCustomButton" customModule="VirtualLearn" customModuleProvider="target">
                             <rect key="frame" x="24" y="38" width="50" height="26"/>

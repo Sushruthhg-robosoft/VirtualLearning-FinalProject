@@ -11,7 +11,6 @@ class ProfileViewModel {
     let networkManager = NetWorkManager()
     var profileDataDetails = [ProfileData]()
     
-    let token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdW1hbnRocHJhYmh1IiwiZXhwIjoxNjcxMzM2ODMyLCJpYXQiOjE2NzEyNTA0MzJ9.D1emdMGeAUyzc30Gvu1iLmFHXbHGh0NNp4LleMrLcpEyuObS-pYO3g7jH-LyPeMBQIZVVjzWIihBe4YWaapmdw"
     
     func getProfileData(completion: @escaping(ProfileData) -> Void, fail: @escaping () -> Void) {
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/profile")!

@@ -11,7 +11,6 @@ import UIKit
 class ChaptersViewModel {
     
     let networkManeger = NetWorkManager()
-    
     var courseChapter = [CourseChapter]()
     var courseContentResponse = [CourseContentResponse]()
     var lessonResponseList = [LessonResponseList]()
@@ -20,26 +19,19 @@ class ChaptersViewModel {
     func getChapters(courseId: String,completion: @escaping(String) -> Void, fail: @escaping () -> Void) {
         
         
-        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/chapter?courseId=18")!
+        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/chapter?courseId=3")!
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        networkManeger.fetchDataJson(request: request) { data in
-            
-//            print(data)
+        networkManeger.fetchDataJson(request: request) { [self] data in
             
             guard let apiData = data as? [String:Any] else {print("apiDataerr");return}
-            
+
             guard let joinedCourse = apiData["joinedCourse"] as? Bool else{print("joinedCourseErr");return}
-//            guard let certificateResponse = apiData["certificateResponse"] as? Certificate? else{print("certificaterespErr");return}
-            guard let certificateGenerated = apiData["certificateGenerated"] as? Bool else{print("certificateGeneratedErr"); return}
-            
-            let courseChapter = CourseChapter(joinedCourse: joinedCourse, certificateResponse: nil, certificateGenerated: certificateGenerated)
-            self.courseChapter.append(courseChapter)
-            
-            
-            
+            guard let certificateGenerated = apiData["certificateGenerated"] as? Bool else{print("certificateGeneratederr");return}
+
+            print("certificateGenerated",certificateGenerated)
             
             guard let courseContentResponse = apiData["courseContentResponse"] as? [String : Int] else{print("courseContentResponseErr"); return}
             guard let courseId = courseContentResponse["courseId"] else{print("courseIdErr"); return}
@@ -49,7 +41,7 @@ class ChaptersViewModel {
             guard let totalVideoLength = courseContentResponse["totalVideoLength"] else{print("totalVideoLengthErr"); return}
             
             let CourseContentData = CourseContentResponse(courseId: courseId, chapterCount: chapterCount, lessonCount: lessonCount, moduleTest: moduleTest, totalVideoLength: totalVideoLength)
-            self.courseContentResponse.append(CourseContentData)
+
             
             
             
@@ -60,33 +52,39 @@ class ChaptersViewModel {
                 guard let chapterName = lessonResponseList["chapterName"] as? String else{print("chapterNameErr"); return}
                 guard let chapterId = lessonResponseList["chapterId"] as? Int else{print("chapterIdErr"); return}
                 guard let chapterCompletionStatus = lessonResponseList["chapterCompleted"] as? Bool else{print("chapterStatusErr"); return}
-//                guard let assignmentResponse = lessonResponseList["assignmentResponse"] as? LessonResponseList else{print("assignmentResponseErr"); return}
                 
+                guard let chapterList = lessonResponseList["lessonList"] as? [[String:Any]] else{print("chapterlist Errrpr"); return}
                 
-                let lessonResponseData = LessonResponseList(chapterId: chapterId, chapterName: chapterName, chapterCompleted: chapterCompletionStatus, assignmentResponse: nil)
+                for lesson in chapterList {
+                    guard let lessonId = lesson["lessonId"] as? Int else {return}
+                    guard let lessonName = lesson["lessonName"] as? String else {return}
+                    guard let videoLink = lesson["videoLink"] as? String else {return}
+                    guard let duration = lesson["duration"] as? Int else {return}
+                    guard let lessonCompleted = lesson["lessonCompleted"] as? Bool else {return}
+                    
+                    let newLesson = LessonList(lessonId: lessonId, lessonName: lessonName, videoLink: videoLink, duration: duration, lessonCompleted: lessonCompleted)
+                    self.lessonList.append(newLesson)
+                    
+                }
+                print("after lesson")
+                let assesmentResponse = lessonResponseList["assignmentResponse"] as? [String: Any]
+//                guard let assesmentResponseExsist = assesmentResponse else {return}
+                print("assesmentResponse",assesmentResponse)
+                if(assesmentResponse != nil) {
+                    guard let assesmentdetails = assesmentResponse else {return}
+                    print(assesmentdetails)
+                    guard let assignmentId = assesmentdetails["assignmentId"] as? Int else {return}
+                    guard let assignmentName = assesmentdetails["assignmentName"] as? String else {return}
+                    guard let testDuration = assesmentdetails["testDuration"] as? String else {return}
+                    guard let questionCount = assesmentdetails["questionCount"] as? Int else {return}
+                    guard let grade = assesmentdetails["grade"] as? Bool else {return}
+                    
+                    let assesment = AssignmentResponse(assignmentId: <#T##Int#>, assignmentName: <#T##String#>, testDuration: <#T##Int#>, questionCount: <#T##Int#>, grade: <#T##Int#>)
+                }
+//                print(assesmentResponseExsist)
                 
-                self.lessonResponseList.append(lessonResponseData)
-                
-                guard let lessonList = lessonResponseList["lessonList"] as? [Any] else{print("lessonListErr"); return}
-                
-                
-                print(chapterName,chapterId,chapterCompletionStatus,lessonList )
+
             }
-            
-            
-            
-            
-            
-            print(joinedCourse)
-//            print(certificateResponse)
-            print(certificateGenerated)
-            print(courseContentResponse)
-            print(courseId)
-            print(chapterCount)
-            print(lessonCount)
-            print(moduleTest)
-            print(totalVideoLength)
-            print(LessonResponse)
             
         } failure: {(error) in
             print(error)

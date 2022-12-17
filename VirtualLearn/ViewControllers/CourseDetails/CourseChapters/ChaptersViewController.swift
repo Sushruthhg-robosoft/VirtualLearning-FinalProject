@@ -46,16 +46,12 @@ class ChaptersViewController: UIViewController {
         overViewBtn.setTitleColor(#colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1), for: .normal)
         overViewUnderLineView.backgroundColor = #colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
         
-        
-        shared.chaptersDetailsViewModelShared.getChapters(courseId: "18") { data in
-            
-//            print(data)
+        shared.chaptersDetailsViewModelShared.getChapters(courseId: "3") { result in
+            print(result)
         } fail: {
-            
+            print("failures")
         }
-
-        
-        
+ 
     }
     
     @IBAction func onClickOverview(_ sender: Any) {

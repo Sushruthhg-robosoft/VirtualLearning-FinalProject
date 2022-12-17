@@ -17,8 +17,8 @@ class customChooseCourseView: UIView {
         setBorder()
     }
     func setBorder(){
-        self.layer.borderWidth = 1
+        self.layer.borderWidth = 0.5
         self.layer.cornerRadius = 5
-        self.layer.borderColor = #colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
+        self.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     }
 }
