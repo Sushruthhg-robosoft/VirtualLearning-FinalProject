@@ -26,11 +26,6 @@ class NewUserHomeView: UIView {
     override init(frame: CGRect) {
         
         super.init(frame: frame)
-       // bottomView.delegate = delegate
-        
-//        testDelegate?.printHome()
-//        bottomView.isHidden = true
-//        existingUserBottomView.isHidden = false
     }
     
     required init?(coder: NSCoder) {
@@ -45,12 +40,8 @@ class NewUserHomeView: UIView {
             newUser()
         }
         
-        DispatchQueue.main.async {
-            print("dsmjfhbiuhfdsfuj",self.bannerImages.count)
-        }
         
-//        testDelegate?.printHome()
-        print("c1 address: \(Unmanaged.passUnretained(BackView).toOpaque())")
+
     }
     
     

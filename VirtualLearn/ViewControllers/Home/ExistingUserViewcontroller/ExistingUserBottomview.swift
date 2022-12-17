@@ -14,7 +14,7 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
     @IBOutlet weak var allBtn: ChoiceOfCourseCustomButton!
     @IBOutlet weak var popularBtn: ChoiceOfCourseCustomButton!
     @IBOutlet weak var newestBtn: ChoiceOfCourseCustomButton!
-    
+    var mainshared = mainViewModel.mainShared
     @IBOutlet weak var ongoingColectionView: UICollectionView!
     
 
@@ -47,6 +47,16 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
        // topCourse2.topCourseTitle.text = "Top courses in Design"
         topCourse2.topCourseLabel.text = "Top courses in Design"
         
+        mainshared.homeViewModelShared.getAllCourseDeatils { (data) in
+            
+            DispatchQueue.main.async {
+                self.choiceOfUrCourseCollectionView.reloadData()
+            }
+            
+        } fail: {
+            print("fail")
+        }
+        
     }
     @IBAction func design(_ sender: Any) {
         
@@ -61,6 +71,15 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
         allBtn.isSelected()
         popularBtn.notSelected()
         newestBtn.notSelected()
+        mainshared.homeViewModelShared.getAllCourseDeatils { (data) in
+            
+            DispatchQueue.main.async {
+                self.choiceOfUrCourseCollectionView.reloadData()
+            }
+            
+        } fail: {
+            print("fail")
+        }
     }
     
     @IBAction func onClickPopular(_ sender: Any) {
@@ -68,6 +87,13 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
         allBtn.notSelected()
         popularBtn.isSelected()
         newestBtn.notSelected()
+        mainshared.homeViewModelShared.getPopularCourseDetails { (data) in
+            DispatchQueue.main.async {
+                self.choiceOfUrCourseCollectionView.reloadData()
+            }
+        } fail: {
+            print("fail")
+        }
     }
     
     @IBAction func onClickNewest(_ sender: Any) {
@@ -75,6 +101,13 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
         allBtn.notSelected()
         popularBtn.notSelected()
         newestBtn.isSelected()
+        mainshared.homeViewModelShared.getNewestCourseDetails { (data) in
+            DispatchQueue.main.async {
+                self.choiceOfUrCourseCollectionView.reloadData()
+            }
+        } fail: {
+            print("fail")
+        }
     }
     private func initCollectionView() {
         let nib = UINib(nibName: "ChoiceOfYourCourseCollectionViewCell", bundle: nil)
@@ -84,7 +117,7 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return mainshared.homeViewModelShared.allCourse.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -92,6 +125,12 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
             fatalError("can't dequeue CustomCell")
             
         }
+        cell.cardTitle.text = mainshared.homeViewModelShared.allCourse[indexPath.row].categoryName
+        cell.lessonName.text = mainshared.homeViewModelShared.allCourse[indexPath.row].courseName
+        cell.numberOfChapters.text = "\(mainshared.homeViewModelShared.allCourse[indexPath.row].totalNumberOfChapters) Chapters"
+        let url = URL(string: mainshared.homeViewModelShared.allCourse[indexPath.row].courseImage)
+        let data = try? Data(contentsOf: url!)
+        cell.lessonImage.image = UIImage(data: data!)
    
         return cell
     }
