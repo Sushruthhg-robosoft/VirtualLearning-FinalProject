@@ -6339,7 +6339,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U2U-wF-dHx">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1768"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1643"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_designcoursedetail1_bg" translatesAutoresizingMaskIntoConstraints="NO" id="L6t-5M-aun">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="212"/>
@@ -6348,7 +6348,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwR-lR-zy4">
-                                                <rect key="frame" x="0.0" y="1712" width="375" height="56"/>
+                                                <rect key="frame" x="0.0" y="1587" width="375" height="56"/>
                                                 <color key="backgroundColor" red="0.93333333330000001" green="0.36078431370000003" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="56" id="FB6-QL-CdC"/>
@@ -6487,7 +6487,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                 </constraints>
                                             </view>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p86-pl-bFZ">
-                                                <rect key="frame" x="24" y="516.5" width="327" height="170"/>
+                                                <rect key="frame" x="24" y="516.5" width="327" height="150"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <string key="text">Figma is a very powerful application that runs online. There are virtually no platform boundaries when it comes to using figma because you can design within a web browser or using their desktop application made for windows and macs. Figma is similar to Sketch and Adobe XD but is the more powerful of the three when it comes to te…</string>
                                                 <color key="textColor" systemColor="labelColor"/>
@@ -6495,13 +6495,16 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Includes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APm-jk-zRB">
-                                                <rect key="frame" x="24" y="716.5" width="129.5" height="21.5"/>
+                                                <rect key="frame" x="24" y="696.5" width="129.5" height="21.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21.5" id="DMq-97-03F"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="41" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6vR-ko-NUu">
-                                                <rect key="frame" x="24" y="752" width="327" height="210"/>
+                                                <rect key="frame" x="24" y="732" width="327" height="210"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="210" id="KGS-06-ajI"/>
@@ -6584,13 +6587,13 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What you'll learn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z09-S5-Uc9">
-                                                <rect key="frame" x="24" y="992" width="134" height="21.5"/>
+                                                <rect key="frame" x="24" y="972" width="134" height="21.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="45" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8Wv-oF-LBp">
-                                                <rect key="frame" x="24" y="1028.5" width="327" height="178"/>
+                                                <rect key="frame" x="24" y="1008.5" width="327" height="178"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="178" id="DFQ-S8-WzO"/>
@@ -6632,13 +6635,13 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                 </prototypes>
                                             </tableView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Requirements" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgV-bE-Ywi">
-                                                <rect key="frame" x="24" y="1231.5" width="111" height="21.5"/>
+                                                <rect key="frame" x="24" y="1211.5" width="111" height="21.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="26" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9gh-b5-MjO">
-                                                <rect key="frame" x="24" y="1262" width="327" height="128"/>
+                                                <rect key="frame" x="24" y="1242" width="327" height="128"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="128" id="7hw-dd-Avr"/>
@@ -6681,32 +6684,32 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                 </prototypes>
                                             </tableView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZQ-lp-bnn">
-                                                <rect key="frame" x="24" y="1420" width="78" height="21.5"/>
+                                                <rect key="frame" x="24" y="1400" width="78" height="21.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_instructor1" translatesAutoresizingMaskIntoConstraints="NO" id="mHb-td-XZO">
-                                                <rect key="frame" x="25" y="1455.5" width="60" height="60"/>
+                                                <rect key="frame" x="25" y="1435.5" width="60" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="7Os-Uz-qOp"/>
                                                     <constraint firstAttribute="height" constant="60" id="LXJ-sz-5IW"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dean Mathew" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0l0-r3-IWf">
-                                                <rect key="frame" x="95" y="1463.5" width="77.5" height="14.5"/>
+                                                <rect key="frame" x="95" y="1443.5" width="77.5" height="14.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Interface teacher www.appledesigntips.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wM-l0-SG4">
-                                                <rect key="frame" x="95" y="1480" width="237.5" height="12"/>
+                                                <rect key="frame" x="95" y="1460" width="237.5" height="12"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ce-li-aRV">
-                                                <rect key="frame" x="24" y="1524.5" width="330" height="171.5"/>
+                                                <rect key="frame" x="24" y="1504.5" width="330" height="66.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <string key="text">Back in 2020, I started brainspin with a desire to design compelling and engaging apps. For over 7 years, I have designed many high…</string>
                                                 <color key="textColor" systemColor="labelColor"/>
@@ -6733,7 +6736,6 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                             <constraint firstAttribute="trailing" secondItem="8Wv-oF-LBp" secondAttribute="trailing" constant="24" id="GwN-4p-gLm"/>
                                             <constraint firstAttribute="bottom" secondItem="uwR-lR-zy4" secondAttribute="bottom" id="H3o-pg-AcM"/>
                                             <constraint firstItem="mHb-td-XZO" firstAttribute="leading" secondItem="U2U-wF-dHx" secondAttribute="leading" constant="25" id="HlH-vB-CG8"/>
-                                            <constraint firstItem="p86-pl-bFZ" firstAttribute="top" secondItem="iQH-uc-sjL" secondAttribute="bottom" constant="29" id="HvJ-tG-AfC"/>
                                             <constraint firstAttribute="trailing" secondItem="9gh-b5-MjO" secondAttribute="trailing" constant="24" id="It4-KA-cvU"/>
                                             <constraint firstItem="LFR-zd-aRb" firstAttribute="width" secondItem="bPN-sQ-Rli" secondAttribute="width" multiplier="0.884685" constant="10.909909909909942" id="J6I-Xq-ixY"/>
                                             <constraint firstAttribute="trailing" secondItem="pfL-VH-dpE" secondAttribute="trailing" constant="24" id="JJi-sJ-ax3"/>
@@ -6746,7 +6748,6 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                             <constraint firstItem="rYX-Pl-Kdt" firstAttribute="centerX" secondItem="Urk-x6-oj8" secondAttribute="centerX" constant="5.5" id="TRd-Ji-YcN"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YZQ-lp-bnn" secondAttribute="trailing" constant="20" symbolic="YES" id="TkP-kE-RUa"/>
                                             <constraint firstAttribute="trailing" secondItem="mIS-ma-pRu" secondAttribute="trailing" constant="16" id="U1Q-Vl-o0A"/>
-                                            <constraint firstItem="6vR-ko-NUu" firstAttribute="top" secondItem="U2U-wF-dHx" secondAttribute="top" constant="752" id="V9c-Nv-3jU"/>
                                             <constraint firstItem="rYX-Pl-Kdt" firstAttribute="top" secondItem="bGN-9m-U4s" secondAttribute="bottom" constant="8.5" id="Xw5-Gl-b3C"/>
                                             <constraint firstItem="uwR-lR-zy4" firstAttribute="leading" secondItem="U2U-wF-dHx" secondAttribute="leading" id="YcN-4R-kLN"/>
                                             <constraint firstItem="APm-jk-zRB" firstAttribute="leading" secondItem="U2U-wF-dHx" secondAttribute="leading" constant="24" id="Zgi-G0-WUV"/>
@@ -6759,23 +6760,23 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                             <constraint firstAttribute="trailing" secondItem="bGN-9m-U4s" secondAttribute="trailing" constant="24" id="cYx-ws-sIH"/>
                                             <constraint firstItem="9gh-b5-MjO" firstAttribute="top" secondItem="dgV-bE-Ywi" secondAttribute="bottom" constant="9" id="cgn-tC-EPS"/>
                                             <constraint firstItem="deq-Il-aF8" firstAttribute="centerY" secondItem="Se6-ff-g1d" secondAttribute="centerY" id="e3W-47-hQA"/>
+                                            <constraint firstItem="p86-pl-bFZ" firstAttribute="leading" secondItem="iQH-uc-sjL" secondAttribute="trailing" constant="-327" id="eBX-P0-OaM"/>
                                             <constraint firstItem="dgV-bE-Ywi" firstAttribute="top" secondItem="8Wv-oF-LBp" secondAttribute="bottom" constant="25" id="ecz-wz-0KC"/>
                                             <constraint firstItem="mIS-ma-pRu" firstAttribute="leading" secondItem="U2U-wF-dHx" secondAttribute="leading" constant="24" id="et2-Q7-CB5"/>
                                             <constraint firstItem="0l0-r3-IWf" firstAttribute="top" secondItem="YZQ-lp-bnn" secondAttribute="bottom" constant="22" id="fL1-Mm-DWm"/>
                                             <constraint firstItem="L6t-5M-aun" firstAttribute="top" secondItem="U2U-wF-dHx" secondAttribute="top" id="fWd-U8-9Ul"/>
-                                            <constraint firstItem="APm-jk-zRB" firstAttribute="top" secondItem="p86-pl-bFZ" secondAttribute="bottom" constant="30" id="gpn-TP-Ak1"/>
                                             <constraint firstItem="LFR-zd-aRb" firstAttribute="centerX" secondItem="bPN-sQ-Rli" secondAttribute="centerX" constant="-5.5" id="hOW-2C-e32"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="APm-jk-zRB" secondAttribute="trailing" constant="20" symbolic="YES" id="hf3-v7-1vd"/>
                                             <constraint firstItem="L6t-5M-aun" firstAttribute="top" secondItem="U2U-wF-dHx" secondAttribute="top" id="hpO-eo-qV2"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0l0-r3-IWf" secondAttribute="trailing" constant="20" symbolic="YES" id="hrp-61-74o"/>
                                             <constraint firstAttribute="trailing" secondItem="uwR-lR-zy4" secondAttribute="trailing" id="ifE-Um-rPJ"/>
                                             <constraint firstAttribute="trailing" secondItem="L6t-5M-aun" secondAttribute="trailing" id="loc-Pn-ubk"/>
-                                            <constraint firstItem="uwR-lR-zy4" firstAttribute="top" secondItem="U2U-wF-dHx" secondAttribute="top" constant="1712" id="nFt-gb-Fm1"/>
                                             <constraint firstItem="bGN-9m-U4s" firstAttribute="leading" secondItem="U2U-wF-dHx" secondAttribute="leading" constant="24" id="p6t-JV-zGY"/>
                                             <constraint firstItem="6vR-ko-NUu" firstAttribute="leading" secondItem="U2U-wF-dHx" secondAttribute="leading" constant="24" id="pdE-ec-bo3"/>
                                             <constraint firstItem="iQH-uc-sjL" firstAttribute="leading" secondItem="U2U-wF-dHx" secondAttribute="leading" constant="24" id="qDu-Ic-uYi"/>
                                             <constraint firstItem="mIS-ma-pRu" firstAttribute="top" secondItem="Jmp-dd-zCY" secondAttribute="bottom" constant="20" id="qRh-Lw-IH5"/>
                                             <constraint firstItem="H1b-kc-cl4" firstAttribute="centerX" secondItem="bGN-9m-U4s" secondAttribute="centerX" id="qXb-jt-7WX"/>
+                                            <constraint firstItem="APm-jk-zRB" firstAttribute="top" secondItem="p86-pl-bFZ" secondAttribute="bottom" constant="30" id="rKV-fg-8ql"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Z09-S5-Uc9" secondAttribute="trailing" constant="20" symbolic="YES" id="scO-yo-i1p"/>
                                             <constraint firstItem="Se6-ff-g1d" firstAttribute="leading" secondItem="U2U-wF-dHx" secondAttribute="leading" constant="24" id="srU-sp-r5u"/>
                                             <constraint firstItem="Jmp-dd-zCY" firstAttribute="leading" secondItem="U2U-wF-dHx" secondAttribute="leading" constant="24" id="szV-nT-78y"/>
@@ -6783,6 +6784,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                             <constraint firstItem="9Ce-li-aRV" firstAttribute="top" secondItem="mHb-td-XZO" secondAttribute="bottom" constant="9" id="td1-lo-NJv"/>
                                             <constraint firstItem="9gh-b5-MjO" firstAttribute="leading" secondItem="U2U-wF-dHx" secondAttribute="leading" constant="24" id="uXk-CC-tpM"/>
                                             <constraint firstAttribute="trailing" secondItem="p86-pl-bFZ" secondAttribute="trailing" constant="24" id="vf7-jo-GBa"/>
+                                            <constraint firstItem="p86-pl-bFZ" firstAttribute="top" secondItem="iQH-uc-sjL" secondAttribute="bottom" constant="29" id="wNN-pv-378"/>
                                             <constraint firstItem="p86-pl-bFZ" firstAttribute="leading" secondItem="U2U-wF-dHx" secondAttribute="leading" constant="24" id="wOy-bz-fsb"/>
                                             <constraint firstItem="rYX-Pl-Kdt" firstAttribute="width" secondItem="Urk-x6-oj8" secondAttribute="width" multiplier="0.884685" constant="10.909909909909913" id="wlL-w3-iKe"/>
                                             <constraint firstItem="6vR-ko-NUu" firstAttribute="top" secondItem="APm-jk-zRB" secondAttribute="bottom" constant="14" id="x07-8y-iMU"/>
@@ -6795,7 +6797,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                         </constraints>
                                     </view>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJI-jT-mVi">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="962"/>
                                         <connections>
                                             <segue destination="CWZ-hf-ahz" kind="embed" identifier="switch" id="RmW-zN-Sfg"/>
                                         </connections>
@@ -7806,11 +7808,11 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
             <objects>
                 <viewController storyboardIdentifier="ChaptersViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CWZ-hf-ahz" customClass="ChaptersViewController" customModule="VirtualLearn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="twS-ur-FOy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="962"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3iU-qK-2hl">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="962"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZBS-Tf-qGu">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>

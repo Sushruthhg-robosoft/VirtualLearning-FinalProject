@@ -39,6 +39,7 @@ class CourseDetailsViewController: UIViewController {
     
     @IBOutlet weak var CourseChapterView: UIView!
     
+    @IBOutlet weak var courseDescriptionHeight: NSLayoutConstraint!
     
     var courseOverView: CourseOverview? = nil
     var courseIncludes = [String]()
@@ -63,7 +64,7 @@ class CourseDetailsViewController: UIViewController {
         
         
         
-        shared.courseDetailsViewModelShared.courseOverView(courseId: "16") { courseDataOverView in
+        shared.courseDetailsViewModelShared.courseOverView(courseId: "3") { courseDataOverView in
             self.courseOverView = courseDataOverView
             DispatchQueue.main.async { [self] in
                 self.CourseHeading.text = courseDataOverView.courseHeader.courseName
@@ -83,6 +84,9 @@ class CourseDetailsViewController: UIViewController {
                     self.courseIncludes.append("Certificate of Completion")
                 }
                 self.courseCaption.text = courseDataOverView.overView.courseDescription
+                
+//                self.courseDescriptionHeight.constant = self.courseDescription.contentSize.height
+                self.courseDescription.sizeToFit()
                 self.courseDescription.text = courseDataOverView.overView.previewCourseContent
                 self.courseOutcome = courseDataOverView.overView.courseOutCome
                 self.courseRequirment = courseDataOverView.overView.requirments
