@@ -50,29 +50,22 @@ class HomeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         
-        let loader = self.loader()
+        let loader1 = self.loader()
         NewUserView.topView.bannerImage.removeAll()
         print(NewUserView.topView.bannerImage.count)
         mainShared.homeViewModelShared.getBanners { (data) in
             DispatchQueue.main.async {
                
                 self.NewUserView.topView.bannerImage = data
-                self.stopLoader(loader: loader)
+                self.stopLoader(loader: loader1)
                 self.NewUserView.topView.suggestionsCollectionView.reloadData()
 
             }
         } fail: {
-           self.stopLoader(loader: loader)
+           self.stopLoader(loader: loader1)
             print("fail")
         }
         
-        
-        mainShared.homeViewModelShared.getAllCourseDeatils { (data) in
-        
-        } fail: {
-        
-        }
-
 
     }
     @IBAction func onClickSearch(_ sender: Any) {
@@ -156,6 +149,11 @@ extension HomeViewController: clickButtons{
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    func onclickChooseInAllCourse() {
+        print(90)
+        let vc = storyboard?.instantiateViewController(identifier: "ChooseYourCourseViewController") as! ChooseYourCourseViewController
+        navigationController?.pushViewController(vc, animated: true)
+    }
 
     
 }

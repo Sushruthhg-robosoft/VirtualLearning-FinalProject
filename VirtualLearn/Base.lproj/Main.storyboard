@@ -2063,7 +2063,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
             <objects>
                 <viewController storyboardIdentifier="NewUserMyCourseViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xN5-0k-xZF" customClass="NewUserMyCourseViewController" customModule="VirtualLearn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3lO-QP-sOL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="509.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="509"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="18f-l1-gKm">
@@ -6797,7 +6797,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                         </constraints>
                                     </view>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJI-jT-mVi">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="962"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <connections>
                                             <segue destination="CWZ-hf-ahz" kind="embed" identifier="switch" id="RmW-zN-Sfg"/>
                                         </connections>
@@ -7078,6 +7078,9 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4JK-Jc-4gn">
                                                 <rect key="frame" x="24" y="74" width="22" height="22"/>
                                                 <state key="normal" image="icn_back_header"/>
+                                                <connections>
+                                                    <action selector="onclickBack:" destination="bpG-Zi-JXV" eventType="touchUpInside" id="sgN-G2-KEA"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your course" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKQ-MC-zc6">
                                                 <rect key="frame" x="24" y="120" width="242" height="32"/>
@@ -7275,13 +7278,17 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="92"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_course_all course1" translatesAutoresizingMaskIntoConstraints="NO" id="y0I-VV-iuT">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_course_all course1" translatesAutoresizingMaskIntoConstraints="NO" id="y0I-VV-iuT">
                                                                     <rect key="frame" x="16" y="21" width="50" height="50"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="50" id="1G1-WS-BT2"/>
-                                                                        <constraint firstAttribute="width" secondItem="y0I-VV-iuT" secondAttribute="height" multiplier="1:1" id="2AI-Ul-8cD"/>
                                                                         <constraint firstAttribute="width" constant="50" id="thZ-Cd-DMz"/>
                                                                     </constraints>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                            <integer key="value" value="5"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adobe Illustrator CC - Essential Training Course" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXN-PI-EOh">
                                                                     <rect key="frame" x="78" y="21" width="277" height="33.5"/>
@@ -7808,11 +7815,11 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
             <objects>
                 <viewController storyboardIdentifier="ChaptersViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CWZ-hf-ahz" customClass="ChaptersViewController" customModule="VirtualLearn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="twS-ur-FOy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="962"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3iU-qK-2hl">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="962"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZBS-Tf-qGu">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>

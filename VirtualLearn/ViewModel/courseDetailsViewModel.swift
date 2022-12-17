@@ -22,7 +22,6 @@ class courseDetailsViewModel {
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         networkManeger.fetchData(request: request){ data in
             
-            print(data)
             guard let status = data as? [String] else{return}
             completion(status[0])
             

@@ -10,6 +10,7 @@ import UIKit
 protocol clickButtons {
     func onClickSeeAllCategories()
     func onClickChoiceofYourCourse()
+    func onclickChooseInAllCourse()
 }
 
 class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -39,6 +40,8 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
     var toCourse1Obj: UIView?
     var toCourse2Obj: UIView?
     var shared = ViewModel.shared
+    var mainShared = mainViewModel.mainShared
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -54,12 +57,17 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
         newestBtn.notSelected()
         initCollectionView()
         topCourse2.topCourseLabel.text = "Design"
-        //topCourse2.topCourseLabel.text =
-//        toCourse1Obj=topCourse1.TopCourseSectionViewObj() as? TopCourseSectionView
-//        toCourse2Obj = topCourse2.TopCourseSectionViewObj() as? TopCourseSectionView
-//
-//        topCourse1.addSubview(toCourse1Obj!)
-//        topCourse2.addSubview(toCourse2Obj!)
+
+        mainShared.homeViewModelShared.getAllCourseDeatils { (data) in
+            
+            DispatchQueue.main.async {
+                self.choiceOfUrCourseCollectionView.reloadData()
+            }
+            
+        } fail: {
+            print("fail")
+        }
+
         
     }
     @IBAction func design(_ sender: Any) {
@@ -78,6 +86,15 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
         allBtn.isSelected()
         popularBtn.notSelected()
         newestBtn.notSelected()
+        mainShared.homeViewModelShared.getAllCourseDeatils { (data) in
+            
+            DispatchQueue.main.async {
+                self.choiceOfUrCourseCollectionView.reloadData()
+            }
+            
+        } fail: {
+            print("fail")
+        }
     }
     
     @IBAction func onClickPopular(_ sender: Any) {
@@ -85,6 +102,14 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
         allBtn.notSelected()
         popularBtn.isSelected()
         newestBtn.notSelected()
+        mainshared.homeViewModelShared.getPopularCourseDetails { (data) in
+            DispatchQueue.main.async {
+                self.choiceOfUrCourseCollectionView.reloadData()
+            }
+        } fail: {
+            print("fail")
+        }
+
     }
     
     @IBAction func onClickNewest(_ sender: Any) {
@@ -92,7 +117,24 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
         allBtn.notSelected()
         popularBtn.notSelected()
         newestBtn.isSelected()
+        mainshared.homeViewModelShared.getNewestCourseDetails { (data) in
+            DispatchQueue.main.async {
+                self.choiceOfUrCourseCollectionView.reloadData()
+            }
+        } fail: {
+            print("fail")
+        }
+
+        
     }
+    
+    @IBAction func onclickChooseInAllCourse(_ sender: Any) {
+        
+        print("123456789")
+        shared.delegate?.onclickChooseInAllCourse()
+    }
+    
+    
     private func initCollectionView() {
         let nib = UINib(nibName: "ChoiceOfYourCourseCollectionViewCell", bundle: nil)
         choiceOfUrCourseCollectionView.register(nib, forCellWithReuseIdentifier: "choiceCell")
@@ -101,7 +143,7 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return mainShared.homeViewModelShared.allCourse.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -110,10 +152,13 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
             
         }
         
-        
-        
-        //cell.lessonImage.image = courseSet[indexPath.row]
-        //topCourseView2.topCourseTitle.text = "Top courses in Design"
+        cell.cardTitle.text = mainShared.homeViewModelShared.allCourse[indexPath.row].categoryName
+        cell.lessonName.text = mainShared.homeViewModelShared.allCourse[indexPath.row].courseName
+        cell.numberOfChapters.text = "\(mainShared.homeViewModelShared.allCourse[indexPath.row].totalNumberOfChapters) Chapters"
+        let url = URL(string: mainShared.homeViewModelShared.allCourse[indexPath.row].courseImage)
+        let data = try? Data(contentsOf: url!)
+        cell.lessonImage.image = UIImage(data: data!)
+
         return cell
     }
     
