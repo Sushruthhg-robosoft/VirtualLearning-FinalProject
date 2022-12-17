@@ -15,10 +15,10 @@ class HamburgerViewController: UIViewController {
 
     @IBOutlet weak var notificationCount: customHamLable!
     var delegate: HamburgerViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+    
     }
     
     @IBAction func onClickHome(_ sender: Any) {

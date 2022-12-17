@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1B0965F9294AD50D00182C9F /* CatergoryCourseDisplayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0965F8294AD50D00182C9F /* CatergoryCourseDisplayTableViewCell.swift */; };
 		1B12FEBF29458F0100612DB1 /* VerificationOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B12FEBE29458F0100612DB1 /* VerificationOTP.swift */; };
+		1B156BE1294C7582000DC768 /* CourseOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B156BE0294C7582000DC768 /* CourseOverview.swift */; };
 		1B3635E729409E1000D07243 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3635E629409E1000D07243 /* LoginPageViewController.swift */; };
 		1B3635EC29409E2500D07243 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3635EB29409E2500D07243 /* ForgotPasswordViewController.swift */; };
 		1B90BA6D294B40BC004A6D4B /* subCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B90BA6C294B40BC004A6D4B /* subCategoryView.swift */; };
@@ -38,6 +39,11 @@
 		590194BF293F715D00055C24 /* textField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590194BD293F715D00055C24 /* textField.swift */; };
 		590194C0293F715D00055C24 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590194BE293F715D00055C24 /* ButtonView.swift */; };
 		590194C6293F717300055C24 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590194C5293F717300055C24 /* LandingViewController.swift */; };
+		59055E26294C22B400608DE8 /* courseDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59055E25294C22B400608DE8 /* courseDetailsViewModel.swift */; };
+		59055E3D294C6A5200608DE8 /* chaptersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59055E3C294C6A5200608DE8 /* chaptersViewModel.swift */; };
+		59055E42294C757700608DE8 /* CourseChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59055E41294C757700608DE8 /* CourseChapter.swift */; };
+		59055E47294C7F5900608DE8 /* Certificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59055E46294C7F5900608DE8 /* Certificate.swift */; };
+		592B3530294CACAC00EDC10A /* AssignmentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B352F294CACAC00EDC10A /* AssignmentResponse.swift */; };
 		C25014C22947218D004A6711 /* CreateNewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25014C12947218D004A6711 /* CreateNewPasswordViewController.swift */; };
 		C25014C7294721B6004A6711 /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25014C6294721B6004A6711 /* Shadow.swift */; };
 		C2ED75032949D40B00562970 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ED75002949D40B00562970 /* ProfileViewController.swift */; };
@@ -46,6 +52,8 @@
 		C2ED750D2949D6A900562970 /* customProfilePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ED750C2949D6A900562970 /* customProfilePageView.swift */; };
 		C2ED75142949DF6300562970 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ED75122949DF6300562970 /* AlertMessage.swift */; };
 		C2ED75152949DF6300562970 /* ModuleTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ED75132949DF6300562970 /* ModuleTestViewController.swift */; };
+		C2ED752E2949EFC900562970 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ED752D2949EFC900562970 /* ProfileViewModel.swift */; };
+		C2ED75E4294B0A8D00562970 /* ProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ED75E3294B0A8D00562970 /* ProfileData.swift */; };
 		CF032A452948332400D6B6D3 /* CustomContinueChapterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF032A3F2948332400D6B6D3 /* CustomContinueChapterView.swift */; };
 		CF032A462948332400D6B6D3 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF032A402948332400D6B6D3 /* HeaderView.swift */; };
 		CF032A472948332400D6B6D3 /* ChaptersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF032A412948332400D6B6D3 /* ChaptersViewController.swift */; };
@@ -78,6 +86,7 @@
 		CF416C4E294361B300A27462 /* TopCourseSectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF416C4C294361B300A27462 /* TopCourseSectionCollectionViewCell.xib */; };
 		CF5231A3293F214600C56B7F /* OnboaringSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5231A2293F214600C56B7F /* OnboaringSlide.swift */; };
 		CF5231A8293F287A00C56B7F /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5231A7293F287A00C56B7F /* OnboardingCollectionViewCell.swift */; };
+		CF65D6DF294C488000B2852A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65D6DE294C488000B2852A /* HomeViewModel.swift */; };
 		CF79F1CF2941AAD000EEC920 /* SuggestionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF79F1CD2941AAD000EEC920 /* SuggestionsCollectionViewCell.swift */; };
 		CF79F1D02941AAD000EEC920 /* SuggestionsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF79F1CE2941AAD000EEC920 /* SuggestionsCollectionViewCell.xib */; };
 		CF79F1D52941BB4400EEC920 /* NewUserBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF79F1D42941BB4400EEC920 /* NewUserBottomView.xib */; };
@@ -131,6 +140,7 @@
 /* Begin PBXFileReference section */
 		1B0965F8294AD50D00182C9F /* CatergoryCourseDisplayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatergoryCourseDisplayTableViewCell.swift; sourceTree = "<group>"; };
 		1B12FEBE29458F0100612DB1 /* VerificationOTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationOTP.swift; sourceTree = "<group>"; };
+		1B156BE0294C7582000DC768 /* CourseOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseOverview.swift; sourceTree = "<group>"; };
 		1B3635E629409E1000D07243 /* LoginPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 		1B3635EB29409E2500D07243 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		1B90BA6C294B40BC004A6D4B /* subCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subCategoryView.swift; sourceTree = "<group>"; };
@@ -160,6 +170,11 @@
 		590194BD293F715D00055C24 /* textField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = textField.swift; sourceTree = "<group>"; };
 		590194BE293F715D00055C24 /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		590194C5293F717300055C24 /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		59055E25294C22B400608DE8 /* courseDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = courseDetailsViewModel.swift; sourceTree = "<group>"; };
+		59055E3C294C6A5200608DE8 /* chaptersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chaptersViewModel.swift; sourceTree = "<group>"; };
+		59055E41294C757700608DE8 /* CourseChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseChapter.swift; sourceTree = "<group>"; };
+		59055E46294C7F5900608DE8 /* Certificate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Certificate.swift; sourceTree = "<group>"; };
+		592B352F294CACAC00EDC10A /* AssignmentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentResponse.swift; sourceTree = "<group>"; };
 		C25014C12947218D004A6711 /* CreateNewPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewPasswordViewController.swift; sourceTree = "<group>"; };
 		C25014C6294721B6004A6711 /* Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
 		C2ED75002949D40B00562970 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +183,8 @@
 		C2ED750C2949D6A900562970 /* customProfilePageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customProfilePageView.swift; sourceTree = "<group>"; };
 		C2ED75122949DF6300562970 /* AlertMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
 		C2ED75132949DF6300562970 /* ModuleTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleTestViewController.swift; sourceTree = "<group>"; };
+		C2ED752D2949EFC900562970 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		C2ED75E3294B0A8D00562970 /* ProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileData.swift; sourceTree = "<group>"; };
 		CF032A3F2948332400D6B6D3 /* CustomContinueChapterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomContinueChapterView.swift; sourceTree = "<group>"; };
 		CF032A402948332400D6B6D3 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		CF032A412948332400D6B6D3 /* ChaptersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChaptersViewController.swift; sourceTree = "<group>"; };
@@ -200,6 +217,7 @@
 		CF416C4C294361B300A27462 /* TopCourseSectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopCourseSectionCollectionViewCell.xib; sourceTree = "<group>"; };
 		CF5231A2293F214600C56B7F /* OnboaringSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboaringSlide.swift; sourceTree = "<group>"; };
 		CF5231A7293F287A00C56B7F /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		CF65D6DE294C488000B2852A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		CF79F1CD2941AAD000EEC920 /* SuggestionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsCollectionViewCell.swift; sourceTree = "<group>"; };
 		CF79F1CE2941AAD000EEC920 /* SuggestionsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestionsCollectionViewCell.xib; sourceTree = "<group>"; };
 		CF79F1D42941BB4400EEC920 /* NewUserBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewUserBottomView.xib; sourceTree = "<group>"; };
@@ -482,6 +500,10 @@
 				CF032A7F2948955F00D6B6D3 /* notificationViewModel.swift */,
 				CF2EFB172949A7B800A7D585 /* myCourseViewModel.swift */,
 				CFA58400294AD84700EAE53B /* categoriesViewModel.swift */,
+				59055E25294C22B400608DE8 /* courseDetailsViewModel.swift */,
+				C2ED752D2949EFC900562970 /* ProfileViewModel.swift */,
+				59055E3C294C6A5200608DE8 /* chaptersViewModel.swift */,
+				CF65D6DE294C488000B2852A /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -492,8 +514,13 @@
 				1BA47D4E294704AF0012B8C3 /* RegisterUser.swift */,
 				CF5231A2293F214600C56B7F /* OnboaringSlide.swift */,
 				CF032A842948958F00D6B6D3 /* Notification.swift */,
-				CF2EFB1C2949ADC200A7D585 /* Course.swift */,
 				CF9E07FF294B38D200F90B49 /* Category.swift */,
+				CF2EFB1C2949ADC200A7D585 /* Course.swift */,
+				C2ED75E3294B0A8D00562970 /* ProfileData.swift */,
+				59055E41294C757700608DE8 /* CourseChapter.swift */,
+				59055E46294C7F5900608DE8 /* Certificate.swift */,
+				592B352F294CACAC00EDC10A /* AssignmentResponse.swift */,
+				1B156BE0294C7582000DC768 /* CourseOverview.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -746,6 +773,7 @@
 				1BD41653294095CC00E5334B /* CategoryViewController.swift in Sources */,
 				CF416C4D294361B300A27462 /* TopCourseSectionCollectionViewCell.swift in Sources */,
 				CFF19645293F5C4F00802396 /* NetworkManager.swift in Sources */,
+				59055E47294C7F5900608DE8 /* Certificate.swift in Sources */,
 				CF032A492948332400D6B6D3 /* CustomChaptersCellView.swift in Sources */,
 				CF9E07EF294B282900F90B49 /* CategoryCollectionViewCell.swift in Sources */,
 				C2ED75142949DF6300562970 /* AlertMessage.swift in Sources */,
@@ -757,7 +785,9 @@
 				C25014C7294721B6004A6711 /* Shadow.swift in Sources */,
 				1BF0C86329408D93009D9030 /* HomeViewController.swift in Sources */,
 				590194BF293F715D00055C24 /* textField.swift in Sources */,
+				59055E26294C22B400608DE8 /* courseDetailsViewModel.swift in Sources */,
 				CF416BC62942DCF200A27462 /* MyCourseTableViewCell.swift in Sources */,
+				59055E3D294C6A5200608DE8 /* chaptersViewModel.swift in Sources */,
 				CF2EFB372949F07200A7D585 /* TestResultViewController.swift in Sources */,
 				1B9289DA2949E76200C66D9E /* CourseDataTableViewCell.swift in Sources */,
 				C2ED75032949D40B00562970 /* ProfileViewController.swift in Sources */,
@@ -765,6 +795,7 @@
 				CF2EFB182949A7B800A7D585 /* myCourseViewModel.swift in Sources */,
 				CF2EFB69294A12B000A7D585 /* OngoingView.swift in Sources */,
 				1BA47D4F294704AF0012B8C3 /* RegisterUser.swift in Sources */,
+				C2ED75E4294B0A8D00562970 /* ProfileData.swift in Sources */,
 				C2ED75052949D40B00562970 /* EditProfileViewController.swift in Sources */,
 				CF79F1DA2941BBB600EEC920 /* NewUserBottomView.swift in Sources */,
 				1BF0C86229408D93009D9030 /* HamburgerViewController.swift in Sources */,
@@ -781,6 +812,7 @@
 				CF032A462948332400D6B6D3 /* HeaderView.swift in Sources */,
 				CFBA057C2946FB9800763342 /* ChooseYourCourseViewController.swift in Sources */,
 				CF9E0800294B38D200F90B49 /* Category.swift in Sources */,
+				C2ED752E2949EFC900562970 /* ProfileViewModel.swift in Sources */,
 				590194C0293F715D00055C24 /* ButtonView.swift in Sources */,
 				1B12FEBF29458F0100612DB1 /* VerificationOTP.swift in Sources */,
 				CFF1963B293F500800802396 /* pagecontrolExtension.swift in Sources */,
@@ -801,8 +833,10 @@
 				1BCF5C09294AE474003E6AF0 /* SubCategoriesCollectionViewCell.swift in Sources */,
 				CF032A8A2948966000D6B6D3 /* mainViewModel.swift in Sources */,
 				1B9289D52949E75300C66D9E /* BorderButton.swift in Sources */,
+				1B156BE1294C7582000DC768 /* CourseOverview.swift in Sources */,
 				CFF5C2722940B747008818EB /* HomeCategoriescustomButton.swift in Sources */,
 				CF79F1E8294217C800EEC920 /* ChoiceOfYourCourseCollectionViewCell.swift in Sources */,
+				59055E42294C757700608DE8 /* CourseChapter.swift in Sources */,
 				CF416BC82942DCF200A27462 /* NewUserMyCourseViewController.swift in Sources */,
 				1B9289CB2949E66800C66D9E /* SearchViewController.swift in Sources */,
 				C2ED75152949DF6300562970 /* ModuleTestViewController.swift in Sources */,
@@ -813,6 +847,7 @@
 				CF2EFB58294A060B00A7D585 /* ExistingCollectionViewCell.swift in Sources */,
 				CF032A4A2948332400D6B6D3 /* CustomChapterTableViewCell.swift in Sources */,
 				CF416C4229435E0E00A27462 /* TopCourseSectionView.swift in Sources */,
+				CF65D6DF294C488000B2852A /* HomeViewModel.swift in Sources */,
 				C25014C22947218D004A6711 /* CreateNewPasswordViewController.swift in Sources */,
 				590194AF293F711F00055C24 /* VerifyAccountViewController.swift in Sources */,
 				CF5231A3293F214600C56B7F /* OnboaringSlide.swift in Sources */,
@@ -828,6 +863,7 @@
 				1BA47D38294700170012B8C3 /* personalDetails.swift in Sources */,
 				CF5231A8293F287A00C56B7F /* OnboardingCollectionViewCell.swift in Sources */,
 				CF2EFB3D2949F0B700A7D585 /* QuestionListTableViewCell.swift in Sources */,
+				592B3530294CACAC00EDC10A /* AssignmentResponse.swift in Sources */,
 				1B0965F9294AD50D00182C9F /* CatergoryCourseDisplayTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

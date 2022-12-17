@@ -6,7 +6,7 @@
 //
 
 import Foundation
-let token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdW1hbnRocHJhYmh1IiwiZXhwIjoxNjcxMTEzMDE0LCJpYXQiOjE2NzEwNzcwMTR9.4Cq9ludokduxgI1okeaC9XrkcGMTXXlpZFmu4apfs929QYwcnpCeA9h8W02YI-U772dX58BMobrpClBvGA_CtA"
+let token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdW1hbnRocHJhYmh1IiwiZXhwIjoxNjcxMzM2OTQxLCJpYXQiOjE2NzEyNTA1NDF9.o6VmZGcISqeQLYDA6gzm9gZlfERpIKJE-pcJELbIzfvYkrEBjKJDbv8Hs2kb-Z2rTiBFZNxffXLZbE4pIoxOjg"
 
 class myCourseViewModel{
 

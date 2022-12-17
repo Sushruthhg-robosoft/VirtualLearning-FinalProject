@@ -15,11 +15,12 @@ class ChangeYourPasswordViewController: UIViewController {
     @IBOutlet weak var invalidPasswordView: UIView!
     @IBOutlet weak var passwordView: UIView!
     @IBOutlet weak var passwordIconImage: UIImageView!
-    
     @IBOutlet weak var currentPasswordLine: UIView!
-    
     @IBOutlet weak var newpasswordUnderLine: UIView!
     @IBOutlet weak var confirmPasswordUnderLine: UIView!
+    
+    let profileViewModel = ProfileViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
@@ -62,10 +63,24 @@ class ChangeYourPasswordViewController: UIViewController {
     }
     
     @IBAction func onClickResetButton(_ sender: Any) {
-        
+        guard let currentpassword = currentPasswordTextField.text else {return}
+        guard let newpassword = newPasswordTextField.text else {return}
+        let loader = self.loader()
+        profileViewModel.changePasswordForExistingUser(password: newpassword, oldpassword: currentpassword) {
+            
+          DispatchQueue.main.async {
+          self.stopLoader(loader: loader)
+          self.navigationController?.popViewController(animated: true)
+
+      }
+           
     }
-    
-    
+         fail: {
+            self.stopLoader(loader: loader)
+            self.okAlertMessagePopup(message: "something went wrong password not changed")
+        }
+    }
+  
 }
 
     

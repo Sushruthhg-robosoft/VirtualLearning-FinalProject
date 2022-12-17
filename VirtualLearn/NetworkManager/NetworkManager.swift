@@ -14,11 +14,17 @@ class NetWorkManager {
         URLSession.shared.dataTask(with: request) { data, response, error in
             if error == nil{
                           let httpResponse = response as! HTTPURLResponse
+                           print(httpResponse)
                           guard let responsedata = data else { return }
                           print(httpResponse.statusCode)
                           if(httpResponse.statusCode == 200){
                             let data = String(data: responsedata, encoding: .utf8)!.components(separatedBy: .newlines)
+                            print(data)
                             completion(data)
+                          }else if httpResponse.statusCode == 304 {
+                            print("already joined the course")
+                          }else if httpResponse.statusCode == 404 {
+                            print("course does not exist")
                           }
                           else{
                             
@@ -107,7 +113,9 @@ class NetWorkManager {
         URLSession.shared.dataTask(with: request) { data, response, error in
             if error == nil{
                           let httpResponse = response as! HTTPURLResponse
+                
                           guard let responsedata = data else { return }
+                print(httpResponse.statusCode)
                 
                           if(httpResponse.statusCode == 200){
                             let data = try! JSONSerialization.jsonObject(with: data!, options: .allowFragments)

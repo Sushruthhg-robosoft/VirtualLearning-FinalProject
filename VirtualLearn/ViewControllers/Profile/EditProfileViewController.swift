@@ -7,12 +7,13 @@
 
 import Foundation
 import UIKit
-class EditProfileViewController: UIViewController {
+class EditProfileViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     @IBOutlet weak var backgroundProfile: UIView!
     @IBOutlet weak var profilePhoto: UIImageView!
     
     
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var mobileNoLabel: UILabel!
     @IBOutlet weak var occupationLabel: UILabel!
@@ -24,6 +25,7 @@ class EditProfileViewController: UIViewController {
     
     
     @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var mobileNoField: UITextField!
     @IBOutlet weak var occupationField: UITextField!
@@ -33,9 +35,11 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var facebookField: UITextField!
     
     
+    
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var nameView: UIView!
+    @IBOutlet weak var userNameView: UIView!
     @IBOutlet weak var emailView: UIView!
     @IBOutlet weak var mobileNoView: UIView!
     @IBOutlet weak var occupationView: UIView!
@@ -49,12 +53,27 @@ class EditProfileViewController: UIViewController {
     
     @IBOutlet weak var femaleGender: UIButton!
     @IBOutlet weak var otherGender: UIButton!
+    
     var isdropDown = false
+    var dummyname = ""
+    var dummyUsername = ""
+    var dummyEmail = ""
+    var dummyMobileNo = ""
+    var dummydateofbirth = ""
+    var dummyusername = ""
+    
+    
+    
     override func viewDidLoad() {
+        
+        emailField.text = dummyEmail
+        nameField.text = dummyname
+        userNameTextField.text = dummyusername
+        mobileNoField.text = dummyMobileNo
+        
+
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
-        
-        
         
         dropDownView.isHidden = true
         genderField.isEnabled = false
@@ -64,8 +83,29 @@ class EditProfileViewController: UIViewController {
        
     }
     
+    
+    @IBAction func onClickCameraButton(_ sender: Any) {
+        let imageController = UIImagePickerController()
+                imageController.delegate = self
+                imageController.sourceType = .photoLibrary
+                self.present(imageController, animated: true, completion: nil)
+        
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+        profilePhoto.image = info[.originalImage] as? UIImage
+
+            self.dismiss(animated: true, completion: nil)
+
+        }
+   
     @IBAction func nameEdit(_ sender: Any) {
         nameView.backgroundColor = #colorLiteral(red: 0.001148699783, green: 0.2356859446, blue: 0.4366979599, alpha: 1)
+    }
+    
+    
+    @IBAction func userNameEdit(_ sender: Any) {
+        userNameView.backgroundColor = #colorLiteral(red: 0.01568627451, green: 0.1725490196, blue: 0.3607843137, alpha: 1)
     }
     
     @IBAction func emailEdit(_ sender: Any) {

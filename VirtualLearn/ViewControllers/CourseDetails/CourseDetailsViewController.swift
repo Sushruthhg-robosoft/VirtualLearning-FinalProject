@@ -8,6 +8,9 @@
 import UIKit
 
 class CourseDetailsViewController: UIViewController {
+    
+    var shared = mainViewModel.mainShared
+
 
     @IBOutlet weak var CourseHeading: UILabel!
     @IBOutlet weak var courseType: UILabel!
@@ -36,8 +39,12 @@ class CourseDetailsViewController: UIViewController {
     
     @IBOutlet weak var CourseChapterView: UIView!
     
+    @IBOutlet weak var courseDescriptionHeight: NSLayoutConstraint!
     
-    
+    var courseOverView: CourseOverview? = nil
+    var courseIncludes = [String]()
+    var courseOutcome = [String]()
+    var courseRequirment = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -54,6 +61,54 @@ class CourseDetailsViewController: UIViewController {
         overViewUnderLineView.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.3607843137, blue: 0.3019607843, alpha: 1)
         chaptersBtn.setTitleColor(#colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1), for: .normal)
         chaptersUnderLineView.backgroundColor = #colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
+        
+        
+        
+        shared.courseDetailsViewModelShared.courseOverView(courseId: "3") { courseDataOverView in
+            self.courseOverView = courseDataOverView
+            DispatchQueue.main.async { [self] in
+                self.CourseHeading.text = courseDataOverView.courseHeader.courseName
+                self.courseType.text = courseDataOverView.courseHeader.categoryName
+                self.courseChapters.text = String( courseDataOverView.courseHeader.totalNumberOfChapters)+" Chapters | " + String( courseDataOverView.courseHeader.totalNumberOfChapters)+" Lessons"
+    
+                self.courseIncludes.append(String(courseDataOverView.courseIncludes.totalVideoContent) + " total hours video")
+                if(courseDataOverView.courseIncludes.supportedFiles) {
+                    self.courseIncludes.append("Supports Files")
+                }
+                self.courseIncludes.append(String(courseDataOverView.courseIncludes.moduleTest) + " Module Test")
+                if(courseDataOverView.courseIncludes.fullLifeTimeAccess) {
+                    self.courseIncludes.append("Full lifetime access")
+                }
+                self.courseIncludes.append(courseDataOverView.courseIncludes.acessOn)
+                if(courseDataOverView.courseIncludes.CertificationofCompletion) {
+                    self.courseIncludes.append("Certificate of Completion")
+                }
+                self.courseCaption.text = courseDataOverView.overView.courseDescription
+                
+//                self.courseDescriptionHeight.constant = self.courseDescription.contentSize.height
+                self.courseDescription.sizeToFit()
+                self.courseDescription.text = courseDataOverView.overView.previewCourseContent
+                self.courseOutcome = courseDataOverView.overView.courseOutCome
+                self.courseRequirment = courseDataOverView.overView.requirments
+                
+                self.instructorName.text = courseDataOverView.Instructor.instructorName
+                self.instructorOccupation.text = courseDataOverView.Instructor.occupation
+                self.instructorDescription.text = courseDataOverView.Instructor.about
+                
+                let url = URL(string: courseDataOverView.Instructor.profilePic)
+                let data = try? Data(contentsOf: url!)
+                //cell.courseImage.image = UIImage(data: data!)
+                self.instructorImage.image = UIImage(data: data!)
+                tableView1.reloadData()
+                tableView2.reloadData()
+                tableView3.reloadData()
+                
+            }
+            
+        } fail: {
+            
+        }
+
       
     }
     
@@ -69,10 +124,7 @@ class CourseDetailsViewController: UIViewController {
     
     @IBAction func onClickChapters(_ sender: Any) {
         
-//        chaptersBtn.setTitleColor(#colorLiteral(red: 0.9333333333, green: 0.3607843137, blue: 0.3019607843, alpha: 1), for: .normal)
-//        chaptersUnderLineView.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.3607843137, blue: 0.3019607843, alpha: 1)
-//        overViewBtn.setTitleColor(#colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1), for: .normal)
-//        overViewUnderLineView.backgroundColor = #colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
+
         
         CourseChapterView.isHidden = false
         CourseOverViewView.isHidden = true
@@ -87,7 +139,18 @@ class CourseDetailsViewController: UIViewController {
     
     
     @IBAction func onClickJoinCourse(_ sender: Any) {
+        
+        shared.courseDetailsViewModelShared.joinCourse(courseId: "19"){ data in
+            
+            print(data)
+            
+        }fail: {
+            self.okAlertMessagePopup(message: "Failed to join course")
+            print("fail")
+        }
     }
+    
+    
     
 
 }
@@ -97,30 +160,31 @@ extension CourseDetailsViewController: UITableViewDelegate, UITableViewDataSourc
         
         switch tableView{
         case tableView1:
-            return 6
+            return courseIncludes.count
         case tableView2:
-            return 4
+            return courseOutcome.count
         case tableView3:
-        return 2
+            return courseRequirment.count
         default:
             return 1
         }
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch tableView {
         case tableView1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell1") as! CourseDetailseTableViewCell
-                    
-                    return cell
+            cell.courseIncludesLabel.text = courseIncludes[indexPath.row]
+            return cell
         case tableView2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell2") as! CourseDetailseTableViewCell
-                    
+            cell.WhatYouLearnLabel.text  = courseOutcome[indexPath.row]
                     return cell
             
         case tableView3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell3") as! CourseDetailseTableViewCell
-                    
+            cell.courseIncludesLabel.text  = courseRequirment[indexPath.row]
                     return cell
             
         default:
@@ -128,7 +192,14 @@ extension CourseDetailsViewController: UITableViewDelegate, UITableViewDataSourc
             return UITableViewCell()
         }
         
+        
     }
+    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 10
+//    }
+//
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
            if segue.identifier == "switch" {
@@ -146,5 +217,15 @@ extension CourseDetailsViewController: switchVc{
     }
     
     
+    
+}
+
+extension CourseDetailsViewController: UITextViewDelegate{
+    
+    func adjustUITextViewHeight(arg : UITextView) {
+        arg.translatesAutoresizingMaskIntoConstraints = true
+        arg.sizeToFit()
+        arg.isScrollEnabled = false
+    }
     
 }
