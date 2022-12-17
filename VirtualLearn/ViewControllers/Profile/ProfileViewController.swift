@@ -71,7 +71,6 @@ class ProfileViewController: UIViewController {
         let vc = storyboard?.instantiateViewController(identifier: "ChangeYourPasswordViewController") as! ChangeYourPasswordViewController
         navigationController?.pushViewController(vc, animated: true)
         }
-        
     
     @IBAction func onClickEditProfile(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(identifier: "EditProfileViewController") as! EditProfileViewController
@@ -83,7 +82,6 @@ class ProfileViewController: UIViewController {
         vc.dummyMobileNo = mobileNumber.text!
         
     }
-    
     
     @IBAction func onClickHamburger(_ sender: Any) {
         navigationController?.popViewController(animated: true)

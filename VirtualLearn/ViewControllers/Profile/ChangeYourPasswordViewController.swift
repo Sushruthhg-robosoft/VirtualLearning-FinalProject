@@ -65,16 +65,18 @@ class ChangeYourPasswordViewController: UIViewController {
     @IBAction func onClickResetButton(_ sender: Any) {
         guard let currentpassword = currentPasswordTextField.text else {return}
         guard let newpassword = newPasswordTextField.text else {return}
-        
+        let loader = self.loader()
         profileViewModel.changePasswordForExistingUser(password: newpassword, oldpassword: currentpassword) {
-            DispatchQueue.main.async {
-                    
+            
+          DispatchQueue.main.async {
+          self.stopLoader(loader: loader)
           self.navigationController?.popViewController(animated: true)
 
       }
            
     }
          fail: {
+            self.stopLoader(loader: loader)
             self.okAlertMessagePopup(message: "something went wrong password not changed")
         }
     }
