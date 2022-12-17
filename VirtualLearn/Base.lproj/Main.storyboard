@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gNg-9K-ofU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mnL-Rd-aKA">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -6486,7 +6486,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                     <constraint firstAttribute="bottom" secondItem="L46-vO-3qO" secondAttribute="bottom" id="yfF-1W-ikH"/>
                                                 </constraints>
                                             </view>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="p86-pl-bFZ">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p86-pl-bFZ">
                                                 <rect key="frame" x="24" y="516.5" width="327" height="170"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <string key="text">Figma is a very powerful application that runs online. There are virtually no platform boundaries when it comes to using figma because you can design within a web browser or using their desktop application made for windows and macs. Figma is similar to Sketch and Adobe XD but is the more powerful of the three when it comes to te…</string>
@@ -6517,23 +6517,28 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_includes_duration" translatesAutoresizingMaskIntoConstraints="NO" id="5rm-yF-3xx">
                                                                     <rect key="frame" x="0.0" y="11.5" width="18" height="18"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="18" id="ASW-M8-CxY"/>
-                                                                        <constraint firstAttribute="width" constant="18" id="PRR-lZ-V44"/>
+                                                                        <constraint firstAttribute="width" constant="18" id="Wgp-bt-ze8"/>
+                                                                        <constraint firstAttribute="height" constant="18" id="lJi-ud-JC1"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5D-bH-O8U">
-                                                                    <rect key="frame" x="33" y="20.5" width="0.0" height="0.0"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5D-bH-O8U">
+                                                                    <rect key="frame" x="33" y="11.5" width="4" height="18"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstItem="5rm-yF-3xx" firstAttribute="centerY" secondItem="CY2-gP-9x4" secondAttribute="centerY" id="6s1-nI-R1w"/>
-                                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="a5D-bH-O8U" secondAttribute="trailing" constant="10" id="DYj-9K-srw"/>
-                                                                <constraint firstItem="5rm-yF-3xx" firstAttribute="leading" secondItem="CY2-gP-9x4" secondAttribute="leading" id="csg-Rd-ijh"/>
-                                                                <constraint firstItem="a5D-bH-O8U" firstAttribute="leading" secondItem="5rm-yF-3xx" secondAttribute="trailing" constant="15" id="peA-aj-1kq"/>
-                                                                <constraint firstItem="a5D-bH-O8U" firstAttribute="centerY" secondItem="CY2-gP-9x4" secondAttribute="centerY" id="uRV-w3-bvZ"/>
+                                                                <constraint firstItem="a5D-bH-O8U" firstAttribute="leading" secondItem="5rm-yF-3xx" secondAttribute="trailing" constant="15" id="2Q6-Vv-qYt"/>
+                                                                <constraint firstItem="5rm-yF-3xx" firstAttribute="leading" secondItem="CY2-gP-9x4" secondAttribute="leading" id="45y-kp-nkB"/>
+                                                                <constraint firstItem="a5D-bH-O8U" firstAttribute="centerY" secondItem="5rm-yF-3xx" secondAttribute="centerY" id="Eya-V7-xeh"/>
+                                                                <constraint firstItem="a5D-bH-O8U" firstAttribute="top" secondItem="5rm-yF-3xx" secondAttribute="bottom" constant="-18" id="JZ6-jh-oro"/>
+                                                                <constraint firstAttribute="bottom" secondItem="a5D-bH-O8U" secondAttribute="bottom" constant="11.5" id="MkM-TV-qrX"/>
+                                                                <constraint firstItem="5rm-yF-3xx" firstAttribute="top" secondItem="CY2-gP-9x4" secondAttribute="top" constant="11.5" id="MrQ-wg-e0s"/>
+                                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="a5D-bH-O8U" secondAttribute="trailing" constant="20" symbolic="YES" id="NFN-rj-3QY"/>
+                                                                <constraint firstItem="5rm-yF-3xx" firstAttribute="centerY" secondItem="CY2-gP-9x4" secondAttribute="centerY" id="Qua-uR-57T"/>
+                                                                <constraint firstAttribute="bottom" secondItem="5rm-yF-3xx" secondAttribute="bottom" constant="11.5" id="gd5-65-vEs"/>
+                                                                <constraint firstItem="a5D-bH-O8U" firstAttribute="top" secondItem="CY2-gP-9x4" secondAttribute="top" constant="11.5" id="mCj-kj-OXN"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
                                                         <connections>
@@ -6669,6 +6674,9 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tjb-TW-a1J" secondAttribute="trailing" constant="20" symbolic="YES" id="sg2-z2-pMN"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="courseIncludesLabel" destination="tjb-TW-a1J" id="Zx4-ni-iNf"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>
@@ -6697,7 +6705,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9Ce-li-aRV">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ce-li-aRV">
                                                 <rect key="frame" x="24" y="1524.5" width="330" height="171.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <string key="text">Back in 2020, I started brainspin with a desire to design compelling and engaging apps. For over 7 years, I have designed many high…</string>
@@ -6787,7 +6795,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                         </constraints>
                                     </view>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJI-jT-mVi">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="969"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <connections>
                                             <segue destination="CWZ-hf-ahz" kind="embed" identifier="switch" id="RmW-zN-Sfg"/>
                                         </connections>
@@ -7798,11 +7806,11 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
             <objects>
                 <viewController storyboardIdentifier="ChaptersViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CWZ-hf-ahz" customClass="ChaptersViewController" customModule="VirtualLearn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="twS-ur-FOy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="969"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3iU-qK-2hl">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="969"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZBS-Tf-qGu">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>

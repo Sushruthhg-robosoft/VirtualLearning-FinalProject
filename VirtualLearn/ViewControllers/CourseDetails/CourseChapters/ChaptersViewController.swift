@@ -14,7 +14,8 @@ protocol switchVc{
 
 class ChaptersViewController: UIViewController {
 
-    
+    var shared = mainViewModel.mainShared
+
     
     //make This constraint 0 while not displaying Course Content lable top constraint = 30
     
@@ -44,6 +45,17 @@ class ChaptersViewController: UIViewController {
         chaptersUnderLineView.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.3607843137, blue: 0.3019607843, alpha: 1)
         overViewBtn.setTitleColor(#colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1), for: .normal)
         overViewUnderLineView.backgroundColor = #colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
+        
+        
+        shared.chaptersDetailsViewModelShared.getChapters(courseId: "18") { data in
+            
+//            print(data)
+        } fail: {
+            
+        }
+
+        
+        
     }
     
     @IBAction func onClickOverview(_ sender: Any) {

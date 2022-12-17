@@ -61,6 +61,8 @@ class CourseDetailsViewController: UIViewController {
         chaptersBtn.setTitleColor(#colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1), for: .normal)
         chaptersUnderLineView.backgroundColor = #colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
         
+        
+        
         shared.courseDetailsViewModelShared.courseOverView(courseId: "16") { courseDataOverView in
             self.courseOverView = courseDataOverView
             DispatchQueue.main.async { [self] in
@@ -80,7 +82,7 @@ class CourseDetailsViewController: UIViewController {
                 if(courseDataOverView.courseIncludes.CertificationofCompletion) {
                     self.courseIncludes.append("Certificate of Completion")
                 }
-                self.courseCaption.text = courseDataOverView.overView.previewCourseContent
+                self.courseCaption.text = courseDataOverView.overView.courseDescription
                 self.courseDescription.text = courseDataOverView.overView.previewCourseContent
                 self.courseOutcome = courseDataOverView.overView.courseOutCome
                 self.courseRequirment = courseDataOverView.overView.requirments
@@ -118,10 +120,7 @@ class CourseDetailsViewController: UIViewController {
     
     @IBAction func onClickChapters(_ sender: Any) {
         
-//        chaptersBtn.setTitleColor(#colorLiteral(red: 0.9333333333, green: 0.3607843137, blue: 0.3019607843, alpha: 1), for: .normal)
-//        chaptersUnderLineView.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.3607843137, blue: 0.3019607843, alpha: 1)
-//        overViewBtn.setTitleColor(#colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1), for: .normal)
-//        overViewUnderLineView.backgroundColor = #colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
+
         
         CourseChapterView.isHidden = false
         CourseOverViewView.isHidden = true
@@ -147,6 +146,8 @@ class CourseDetailsViewController: UIViewController {
         }
     }
     
+    
+    
 
 }
 
@@ -165,20 +166,21 @@ extension CourseDetailsViewController: UITableViewDelegate, UITableViewDataSourc
         }
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch tableView {
         case tableView1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell1") as! CourseDetailseTableViewCell
-            cell.textLabel?.text = courseIncludes[indexPath.row]
+            cell.courseIncludesLabel.text = courseIncludes[indexPath.row]
             return cell
         case tableView2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell2") as! CourseDetailseTableViewCell
-            cell.textLabel?.text = courseOutcome[indexPath.row]
+            cell.WhatYouLearnLabel.text  = courseOutcome[indexPath.row]
                     return cell
             
         case tableView3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell3") as! CourseDetailseTableViewCell
-            cell.textLabel?.text = courseRequirment[indexPath.row]
+            cell.courseIncludesLabel.text  = courseRequirment[indexPath.row]
                     return cell
             
         default:
@@ -186,7 +188,14 @@ extension CourseDetailsViewController: UITableViewDelegate, UITableViewDataSourc
             return UITableViewCell()
         }
         
+        
     }
+    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 10
+//    }
+//
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
            if segue.identifier == "switch" {
@@ -204,5 +213,15 @@ extension CourseDetailsViewController: switchVc{
     }
     
     
+    
+}
+
+extension CourseDetailsViewController: UITextViewDelegate{
+    
+    func adjustUITextViewHeight(arg : UITextView) {
+        arg.translatesAutoresizingMaskIntoConstraints = true
+        arg.sizeToFit()
+        arg.isScrollEnabled = false
+    }
     
 }
