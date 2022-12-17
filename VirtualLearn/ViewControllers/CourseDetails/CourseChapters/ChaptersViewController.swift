@@ -29,9 +29,14 @@ class ChaptersViewController: UIViewController {
     @IBOutlet weak var ContinuationLabelconstraint: NSLayoutConstraint!
     @IBOutlet weak var ContinuationLabelHeightContraint: NSLayoutConstraint!
     
+    @IBOutlet weak var courseHeading: UILabel!
+    @IBOutlet weak var courseCategory: customCourseCategoryLable!
+    @IBOutlet weak var courseLessonAndChapters: UILabel!
+    @IBOutlet weak var sourseContentDescription: UILabel!
+    
     var delegate : switchVc?
     var data = [Chapter(chapterName: "Chapter 1 - Introduction to the course", lessonNames: ["Introduction", "Using the Exercise Files"], isExpandable: false),Chapter(chapterName: "Chapter 2 - Learning the Figma Interface", lessonNames: ["Introduction", "Using the Exercise Files"], isExpandable: false),Chapter(chapterName: "Chapter 3 - Setting up a new project", lessonNames: ["Introduction", "Using the Exercise Files"], isExpandable: false),Chapter(chapterName: "Chapter 4 - Adding and Editing Content", lessonNames: ["Introduction", "Using the Exercise Files"], isExpandable: false),Chapter(chapterName: "Chapter 5 - Completing the Design", lessonNames: ["Introduction", "Using the Exercise Files"], isExpandable: false)]
-    
+    var dataoflesson = [LessonResponseList]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -47,7 +52,16 @@ class ChaptersViewController: UIViewController {
         overViewUnderLineView.backgroundColor = #colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
         
         shared.chaptersDetailsViewModelShared.getChapters(courseId: "3") { result in
-            print(result)
+            DispatchQueue.main.async { [self] in
+                let chapter = String(result.courseContentResponse.chapterCount) + "Chapter | "
+                let lesson = String(result.courseContentResponse.lessonCount) + "Lessons | "
+                let assesment = String(result.courseContentResponse.moduleTest) + "Assesment Test |"
+                let totalLength = String(result.courseContentResponse.totalVideoLength) + "h total Length"
+               
+                self.sourseContentDescription.text = chapter + lesson + assesment + totalLength
+                self.dataoflesson = result.lessonResponseList
+                tableView.reloadData()
+            }
         } fail: {
             print("failures")
         }
@@ -82,8 +96,14 @@ class ChaptersViewController: UIViewController {
 extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if data[section].isExpandable {
-            return data[section].lessonNames.count
+//        if data[section].isExpandable {
+//            return data[section].lessonNames.count
+//        }
+//        else{
+//            return 0
+//        }
+        if dataoflesson[section].isExpandable {
+            return dataoflesson[section].lessonList.count
         }
         else{
             return 0
@@ -93,7 +113,9 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cells") as! CustomChapterTableViewCell
-        cell.chapterName.text = data[indexPath.section].lessonNames[indexPath.row]
+        cell.chapterName.text = dataoflesson[indexPath.section].lessonList[indexPath.row].lessonName
+        cell.chapterNumber.text = "0\(String(dataoflesson[indexPath.section].lessonList[indexPath.row].lessonId))"
+        cell.chapterDuration.text = "\(String(dataoflesson[indexPath.section].lessonList[indexPath.row].duration)) mins"
         cell.moduleTestView.isHidden = true
         cell.progressViewWidthContraint.constant = 0
         cell.cellLeadingConstraint.constant = 0
@@ -103,13 +125,13 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return data.count
+        return dataoflesson.count
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderView") as! HeaderView
-        headerView.title.text = data[section].chapterName
+        headerView.title.text = dataoflesson[section].chapterName
         headerView.button.setImage(#imageLiteral(resourceName: "icn_chapter maximise"), for: .normal)
         headerView.delegateForHeader = self
         headerView.secIndex = section
@@ -123,7 +145,7 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
 
 extension ChaptersViewController: headerDelegate{
     func callHeader(idx: Int) {
-        data[idx].isExpandable = !data[idx].isExpandable
+        dataoflesson[idx].isExpandable = !dataoflesson[idx].isExpandable
         tableView.reloadSections([idx], with: .automatic)
     }
     

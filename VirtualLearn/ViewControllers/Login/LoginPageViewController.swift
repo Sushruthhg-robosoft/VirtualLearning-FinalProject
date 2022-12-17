@@ -86,9 +86,11 @@ class LoginPageViewController: UIViewController {
             self.stopLoader(loader: loader)
             DispatchQueue.main.async {
                 self.invalidPopup.isHidden=false
-                self.userNameTextField.text = ""
+                //self.userNameTextField.text = ""
                 self.passwordTextfield.text = ""
                 self.invalidMessage.text = "Invalid credentials, please try again"
+                self.passwordTextfield.becomeFirstResponder()
+                
             }
             
             //print("login fails")

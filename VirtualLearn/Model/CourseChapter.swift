@@ -13,15 +13,16 @@ class CourseChapter {
     var joinedCourse: Bool
     var certificateResponse: Certificate?
     var certificateGenerated: Bool
-    
+    var courseContentResponse: CourseContentResponse
     var lessonResponseList: [LessonResponseList]
     
-    init(joinedCourse: Bool,certificateResponse: Certificate?,certificateGenerated: Bool, lessonResponseList: [LessonResponseList]){
+    init(joinedCourse: Bool,certificateResponse: Certificate?,certificateGenerated: Bool, lessonResponseList: [LessonResponseList], courseContentResponse: CourseContentResponse){
         
         self.joinedCourse = joinedCourse
         self.certificateResponse = certificateResponse
         self.certificateGenerated = certificateGenerated
         self.lessonResponseList = lessonResponseList
+        self.courseContentResponse = courseContentResponse
        
     }
 }
@@ -48,6 +49,7 @@ class LessonResponseList {
     var chapterId: Int
     var chapterName: String
     var chapterCompleted: Bool
+    var isExpandable: Bool = false
     var lessonList: [LessonList]
     var assignmentResponse: AssignmentResponse?
     

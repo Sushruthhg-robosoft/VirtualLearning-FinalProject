@@ -8194,8 +8194,12 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                         <outlet property="CourseContentConstraint" destination="Qa4-41-sjn" id="g1K-dc-bMK"/>
                         <outlet property="chaptersBtn" destination="VKp-tl-qyn" id="8bU-GS-4CZ"/>
                         <outlet property="chaptersUnderLineView" destination="U7G-DD-Jbq" id="2ch-jK-eMs"/>
+                        <outlet property="courseCategory" destination="YNn-04-TzE" id="805-Ah-DVq"/>
+                        <outlet property="courseHeading" destination="7fJ-uA-ljs" id="hep-wO-NQc"/>
+                        <outlet property="courseLessonAndChapters" destination="Chv-25-5C5" id="SW1-kl-lcA"/>
                         <outlet property="overViewBtn" destination="9vI-2J-QnP" id="7wv-28-9eg"/>
                         <outlet property="overViewUnderLineView" destination="d1i-CN-0eo" id="spp-hy-ZFB"/>
+                        <outlet property="sourseContentDescription" destination="MTk-uE-osJ" id="HM6-ub-v79"/>
                         <outlet property="tableView" destination="97k-ge-eLi" id="nQv-Gz-6Av"/>
                     </connections>
                 </viewController>

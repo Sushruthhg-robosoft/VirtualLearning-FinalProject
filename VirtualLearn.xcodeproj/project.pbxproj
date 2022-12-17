@@ -504,8 +504,8 @@
 				CFA58400294AD84700EAE53B /* categoriesViewModel.swift */,
 				59055E25294C22B400608DE8 /* courseDetailsViewModel.swift */,
 				C2ED752D2949EFC900562970 /* ProfileViewModel.swift */,
-				59055E3C294C6A5200608DE8 /* chaptersViewModel.swift */,
 				CF65D6DE294C488000B2852A /* HomeViewModel.swift */,
+				59055E3C294C6A5200608DE8 /* chaptersViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
