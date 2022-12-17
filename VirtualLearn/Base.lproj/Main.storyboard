@@ -6530,7 +6530,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstItem="5rm-yF-3xx" firstAttribute="centerY" secondItem="CY2-gP-9x4" secondAttribute="centerY" id="6s1-nI-R1w"/>
-                                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="a5D-bH-O8U" secondAttribute="trailing" constant="20" symbolic="YES" id="DYj-9K-srw"/>
+                                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="a5D-bH-O8U" secondAttribute="trailing" constant="10" id="DYj-9K-srw"/>
                                                                 <constraint firstItem="5rm-yF-3xx" firstAttribute="leading" secondItem="CY2-gP-9x4" secondAttribute="leading" id="csg-Rd-ijh"/>
                                                                 <constraint firstItem="a5D-bH-O8U" firstAttribute="leading" secondItem="5rm-yF-3xx" secondAttribute="trailing" constant="15" id="peA-aj-1kq"/>
                                                                 <constraint firstItem="a5D-bH-O8U" firstAttribute="centerY" secondItem="CY2-gP-9x4" secondAttribute="centerY" id="uRV-w3-bvZ"/>
@@ -6787,7 +6787,7 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                         </constraints>
                                     </view>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJI-jT-mVi">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1166"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="969"/>
                                         <connections>
                                             <segue destination="CWZ-hf-ahz" kind="embed" identifier="switch" id="RmW-zN-Sfg"/>
                                         </connections>
@@ -7798,11 +7798,11 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
             <objects>
                 <viewController storyboardIdentifier="ChaptersViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CWZ-hf-ahz" customClass="ChaptersViewController" customModule="VirtualLearn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="twS-ur-FOy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1166"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="969"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3iU-qK-2hl">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1166"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="969"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZBS-Tf-qGu">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
