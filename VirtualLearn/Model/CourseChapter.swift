@@ -10,30 +10,22 @@ import Foundation
 
 class CourseChapter {
     
-    
     var joinedCourse: Bool
     var certificateResponse: Certificate?
     var certificateGenerated: Bool
-    
     
     var courseContentResponse : CourseContentResponse?
     var lessonResponseList: LessonResponseList?
     var lessonList: LessonList?
     
-   
-   
     init(joinedCourse: Bool,certificateResponse: Certificate?,certificateGenerated: Bool){
         
         self.joinedCourse = joinedCourse
         self.certificateResponse = certificateResponse
         self.certificateGenerated = certificateGenerated
        
-        
     }
-    
 }
-
-
 class CourseContentResponse {
     
     var courseId: Int

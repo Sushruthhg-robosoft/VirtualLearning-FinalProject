@@ -27,8 +27,6 @@ class ChaptersViewModel {
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         networkManeger.fetchDataJson(request: request) { data in
             
-//            print(data)
-            
             guard let apiData = data as? [String:Any] else {print("apiDataerr");return}
             
             guard let joinedCourse = apiData["joinedCourse"] as? Bool else{print("joinedCourseErr");return}
