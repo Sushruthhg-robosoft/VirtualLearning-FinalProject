@@ -10,7 +10,7 @@ import Foundation
 class HomeViewModel {
     //var shared = mainViewModel.mainShared
     var banners = [String]()
-    
+    var allCourse = [Course]()
     var networkManger = NetWorkManager()
     
     func getBanners(completion: @escaping([String]) -> Void, fail: @escaping () -> Void){
@@ -38,5 +38,39 @@ class HomeViewModel {
         }
 
     }
+    
+    func getAllCourseDeatils(completion: @escaping([Course]) -> Void, fail: @escaping () -> Void){
+        
+        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/courses?limit=5&page=1")!
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        
+        networkManger.fetchDataJson(request: request) { (data) in
+            guard let apiData = data as? [Any] else{print("myCourseViewModel apiData array error1");return}
+            guard let apiDataJson = apiData[0] as? [String:Any] else{print("myCourseViewModel apiData array error2");return}
+            guard let completedChapter = apiDataJson["chapter_count"] as? Int else{print("myCourseViewModel apiData array error3");return}
+            guard let courseId = apiDataJson["course_id"] as? Int else{print("myCourseViewModel apiData array error4");return}
+            guard let courseImage = apiDataJson["course_image"] as? String else{print("myCourseViewModel apiData array error5");return}
+            guard let courseName = apiDataJson["course_name"] as? String else{print("myCourseViewModel apiData array error6");return}
+            guard let totalChapters = apiDataJson["totalVideoLength"] as? Int else{print("myCourseViewModel apiData array error7");return}
+            let ongoingStatus = false
+                
+            
+            let myCourseDetails = Course(courseId: String(courseId), courseImage: courseImage, courseName: courseName, completedCount: String(completedChapter), totalNumberOfChapters: String(totalChapters), ongoingStatus: ongoingStatus)
+            self.allCourse.append(myCourseDetails)
+            print(self.allCourse.count)
+            completion(self.allCourse)
+    
+        } failure: { (error) in
+            print(error)
+            fail()
+        }
+
+    
+    }
+    
+    
     
 }

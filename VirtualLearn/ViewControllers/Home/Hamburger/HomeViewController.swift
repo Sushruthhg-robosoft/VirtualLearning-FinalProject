@@ -65,6 +65,14 @@ class HomeViewController: UIViewController {
            self.stopLoader(loader: loader)
             print("fail")
         }
+        
+        
+        mainShared.homeViewModelShared.getAllCourseDeatils { (data) in
+        
+        } fail: {
+        
+        }
+
 
     }
     @IBAction func onClickSearch(_ sender: Any) {
