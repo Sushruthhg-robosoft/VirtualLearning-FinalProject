@@ -51,4 +51,9 @@ extension TopCourseSectionView: UICollectionViewDelegate, UICollectionViewDataSo
         topCourseCollectionView.delegate = self
     }
     
+    
+    func TopCourseSectionViewObj() -> UIView{
+        return view
+    }
+    
 }

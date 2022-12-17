@@ -15,9 +15,12 @@ class mainViewModel{
     var categoriesViewModelShared = CategoryViewModel()
     var courseDetailsViewModelShared = courseDetailsViewModel()
     var chaptersDetailsViewModelShared = ChaptersViewModel()
+    var homeViewModelShared = HomeViewModel()
     var isExisting = false
+    var loginUserName: String?
     
-    let token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdW1hbnRocHJhYmh1IiwiZXhwIjoxNjcxMDM2Mjg1LCJpYXQiOjE2NzEwMDAyODV9.r_-6vPg-9s8WrbcYQdIN9kInYJdUtQCv8NKtFw4nzEgCCTfGRMGTWpXmx3qQCXlEQ7I-Pid1htCLyQ3bR1cKbQ"
+    
+    let token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdW1hbnRocHJhYmh1IiwiZXhwIjoxNjcxMzM2OTQxLCJpYXQiOjE2NzEyNTA1NDF9.o6VmZGcISqeQLYDA6gzm9gZlfERpIKJE-pcJELbIzfvYkrEBjKJDbv8Hs2kb-Z2rTiBFZNxffXLZbE4pIoxOjg"
     
     
 }

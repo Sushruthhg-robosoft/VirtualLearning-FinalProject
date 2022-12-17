@@ -13,7 +13,7 @@
                 <outlet property="BackView" destination="iN0-l3-epB" id="xKC-vq-owL"/>
                 <outlet property="bottomView" destination="FhD-R4-xgJ" id="qvy-8X-5sA"/>
                 <outlet property="existingUserBottomView" destination="IYl-d3-rEX" id="Ep1-R2-bS8"/>
-                <outlet property="topView" destination="AFW-5H-BQk" id="x8g-7i-ztL"/>
+                <outlet property="topView" destination="AFW-5H-BQk" id="2rn-Lh-dkk"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

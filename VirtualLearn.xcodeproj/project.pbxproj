@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1B0965F9294AD50D00182C9F /* CatergoryCourseDisplayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0965F8294AD50D00182C9F /* CatergoryCourseDisplayTableViewCell.swift */; };
 		1B12FEBF29458F0100612DB1 /* VerificationOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B12FEBE29458F0100612DB1 /* VerificationOTP.swift */; };
+		1B156BE1294C7582000DC768 /* CourseOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B156BE0294C7582000DC768 /* CourseOverview.swift */; };
 		1B3635E729409E1000D07243 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3635E629409E1000D07243 /* LoginPageViewController.swift */; };
 		1B3635EC29409E2500D07243 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3635EB29409E2500D07243 /* ForgotPasswordViewController.swift */; };
 		1B90BA6D294B40BC004A6D4B /* subCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B90BA6C294B40BC004A6D4B /* subCategoryView.swift */; };
@@ -85,6 +86,7 @@
 		CF416C4E294361B300A27462 /* TopCourseSectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF416C4C294361B300A27462 /* TopCourseSectionCollectionViewCell.xib */; };
 		CF5231A3293F214600C56B7F /* OnboaringSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5231A2293F214600C56B7F /* OnboaringSlide.swift */; };
 		CF5231A8293F287A00C56B7F /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5231A7293F287A00C56B7F /* OnboardingCollectionViewCell.swift */; };
+		CF65D6DF294C488000B2852A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65D6DE294C488000B2852A /* HomeViewModel.swift */; };
 		CF79F1CF2941AAD000EEC920 /* SuggestionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF79F1CD2941AAD000EEC920 /* SuggestionsCollectionViewCell.swift */; };
 		CF79F1D02941AAD000EEC920 /* SuggestionsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF79F1CE2941AAD000EEC920 /* SuggestionsCollectionViewCell.xib */; };
 		CF79F1D52941BB4400EEC920 /* NewUserBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF79F1D42941BB4400EEC920 /* NewUserBottomView.xib */; };
@@ -138,6 +140,7 @@
 /* Begin PBXFileReference section */
 		1B0965F8294AD50D00182C9F /* CatergoryCourseDisplayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatergoryCourseDisplayTableViewCell.swift; sourceTree = "<group>"; };
 		1B12FEBE29458F0100612DB1 /* VerificationOTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationOTP.swift; sourceTree = "<group>"; };
+		1B156BE0294C7582000DC768 /* CourseOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseOverview.swift; sourceTree = "<group>"; };
 		1B3635E629409E1000D07243 /* LoginPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 		1B3635EB29409E2500D07243 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		1B90BA6C294B40BC004A6D4B /* subCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subCategoryView.swift; sourceTree = "<group>"; };
@@ -214,6 +217,7 @@
 		CF416C4C294361B300A27462 /* TopCourseSectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopCourseSectionCollectionViewCell.xib; sourceTree = "<group>"; };
 		CF5231A2293F214600C56B7F /* OnboaringSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboaringSlide.swift; sourceTree = "<group>"; };
 		CF5231A7293F287A00C56B7F /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		CF65D6DE294C488000B2852A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		CF79F1CD2941AAD000EEC920 /* SuggestionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsCollectionViewCell.swift; sourceTree = "<group>"; };
 		CF79F1CE2941AAD000EEC920 /* SuggestionsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestionsCollectionViewCell.xib; sourceTree = "<group>"; };
 		CF79F1D42941BB4400EEC920 /* NewUserBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewUserBottomView.xib; sourceTree = "<group>"; };
@@ -499,6 +503,7 @@
 				59055E25294C22B400608DE8 /* courseDetailsViewModel.swift */,
 				C2ED752D2949EFC900562970 /* ProfileViewModel.swift */,
 				59055E3C294C6A5200608DE8 /* chaptersViewModel.swift */,
+				CF65D6DE294C488000B2852A /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -515,6 +520,7 @@
 				59055E41294C757700608DE8 /* CourseChapter.swift */,
 				59055E46294C7F5900608DE8 /* Certificate.swift */,
 				592B352F294CACAC00EDC10A /* AssignmentResponse.swift */,
+				1B156BE0294C7582000DC768 /* CourseOverview.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -827,6 +833,7 @@
 				1BCF5C09294AE474003E6AF0 /* SubCategoriesCollectionViewCell.swift in Sources */,
 				CF032A8A2948966000D6B6D3 /* mainViewModel.swift in Sources */,
 				1B9289D52949E75300C66D9E /* BorderButton.swift in Sources */,
+				1B156BE1294C7582000DC768 /* CourseOverview.swift in Sources */,
 				CFF5C2722940B747008818EB /* HomeCategoriescustomButton.swift in Sources */,
 				CF79F1E8294217C800EEC920 /* ChoiceOfYourCourseCollectionViewCell.swift in Sources */,
 				59055E42294C757700608DE8 /* CourseChapter.swift in Sources */,
@@ -840,6 +847,7 @@
 				CF2EFB58294A060B00A7D585 /* ExistingCollectionViewCell.swift in Sources */,
 				CF032A4A2948332400D6B6D3 /* CustomChapterTableViewCell.swift in Sources */,
 				CF416C4229435E0E00A27462 /* TopCourseSectionView.swift in Sources */,
+				CF65D6DF294C488000B2852A /* HomeViewModel.swift in Sources */,
 				C25014C22947218D004A6711 /* CreateNewPasswordViewController.swift in Sources */,
 				590194AF293F711F00055C24 /* VerifyAccountViewController.swift in Sources */,
 				CF5231A3293F214600C56B7F /* OnboaringSlide.swift in Sources */,
