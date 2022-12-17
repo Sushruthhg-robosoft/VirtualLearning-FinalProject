@@ -11,7 +11,7 @@ class ProfileViewModel {
     let networkManager = NetWorkManager()
     var profileDataDetails = [ProfileData]()
     
-    let token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdW1hbnRocHJhYmh1IiwiZXhwIjoxNjcxMjU5MzkzLCJpYXQiOjE2NzExNzI5OTN9.LjkrVfJZfR50BHOf7FY6gdEZGcp3zMN-sqyxxorTfbJWK_M452aXqrBOTfgBDIi9xQqzrIbXyi29wsWEuskX7A"
+    let token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdW1hbnRocHJhYmh1IiwiZXhwIjoxNjcxMzM2ODMyLCJpYXQiOjE2NzEyNTA0MzJ9.D1emdMGeAUyzc30Gvu1iLmFHXbHGh0NNp4LleMrLcpEyuObS-pYO3g7jH-LyPeMBQIZVVjzWIihBe4YWaapmdw"
     
     func getProfileData(completion: @escaping(ProfileData) -> Void, fail: @escaping () -> Void) {
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/profile")!
@@ -54,10 +54,14 @@ class ProfileViewModel {
         request.setValue(password, forHTTPHeaderField: "password")
         request.setValue(oldpassword, forHTTPHeaderField: "oldPassword")
         networkManager.fetchData(request: request as URLRequest) { result in
-            guard let response = result as? String else{return}
-            print(response)
+            guard let response = result as? [String] else{return}
+            if response[0] == "Password changed"
+            {
+                completion()
+            }
             
         } failure: { failResult in
+            fail()
             print(failResult)
         }
     }

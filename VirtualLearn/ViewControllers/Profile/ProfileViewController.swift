@@ -67,22 +67,11 @@ class ProfileViewController: UIViewController {
     
     
     @IBAction func onClickChangePassword(_ sender: Any) {
-//        let profileViewModel = ProfileViewModel()
-//        profileViewModel.changePasswordForExistingUser(password: "password", oldpassword: "oldpassword") {
-//      
-        
-        
+
         let vc = storyboard?.instantiateViewController(identifier: "ChangeYourPasswordViewController") as! ChangeYourPasswordViewController
         navigationController?.pushViewController(vc, animated: true)
-//        profileViewModel.changePasswordForExistingUser(password: "password", oldpassword: "oldpassword") {
-//        } fail: {
-//            
-//        }
         }
         
-    
-    
-    
     
     @IBAction func onClickEditProfile(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(identifier: "EditProfileViewController") as! EditProfileViewController
