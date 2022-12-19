@@ -8,16 +8,24 @@
 import UIKit
 
 class TermConditionViewController: UIViewController {
+    @IBOutlet weak var privacyPolicyLabel: UILabel!
+    @IBOutlet weak var textView: UITextView!
+    var label = ""
+    var content = ""
+    
 
     override func viewDidLoad() {
-        super.viewDidLoad()
+        privacyPolicyLabel.text = label
+        textView.text = content
 
-        // Do any additional setup after loading the view.
+        super.viewDidLoad()
+        
     }
-    
 
     @IBAction func onClickBack(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
     
 }
+
+

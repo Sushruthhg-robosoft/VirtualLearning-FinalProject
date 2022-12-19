@@ -115,11 +115,13 @@ class NetWorkManager {
                           let httpResponse = response as! HTTPURLResponse
                 
                           guard let responsedata = data else { return }
-                print(httpResponse.statusCode)
+                          print(httpResponse.statusCode)
                 
                           if(httpResponse.statusCode == 200){
                             let data = try! JSONSerialization.jsonObject(with: data!, options: .allowFragments)
+                           
                             completion(data)
+                            
                           }
                           else{
                             

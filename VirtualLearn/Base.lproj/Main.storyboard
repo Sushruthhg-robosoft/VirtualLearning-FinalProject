@@ -1224,31 +1224,25 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c59-IB-KGA">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="711.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="159"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffA-IM-zS1">
-                                                <rect key="frame" x="24" y="30" width="20" height="40"/>
+                                                <rect key="frame" x="24" y="30" width="20" height="22"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="arrow.left" catalog="system"/>
                                                 <connections>
                                                     <action selector="onClickBack:" destination="Yie-ey-AJ0" eventType="touchUpInside" id="naA-aL-IT3"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms and Services" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jEM-jC-U2u">
-                                                <rect key="frame" x="20" y="90" width="217.5" height="31.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms and Conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="712-5r-Dfc">
+                                                <rect key="frame" x="20" y="72" width="243" height="31.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                                <color key="textColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="igZ-Yy-d65">
-                                                <rect key="frame" x="24" y="141.5" width="327" height="570"/>
+                                                <rect key="frame" x="24" y="123.5" width="327" height="35.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <string key="text">These Terms of Services ("Terms") were last updated on September 16, 2020.
-
-VirtualLearn’s mission is to improve lives through learning. We enable anyone anywhere to create and share educational courses (instructors) and to enroll in these educational courses to learn (students). We consider our marketplace model the best way to offer valuable educational content to our users. We need rules to keep our platform and services safe for you, us and our student and instructor community. These Terms apply to all your activities on the VirtualLearn mobile application and our APIs and other related services (“Services”).
-
-If you publish a course on the VirtualLearn platform, you must also agree to the Instructor Terms. We also provide details regarding our processing of personal data of our students and instructors in our Privacy Policy. If you are using VirtualLearn as part of your employer’s VirtualLearn For Business learning and development program, you can consult our VirtualLearn for Business Privacy Statement.
-</string>
                                                 <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1256,15 +1250,14 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jEM-jC-U2u" secondAttribute="trailing" constant="20" symbolic="YES" id="18U-op-cgo"/>
-                                            <constraint firstItem="igZ-Yy-d65" firstAttribute="top" secondItem="jEM-jC-U2u" secondAttribute="bottom" constant="20" id="65h-d1-MM3"/>
                                             <constraint firstAttribute="bottom" secondItem="igZ-Yy-d65" secondAttribute="bottom" id="7tJ-ix-Fln"/>
                                             <constraint firstItem="ffA-IM-zS1" firstAttribute="leading" secondItem="c59-IB-KGA" secondAttribute="leading" constant="24" id="Bvx-9i-oSR"/>
-                                            <constraint firstItem="jEM-jC-U2u" firstAttribute="top" secondItem="c59-IB-KGA" secondAttribute="top" constant="90" id="Ezd-dv-Nuf"/>
+                                            <constraint firstItem="712-5r-Dfc" firstAttribute="leading" secondItem="c59-IB-KGA" secondAttribute="leading" constant="20" id="DKc-mb-t0O"/>
+                                            <constraint firstItem="igZ-Yy-d65" firstAttribute="top" secondItem="712-5r-Dfc" secondAttribute="bottom" constant="20" id="E1r-wp-12o"/>
                                             <constraint firstItem="ffA-IM-zS1" firstAttribute="top" secondItem="c59-IB-KGA" secondAttribute="top" constant="30" id="Qjr-0E-TaW"/>
-                                            <constraint firstItem="jEM-jC-U2u" firstAttribute="top" secondItem="ffA-IM-zS1" secondAttribute="bottom" constant="20" id="RPv-k6-j4K"/>
-                                            <constraint firstItem="jEM-jC-U2u" firstAttribute="leading" secondItem="c59-IB-KGA" secondAttribute="leading" constant="20" id="cOv-iI-xon"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="712-5r-Dfc" secondAttribute="trailing" constant="20" symbolic="YES" id="WhU-hR-whj"/>
                                             <constraint firstItem="igZ-Yy-d65" firstAttribute="leading" secondItem="c59-IB-KGA" secondAttribute="leading" constant="24" id="hqC-EN-Wu0"/>
+                                            <constraint firstItem="712-5r-Dfc" firstAttribute="top" secondItem="ffA-IM-zS1" secondAttribute="bottom" constant="20" id="pQk-4n-wca"/>
                                             <constraint firstAttribute="trailing" secondItem="igZ-Yy-d65" secondAttribute="trailing" constant="24" id="wb7-h6-T9Y"/>
                                         </constraints>
                                     </view>
@@ -1289,6 +1282,10 @@ If you publish a course on the VirtualLearn platform, you must also agree to the
                             <constraint firstItem="cY6-4U-awS" firstAttribute="leading" secondItem="dB5-sF-an8" secondAttribute="leading" id="gb1-AW-lyn"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="privacyPolicyLabel" destination="712-5r-Dfc" id="Xt8-dk-XRT"/>
+                        <outlet property="textView" destination="igZ-Yy-d65" id="jgk-ys-kNc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wP1-Zc-gNS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
