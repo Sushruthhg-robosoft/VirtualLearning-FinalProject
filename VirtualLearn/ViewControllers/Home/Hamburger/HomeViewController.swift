@@ -39,18 +39,11 @@ class HomeViewController: UIViewController {
         
         shared.delegate = self
         
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapView(_:)))
-        view.addGestureRecognizer(tapGestureRecognizer)
+       
 
     }
     
-    @objc func didTapView(_ sender: UITapGestureRecognizer) {
-        
-        if !hamburgerView.isHidden{
-            hideHamburgerMenu()
-        }
-        
-    }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         
