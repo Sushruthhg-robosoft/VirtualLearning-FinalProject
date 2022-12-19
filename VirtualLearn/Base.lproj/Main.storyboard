@@ -3823,7 +3823,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DEf-YP-wbv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="908" y="3214.5427286356826"/>
+            <point key="canvasLocation" x="908" y="3143"/>
         </scene>
         <!--Change Your Password View Controller-->
         <scene sceneID="RjZ-QQ-L5z">
@@ -8408,7 +8408,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nGe-hV-Woi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5524" y="1710.4947526236883"/>
+            <point key="canvasLocation" x="5513" y="1530"/>
         </scene>
     </scenes>
     <resources>

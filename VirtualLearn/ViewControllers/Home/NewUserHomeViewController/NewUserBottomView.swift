@@ -41,7 +41,8 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
     var toCourse2Obj: UIView?
     var shared = ViewModel.shared
     var mainShared = mainViewModel.mainShared
-    
+    var array = ["nbvhj", "afka", "aef", "nbvhj", "afka", "aef", "nbvhj", "afka", "aef"]
+    var array2 = ["123", "7456", "67", "nbvhj", "afka", "aef", "nbvhj", "afka", "aef"]
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -57,6 +58,8 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
         newestBtn.notSelected()
         initCollectionView()
         topCourse2.topCourseLabel.text = "Design"
+        
+        
 
         mainShared.homeViewModelShared.getAllCourseDeatils { (data) in
             
@@ -67,6 +70,34 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
         } fail: {
             print("fail")
         }
+
+        
+        
+        mainshared.homeViewModelShared.getPopularCourseCategory1Details { (data) in
+            
+            DispatchQueue.main.async {
+                self.topCourse1.topCourse = data
+                self.topCourse1.topCourseCollectionView.reloadData()
+            }
+            
+            
+        } fail: {
+            print("fail")
+        }
+        
+        mainshared.homeViewModelShared.getPopularCourseCategory2Details { (data) in
+            
+            DispatchQueue.main.async {
+                self.topCourse2.topCourse = data
+                self.topCourse2.topCourseCollectionView.reloadData()
+            }
+        } fail: {
+            print("fail")
+        }
+
+
+
+
 
         
     }
@@ -130,7 +161,7 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
     
     @IBAction func onclickChooseInAllCourse(_ sender: Any) {
         
-        print("123456789")
+       
         shared.delegate?.onclickChooseInAllCourse()
     }
     

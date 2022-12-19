@@ -39,7 +39,8 @@ class HomeViewController: UIViewController {
         
         shared.delegate = self
         
-       
+        
+
 
     }
     

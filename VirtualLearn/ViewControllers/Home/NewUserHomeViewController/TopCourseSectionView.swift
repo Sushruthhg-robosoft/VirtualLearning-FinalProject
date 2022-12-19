@@ -13,6 +13,10 @@ class TopCourseSectionView: UIView {
     @IBOutlet weak var skipBtn: UIButton!
     @IBOutlet weak var topCourseCollectionView: UICollectionView!
     
+    var shared = ViewModel.shared
+    var mainShared = mainViewModel.mainShared
+    var array = [String]()
+    var topCourse = [TopCourseCategory]()
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -32,7 +36,8 @@ class TopCourseSectionView: UIView {
 
 extension TopCourseSectionView: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+       
+        return topCourse.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -40,6 +45,13 @@ extension TopCourseSectionView: UICollectionViewDelegate, UICollectionViewDataSo
         guard let cell = topCourseCollectionView.dequeueReusableCell(withReuseIdentifier: "TopCourseSectionCell", for: indexPath) as? TopCourseSectionCollectionViewCell else {
             fatalError("can't dequeue CustomCell")
         }
+        cell.headingLabel.text = topCourse[indexPath.row].courseName
+        let url = URL(string: topCourse[indexPath.row].courseImage)
+        let data = try? Data(contentsOf: url!)
+        cell.courseImage.image = UIImage(data: data!)
+        cell.chapterCount.text = "\(topCourse[indexPath.row].totalNumberOfChapters) Chapter"
+        
+        cell.duration.text = topCourse[indexPath.row].videoLength
         
         return cell
     }
