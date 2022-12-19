@@ -14,10 +14,13 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     var shared = mainViewModel.mainShared
     @IBOutlet weak var tableview: UITableView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview.dataSource = self
         tableview.delegate = self
+        
+        
     
     }
     
@@ -27,13 +30,13 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewDidAppear(_ animated: Bool) {
         let loader =   self.loader()
-        shared.notificationViewModelShared.getNotificationCount {
-            self.tableview.reloadData()
-        } fail: {
-        }
+//        shared.notificationViewModelShared.getNotificationCount {
+//            self.tableview.reloadData()
+//        } fail: {
+//        }
 
         
-        shared.notificationViewModelShared.getNotifications(limit: "5", page: "1") {
+        shared.notificationViewModelShared.getNotifications(limit: "30", page: "1") {
             DispatchQueue.main.async {
                 self.stopLoader(loader: loader)
                 self.tableview.reloadData()
@@ -44,6 +47,9 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
             self.okAlertMessagePopup(message: "Failed to load notification")
             print("fail")
         }
+        
+        
+        
 
     }
     

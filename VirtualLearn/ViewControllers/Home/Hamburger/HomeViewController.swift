@@ -31,8 +31,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         hamburgerViewController?.delegate = self
-//        existingUserView.isHidden = false
-//        NewUserView.isHidden = true
+
         newUserDelegate.delegate = self
         NewUserView.delegate = self
         test.testDelegate = self
@@ -40,12 +39,17 @@ class HomeViewController: UIViewController {
         
         shared.delegate = self
         
-        print(mainShared.homeViewModelShared.banners.count)
-     
-        let view = NewUserView.returnObj()
-        print("Homevc: \(Unmanaged.passUnretained(view).toOpaque())")
-       
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapView(_:)))
+        view.addGestureRecognizer(tapGestureRecognizer)
 
+    }
+    
+    @objc func didTapView(_ sender: UITapGestureRecognizer) {
+        
+        if !hamburgerView.isHidden{
+            hideHamburgerMenu()
+        }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
