@@ -17,6 +17,8 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var notificationSoundView: UIView!
     @IBOutlet weak var notificationSoundViewHeight: NSLayoutConstraint!
     @IBOutlet weak var PopUpViewTopViewHeight: NSLayoutConstraint!
+    
+    let privacyViewModel = PrivacyPolicyViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.notificationSettingPopUpView.isHidden = true
@@ -52,6 +54,7 @@ class SettingViewController: UIViewController {
     }
     
     @IBAction func privacyPolicyClicked(_ sender: Any) {
+        privacyViewModel.getprivacyPolicyContent(privacyPolicyId: <#T##String#>, completion: <#T##() -> Void#>, fail: <#T##() -> Void#>)
         let vc = storyboard?.instantiateViewController(identifier: "TermConditionViewController") as! TermConditionViewController
         
         navigationController?.pushViewController(vc, animated: true)
