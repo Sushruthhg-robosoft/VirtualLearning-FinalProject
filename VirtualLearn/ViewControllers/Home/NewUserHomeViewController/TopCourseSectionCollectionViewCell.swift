@@ -9,6 +9,12 @@ import UIKit
 
 class TopCourseSectionCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var headingLabel: UILabel!
+    
+    @IBOutlet weak var courseImage: UIImageView!
+    
+    @IBOutlet weak var duration: UILabel!
+    @IBOutlet weak var chapterCount: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

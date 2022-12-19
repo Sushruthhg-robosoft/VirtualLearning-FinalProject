@@ -101,6 +101,12 @@
                 <constraint firstItem="lgB-gn-nC2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="sOj-a2-AeJ"/>
                 <constraint firstItem="lgB-gn-nC2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="vKi-4c-EuG"/>
             </constraints>
+            <connections>
+                <outlet property="chapterCount" destination="VM5-CL-Nar" id="tAS-aK-6hm"/>
+                <outlet property="courseImage" destination="3ao-pI-hJ6" id="hG3-f6-RsE"/>
+                <outlet property="duration" destination="PSj-px-QI7" id="4Xq-6u-3aj"/>
+                <outlet property="headingLabel" destination="ZGo-0e-lUr" id="GwE-Dc-Orc"/>
+            </connections>
             <point key="canvasLocation" x="142" y="104"/>
         </collectionViewCell>
     </objects>
