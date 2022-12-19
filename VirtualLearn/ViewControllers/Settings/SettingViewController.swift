@@ -18,6 +18,8 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var notificationSoundViewHeight: NSLayoutConstraint!
     @IBOutlet weak var PopUpViewTopViewHeight: NSLayoutConstraint!
     
+    let privacyViewModel = PrivacyPolicyViewModel()
+//    let privacyPolicyModel = [PrivacyPolicyModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,15 +56,21 @@ class SettingViewController: UIViewController {
     }
     
     @IBAction func privacyPolicyClicked(_ sender: Any) {
-//        let loader = self.loader()
-//        privacyViewModel.getprivacyPolicyContent(privacyPolicyId: "1")
-//        DispatchQueue.main.async {
-//        self.stopLoader(loader: loader)
+        let loader = self.loader()
         let vc = storyboard?.instantiateViewController(identifier: "TermConditionViewController") as! TermConditionViewController
         navigationController?.pushViewController(vc, animated: true)
-     
-    }
+        privacyViewModel.getprivacyPolicyContent(privacyPolicyId: "1") {
+        DispatchQueue.main.async {
+        
+        self.stopLoader(loader: loader)
 
+        }
+            
+        } fail: {
+            print("error")
+        }
+    }
+           
 
 
     

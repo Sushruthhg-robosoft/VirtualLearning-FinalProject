@@ -28,8 +28,10 @@ class PrivacyPolicyViewModel {
             let PolicyData = PrivacyPolicyModel(privacyPolicyId: String(policyId), content: content)
             
             self.privacyPolicyData.append(PolicyData)
+        
             
             completion()
+            
         } failure: { (error) in
             print(error)
             fail()
@@ -37,6 +39,7 @@ class PrivacyPolicyViewModel {
         
     }
 }
+
 
             
             
