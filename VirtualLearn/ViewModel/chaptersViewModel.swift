@@ -67,10 +67,10 @@ class ChaptersViewModel {
 
                     guard let assignmentId = assesmentdetails["assignmentId"] as? Int else {print("chapterCountErr1"); return}
                     guard let assignmentName = assesmentdetails["assignmentName"] as? String else {print("chapterCountErr2"); return}
-                    guard let testDuration = assesmentdetails["testDuration"] as? String else {print("hello");return}
+                    guard let testDuration = assesmentdetails["testDuration"] as? Int else {print("hello");return}
                     guard let questionCount = assesmentdetails["questionCount"] as? Int else {print("chapterCountErr3"); return}
-                    guard let grade = assesmentdetails["grade"] as? Double else {print("chapterCountErr4"); return}
-                    let assesment = AssignmentResponse(assignmentId: assignmentId, assignmentName: assignmentName, testDuration: testDuration, questionCount: questionCount, grade: Float(grade))
+                    guard let grade = assesmentdetails["grade"] as? Int else {print("chapterCountErr4"); return}
+                    let assesment = AssignmentResponse(assignmentId: assignmentId, assignmentName: assignmentName, testDuration: testDuration, questionCount: questionCount, grade: Int(grade))
                     assementData = assesment
                 }
                 let lessonResponse = LessonResponseList(chapterId: chapterId, chapterName: chapterName, chapterCompleted: chapterCompletionStatus, assignmentResponse: assementData, lessonList: lessonList)

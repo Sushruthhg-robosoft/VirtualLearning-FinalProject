@@ -17,6 +17,10 @@ class ChaptersViewController: UIViewController {
     var shared = mainViewModel.mainShared
 
     
+    @IBOutlet weak var joinedView: UIView!
+    
+    @IBOutlet weak var joinedLeftView: UIView!
+    @IBOutlet weak var joinedRightView: UIView!
     //make This constraint 0 while not displaying Course Content lable top constraint = 30
     
     @IBOutlet weak var overViewBtn: UIButton!
@@ -35,10 +39,17 @@ class ChaptersViewController: UIViewController {
     @IBOutlet weak var sourseContentDescription: UILabel!
     
     var delegate : switchVc?
-    var data = [Chapter(chapterName: "Chapter 1 - Introduction to the course", lessonNames: ["Introduction", "Using the Exercise Files"], isExpandable: false),Chapter(chapterName: "Chapter 2 - Learning the Figma Interface", lessonNames: ["Introduction", "Using the Exercise Files"], isExpandable: false),Chapter(chapterName: "Chapter 3 - Setting up a new project", lessonNames: ["Introduction", "Using the Exercise Files"], isExpandable: false),Chapter(chapterName: "Chapter 4 - Adding and Editing Content", lessonNames: ["Introduction", "Using the Exercise Files"], isExpandable: false),Chapter(chapterName: "Chapter 5 - Completing the Design", lessonNames: ["Introduction", "Using the Exercise Files"], isExpandable: false)]
     var dataoflesson = [LessonResponseList]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        joinedLeftView.layer.cornerRadius = 5
+        joinedRightView.layer.cornerRadius = 5
+       
+        joinedView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
+        joinedView.layer.shadowOpacity = 100
+        joinedView.layer.shadowRadius = 5
+        joinedView.layer.shadowOffset = CGSize(width: 0, height: 2)
 
         ContinuationLabelHeightContraint.constant = 0
         ContinuationLabelconstraint.constant = 0
@@ -70,10 +81,7 @@ class ChaptersViewController: UIViewController {
     
     @IBAction func onClickOverview(_ sender: Any) {
         
-//        overViewBtn.setTitleColor(#colorLiteral(red: 0.9333333333, green: 0.3607843137, blue: 0.3019607843, alpha: 1), for: .normal)
-//        overViewUnderLineView.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.3607843137, blue: 0.3019607843, alpha: 1)
-//        chaptersBtn.setTitleColor(#colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1), for: .normal)
-//        chaptersUnderLineView.backgroundColor = #colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
+
         delegate?.switchVc()
 
         
@@ -96,12 +104,7 @@ class ChaptersViewController: UIViewController {
 extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-//        if data[section].isExpandable {
-//            return data[section].lessonNames.count
-//        }
-//        else{
-//            return 0
-//        }
+
         if dataoflesson[section].isExpandable {
             return dataoflesson[section].lessonList.count
         }

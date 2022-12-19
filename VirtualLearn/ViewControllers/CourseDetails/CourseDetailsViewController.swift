@@ -41,6 +41,7 @@ class CourseDetailsViewController: UIViewController {
     
     @IBOutlet weak var courseDescriptionHeight: NSLayoutConstraint!
     
+    @IBOutlet weak var overViewScrollView: UIScrollView!
     var courseOverView: CourseOverview? = nil
     var courseIncludes = [String]()
     var courseOutcome = [String]()
@@ -128,6 +129,7 @@ class CourseDetailsViewController: UIViewController {
         
         CourseChapterView.isHidden = false
         CourseOverViewView.isHidden = true
+        overViewScrollView.isScrollEnabled = false
         view.bringSubviewToFront(CourseChapterView)
         
     }
@@ -213,6 +215,7 @@ extension CourseDetailsViewController: switchVc{
     func switchVc() {
         CourseChapterView.isHidden = true
         CourseOverViewView.isHidden = false
+        overViewScrollView.isScrollEnabled = true
         view.bringSubviewToFront(CourseOverViewView)
     }
     
