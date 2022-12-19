@@ -19,7 +19,7 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var PopUpViewTopViewHeight: NSLayoutConstraint!
     
     let privacyViewModel = PrivacyPolicyViewModel()
-//    let privacyPolicyModel = [PrivacyPolicyModel]()
+    let privacyPolicyModel = [PrivacyPolicyModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
