@@ -163,6 +163,7 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         shared.delegate?.onClickChoiceofYourCourse()
     }
     
