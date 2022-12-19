@@ -16,7 +16,7 @@ class NotificationViewModel{
    // let token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdW1hbnRocHJhYmh1IiwiZXhwIjoxNjcxMDI3MDAxLCJpYXQiOjE2NzA5OTEwMDF9.eD99V-Mat-m3XbiIdt6y_Bm0IGTYYcVsNz2HXRcPomd4CeZwdmBlmlZxxl_gvyzSS6U34GYPIm8D4AxypeefSg"
     
     
-    func getNotificationCount(completion: @escaping() -> Void, fail: @escaping () -> Void){
+    func getNotificationCount(token: String,completion: @escaping() -> Void, fail: @escaping () -> Void){
         
         print("inside get notification")
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/notificationCount")!
@@ -40,7 +40,7 @@ class NotificationViewModel{
     }
     
     
-    func getNotifications(limit: String,page: String,completion: @escaping() -> Void, fail: @escaping () -> Void){
+    func getNotifications(token: String, limit: String,page: String,completion: @escaping() -> Void, fail: @escaping () -> Void){
         
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/notification?limit=\(limit)&page=\(page)")!
         
@@ -94,7 +94,7 @@ class NotificationViewModel{
     }
     
     
-    func readNotification(notificationId: String, completion: @escaping(String) -> Void, fail: @escaping () -> Void){
+    func readNotification(token: String, notificationId: String, completion: @escaping(String) -> Void, fail: @escaping () -> Void){
         
         
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/notification?notificationId=\(notificationId)")!

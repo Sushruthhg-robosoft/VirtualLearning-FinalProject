@@ -23,7 +23,7 @@ class SettingViewController: UIViewController {
     let termsOfServiceViewModel = TermsOfServicesViewModel()
     let termsOfServiceModel = [TermsOfServicesModel]()
     
-    
+    let shared = mainViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.notificationSettingPopUpView.isHidden = true
@@ -62,7 +62,7 @@ class SettingViewController: UIViewController {
         let loader = self.loader()
         
       
-        privacyViewModel.getprivacyPolicyContent(privacyPolicyId: "1") { PolicyData in
+        privacyViewModel.getprivacyPolicyContent(token: shared.token, privacyPolicyId: "1") { PolicyData in
         DispatchQueue.main.async {
             self.stopLoader(loader: loader)
             let vc = self.storyboard?.instantiateViewController(identifier: "TermConditionViewController") as! TermConditionViewController
@@ -80,7 +80,7 @@ class SettingViewController: UIViewController {
 
     @IBAction func termsandConditionCliked(_ sender: Any) {
         let loader = self.loader()
-        termsOfServiceViewModel.gettermsofServicesContent(termsOfServicesId: "1") { ServiceData in
+        termsOfServiceViewModel.gettermsofServicesContent(token:shared.token, termsOfServicesId: "1") { ServiceData in
         DispatchQueue.main.async {
             self.stopLoader(loader: loader)
             let vc = self.storyboard?.instantiateViewController(identifier: "TermConditionViewController") as! TermConditionViewController

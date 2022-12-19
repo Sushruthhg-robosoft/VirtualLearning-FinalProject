@@ -34,7 +34,7 @@ class ProfileViewController: UIViewController {
     var oldpassword = ""
 
     let profileViewModel = ProfileViewModel()
-    
+    let shared = mainViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,7 +43,7 @@ class ProfileViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         let loader = self.loader()
-        profileViewModel.getProfileData { profiledata in
+        profileViewModel.getProfileData(token:shared.token ) { profiledata in
             DispatchQueue.main.async {
                 self.stopLoader(loader: loader)
                 self.profileName.text = profiledata.fullName

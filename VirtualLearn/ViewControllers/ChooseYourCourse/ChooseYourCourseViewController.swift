@@ -23,7 +23,7 @@ class ChooseYourCourseViewController: UIViewController {
         self.searchTextField.removeBorder()
         super.viewDidLoad()
         let loader = self.loader()
-        mainShared.homeViewModelShared.getAllCourseDeatils { (data) in
+        mainShared.homeViewModelShared.getAllCourseDeatils(token: mainShared.token) { (data) in
             
             DispatchQueue.main.async {
                 self.stopLoader(loader: loader)

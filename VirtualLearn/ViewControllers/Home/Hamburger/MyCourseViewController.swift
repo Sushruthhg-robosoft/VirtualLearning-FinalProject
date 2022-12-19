@@ -44,7 +44,7 @@ class MyCourseViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         let loder = self.loader()
-        shared.myCourseViewModelShared.getMycourseDetails {
+        shared.myCourseViewModelShared.getMycourseDetails(token: shared.token ) {
             
             DispatchQueue.main.async { [self] in
                 self.stopLoader(loader: loder)

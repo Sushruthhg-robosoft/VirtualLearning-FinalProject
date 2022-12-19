@@ -14,7 +14,7 @@ class PrivacyPolicyViewModel {
     var privacyPolicyData = [PrivacyPolicyModel]()
     
     
-    func getprivacyPolicyContent(privacyPolicyId: String, completion: @escaping(PrivacyPolicyModel) -> Void, fail: @escaping () -> Void) {
+    func getprivacyPolicyContent(token: String, privacyPolicyId: String, completion: @escaping(PrivacyPolicyModel) -> Void, fail: @escaping () -> Void) {
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/privacy-policy")!
         var request = URLRequest(url: url)
         request.httpMethod = "GET"

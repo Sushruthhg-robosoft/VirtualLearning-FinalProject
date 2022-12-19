@@ -12,7 +12,7 @@ class CategoryViewModel{
     var networkManger = NetWorkManager()
     var listofCategories = [Category]()
     
-    func getCategories(completion: @escaping() -> Void, fail: @escaping () -> Void){
+    func getCategories(token: String, completion: @escaping() -> Void, fail: @escaping () -> Void){
         listofCategories.removeAll()
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/categories")
         var request = URLRequest(url: url!)

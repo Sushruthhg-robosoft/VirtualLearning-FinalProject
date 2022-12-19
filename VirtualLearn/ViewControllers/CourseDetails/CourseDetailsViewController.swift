@@ -65,7 +65,7 @@ class CourseDetailsViewController: UIViewController {
         
         
         
-        shared.courseDetailsViewModelShared.courseOverView(courseId: "3") { courseDataOverView in
+        shared.courseDetailsViewModelShared.courseOverView(token: shared.token, courseId: "3") { courseDataOverView in
             self.courseOverView = courseDataOverView
             DispatchQueue.main.async { [self] in
                 self.CourseHeading.text = courseDataOverView.courseHeader.courseName
@@ -142,7 +142,7 @@ class CourseDetailsViewController: UIViewController {
     
     @IBAction func onClickJoinCourse(_ sender: Any) {
         
-        shared.courseDetailsViewModelShared.joinCourse(courseId: "19"){ data in
+        shared.courseDetailsViewModelShared.joinCourse(token: shared.token, courseId: "19"){ data in
             
             print(data)
             

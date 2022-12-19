@@ -62,7 +62,7 @@ class ChaptersViewController: UIViewController {
         overViewBtn.setTitleColor(#colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1), for: .normal)
         overViewUnderLineView.backgroundColor = #colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
         
-        shared.chaptersDetailsViewModelShared.getChapters(courseId: "3") { result in
+        shared.chaptersDetailsViewModelShared.getChapters(token: shared.token, courseId: "3") { result in
             DispatchQueue.main.async { [self] in
                 let chapter = String(result.courseContentResponse.chapterCount) + "Chapter | "
                 let lesson = String(result.courseContentResponse.lessonCount) + "Lessons | "

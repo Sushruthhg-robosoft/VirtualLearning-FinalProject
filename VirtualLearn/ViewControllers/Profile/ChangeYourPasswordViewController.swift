@@ -20,7 +20,7 @@ class ChangeYourPasswordViewController: UIViewController {
     @IBOutlet weak var confirmPasswordUnderLine: UIView!
     
     let profileViewModel = ProfileViewModel()
-    
+    let shared  = mainViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
@@ -66,7 +66,7 @@ class ChangeYourPasswordViewController: UIViewController {
         guard let currentpassword = currentPasswordTextField.text else {return}
         guard let newpassword = newPasswordTextField.text else {return}
         let loader = self.loader()
-        profileViewModel.changePasswordForExistingUser(password: newpassword, oldpassword: currentpassword) {
+        profileViewModel.changePasswordForExistingUser(token: shared.token, password: newpassword, oldpassword: currentpassword) {
             
           DispatchQueue.main.async {
           self.stopLoader(loader: loader)

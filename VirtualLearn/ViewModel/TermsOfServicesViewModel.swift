@@ -13,7 +13,7 @@ class TermsOfServicesViewModel {
     var termsOfServicesData = [TermsOfServicesModel]()
     
     
-    func gettermsofServicesContent(termsOfServicesId: String, completion: @escaping(TermsOfServicesModel) -> Void, fail: @escaping () -> Void) {
+    func gettermsofServicesContent(token: String, termsOfServicesId: String, completion: @escaping(TermsOfServicesModel) -> Void, fail: @escaping () -> Void) {
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/terms-of-service")!
         var request = URLRequest(url: url)
         request.httpMethod = "GET"

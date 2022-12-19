@@ -61,7 +61,7 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
         
         
 
-        mainShared.homeViewModelShared.getAllCourseDeatils { (data) in
+        mainShared.homeViewModelShared.getAllCourseDeatils(token: mainshared.token) { (data) in
             
             DispatchQueue.main.async {
                 self.choiceOfUrCourseCollectionView.reloadData()
@@ -73,7 +73,7 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
 
         
         
-        mainshared.homeViewModelShared.getPopularCourseCategory1Details { (data) in
+        mainshared.homeViewModelShared.getPopularCourseCategory1Details(token: mainshared.token) { (data) in
             
             DispatchQueue.main.async {
                 self.topCourse1.topCourse = data
@@ -85,7 +85,7 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
             print("fail")
         }
         
-        mainshared.homeViewModelShared.getPopularCourseCategory2Details { (data) in
+        mainshared.homeViewModelShared.getPopularCourseCategory2Details(token: mainshared.token) { (data) in
             
             DispatchQueue.main.async {
                 self.topCourse2.topCourse = data
@@ -117,7 +117,7 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
         allBtn.isSelected()
         popularBtn.notSelected()
         newestBtn.notSelected()
-        mainShared.homeViewModelShared.getAllCourseDeatils { (data) in
+        mainShared.homeViewModelShared.getAllCourseDeatils(token: mainshared.token) { (data) in
             
             DispatchQueue.main.async {
                 self.choiceOfUrCourseCollectionView.reloadData()
@@ -133,7 +133,7 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
         allBtn.notSelected()
         popularBtn.isSelected()
         newestBtn.notSelected()
-        mainshared.homeViewModelShared.getPopularCourseDetails { (data) in
+        mainshared.homeViewModelShared.getPopularCourseDetails(token: mainshared.token) { (data) in
             DispatchQueue.main.async {
                 self.choiceOfUrCourseCollectionView.reloadData()
             }
@@ -148,7 +148,7 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
         allBtn.notSelected()
         popularBtn.notSelected()
         newestBtn.isSelected()
-        mainshared.homeViewModelShared.getNewestCourseDetails { (data) in
+        mainshared.homeViewModelShared.getNewestCourseDetails(token: mainshared.token) { (data) in
             DispatchQueue.main.async {
                 self.choiceOfUrCourseCollectionView.reloadData()
             }

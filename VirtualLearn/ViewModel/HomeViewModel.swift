@@ -15,7 +15,7 @@ class HomeViewModel {
     var topCourseCategory2 = [TopCourseCategory]()
     var networkManger = NetWorkManager()
     
-    func getBanners(completion: @escaping([String]) -> Void, fail: @escaping () -> Void){
+    func getBanners(token: String, completion: @escaping([String]) -> Void, fail: @escaping () -> Void){
         banners.removeAll()
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/banner")!
         
@@ -41,7 +41,7 @@ class HomeViewModel {
         
     }
     
-    func getAllCourseDeatils(completion: @escaping([HomeCourse]) -> Void, fail: @escaping () -> Void){
+    func getAllCourseDeatils(token: String,completion: @escaping([HomeCourse]) -> Void, fail: @escaping () -> Void){
         
         allCourse.removeAll()
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/courses?limit=5&page=1")!
@@ -79,7 +79,7 @@ class HomeViewModel {
     }
     
     
-    func getPopularCourseDetails(completion: @escaping([HomeCourse]) -> Void, fail: @escaping () -> Void){
+    func getPopularCourseDetails(token: String,completion: @escaping([HomeCourse]) -> Void, fail: @escaping () -> Void){
         allCourse.removeAll()
         
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/popularCourse?limit=5&page=1")!
@@ -115,7 +115,7 @@ class HomeViewModel {
     
     }
     
-    func getNewestCourseDetails(completion: @escaping([HomeCourse]) -> Void, fail: @escaping () -> Void){
+    func getNewestCourseDetails(token: String,completion: @escaping([HomeCourse]) -> Void, fail: @escaping () -> Void){
         allCourse.removeAll()
         
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/newestCourse?limit=5&page=1")!
@@ -151,7 +151,7 @@ class HomeViewModel {
     
     }
     
-    func getPopularCourseCategory1Details(completion: @escaping([TopCourseCategory]) -> Void, fail: @escaping () -> Void){
+    func getPopularCourseCategory1Details(token: String,completion: @escaping([TopCourseCategory]) -> Void, fail: @escaping () -> Void){
         
         print("getPopularCourseCategory1Details")
         topCourseCategory1.removeAll()
@@ -190,7 +190,7 @@ class HomeViewModel {
     
     }
     
-    func getPopularCourseCategory2Details(completion: @escaping([TopCourseCategory]) -> Void, fail: @escaping () -> Void){
+    func getPopularCourseCategory2Details(token: String,completion: @escaping([TopCourseCategory]) -> Void, fail: @escaping () -> Void){
         topCourseCategory2.removeAll()
         
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/course/category2?limit=5&page=1")!
