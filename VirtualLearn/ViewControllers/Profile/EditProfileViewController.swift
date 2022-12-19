@@ -55,21 +55,22 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var otherGender: UIButton!
     
     var isdropDown = false
-    var dummyname = ""
-    var dummyUsername = ""
-    var dummyEmail = ""
-    var dummyMobileNo = ""
-    var dummydateofbirth = ""
-    var dummyusername = ""
-    
-    
+//    var dummyname = ""
+//    var dummyUsername = ""
+//    var dummyEmail = ""
+//    var dummyMobileNo = ""
+//    var dummydateofbirth = ""
+//    var dummyusername = ""
+     
+    var profileData: ProfileData?
+    let editProfileViewModel = ProfileViewModel()
     
     override func viewDidLoad() {
         
-        emailField.text = dummyEmail
-        nameField.text = dummyname
-        userNameTextField.text = dummyusername
-        mobileNoField.text = dummyMobileNo
+        emailField.text = profileData?.emailId
+        nameField.text = profileData?.fullName
+        userNameTextField.text = profileData?.userName
+        mobileNoField.text = profileData?.phoneNumber
         
 
         super.viewDidLoad()
@@ -98,6 +99,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
             self.dismiss(animated: true, completion: nil)
 
         }
+    
+    
    
     @IBAction func nameEdit(_ sender: Any) {
         nameView.backgroundColor = #colorLiteral(red: 0.001148699783, green: 0.2356859446, blue: 0.4366979599, alpha: 1)

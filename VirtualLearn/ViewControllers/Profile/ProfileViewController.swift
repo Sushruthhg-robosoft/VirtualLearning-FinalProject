@@ -30,11 +30,12 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var chaptersView: UIView!
     @IBOutlet weak var testView: UIView!
     @IBOutlet weak var changeYourPasswordButton: UIButton!
+    
     var password = ""
     var oldpassword = ""
 
     let profileViewModel = ProfileViewModel()
-    
+    var profiledata : ProfileData?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,6 +46,7 @@ class ProfileViewController: UIViewController {
         let loader = self.loader()
         profileViewModel.getProfileData { profiledata in
             DispatchQueue.main.async {
+                self.profiledata = profiledata
                 self.stopLoader(loader: loader)
                 self.profileName.text = profiledata.fullName
                 self.name.text = profiledata.fullName
@@ -75,12 +77,12 @@ class ProfileViewController: UIViewController {
     @IBAction func onClickEditProfile(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(identifier: "EditProfileViewController") as! EditProfileViewController
         navigationController?.pushViewController(vc, animated: true)
-        vc.dummyEmail = email.text!
-        vc.dummyname = name.text!
-        vc.dummyusername = userName.text!
-        vc.dummyusername = userName.text!
-        vc.dummyMobileNo = mobileNumber.text!
-        
+//        vc.dummyEmail = email.text!
+//        vc.dummyname = name.text!
+//        vc.dummyusername = userName.text!
+//        vc.dummyusername = userName.text!
+//        vc.dummyMobileNo = mobileNumber.text!
+        vc.profileData = profiledata
     }
     
     @IBAction func onClickHamburger(_ sender: Any) {
