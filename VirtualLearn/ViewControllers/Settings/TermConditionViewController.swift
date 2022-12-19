@@ -8,11 +8,20 @@
 import UIKit
 
 class TermConditionViewController: UIViewController {
+    let privacyViewModel = PrivacyPolicyViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        let loader = self.loader()
+        privacyViewModel.getprivacyPolicyContent(privacyPolicyId: "1") {
+        DispatchQueue.main.async {
+        self.stopLoader(loader: loader)
+        }
+            
+        } fail: {
+            print("failure")
+        }
     }
     
 
@@ -21,3 +30,4 @@ class TermConditionViewController: UIViewController {
     }
     
 }
+
