@@ -30,7 +30,7 @@
                                 <rect key="frame" x="99" y="64" width="37" height="12"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="37" id="Hfc-8Q-vPB"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="37" id="Hfc-8Q-vPB"/>
                                     <constraint firstAttribute="height" constant="12" id="vRh-1M-NPW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
