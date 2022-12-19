@@ -16,3 +16,4 @@ class NewUser {
     var password: String = ""
     var mobileNumber: String = ""
 }
+// new user
