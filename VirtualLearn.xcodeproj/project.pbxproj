@@ -121,6 +121,8 @@
 		CFEC206C29419AD200A171DA /* NewUserHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEC206B29419AD200A171DA /* NewUserHomeView.swift */; };
 		CFEC20722941A57A00A171DA /* SuggestionsTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFEC20712941A57A00A171DA /* SuggestionsTopView.xib */; };
 		CFEC20772941A5C500A171DA /* SuggestionsTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEC20762941A5C500A171DA /* SuggestionsTopView.swift */; };
+		CFF13F1F2950A6570054697D /* CategoriesCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF13F1D2950A6570054697D /* CategoriesCellCollectionViewCell.swift */; };
+		CFF13F202950A6570054697D /* CategoriesCellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFF13F1E2950A6570054697D /* CategoriesCellCollectionViewCell.xib */; };
 		CFF1963B293F500800802396 /* pagecontrolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF1963A293F500800802396 /* pagecontrolExtension.swift */; };
 		CFF19640293F5C3F00802396 /* viewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF1963F293F5C3F00802396 /* viewModel.swift */; };
 		CFF19645293F5C4F00802396 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF19644293F5C4F00802396 /* NetworkManager.swift */; };
@@ -265,6 +267,8 @@
 		CFEC206B29419AD200A171DA /* NewUserHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserHomeView.swift; sourceTree = "<group>"; };
 		CFEC20712941A57A00A171DA /* SuggestionsTopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestionsTopView.xib; sourceTree = "<group>"; };
 		CFEC20762941A5C500A171DA /* SuggestionsTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsTopView.swift; sourceTree = "<group>"; };
+		CFF13F1D2950A6570054697D /* CategoriesCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCellCollectionViewCell.swift; sourceTree = "<group>"; };
+		CFF13F1E2950A6570054697D /* CategoriesCellCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesCellCollectionViewCell.xib; sourceTree = "<group>"; };
 		CFF1963A293F500800802396 /* pagecontrolExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pagecontrolExtension.swift; sourceTree = "<group>"; };
 		CFF1963F293F5C3F00802396 /* viewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewModel.swift; sourceTree = "<group>"; };
 		CFF19644293F5C4F00802396 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -654,6 +658,8 @@
 				CF416C4629435E2A00A27462 /* TopCourseSectionView.xib */,
 				CF416C4B294361B300A27462 /* TopCourseSectionCollectionViewCell.swift */,
 				CF416C4C294361B300A27462 /* TopCourseSectionCollectionViewCell.xib */,
+				CFF13F1D2950A6570054697D /* CategoriesCellCollectionViewCell.swift */,
+				CFF13F1E2950A6570054697D /* CategoriesCellCollectionViewCell.xib */,
 			);
 			path = NewUserHomeViewController;
 			sourceTree = "<group>";
@@ -768,6 +774,7 @@
 				CF79F1D52941BB4400EEC920 /* NewUserBottomView.xib in Resources */,
 				CF2EFB4D294A042F00A7D585 /* ExistingUserBottomview.xib in Resources */,
 				CF2EFB59294A060B00A7D585 /* ExistingCollectionViewCell.xib in Resources */,
+				CFF13F202950A6570054697D /* CategoriesCellCollectionViewCell.xib in Resources */,
 				CFAFC9A8293EFAA900F84288 /* Assets.xcassets in Resources */,
 				CFEC20722941A57A00A171DA /* SuggestionsTopView.xib in Resources */,
 				CF2EFB64294A125800A7D585 /* OngoingView.xib in Resources */,
@@ -837,6 +844,7 @@
 				CF032A482948332400D6B6D3 /* Chapter.swift in Sources */,
 				1B90BA6D294B40BC004A6D4B /* subCategoryView.swift in Sources */,
 				1BA47D47294704870012B8C3 /* customChooseCourseView.swift in Sources */,
+				CFF13F1F2950A6570054697D /* CategoriesCellCollectionViewCell.swift in Sources */,
 				CF032A8F2948972000D6B6D3 /* NotificationTableViewCell.swift in Sources */,
 				CFEC20772941A5C500A171DA /* SuggestionsTopView.swift in Sources */,
 				1B9289C12949E52500C66D9E /* TermConditionViewController.swift in Sources */,
