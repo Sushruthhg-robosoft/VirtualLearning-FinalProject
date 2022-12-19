@@ -8,12 +8,18 @@
 import UIKit
 
 class TermConditionViewController: UIViewController {
-   
+    @IBOutlet weak var privacyPolicyLabel: UILabel!
+    @IBOutlet weak var textView: UITextView!
+    var label = ""
+    var content = ""
+    
+
     override func viewDidLoad() {
+        privacyPolicyLabel.text = label
+        textView.text = content
+
         super.viewDidLoad()
         
-
-
     }
 
     @IBAction func onClickBack(_ sender: Any) {

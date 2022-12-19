@@ -20,6 +20,9 @@ class SettingViewController: UIViewController {
     
     let privacyViewModel = PrivacyPolicyViewModel()
     let privacyPolicyModel = [PrivacyPolicyModel]()
+    let termsOfServiceViewModel = TermsOfServicesViewModel()
+    let termsOfServiceModel = [TermsOfServicesModel]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,32 +60,46 @@ class SettingViewController: UIViewController {
     
     @IBAction func privacyPolicyClicked(_ sender: Any) {
         let loader = self.loader()
-        let vc = storyboard?.instantiateViewController(identifier: "TermConditionViewController") as! TermConditionViewController
-        navigationController?.pushViewController(vc, animated: true)
-        privacyViewModel.getprivacyPolicyContent(privacyPolicyId: "1") {
-        DispatchQueue.main.async {
         
-        self.stopLoader(loader: loader)
-
-        }
+      
+        privacyViewModel.getprivacyPolicyContent(privacyPolicyId: "1") { PolicyData in
+        DispatchQueue.main.async {
+            self.stopLoader(loader: loader)
+            let vc = self.storyboard?.instantiateViewController(identifier: "TermConditionViewController") as! TermConditionViewController
+            vc.label = "Privacy Policy"
+            vc.content = PolicyData.content
+            self.navigationController?.pushViewController(vc, animated: true)
             
+        }
+
         } fail: {
             print("error")
         }
     }
-           
 
 
-    
     @IBAction func termsandConditionCliked(_ sender: Any) {
-        let vc = storyboard?.instantiateViewController(identifier: "TermConditionViewController") as! TermConditionViewController
+        let loader = self.loader()
+        termsOfServiceViewModel.gettermsofServicesContent(termsOfServicesId: "1") { ServiceData in
+        DispatchQueue.main.async {
+            self.stopLoader(loader: loader)
+            let vc = self.storyboard?.instantiateViewController(identifier: "TermConditionViewController") as! TermConditionViewController
+            vc.label = "Terms Of Services"
+            vc.content = ServiceData.content
+        self.navigationController?.pushViewController(vc, animated: true)
+       
         
-        navigationController?.pushViewController(vc, animated: true)
-        
+    }
+    } fail: {
+            print("error")
+        }
     }
     
     @IBAction func onClickBack(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
     
-}
+
+    }
+
+
