@@ -11,13 +11,14 @@ class NotificationViewModel{
     static var shared = NotificationViewModel()
     let networkManeger = NetWorkManager()
     var notifications = [Notification]()
+    var count = 0
     
    // let token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdW1hbnRocHJhYmh1IiwiZXhwIjoxNjcxMDI3MDAxLCJpYXQiOjE2NzA5OTEwMDF9.eD99V-Mat-m3XbiIdt6y_Bm0IGTYYcVsNz2HXRcPomd4CeZwdmBlmlZxxl_gvyzSS6U34GYPIm8D4AxypeefSg"
     
     
     func getNotificationCount(completion: @escaping() -> Void, fail: @escaping () -> Void){
         
-        
+        print("inside get notification")
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/notificationCount")!
         
         var request = URLRequest(url: url)
@@ -28,9 +29,12 @@ class NotificationViewModel{
             
             guard let notificationCount = data as? Int else {print("countErr");return}
             //guard let Count = Int(notificationCount[0]) else {return}
-            print(notificationCount)
+            print("notificaton Count",notificationCount)
+            self.count = notificationCount
+            completion()
         } failure: { (error) in
             print(error)
+            fail()
         }
         
     }

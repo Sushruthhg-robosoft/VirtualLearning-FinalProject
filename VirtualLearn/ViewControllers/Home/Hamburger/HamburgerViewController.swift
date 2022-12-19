@@ -15,10 +15,35 @@ class HamburgerViewController: UIViewController {
 
     @IBOutlet weak var notificationCount: customHamLable!
     var delegate: HamburgerViewControllerDelegate?
+    var mainShraed = mainViewModel.mainShared
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       // let loader = self.loader()
+        print("insideHamburgerMenu")
+        mainShraed.notificationViewModelShared.getNotificationCount {
+            print("slfdhoifhfdidsdnieohiodhdfhsi")
+            DispatchQueue.main.async {
+                //self.stopLoader(loader: loader)
+                self.notificationCount.text = String(self.mainShraed.notificationViewModelShared.count)
+            }
+        } fail: {
+           // self.stopLoader(loader: loader)
+        }
+    }
     
+    override func viewDidAppear(_ animated: Bool) {
+        
+        let loader = self.loader()
+        mainShraed.notificationViewModelShared.getNotificationCount {
+            DispatchQueue.main.async {
+                self.stopLoader(loader: loader)
+                self.notificationCount.text = String(self.mainShraed.notificationViewModelShared.count)
+            }
+        } fail: {
+            self.stopLoader(loader: loader)
+        }
+
     }
     
     @IBAction func onClickHome(_ sender: Any) {
