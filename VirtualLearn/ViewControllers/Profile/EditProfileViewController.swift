@@ -65,6 +65,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     var profileData: ProfileData?
     let profileViewModel = ProfileViewModel()
     let editProfileViewModel = EditProfileViewModel()
+//    let shared = mainViewModel.mainShared
+    
     override func viewDidLoad() {
         
         emailField.text = profileData?.emailId
@@ -101,8 +103,15 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         }
     
     @IBAction func onClickSaveBtn(_ sender: Any) {
-//        editProfileViewModel.updateProfileData(profiledata: P, completion: <#T##() -> Void#>, fail: <#T##() -> Void#>)
-    }
+        updateEditProfileData()
+//        editProfileViewModel.updateProfileData(profiledata: profileData!) { completion: <#T##() -> Void#>, fail: <#T##() -> Void#>)
+            
+    
+            
+        }
+
+        
+    
     
    
     @IBAction func nameEdit(_ sender: Any) {
@@ -167,6 +176,13 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         
     @IBAction func backButtonTapped(_ sender: Any) {
         navigationController?.popViewController(animated: true)
+    }
+    
+    func updateEditProfileData() {
+        profileData?.emailId = emailField.text!
+        profileData?.fullName =  nameField.text!
+        profileData?.userName = userNameTextField.text!
+        profileData?.phoneNumber = mobileNoField.text!
     }
 }
     

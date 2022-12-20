@@ -21,8 +21,14 @@ class EditProfileViewModel {
             ]
         let header = [String:String]()
         networkManager.postData(url: url, requestMethod: "PATCH", parameters: parameters, headers: header) {(result, error) in
-         
+            
+            
+            
+            
+            
     
         }
+        
 }
 }
+
