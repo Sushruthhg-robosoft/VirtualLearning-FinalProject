@@ -7,28 +7,22 @@
 
 import Foundation
 class EditProfileViewModel {
-    let networkManager = NetWorkManager()
     
-
+    func updateProfileData(profiledata: ProfileData, completion: @escaping () -> Void, fail: @escaping () -> Void) {
+        let networkManager = NetWorkManager()
+        let url = "https://app-virtuallearning-221207091853.azurewebsites.net/user/profile"
+        
+        let parameters: [String : Any] = [
+            "fullName" : profiledata.fullName,
+            "userName" : profiledata.userName,
+            "phoneNumber" : profiledata.phoneNumber,
+            "emailId" : profiledata.emailId,
+            
+            ]
+        let header = [String:String]()
+        networkManager.postData(url: url, requestMethod: "PATCH", parameters: parameters, headers: header) {(result, error) in
+         
     
-    func updateProfileData(profiledata: String, completion: @escaping () -> Void, fail: @escaping () -> Void) {
-        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/profile")!
-        var request = URLRequest(url: url)
-        request.httpMethod = "PATCH"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-//        let parameters = [String: Any] [
-//            "phoneNumber" = profiledata.
-//        ]
-        
-            
-            
-            
-            
-            
-        
-        
-        
-    
-    
+        }
 }
 }

@@ -63,8 +63,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 //    var dummyusername = ""
      
     var profileData: ProfileData?
-    let editProfileViewModel = ProfileViewModel()
-    
+    let profileViewModel = ProfileViewModel()
+    let editProfileViewModel = EditProfileViewModel()
     override func viewDidLoad() {
         
         emailField.text = profileData?.emailId
@@ -100,6 +100,9 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 
         }
     
+    @IBAction func onClickSaveBtn(_ sender: Any) {
+        editProfileViewModel.updateProfileData(profiledata: P, completion: <#T##() -> Void#>, fail: <#T##() -> Void#>)
+    }
     
    
     @IBAction func nameEdit(_ sender: Any) {
