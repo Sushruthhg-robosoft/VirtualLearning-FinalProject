@@ -175,6 +175,9 @@
 		1BD41652294095CC00E5334B /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		1BDBD84F295095CC00983C10 /* VideoPlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayViewController.swift; sourceTree = "<group>"; };
 		1BDC5F4B293F771B00BE877F /* PersonalDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDetailsViewController.swift; sourceTree = "<group>"; };
+		1BE0706B29517BB800E3894C /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
+		1BE0706C29517BC300E3894C /* Proxima Nova Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Bold.otf"; sourceTree = "<group>"; };
+		1BE0706D29517BE000E3894C /* Biko_Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Biko_Bold.otf; sourceTree = "<group>"; };
 		1BF0C85D29408D92009D9030 /* customHamLable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customHamLable.swift; sourceTree = "<group>"; };
 		1BF0C85E29408D92009D9030 /* HamburgerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerViewController.swift; sourceTree = "<group>"; };
 		1BF0C85F29408D93009D9030 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -390,6 +393,32 @@
 			path = PersonalDetails;
 			sourceTree = "<group>";
 		};
+		1BE0706829517B3A00E3894C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1BE0706A29517B4E00E3894C /* Biko */,
+				1BE0706929517B4200E3894C /* Proxima-Nova */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		1BE0706929517B4200E3894C /* Proxima-Nova */ = {
+			isa = PBXGroup;
+			children = (
+				1BE0706C29517BC300E3894C /* Proxima Nova Bold.otf */,
+				1BE0706B29517BB800E3894C /* ProximaNova-Regular.otf */,
+			);
+			path = "Proxima-Nova";
+			sourceTree = "<group>";
+		};
+		1BE0706A29517B4E00E3894C /* Biko */ = {
+			isa = PBXGroup;
+			children = (
+				1BE0706D29517BE000E3894C /* Biko_Bold.otf */,
+			);
+			path = Biko;
+			sourceTree = "<group>";
+		};
 		1BF0C85C29408D66009D9030 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -600,6 +629,7 @@
 		CFAFC99D293EFAA700F84288 /* VirtualLearn */ = {
 			isa = PBXGroup;
 			children = (
+				1BE0706829517B3A00E3894C /* Fonts */,
 				CF523184293F02BA00C56B7F /* ViewControllers */,
 				CF52319A293F046700C56B7F /* Model */,
 				CF523199293F045C00C56B7F /* ViewModel */,
