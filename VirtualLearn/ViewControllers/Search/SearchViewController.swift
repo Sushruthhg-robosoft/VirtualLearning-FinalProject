@@ -50,4 +50,38 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     
+    
+    @IBAction func onClickDesign(_ sender: Any) {
+    }
+    
+    @IBAction func onClickDevelopment(_ sender: Any) {
+    }
+    
+    @IBAction func onClickBusiness(_ sender: Any) {
+    }
+    
+    @IBAction func onClickFinance(_ sender: Any) {
+    }
+    
+    @IBAction func onClickHealthFitness(_ sender: Any) {
+    }
+    
+    @IBAction func onClickMusic(_ sender: Any) {
+    }
+    
+    @IBAction func onClickIT(_ sender: Any) {
+    }
+    
+    @IBAction func onClickMarketing(_ sender: Any) {
+    }
+    
+    @IBAction func onClickLifestyle(_ sender: Any) {
+    }
+    
+    @IBAction func onClickPhotography(_ sender: Any) {
+    }
+    
+    @IBAction func onClickTeaching(_ sender: Any) {
+    }
+    
 }
