@@ -101,7 +101,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         }
     
     @IBAction func onClickSaveBtn(_ sender: Any) {
-        editProfileViewModel.updateProfileData(profiledata: P, completion: <#T##() -> Void#>, fail: <#T##() -> Void#>)
+//        editProfileViewModel.updateProfileData(profiledata: P, completion: <#T##() -> Void#>, fail: <#T##() -> Void#>)
     }
     
    
