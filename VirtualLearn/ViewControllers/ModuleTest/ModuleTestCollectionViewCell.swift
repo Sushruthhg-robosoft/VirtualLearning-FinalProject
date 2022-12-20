@@ -7,19 +7,23 @@
 
 import UIKit
 
+protocol saveAnswers {
+    func save(QuestionID: Int, Answer: String)
+}
+
 class ModuleTestCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var questionNoLabel: UILabel!
     @IBOutlet weak var question: UILabel!
     @IBOutlet weak var option1Btn: UIButton!
     @IBOutlet weak var option1Label: UILabel!
-    
+    var QuestionInd: Int?
     @IBOutlet weak var option1Image: UIImageView!
     @IBOutlet weak var option2Btn: UIButton!
     @IBOutlet weak var option2Label: UILabel!
     @IBOutlet weak var option2Image: UIImageView!
     
-    
+    var delegate: saveAnswers?
     @IBOutlet weak var option3Btn: UIButton!
     @IBOutlet weak var option3Label: UILabel!
     @IBOutlet weak var option3Image: UIImageView!
@@ -43,6 +47,8 @@ class ModuleTestCollectionViewCell: UICollectionViewCell {
             option2Image.deselected()
             option3Image.deselected()
             option4Image.deselected()
+            
+            delegate?.save(QuestionID: QuestionInd!, Answer: option1Label.text!)
         }
     
         @IBAction func onClickOption2(_ sender: Any) {
@@ -61,6 +67,7 @@ class ModuleTestCollectionViewCell: UICollectionViewCell {
             option1Image.deselected()
             option3Image.deselected()
             option4Image.deselected()
+            delegate?.save(QuestionID: QuestionInd!, Answer: option2Label.text!)
         }
     
         @IBAction func onClickOption3(_ sender: Any) {
@@ -79,6 +86,7 @@ class ModuleTestCollectionViewCell: UICollectionViewCell {
             option2Image.deselected()
             option1Image.deselected()
             option4Image.deselected()
+            delegate?.save(QuestionID: QuestionInd!, Answer: option3Label.text!)
         }
     
         @IBAction func onClickOption4(_ sender: Any) {
@@ -96,6 +104,7 @@ class ModuleTestCollectionViewCell: UICollectionViewCell {
             option2Image.deselected()
             option3Image.deselected()
             option1Image.deselected()
+            delegate?.save(QuestionID: QuestionInd!, Answer: option4Label.text!)
         }
     
         
