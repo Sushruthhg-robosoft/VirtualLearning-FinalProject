@@ -12,7 +12,7 @@ class ChaptersViewModel {
     
     let networkManeger = NetWorkManager()
     
-    func getChapters(courseId: String,completion: @escaping(CourseChapter) -> Void, fail: @escaping () -> Void) {
+    func getChapters(token: String, courseId: String,completion: @escaping(CourseChapter) -> Void, fail: @escaping () -> Void) {
         
         var listOfLessons = [LessonResponseList]()
         

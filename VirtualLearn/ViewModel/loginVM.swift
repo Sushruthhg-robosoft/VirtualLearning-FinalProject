@@ -11,7 +11,7 @@ import UIKit
 
 class LoginViewModel {
     
-    func loginUser(userName: String, password: String, completion: @escaping () -> Void, fail: @escaping () -> Void) {
+    func loginUser(userName: String, password: String, completion: @escaping (String) -> Void, fail: @escaping () -> Void) {
         let network = NetWorkManager()
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/auth/login")!
         let shared = mainViewModel.mainShared
@@ -35,8 +35,8 @@ class LoginViewModel {
                 
                 guard let receivedTokenData = keychain.loadData(userName: userName) else {return}
                 guard let receivedToken = String(data: receivedTokenData, encoding: .utf8) else { return }
-                print("unchained", receivedToken)
-                completion()
+                print("token",receivedToken)
+                completion(token)
                 
             } failure: { failResult in
                 fail()

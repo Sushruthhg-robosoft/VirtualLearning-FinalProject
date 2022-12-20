@@ -32,7 +32,7 @@ class CategoryViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         
         let loader = self.loader()
-        shared.categoriesViewModelShared.getCategories {
+        shared.categoriesViewModelShared.getCategories(token: shared.token) {
             DispatchQueue.main.async {
                 self.stopLoader(loader: loader)
                 self.collectionView.reloadData()

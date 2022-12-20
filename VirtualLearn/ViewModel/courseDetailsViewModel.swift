@@ -12,7 +12,7 @@ class courseDetailsViewModel {
     
     let networkManeger = NetWorkManager()
     
-    func joinCourse(courseId: String, completion: @escaping(String) -> Void, fail: @escaping () -> Void){
+    func joinCourse(token: String, courseId: String, completion: @escaping(String) -> Void, fail: @escaping () -> Void){
         
         
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/notification?notificationId=\(courseId)")!
@@ -33,7 +33,7 @@ class courseDetailsViewModel {
         
     }
     
-    func courseOverView(courseId: String, completion: @escaping(CourseOverview) -> Void, fail: @escaping () -> Void) {
+    func courseOverView(token: String,courseId: String, completion: @escaping(CourseOverview) -> Void, fail: @escaping () -> Void) {
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/courseOverview?courseId=\(courseId)")!
         
         var request = URLRequest(url: url)

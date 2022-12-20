@@ -6,7 +6,7 @@
 //
 
 import Foundation
-let token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdW1hbnRocHJhYmh1IiwiZXhwIjoxNjcxNTMwOTI1LCJpYXQiOjE2NzE0NDQ1MjV9.U0TqNNnHPTYp4Ly3pKPOa1mEXrN6uNsj64f6DIifBSQIzKY-KBzGSVFECaGt9AWaqOQ31sz_nWH7yycPlE5rsw"
+
 
 class myCourseViewModel{
 
@@ -17,7 +17,7 @@ class myCourseViewModel{
 
     
     
-    func getMycourseDetails(completion: @escaping() -> Void, fail: @escaping () -> Void){
+    func getMycourseDetails(token: String,completion: @escaping() -> Void, fail: @escaping () -> Void){
         ongoingCourses.removeAll()
         completedCourses.removeAll()
         

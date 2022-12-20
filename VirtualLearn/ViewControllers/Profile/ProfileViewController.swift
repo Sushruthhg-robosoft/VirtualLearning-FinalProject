@@ -36,6 +36,7 @@ class ProfileViewController: UIViewController {
 
     let profileViewModel = ProfileViewModel()
     var profiledata : ProfileData?
+    let shared = mainViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,7 +45,7 @@ class ProfileViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         let loader = self.loader()
-        profileViewModel.getProfileData { profiledata in
+        profileViewModel.getProfileData(token:shared.token ) { profiledata in
             DispatchQueue.main.async {
                 self.profiledata = profiledata
                 self.stopLoader(loader: loader)

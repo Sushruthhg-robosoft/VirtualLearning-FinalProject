@@ -51,7 +51,7 @@ class HomeViewController: UIViewController {
         let loader1 = self.loader()
         NewUserView.topView.bannerImage.removeAll()
         print(NewUserView.topView.bannerImage.count)
-        mainShared.homeViewModelShared.getBanners { (data) in
+        mainShared.homeViewModelShared.getBanners(token: mainShared.token) { (data) in
             DispatchQueue.main.async {
                
                 self.NewUserView.topView.bannerImage = data

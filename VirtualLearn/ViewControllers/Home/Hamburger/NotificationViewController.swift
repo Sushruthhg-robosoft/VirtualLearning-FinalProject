@@ -36,7 +36,7 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
 //        }
 
         
-        shared.notificationViewModelShared.getNotifications(limit: "30", page: "1") {
+        shared.notificationViewModelShared.getNotifications(token: shared.token , limit: "30", page: "1") {
             DispatchQueue.main.async {
                 self.stopLoader(loader: loader)
                 self.tableview.reloadData()
@@ -82,7 +82,7 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        shared.notificationViewModelShared.readNotification(notificationId: shared.notificationViewModelShared.fetchDataToNotificationCell(index: indexPath.row).id) { (data) in
+        shared.notificationViewModelShared.readNotification(token: shared.token, notificationId: shared.notificationViewModelShared.fetchDataToNotificationCell(index: indexPath.row).id) { (data) in
             
             DispatchQueue.main.async {
                 if data == "true"{

@@ -12,7 +12,7 @@ class ProfileViewModel {
     var profileDataDetails = [ProfileData]()
     
     
-    func getProfileData(completion: @escaping(ProfileData) -> Void, fail: @escaping () -> Void) {
+    func getProfileData(token: String, completion: @escaping(ProfileData) -> Void, fail: @escaping () -> Void) {
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/profile")!
         
         var request = URLRequest(url: url)
@@ -45,7 +45,7 @@ class ProfileViewModel {
                 }
         }
     
-    func changePasswordForExistingUser(password: String, oldpassword: String, completion: @escaping () -> Void, fail: @escaping () -> Void) {
+    func changePasswordForExistingUser(token: String, password: String, oldpassword: String, completion: @escaping () -> Void, fail: @escaping () -> Void) {
        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/auth/reset-password")!
         var request = URLRequest(url: url)
         request.httpMethod = "PATCH"

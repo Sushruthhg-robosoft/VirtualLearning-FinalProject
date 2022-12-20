@@ -26,7 +26,7 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
     @IBOutlet weak var topCourse1: TopCourseSectionView!
     @IBOutlet weak var topCourse2: TopCourseSectionView!
     
-    
+    let mainShared = mainViewModel()
     var courseSet: [UIImage] = [#imageLiteral(resourceName: "img_course1_bg"), #imageLiteral(resourceName: "img_course2_bg")]
     var delegate: clickButtons?
     var shared = ViewModel.shared
@@ -47,7 +47,7 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
        // topCourse2.topCourseTitle.text = "Top courses in Design"
         topCourse2.topCourseLabel.text = "Top courses in Design"
         
-        mainshared.homeViewModelShared.getAllCourseDeatils { (data) in
+        mainshared.homeViewModelShared.getAllCourseDeatils(token: mainShared.token) { (data) in
             
             DispatchQueue.main.async {
                 self.choiceOfUrCourseCollectionView.reloadData()
@@ -71,7 +71,7 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
         allBtn.isSelected()
         popularBtn.notSelected()
         newestBtn.notSelected()
-        mainshared.homeViewModelShared.getAllCourseDeatils { (data) in
+        mainshared.homeViewModelShared.getAllCourseDeatils(token: mainShared.token) { (data) in
             
             DispatchQueue.main.async {
                 self.choiceOfUrCourseCollectionView.reloadData()
@@ -87,7 +87,7 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
         allBtn.notSelected()
         popularBtn.isSelected()
         newestBtn.notSelected()
-        mainshared.homeViewModelShared.getPopularCourseDetails { (data) in
+        mainshared.homeViewModelShared.getPopularCourseDetails(token: mainShared.token) { (data) in
             DispatchQueue.main.async {
                 self.choiceOfUrCourseCollectionView.reloadData()
             }
@@ -101,7 +101,7 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
         allBtn.notSelected()
         popularBtn.notSelected()
         newestBtn.isSelected()
-        mainshared.homeViewModelShared.getNewestCourseDetails { (data) in
+        mainshared.homeViewModelShared.getNewestCourseDetails(token: mainShared.token) { (data) in
             DispatchQueue.main.async {
                 self.choiceOfUrCourseCollectionView.reloadData()
             }

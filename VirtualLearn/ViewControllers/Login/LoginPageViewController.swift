@@ -75,11 +75,13 @@ class LoginPageViewController: UIViewController {
    
     
     @IBAction func loginClick(_ sender: Any) {
+    
         let loader = self.loader()
-        loginviewModel.loginUser(userName: userNameTextField.text!, password: passwordTextfield.text!) {
+        loginviewModel.loginUser(userName: userNameTextField.text!, password: passwordTextfield.text!) { token in
             DispatchQueue.main.async {
                 self.stopLoader(loader: loader)
                 let vc = self.storyboard?.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
+                vc.mainShared.token = token
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         } fail: {
@@ -93,7 +95,6 @@ class LoginPageViewController: UIViewController {
                 
             }
             
-            //print("login fails")
         }
         
         

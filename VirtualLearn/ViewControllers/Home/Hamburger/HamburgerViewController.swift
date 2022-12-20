@@ -21,7 +21,7 @@ class HamburgerViewController: UIViewController {
         super.viewDidLoad()
        // let loader = self.loader()
         print("insideHamburgerMenu")
-        mainShraed.notificationViewModelShared.getNotificationCount {
+        mainShraed.notificationViewModelShared.getNotificationCount( token: mainShraed.token){
             print("slfdhoifhfdidsdnieohiodhdfhsi")
             DispatchQueue.main.async {
                 //self.stopLoader(loader: loader)
@@ -35,7 +35,7 @@ class HamburgerViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         
         let loader = self.loader()
-        mainShraed.notificationViewModelShared.getNotificationCount {
+        mainShraed.notificationViewModelShared.getNotificationCount(token: mainShraed.token){
             DispatchQueue.main.async {
                 self.stopLoader(loader: loader)
                 self.notificationCount.text = String(self.mainShraed.notificationViewModelShared.count)
