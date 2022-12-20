@@ -36,7 +36,7 @@ class ProfileViewController: UIViewController {
 
     let profileViewModel = ProfileViewModel()
     var profiledata : ProfileData?
-    let shared = mainViewModel()
+    let shared = mainViewModel.mainShared
     override func viewDidLoad() {
         super.viewDidLoad()
         

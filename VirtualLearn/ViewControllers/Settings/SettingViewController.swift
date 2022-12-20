@@ -23,7 +23,7 @@ class SettingViewController: UIViewController {
     let termsOfServiceViewModel = TermsOfServicesViewModel()
     let termsOfServiceModel = [TermsOfServicesModel]()
     
-    let shared = mainViewModel()
+    let shared = mainViewModel.mainShared
     override func viewDidLoad() {
         super.viewDidLoad()
         self.notificationSettingPopUpView.isHidden = true
