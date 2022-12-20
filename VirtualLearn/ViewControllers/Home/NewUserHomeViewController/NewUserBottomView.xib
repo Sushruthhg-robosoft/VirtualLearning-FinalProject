@@ -7,6 +7,14 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Proxima Nova Bold.otf">
+            <string>ProximaNova-Bold</string>
+        </array>
+        <array key="ProximaNova-Regular.otf">
+            <string>ProximaNova-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewUserBottomView" customModule="VirtualLearn" customModuleProvider="target">
             <connections>
@@ -53,7 +61,7 @@
                         <constraint firstAttribute="height" constant="22" id="3VF-Vs-yCM"/>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="167" id="B2q-V9-qmE"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                    <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="18"/>
                     <color key="textColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -63,7 +71,7 @@
                         <constraint firstAttribute="width" constant="39" id="4uf-Gf-qWj"/>
                         <constraint firstAttribute="height" constant="27" id="qCl-9i-pna"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="12"/>
                     <state key="normal" title="See All">
                         <color key="titleColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
@@ -75,8 +83,8 @@
                     <rect key="frame" x="0.0" y="159" width="427" height="80"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choice your course" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1g1-Pl-ic3">
-                            <rect key="frame" x="24" y="8" width="162" height="22"/>
-                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                            <rect key="frame" x="24" y="8" width="157.5" height="22"/>
+                            <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="18"/>
                             <color key="textColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -86,7 +94,7 @@
                                 <constraint firstAttribute="width" constant="39" id="DLr-i6-Jb6"/>
                                 <constraint firstAttribute="height" constant="27" id="GFn-q6-upv"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="12"/>
                             <state key="normal" title="See All">
                                 <color key="titleColor" red="0.47843137254901957" green="0.47843137254901957" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
@@ -101,7 +109,7 @@
                                 <constraint firstAttribute="height" constant="26" id="M8R-Rv-0EC"/>
                                 <constraint firstAttribute="width" constant="50" id="so5-gk-0IV"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="12"/>
                             <state key="normal" title="All"/>
                             <connections>
                                 <action selector="onClickAll:" destination="-1" eventType="touchUpInside" id="OW0-F0-yBM"/>
@@ -114,7 +122,7 @@
                                 <constraint firstAttribute="width" constant="55" id="gg9-0z-jEA"/>
                                 <constraint firstAttribute="height" constant="26" id="pWJ-pj-3fU"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="12"/>
                             <state key="normal" title="Popular">
                                 <color key="titleColor" red="0.47843137254901957" green="0.47843137254901957" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
@@ -129,7 +137,7 @@
                                 <constraint firstAttribute="width" constant="55" id="9ST-ef-CBS"/>
                                 <constraint firstAttribute="height" constant="26" id="Dfo-nV-muB"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="12"/>
                             <state key="normal" title="Newest">
                                 <color key="titleColor" red="0.47843137254901957" green="0.47843137254901957" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
                             </state>

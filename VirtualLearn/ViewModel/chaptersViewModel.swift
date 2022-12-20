@@ -72,6 +72,7 @@ class ChaptersViewModel {
                     guard let grade = assesmentdetails["grade"] as? Int else {print("chapterCountErr4"); return}
                     let assesment = AssignmentResponse(assignmentId: assignmentId, assignmentName: assignmentName, testDuration: testDuration, questionCount: questionCount, grade: Int(grade))
                     assementData = assesment
+                    print(123456,assesment.assignmentName)
                 }
                 let lessonResponse = LessonResponseList(chapterId: chapterId, chapterName: chapterName, chapterCompleted: chapterCompletionStatus, assignmentResponse: assementData, lessonList: lessonList)
                 listOfLessons.append(lessonResponse)
