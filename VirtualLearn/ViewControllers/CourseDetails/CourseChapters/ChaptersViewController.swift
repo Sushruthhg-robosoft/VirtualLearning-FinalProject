@@ -71,7 +71,9 @@ class ChaptersViewController: UIViewController {
                
                 self.sourseContentDescription.text = chapter + lesson + assesment + totalLength
                 self.dataoflesson = result.lessonResponseList
+                
                 tableView.reloadData()
+         
             }
         } fail: {
             print("failures")
@@ -125,7 +127,6 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
 //        cell.progressHeight.constant = 0
 //        cell.progressWidth.constant = 0
         
-        if dataoflesson[indexPath.row].assignmentResponse == nil{
             cell.chapterName.text = dataoflesson[indexPath.section].lessonList[indexPath.row].lessonName
             cell.chapterNumber.text = "0\(String(dataoflesson[indexPath.section].lessonList[indexPath.row].lessonId))"
             cell.chapterDuration.text = "\(String(dataoflesson[indexPath.section].lessonList[indexPath.row].duration)) mins"
@@ -134,12 +135,20 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
             cell.cellLeadingConstraint.constant = 0
             cell.progressHeight.constant = 0
             cell.progressWidth.constant = 0
-        }
-        else{
-            
+        
+         if dataoflesson[indexPath.section].assignmentResponse !=  nil{
+            print("Data inside assesments")
             cell.moduleTestView.isHidden = false
             cell.chapterNumberView.isHidden = true
             cell.chapterNumber.isHidden = true
+            cell.chapterName.text = dataoflesson[indexPath.section].assignmentResponse?.assignmentName
+            cell.chapterNumber.text = "0\(String(dataoflesson[indexPath.section].assignmentResponse?.assignmentId ?? 0))"
+            cell.chapterDuration.text = "\(String(dataoflesson[indexPath.section].assignmentResponse?.testDuration ?? 0)) mins"
+            cell.moduleTestView.isHidden = true
+            cell.progressViewWidthContraint.constant = 0
+            cell.cellLeadingConstraint.constant = 0
+            cell.progressHeight.constant = 0
+            cell.progressWidth.constant = 0
             
         }
 //        let assignment = dataoflesson[indexPath.row].assignmentResponse?.assignmentName
