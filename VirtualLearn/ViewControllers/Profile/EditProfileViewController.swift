@@ -50,7 +50,6 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var dropDownButton: UIButton!
     @IBOutlet weak var dropDownView: UIView!
     @IBOutlet weak var maleGender: UIButton!
-    
     @IBOutlet weak var femaleGender: UIButton!
     @IBOutlet weak var otherGender: UIButton!
     
@@ -65,7 +64,9 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     var profileData: ProfileData?
     let profileViewModel = ProfileViewModel()
     let editProfileViewModel = EditProfileViewModel()
-//    let shared = mainViewModel.mainShared
+    
+   
+    let shared = mainViewModel.mainShared
     
     override func viewDidLoad() {
         
@@ -103,17 +104,30 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         }
     
     @IBAction func onClickSaveBtn(_ sender: Any) {
+        let loader = self.loader()
         updateEditProfileData()
-//        editProfileViewModel.updateProfileData(profiledata: profileData!) { completion: <#T##() -> Void#>, fail: <#T##() -> Void#>)
-            
+        editProfileViewModel.updateProfileData(token: shared.token, profiledata: profileData!) {
+            DispatchQueue.main.async {
+            self.stopLoader(loader: loader)
+            }
+            } fail: {
+                
+            }
+    }
+       
+            func updateEditProfileData() {
+                profileData?.emailId = emailField.text!
+                profileData?.fullName =  nameField.text!
+                profileData?.userName = userNameTextField.text!
+                profileData?.phoneNumber = mobileNoField.text!
+                profileData?.gender = genderField.text!
+                profileData?.dateOfBirth = dateOfBirth.text!
+                profileData?.facebookLink = facebookField.text!
+                profileData?.twitterLink = twitterField.text!
+                profileData?.occupation = occupationField.text!
+                
+            }
     
-            
-        }
-
-        
-    
-    
-   
     @IBAction func nameEdit(_ sender: Any) {
         nameView.backgroundColor = #colorLiteral(red: 0.001148699783, green: 0.2356859446, blue: 0.4366979599, alpha: 1)
     }
@@ -178,30 +192,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         navigationController?.popViewController(animated: true)
     }
     
-    func updateEditProfileData() {
-        profileData?.emailId = emailField.text!
-        profileData?.fullName =  nameField.text!
-        profileData?.userName = userNameTextField.text!
-        profileData?.phoneNumber = mobileNoField.text!
-    }
+    
+        
+    
 }
-    
-
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-

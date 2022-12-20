@@ -30,13 +30,14 @@ class ProfileViewModel {
             guard let phoneNumber = profileData["phoneNumber"] as? String else{print("phoneNumber error");return}
              let occupation = profileData["occupation"] as? String
              let dateOfBirth = profileData["dateOfBirth"] as? String
+             let gender = profileData["gender"] as? String
             guard let coursesCompleted = profileData["numberOfCoursesCompleted"] as? Int else{print("coursesCompleted error");return}
             guard let chaptersCompleted = profileData["numberOfChaptersCompleted"] as? Int else{print("chaptersCompleted error");return}
             guard let testsAttempted = profileData["numberOfTestAttempted"] as? Int else{print("testAttempted error");return}
             let facebookLink = profileData["facebookLink"] as? String
             let twitterLink = profileData["twitterLink"] as? String
         
-            let profiledata = ProfileData(userId: userId, profilePic: profilePicture, fullName: name, userName: userName, emailId: emailId, phoneNumber: phoneNumber, occupation: occupation, dateOfBirth: dateOfBirth, numberOfCoursesCompleted: coursesCompleted, numberOfChaptersCompleted: chaptersCompleted, numberOfTestsAttempted: testsAttempted, facebookLink: facebookLink, twitterLink: twitterLink)
+            let profiledata = ProfileData(userId: userId, profilePic: profilePicture, fullName: name, userName: userName, emailId: emailId, phoneNumber: phoneNumber, occupation: occupation, dateOfBirth: dateOfBirth, numberOfCoursesCompleted: coursesCompleted, numberOfChaptersCompleted: chaptersCompleted, numberOfTestsAttempted: testsAttempted, facebookLink: facebookLink, twitterLink: twitterLink, gender: gender)
             
             completion(profiledata)
             
