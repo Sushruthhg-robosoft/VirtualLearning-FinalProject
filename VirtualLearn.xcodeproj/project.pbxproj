@@ -50,9 +50,11 @@
 		C21A3F872950772800FDDE71 /* TermsOfServicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21A3F862950772800FDDE71 /* TermsOfServicesViewModel.swift */; };
 		C21A3F8C29507C3200FDDE71 /* TermsOfServicesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21A3F8B29507C3200FDDE71 /* TermsOfServicesModel.swift */; };
 		C21A3F942950925500FDDE71 /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21A3F932950925500FDDE71 /* EditProfileViewModel.swift */; };
-		59FC6E8F295066F90031E719 /* TopCourseCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FC6E8E295066F90031E719 /* TopCourseCategory.swift */; };
 		C25014C22947218D004A6711 /* CreateNewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25014C12947218D004A6711 /* CreateNewPasswordViewController.swift */; };
 		C25014C7294721B6004A6711 /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25014C6294721B6004A6711 /* Shadow.swift */; };
+		C26BA487295172070068C7CE /* ModuleTestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26BA486295172060068C7CE /* ModuleTestCollectionViewCell.swift */; };
+		C26BA48C2951721F0068C7CE /* ModuleTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26BA48B2951721F0068C7CE /* ModuleTestViewModel.swift */; };
+		C26BA491295172550068C7CE /* ModuleTestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26BA490295172550068C7CE /* ModuleTestData.swift */; };
 		C2ED75032949D40B00562970 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ED75002949D40B00562970 /* ProfileViewController.swift */; };
 		C2ED75042949D40B00562970 /* ChangeYourPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ED75012949D40B00562970 /* ChangeYourPasswordViewController.swift */; };
 		C2ED75052949D40B00562970 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ED75022949D40B00562970 /* EditProfileViewController.swift */; };
@@ -192,9 +194,11 @@
 		C21A3F862950772800FDDE71 /* TermsOfServicesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServicesViewModel.swift; sourceTree = "<group>"; };
 		C21A3F8B29507C3200FDDE71 /* TermsOfServicesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServicesModel.swift; sourceTree = "<group>"; };
 		C21A3F932950925500FDDE71 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
-		59FC6E8E295066F90031E719 /* TopCourseCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCourseCategory.swift; sourceTree = "<group>"; };
 		C25014C12947218D004A6711 /* CreateNewPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewPasswordViewController.swift; sourceTree = "<group>"; };
 		C25014C6294721B6004A6711 /* Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
+		C26BA486295172060068C7CE /* ModuleTestCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleTestCollectionViewCell.swift; sourceTree = "<group>"; };
+		C26BA48B2951721F0068C7CE /* ModuleTestViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleTestViewModel.swift; sourceTree = "<group>"; };
+		C26BA490295172550068C7CE /* ModuleTestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleTestData.swift; sourceTree = "<group>"; };
 		C2ED75002949D40B00562970 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C2ED75012949D40B00562970 /* ChangeYourPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeYourPasswordViewController.swift; sourceTree = "<group>"; };
 		C2ED75022949D40B00562970 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
@@ -436,6 +440,7 @@
 			children = (
 				CF2EFB362949F07200A7D585 /* TestResultViewController.swift */,
 				C2ED75122949DF6300562970 /* AlertMessage.swift */,
+				C26BA486295172060068C7CE /* ModuleTestCollectionViewCell.swift */,
 				C2ED75132949DF6300562970 /* ModuleTestViewController.swift */,
 				CF2EFB3B2949F0B600A7D585 /* QuestionListTableViewCell.swift */,
 				CF2EFB3C2949F0B600A7D585 /* showQuestionResultViewController.swift */,
@@ -521,6 +526,7 @@
 		CF523199293F045C00C56B7F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C26BA48B2951721F0068C7CE /* ModuleTestViewModel.swift */,
 				1BA47D41294700900012B8C3 /* KeyChain.swift */,
 				CF032A892948966000D6B6D3 /* mainViewModel.swift */,
 				CFF1963F293F5C3F00802396 /* viewModel.swift */,
@@ -544,6 +550,7 @@
 		CF52319A293F046700C56B7F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C26BA490295172550068C7CE /* ModuleTestData.swift */,
 				1BA47D4E294704AF0012B8C3 /* RegisterUser.swift */,
 				CF5231A2293F214600C56B7F /* OnboaringSlide.swift */,
 				CF032A842948958F00D6B6D3 /* Notification.swift */,
@@ -843,12 +850,14 @@
 				1BF0C86229408D93009D9030 /* HamburgerViewController.swift in Sources */,
 				CF79F1CF2941AAD000EEC920 /* SuggestionsCollectionViewCell.swift in Sources */,
 				CFBA05752946FB4900763342 /* customCourseCategoryLable.swift in Sources */,
+				C26BA48C2951721F0068C7CE /* ModuleTestViewModel.swift in Sources */,
 				CFAFC99F293EFAA700F84288 /* AppDelegate.swift in Sources */,
 				CF416BC72942DCF200A27462 /* MyCourseViewController.swift in Sources */,
 				C21A3F872950772800FDDE71 /* TermsOfServicesViewModel.swift in Sources */,
 				CF032A482948332400D6B6D3 /* Chapter.swift in Sources */,
 				1B90BA6D294B40BC004A6D4B /* subCategoryView.swift in Sources */,
 				1BA47D47294704870012B8C3 /* customChooseCourseView.swift in Sources */,
+				C26BA491295172550068C7CE /* ModuleTestData.swift in Sources */,
 				CFF13F1F2950A6570054697D /* CategoriesCellCollectionViewCell.swift in Sources */,
 				CF032A8F2948972000D6B6D3 /* NotificationTableViewCell.swift in Sources */,
 				CFEC20772941A5C500A171DA /* SuggestionsTopView.swift in Sources */,
@@ -856,6 +865,7 @@
 				CF032A462948332400D6B6D3 /* HeaderView.swift in Sources */,
 				CFBA057C2946FB9800763342 /* ChooseYourCourseViewController.swift in Sources */,
 				C21A3F8C29507C3200FDDE71 /* TermsOfServicesModel.swift in Sources */,
+				C26BA487295172070068C7CE /* ModuleTestCollectionViewCell.swift in Sources */,
 				CF9E0800294B38D200F90B49 /* Category.swift in Sources */,
 				C2ED752E2949EFC900562970 /* ProfileViewModel.swift in Sources */,
 				590194C0293F715D00055C24 /* ButtonView.swift in Sources */,
