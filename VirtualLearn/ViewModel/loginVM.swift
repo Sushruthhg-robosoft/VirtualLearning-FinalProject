@@ -86,7 +86,7 @@ class LoginViewModel {
         
     }
     
-    func checkUserNameForExsistingUser(userName: String, completion: @escaping () ->Void, fail: @escaping() -> Void) {
+    func checkUserNameForExsistingUser(userName: String, completion: @escaping (String) ->Void, fail: @escaping(String) -> Void) {
         let network = NetWorkManager()
         let url = URL(string:"https://app-virtuallearning-221207091853.azurewebsites.net/auth/login/check/userName")!
         var request = URLRequest(url: url)
@@ -98,15 +98,15 @@ class LoginViewModel {
                 
                 if(response[0] == "true")
                 {
-                    completion()
+                    completion(userName)
                 }
                 else
                 {
-                    fail()
+                    fail(userName)
                 }
             } failure: { failResult in
                 print(failResult)
-                fail()
+                fail(userName)
             }
         
     }
