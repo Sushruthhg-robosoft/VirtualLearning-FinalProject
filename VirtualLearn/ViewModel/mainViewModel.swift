@@ -16,7 +16,7 @@ class mainViewModel{
     var courseDetailsViewModelShared = courseDetailsViewModel()
     var chaptersDetailsViewModelShared = ChaptersViewModel()
     var homeViewModelShared = HomeViewModel()
-    var isExisting = true
+    var isExisting = false
     var loginUserName: String?
     
     
