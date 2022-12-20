@@ -31,11 +31,11 @@ class LoginPageViewController: UIViewController {
         userNameUnderLineView.backgroundColor = #colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
         passwordUnderLineView.backgroundColor = #colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
         
-        loginviewModel.checkUserNameForExsistingUser(userName: "santhosh") {
-            
-        } fail: {
-            
-        }
+//        loginviewModel.checkUserNameForExsistingUser(userName: "santhosh") {
+//
+//        } fail: {
+//
+//        }
 
 
     }
@@ -44,9 +44,13 @@ class LoginPageViewController: UIViewController {
         invalidPopup.isHidden = true
         checkAllFileds()
         if let username = userNameTextField.text{
+            print("username",username)
             if username.count >= 3 && username.count <= 20{
                 loginviewModel.checkUserNameForExsistingUser(userName: username) {
                     
+                    givenUsername in
+                    print("\(givenUsername) succeeded")
+
                     DispatchQueue.main.async {
                         self.userNameUnderLineView.backgroundColor = #colorLiteral(red: 0.07058823529, green: 0.6549019608, blue: 0.231372549, alpha: 1)
                         self.verifiedImg.isHidden = false
@@ -54,7 +58,11 @@ class LoginPageViewController: UIViewController {
                     }
                     
                 } fail: {
-                    DispatchQueue.main.async {
+                
+                    givenUsername in
+                    
+                    print("\(givenUsername) failed")
+                   DispatchQueue.main.async {
                         self.verifiedImg.isHidden = false
                         self.userNameUnderLineView.backgroundColor = #colorLiteral(red: 0.9176470588, green: 0.1490196078, blue: 0.1490196078, alpha: 1)
                         self.verifiedImg.image = #imageLiteral(resourceName: "icn_textfield_wrong-1")
@@ -78,6 +86,7 @@ class LoginPageViewController: UIViewController {
     
         let loader = self.loader()
         loginviewModel.loginUser(userName: userNameTextField.text!, password: passwordTextfield.text!) { token in
+            
             DispatchQueue.main.async {
                 self.stopLoader(loader: loader)
                 let vc = self.storyboard?.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
