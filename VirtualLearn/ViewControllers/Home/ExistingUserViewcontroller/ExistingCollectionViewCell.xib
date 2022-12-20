@@ -54,6 +54,9 @@
                                 <state key="normal" title="Continue">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="onClickContinue:" destination="gTV-IL-0wX" eventType="touchUpInside" id="CNh-Yc-JE1"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -83,6 +86,11 @@
                 <constraint firstAttribute="bottom" secondItem="cTA-Re-GxP" secondAttribute="bottom" id="o7R-nW-S2B"/>
                 <constraint firstAttribute="trailing" secondItem="cTA-Re-GxP" secondAttribute="trailing" id="ucd-Zg-9DS"/>
             </constraints>
+            <connections>
+                <outlet property="ChapterName" destination="fwC-q8-tD7" id="WfE-Rr-k2y"/>
+                <outlet property="numberOfChapters" destination="DmI-ou-8Yv" id="1gM-Jj-C0p"/>
+                <outlet property="ongoingImage" destination="PyK-l2-3Ec" id="Q5a-1D-nt3"/>
+            </connections>
             <point key="canvasLocation" x="141.30434782608697" y="126.5625"/>
         </collectionViewCell>
     </objects>

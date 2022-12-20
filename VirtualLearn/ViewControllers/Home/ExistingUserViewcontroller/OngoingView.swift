@@ -13,6 +13,7 @@ class OngoingView: UIView, UICollectionViewDataSource, UICollectionViewDelegate 
     @IBOutlet var backView: UIView!
     
     @IBOutlet weak var ongoingCollectionView: UICollectionView!
+    var mainShared = mainViewModel.mainShared
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,6 +27,17 @@ class OngoingView: UIView, UICollectionViewDataSource, UICollectionViewDelegate 
         addSubview(backView)
         backView.frame = self.bounds
         initCollectionView()
+        
+        mainShared.myCourseViewModelShared.getMycourseDetails(token: mainShared.token) {
+            DispatchQueue.main.async {
+                self.ongoingCollectionView.reloadData()
+            }
+            
+        } fail: {
+            print("ongoing home fail")
+        }
+
+        
     }
     
     private func initCollectionView() {
@@ -36,7 +48,7 @@ class OngoingView: UIView, UICollectionViewDataSource, UICollectionViewDelegate 
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return mainShared.myCourseViewModelShared.ongoingCourses.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -45,6 +57,11 @@ class OngoingView: UIView, UICollectionViewDataSource, UICollectionViewDelegate 
             fatalError("can't dequeue CustomCell")
             
         }
+        cell.ChapterName.text = mainShared.myCourseViewModelShared.ongoingCourses[indexPath.row].courseName
+        cell.numberOfChapters.text = "\(mainShared.myCourseViewModelShared.ongoingCourses[indexPath.row].completedCount) /\(mainShared.myCourseViewModelShared.ongoingCourses[indexPath.row].totalNumberOfChapters) Chapters"
+        let url = URL(string: mainShared.myCourseViewModelShared.ongoingCourses[indexPath.row].courseImage)
+        let data = try? Data(contentsOf: url!)
+        cell.ongoingImage.image = UIImage(data: data!)
        
         return cell
     }
