@@ -13,6 +13,7 @@ class ChooseYourCourseViewController: UIViewController {
     @IBOutlet weak var searchView: customChooseCourseView!
     @IBOutlet weak var searchTextField: UITextField!
     var mainShared = mainViewModel.mainShared
+    @IBOutlet weak var categoriesCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         
