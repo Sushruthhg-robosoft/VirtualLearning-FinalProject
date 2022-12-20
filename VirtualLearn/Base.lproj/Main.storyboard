@@ -7245,6 +7245,9 @@
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ur5-iL-qOt">
                                                 <rect key="frame" x="0.0" y="425" width="375" height="485"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="485" id="TTo-R0-c7W"/>
+                                                </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="92" id="AwF-gZ-6om" customClass="ChooseYourCourseTableViewCell" customModule="VirtualLearn" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="375" height="92"/>
@@ -7319,35 +7322,35 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nw1-VL-u4W">
                                                 <rect key="frame" x="24" y="278" width="351" height="103"/>
                                                 <subviews>
-                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="J2T-D5-thy">
+                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="J2T-D5-thy">
                                                         <rect key="frame" x="0.0" y="0.0" width="351" height="103"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zI1-8Y-19N">
+                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zI1-8Y-19N">
                                                             <size key="itemSize" width="83" height="30"/>
                                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         </collectionViewFlowLayout>
                                                         <cells>
-                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hqv-CM-0VD">
-                                                                <rect key="frame" x="0.0" y="0.0" width="103" height="30"/>
+                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="cell" id="hqv-CM-0VD" customClass="ChooseYourCourseCollectionViewCell" customModule="VirtualLearn" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="113" height="32"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vUP-If-t2i">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="103" height="30"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="113" height="32"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zQ2-qQ-TUj">
-                                                                            <rect key="frame" x="1" y="1" width="101" height="28"/>
+                                                                            <rect key="frame" x="1" y="1" width="111" height="30"/>
                                                                             <subviews>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_categories_design" translatesAutoresizingMaskIntoConstraints="NO" id="x1l-Eg-nxr">
-                                                                                    <rect key="frame" x="0.0" y="4.5" width="20" height="19"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                                                                     <constraints>
-                                                                                        <constraint firstAttribute="height" constant="19" id="JmC-7e-kcY"/>
-                                                                                        <constraint firstAttribute="width" constant="20" id="b1F-j4-aRC"/>
+                                                                                        <constraint firstAttribute="height" constant="30" id="JmC-7e-kcY"/>
+                                                                                        <constraint firstAttribute="width" constant="30" id="b1F-j4-aRC"/>
                                                                                     </constraints>
                                                                                 </imageView>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Design" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dh7-ff-dsX">
-                                                                                    <rect key="frame" x="41" y="6.5" width="40" height="15"/>
+                                                                                    <rect key="frame" x="51" y="7.5" width="40" height="15"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="height" constant="15" id="5uJ-ZY-EVo"/>
                                                                                     </constraints>
@@ -7360,8 +7363,10 @@
                                                                             <constraints>
                                                                                 <constraint firstItem="x1l-Eg-nxr" firstAttribute="leading" secondItem="zQ2-qQ-TUj" secondAttribute="leading" id="AGa-p4-F0C"/>
                                                                                 <constraint firstItem="x1l-Eg-nxr" firstAttribute="centerY" secondItem="zQ2-qQ-TUj" secondAttribute="centerY" id="B9D-yB-fng"/>
+                                                                                <constraint firstAttribute="bottom" secondItem="x1l-Eg-nxr" secondAttribute="bottom" id="XL8-kh-GPF"/>
                                                                                 <constraint firstItem="Dh7-ff-dsX" firstAttribute="leading" secondItem="x1l-Eg-nxr" secondAttribute="trailing" constant="21" id="bUh-lY-hfV"/>
                                                                                 <constraint firstItem="Dh7-ff-dsX" firstAttribute="centerY" secondItem="zQ2-qQ-TUj" secondAttribute="centerY" id="jge-0x-3un"/>
+                                                                                <constraint firstItem="x1l-Eg-nxr" firstAttribute="top" secondItem="zQ2-qQ-TUj" secondAttribute="top" id="n94-Fs-csp"/>
                                                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Dh7-ff-dsX" secondAttribute="trailing" constant="20" symbolic="YES" id="z4T-WF-nSx"/>
                                                                             </constraints>
                                                                         </view>
@@ -7374,6 +7379,10 @@
                                                                     </constraints>
                                                                 </collectionViewCellContentView>
                                                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <connections>
+                                                                    <outlet property="categoryImage" destination="x1l-Eg-nxr" id="cbr-0f-gHC"/>
+                                                                    <outlet property="categoryName" destination="Dh7-ff-dsX" id="Mni-u8-kri"/>
+                                                                </connections>
                                                             </collectionViewCell>
                                                         </cells>
                                                     </collectionView>
@@ -7381,7 +7390,6 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="J2T-D5-thy" secondAttribute="trailing" id="HAc-b2-3fd"/>
-                                                    <constraint firstAttribute="height" constant="103" id="LYA-7Z-qas"/>
                                                     <constraint firstAttribute="width" constant="351" id="Uo9-Km-owb"/>
                                                     <constraint firstItem="J2T-D5-thy" firstAttribute="leading" secondItem="Nw1-VL-u4W" secondAttribute="leading" id="WBG-Xn-0b7"/>
                                                     <constraint firstAttribute="bottom" secondItem="J2T-D5-thy" secondAttribute="bottom" id="cpT-TU-HUk"/>
