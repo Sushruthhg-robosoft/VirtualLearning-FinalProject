@@ -29,6 +29,10 @@ class NewAccountViewController: UIViewController {
     @IBAction func continueButton(_ sender: Any) {
         guard let mobileNumber = enteredMobileNumber.text else {return}
 //        print(mobileNumber)
+        if mobileNumber.count != 10 {
+            
+            return
+        }
         verificationOTP.checkphoneNumberForNewUser(mobileNumber: "+91"+mobileNumber) {
             DispatchQueue.main.async {
                 let vc = self.storyboard?.instantiateViewController(identifier: "VerifyAccountViewController") as! VerifyAccountViewController

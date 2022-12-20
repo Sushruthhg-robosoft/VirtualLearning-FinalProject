@@ -46,6 +46,7 @@
 		59055E47294C7F5900608DE8 /* Certificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59055E46294C7F5900608DE8 /* Certificate.swift */; };
 		592B3530294CACAC00EDC10A /* AssignmentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B352F294CACAC00EDC10A /* AssignmentResponse.swift */; };
 		59FC6E8F295066F90031E719 /* TopCourseCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FC6E8E295066F90031E719 /* TopCourseCategory.swift */; };
+		59FC6F17295179420031E719 /* ChooseYourCourseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FC6F16295179420031E719 /* ChooseYourCourseCollectionViewCell.swift */; };
 		C21A3F8229502F2D00FDDE71 /* PrivacyPolicyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21A3F8129502F2D00FDDE71 /* PrivacyPolicyModel.swift */; };
 		C21A3F872950772800FDDE71 /* TermsOfServicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21A3F862950772800FDDE71 /* TermsOfServicesViewModel.swift */; };
 		C21A3F8C29507C3200FDDE71 /* TermsOfServicesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21A3F8B29507C3200FDDE71 /* TermsOfServicesModel.swift */; };
@@ -175,6 +176,9 @@
 		1BD41652294095CC00E5334B /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		1BDBD84F295095CC00983C10 /* VideoPlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayViewController.swift; sourceTree = "<group>"; };
 		1BDC5F4B293F771B00BE877F /* PersonalDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDetailsViewController.swift; sourceTree = "<group>"; };
+		1BE0706B29517BB800E3894C /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
+		1BE0706C29517BC300E3894C /* Proxima Nova Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Bold.otf"; sourceTree = "<group>"; };
+		1BE0706D29517BE000E3894C /* Biko_Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Biko_Bold.otf; sourceTree = "<group>"; };
 		1BF0C85D29408D92009D9030 /* customHamLable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customHamLable.swift; sourceTree = "<group>"; };
 		1BF0C85E29408D92009D9030 /* HamburgerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerViewController.swift; sourceTree = "<group>"; };
 		1BF0C85F29408D93009D9030 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +194,7 @@
 		59055E46294C7F5900608DE8 /* Certificate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Certificate.swift; sourceTree = "<group>"; };
 		592B352F294CACAC00EDC10A /* AssignmentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentResponse.swift; sourceTree = "<group>"; };
 		59FC6E8E295066F90031E719 /* TopCourseCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCourseCategory.swift; sourceTree = "<group>"; };
+		59FC6F16295179420031E719 /* ChooseYourCourseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseYourCourseCollectionViewCell.swift; sourceTree = "<group>"; };
 		C21A3F8129502F2D00FDDE71 /* PrivacyPolicyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyModel.swift; sourceTree = "<group>"; };
 		C21A3F862950772800FDDE71 /* TermsOfServicesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServicesViewModel.swift; sourceTree = "<group>"; };
 		C21A3F8B29507C3200FDDE71 /* TermsOfServicesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServicesModel.swift; sourceTree = "<group>"; };
@@ -388,6 +393,32 @@
 				1BDC5F4B293F771B00BE877F /* PersonalDetailsViewController.swift */,
 			);
 			path = PersonalDetails;
+			sourceTree = "<group>";
+		};
+		1BE0706829517B3A00E3894C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1BE0706A29517B4E00E3894C /* Biko */,
+				1BE0706929517B4200E3894C /* Proxima-Nova */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		1BE0706929517B4200E3894C /* Proxima-Nova */ = {
+			isa = PBXGroup;
+			children = (
+				1BE0706C29517BC300E3894C /* Proxima Nova Bold.otf */,
+				1BE0706B29517BB800E3894C /* ProximaNova-Regular.otf */,
+			);
+			path = "Proxima-Nova";
+			sourceTree = "<group>";
+		};
+		1BE0706A29517B4E00E3894C /* Biko */ = {
+			isa = PBXGroup;
+			children = (
+				1BE0706D29517BE000E3894C /* Biko_Bold.otf */,
+			);
+			path = Biko;
 			sourceTree = "<group>";
 		};
 		1BF0C85C29408D66009D9030 /* Home */ = {
@@ -600,6 +631,7 @@
 		CFAFC99D293EFAA700F84288 /* VirtualLearn */ = {
 			isa = PBXGroup;
 			children = (
+				1BE0706829517B3A00E3894C /* Fonts */,
 				CF523184293F02BA00C56B7F /* ViewControllers */,
 				CF52319A293F046700C56B7F /* Model */,
 				CF523199293F045C00C56B7F /* ViewModel */,
@@ -649,6 +681,7 @@
 			children = (
 				CFBA05792946FB9800763342 /* ChooseYourCourseTableViewCell.swift */,
 				CFBA057A2946FB9800763342 /* ChooseYourCourseViewController.swift */,
+				59FC6F16295179420031E719 /* ChooseYourCourseCollectionViewCell.swift */,
 			);
 			path = ChooseYourCourse;
 			sourceTree = "<group>";
@@ -853,6 +886,7 @@
 				C26BA48C2951721F0068C7CE /* ModuleTestViewModel.swift in Sources */,
 				CFAFC99F293EFAA700F84288 /* AppDelegate.swift in Sources */,
 				CF416BC72942DCF200A27462 /* MyCourseViewController.swift in Sources */,
+				59FC6F17295179420031E719 /* ChooseYourCourseCollectionViewCell.swift in Sources */,
 				C21A3F872950772800FDDE71 /* TermsOfServicesViewModel.swift in Sources */,
 				CF032A482948332400D6B6D3 /* Chapter.swift in Sources */,
 				1B90BA6D294B40BC004A6D4B /* subCategoryView.swift in Sources */,
