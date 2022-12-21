@@ -18,6 +18,14 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var notificationSoundViewHeight: NSLayoutConstraint!
     @IBOutlet weak var PopUpViewTopViewHeight: NSLayoutConstraint!
     
+    @IBOutlet weak var pushNotificationBtn: UIButton!
+    
+    @IBOutlet weak var notificationSoundBtn: UIButton!
+    
+    
+    var isPushNotification = true
+    var isNotificationSound = true
+    
     let privacyViewModel = PrivacyPolicyViewModel()
     let privacyPolicyModel = [PrivacyPolicyModel]()
     let termsOfServiceViewModel = TermsOfServicesViewModel()
@@ -97,7 +105,29 @@ class SettingViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-
+    @IBAction func onClickPushNotification(_ sender: Any) {
+        
+        if isPushNotification {
+            self.pushNotificationBtn.setImage(#imageLiteral(resourceName: "btn_off copy"), for: .normal)
+            self.isPushNotification = false
+        }
+        else{
+            self.pushNotificationBtn.setImage(#imageLiteral(resourceName: "btn_on"), for: .normal)
+            self.isPushNotification = true
+        }
     }
+    
+    @IBAction func onClickNotificationSound(_ sender: Any) {
+        
+        if isNotificationSound {
+            self.notificationSoundBtn.setImage(#imageLiteral(resourceName: "btn_off copy"), for: .normal)
+            self.isNotificationSound = false
+        }
+        else{
+            self.notificationSoundBtn.setImage(#imageLiteral(resourceName: "btn_on"), for: .normal)
+            self.isNotificationSound = true
+        }
+    }
+}
 
 
