@@ -2223,7 +2223,7 @@
             <objects>
                 <viewController storyboardIdentifier="NewUserMyCourseViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xN5-0k-xZF" customClass="NewUserMyCourseViewController" customModule="VirtualLearn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3lO-QP-sOL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="509.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="509"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="18f-l1-gKm">
@@ -5370,6 +5370,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QtC-2T-rw9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8326" y="1542"/>
+        </scene>
+        <!--View Certificate View Controller-->
+        <scene sceneID="9NA-hZ-PRw">
+            <objects>
+                <viewController storyboardIdentifier="ViewCertificateViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RE1-DO-9qH" customClass="ViewCertificateViewController" customModule="VirtualLearn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="guy-sq-LdT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BGw-ss-0nx">
+                                <rect key="frame" x="0.0" y="201" width="375" height="265"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="60A-ga-w7Q"/>
+                                    <constraint firstAttribute="height" constant="265" id="oiV-No-ZjW"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nh8-mC-UZ0">
+                                <rect key="frame" x="24" y="74" width="14.5" height="14.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="14.5" id="XEu-0i-Sdu"/>
+                                    <constraint firstAttribute="width" constant="14.5" id="cVM-t7-efr"/>
+                                </constraints>
+                                <state key="normal" image="icn_close_white"/>
+                                <connections>
+                                    <action selector="onClickCancel:" destination="RE1-DO-9qH" eventType="touchUpInside" id="Pki-Zd-uiC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SDI-GJ-0kK">
+                                <rect key="frame" x="329" y="74" width="22" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="GpM-oi-6HS"/>
+                                    <constraint firstAttribute="width" constant="22" id="c8c-kr-EJ4"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="arrow.down.to.line.alt" catalog="system"/>
+                                <connections>
+                                    <action selector="onClickDownload:" destination="RE1-DO-9qH" eventType="touchUpInside" id="yhe-nX-FuI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="T6H-sE-OPu"/>
+                        <color key="backgroundColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="BGw-ss-0nx" firstAttribute="centerY" secondItem="guy-sq-LdT" secondAttribute="centerY" id="6QE-43-UK6"/>
+                            <constraint firstItem="Nh8-mC-UZ0" firstAttribute="top" secondItem="T6H-sE-OPu" secondAttribute="top" constant="74" id="Cy1-jZ-52e"/>
+                            <constraint firstItem="T6H-sE-OPu" firstAttribute="trailing" secondItem="SDI-GJ-0kK" secondAttribute="trailing" constant="24" id="Hq2-Gr-LIl"/>
+                            <constraint firstItem="Nh8-mC-UZ0" firstAttribute="leading" secondItem="T6H-sE-OPu" secondAttribute="leading" constant="24" id="RHZ-xF-49P"/>
+                            <constraint firstItem="BGw-ss-0nx" firstAttribute="centerX" secondItem="guy-sq-LdT" secondAttribute="centerX" id="f2I-Iw-2ir"/>
+                            <constraint firstItem="SDI-GJ-0kK" firstAttribute="top" secondItem="T6H-sE-OPu" secondAttribute="top" constant="74" id="ikL-Px-7Ux"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="certificateImage" destination="BGw-ss-0nx" id="kc7-sc-17i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xUD-km-Hpc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8366" y="2284"/>
         </scene>
         <!--Congrats View Controller-->
         <scene sceneID="HUr-1H-oSt">
