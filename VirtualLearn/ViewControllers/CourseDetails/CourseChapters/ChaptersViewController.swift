@@ -37,6 +37,7 @@ class ChaptersViewController: UIViewController {
     @IBOutlet weak var courseCategory: customCourseCategoryLable!
     @IBOutlet weak var courseLessonAndChapters: UILabel!
     @IBOutlet weak var sourseContentDescription: UILabel!
+    @IBOutlet weak var joinCourseButton: UIButton!
     
     var delegate : switchVc?
     var dataoflesson = [LessonResponseList]()
@@ -85,8 +86,14 @@ class ChaptersViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         let loader = self.loader()
         shared.chaptersDetailsViewModelShared.getChapters(token: shared.token, courseId: "3") { result in
-            
+            if(result.joinedCourse) {
+                self.joinCourseButton.isHidden = true
+            }
+            else {
+                self.joinCourseButton.isHidden = false
+            }
             DispatchQueue.main.async { [self] in
+                
                 let chapter = String(result.courseContentResponse.chapterCount) + "Chapter | "
                 let lesson = String(result.courseContentResponse.lessonCount) + "Lessons | "
                 let assesment = String(result.courseContentResponse.moduleTest) + "Assesment Test |"
@@ -123,7 +130,10 @@ class ChaptersViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-
+    @IBAction func joinCourseClicked(_ sender: Any) {
+        
+    }
+    
 }
 
 extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{

@@ -26,6 +26,7 @@ class NetWorkManager {
                     print("already joined the course")
                 }else if httpResponse.statusCode == 404 {
                     print("course does not exist")
+                    failure("course does not exist")
                 }
                 else{
                     
