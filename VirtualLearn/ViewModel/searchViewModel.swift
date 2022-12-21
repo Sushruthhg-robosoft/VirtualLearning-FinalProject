@@ -15,7 +15,9 @@ class SearchViewModel {
     var duration = [[String : Int]]()
     var searchOption = ""
     var categories = [Int]()
-    var topSearches = [Search]()
+    var searchResult = [Search]()
+    
+    var topSearches = [String]()
 
     
     func getSearchResult(completion: @escaping (Bool) -> (), fail: @escaping (Bool) ->()){
@@ -44,7 +46,7 @@ class SearchViewModel {
             
             let search = Search(courseId: courseId, courseName: courseName, categoryName: categoryName, noOfChapters: noOfChapters)
             
-            self.topSearches.append(search)
+            self.searchResult.append(search)
             
             
         }, failure: { (a) in
@@ -60,7 +62,10 @@ class SearchViewModel {
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
     
             networkManeger.fetchDataJson(request: request, completion: { (result) in
-                print(result)
+                
+                
+                
+                
             }, failure: { (a) in
                 print(a)
             })
