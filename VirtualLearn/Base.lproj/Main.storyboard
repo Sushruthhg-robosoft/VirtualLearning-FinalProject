@@ -6033,7 +6033,12 @@
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fjQ-iK-4lE">
                                                                 <rect key="frame" x="0.0" y="0.0" width="119" height="29"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <state key="normal" title="Terms of Services"/>
+                                                                <state key="normal" title="Terms of Services">
+                                                                    <color key="titleColor" red="0.16862745098039217" green="0.70980392156862748" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="onClickTermsofServices:" destination="yEG-9w-pHZ" eventType="touchUpInside" id="L15-Td-JZM"/>
+                                                                </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&amp;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAv-Yd-etz">
                                                                 <rect key="frame" x="124" y="0.0" width="9" height="29"/>
@@ -6044,7 +6049,12 @@
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g59-ZB-xsM">
                                                                 <rect key="frame" x="138" y="0.0" width="90" height="29"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <state key="normal" title="Privacy Policy"/>
+                                                                <state key="normal" title="Privacy Policy">
+                                                                    <color key="titleColor" red="0.16862745100000001" green="0.70980392160000005" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="onClickPrivacyPolicy:" destination="yEG-9w-pHZ" eventType="touchUpInside" id="MgI-zI-WCX"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -6110,7 +6120,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="privacyPolicy" destination="g59-ZB-xsM" id="Ma0-TP-sPH"/>
                         <outlet property="registerBtn" destination="tSS-Fw-p6f" id="iU3-nC-lUx"/>
+                        <outlet property="termsOfServices" destination="fjQ-iK-4lE" id="DJP-Ve-3uI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="92B-aG-JqZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -7101,7 +7113,7 @@
                                         </constraints>
                                     </view>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJI-jT-mVi">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1643"/>
                                         <connections>
                                             <segue destination="CWZ-hf-ahz" kind="embed" identifier="switch" id="RmW-zN-Sfg"/>
                                         </connections>
@@ -7149,6 +7161,7 @@
                         <outlet property="instructorName" destination="0l0-r3-IWf" id="jla-Hl-LlT"/>
                         <outlet property="instructorOccupation" destination="6wM-l0-SG4" id="Whn-du-inD"/>
                         <outlet property="introductionDuration" destination="YAL-1U-EOk" id="x3n-bX-cFP"/>
+                        <outlet property="joinCourseButton" destination="uwR-lR-zy4" id="FZZ-8a-ryV"/>
                         <outlet property="overViewBtn" destination="Urk-x6-oj8" id="Hke-fJ-1uj"/>
                         <outlet property="overViewScrollView" destination="5cl-4O-0if" id="n3U-wd-cRh"/>
                         <outlet property="overViewUnderLineView" destination="rYX-Pl-Kdt" id="ev3-bL-G46"/>
@@ -8085,11 +8098,11 @@
             <objects>
                 <viewController storyboardIdentifier="ChaptersViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CWZ-hf-ahz" customClass="ChaptersViewController" customModule="VirtualLearn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="twS-ur-FOy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1643"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3iU-qK-2hl">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1643"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VmF-ZA-U7f">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1492"/>

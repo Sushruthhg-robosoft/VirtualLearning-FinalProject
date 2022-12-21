@@ -14,11 +14,10 @@ class PrivacyPolicyViewModel {
     var privacyPolicyData = [PrivacyPolicyModel]()
     
     
-    func getprivacyPolicyContent(token: String, privacyPolicyId: String, completion: @escaping(PrivacyPolicyModel) -> Void, fail: @escaping () -> Void) {
-        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/privacy-policy")!
+    func getprivacyPolicyContent(privacyPolicyId: String, completion: @escaping(PrivacyPolicyModel) -> Void, fail: @escaping () -> Void) {
+        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/privacy-policy")!
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         networkManager.fetchDataJson(request: request) { data in
             guard let apiData = data as? [String: Any] else{ print("apiDataerror");return}
             guard let policyId = apiData["privacyPolicyId"] as? Int else{ print("privacyPolicyIderror");return}

@@ -10,7 +10,7 @@ import UIKit
 class EditProfileViewModel {
     var mainshared = mainViewModel.mainShared
     
-    func updateProfileData(imageToUpdate: UIImage,token: String, profiledata: ProfileData, completion: @escaping () -> Void, fail: @escaping () -> Void) {
+    func updateProfileData(profileImage: UIImage,token: String, profiledata: ProfileData, completion: @escaping () -> Void, fail: @escaping () -> Void) {
         let networkManager = NetWorkManager()
         guard let urL = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/profile") else{ return}
         var request = URLRequest(url: urL)
@@ -27,11 +27,13 @@ class EditProfileViewModel {
             "facebookLink" : profiledata.facebookLink!,
             
         ]
+        let boundary = "Boundary-\(UUID().uuidString)"
+        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         let data = NSMutableData()
         let fieldName = "file"
-        if let imageData = imageToUpdate.jpegData(compressionQuality: 1) {
+        if let imageData = profileImage.jpegData(compressionQuality: 1) {
 
-//                      data.append("--\(boundary)\r\n".data(using: .utf8)!)
+                      data.append("--\(boundary)\r\n".data(using: .utf8)!)
 
                       data.append("Content-Disposition: form-data; name=\"\(fieldName)\"; filename=\"image.jpg\"\r\n".data(using: .utf8)!)
 
@@ -48,6 +50,7 @@ class EditProfileViewModel {
         
         
         request.setValue("Bearer \(mainshared.token)", forHTTPHeaderField: "Authorization")
+        
         networkManager.fetchData(request: request) { result in
         completion()
             

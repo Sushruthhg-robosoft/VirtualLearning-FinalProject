@@ -14,9 +14,7 @@ class NetWorkManager {
         URLSession.shared.dataTask(with: request) { data, response, error in
             if error == nil{
                 let httpResponse = response as! HTTPURLResponse
-                print(httpResponse)
                 guard let responsedata = data else { return }
-                print(httpResponse.statusCode)
                 if(httpResponse.statusCode == 200){
                     let data = String(data: responsedata, encoding: .utf8)!.components(separatedBy: .newlines)
                     
@@ -75,7 +73,6 @@ class NetWorkManager {
         request.allHTTPHeaderFields = headers
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let response = response as? HTTPURLResponse {
-                print(response.statusCode)
                 if (response.statusCode == 200 || response.statusCode == 201) {
                     let data = String(data: data!, encoding: .utf8)!.components(separatedBy: .newlines)
                     completion(data[0],nil)
@@ -91,7 +88,6 @@ class NetWorkManager {
     func requestData(request: URLRequest,completion: @escaping (Any) -> (), failure: @escaping (Any) -> ()) {
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let response = response as? HTTPURLResponse {
-                print("Response", response.statusCode)
                 if (response.statusCode == 200 || response.statusCode == 201) {
                     let reponseData = try! JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
                     completion(reponseData)
@@ -115,7 +111,6 @@ class NetWorkManager {
                 let httpResponse = response as! HTTPURLResponse
                 
                 guard let responsedata = data else { return }
-                print(httpResponse.statusCode)
                 
                 if(httpResponse.statusCode == 200){
                     let data = try! JSONSerialization.jsonObject(with: data!, options: .allowFragments)

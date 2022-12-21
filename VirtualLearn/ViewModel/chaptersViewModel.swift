@@ -16,7 +16,7 @@ class ChaptersViewModel {
         
 //        var listOfLessons = [LessonResponseList]()
         
-        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/chapter?courseId=3")!
+        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/chapter?courseId=3")!
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"

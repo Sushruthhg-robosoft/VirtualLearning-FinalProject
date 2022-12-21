@@ -10,6 +10,13 @@ import UIKit
 class LandingViewController: UIViewController {
 
     @IBOutlet weak var registerBtn: UIButton!
+    @IBOutlet weak var termsOfServices: UIButton!
+    @IBOutlet weak var privacyPolicy: UIButton!
+    
+    
+    let privacyViewModel = PrivacyPolicyViewModel()
+    let termsOfServiceViewModel = TermsOfServicesViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,4 +41,41 @@ class LandingViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func onClickTermsofServices(_ sender: Any) {
+        let loader = self.loader()
+       
+        termsOfServiceViewModel.gettermsofServicesContent(termsOfServicesId: "1") { ServiceData in
+        DispatchQueue.main.async {
+            self.stopLoader(loader: loader)
+            let vc = self.storyboard?.instantiateViewController(identifier: "TermConditionViewController") as! TermConditionViewController
+            vc.label = "Terms Of Services"
+            vc.content = ServiceData.content
+        self.navigationController?.pushViewController(vc, animated: true)
+       
+        
+    }
+    } fail: {
+            print("error")
+        }
+      
+        
+    }
+    
+    @IBAction func onClickPrivacyPolicy(_ sender: Any) {
+        let loader = self.loader()
+
+        privacyViewModel.getprivacyPolicyContent(privacyPolicyId: "1") { PolicyData in
+        DispatchQueue.main.async {
+            self.stopLoader(loader: loader)
+            let vc = self.storyboard?.instantiateViewController(identifier: "TermConditionViewController") as! TermConditionViewController
+            vc.label = "Privacy Policy"
+            vc.content = PolicyData.content
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        }
+
+        } fail: {
+            print("error")
+        }
+}
 }

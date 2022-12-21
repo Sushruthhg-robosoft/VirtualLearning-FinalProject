@@ -42,6 +42,9 @@ class CourseDetailsViewController: UIViewController {
     @IBOutlet weak var courseDescriptionHeight: NSLayoutConstraint!
     
     @IBOutlet weak var overViewScrollView: UIScrollView!
+    
+    @IBOutlet weak var joinCourseButton: UIButton!
+    
     var courseOverView: CourseOverview? = nil
     var courseIncludes = [String]()
     var courseOutcome = [String]()
@@ -68,6 +71,14 @@ class CourseDetailsViewController: UIViewController {
         shared.courseDetailsViewModelShared.courseOverView(token: shared.token, courseId: "3") { courseDataOverView in
             self.courseOverView = courseDataOverView
             DispatchQueue.main.async { [self] in
+                if(courseDataOverView.joinedCourse) {
+                    joinCourseButton.isHidden = true
+                }
+                else
+                {
+                    joinCourseButton.isHidden = false
+                }
+                
                 self.CourseHeading.text = courseDataOverView.courseHeader.courseName
                 self.courseType.text = courseDataOverView.courseHeader.categoryName
                 self.courseChapters.text = String( courseDataOverView.courseHeader.totalNumberOfChapters)+" Chapters | " + String( courseDataOverView.courseHeader.totalNumberOfChapters)+" Lessons"
@@ -98,7 +109,6 @@ class CourseDetailsViewController: UIViewController {
                 
                 let url = URL(string: courseDataOverView.Instructor.profilePic)
                 let data = try? Data(contentsOf: url!)
-                //cell.courseImage.image = UIImage(data: data!)
                 self.instructorImage.image = UIImage(data: data!)
                 tableView1.reloadData()
                 tableView2.reloadData()
