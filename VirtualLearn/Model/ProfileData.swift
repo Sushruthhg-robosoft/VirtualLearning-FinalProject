@@ -21,8 +21,9 @@ class ProfileData {
     var numberOfTestsAttempted: Int
     var facebookLink: String?
     var twitterLink: String?
+    var gender: String?
     
-    init(userId: Int, profilePic: String?, fullName: String, userName: String, emailId: String, phoneNumber: String, occupation: String?, dateOfBirth: String?, numberOfCoursesCompleted: Int, numberOfChaptersCompleted: Int, numberOfTestsAttempted: Int, facebookLink: String?, twitterLink: String?) {
+    init(userId: Int, profilePic: String?, fullName: String, userName: String, emailId: String, phoneNumber: String, occupation: String?, dateOfBirth: String?, numberOfCoursesCompleted: Int, numberOfChaptersCompleted: Int, numberOfTestsAttempted: Int, facebookLink: String?, twitterLink: String?, gender: String?) {
         self.userId = userId
         self.profilePic = profilePic
         self.fullName = fullName
@@ -36,6 +37,7 @@ class ProfileData {
         self.numberOfTestsAttempted = numberOfTestsAttempted
         self.facebookLink = facebookLink
         self.twitterLink = twitterLink
+        self.gender = gender
         
     }
     

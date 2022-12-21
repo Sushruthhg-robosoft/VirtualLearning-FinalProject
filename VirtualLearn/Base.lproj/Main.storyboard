@@ -3603,7 +3603,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
-                                                            <action selector="emailEdit:" destination="05D-p0-z4I" eventType="editingDidEnd" id="41c-GO-d9M"/>
+                                                            <action selector="facebookFieldEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="v2D-Ss-cuA"/>
                                                         </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aao-NR-8SQ">
@@ -3622,7 +3622,7 @@
                                                         <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mobile number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E3T-su-ZKt" customClass="borderlessTextField" customModule="VirtualLearn" customModuleProvider="target">
+                                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mobile number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E3T-su-ZKt" customClass="borderlessTextField" customModule="VirtualLearn" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="225" width="327" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="qfF-SG-p7D"/>
@@ -3707,7 +3707,7 @@
                                                         <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Date of birth" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bh6-l3-hQ4" customClass="borderlessTextField" customModule="VirtualLearn" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date Of Birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bh6-l3-hQ4" customClass="borderlessTextField" customModule="VirtualLearn" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="444" width="327" height="17"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="17" id="pzX-7a-1xv"/>
@@ -3733,6 +3733,9 @@
                                                             <constraint firstAttribute="width" constant="21" id="DRX-uS-kaq"/>
                                                         </constraints>
                                                         <state key="normal" image="icn_dropdown"/>
+                                                        <connections>
+                                                            <action selector="onClickDropdown:" destination="05D-p0-z4I" eventType="touchUpInside" id="VWn-hp-RLs"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Twitter Link" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6J-TA-ZiZ">
                                                         <rect key="frame" x="0.0" y="488" width="70.5" height="19"/>
@@ -3743,7 +3746,7 @@
                                                         <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Twitter link" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pGL-EK-OGq" customClass="borderlessTextField" customModule="VirtualLearn" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Twitter Link" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pGL-EK-OGq" customClass="borderlessTextField" customModule="VirtualLearn" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="515" width="327" height="17"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="17" id="fy4-5c-gqv"/>
@@ -4024,10 +4027,12 @@
                         <outlet property="cameraButton" destination="tmh-Td-bN8" id="wPt-40-ETk"/>
                         <outlet property="dateOfBirth" destination="j2J-XB-o9u" id="IXt-g0-byg"/>
                         <outlet property="dateOfBirthField" destination="bh6-l3-hQ4" id="pyU-Ze-wwM"/>
+                        <outlet property="dateOfBirthView" destination="623-mX-bez" id="g4n-A1-y4y"/>
                         <outlet property="dropDownButton" destination="36Y-Uh-SwV" id="a41-zQ-Qnt"/>
                         <outlet property="dropDownView" destination="3ge-Om-iDA" id="0OY-Ug-a77"/>
                         <outlet property="emailField" destination="XH7-tZ-v6A" id="dtM-PN-xg9"/>
                         <outlet property="emailLabel" destination="upW-IG-b4x" id="YVI-Pt-7rj"/>
+                        <outlet property="emailView" destination="aao-NR-8SQ" id="7aG-BL-quG"/>
                         <outlet property="facebookField" destination="InT-pf-vXj" id="IIS-kR-1Ie"/>
                         <outlet property="facebookLabel" destination="7L6-Jm-Loa" id="4Rf-Ao-Z8e"/>
                         <outlet property="facebookView" destination="KuR-K5-Bnq" id="Wvn-2Y-dav"/>
