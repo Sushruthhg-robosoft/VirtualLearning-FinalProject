@@ -11,6 +11,16 @@ import UIKit
 
 class SearchViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var firstBtn: UIButton!
+    
+    @IBOutlet weak var secondBtn: UIButton!
+    
+    @IBOutlet weak var thirdBtn: UIButton!
+    
+    @IBOutlet weak var fourthBtn: UIButton!
+    
+    @IBOutlet weak var fifthBtn: UIButton!
+    
     @IBOutlet weak var CourseDetailsTableView: UITableView!
     
     @IBOutlet weak var searchTextField: UITextField!
@@ -28,7 +38,11 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         topSearchView.isHidden = true
             topSearchViewHeight.constant  = 0
         super.viewDidLoad()
-        
+        shared.searchViewModelShared.getTopSearches { (result) in
+            print(result)
+        } fail: { (error) in
+            print("error")
+        }
         
         searchTextField.delegate = self
         
@@ -40,7 +54,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         }
 
     }
-    //filterSegue
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

@@ -30,7 +30,7 @@ class CategoryViewModel{
                 
                 let categoty = Category(categoryId: String(categoryId), categoryImage: categoryImage, categotyName: categoryName)
                 self.listofCategories.append(categoty)
-                print(self.listofCategories.count)
+//                print(self.listofCategories.count)
                 
                 completion()
             }
