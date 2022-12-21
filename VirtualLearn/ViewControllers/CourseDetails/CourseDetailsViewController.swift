@@ -153,12 +153,16 @@ class CourseDetailsViewController: UIViewController {
     @IBAction func onClickJoinCourse(_ sender: Any) {
         
         shared.courseDetailsViewModelShared.joinCourse(token: shared.token, courseId: "3"){ data in
-            
-            print(data)
+            DispatchQueue.main.async {
+                print(data)
+            }
             
         }fail: {
-            self.okAlertMessagePopup(message: "Failed to join course")
-            print("fail")
+            DispatchQueue.main.async {
+                self.okAlertMessagePopup(message: "Failed to join course")
+                print("fail")
+            }
+            
         }
     }
     

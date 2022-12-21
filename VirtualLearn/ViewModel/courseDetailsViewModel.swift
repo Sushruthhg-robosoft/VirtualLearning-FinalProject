@@ -14,8 +14,8 @@ class courseDetailsViewModel {
     
     func joinCourse(token: String, courseId: String, completion: @escaping(String) -> Void, fail: @escaping () -> Void){
         
-        
-        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/course/courseId=\(courseId)")!
+        print(courseId)
+        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/course?courseId=\(courseId)")!
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -25,10 +25,9 @@ class courseDetailsViewModel {
             guard let status = data as? [String] else{return}
             completion(status[0])
             
-            
-            
         } failure: {error in
             print(error)
+            fail()
         }
         
     }

@@ -8526,6 +8526,9 @@
                                                 <state key="normal" title="Join Course">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="joinCourseClicked:" destination="CWZ-hf-ahz" eventType="touchUpInside" id="K95-ca-5cE"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CMl-lq-P4W">
                                                 <rect key="frame" x="0.0" y="936" width="375" height="556"/>
@@ -8805,6 +8808,7 @@
                         <outlet property="courseCategory" destination="YNn-04-TzE" id="805-Ah-DVq"/>
                         <outlet property="courseHeading" destination="7fJ-uA-ljs" id="hep-wO-NQc"/>
                         <outlet property="courseLessonAndChapters" destination="Chv-25-5C5" id="SW1-kl-lcA"/>
+                        <outlet property="joinCourseButton" destination="iTM-07-o90" id="jXc-9A-H7z"/>
                         <outlet property="joinedLeftView" destination="Fp5-pN-ITM" id="Kzg-Xo-etk"/>
                         <outlet property="joinedRightView" destination="iAf-lz-T32" id="NMP-DS-4e7"/>
                         <outlet property="joinedView" destination="mef-fP-wmw" id="BZw-54-4IY"/>
