@@ -676,30 +676,6 @@
                                                                     <color key="titleColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n34-EB-ldI">
-                                                                <rect key="frame" x="92" y="70" width="50" height="24"/>
-                                                                <color key="backgroundColor" red="0.98823529409999999" green="0.74509803919999995" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="gXc-cx-Oll"/>
-                                                                    <constraint firstAttribute="height" constant="24" id="mr4-AZ-esn"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                                <state key="normal" title="react">
-                                                                    <color key="titleColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
-                                                                </state>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YPX-r6-cMy">
-                                                                <rect key="frame" x="152" y="70" width="44" height="24"/>
-                                                                <color key="backgroundColor" red="0.98823529409999999" green="0.74509803919999995" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="24" id="1bG-Dc-zK5"/>
-                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="Qfr-qX-far"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                                <state key="normal" title="php">
-                                                                    <color key="titleColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
-                                                                </state>
-                                                            </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K6N-BJ-jUu">
                                                                 <rect key="frame" x="69" y="36" width="48" height="24"/>
                                                                 <color key="backgroundColor" red="0.98823529409999999" green="0.74509803919999995" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -736,39 +712,21 @@
                                                                     <color key="titleColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNR-PY-6v1">
-                                                                <rect key="frame" x="206" y="69" width="109" height="24"/>
-                                                                <color key="backgroundColor" red="0.98823529409999999" green="0.74509803919999995" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="109" id="WEY-j5-LgE"/>
-                                                                    <constraint firstAttribute="height" constant="24" id="WJc-4T-fMv"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                                <state key="normal" title="Communication">
-                                                                    <color key="titleColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
-                                                                </state>
-                                                            </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstItem="n34-EB-ldI" firstAttribute="leading" secondItem="MSZ-Vu-SU2" secondAttribute="trailing" constant="10" id="1JR-wc-qi6"/>
-                                                            <constraint firstItem="n34-EB-ldI" firstAttribute="top" secondItem="K6N-BJ-jUu" secondAttribute="bottom" constant="10" id="3fv-4f-eD5"/>
-                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FNR-PY-6v1" secondAttribute="trailing" constant="2" id="4Fv-Bl-8zh"/>
                                                             <constraint firstItem="K6N-BJ-jUu" firstAttribute="top" secondItem="guk-yb-sda" secondAttribute="bottom" constant="14" id="5fC-Ob-nUC"/>
                                                             <constraint firstItem="0Yw-ZY-IIF" firstAttribute="leading" secondItem="iQA-qm-YVq" secondAttribute="leading" id="6dw-Es-nia"/>
                                                             <constraint firstItem="ej2-Fb-M7e" firstAttribute="leading" secondItem="K6N-BJ-jUu" secondAttribute="trailing" constant="10" id="6mM-z8-MfE"/>
-                                                            <constraint firstItem="FNR-PY-6v1" firstAttribute="top" secondItem="hYb-Gq-Aw7" secondAttribute="bottom" constant="10" id="7Ge-28-7yM"/>
                                                             <constraint firstAttribute="height" constant="94" id="FaN-KT-3UH"/>
-                                                            <constraint firstItem="YPX-r6-cMy" firstAttribute="top" secondItem="ej2-Fb-M7e" secondAttribute="bottom" constant="10" id="KKe-v9-TZE"/>
                                                             <constraint firstItem="MSZ-Vu-SU2" firstAttribute="leading" secondItem="iQA-qm-YVq" secondAttribute="leading" id="MTs-mJ-JVV"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MSZ-Vu-SU2" secondAttribute="trailing" constant="20" symbolic="YES" id="PNG-MR-7S5"/>
                                                             <constraint firstItem="hYb-Gq-Aw7" firstAttribute="leading" secondItem="ej2-Fb-M7e" secondAttribute="trailing" constant="10" id="Uo7-Fa-nPd"/>
                                                             <constraint firstItem="hYb-Gq-Aw7" firstAttribute="top" secondItem="guk-yb-sda" secondAttribute="bottom" constant="13" id="YnR-Z9-In2"/>
                                                             <constraint firstItem="guk-yb-sda" firstAttribute="leading" secondItem="iQA-qm-YVq" secondAttribute="leading" id="fdY-il-Lw7"/>
                                                             <constraint firstItem="MSZ-Vu-SU2" firstAttribute="top" secondItem="0Yw-ZY-IIF" secondAttribute="bottom" constant="10" id="hol-ko-xnV"/>
-                                                            <constraint firstItem="FNR-PY-6v1" firstAttribute="leading" secondItem="YPX-r6-cMy" secondAttribute="trailing" constant="10" id="k6M-Ty-GT2"/>
                                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hYb-Gq-Aw7" secondAttribute="trailing" constant="20" symbolic="YES" id="kys-qJ-sMo"/>
                                                             <constraint firstAttribute="width" constant="317" id="mDA-Hz-Jmc"/>
-                                                            <constraint firstItem="YPX-r6-cMy" firstAttribute="leading" secondItem="n34-EB-ldI" secondAttribute="trailing" constant="10" id="rZc-Id-zL6"/>
                                                             <constraint firstItem="ej2-Fb-M7e" firstAttribute="top" secondItem="guk-yb-sda" secondAttribute="bottom" constant="14" id="ttB-hj-0fL"/>
                                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="guk-yb-sda" secondAttribute="trailing" constant="20" symbolic="YES" id="u6u-Ep-9V5"/>
                                                             <constraint firstItem="guk-yb-sda" firstAttribute="top" secondItem="iQA-qm-YVq" secondAttribute="top" id="xrz-9q-2Lm"/>

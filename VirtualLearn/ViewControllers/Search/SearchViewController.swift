@@ -35,11 +35,25 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
 
 
     override func viewDidLoad() {
-        topSearchView.isHidden = true
-            topSearchViewHeight.constant  = 0
+        
+        
+        topSearchView.isHidden = false
+        
+//            topSearchViewHeight.constant  = 0
+        noDataDisplayView.isHidden = true
+        noDataDisplayViewheight.constant = 0
+        
         super.viewDidLoad()
         shared.searchViewModelShared.getTopSearches { (result) in
-            print(result)
+            DispatchQueue.main.async {
+                print(self.shared.searchViewModelShared.topSearches)
+                self.firstBtn.setTitle(self.shared.searchViewModelShared.topSearches[0], for: .normal)
+                self.secondBtn.setTitle(self.shared.searchViewModelShared.topSearches[1], for: .normal)
+                self.thirdBtn.setTitle(self.shared.searchViewModelShared.topSearches[2], for: .normal)
+                self.fourthBtn.setTitle(self.shared.searchViewModelShared.topSearches[3], for: .normal)
+                self.fifthBtn.setTitle(self.shared.searchViewModelShared.topSearches[4], for: .normal)
+
+            }
         } fail: { (error) in
             print("error")
         }

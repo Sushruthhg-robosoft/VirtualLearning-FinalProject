@@ -63,6 +63,11 @@ class SearchViewModel {
     
             networkManeger.fetchDataJson(request: request, completion: { (result) in
                 
+                guard let topSearch = result as? [String] else{print("topsearchErr"); return}
+                for i in topSearch {
+                    self.topSearches.append(i)
+                }
+                completion(true)
                 
                 
                 
