@@ -18,6 +18,7 @@ class HomeViewController: UIViewController {
     var profileDelegate = ProfileViewController()
     @IBOutlet weak var existingUserView: ExistingUserBottomview!
     
+    @IBOutlet weak var popUpView: customPopHomeView!
     var banners = [String]()
     var userName: String?
     var shared = ViewModel.shared
@@ -35,7 +36,7 @@ class HomeViewController: UIViewController {
         newUserDelegate.delegate = self
         NewUserView.delegate = self
         test.testDelegate = self
-        
+        popUpView.isHidden = true
         
         shared.delegate = self
         
@@ -71,6 +72,10 @@ class HomeViewController: UIViewController {
         
         navigationController?.pushViewController(vc!, animated: true)
     }
+    
+    @IBAction func onClickNext(_ sender: Any) {
+    }
+    
     
     @IBAction func showHamburger(_ sender: Any) {
         self.hamburgerView.isHidden = false
