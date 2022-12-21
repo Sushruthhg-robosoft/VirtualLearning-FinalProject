@@ -5678,7 +5678,7 @@
                                 <rect key="frame" x="0.0" y="613" width="375" height="54"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invalid verification code, please try again" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wjv-cO-RKG">
-                                        <rect key="frame" x="53" y="17.5" width="302" height="19.5"/>
+                                        <rect key="frame" x="53" y="17.5" width="302" height="19"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -5785,13 +5785,13 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please fill in the verification code that has been sent to your mobile number." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLL-6r-ufi">
-                                                        <rect key="frame" x="24" y="113" width="327" height="39"/>
+                                                        <rect key="frame" x="24" y="113" width="327" height="37.5"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                         <color key="textColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bAD-DU-9rQ">
-                                                        <rect key="frame" x="81" y="200" width="200" height="34"/>
+                                                        <rect key="frame" x="81" y="198.5" width="200" height="34"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Grk-eW-x00">
                                                                 <rect key="frame" x="0.0" y="0.0" width="35" height="34"/>
@@ -5836,7 +5836,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8J4-N8-9aY">
-                                                        <rect key="frame" x="95" y="282.5" width="165" height="24"/>
+                                                        <rect key="frame" x="94" y="281" width="167" height="24"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="24" id="6ik-co-X0g"/>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="165" id="QYG-f2-3xp"/>
@@ -5849,7 +5849,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kjn-BB-rU4">
-                                                        <rect key="frame" x="148" y="316.5" width="59" height="33"/>
+                                                        <rect key="frame" x="148" y="315" width="59" height="33"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="33" id="AgB-QU-SxZ"/>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="59" id="CFW-0J-tTj"/>
@@ -5863,7 +5863,7 @@
                                                         </connections>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fK1-QN-xHP">
-                                                        <rect key="frame" x="81" y="242" width="200" height="0.5"/>
+                                                        <rect key="frame" x="81" y="240.5" width="200" height="0.5"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ssZ-F4-6A2">
                                                                 <rect key="frame" x="0.0" y="0.0" width="35" height="0.5"/>
@@ -5901,7 +5901,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dmx-7r-DmF">
-                                                        <rect key="frame" x="24" y="429.5" width="327" height="46"/>
+                                                        <rect key="frame" x="24" y="428" width="327" height="46"/>
                                                         <color key="backgroundColor" red="0.93333333330000001" green="0.36078431370000003" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="327" id="bjZ-qi-dMK"/>
@@ -6201,6 +6201,17 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="PXg-uA-Y2b"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="y1Q-Dc-JLw"/>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="265-m6-k0b">
+                                <rect key="frame" x="291" y="74" width="60" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="Sqv-A5-HsQ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="wL7-gG-BGC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="15"/>
+                                <state key="normal" title="Skip">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="o2o-Mm-hfe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -6208,9 +6219,12 @@
                             <constraint firstItem="Ze4-CS-eGq" firstAttribute="leading" secondItem="8ws-Bp-3tq" secondAttribute="leading" id="3XZ-4y-dFA"/>
                             <constraint firstItem="Ze4-CS-eGq" firstAttribute="trailing" secondItem="8ws-Bp-3tq" secondAttribute="trailing" id="6jU-5N-3HI"/>
                             <constraint firstItem="yaR-Un-YsY" firstAttribute="top" secondItem="o2o-Mm-hfe" secondAttribute="top" constant="74" id="8xq-6N-Wf2"/>
+                            <constraint firstItem="265-m6-k0b" firstAttribute="centerY" secondItem="yaR-Un-YsY" secondAttribute="centerY" id="9Bk-yP-C2l"/>
+                            <constraint firstItem="o2o-Mm-hfe" firstAttribute="trailing" secondItem="265-m6-k0b" secondAttribute="trailing" constant="24" id="MdI-aw-Pgg"/>
                             <constraint firstItem="yaR-Un-YsY" firstAttribute="leading" secondItem="o2o-Mm-hfe" secondAttribute="leading" constant="30" id="N5h-Hu-nxI"/>
                             <constraint firstAttribute="bottom" secondItem="Ze4-CS-eGq" secondAttribute="bottom" id="fFI-eg-waq"/>
                             <constraint firstItem="Ze4-CS-eGq" firstAttribute="top" secondItem="yaR-Un-YsY" secondAttribute="bottom" constant="8" id="n3A-ew-dw7"/>
+                            <constraint firstItem="265-m6-k0b" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yaR-Un-YsY" secondAttribute="trailing" constant="8" symbolic="YES" id="pwK-Lb-FNA"/>
                         </constraints>
                     </view>
                     <connections>
