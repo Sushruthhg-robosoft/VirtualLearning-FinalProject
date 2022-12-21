@@ -71,6 +71,8 @@ class HomeViewController: UIViewController {
         let vc = storyboard?.instantiateViewController(identifier: "SearchViewController") as? SearchViewController
         
         navigationController?.pushViewController(vc!, animated: true)
+        
+
     }
     
     @IBAction func onClickNext(_ sender: Any) {

@@ -11,6 +11,16 @@ import UIKit
 
 class SearchViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var firstBtn: UIButton!
+    
+    @IBOutlet weak var secondBtn: UIButton!
+    
+    @IBOutlet weak var thirdBtn: UIButton!
+    
+    @IBOutlet weak var fourthBtn: UIButton!
+    
+    @IBOutlet weak var fifthBtn: UIButton!
+    
     @IBOutlet weak var CourseDetailsTableView: UITableView!
     
     @IBOutlet weak var searchTextField: UITextField!
@@ -25,10 +35,28 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
 
 
     override func viewDidLoad() {
-        topSearchView.isHidden = true
-            topSearchViewHeight.constant  = 0
-        super.viewDidLoad()
         
+        
+        topSearchView.isHidden = false
+        
+//            topSearchViewHeight.constant  = 0
+        noDataDisplayView.isHidden = true
+        noDataDisplayViewheight.constant = 0
+        
+        super.viewDidLoad()
+        shared.searchViewModelShared.getTopSearches { (result) in
+            DispatchQueue.main.async {
+                print(self.shared.searchViewModelShared.topSearches)
+                self.firstBtn.setTitle(self.shared.searchViewModelShared.topSearches[0], for: .normal)
+                self.secondBtn.setTitle(self.shared.searchViewModelShared.topSearches[1], for: .normal)
+                self.thirdBtn.setTitle(self.shared.searchViewModelShared.topSearches[2], for: .normal)
+                self.fourthBtn.setTitle(self.shared.searchViewModelShared.topSearches[3], for: .normal)
+                self.fifthBtn.setTitle(self.shared.searchViewModelShared.topSearches[4], for: .normal)
+
+            }
+        } fail: { (error) in
+            print("error")
+        }
         
         searchTextField.delegate = self
         
@@ -40,7 +68,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         }
 
     }
-    //filterSegue
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
