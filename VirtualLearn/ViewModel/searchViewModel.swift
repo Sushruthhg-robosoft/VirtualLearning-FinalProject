@@ -47,6 +47,7 @@ class SearchViewModel {
             let search = Search(courseId: courseId, courseName: courseName, categoryName: categoryName, noOfChapters: noOfChapters)
             
             self.searchResult.append(search)
+            completion(true)
             
             
         }, failure: { (a) in
