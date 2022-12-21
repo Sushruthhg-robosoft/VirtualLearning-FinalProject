@@ -40,23 +40,38 @@ class ModuleTestViewModel {
             fail()
         }
     }
+    var parameter: [String: Any] = [
+
+           "testId":1,
+
+           "lessonId": 62,
+
+           "questionAnswerResponses": [
+
+               "questionId":1,
+
+               "givenAnswer": ""
+
+           ]
+
+       ]
     
     func submitAnswer(token: String, assignnmentId: String, testAnswers: [Int: String], completion: @escaping() -> Void, fail: @escaping() -> Void) {
         guard let id = Int(assignnmentId) else {return}
         var totalQuestionAnswer = [[String: Any]]()
-        for answer in testAnswers {
-            let newQuestion = QuestionModel(id: answer.key, answer: answer.value)
-            
-            totalQuestionAnswer.append(newQuestion.dictionary)
-        }
+
         let parameters: [String : Any] = [
-            "assignmentId": id,
-            "questionAnswers": [
+            "assignmentId": Int.self,
+            "questionAnswers": [[String:Any]]()
                 
-            ]
-        ]
-        print(parameters)
-  
+     ]
+        var temp = parameters["questionAnswers"] as! [String:Any]
+        
+        for answer in testAnswers {
+            temp["questionId"] = answer.key
+            temp["givenAnswer"] = answer.value
+            
+        }
         let network = NetWorkManager()
         
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/assignment")!
