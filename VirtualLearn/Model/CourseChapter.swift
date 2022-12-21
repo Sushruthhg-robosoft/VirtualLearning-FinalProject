@@ -50,15 +50,13 @@ class LessonResponseList {
     var chapterName: String
     var chapterCompleted: Bool
     var isExpandable: Bool = false
-    var lessonList: [LessonList]
-    var assignmentResponse: AssignmentResponse?
+    var lessonList: [Any]
     
     
-    init(chapterId: Int, chapterName: String, chapterCompleted: Bool,assignmentResponse: AssignmentResponse?, lessonList:[LessonList]){
+    init(chapterId: Int, chapterName: String, chapterCompleted: Bool, lessonList:[Any]){
         self.chapterId = chapterId
         self.chapterName = chapterName
         self.chapterCompleted = chapterCompleted
-        self.assignmentResponse = assignmentResponse
         self.lessonList = lessonList
 
     }

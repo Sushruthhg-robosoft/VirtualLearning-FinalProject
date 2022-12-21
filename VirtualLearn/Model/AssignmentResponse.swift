@@ -10,6 +10,7 @@ import Foundation
 
 class AssignmentResponse {
     
+    
     var assignmentId : Int
     var assignmentName: String
     var testDuration : Int
