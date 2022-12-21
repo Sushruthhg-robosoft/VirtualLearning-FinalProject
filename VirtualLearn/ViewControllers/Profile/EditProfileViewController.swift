@@ -106,7 +106,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     @IBAction func onClickSaveBtn(_ sender: Any) {
        // let loader = self.loader()
         updateEditProfileData()
-        editProfileViewModel.updateProfileData(token: shared.token, profiledata: profileData!) {
+        editProfileViewModel.updateProfileData(profileImage: profilePhoto.image ?? #imageLiteral(resourceName: "icn_profile_menu"), token: shared.token, profiledata: profileData!) {
             
             
             DispatchQueue.main.async {
