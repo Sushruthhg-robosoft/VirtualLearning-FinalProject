@@ -116,9 +116,9 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oik-SF-LyQ">
-                                                                    <rect key="frame" x="24" y="412" width="275" height="80"/>
+                                                                    <rect key="frame" x="24" y="412" width="275" height="85"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="80" id="g66-pH-UkA"/>
+                                                                        <constraint firstAttribute="height" constant="85" id="g66-pH-UkA"/>
                                                                     </constraints>
                                                                     <string key="text">Interactive features mirror the traditional classroom experience and learners receive feedback to increase long-term retention, tripling learning efficacy over standard video.</string>
                                                                     <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
@@ -127,7 +127,7 @@
                                                                 </label>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstAttribute="bottom" secondItem="Oik-SF-LyQ" secondAttribute="bottom" constant="30" id="5p7-VW-Jib"/>
+                                                                <constraint firstAttribute="bottom" secondItem="Oik-SF-LyQ" secondAttribute="bottom" constant="25" id="5p7-VW-Jib"/>
                                                                 <constraint firstItem="UaH-lD-gPD" firstAttribute="leading" secondItem="2L2-Gb-W0O" secondAttribute="leading" id="Gw7-2H-TAO"/>
                                                                 <constraint firstItem="UaH-lD-gPD" firstAttribute="top" secondItem="2L2-Gb-W0O" secondAttribute="top" constant="78" id="LvE-jq-RMH"/>
                                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vwU-oR-hw5" secondAttribute="trailing" constant="20" symbolic="YES" id="MXe-gd-W6C"/>
@@ -518,6 +518,7 @@
                                                 <state key="normal" image="icn_filter_search"/>
                                                 <connections>
                                                     <action selector="filterButton:" destination="UYo-Eu-7OW" eventType="touchUpInside" id="hKz-kB-q2C"/>
+                                                    <segue destination="I7r-tc-w1J" kind="presentation" id="Ij8-cg-sC8"/>
                                                 </connections>
                                             </button>
                                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WCS-OY-zHF">
@@ -759,7 +760,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UTh-Qw-cn5">
-                                                        <rect key="frame" x="27" y="521" width="321" height="180"/>
+                                                        <rect key="frame" x="24" y="521" width="327" height="185"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHM-eL-e95">
                                                                 <rect key="frame" x="0.0" y="0.0" width="87.5" height="21"/>
@@ -768,170 +769,191 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTl-L2-3MP" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="35" width="83" height="30"/>
+                                                                <rect key="frame" x="0.0" y="29" width="91" height="30"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="83" id="I7S-49-xn7"/>
-                                                                    <constraint firstAttribute="height" constant="30" id="vaI-C2-Ryg"/>
+                                                                    <constraint firstAttribute="height" constant="30" id="Ean-bN-0oZ"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                <state key="normal" title="Design" image="icn_categories_design">
+                                                                <state key="normal" title="  Design  " image="icn_categories_design">
                                                                     <color key="titleColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClickDesign:" destination="UYo-Eu-7OW" eventType="touchUpInside" id="sym-RZ-kOg"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSd-UZ-Fta" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
-                                                                <rect key="frame" x="91" y="35" width="117" height="30"/>
+                                                                <rect key="frame" x="99" y="29" width="126" height="30"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="30" id="6xQ-KR-70K"/>
-                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="117" id="EjU-Bf-fo0"/>
+                                                                    <constraint firstAttribute="height" constant="30" id="2MG-IC-8wo"/>
+                                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="4MG-qx-3vj"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                <state key="normal" title="Development" image="icn_categories_developer">
+                                                                <state key="normal" title="  Development  " image="icn_categories_developer">
                                                                     <color key="titleColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClickDevelopment:" destination="UYo-Eu-7OW" eventType="touchUpInside" id="r45-Be-VfC"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ql7-eR-L9S" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
-                                                                <rect key="frame" x="216" y="35" width="93" height="30"/>
+                                                                <rect key="frame" x="233" y="29" width="102" height="30"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="93" id="eHQ-1M-09o"/>
-                                                                    <constraint firstAttribute="height" constant="30" id="pOa-Fm-3vK"/>
+                                                                    <constraint firstAttribute="height" constant="30" id="Ycv-q0-Etf"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                <state key="normal" title="Business" image="icn_categories_business">
+                                                                <state key="normal" title="  Business  " image="icn_categories_business">
                                                                     <color key="titleColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClickBusiness:" destination="UYo-Eu-7OW" eventType="touchUpInside" id="oRj-jL-Seb"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YcM-Pt-NT3" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="73" width="87" height="30"/>
+                                                                <rect key="frame" x="0.0" y="67" width="96" height="30"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="30" id="3le-cm-MMI"/>
-                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="87" id="a2K-Jv-GQV"/>
+                                                                    <constraint firstAttribute="height" constant="30" id="gYS-nW-bSc"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                <state key="normal" title="Finance" image="icn_categories_finance">
+                                                                <state key="normal" title="  Finance  " image="icn_categories_finance">
                                                                     <color key="titleColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClickFinance:" destination="UYo-Eu-7OW" eventType="touchUpInside" id="OqG-qO-Cs1"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqC-By-xCA" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
-                                                                <rect key="frame" x="95" y="73" width="132" height="30"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqC-By-xCA" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
+                                                                <rect key="frame" x="101" y="67" width="135" height="30"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="30" id="H4A-cx-7FU"/>
-                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="132" id="HMh-sK-2ff"/>
+                                                                    <constraint firstAttribute="height" constant="30" id="S6d-HD-Q8b"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                <state key="normal" title="Health &amp; Fitness" image="icn_categories_fitness">
+                                                                <state key="normal" title=" Health &amp; Fitness" image="icn_categories_fitness">
                                                                     <color key="titleColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClickHealthFitness:" destination="UYo-Eu-7OW" eventType="touchUpInside" id="YBa-lb-hpR"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ANM-EC-7eh" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
-                                                                <rect key="frame" x="235" y="73" width="76" height="30"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ANM-EC-7eh" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
+                                                                <rect key="frame" x="241" y="67" width="86" height="30"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="30" id="5AC-gh-0ug"/>
-                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="76" id="YM9-R2-Ub0"/>
+                                                                    <constraint firstAttribute="height" constant="30" id="Ttc-o5-qns"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                <state key="normal" title="Music" image="icn_categories_music">
+                                                                <state key="normal" title="  Music  " image="icn_categories_music">
                                                                     <color key="titleColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClickMusic:" destination="UYo-Eu-7OW" eventType="touchUpInside" id="IYt-fK-8Ij"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bg5-mC-J31" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="111" width="117" height="30"/>
+                                                                <rect key="frame" x="0.0" y="105" width="122" height="30"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="30" id="QxV-OE-EW9"/>
-                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="117" id="tLl-r4-aKi"/>
+                                                                    <constraint firstAttribute="height" constant="30" id="927-1v-U8m"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                <state key="normal" title="IT &amp; Software" image="icn_categories_IT">
+                                                                <state key="normal" title=" IT &amp; Software " image="icn_categories_IT">
                                                                     <color key="titleColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClickIT:" destination="UYo-Eu-7OW" eventType="touchUpInside" id="vev-Pj-0CK"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1lr-gq-ite" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
-                                                                <rect key="frame" x="125" y="111" width="99" height="30"/>
+                                                                <rect key="frame" x="130" y="105" width="102" height="30"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="30" id="rO2-5G-3qy"/>
-                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="99" id="zyV-2e-psi"/>
+                                                                    <constraint firstAttribute="height" constant="30" id="qKy-RV-HXN"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                <state key="normal" title="Marketing" image="icn_categories_finance">
+                                                                <state key="normal" title=" Marketing " image="icn_categories_marketing">
                                                                     <color key="titleColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClickMarketing:" destination="UYo-Eu-7OW" eventType="touchUpInside" id="u23-aT-JBQ"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKU-dJ-wiA" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
-                                                                <rect key="frame" x="232" y="111" width="91" height="30"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKU-dJ-wiA" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
+                                                                <rect key="frame" x="234" y="105" width="91" height="30"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="89" id="ERe-VP-NTf"/>
-                                                                    <constraint firstAttribute="height" constant="30" id="uj9-pL-dlb"/>
+                                                                    <constraint firstAttribute="height" constant="30" id="x7E-oX-EV8"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                <state key="normal" title="Life Style" image="icn_categories_finance">
+                                                                <state key="normal" title="Life Style" image="icn_categories_lifestyle">
                                                                     <color key="titleColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClickLifestyle:" destination="UYo-Eu-7OW" eventType="touchUpInside" id="FnD-G3-5RW"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CqP-ek-RZL" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="149" width="114" height="30"/>
+                                                                <rect key="frame" x="0.0" y="143" width="118" height="30"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="30" id="JgA-4B-NFK"/>
-                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="114" id="gIx-XN-k8e"/>
+                                                                    <constraint firstAttribute="height" constant="30" id="PmS-F7-sV8"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                <state key="normal" title="Photography" image="icn_categories_fitness">
+                                                                <state key="normal" title=" Photography " image="icn_categories_photography">
                                                                     <color key="titleColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClickPhotography:" destination="UYo-Eu-7OW" eventType="touchUpInside" id="74H-Ed-crT"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFA-gf-wzK" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
-                                                                <rect key="frame" x="122" y="149" width="95" height="30"/>
+                                                                <rect key="frame" x="126" y="143" width="100" height="30"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="30" id="knr-Ka-SvL"/>
-                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="95" id="t0i-wl-jdG"/>
+                                                                    <constraint firstAttribute="height" constant="30" id="JuK-Uj-O3u"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                <state key="normal" title="Teaching" image="icn_categories_fitness">
+                                                                <state key="normal" title="  Teaching " image="icn_categories_teaching">
                                                                     <color key="titleColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClickTeaching:" destination="UYo-Eu-7OW" eventType="touchUpInside" id="cJg-n7-o7B"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PKU-dJ-wiA" secondAttribute="trailing" constant="-2" id="319-if-6Nq"/>
-                                                            <constraint firstItem="CqP-ek-RZL" firstAttribute="top" secondItem="bg5-mC-J31" secondAttribute="bottom" constant="8" id="4xp-ST-ok6"/>
-                                                            <constraint firstItem="OTl-L2-3MP" firstAttribute="top" secondItem="iHM-eL-e95" secondAttribute="bottom" constant="14" id="8De-2y-aZw"/>
-                                                            <constraint firstItem="lqC-By-xCA" firstAttribute="top" secondItem="jSd-UZ-Fta" secondAttribute="bottom" constant="8" id="8RX-eE-NiE"/>
-                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ANM-EC-7eh" secondAttribute="trailing" constant="10" id="9VP-QR-egd"/>
-                                                            <constraint firstItem="1lr-gq-ite" firstAttribute="top" secondItem="lqC-By-xCA" secondAttribute="bottom" constant="8" id="9vz-ql-Eu0"/>
-                                                            <constraint firstItem="1lr-gq-ite" firstAttribute="leading" secondItem="bg5-mC-J31" secondAttribute="trailing" constant="8" id="Cyi-ZZ-bS0"/>
-                                                            <constraint firstItem="CqP-ek-RZL" firstAttribute="leading" secondItem="UTh-Qw-cn5" secondAttribute="leading" id="IYf-cc-rfh"/>
-                                                            <constraint firstItem="bg5-mC-J31" firstAttribute="leading" secondItem="UTh-Qw-cn5" secondAttribute="leading" id="Ien-bl-LTR"/>
-                                                            <constraint firstItem="lqC-By-xCA" firstAttribute="leading" secondItem="YcM-Pt-NT3" secondAttribute="trailing" constant="8" id="JRt-fn-iG9"/>
-                                                            <constraint firstItem="ANM-EC-7eh" firstAttribute="leading" secondItem="lqC-By-xCA" secondAttribute="trailing" constant="8" id="LUW-kQ-Gqe"/>
-                                                            <constraint firstItem="YcM-Pt-NT3" firstAttribute="leading" secondItem="UTh-Qw-cn5" secondAttribute="leading" id="Lpz-oU-fTV"/>
-                                                            <constraint firstItem="PKU-dJ-wiA" firstAttribute="leading" secondItem="1lr-gq-ite" secondAttribute="trailing" constant="8" id="OBn-EE-KRB"/>
-                                                            <constraint firstItem="lFA-gf-wzK" firstAttribute="top" secondItem="1lr-gq-ite" secondAttribute="bottom" constant="8" id="Odf-0c-Hl4"/>
-                                                            <constraint firstItem="ql7-eR-L9S" firstAttribute="leading" secondItem="jSd-UZ-Fta" secondAttribute="trailing" constant="8" id="Qkl-Hs-7AO"/>
-                                                            <constraint firstItem="YcM-Pt-NT3" firstAttribute="top" secondItem="OTl-L2-3MP" secondAttribute="bottom" constant="8" id="RPO-yY-ObT"/>
-                                                            <constraint firstAttribute="width" constant="321" id="SOO-em-viw"/>
-                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lFA-gf-wzK" secondAttribute="trailing" constant="20" symbolic="YES" id="WdI-a3-ANk"/>
-                                                            <constraint firstItem="bg5-mC-J31" firstAttribute="top" secondItem="YcM-Pt-NT3" secondAttribute="bottom" constant="8" id="WyF-x0-5q4"/>
-                                                            <constraint firstItem="ql7-eR-L9S" firstAttribute="top" secondItem="iHM-eL-e95" secondAttribute="bottom" constant="14" id="YAO-0l-edX"/>
+                                                            <constraint firstItem="lFA-gf-wzK" firstAttribute="top" secondItem="1lr-gq-ite" secondAttribute="bottom" constant="8" id="CXP-2v-Yko"/>
+                                                            <constraint firstItem="ANM-EC-7eh" firstAttribute="leading" secondItem="lqC-By-xCA" secondAttribute="trailing" constant="5" id="I88-ih-hIf"/>
+                                                            <constraint firstItem="1lr-gq-ite" firstAttribute="top" secondItem="lqC-By-xCA" secondAttribute="bottom" constant="8" id="MgY-VA-95j"/>
+                                                            <constraint firstAttribute="trailing" secondItem="ANM-EC-7eh" secondAttribute="trailing" id="OtN-rh-csa"/>
+                                                            <constraint firstItem="bg5-mC-J31" firstAttribute="top" secondItem="YcM-Pt-NT3" secondAttribute="bottom" constant="8" id="POn-qy-ifb"/>
+                                                            <constraint firstItem="CqP-ek-RZL" firstAttribute="leading" secondItem="UTh-Qw-cn5" secondAttribute="leading" id="TRz-8d-98E"/>
+                                                            <constraint firstItem="OTl-L2-3MP" firstAttribute="leading" secondItem="UTh-Qw-cn5" secondAttribute="leading" id="V0d-vz-RLF"/>
+                                                            <constraint firstItem="lFA-gf-wzK" firstAttribute="leading" secondItem="CqP-ek-RZL" secondAttribute="trailing" constant="8" id="Weg-Em-DEf"/>
+                                                            <constraint firstItem="jSd-UZ-Fta" firstAttribute="leading" secondItem="OTl-L2-3MP" secondAttribute="trailing" constant="8" id="X42-ME-Vet"/>
+                                                            <constraint firstItem="bg5-mC-J31" firstAttribute="leading" secondItem="UTh-Qw-cn5" secondAttribute="leading" id="YkB-7V-byd"/>
+                                                            <constraint firstItem="lqC-By-xCA" firstAttribute="leading" secondItem="YcM-Pt-NT3" secondAttribute="trailing" constant="5" id="a3i-XO-8qU"/>
+                                                            <constraint firstItem="OTl-L2-3MP" firstAttribute="top" secondItem="iHM-eL-e95" secondAttribute="bottom" constant="8" id="aIv-Wx-9vq"/>
+                                                            <constraint firstItem="YcM-Pt-NT3" firstAttribute="leading" secondItem="UTh-Qw-cn5" secondAttribute="leading" id="aYR-7j-CTf"/>
+                                                            <constraint firstItem="ql7-eR-L9S" firstAttribute="leading" secondItem="jSd-UZ-Fta" secondAttribute="trailing" constant="8" id="cRR-CA-bJo"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ql7-eR-L9S" secondAttribute="trailing" constant="-8" id="eIP-pn-n7w"/>
+                                                            <constraint firstItem="CqP-ek-RZL" firstAttribute="top" secondItem="bg5-mC-J31" secondAttribute="bottom" constant="8" id="ecU-W4-d5L"/>
+                                                            <constraint firstItem="lqC-By-xCA" firstAttribute="top" secondItem="jSd-UZ-Fta" secondAttribute="bottom" constant="8" id="fAd-m2-hGk"/>
                                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iHM-eL-e95" secondAttribute="trailing" constant="20" symbolic="YES" id="fGK-X3-51I"/>
-                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ql7-eR-L9S" secondAttribute="trailing" constant="12" id="mMv-Kr-GXx"/>
-                                                            <constraint firstItem="PKU-dJ-wiA" firstAttribute="top" secondItem="ANM-EC-7eh" secondAttribute="bottom" constant="8" id="mpr-B5-qAs"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lFA-gf-wzK" secondAttribute="trailing" constant="20" symbolic="YES" id="fUr-4m-Alr"/>
+                                                            <constraint firstItem="ANM-EC-7eh" firstAttribute="top" secondItem="ql7-eR-L9S" secondAttribute="bottom" constant="8" id="gKO-z0-WlE"/>
+                                                            <constraint firstItem="PKU-dJ-wiA" firstAttribute="top" secondItem="ANM-EC-7eh" secondAttribute="bottom" constant="8" id="gcg-ij-bkm"/>
+                                                            <constraint firstItem="1lr-gq-ite" firstAttribute="leading" secondItem="bg5-mC-J31" secondAttribute="trailing" constant="8" id="hj0-4m-xah"/>
+                                                            <constraint firstItem="ql7-eR-L9S" firstAttribute="top" secondItem="iHM-eL-e95" secondAttribute="bottom" constant="8" id="jWB-DF-pgg"/>
+                                                            <constraint firstItem="YcM-Pt-NT3" firstAttribute="top" secondItem="OTl-L2-3MP" secondAttribute="bottom" constant="8" id="lA7-qg-CVb"/>
+                                                            <constraint firstItem="jSd-UZ-Fta" firstAttribute="top" secondItem="iHM-eL-e95" secondAttribute="bottom" constant="8" id="nOV-lf-Jrl"/>
                                                             <constraint firstItem="iHM-eL-e95" firstAttribute="leading" secondItem="UTh-Qw-cn5" secondAttribute="leading" id="qha-26-QUF"/>
                                                             <constraint firstItem="iHM-eL-e95" firstAttribute="top" secondItem="UTh-Qw-cn5" secondAttribute="top" id="r6c-sP-eBQ"/>
-                                                            <constraint firstAttribute="height" constant="180" id="s0S-AT-Nti"/>
-                                                            <constraint firstItem="OTl-L2-3MP" firstAttribute="leading" secondItem="UTh-Qw-cn5" secondAttribute="leading" id="sie-MY-94t"/>
-                                                            <constraint firstItem="lFA-gf-wzK" firstAttribute="leading" secondItem="CqP-ek-RZL" secondAttribute="trailing" constant="8" id="unc-8T-wyW"/>
-                                                            <constraint firstItem="jSd-UZ-Fta" firstAttribute="leading" secondItem="OTl-L2-3MP" secondAttribute="trailing" constant="8" id="vHJ-Uh-qDI"/>
-                                                            <constraint firstItem="jSd-UZ-Fta" firstAttribute="top" secondItem="iHM-eL-e95" secondAttribute="bottom" constant="14" id="vmt-vi-Jwf"/>
-                                                            <constraint firstItem="ANM-EC-7eh" firstAttribute="top" secondItem="ql7-eR-L9S" secondAttribute="bottom" constant="8" id="zIe-dg-rb2"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PKU-dJ-wiA" secondAttribute="trailing" constant="1" id="tM6-lP-j0c"/>
+                                                            <constraint firstItem="PKU-dJ-wiA" firstAttribute="leading" secondItem="1lr-gq-ite" secondAttribute="trailing" constant="2" id="u0e-kH-KZ8"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="UTh-Qw-cn5" firstAttribute="centerX" secondItem="03I-D2-X67" secondAttribute="centerX" id="7eh-Bg-fUi"/>
                                                     <constraint firstItem="yJM-Th-XGb" firstAttribute="top" secondItem="iQA-qm-YVq" secondAttribute="bottom" constant="10" id="Bwg-76-SK6"/>
-                                                    <constraint firstItem="UTh-Qw-cn5" firstAttribute="top" secondItem="yJM-Th-XGb" secondAttribute="bottom" id="He8-S2-Mxw"/>
+                                                    <constraint firstAttribute="bottom" secondItem="UTh-Qw-cn5" secondAttribute="bottom" id="GK0-KL-FFc"/>
+                                                    <constraint firstItem="UTh-Qw-cn5" firstAttribute="top" secondItem="yJM-Th-XGb" secondAttribute="bottom" id="Gm5-SB-pNC"/>
                                                     <constraint firstItem="iQA-qm-YVq" firstAttribute="centerX" secondItem="yJM-Th-XGb" secondAttribute="centerX" id="aaf-2k-8hj"/>
-                                                    <constraint firstItem="UTh-Qw-cn5" firstAttribute="top" secondItem="yJM-Th-XGb" secondAttribute="bottom" id="gxR-UA-YxX"/>
                                                     <constraint firstItem="yJM-Th-XGb" firstAttribute="centerX" secondItem="03I-D2-X67" secondAttribute="centerX" id="jTk-4z-k2w"/>
-                                                    <constraint firstItem="UTh-Qw-cn5" firstAttribute="top" secondItem="iQA-qm-YVq" secondAttribute="bottom" priority="750" constant="40" id="sBw-uZ-TVB"/>
+                                                    <constraint firstItem="UTh-Qw-cn5" firstAttribute="centerX" secondItem="yJM-Th-XGb" secondAttribute="centerX" id="r5v-mq-P0m"/>
+                                                    <constraint firstItem="UTh-Qw-cn5" firstAttribute="top" secondItem="iQA-qm-YVq" secondAttribute="bottom" priority="750" constant="427" id="sBw-uZ-TVB"/>
                                                     <constraint firstItem="iQA-qm-YVq" firstAttribute="top" secondItem="03I-D2-X67" secondAttribute="top" id="yHE-aB-3fe"/>
                                                 </constraints>
                                             </view>
@@ -979,6 +1001,15 @@
                             <constraint firstItem="t1k-Kd-9hv" firstAttribute="bottom" secondItem="8Z3-AC-Jza" secondAttribute="bottom" id="Zqi-nb-gVF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="CategoriesDisplayView" destination="UTh-Qw-cn5" id="cHc-5o-W1D"/>
+                        <outlet property="CourseDetailsTableView" destination="WCS-OY-zHF" id="J7g-ZB-9fi"/>
+                        <outlet property="InitialDisplayView" destination="03I-D2-X67" id="R75-Fu-U0N"/>
+                        <outlet property="noDataDisplayView" destination="yJM-Th-XGb" id="kHr-Vb-aYc"/>
+                        <outlet property="noDataDisplayViewheight" destination="xEt-ET-OFi" id="u0v-u5-MaN"/>
+                        <outlet property="topSearchView" destination="iQA-qm-YVq" id="HVu-H6-v5o"/>
+                        <outlet property="topSearchViewHeight" destination="FaN-KT-3UH" id="R8x-sZ-xtW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xNV-sO-CdN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1294,14 +1325,14 @@
             <objects>
                 <viewController storyboardIdentifier="ModallyViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="I7r-tc-w1J" customClass="ModallyViewController" customModule="VirtualLearn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XJH-Ni-aA5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m1X-uE-fny">
-                                <rect key="frame" x="0.0" y="67" width="375" height="600"/>
+                                <rect key="frame" x="0.0" y="67" width="375" height="580"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3R0-FY-y7G">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="580"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJy-pR-JhL">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="578"/>
@@ -1323,6 +1354,7 @@
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WkB-V0-CQ4" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="35" width="83" height="30"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="J08-rC-T2D"/>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="83" id="n5y-ub-6Q0"/>
@@ -1331,9 +1363,13 @@
                                                                 <state key="normal" title="Design" image="icn_categories_design">
                                                                     <color key="titleColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClickDesign:" destination="I7r-tc-w1J" eventType="touchUpInside" id="ilg-Fg-OZP"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3e-SR-bai" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
                                                                 <rect key="frame" x="91" y="35" width="117" height="30"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="117" id="5bg-CK-AXf"/>
                                                                     <constraint firstAttribute="height" constant="30" id="nT5-li-dKI"/>
@@ -1342,9 +1378,13 @@
                                                                 <state key="normal" title="Development" image="icn_categories_developer">
                                                                     <color key="titleColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClickDevelopment:" destination="I7r-tc-w1J" eventType="touchUpInside" id="ltf-KR-xha"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ws-3x-m6c" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
                                                                 <rect key="frame" x="216" y="35" width="93" height="30"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="93" id="7Fz-Bq-H3G"/>
                                                                     <constraint firstAttribute="height" constant="30" id="dnU-IR-hEq"/>
@@ -1353,9 +1393,13 @@
                                                                 <state key="normal" title="Business" image="icn_categories_business">
                                                                     <color key="titleColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClickBusiness:" destination="I7r-tc-w1J" eventType="touchUpInside" id="qz4-vw-4ur"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fpb-A2-5o3" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="73" width="87" height="30"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="8Xs-Kc-Lqz"/>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="87" id="m5w-2c-cU6"/>
@@ -1364,9 +1408,13 @@
                                                                 <state key="normal" title="Finance" image="icn_categories_finance">
                                                                     <color key="titleColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClickFinance:" destination="I7r-tc-w1J" eventType="touchUpInside" id="QmW-JI-UHr"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oux-5u-R2Q" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
                                                                 <rect key="frame" x="95" y="73" width="132" height="30"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="Sh0-FA-h53"/>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="132" id="ahR-IV-zaY"/>
@@ -1375,9 +1423,13 @@
                                                                 <state key="normal" title="Health &amp; Fitness" image="icn_categories_fitness">
                                                                     <color key="titleColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClickHealthFitness:" destination="I7r-tc-w1J" eventType="touchUpInside" id="GEd-Yn-WZm"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t8H-6u-vlA" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
                                                                 <rect key="frame" x="235" y="73" width="76" height="30"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="76" id="H5t-VA-LHY"/>
                                                                     <constraint firstAttribute="height" constant="30" id="yG1-Eq-M2P"/>
@@ -1386,9 +1438,13 @@
                                                                 <state key="normal" title="Music" image="icn_categories_music">
                                                                     <color key="titleColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClickMusic:" destination="I7r-tc-w1J" eventType="touchUpInside" id="Kcn-vT-paG"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6k-lD-Zmi" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="111" width="117" height="30"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="117" id="A89-WO-DrW"/>
                                                                     <constraint firstAttribute="height" constant="30" id="CIX-ls-Hwt"/>
@@ -1397,53 +1453,73 @@
                                                                 <state key="normal" title="IT &amp; Software" image="icn_categories_IT">
                                                                     <color key="titleColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClickIT:" destination="I7r-tc-w1J" eventType="touchUpInside" id="yUg-Jt-dki"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rT-7b-9hX" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
                                                                 <rect key="frame" x="125" y="111" width="99" height="30"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="99" id="3Lj-Fz-78a"/>
                                                                     <constraint firstAttribute="height" constant="30" id="Qt6-7i-wvt"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                <state key="normal" title="Marketing" image="icn_categories_finance">
+                                                                <state key="normal" title="Marketing" image="icn_categories_marketing">
                                                                     <color key="titleColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClickMarketing:" destination="I7r-tc-w1J" eventType="touchUpInside" id="URp-Kd-MHt"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UuW-72-6Pu" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
                                                                 <rect key="frame" x="232" y="111" width="91" height="30"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="89" id="5dz-Bb-6p9"/>
                                                                     <constraint firstAttribute="height" constant="30" id="NjR-6R-gaV"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                <state key="normal" title="Life Style" image="icn_categories_finance">
+                                                                <state key="normal" title="Life Style" image="icn_categories_lifestyle">
                                                                     <color key="titleColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClickLifestyle:" destination="I7r-tc-w1J" eventType="touchUpInside" id="f3w-Hn-85d"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0J3-Qs-Xeg" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="149" width="114" height="30"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="5HP-MC-t0h"/>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="114" id="d6U-ua-Fsl"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                <state key="normal" title="Photography" image="icn_categories_fitness">
+                                                                <state key="normal" title="Photography" image="icn_categories_photography">
                                                                     <color key="titleColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClickPhotography:" destination="I7r-tc-w1J" eventType="touchUpInside" id="4sj-CS-Drm"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OtU-dC-75T" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
                                                                 <rect key="frame" x="122" y="149" width="95" height="30"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="95" id="HrN-kk-9mr"/>
                                                                     <constraint firstAttribute="height" constant="30" id="zI2-4k-nK3"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                <state key="normal" title="Teaching" image="icn_categories_fitness">
+                                                                <state key="normal" title="Teaching" image="icn_categories_teaching">
                                                                     <color key="titleColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClickTeaching:" destination="I7r-tc-w1J" eventType="touchUpInside" id="hpm-ht-4UF"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="t8H-6u-vlA" secondAttribute="trailing" constant="10" id="1Do-V7-Gks"/>
                                                             <constraint firstItem="2rT-7b-9hX" firstAttribute="top" secondItem="Oux-5u-R2Q" secondAttribute="bottom" constant="8" id="1Se-3s-YsP"/>
                                                             <constraint firstItem="Z3e-SR-bai" firstAttribute="top" secondItem="KmG-8F-Ddn" secondAttribute="bottom" constant="14" id="3PA-Rm-a8s"/>
                                                             <constraint firstItem="KmG-8F-Ddn" firstAttribute="leading" secondItem="sZ2-9o-rSF" secondAttribute="leading" id="4Rv-Kt-cNb"/>
@@ -1452,14 +1528,18 @@
                                                             <constraint firstItem="WkB-V0-CQ4" firstAttribute="leading" secondItem="sZ2-9o-rSF" secondAttribute="leading" id="E0R-Mj-ENE"/>
                                                             <constraint firstItem="OtU-dC-75T" firstAttribute="top" secondItem="2rT-7b-9hX" secondAttribute="bottom" constant="8" id="IRN-xi-Tbo"/>
                                                             <constraint firstItem="1Ws-3x-m6c" firstAttribute="top" secondItem="KmG-8F-Ddn" secondAttribute="bottom" constant="14" id="Jh7-VU-nzH"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="UuW-72-6Pu" secondAttribute="trailing" constant="-2" id="Kir-BG-4bJ"/>
                                                             <constraint firstItem="0J3-Qs-Xeg" firstAttribute="top" secondItem="b6k-lD-Zmi" secondAttribute="bottom" constant="8" id="MUr-xx-W7R"/>
                                                             <constraint firstAttribute="width" constant="321" id="NOU-xv-dNY"/>
                                                             <constraint firstItem="Fpb-A2-5o3" firstAttribute="top" secondItem="WkB-V0-CQ4" secondAttribute="bottom" constant="8" id="Qf8-sO-zOe"/>
                                                             <constraint firstItem="2rT-7b-9hX" firstAttribute="leading" secondItem="b6k-lD-Zmi" secondAttribute="trailing" constant="8" id="RNJ-zD-BuT"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="OtU-dC-75T" secondAttribute="trailing" constant="20" symbolic="YES" id="Rbj-ua-21d"/>
                                                             <constraint firstItem="OtU-dC-75T" firstAttribute="leading" secondItem="0J3-Qs-Xeg" secondAttribute="trailing" constant="8" id="So6-sW-iaM"/>
                                                             <constraint firstItem="b6k-lD-Zmi" firstAttribute="leading" secondItem="sZ2-9o-rSF" secondAttribute="leading" id="aVo-5B-wG0"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1Ws-3x-m6c" secondAttribute="trailing" constant="12" id="bYz-la-Ajn"/>
                                                             <constraint firstItem="t8H-6u-vlA" firstAttribute="leading" secondItem="Oux-5u-R2Q" secondAttribute="trailing" constant="8" id="dUq-1U-ecS"/>
                                                             <constraint firstItem="Fpb-A2-5o3" firstAttribute="leading" secondItem="sZ2-9o-rSF" secondAttribute="leading" id="f8T-Sf-8uc"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KmG-8F-Ddn" secondAttribute="trailing" constant="20" symbolic="YES" id="gAY-is-DPg"/>
                                                             <constraint firstItem="b6k-lD-Zmi" firstAttribute="top" secondItem="Fpb-A2-5o3" secondAttribute="bottom" constant="8" id="kWr-Kp-JFU"/>
                                                             <constraint firstItem="WkB-V0-CQ4" firstAttribute="top" secondItem="KmG-8F-Ddn" secondAttribute="bottom" constant="14" id="kZY-tK-UMb"/>
                                                             <constraint firstItem="t8H-6u-vlA" firstAttribute="top" secondItem="1Ws-3x-m6c" secondAttribute="bottom" constant="8" id="lyD-bs-Mud"/>
@@ -1483,58 +1563,78 @@
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d51-Vz-H0y" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="26" width="101" height="30"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="101" id="A3G-WP-0St"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="101" id="A3G-WP-0St"/>
                                                                     <constraint firstAttribute="height" constant="30" id="OeJ-0H-znH"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <state key="normal" title="5/10 chapters">
                                                                     <color key="titleColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClickFiveTen:" destination="I7r-tc-w1J" eventType="touchUpInside" id="GPS-hN-Qsj"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D66-Aa-ZFC" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="64" width="101" height="30"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="101" id="4vx-Q3-ft4"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="101" id="4vx-Q3-ft4"/>
                                                                     <constraint firstAttribute="height" constant="30" id="sPC-SD-7xZ"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <state key="normal" title="30/40 chapters">
                                                                     <color key="titleColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClickThirtyFourty:" destination="I7r-tc-w1J" eventType="touchUpInside" id="nZb-nb-bLb"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BrZ-cA-BrG" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
                                                                 <rect key="frame" x="109" y="26" width="101" height="30"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="bXD-kQ-Jgk"/>
-                                                                    <constraint firstAttribute="width" constant="101" id="lr0-oN-BAV"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="101" id="lr0-oN-BAV"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <state key="normal" title="10/20chapters">
                                                                     <color key="titleColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClickTenTwenty:" destination="I7r-tc-w1J" eventType="touchUpInside" id="4A1-Ml-tb4"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3G-us-gRf" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
                                                                 <rect key="frame" x="218" y="26" width="101" height="30"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="1n5-ug-vML"/>
-                                                                    <constraint firstAttribute="width" constant="101" id="dCW-Z3-VLj"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="101" id="dCW-Z3-VLj"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <state key="normal" title="20/30 chapters">
                                                                     <color key="titleColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClickTwentyThirty:" destination="I7r-tc-w1J" eventType="touchUpInside" id="Jo5-CZ-9k7"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhK-uz-R5b" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
                                                                 <rect key="frame" x="109" y="64" width="101" height="30"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="101" id="AT7-Iv-q6B"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="101" id="AT7-Iv-q6B"/>
                                                                     <constraint firstAttribute="height" constant="30" id="vY1-zq-7pv"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <state key="normal" title="40/50 chapters">
                                                                     <color key="titleColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClickFourtyFifty:" destination="I7r-tc-w1J" eventType="touchUpInside" id="ZqF-Fu-ilM"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -1545,6 +1645,9 @@
                                                             <constraint firstItem="LUL-ve-bPp" firstAttribute="top" secondItem="muS-OO-Mas" secondAttribute="top" id="Jir-33-dlp"/>
                                                             <constraint firstItem="D66-Aa-ZFC" firstAttribute="top" secondItem="d51-Vz-H0y" secondAttribute="bottom" constant="8" id="MaH-sB-USl"/>
                                                             <constraint firstItem="U3G-us-gRf" firstAttribute="top" secondItem="LUL-ve-bPp" secondAttribute="bottom" constant="5" id="Odu-p8-83y"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="LUL-ve-bPp" secondAttribute="trailing" constant="20" symbolic="YES" id="Rg1-lo-oLj"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="U3G-us-gRf" secondAttribute="trailing" id="WiW-6F-hAi"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bhK-uz-R5b" secondAttribute="trailing" constant="20" symbolic="YES" id="bKw-4e-WHZ"/>
                                                             <constraint firstItem="bhK-uz-R5b" firstAttribute="top" secondItem="BrZ-cA-BrG" secondAttribute="bottom" constant="8" id="d71-U8-INS"/>
                                                             <constraint firstItem="d51-Vz-H0y" firstAttribute="top" secondItem="LUL-ve-bPp" secondAttribute="bottom" constant="5" id="k03-hP-OAb"/>
                                                             <constraint firstItem="LUL-ve-bPp" firstAttribute="leading" secondItem="muS-OO-Mas" secondAttribute="leading" id="pUg-hY-9hQ"/>
@@ -1572,7 +1675,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mdW-me-RhE" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
                                                         <rect key="frame" x="24" y="468" width="327" height="46"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="327" id="n9J-FG-tTh"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="327" id="n9J-FG-tTh"/>
                                                             <constraint firstAttribute="height" constant="46" id="p43-VY-lAi"/>
                                                         </constraints>
                                                         <state key="normal" title="Clear All">
@@ -1627,6 +1730,24 @@
                             <constraint firstItem="m1X-uE-fny" firstAttribute="leading" secondItem="4tf-nm-jmv" secondAttribute="leading" id="ttq-H1-Tbl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ITBtn" destination="b6k-lD-Zmi" id="yI5-6c-fRV"/>
+                        <outlet property="PhotographyBtn" destination="0J3-Qs-Xeg" id="2yz-BV-o8d"/>
+                        <outlet property="businessBtn" destination="1Ws-3x-m6c" id="mvi-X4-K8s"/>
+                        <outlet property="designBtn" destination="WkB-V0-CQ4" id="cse-eH-AaX"/>
+                        <outlet property="developmentBtn" destination="Z3e-SR-bai" id="dC2-58-v7W"/>
+                        <outlet property="financeBtn" destination="Fpb-A2-5o3" id="VT8-eM-2F5"/>
+                        <outlet property="fiveTenBtn" destination="d51-Vz-H0y" id="AGF-mY-Ho9"/>
+                        <outlet property="fourtyFiftyBtn" destination="bhK-uz-R5b" id="zfJ-jT-xSY"/>
+                        <outlet property="healthFitnessBtn" destination="Oux-5u-R2Q" id="qV9-5f-q2H"/>
+                        <outlet property="lifeStyleBtn" destination="UuW-72-6Pu" id="sT0-r0-Q7e"/>
+                        <outlet property="marketingBtn" destination="2rT-7b-9hX" id="Mju-bS-KPR"/>
+                        <outlet property="musicBtn" destination="t8H-6u-vlA" id="68m-xJ-17r"/>
+                        <outlet property="teachingBtn" destination="OtU-dC-75T" id="TVh-9e-8Bi"/>
+                        <outlet property="tenTwentyBtn" destination="BrZ-cA-BrG" id="PUR-V8-tJM"/>
+                        <outlet property="thirtyFourtyBtn" destination="D66-Aa-ZFC" id="1bj-5N-1ms"/>
+                        <outlet property="twentyThirtyBtn" destination="U3G-us-gRf" id="7gQ-Xk-DGw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="neG-u1-T0k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1667,7 +1788,7 @@
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="208" id="Skf-6y-He2"/>
                                                                     <constraint firstAttribute="height" constant="21" id="biy-Zm-sQK"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                                <fontDescription key="fontDescription" name="Biko-Bold" family="Biko" pointSize="17"/>
                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -1677,7 +1798,7 @@
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="86" id="FSg-XE-80w"/>
                                                                     <constraint firstAttribute="height" constant="15" id="Xab-4L-PX8"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="11"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -1694,11 +1815,11 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="PSs-ic-iUK">
-                                                <rect key="frame" x="8" y="218" width="164" height="290"/>
+                                                <rect key="frame" x="8" y="218" width="159" height="290"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9E-He-0ZY" customClass="customHabButtons" customModule="VirtualLearn" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="20"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="59" height="20"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                         <state key="normal" title="Home" image="icn_home_menu-Home">
                                                             <color key="titleColor" red="0.91764705879999997" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
@@ -1707,8 +1828,8 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHF-1E-mLy" customClass="customHabButtons" customModule="VirtualLearn" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="54" width="95" height="20"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <rect key="frame" x="0.0" y="54" width="92" height="20"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                         <state key="normal" title="My Course" image="icn_course_menu-Briefcase">
                                                             <color key="titleColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
@@ -1717,8 +1838,8 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daD-yF-4kg" customClass="customHabButtons" customModule="VirtualLearn" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="108" width="91" height="20"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <rect key="frame" x="0.0" y="108" width="88" height="20"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                         <state key="normal" title="My Profile" image="icn_profile_menu">
                                                             <color key="titleColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
@@ -1727,11 +1848,11 @@
                                                         </connections>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Lhp-gT-qll">
-                                                        <rect key="frame" x="0.0" y="162" width="164" height="20"/>
+                                                        <rect key="frame" x="0.0" y="162" width="159" height="20"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4n-vg-T6P" customClass="customHabButtons" customModule="VirtualLearn" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="110" height="20"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="105" height="20"/>
+                                                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                                 <state key="normal" title="Notifications" image="icn_notification_menu">
                                                                     <color key="titleColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
@@ -1740,7 +1861,7 @@
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ds-Hk-kWK" customClass="customHamLable" customModule="VirtualLearn" customModuleProvider="target">
-                                                                <rect key="frame" x="134" y="0.0" width="30" height="20"/>
+                                                                <rect key="frame" x="129" y="0.0" width="30" height="20"/>
                                                                 <color key="backgroundColor" red="0.91764705879999997" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="3X2-fj-Swf"/>
@@ -1753,8 +1874,8 @@
                                                         </subviews>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBi-Nc-K0O" customClass="customHabButtons" customModule="VirtualLearn" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="216" width="76" height="20"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <rect key="frame" x="0.0" y="216" width="73" height="20"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                         <state key="normal" title="Settings" image="icn_settings_menu-Settings">
                                                             <color key="titleColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
@@ -1763,8 +1884,8 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Kv-Hi-Z0Y" customClass="customHabButtons" customModule="VirtualLearn" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="270" width="67" height="20"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <rect key="frame" x="0.0" y="270" width="65" height="20"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                         <state key="normal" title="Logout" image="icn_logout_menu-Power buttom">
                                                             <color key="titleColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
@@ -3354,7 +3475,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MaH-Zg-pj6">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1158"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1130"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-profile-picture-icon" translatesAutoresizingMaskIntoConstraints="NO" id="O8U-mY-SX5">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="323"/>
@@ -3446,11 +3567,11 @@
                                                 <rect key="frame" x="24" y="354" width="327" height="641"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Bt-MH-gSw">
-                                                        <rect key="frame" x="0.0" y="0.0" width="73" height="17"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="17"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="17" id="ec7-Lk-q3i"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                                         <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -3459,6 +3580,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="wKp-0F-Unw"/>
                                                         </constraints>
+                                                        <color key="textColor" red="0.015686274509803921" green="0.17254901960784313" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
@@ -3477,6 +3599,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="ycZ-KI-Of0"/>
                                                         </constraints>
+                                                        <color key="textColor" red="0.015686274509803921" green="0.17254901960784313" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
@@ -3491,11 +3614,11 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKz-wb-6W4">
-                                                        <rect key="frame" x="0.0" y="199" width="114" height="16"/>
+                                                        <rect key="frame" x="0.0" y="199" width="92.5" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="16" id="rOo-Ti-qpG"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                                         <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -3504,6 +3627,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="qfF-SG-p7D"/>
                                                         </constraints>
+                                                        <color key="textColor" red="0.015686274509803921" green="0.17254901960784313" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
@@ -3523,7 +3647,7 @@
                                                             <constraint firstAttribute="height" constant="17" id="7lr-Wk-sac"/>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="88" id="pEt-5F-Oqe"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                                         <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -3532,7 +3656,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="6QD-wX-Hbh"/>
                                                         </constraints>
-                                                        <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="0.86306117959999995" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" red="0.015686274509803921" green="0.17254901960784313" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
@@ -3547,11 +3671,11 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Edb-Xw-hxP">
-                                                        <rect key="frame" x="0.0" y="346" width="56.5" height="17"/>
+                                                        <rect key="frame" x="0.0" y="346" width="46.5" height="17"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="17" id="Dbk-Cn-wIa"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                                         <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -3567,6 +3691,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="17" id="q40-B3-vUQ"/>
                                                         </constraints>
+                                                        <color key="textColor" red="0.015686274509803921" green="0.17254901960784313" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
@@ -3574,11 +3699,11 @@
                                                         </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Birth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2J-XB-o9u">
-                                                        <rect key="frame" x="0.0" y="417" width="96.5" height="17"/>
+                                                        <rect key="frame" x="0.0" y="417" width="77" height="17"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="17" id="xcU-3X-u2w"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                                         <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -3587,7 +3712,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="17" id="pzX-7a-1xv"/>
                                                         </constraints>
-                                                        <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" red="0.015686274509803921" green="0.17254901960784313" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
@@ -3610,11 +3735,11 @@
                                                         <state key="normal" image="icn_dropdown"/>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Twitter Link" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6J-TA-ZiZ">
-                                                        <rect key="frame" x="0.0" y="488" width="88.5" height="19"/>
+                                                        <rect key="frame" x="0.0" y="488" width="70.5" height="19"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="19" id="FBx-64-f6J"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                                         <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -3623,7 +3748,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="17" id="fy4-5c-gqv"/>
                                                         </constraints>
-                                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" red="0.015686274509803921" green="0.17254901960784313" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
@@ -3638,8 +3763,8 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mqb-Pa-uW1">
-                                                        <rect key="frame" x="0.0" y="69" width="79" height="12"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <rect key="frame" x="0.0" y="69" width="63.5" height="12"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                                         <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -3648,6 +3773,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="WyU-m8-gVT"/>
                                                         </constraints>
+                                                        <color key="textColor" red="0.015686274509803921" green="0.17254901960784313" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
@@ -3655,11 +3781,11 @@
                                                         </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upW-IG-b4x">
-                                                        <rect key="frame" x="0.0" y="131" width="41" height="17"/>
+                                                        <rect key="frame" x="0.0" y="131" width="33" height="17"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="17" id="7oK-xH-ycQ"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                                         <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -3821,11 +3947,11 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Facebook Link" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7L6-Jm-Loa">
-                                                <rect key="frame" x="24" y="913" width="110" height="17"/>
+                                                <rect key="frame" x="24" y="913" width="92.5" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="17" id="oZn-rf-2Ul"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                 <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -3834,6 +3960,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="17" id="xym-YK-R6f"/>
                                                 </constraints>
+                                                <color key="textColor" red="0.015686274509803921" green="0.17254901960784313" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -3854,7 +3981,7 @@
                                             <constraint firstItem="2Jw-U8-gf1" firstAttribute="leading" secondItem="MaH-Zg-pj6" secondAttribute="leading" constant="24" id="EYJ-zJ-5bd"/>
                                             <constraint firstAttribute="trailing" secondItem="KuR-K5-Bnq" secondAttribute="trailing" constant="24" id="Fth-ia-mgA"/>
                                             <constraint firstItem="7L6-Jm-Loa" firstAttribute="top" secondItem="hCF-Lt-34J" secondAttribute="bottom" constant="16" id="Im7-cm-4ps"/>
-                                            <constraint firstAttribute="height" constant="1158" id="JBX-nk-etc"/>
+                                            <constraint firstAttribute="height" constant="1130" id="JBX-nk-etc"/>
                                             <constraint firstAttribute="trailing" secondItem="Ax1-Yo-NEe" secondAttribute="trailing" id="Ngr-IO-JhS"/>
                                             <constraint firstItem="O8U-mY-SX5" firstAttribute="top" secondItem="MaH-Zg-pj6" secondAttribute="top" id="Obc-Gg-Qmu"/>
                                             <constraint firstItem="KuR-K5-Bnq" firstAttribute="top" secondItem="InT-pf-vXj" secondAttribute="bottom" constant="10" id="P5f-lC-ChX"/>
@@ -6080,7 +6207,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmY-xu-mw1">
-                                                <rect key="frame" x="26" y="537.5" width="323" height="46"/>
+                                                <rect key="frame" x="24" y="537.5" width="327" height="46"/>
                                                 <color key="backgroundColor" red="0.93333333330000001" green="0.36078431370000003" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="323" id="1tM-e8-gIf"/>
@@ -6100,10 +6227,10 @@
                                                     <action selector="loginClick:" destination="Cr0-fg-m9I" eventType="touchUpInside" id="mEn-Hv-URq"/>
                                                 </connections>
                                             </button>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="-9" translatesAutoresizingMaskIntoConstraints="NO" id="5lz-d6-3yN">
-                                                <rect key="frame" x="69" y="607.5" width="233" height="20"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="-8" translatesAutoresizingMaskIntoConstraints="NO" id="5lz-d6-3yN">
+                                                <rect key="frame" x="66.5" y="607.5" width="242" height="20"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don’t have a account? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rno-Hq-isV">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don’t have a account? " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rno-Hq-isV">
                                                         <rect key="frame" x="0.0" y="0.0" width="170" height="20"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -6115,7 +6242,10 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFZ-ab-v5B">
-                                                        <rect key="frame" x="161" y="0.0" width="72" height="20"/>
+                                                        <rect key="frame" x="162" y="0.0" width="80" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="80" id="UyH-l1-wLb"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="16"/>
                                                         <state key="normal" title="Register">
                                                             <color key="titleColor" red="0.93333333330000001" green="0.36078431370000003" blue="0.30196078430000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
@@ -6147,6 +6277,7 @@
                                             <constraint firstItem="kmY-xu-mw1" firstAttribute="top" secondItem="kob-wE-0Ko" secondAttribute="bottom" constant="40" id="0mx-xv-U6d"/>
                                             <constraint firstItem="g7Z-25-wxD" firstAttribute="centerX" secondItem="4Rr-Em-eq3" secondAttribute="centerX" constant="-2.5" id="1Zk-29-6HM"/>
                                             <constraint firstItem="IOP-Ct-WNK" firstAttribute="top" secondItem="YPu-VC-Qvr" secondAttribute="bottom" constant="11" id="284-su-566"/>
+                                            <constraint firstItem="kmY-xu-mw1" firstAttribute="leading" secondItem="4Rr-Em-eq3" secondAttribute="leading" constant="24" id="4EA-iH-lUb"/>
                                             <constraint firstItem="g7Z-25-wxD" firstAttribute="top" secondItem="BHm-No-l1A" secondAttribute="bottom" constant="60" id="88x-82-Aux"/>
                                             <constraint firstItem="nhB-ZV-1Q0" firstAttribute="top" secondItem="4Rr-Em-eq3" secondAttribute="top" constant="70" id="Bt1-J6-1xj"/>
                                             <constraint firstItem="lY8-Lc-pgM" firstAttribute="top" secondItem="Q4H-PI-icA" secondAttribute="bottom" constant="9" id="G5f-ua-uri"/>
@@ -6155,6 +6286,7 @@
                                             <constraint firstAttribute="trailing" secondItem="lY8-Lc-pgM" secondAttribute="trailing" constant="26" id="GyS-9J-OC6"/>
                                             <constraint firstItem="IOP-Ct-WNK" firstAttribute="leading" secondItem="4Rr-Em-eq3" secondAttribute="leading" constant="22" id="Icm-c2-agG"/>
                                             <constraint firstAttribute="height" constant="700" id="JJF-cI-wYo"/>
+                                            <constraint firstItem="5lz-d6-3yN" firstAttribute="centerX" secondItem="4Rr-Em-eq3" secondAttribute="centerX" id="JUn-T0-cVr"/>
                                             <constraint firstAttribute="trailing" secondItem="Q4H-PI-icA" secondAttribute="trailing" constant="64" id="LPW-u4-Zwx"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="35Y-bA-Cho" secondAttribute="trailing" constant="20" symbolic="YES" id="MpG-eJ-HYc"/>
                                             <constraint firstItem="YPu-VC-Qvr" firstAttribute="leading" secondItem="4Rr-Em-eq3" secondAttribute="leading" constant="22" id="NVi-TB-i0p"/>
@@ -6168,9 +6300,9 @@
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YPu-VC-Qvr" secondAttribute="trailing" constant="20" symbolic="YES" id="bRB-He-Ajb"/>
                                             <constraint firstItem="35Y-bA-Cho" firstAttribute="leading" secondItem="4Rr-Em-eq3" secondAttribute="leading" constant="22" id="bha-yF-PcK"/>
                                             <constraint firstItem="YPu-VC-Qvr" firstAttribute="top" secondItem="lY8-Lc-pgM" secondAttribute="bottom" constant="41" id="crD-Qw-f1g"/>
-                                            <constraint firstAttribute="trailing" secondItem="5lz-d6-3yN" secondAttribute="trailing" constant="73" id="crX-SV-ZSE"/>
                                             <constraint firstItem="BHm-No-l1A" firstAttribute="leading" secondItem="4Rr-Em-eq3" secondAttribute="leading" constant="22" id="dtW-ld-uk7"/>
                                             <constraint firstItem="35Y-bA-Cho" firstAttribute="top" secondItem="g7Z-25-wxD" secondAttribute="bottom" constant="44" id="g89-BU-6yg"/>
+                                            <constraint firstAttribute="trailing" secondItem="kmY-xu-mw1" secondAttribute="trailing" constant="24" id="o4g-CQ-3If"/>
                                             <constraint firstItem="qnJ-Ka-XRU" firstAttribute="top" secondItem="IOP-Ct-WNK" secondAttribute="bottom" constant="9" id="oDE-7v-Dmk"/>
                                             <constraint firstItem="Q4H-PI-icA" firstAttribute="top" secondItem="35Y-bA-Cho" secondAttribute="bottom" constant="11" id="pBs-25-CWZ"/>
                                             <constraint firstAttribute="trailing" secondItem="kob-wE-0Ko" secondAttribute="trailing" constant="21" id="qh5-Ff-o7E"/>
@@ -6179,7 +6311,6 @@
                                             <constraint firstItem="5lz-d6-3yN" firstAttribute="top" secondItem="kmY-xu-mw1" secondAttribute="bottom" constant="24" id="wJn-EP-K03"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BHm-No-l1A" secondAttribute="trailing" constant="20" symbolic="YES" id="wqg-GL-2UC"/>
                                             <constraint firstItem="nhB-ZV-1Q0" firstAttribute="leading" secondItem="4Rr-Em-eq3" secondAttribute="leading" constant="22" id="xXc-TL-Cg8"/>
-                                            <constraint firstItem="5lz-d6-3yN" firstAttribute="leading" secondItem="4Rr-Em-eq3" secondAttribute="leading" constant="69" id="yL5-cp-7JW"/>
                                             <constraint firstItem="BHm-No-l1A" firstAttribute="top" secondItem="nhB-ZV-1Q0" secondAttribute="bottom" constant="10" id="zB3-Sp-JuP"/>
                                         </constraints>
                                     </view>

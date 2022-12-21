@@ -116,14 +116,34 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cells") as! CustomChapterTableViewCell
-        cell.chapterName.text = dataoflesson[indexPath.section].lessonList[indexPath.row].lessonName
-        cell.chapterNumber.text = "0\(String(dataoflesson[indexPath.section].lessonList[indexPath.row].lessonId))"
-        cell.chapterDuration.text = "\(String(dataoflesson[indexPath.section].lessonList[indexPath.row].duration)) mins"
-        cell.moduleTestView.isHidden = true
-        cell.progressViewWidthContraint.constant = 0
-        cell.cellLeadingConstraint.constant = 0
-        cell.progressHeight.constant = 0
-        cell.progressWidth.constant = 0
+//        cell.chapterName.text = dataoflesson[indexPath.section].lessonList[indexPath.row].lessonName
+//        cell.chapterNumber.text = "0\(String(dataoflesson[indexPath.section].lessonList[indexPath.row].lessonId))"
+//        cell.chapterDuration.text = "\(String(dataoflesson[indexPath.section].lessonList[indexPath.row].duration)) mins"
+//        cell.moduleTestView.isHidden = true
+//        cell.progressViewWidthContraint.constant = 0
+//        cell.cellLeadingConstraint.constant = 0
+//        cell.progressHeight.constant = 0
+//        cell.progressWidth.constant = 0
+        
+        if dataoflesson[indexPath.row].assignmentResponse == nil{
+            cell.chapterName.text = dataoflesson[indexPath.section].lessonList[indexPath.row].lessonName
+            cell.chapterNumber.text = "0\(String(dataoflesson[indexPath.section].lessonList[indexPath.row].lessonId))"
+            cell.chapterDuration.text = "\(String(dataoflesson[indexPath.section].lessonList[indexPath.row].duration)) mins"
+            cell.moduleTestView.isHidden = true
+            cell.progressViewWidthContraint.constant = 0
+            cell.cellLeadingConstraint.constant = 0
+            cell.progressHeight.constant = 0
+            cell.progressWidth.constant = 0
+        }
+        else{
+            
+            cell.moduleTestView.isHidden = false
+            cell.chapterNumberView.isHidden = true
+            cell.chapterNumber.isHidden = true
+            
+        }
+//        let assignment = dataoflesson[indexPath.row].assignmentResponse?.assignmentName
+//        print(14563212,assignment)
         return cell
     }
     
