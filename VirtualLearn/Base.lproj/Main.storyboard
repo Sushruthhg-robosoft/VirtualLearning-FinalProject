@@ -309,6 +309,9 @@
                                             <constraint firstAttribute="height" constant="28" id="Lsb-yE-I9d"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="icn_next"/>
+                                        <connections>
+                                            <action selector="onClickNext:" destination="4FE-TF-MIM" eventType="touchUpInside" id="Mld-CN-9TT"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complete profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XlW-VY-dJD">
                                         <rect key="frame" x="22" y="8" width="120" height="16"/>
@@ -358,6 +361,7 @@
                         <outlet property="existingUserView" destination="Mnt-es-9ae" id="rfN-Y2-cxM"/>
                         <outlet property="hamburgerView" destination="SWV-ei-nwa" id="VoM-Wx-SD0"/>
                         <outlet property="leadingConstraintForHamburgerView" destination="1jP-VY-WlY" id="N8z-v0-5FL"/>
+                        <outlet property="popUpView" destination="bzd-i6-6uW" id="Abz-IU-1qo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zY8-wj-dMM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
