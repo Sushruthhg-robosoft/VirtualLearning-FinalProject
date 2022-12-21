@@ -541,6 +541,9 @@
                                                             <constraint firstAttribute="width" constant="18" id="ypZ-Zb-eFD"/>
                                                         </constraints>
                                                         <state key="normal" backgroundImage="icn_search-Search"/>
+                                                        <connections>
+                                                            <action selector="onclickSearchBtn:" destination="UYo-Eu-7OW" eventType="touchUpInside" id="pGZ-MW-Ftf"/>
+                                                        </connections>
                                                     </button>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select course" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="27R-oH-LkP">
                                                         <rect key="frame" x="46" y="3" width="221" height="34"/>
@@ -568,7 +571,6 @@
                                                 <state key="normal" image="icn_filter_search"/>
                                                 <connections>
                                                     <action selector="filterButton:" destination="UYo-Eu-7OW" eventType="touchUpInside" id="hKz-kB-q2C"/>
-                                                    <segue destination="I7r-tc-w1J" kind="presentation" id="Ij8-cg-sC8"/>
                                                 </connections>
                                             </button>
                                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WCS-OY-zHF">
@@ -1056,9 +1058,10 @@
                         <outlet property="CourseDetailsTableView" destination="WCS-OY-zHF" id="J7g-ZB-9fi"/>
                         <outlet property="InitialDisplayView" destination="03I-D2-X67" id="R75-Fu-U0N"/>
                         <outlet property="noDataDisplayView" destination="yJM-Th-XGb" id="kHr-Vb-aYc"/>
-                        <outlet property="noDataDisplayViewheight" destination="xEt-ET-OFi" id="u0v-u5-MaN"/>
+                        <outlet property="noDataDisplayViewheight" destination="xEt-ET-OFi" id="pfI-Jr-FUi"/>
+                        <outlet property="searchTextField" destination="27R-oH-LkP" id="TNh-wz-PKp"/>
                         <outlet property="topSearchView" destination="iQA-qm-YVq" id="HVu-H6-v5o"/>
-                        <outlet property="topSearchViewHeight" destination="FaN-KT-3UH" id="R8x-sZ-xtW"/>
+                        <outlet property="topSearchViewHeight" destination="FaN-KT-3UH" id="fvq-w2-0ee"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xNV-sO-CdN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1375,14 +1378,14 @@
             <objects>
                 <viewController storyboardIdentifier="ModallyViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="I7r-tc-w1J" customClass="ModallyViewController" customModule="VirtualLearn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XJH-Ni-aA5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m1X-uE-fny">
-                                <rect key="frame" x="0.0" y="67" width="375" height="580"/>
+                                <rect key="frame" x="0.0" y="67" width="375" height="600"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3R0-FY-y7G">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="580"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJy-pR-JhL">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="578"/>
@@ -1721,6 +1724,9 @@
                                                                 <integer key="value" value="6"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="onClickApplyFilter:" destination="I7r-tc-w1J" eventType="touchUpInside" id="pJ6-T8-8dS"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mdW-me-RhE" customClass="CustomBorderButton" customModule="VirtualLearn" customModuleProvider="target">
                                                         <rect key="frame" x="24" y="468" width="327" height="46"/>
@@ -1731,6 +1737,9 @@
                                                         <state key="normal" title="Clear All">
                                                             <color key="titleColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="onClickClearAll:" destination="I7r-tc-w1J" eventType="touchUpInside" id="3zF-Rm-g8u"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>

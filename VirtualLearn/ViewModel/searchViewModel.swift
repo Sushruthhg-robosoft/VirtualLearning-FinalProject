@@ -10,20 +10,25 @@ import Foundation
 class SearchViewModel {
     
     let networkManeger = NetWorkManager()
+    
+    
+    var duration = [[String : Int]]()
+    var searchOption = ""
+    var categories = [Int]()
 
     
     func getSearchResult(completion: @escaping (Bool) -> (), fail: @escaping (Bool) ->()){
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/search")!
         var request = URLRequest(url: url)
-        request.httpMethod = "GET"
+        request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
 
         let parameters: [String : Any] = [
             
-            "searchOption" : "design"
-//            "categories" : [1,2],
-//            "durationRequestList":[["startDuration" : 5,"endDuration" : 10],["startDuration" : 15,"endDuration" : 20]]
+            "searchOption" : searchOption,
+            "categories" : categories,
+            "durationRequestList": duration
         ]
         print(parameters)
        request.httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: .fragmentsAllowed)
