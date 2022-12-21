@@ -50,6 +50,7 @@
 		592B3530294CACAC00EDC10A /* AssignmentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B352F294CACAC00EDC10A /* AssignmentResponse.swift */; };
 		59FC6E8F295066F90031E719 /* TopCourseCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FC6E8E295066F90031E719 /* TopCourseCategory.swift */; };
 		59FC6F17295179420031E719 /* ChooseYourCourseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FC6F16295179420031E719 /* ChooseYourCourseCollectionViewCell.swift */; };
+		59FC6F282951E8A60031E719 /* searchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FC6F272951E8A60031E719 /* searchViewModel.swift */; };
 		C21A3F8229502F2D00FDDE71 /* PrivacyPolicyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21A3F8129502F2D00FDDE71 /* PrivacyPolicyModel.swift */; };
 		C21A3F872950772800FDDE71 /* TermsOfServicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21A3F862950772800FDDE71 /* TermsOfServicesViewModel.swift */; };
 		C21A3F8C29507C3200FDDE71 /* TermsOfServicesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21A3F8B29507C3200FDDE71 /* TermsOfServicesModel.swift */; };
@@ -101,6 +102,8 @@
 		CF5231A3293F214600C56B7F /* OnboaringSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5231A2293F214600C56B7F /* OnboaringSlide.swift */; };
 		CF5231A8293F287A00C56B7F /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5231A7293F287A00C56B7F /* OnboardingCollectionViewCell.swift */; };
 		CF54BF622952D4A000BD4F07 /* popupViewHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF54BF612952D4A000BD4F07 /* popupViewHome.swift */; };
+		CF54BFD129531EE600BD4F07 /* FolderManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF54BFD029531EE600BD4F07 /* FolderManger.swift */; };
+		CF54BFDA29531F1600BD4F07 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF54BFD929531F1600BD4F07 /* LoadingViewController.swift */; };
 		CF65D6DF294C488000B2852A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65D6DE294C488000B2852A /* HomeViewModel.swift */; };
 		CF79F1CF2941AAD000EEC920 /* SuggestionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF79F1CD2941AAD000EEC920 /* SuggestionsCollectionViewCell.swift */; };
 		CF79F1D02941AAD000EEC920 /* SuggestionsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF79F1CE2941AAD000EEC920 /* SuggestionsCollectionViewCell.xib */; };
@@ -199,6 +202,7 @@
 		592B352F294CACAC00EDC10A /* AssignmentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentResponse.swift; sourceTree = "<group>"; };
 		59FC6E8E295066F90031E719 /* TopCourseCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCourseCategory.swift; sourceTree = "<group>"; };
 		59FC6F16295179420031E719 /* ChooseYourCourseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseYourCourseCollectionViewCell.swift; sourceTree = "<group>"; };
+		59FC6F272951E8A60031E719 /* searchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchViewModel.swift; sourceTree = "<group>"; };
 		C21A3F8129502F2D00FDDE71 /* PrivacyPolicyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyModel.swift; sourceTree = "<group>"; };
 		C21A3F862950772800FDDE71 /* TermsOfServicesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServicesViewModel.swift; sourceTree = "<group>"; };
 		C21A3F8B29507C3200FDDE71 /* TermsOfServicesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServicesModel.swift; sourceTree = "<group>"; };
@@ -250,6 +254,8 @@
 		CF5231A2293F214600C56B7F /* OnboaringSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboaringSlide.swift; sourceTree = "<group>"; };
 		CF5231A7293F287A00C56B7F /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		CF54BF612952D4A000BD4F07 /* popupViewHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popupViewHome.swift; sourceTree = "<group>"; };
+		CF54BFD029531EE600BD4F07 /* FolderManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderManger.swift; sourceTree = "<group>"; };
+		CF54BFD929531F1600BD4F07 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		CF65D6DE294C488000B2852A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		CF79F1CD2941AAD000EEC920 /* SuggestionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsCollectionViewCell.swift; sourceTree = "<group>"; };
 		CF79F1CE2941AAD000EEC920 /* SuggestionsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestionsCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -513,6 +519,7 @@
 		CF523184293F02BA00C56B7F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CF54BFD829531F0000BD4F07 /* Loading */,
 				1B9289C52949E60300C66D9E /* Search */,
 				1B9289B72949E39400C66D9E /* Settings */,
 				C2ED75112949DF5100562970 /* ModuleTest */,
@@ -580,6 +587,7 @@
 				59055E3C294C6A5200608DE8 /* chaptersViewModel.swift */,
 				C2F544D629501F04005B85B9 /* PrivacyPolicyViewModel.swift */,
 				C21A3F862950772800FDDE71 /* TermsOfServicesViewModel.swift */,
+				59FC6F272951E8A60031E719 /* searchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -614,6 +622,22 @@
 			path = NetworkManager;
 			sourceTree = "<group>";
 		};
+		CF54BFCF29531ED100BD4F07 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CF54BFD029531EE600BD4F07 /* FolderManger.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CF54BFD829531F0000BD4F07 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				CF54BFD929531F1600BD4F07 /* LoadingViewController.swift */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
 		CFAFC992293EFAA700F84288 = {
 			isa = PBXGroup;
 			children = (
@@ -637,6 +661,7 @@
 		CFAFC99D293EFAA700F84288 /* VirtualLearn */ = {
 			isa = PBXGroup;
 			children = (
+				CF54BFCF29531ED100BD4F07 /* Services */,
 				1BE0706829517B3A00E3894C /* Fonts */,
 				CF523184293F02BA00C56B7F /* ViewControllers */,
 				CF52319A293F046700C56B7F /* Model */,
@@ -865,6 +890,7 @@
 				CFF19645293F5C4F00802396 /* NetworkManager.swift in Sources */,
 				59055E47294C7F5900608DE8 /* Certificate.swift in Sources */,
 				CF032A492948332400D6B6D3 /* CustomChaptersCellView.swift in Sources */,
+				59FC6F282951E8A60031E719 /* searchViewModel.swift in Sources */,
 				CF9E07EF294B282900F90B49 /* CategoryCollectionViewCell.swift in Sources */,
 				C2ED75142949DF6300562970 /* AlertMessage.swift in Sources */,
 				1B928A00294A1CDC00C66D9E /* CategoryInformationViewController.swift in Sources */,
@@ -894,6 +920,7 @@
 				CFBA05752946FB4900763342 /* customCourseCategoryLable.swift in Sources */,
 				C26BA48C2951721F0068C7CE /* ModuleTestViewModel.swift in Sources */,
 				CFAFC99F293EFAA700F84288 /* AppDelegate.swift in Sources */,
+				CF54BFDA29531F1600BD4F07 /* LoadingViewController.swift in Sources */,
 				CF416BC72942DCF200A27462 /* MyCourseViewController.swift in Sources */,
 				59FC6F17295179420031E719 /* ChooseYourCourseCollectionViewCell.swift in Sources */,
 				C21A3F872950772800FDDE71 /* TermsOfServicesViewModel.swift in Sources */,
@@ -940,6 +967,7 @@
 				59055E42294C757700608DE8 /* CourseChapter.swift in Sources */,
 				CF416BC82942DCF200A27462 /* NewUserMyCourseViewController.swift in Sources */,
 				CF9698BA294DBD460061234E /* HomeModel.swift in Sources */,
+				CF54BFD129531EE600BD4F07 /* FolderManger.swift in Sources */,
 				1B9289CB2949E66800C66D9E /* SearchViewController.swift in Sources */,
 				C2ED75152949DF6300562970 /* ModuleTestViewController.swift in Sources */,
 				CF79F1DF2942118600EEC920 /* ChoiceOfCourseCustomButton.swift in Sources */,

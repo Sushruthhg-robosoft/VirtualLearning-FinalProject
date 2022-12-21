@@ -7,10 +7,13 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+
+
+class SearchViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var CourseDetailsTableView: UITableView!
     
+    @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var InitialDisplayView: UIView!
     @IBOutlet weak var topSearchView: UIView!
     @IBOutlet weak var noDataDisplayView: UIView!
@@ -18,16 +21,50 @@ class SearchViewController: UIViewController {
     
     @IBOutlet weak var topSearchViewHeight: NSLayoutConstraint!
     @IBOutlet weak var noDataDisplayViewheight: NSLayoutConstraint!
-    
+    let shared = mainViewModel.mainShared
+
+
     override func viewDidLoad() {
         topSearchView.isHidden = true
             topSearchViewHeight.constant  = 0
         super.viewDidLoad()
+        
+        
+        searchTextField.delegate = self
+        
+        shared.categoriesViewModelShared.getCategories(token: shared.token) {
+            DispatchQueue.main.async {
+            }
+        } fail: {
+            print("error")
+        }
+
     }
+    //filterSegue
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        shared.searchViewModelShared.searchOption = searchTextField.text!
+        shared.searchViewModelShared.getSearchResult { (result) in
+                    print(result)
+                } fail: { (fail) in
+                    print(fail)
+                }
+        
+        
+        return true
+    }
+    
 
     @IBAction func filterButton(_ sender: Any) {
+    
         
-        //resizeView.isHidden = false
+        let vc = storyboard?.instantiateViewController(identifier: "ModallyViewController") as? ModallyViewController
+        
+        present(vc!, animated: true, completion: nil)
+        
+        vc?.searchField = searchTextField.text!
+        
     }
     
     @IBAction func onClickBack(_ sender: Any) {
@@ -35,6 +72,8 @@ class SearchViewController: UIViewController {
     }
     
     
+    @IBAction func onclickSearchBtn(_ sender: Any) {
+    }
 }
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {

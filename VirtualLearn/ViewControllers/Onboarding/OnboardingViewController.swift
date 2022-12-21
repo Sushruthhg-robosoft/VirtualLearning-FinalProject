@@ -12,7 +12,7 @@ class OnboardingViewController: UIViewController {
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var onboardingCollectionView: UICollectionView!
     @IBOutlet weak var nextBtn: UIButton!
-    
+    var storageMaaneger = StorageManeger()
     var currentPage = 0 {
         didSet {
             if currentPage == slides.count - 1{
@@ -29,7 +29,7 @@ class OnboardingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        storageMaaneger.setOnboardingseen()
         
         navigationController?.navigationBar.isHidden = true
         //titleTxt.lineBreakMode = .byWordWrapping
