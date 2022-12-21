@@ -12,9 +12,9 @@ class EditProfileViewModel {
     
     func updateProfileData(profileImage: UIImage,token: String, profiledata: ProfileData, completion: @escaping () -> Void, fail: @escaping () -> Void) {
         let networkManager = NetWorkManager()
-        guard let urL = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/profile") else{ return}
-        var request = URLRequest(url: urL)
-        request.httpMethod = "PATCH"
+         let url = "https://app-virtuallearning-221207091853.azurewebsites.net/user/profile"
+//        var request = URLRequest(url: urL)
+//        request.httpMethod = "PATCH"
         let parameters: [String : Any] = [
             "fullName" : profiledata.fullName,
             "userName" : profiledata.userName,
@@ -27,38 +27,37 @@ class EditProfileViewModel {
             "facebookLink" : profiledata.facebookLink!,
             
         ]
-        let boundary = "Boundary-\(UUID().uuidString)"
-        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
-        let data = NSMutableData()
-        let fieldName = "file"
-        if let imageData = profileImage.jpegData(compressionQuality: 1) {
-
-                      data.append("--\(boundary)\r\n".data(using: .utf8)!)
-
-                      data.append("Content-Disposition: form-data; name=\"\(fieldName)\"; filename=\"image.jpg\"\r\n".data(using: .utf8)!)
-
-                      data.append("Content-Type: image/jpeg\r\n\r\n".data(using: .utf8)!)
-
-                      data.append(imageData)
-
-                      data.append("\r\n".data(using: .utf8)!)
-
-                  }
-        
-        print(parameters)
-//        headers = [String : String]
+//        let boundary = "Boundary-\(UUID().uuidString)"
+//        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+//        let data = NSMutableData()
+//        let fieldName = "file"
+//        if let imageData = profileImage.jpegData(compressionQuality: 1) {
+//
+//                      data.append("--\(boundary)\r\n".data(using: .utf8)!)
+//
+//                      data.append("Content-Disposition: form-data; name=\"\(fieldName)\"; filename=\"image.jpg\"\r\n".data(using: .utf8)!)
+//
+//                      data.append("Content-Type: image/jpeg\r\n\r\n".data(using: .utf8)!)
+//
+//                      data.append(imageData)
+//
+//                      data.append("\r\n".data(using: .utf8)!)
+//
+//                  }
+//
+//        print(parameters)
+//
 //        request.httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: .fragmentsAllowed)
-//        
-//        
+//
+//
 //        request.setValue("Bearer \(mainshared.token)", forHTTPHeaderField: "Authorization")
-//        
-//        networkManager.postData(url: url, requestMethod: "PATCH", parameters: parameters, headers: <#T##[String : String]?#>, completion: <#T##(Any?, Error?) -> Void#>)(request: request) { result in
-//        completion()
-//            
-//        } failure: { error in
-//            print(error)
-//        }
-//        
-//    }
-//}
+//
+        networkManager.postData(url: url, requestMethod: "PATCH", profileImage:profileImage,  parameters: parameters,token: token, headers: nil) { (result,error)  in
+            print(result)
+        completion()
+            
+        }
+    }
+}
+
 

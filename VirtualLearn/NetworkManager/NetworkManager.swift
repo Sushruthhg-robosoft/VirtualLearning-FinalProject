@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class NetWorkManager {
     
@@ -61,22 +62,42 @@ class NetWorkManager {
     }
     
     
-    func postData(url: String, requestMethod: String, parameters: [String: Any], headers: [String: String]?, completion: @escaping(Any? , Error?) -> Void) {
-
+    func postData(url: String, requestMethod: String,profileImage:UIImage , parameters: [String: Any], token: String, headers: [String: String]?, completion: @escaping(Any? , Error?) -> Void) {
+        let imageData = profileImage.jpegData(compressionQuality: 0.1)
         let boundary = "Boundary-\(UUID().uuidString)"
         var request = URLRequest(url: URL(string: url)!)
-        request.httpMethod = requestMethod
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         let httpBody = NSMutableData()
+        
         for (key, value) in parameters {
             httpBody.appendString(convertFormField(named: key, value: value, using: boundary))
         }
-
+        
+//        let data = NSMutableData()
+//              let fieldName = "profileImage"
+//                  if let imageData = profileImage.jpegData(compressionQuality: 1) {
+//                      data.append("--\(boundary)\r\n".data(using: .utf8)!)
+//                      data.append("Content-Disposition: form-data; name=\"\(fieldName)\"; filename=\"image.jpg\"\r\n".data(using: .utf8)!)
+//                      data.append("Content-Type: image/jpeg\r\n\r\n".data(using: .utf8)!)
+//                      data.append(imageData)
+//                      data.append("\r\n".data(using: .utf8)!)
+//                  }
+        if let image = imageData {
+                    httpBody.append(convertFileData(fieldName: "profileImage",
+                                                    fileName: "profile.jpeg",
+                                                    mimeType: "img/png",
+                                                    fileData: image,
+                                                    using: boundary))}
+        request.httpMethod = requestMethod
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         httpBody.appendString("--\(boundary)--")
         request.httpBody = httpBody as Data
         request.allHTTPHeaderFields = headers
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let response = response as? HTTPURLResponse {
+                print(response.statusCode)
+                let data8 = String(data: data!, encoding: .utf8)!.components(separatedBy: .newlines)
+                print(data8)
                 if (response.statusCode == 200 || response.statusCode == 201) {
                     let data = String(data: data!, encoding: .utf8)!.components(separatedBy: .newlines)
                     completion(data[0],nil)
@@ -92,6 +113,7 @@ class NetWorkManager {
     func requestData(request: URLRequest,completion: @escaping (Any) -> (), failure: @escaping (Any) -> ()) {
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let response = response as? HTTPURLResponse {
+                
                 guard let responsedata = data else {return}
                 if(response.statusCode == 401) {
                     
