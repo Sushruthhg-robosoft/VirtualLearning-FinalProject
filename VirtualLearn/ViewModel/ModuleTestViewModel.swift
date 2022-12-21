@@ -40,6 +40,44 @@ class ModuleTestViewModel {
             fail()
         }
     }
+    
+    func submitAnswer(token: String, assignnmentId: String, testAnswers: [Int: String], completion: @escaping() -> Void, fail: @escaping() -> Void) {
+        guard let id = Int(assignnmentId) else {return}
+        var totalQuestionAnswer = [[String: Any]]()
+        for answer in testAnswers {
+            let newQuestion = QuestionModel(id: answer.key, answer: answer.value)
+            
+            totalQuestionAnswer.append(newQuestion.dictionary)
+        }
+        let parameters: [String : Any] = [
+            "assignmentId": id,
+            "questionAnswers": [
+                
+            ]
+        ]
+        print(parameters)
+  
+        let network = NetWorkManager()
+        
+        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/assignment")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("Bearer \(mainshared.token)", forHTTPHeaderField: "Authorization")
+        request.httpBody = try? JSONSerialization.data(withJSONObject: parameters)
+        
+        network.fetchData(request: request) { result in
+            print("result",result)
+        } failure: { error in
+            print("error",error)
+        }
+
+    }
 }
 
+struct QuestionModel {
+    var id: Int
+    var answer: String
+
+    var dictionary: [String: Any] { return ["questionId": id, "givenAnswer": answer] }
+}
 
