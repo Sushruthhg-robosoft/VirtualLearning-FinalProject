@@ -676,30 +676,6 @@
                                                                     <color key="titleColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n34-EB-ldI">
-                                                                <rect key="frame" x="92" y="70" width="50" height="24"/>
-                                                                <color key="backgroundColor" red="0.98823529409999999" green="0.74509803919999995" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="gXc-cx-Oll"/>
-                                                                    <constraint firstAttribute="height" constant="24" id="mr4-AZ-esn"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                                <state key="normal" title="react">
-                                                                    <color key="titleColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
-                                                                </state>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YPX-r6-cMy">
-                                                                <rect key="frame" x="152" y="70" width="44" height="24"/>
-                                                                <color key="backgroundColor" red="0.98823529409999999" green="0.74509803919999995" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="24" id="1bG-Dc-zK5"/>
-                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="Qfr-qX-far"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                                <state key="normal" title="php">
-                                                                    <color key="titleColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
-                                                                </state>
-                                                            </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K6N-BJ-jUu">
                                                                 <rect key="frame" x="69" y="36" width="48" height="24"/>
                                                                 <color key="backgroundColor" red="0.98823529409999999" green="0.74509803919999995" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -736,39 +712,21 @@
                                                                     <color key="titleColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNR-PY-6v1">
-                                                                <rect key="frame" x="206" y="69" width="109" height="24"/>
-                                                                <color key="backgroundColor" red="0.98823529409999999" green="0.74509803919999995" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="109" id="WEY-j5-LgE"/>
-                                                                    <constraint firstAttribute="height" constant="24" id="WJc-4T-fMv"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                                <state key="normal" title="Communication">
-                                                                    <color key="titleColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
-                                                                </state>
-                                                            </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstItem="n34-EB-ldI" firstAttribute="leading" secondItem="MSZ-Vu-SU2" secondAttribute="trailing" constant="10" id="1JR-wc-qi6"/>
-                                                            <constraint firstItem="n34-EB-ldI" firstAttribute="top" secondItem="K6N-BJ-jUu" secondAttribute="bottom" constant="10" id="3fv-4f-eD5"/>
-                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FNR-PY-6v1" secondAttribute="trailing" constant="2" id="4Fv-Bl-8zh"/>
                                                             <constraint firstItem="K6N-BJ-jUu" firstAttribute="top" secondItem="guk-yb-sda" secondAttribute="bottom" constant="14" id="5fC-Ob-nUC"/>
                                                             <constraint firstItem="0Yw-ZY-IIF" firstAttribute="leading" secondItem="iQA-qm-YVq" secondAttribute="leading" id="6dw-Es-nia"/>
                                                             <constraint firstItem="ej2-Fb-M7e" firstAttribute="leading" secondItem="K6N-BJ-jUu" secondAttribute="trailing" constant="10" id="6mM-z8-MfE"/>
-                                                            <constraint firstItem="FNR-PY-6v1" firstAttribute="top" secondItem="hYb-Gq-Aw7" secondAttribute="bottom" constant="10" id="7Ge-28-7yM"/>
                                                             <constraint firstAttribute="height" constant="94" id="FaN-KT-3UH"/>
-                                                            <constraint firstItem="YPX-r6-cMy" firstAttribute="top" secondItem="ej2-Fb-M7e" secondAttribute="bottom" constant="10" id="KKe-v9-TZE"/>
                                                             <constraint firstItem="MSZ-Vu-SU2" firstAttribute="leading" secondItem="iQA-qm-YVq" secondAttribute="leading" id="MTs-mJ-JVV"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MSZ-Vu-SU2" secondAttribute="trailing" constant="20" symbolic="YES" id="PNG-MR-7S5"/>
                                                             <constraint firstItem="hYb-Gq-Aw7" firstAttribute="leading" secondItem="ej2-Fb-M7e" secondAttribute="trailing" constant="10" id="Uo7-Fa-nPd"/>
                                                             <constraint firstItem="hYb-Gq-Aw7" firstAttribute="top" secondItem="guk-yb-sda" secondAttribute="bottom" constant="13" id="YnR-Z9-In2"/>
                                                             <constraint firstItem="guk-yb-sda" firstAttribute="leading" secondItem="iQA-qm-YVq" secondAttribute="leading" id="fdY-il-Lw7"/>
                                                             <constraint firstItem="MSZ-Vu-SU2" firstAttribute="top" secondItem="0Yw-ZY-IIF" secondAttribute="bottom" constant="10" id="hol-ko-xnV"/>
-                                                            <constraint firstItem="FNR-PY-6v1" firstAttribute="leading" secondItem="YPX-r6-cMy" secondAttribute="trailing" constant="10" id="k6M-Ty-GT2"/>
                                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hYb-Gq-Aw7" secondAttribute="trailing" constant="20" symbolic="YES" id="kys-qJ-sMo"/>
                                                             <constraint firstAttribute="width" constant="317" id="mDA-Hz-Jmc"/>
-                                                            <constraint firstItem="YPX-r6-cMy" firstAttribute="leading" secondItem="n34-EB-ldI" secondAttribute="trailing" constant="10" id="rZc-Id-zL6"/>
                                                             <constraint firstItem="ej2-Fb-M7e" firstAttribute="top" secondItem="guk-yb-sda" secondAttribute="bottom" constant="14" id="ttB-hj-0fL"/>
                                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="guk-yb-sda" secondAttribute="trailing" constant="20" symbolic="YES" id="u6u-Ep-9V5"/>
                                                             <constraint firstItem="guk-yb-sda" firstAttribute="top" secondItem="iQA-qm-YVq" secondAttribute="top" id="xrz-9q-2Lm"/>
@@ -1057,9 +1015,14 @@
                         <outlet property="CategoriesDisplayView" destination="UTh-Qw-cn5" id="cHc-5o-W1D"/>
                         <outlet property="CourseDetailsTableView" destination="WCS-OY-zHF" id="J7g-ZB-9fi"/>
                         <outlet property="InitialDisplayView" destination="03I-D2-X67" id="R75-Fu-U0N"/>
+                        <outlet property="fifthBtn" destination="MSZ-Vu-SU2" id="Yvo-rq-Bf4"/>
+                        <outlet property="firstBtn" destination="0Yw-ZY-IIF" id="EW9-hU-FI3"/>
+                        <outlet property="fourthBtn" destination="hYb-Gq-Aw7" id="iAv-Ea-Gxc"/>
                         <outlet property="noDataDisplayView" destination="yJM-Th-XGb" id="kHr-Vb-aYc"/>
                         <outlet property="noDataDisplayViewheight" destination="xEt-ET-OFi" id="pfI-Jr-FUi"/>
                         <outlet property="searchTextField" destination="27R-oH-LkP" id="TNh-wz-PKp"/>
+                        <outlet property="secondBtn" destination="K6N-BJ-jUu" id="nMn-BF-KCR"/>
+                        <outlet property="thirdBtn" destination="ej2-Fb-M7e" id="jvh-ZW-bvb"/>
                         <outlet property="topSearchView" destination="iQA-qm-YVq" id="HVu-H6-v5o"/>
                         <outlet property="topSearchViewHeight" destination="FaN-KT-3UH" id="fvq-w2-0ee"/>
                     </connections>
@@ -7232,9 +7195,9 @@
                                     </containerView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="pJI-jT-mVi" firstAttribute="trailing" secondItem="alv-fO-DLO" secondAttribute="trailing" id="29w-Lx-qRY"/>
+                                    <constraint firstItem="pJI-jT-mVi" firstAttribute="trailing" secondItem="5cl-4O-0if" secondAttribute="trailing" id="29w-Lx-qRY"/>
                                     <constraint firstItem="U2U-wF-dHx" firstAttribute="width" secondItem="5cl-4O-0if" secondAttribute="width" id="8qk-Fd-z9N"/>
-                                    <constraint firstItem="pJI-jT-mVi" firstAttribute="leading" secondItem="alv-fO-DLO" secondAttribute="leading" id="8ys-iy-BRc"/>
+                                    <constraint firstItem="pJI-jT-mVi" firstAttribute="leading" secondItem="5cl-4O-0if" secondAttribute="leading" id="8ys-iy-BRc"/>
                                     <constraint firstItem="pJI-jT-mVi" firstAttribute="top" secondItem="5cl-4O-0if" secondAttribute="top" id="KUz-Jt-sgh"/>
                                     <constraint firstItem="U2U-wF-dHx" firstAttribute="leading" secondItem="5cl-4O-0if" secondAttribute="leading" id="OU4-Ww-1B1"/>
                                     <constraint firstItem="pJI-jT-mVi" firstAttribute="bottom" secondItem="alv-fO-DLO" secondAttribute="bottom" id="QyT-3B-wyQ"/>
@@ -7332,7 +7295,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+91" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Vi-vE-4vE">
-                                                <rect key="frame" x="24" y="257.5" width="25" height="20"/>
+                                                <rect key="frame" x="24" y="257" width="25" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="8dL-Yc-84v"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="hIX-CE-PbH"/>
@@ -7342,7 +7305,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your mobile number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SUv-I0-V8N" customClass="borderlessTextField" customModule="VirtualLearn" customModuleProvider="target">
-                                                <rect key="frame" x="67" y="257.5" width="210" height="20"/>
+                                                <rect key="frame" x="67" y="257" width="210" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="OjK-b4-YNO"/>
                                                 </constraints>
@@ -7354,7 +7317,7 @@
                                                 </connections>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0dB-EJ-jgc">
-                                                <rect key="frame" x="24" y="287.5" width="327" height="1"/>
+                                                <rect key="frame" x="24" y="287" width="327" height="1"/>
                                                 <color key="backgroundColor" systemColor="systemPinkColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="HF0-kL-1wo"/>
@@ -7364,7 +7327,7 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2gl-pQ-srW">
-                                                <rect key="frame" x="24" y="341.5" width="327" height="46"/>
+                                                <rect key="frame" x="24" y="341" width="327" height="46"/>
                                                 <color key="backgroundColor" red="0.93333333330000001" green="0.36078431370000003" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="46" id="yKk-0s-hDv"/>
@@ -7384,7 +7347,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIy-kk-MvP">
-                                                <rect key="frame" x="24" y="223" width="106" height="19.5"/>
+                                                <rect key="frame" x="24" y="223" width="106" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="97" id="Iea-nF-Obg"/>
                                                 </constraints>
@@ -7393,7 +7356,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_textfield_right" translatesAutoresizingMaskIntoConstraints="NO" id="yqx-4M-zQu">
-                                                <rect key="frame" x="331" y="257.5" width="20" height="20"/>
+                                                <rect key="frame" x="331" y="257" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="A0M-q0-Bbu"/>
                                                     <constraint firstAttribute="width" constant="20" id="u1I-nk-x21"/>
@@ -7442,7 +7405,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invalid mobile number, please try again" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gJ-Cw-sxa">
-                                                <rect key="frame" x="60" y="12" width="297" height="19.5"/>
+                                                <rect key="frame" x="60" y="12" width="297" height="19"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -7876,19 +7839,19 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="+919876543211" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8I8-Hg-n9y">
-                                                        <rect key="frame" x="25" y="153.5" width="134" height="24.5"/>
+                                                        <rect key="frame" x="25" y="153.5" width="134" height="25"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="20"/>
                                                         <color key="textColor" red="0.16862745098039217" green="0.70980392156862748" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7Y-r8-BAP">
-                                                        <rect key="frame" x="24" y="211" width="60" height="17.5"/>
+                                                        <rect key="frame" x="24" y="211.5" width="60" height="17.5"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                                         <color key="textColor" red="0.47843137254901957" green="0.47843137254901957" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="253" verticalCompressionResistancePriority="758" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full name" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="Vti-05-j60">
-                                                        <rect key="frame" x="24" y="241.5" width="327" height="34"/>
+                                                        <rect key="frame" x="24" y="242" width="327" height="34"/>
                                                         <color key="textColor" red="0.015686274509803921" green="0.17254901960784313" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES"/>
@@ -7899,31 +7862,31 @@
                                                         </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="759" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPy-J7-kDT">
-                                                        <rect key="frame" x="24" y="300.5" width="63.5" height="17.5"/>
+                                                        <rect key="frame" x="24" y="301" width="63.5" height="17.5"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                                         <color key="textColor" red="0.47843137254901957" green="0.47843137254901957" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="760" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTe-IC-drr">
-                                                        <rect key="frame" x="24" y="390" width="33" height="17.5"/>
+                                                        <rect key="frame" x="24" y="390.5" width="33" height="17.5"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                                         <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="755" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6BV-Wv-R5j">
-                                                        <rect key="frame" x="24" y="479.5" width="59.5" height="17.5"/>
+                                                        <rect key="frame" x="24" y="480" width="59.5" height="17.5"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                                         <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="757" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OAx-Ci-rFK">
-                                                        <rect key="frame" x="24" y="569" width="111.5" height="17.5"/>
+                                                        <rect key="frame" x="24" y="569.5" width="111.5" height="17.5"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                                         <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="753" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="M1r-vq-iz7">
-                                                        <rect key="frame" x="24" y="331" width="327" height="34"/>
+                                                        <rect key="frame" x="24" y="331.5" width="327" height="34"/>
                                                         <color key="textColor" red="0.015686274509803921" green="0.17254901960784313" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES"/>
@@ -7934,7 +7897,7 @@
                                                         </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="754" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="0ga-Du-kQz">
-                                                        <rect key="frame" x="24" y="420.5" width="327" height="34"/>
+                                                        <rect key="frame" x="24" y="421" width="327" height="34"/>
                                                         <color key="textColor" red="0.015686274509803921" green="0.17254901960784313" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES"/>
@@ -7945,7 +7908,7 @@
                                                         </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="756" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="7ZB-IV-te7">
-                                                        <rect key="frame" x="24" y="510" width="327" height="34"/>
+                                                        <rect key="frame" x="24" y="510.5" width="327" height="34"/>
                                                         <color key="textColor" red="0.015686274509803921" green="0.17254901960784313" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
@@ -7956,42 +7919,42 @@
                                                         </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIE-o1-7GB">
-                                                        <rect key="frame" x="24" y="554" width="327" height="1"/>
+                                                        <rect key="frame" x="24" y="554.5" width="327" height="1"/>
                                                         <color key="backgroundColor" red="0.015686274510000001" green="0.17254901959999999" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="nBM-R9-bj9"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ubw-f3-4N1">
-                                                        <rect key="frame" x="24" y="375" width="327" height="1"/>
+                                                        <rect key="frame" x="24" y="375.5" width="327" height="1"/>
                                                         <color key="backgroundColor" red="0.015686274510000001" green="0.17254901959999999" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="AL8-yd-F9V"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7a6-sS-X7u">
-                                                        <rect key="frame" x="24" y="643.5" width="327" height="1"/>
+                                                        <rect key="frame" x="24" y="644" width="327" height="1"/>
                                                         <color key="backgroundColor" red="0.015686274510000001" green="0.17254901959999999" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="13p-uc-81W"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="meJ-PJ-g3o">
-                                                        <rect key="frame" x="24" y="464.5" width="327" height="1"/>
+                                                        <rect key="frame" x="24" y="465" width="327" height="1"/>
                                                         <color key="backgroundColor" red="0.015686274510000001" green="0.17254901959999999" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="yFY-gJ-yGv"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SrZ-L2-zGR">
-                                                        <rect key="frame" x="24" y="285.5" width="327" height="1"/>
+                                                        <rect key="frame" x="24" y="286" width="327" height="1"/>
                                                         <color key="backgroundColor" red="0.015686274510000001" green="0.17254901959999999" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="5i5-5W-bda"/>
                                                         </constraints>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4YM-Er-s6S">
-                                                        <rect key="frame" x="100" y="521" width="12" height="12"/>
+                                                        <rect key="frame" x="100" y="521.5" width="12" height="12"/>
                                                         <color key="backgroundColor" red="0.9882352941176471" green="0.74509803921568629" blue="0.29411764705882354" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="12" id="VOh-S8-6sM"/>
@@ -8006,7 +7969,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6O-PQ-lyh">
-                                                        <rect key="frame" x="23.5" y="725.5" width="327" height="46"/>
+                                                        <rect key="frame" x="23.5" y="726" width="327" height="46"/>
                                                         <color key="backgroundColor" red="0.93333333333333335" green="0.36078431372549019" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="46" id="LXM-Wf-2xA"/>
@@ -8026,7 +7989,7 @@
                                                         </connections>
                                                     </button>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="2Gs-lt-YtT">
-                                                        <rect key="frame" x="24" y="599.5" width="327" height="34"/>
+                                                        <rect key="frame" x="24" y="600" width="327" height="34"/>
                                                         <color key="textColor" red="0.015686274509803921" green="0.17254901960784313" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES"/>
@@ -8037,7 +8000,7 @@
                                                         </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RMF-5h-nse">
-                                                        <rect key="frame" x="24" y="540.5" width="327" height="70"/>
+                                                        <rect key="frame" x="24" y="541" width="327" height="70"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Our minimum Requirment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTb-yw-8wb">
                                                                 <rect key="frame" x="16" y="12" width="134.5" height="15"/>
