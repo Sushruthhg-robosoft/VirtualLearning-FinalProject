@@ -105,6 +105,7 @@
 		CF54BF622952D4A000BD4F07 /* popupViewHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF54BF612952D4A000BD4F07 /* popupViewHome.swift */; };
 		CF54BFD129531EE600BD4F07 /* FolderManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF54BFD029531EE600BD4F07 /* FolderManger.swift */; };
 		CF54BFDA29531F1600BD4F07 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF54BFD929531F1600BD4F07 /* LoadingViewController.swift */; };
+		CF54BFE22953280000BD4F07 /* CongratsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF54BFE12953280000BD4F07 /* CongratsViewController.swift */; };
 		CF65D6DF294C488000B2852A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65D6DE294C488000B2852A /* HomeViewModel.swift */; };
 		CF79F1CF2941AAD000EEC920 /* SuggestionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF79F1CD2941AAD000EEC920 /* SuggestionsCollectionViewCell.swift */; };
 		CF79F1D02941AAD000EEC920 /* SuggestionsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF79F1CE2941AAD000EEC920 /* SuggestionsCollectionViewCell.xib */; };
@@ -258,6 +259,7 @@
 		CF54BF612952D4A000BD4F07 /* popupViewHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popupViewHome.swift; sourceTree = "<group>"; };
 		CF54BFD029531EE600BD4F07 /* FolderManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderManger.swift; sourceTree = "<group>"; };
 		CF54BFD929531F1600BD4F07 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		CF54BFE12953280000BD4F07 /* CongratsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratsViewController.swift; sourceTree = "<group>"; };
 		CF65D6DE294C488000B2852A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		CF79F1CD2941AAD000EEC920 /* SuggestionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsCollectionViewCell.swift; sourceTree = "<group>"; };
 		CF79F1CE2941AAD000EEC920 /* SuggestionsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestionsCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -488,6 +490,7 @@
 				C2ED75132949DF6300562970 /* ModuleTestViewController.swift */,
 				CF2EFB3B2949F0B600A7D585 /* QuestionListTableViewCell.swift */,
 				CF2EFB3C2949F0B600A7D585 /* showQuestionResultViewController.swift */,
+				CF54BFE12953280000BD4F07 /* CongratsViewController.swift */,
 			);
 			path = ModuleTest;
 			sourceTree = "<group>";
@@ -920,6 +923,7 @@
 				CF79F1DA2941BBB600EEC920 /* NewUserBottomView.swift in Sources */,
 				1BF0C86229408D93009D9030 /* HamburgerViewController.swift in Sources */,
 				CF79F1CF2941AAD000EEC920 /* SuggestionsCollectionViewCell.swift in Sources */,
+				CF54BFE22953280000BD4F07 /* CongratsViewController.swift in Sources */,
 				CFBA05752946FB4900763342 /* customCourseCategoryLable.swift in Sources */,
 				C26BA48C2951721F0068C7CE /* ModuleTestViewModel.swift in Sources */,
 				CFAFC99F293EFAA700F84288 /* AppDelegate.swift in Sources */,
