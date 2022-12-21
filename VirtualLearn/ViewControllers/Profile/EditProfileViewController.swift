@@ -106,18 +106,18 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     @IBAction func onClickSaveBtn(_ sender: Any) {
        // let loader = self.loader()
         updateEditProfileData()
-        editProfileViewModel.updateProfileData(token: shared.token, profiledata: profileData!) {
-            
-            
-            DispatchQueue.main.async {
-            //self.stopLoader(loader: loader)
-                self.AlertMessagePopup(message: "Profile updated successfully")
-                            
-            }
-            } fail: {
-                
-                
-            }
+//        editProfileViewModel.updateProfileData(token: shared.token, profiledata: profileData!) {
+//
+//
+//            DispatchQueue.main.async {
+//            //self.stopLoader(loader: loader)
+//                self.AlertMessagePopup(message: "Profile updated successfully")
+//
+//            }
+//            } fail: {
+//
+//
+//            }
     }
        
             func updateEditProfileData() {
@@ -211,6 +211,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 
         self.present(dialogMessage, animated: true, completion: nil)
     }
+
         
     
 }
