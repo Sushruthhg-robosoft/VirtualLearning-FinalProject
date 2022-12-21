@@ -15,8 +15,6 @@ class myCourseViewModel{
     var completedCourses = [Course]()
     
 
-    
-    
     func getMycourseDetails(token: String,completion: @escaping() -> Void, fail: @escaping () -> Void){
         ongoingCourses.removeAll()
         completedCourses.removeAll()

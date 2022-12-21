@@ -37,7 +37,6 @@ class ModuleTestViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        timerCountdown()
         
         nextButton.isHidden = false
         submitButton.isHidden = true
@@ -49,6 +48,8 @@ class ModuleTestViewController: UIViewController {
         moduleTestViewModel.getQuestions(limit: "3", page: "1", assignnmentId: "5") {
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
+                self.timerCountdown()
+
             }
         } fail: {
             print("fail")
@@ -56,6 +57,8 @@ class ModuleTestViewController: UIViewController {
 
         
     }
+    
+    
     
     @IBAction func onClickNext(_ sender: Any) {
         previousButton.isEnabled = true
@@ -82,6 +85,7 @@ class ModuleTestViewController: UIViewController {
     
     @IBAction func onclickSubmit(_ sender: Any) {
         moduleTestViewModel.submitAnswer(token: mainShared.token, assignnmentId: "5", testAnswers: testAnswers){
+            
             print("sucess")
         } fail: {
             print("fail")
