@@ -42,11 +42,8 @@ class ModuleTestViewModel {
     }
     var parameter: [String: Any] = [
 
-           "testId":1,
-
-           "lessonId": 62,
-
-           "questionAnswerResponses": [
+           "assignmentId":5,
+           "questionAnswers": [
 
                "questionId":1,
 
@@ -57,28 +54,21 @@ class ModuleTestViewModel {
        ]
     
     func submitAnswer(token: String, assignnmentId: String, testAnswers: [Int: String], completion: @escaping() -> Void, fail: @escaping() -> Void) {
-        guard let id = Int(assignnmentId) else {return}
-        var totalQuestionAnswer = [[String: Any]]()
-
-        let parameters: [String : Any] = [
-            "assignmentId": Int.self,
-            "questionAnswers": [[String:Any]]()
-                
-     ]
-        var temp = parameters["questionAnswers"] as! [String:Any]
-        
+        var totalAnswer = [[String:Any]]()
         for answer in testAnswers {
-            temp["questionId"] = answer.key
-            temp["givenAnswer"] = answer.value
-            
+            let new = QuestionModel(id: answer.key, answer: answer.value)
+            totalAnswer.append(new.dictionary)
         }
+        parameter["assignmentId"] = Int(assignnmentId)
+        parameter["questionAnswers"] = totalAnswer
         let network = NetWorkManager()
-        
+        print(parameter)
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/assignment")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(mainshared.token)", forHTTPHeaderField: "Authorization")
-        request.httpBody = try? JSONSerialization.data(withJSONObject: parameters)
+        request.httpBody = try? JSONSerialization.data(withJSONObject: parameter, options: .fragmentsAllowed)
         
         network.fetchData(request: request) { result in
             print("result",result)
