@@ -51,7 +51,9 @@ class ModuleTestViewModel {
         }
         let parameters: [String : Any] = [
             "assignmentId": id,
-            "questionAnswers": totalQuestionAnswer
+            "questionAnswers": [
+                
+            ]
         ]
         print(parameters)
   
