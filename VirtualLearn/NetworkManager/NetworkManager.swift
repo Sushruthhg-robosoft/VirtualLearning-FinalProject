@@ -130,6 +130,7 @@ class NetWorkManager {
                           }
                       }
                       else{
+                        print(error)
                           print(error!.localizedDescription)
 
                       }

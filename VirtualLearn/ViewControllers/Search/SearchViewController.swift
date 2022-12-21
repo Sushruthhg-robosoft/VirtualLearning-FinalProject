@@ -18,11 +18,18 @@ class SearchViewController: UIViewController {
     
     @IBOutlet weak var topSearchViewHeight: NSLayoutConstraint!
     @IBOutlet weak var noDataDisplayViewheight: NSLayoutConstraint!
-    
+    var mainShared = mainViewModel.mainShared.searchViewModelShared
+
     override func viewDidLoad() {
         topSearchView.isHidden = true
             topSearchViewHeight.constant  = 0
         super.viewDidLoad()
+        mainShared.getSearchResult { (result) in
+            print(result)
+        } fail: { (fail) in
+            print(fail)
+        }
+
     }
 
     @IBAction func filterButton(_ sender: Any) {
