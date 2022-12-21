@@ -62,7 +62,30 @@ class ChaptersViewController: UIViewController {
         overViewBtn.setTitleColor(#colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1), for: .normal)
         overViewUnderLineView.backgroundColor = #colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
         
+//        shared.chaptersDetailsViewModelShared.getChapters(token: shared.token, courseId: "3") { result in
+//            let loader = self.loader()
+//            DispatchQueue.main.async { [self] in
+//                let chapter = String(result.courseContentResponse.chapterCount) + "Chapter | "
+//                let lesson = String(result.courseContentResponse.lessonCount) + "Lessons | "
+//                let assesment = String(result.courseContentResponse.moduleTest) + "Assesment Test |"
+//                let totalLength = String(result.courseContentResponse.totalVideoLength) + "h total Length"
+//
+//                self.sourseContentDescription.text = chapter + lesson + assesment + totalLength
+//                self.dataoflesson = result.lessonResponseList
+//                self.stopLoader(loader: loader)
+//                tableView.reloadData()
+//
+//            }
+//        } fail: {
+//            print("failures")
+//        }
+ 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let loader = self.loader()
         shared.chaptersDetailsViewModelShared.getChapters(token: shared.token, courseId: "3") { result in
+            
             DispatchQueue.main.async { [self] in
                 let chapter = String(result.courseContentResponse.chapterCount) + "Chapter | "
                 let lesson = String(result.courseContentResponse.lessonCount) + "Lessons | "
@@ -71,14 +94,13 @@ class ChaptersViewController: UIViewController {
                
                 self.sourseContentDescription.text = chapter + lesson + assesment + totalLength
                 self.dataoflesson = result.lessonResponseList
-                
+                self.stopLoader(loader: loader)
                 tableView.reloadData()
          
             }
         } fail: {
             print("failures")
         }
- 
     }
     
     @IBAction func onClickOverview(_ sender: Any) {
@@ -118,39 +140,63 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cells") as! CustomChapterTableViewCell
-//        cell.chapterName.text = dataoflesson[indexPath.section].lessonList[indexPath.row].lessonName
-//        cell.chapterNumber.text = "0\(String(dataoflesson[indexPath.section].lessonList[indexPath.row].lessonId))"
-//        cell.chapterDuration.text = "\(String(dataoflesson[indexPath.section].lessonList[indexPath.row].duration)) mins"
-//        cell.moduleTestView.isHidden = true
-//        cell.progressViewWidthContraint.constant = 0
-//        cell.cellLeadingConstraint.constant = 0
-//        cell.progressHeight.constant = 0
-//        cell.progressWidth.constant = 0
-        
-            cell.chapterName.text = dataoflesson[indexPath.section].lessonList[indexPath.row].lessonName
-            cell.chapterNumber.text = "0\(String(dataoflesson[indexPath.section].lessonList[indexPath.row].lessonId))"
-            cell.chapterDuration.text = "\(String(dataoflesson[indexPath.section].lessonList[indexPath.row].duration)) mins"
+   
+        if let data = dataoflesson[indexPath.section].lessonList[indexPath.row] as? LessonList {
+            
+            cell.chapterName.text = data.lessonName
+            cell.chapterNumber.text = "0\(String(data.lessonId))"
+            cell.chapterDuration.text = "\(String(data.duration)) mins"
             cell.moduleTestView.isHidden = true
+            cell.chapterNumberView.isHidden = false
+            cell.chapterNumber.isHidden = false
             cell.progressViewWidthContraint.constant = 0
             cell.cellLeadingConstraint.constant = 0
             cell.progressHeight.constant = 0
             cell.progressWidth.constant = 0
+        }
         
-         if dataoflesson[indexPath.section].assignmentResponse !=  nil{
-            print("Data inside assesments")
+        if let data = dataoflesson[indexPath.section].lessonList[indexPath.row] as? AssignmentResponse {
+            
             cell.moduleTestView.isHidden = false
             cell.chapterNumberView.isHidden = true
             cell.chapterNumber.isHidden = true
-            cell.chapterName.text = dataoflesson[indexPath.section].assignmentResponse?.assignmentName
-            cell.chapterNumber.text = "0\(String(dataoflesson[indexPath.section].assignmentResponse?.assignmentId ?? 0))"
-            cell.chapterDuration.text = "\(String(dataoflesson[indexPath.section].assignmentResponse?.testDuration ?? 0)) mins"
-            cell.moduleTestView.isHidden = true
+            cell.chapterName.text = data.assignmentName
+            cell.chapterNumber.text = "0\(data.assignmentId ))"
+            cell.chapterDuration.text = "\(data.testDuration )) mins"
             cell.progressViewWidthContraint.constant = 0
             cell.cellLeadingConstraint.constant = 0
             cell.progressHeight.constant = 0
             cell.progressWidth.constant = 0
-            
         }
+        
+        
+        
+        
+        
+//        cell.chapterName.text = dataoflesson[indexPath.section].lessonList[indexPath.row].lessonName
+//            cell.chapterNumber.text = "0\(String(dataoflesson[indexPath.section].lessonList[indexPath.row].lessonId))"
+//            cell.chapterDuration.text = "\(String(dataoflesson[indexPath.section].lessonList[indexPath.row].duration)) mins"
+//            cell.moduleTestView.isHidden = true
+//            cell.progressViewWidthContraint.constant = 0
+//            cell.cellLeadingConstraint.constant = 0
+//            cell.progressHeight.constant = 0
+//            cell.progressWidth.constant = 0
+//
+//         if dataoflesson[indexPath.section].assignmentResponse !=  nil{
+//            print("Data inside assesments")
+//            cell.moduleTestView.isHidden = false
+//            cell.chapterNumberView.isHidden = true
+//            cell.chapterNumber.isHidden = true
+//            cell.chapterName.text = dataoflesson[indexPath.section].assignmentResponse?.assignmentName
+//            cell.chapterNumber.text = "0\(String(dataoflesson[indexPath.section].assignmentResponse?.assignmentId ?? 0))"
+//            cell.chapterDuration.text = "\(String(dataoflesson[indexPath.section].assignmentResponse?.testDuration ?? 0)) mins"
+//            cell.moduleTestView.isHidden = true
+//            cell.progressViewWidthContraint.constant = 0
+//            cell.cellLeadingConstraint.constant = 0
+//            cell.progressHeight.constant = 0
+//            cell.progressWidth.constant = 0
+//
+//        }
 //        let assignment = dataoflesson[indexPath.row].assignmentResponse?.assignmentName
 //        print(14563212,assignment)
         return cell

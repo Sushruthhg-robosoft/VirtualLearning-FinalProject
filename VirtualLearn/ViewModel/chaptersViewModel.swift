@@ -39,9 +39,9 @@ class ChaptersViewModel {
             let CourseContentData = CourseContentResponse(courseId: courseId, chapterCount: chapterCount, lessonCount: lessonCount, moduleTest: moduleTest, totalVideoLength: totalVideoLength)
             
             guard let lessonResponseLists = apiData["lessonResponseList"] as? [[String:Any]] else{print("lessonResponseListErr"); return}
-  
+            var lessonsList = [Any]()
             for lessonResponse in lessonResponseLists {
-                var lessonList = [LessonList]()
+                lessonsList.removeAll()
                 guard let chapterName = lessonResponse["chapterName"] as? String else{print("chapterNameErr"); return}
                 guard let chapterId = lessonResponse["chapterId"] as? Int else{print("chapterIdErr"); return}
                 guard let chapterCompletionStatus = lessonResponse["chapterCompleted"] as? Bool else{print("chapterStatusErr"); return}
@@ -56,10 +56,10 @@ class ChaptersViewModel {
                     guard let lessonCompleted = lesson["lessonCompleted"] as? Bool else {return}
 
                     let newLesson = LessonList(lessonId: lessonId, lessonName: lessonName, videoLink: videoLink, duration: duration, lessonCompleted: lessonCompleted)
-                    lessonList.append(newLesson)
+                    lessonsList.append(newLesson)
 
                 }
-                var assementData: AssignmentResponse?
+            
                 let assesmentResponse = lessonResponse["assignmentResponse"] as? [String: Any]
                 
                 if(assesmentResponse != nil) {
@@ -73,16 +73,10 @@ class ChaptersViewModel {
                     guard let grade = assesmentdetails["grade"] as? Int else {print("chapterCountErr4"); return}
                     let assesment = AssignmentResponse(assignmentId: assignmentId, assignmentName: assignmentName, testDuration: testDuration, questionCount: questionCount, grade: Int(grade))
                    
-                    assementData = assesment
+                    lessonsList.append(assesment)
                
                 }
-                else{
-                   // let assesment = AssignmentResponse(assignmentId: 0, assignmentName: "" , testDuration: 0, questionCount: 0, grade: 0)
-                    print("outside assesment response")
-                    assementData = nil
-                 
-                }
-                let lessonResponse = LessonResponseList(chapterId: chapterId, chapterName: chapterName, chapterCompleted: chapterCompletionStatus, assignmentResponse: assementData, lessonList: lessonList)
+                let lessonResponse = LessonResponseList(chapterId: chapterId, chapterName: chapterName, chapterCompleted: chapterCompletionStatus, lessonList: lessonsList)
                 self.listOfLessons.append(lessonResponse)
                 
                 
