@@ -13,8 +13,10 @@ class ModuleTestViewController: UIViewController {
     @IBOutlet weak var previousButton: UIButton!
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var timeLabel: UILabel!
+    var testAnswers: [Int:String] = [:]
 
     var moduleTestViewModel = ModuleTestViewModel()
+    let mainShared = mainViewModel.mainShared
     var time = ""
 
     var currentPage = 0 {
@@ -78,6 +80,14 @@ class ModuleTestViewController: UIViewController {
         
     }
     
+    @IBAction func onclickSubmit(_ sender: Any) {
+        moduleTestViewModel.submitAnswer(token: mainShared.token, assignnmentId: "5", testAnswers: testAnswers){
+            print("sucess")
+        } fail: {
+            print("fail")
+        }
+       
+    }
     
     @IBAction func onClickPrevious(_ sender: Any) {
         
@@ -138,6 +148,8 @@ extension ModuleTestViewController: UICollectionViewDelegate, UICollectionViewDa
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? ModuleTestCollectionViewCell
         cell?.question.text = moduleTestViewModel.moduleTestData[indexPath.row].questionName
         cell?.questionNoLabel.text = moduleTestViewModel.moduleTestData[indexPath.row].questionId
+        cell?.QuestionInd = Int(moduleTestViewModel.moduleTestData[indexPath.row].questionId)
+        cell?.delegate = self
         cell?.option1Label.text = moduleTestViewModel.moduleTestData[indexPath.row].option_1
         cell?.option2Label.text = moduleTestViewModel.moduleTestData[indexPath.row].option_2
         cell?.option3Label.text = moduleTestViewModel.moduleTestData[indexPath.row].option_3
@@ -158,5 +170,13 @@ extension ModuleTestViewController: UICollectionViewDelegate, UICollectionViewDa
         return CGSize(width: size, height: size)
         
     }
+}
+
+extension ModuleTestViewController: saveAnswers{
+    func save(QuestionID: Int, Answer: String) {
+        self.testAnswers[QuestionID] = Answer
+    }
+    
+    
 }
 

@@ -140,6 +140,7 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
             cell.moduleTestView.isHidden = false
             cell.chapterNumberView.isHidden = true
             cell.chapterNumber.isHidden = true
+            
         }
 //        let assignment = dataoflesson[indexPath.row].assignmentResponse?.assignmentName
 //        print(14563212,assignment)
