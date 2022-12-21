@@ -100,6 +100,7 @@
 		CF416C4E294361B300A27462 /* TopCourseSectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF416C4C294361B300A27462 /* TopCourseSectionCollectionViewCell.xib */; };
 		CF5231A3293F214600C56B7F /* OnboaringSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5231A2293F214600C56B7F /* OnboaringSlide.swift */; };
 		CF5231A8293F287A00C56B7F /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5231A7293F287A00C56B7F /* OnboardingCollectionViewCell.swift */; };
+		CF54BF622952D4A000BD4F07 /* popupViewHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF54BF612952D4A000BD4F07 /* popupViewHome.swift */; };
 		CF65D6DF294C488000B2852A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65D6DE294C488000B2852A /* HomeViewModel.swift */; };
 		CF79F1CF2941AAD000EEC920 /* SuggestionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF79F1CD2941AAD000EEC920 /* SuggestionsCollectionViewCell.swift */; };
 		CF79F1D02941AAD000EEC920 /* SuggestionsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF79F1CE2941AAD000EEC920 /* SuggestionsCollectionViewCell.xib */; };
@@ -248,6 +249,7 @@
 		CF416C4C294361B300A27462 /* TopCourseSectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopCourseSectionCollectionViewCell.xib; sourceTree = "<group>"; };
 		CF5231A2293F214600C56B7F /* OnboaringSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboaringSlide.swift; sourceTree = "<group>"; };
 		CF5231A7293F287A00C56B7F /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		CF54BF612952D4A000BD4F07 /* popupViewHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popupViewHome.swift; sourceTree = "<group>"; };
 		CF65D6DE294C488000B2852A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		CF79F1CD2941AAD000EEC920 /* SuggestionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsCollectionViewCell.swift; sourceTree = "<group>"; };
 		CF79F1CE2941AAD000EEC920 /* SuggestionsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestionsCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -553,6 +555,7 @@
 				CF79F1DE2942118600EEC920 /* ChoiceOfCourseCustomButton.swift */,
 				CF032A93294897DB00D6B6D3 /* activityLoader.swift */,
 				1B90BA6C294B40BC004A6D4B /* subCategoryView.swift */,
+				CF54BF612952D4A000BD4F07 /* popupViewHome.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -918,6 +921,7 @@
 				CFBA056D2946F79100763342 /* CourseDetailseTableViewCell.swift in Sources */,
 				C2ED750D2949D6A900562970 /* customProfilePageView.swift in Sources */,
 				CF032A94294897DB00D6B6D3 /* activityLoader.swift in Sources */,
+				CF54BF622952D4A000BD4F07 /* popupViewHome.swift in Sources */,
 				1B9289BC2949E50900C66D9E /* SettingViewController.swift in Sources */,
 				CF032A472948332400D6B6D3 /* ChaptersViewController.swift in Sources */,
 				CFBA05622946F60300763342 /* CourseDetailsViewController.swift in Sources */,
