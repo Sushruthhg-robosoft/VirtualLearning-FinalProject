@@ -7,11 +7,13 @@
 
 import Foundation
 class EditProfileViewModel {
+    var mainshared = mainViewModel.mainShared
     
-    func updateProfileData(token: String,profiledata: ProfileData, completion: @escaping () -> Void, fail: @escaping () -> Void) {
+    func updateProfileData(token: String, profiledata: ProfileData, completion: @escaping () -> Void, fail: @escaping () -> Void) {
         let networkManager = NetWorkManager()
-        let url = "https://app-virtuallearning-221207091853.azurewebsites.net/user/profile"
-        
+        let urL = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/profile")!
+        var request = URLRequest(url: urL)
+        request.httpMethod = "PATCH"
         let parameters: [String : Any] = [
             "fullName" : profiledata.fullName,
             "userName" : profiledata.userName,
@@ -24,17 +26,16 @@ class EditProfileViewModel {
             "facebookLink" : profiledata.facebookLink!,
             
         ]
-        let header = [String:String]()
-        networkManager.postData(url: url, requestMethod: "PATCH", parameters: parameters, headers: header) {(result, error) in
-            if error == nil {
-//                print(result)
-                completion()
-            }
-            else {
-//                print(error)
-                fail()
-            }
+        
+        print(parameters)
+        request.httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: .fragmentsAllowed)
+        
+        request.setValue("Bearer \(mainshared.token)", forHTTPHeaderField: "Authorization")
+        networkManager.fetchData(request: request) { result in
+        completion()
             
+        } failure: { error in
+            print(error)
         }
         
     }

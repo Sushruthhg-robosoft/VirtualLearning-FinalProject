@@ -104,18 +104,26 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         }
     
     @IBAction func onClickSaveBtn(_ sender: Any) {
-        let loader = self.loader()
+       // let loader = self.loader()
         updateEditProfileData()
         editProfileViewModel.updateProfileData(token: shared.token, profiledata: profileData!) {
+            
+            
             DispatchQueue.main.async {
-            self.stopLoader(loader: loader)
+            //self.stopLoader(loader: loader)
+                self.AlertMessagePopup(message: "Profile updated successfully")
+                            
             }
             } fail: {
+                
                 
             }
     }
        
             func updateEditProfileData() {
+                
+                
+                
                 profileData?.emailId = emailField.text!
                 profileData?.fullName =  nameField.text!
                 profileData?.userName = userNameTextField.text!
@@ -192,7 +200,17 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         navigationController?.popViewController(animated: true)
     }
     
-    
+    func AlertMessagePopup(message: String){
+        
+        let dialogMessage = UIAlertController(title: "Congrats!", message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+            self.dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
+         })
+        dialogMessage.addAction(ok)
+
+        self.present(dialogMessage, animated: true, completion: nil)
+    }
         
     
 }

@@ -20,7 +20,7 @@ class mainViewModel{
     var loginUserName: String?
     
     
-    var token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdW1hbnRocHJhYmh1IiwiZXhwIjoxNjcxMzM2OTQxLCJpYXQiOjE2NzEyNTA1NDF9.o6VmZGcISqeQLYDA6gzm9gZlfERpIKJE-pcJELbIzfvYkrEBjKJDbv8Hs2kb-Z2rTiBFZNxffXLZbE4pIoxOjg"
+    var token = ""
     
     
 }
