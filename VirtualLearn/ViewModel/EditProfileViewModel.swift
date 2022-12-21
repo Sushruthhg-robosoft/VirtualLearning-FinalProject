@@ -27,9 +27,25 @@ class EditProfileViewModel {
             "facebookLink" : profiledata.facebookLink!,
             
         ]
+        let data = NSMutableData()
+        let fieldName = "file"
+        if let imageData = imageToUpdate.jpegData(compressionQuality: 1) {
+
+//                      data.append("--\(boundary)\r\n".data(using: .utf8)!)
+
+                      data.append("Content-Disposition: form-data; name=\"\(fieldName)\"; filename=\"image.jpg\"\r\n".data(using: .utf8)!)
+
+                      data.append("Content-Type: image/jpeg\r\n\r\n".data(using: .utf8)!)
+
+                      data.append(imageData)
+
+                      data.append("\r\n".data(using: .utf8)!)
+
+                  }
         
         print(parameters)
         request.httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: .fragmentsAllowed)
+        
         
         request.setValue("Bearer \(mainshared.token)", forHTTPHeaderField: "Authorization")
         networkManager.fetchData(request: request) { result in
