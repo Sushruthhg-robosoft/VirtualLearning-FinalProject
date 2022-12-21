@@ -46,18 +46,19 @@ class EditProfileViewModel {
                   }
         
         print(parameters)
-        request.httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: .fragmentsAllowed)
-        
-        
-        request.setValue("Bearer \(mainshared.token)", forHTTPHeaderField: "Authorization")
-        
-        networkManager.fetchData(request: request) { result in
-        completion()
-            
-        } failure: { error in
-            print(error)
-        }
-        
-    }
-}
+//        headers = [String : String]
+//        request.httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: .fragmentsAllowed)
+//        
+//        
+//        request.setValue("Bearer \(mainshared.token)", forHTTPHeaderField: "Authorization")
+//        
+//        networkManager.postData(url: url, requestMethod: "PATCH", parameters: parameters, headers: <#T##[String : String]?#>, completion: <#T##(Any?, Error?) -> Void#>)(request: request) { result in
+//        completion()
+//            
+//        } failure: { error in
+//            print(error)
+//        }
+//        
+//    }
+//}
 

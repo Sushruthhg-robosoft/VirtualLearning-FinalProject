@@ -61,33 +61,33 @@ class NetWorkManager {
     }
     
     
-//    func postData(url: String, requestMethod: String, parameters: [String: Any], headers: [String: String]?, completion: @escaping(Any? , Error?) -> Void) {
-//
-//        let boundary = "Boundary-\(UUID().uuidString)"
-//        var request = URLRequest(url: URL(string: url)!)
-//        request.httpMethod = requestMethod
-//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-//        let httpBody = NSMutableData()
-//        for (key, value) in parameters {
-//            httpBody.appendString(convertFormField(named: key, value: value, using: boundary))
-//        }
-//
-//        httpBody.appendString("--\(boundary)--")
-//        request.httpBody = httpBody as Data
-//        request.allHTTPHeaderFields = headers
-//        URLSession.shared.dataTask(with: request) { data, response, error in
-//            if let response = response as? HTTPURLResponse {
-//                if (response.statusCode == 200 || response.statusCode == 201) {
-//                    let data = String(data: data!, encoding: .utf8)!.components(separatedBy: .newlines)
-//                    completion(data[0],nil)
-//                }
-//            }
-//            if error != nil {
-//                print(error?.localizedDescription as Any)
-//                completion(nil,error)
-//            }
-//        }.resume()
-//    }
+    func postData(url: String, requestMethod: String, parameters: [String: Any], headers: [String: String]?, completion: @escaping(Any? , Error?) -> Void) {
+
+        let boundary = "Boundary-\(UUID().uuidString)"
+        var request = URLRequest(url: URL(string: url)!)
+        request.httpMethod = requestMethod
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let httpBody = NSMutableData()
+        for (key, value) in parameters {
+            httpBody.appendString(convertFormField(named: key, value: value, using: boundary))
+        }
+
+        httpBody.appendString("--\(boundary)--")
+        request.httpBody = httpBody as Data
+        request.allHTTPHeaderFields = headers
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let response = response as? HTTPURLResponse {
+                if (response.statusCode == 200 || response.statusCode == 201) {
+                    let data = String(data: data!, encoding: .utf8)!.components(separatedBy: .newlines)
+                    completion(data[0],nil)
+                }
+            }
+            if error != nil {
+                print(error?.localizedDescription as Any)
+                completion(nil,error)
+            }
+        }.resume()
+    }
     
     func requestData(request: URLRequest,completion: @escaping (Any) -> (), failure: @escaping (Any) -> ()) {
         URLSession.shared.dataTask(with: request) { data, response, error in
