@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 
 protocol saveAnswers {
     func save(QuestionID: Int, Answer: String)
@@ -31,6 +32,7 @@ class ModuleTestCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var option4Btn: UIButton!
     @IBOutlet weak var option4Label: UILabel!
     @IBOutlet weak var option4Image: UIImageView!
+    
     
         @IBAction func onClickOption1(_ sender: Any) {
             option1Btn.selectBtn()
@@ -106,8 +108,6 @@ class ModuleTestCollectionViewCell: UICollectionViewCell {
             option1Image.deselected()
             delegate?.save(QuestionID: QuestionInd!, Answer: option4Label.text!)
         }
-    
-        
     
 }
 extension UIButton {

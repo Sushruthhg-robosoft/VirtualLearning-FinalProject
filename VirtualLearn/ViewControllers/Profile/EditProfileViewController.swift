@@ -118,6 +118,18 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 //
 //
 //            }
+        editProfileViewModel.updateProfileData(profileImage: profilePhoto.image ?? #imageLiteral(resourceName: "icn_profile_menu"), token: shared.token, profiledata: profileData!) {
+            
+            
+            DispatchQueue.main.async {
+            //self.stopLoader(loader: loader)
+                self.AlertMessagePopup(message: "Profile updated successfully")
+                            
+            }
+            } fail: {
+                
+                
+            }
     }
        
             func updateEditProfileData() {
