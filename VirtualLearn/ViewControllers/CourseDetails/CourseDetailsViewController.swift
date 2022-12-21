@@ -152,7 +152,7 @@ class CourseDetailsViewController: UIViewController {
     
     @IBAction func onClickJoinCourse(_ sender: Any) {
         
-        shared.courseDetailsViewModelShared.joinCourse(token: shared.token, courseId: "19"){ data in
+        shared.courseDetailsViewModelShared.joinCourse(token: shared.token, courseId: "3"){ data in
             
             print(data)
             

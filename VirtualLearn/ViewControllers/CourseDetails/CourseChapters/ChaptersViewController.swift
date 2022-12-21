@@ -99,6 +99,7 @@ class ChaptersViewController: UIViewController {
          
             }
         } fail: {
+            self.stopLoader(loader: loader)
             print("failures")
         }
     }
