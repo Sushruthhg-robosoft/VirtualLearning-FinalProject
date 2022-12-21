@@ -168,37 +168,6 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
             cell.progressHeight.constant = 0
             cell.progressWidth.constant = 0
         }
-        
-        
-        
-        
-        
-//        cell.chapterName.text = dataoflesson[indexPath.section].lessonList[indexPath.row].lessonName
-//            cell.chapterNumber.text = "0\(String(dataoflesson[indexPath.section].lessonList[indexPath.row].lessonId))"
-//            cell.chapterDuration.text = "\(String(dataoflesson[indexPath.section].lessonList[indexPath.row].duration)) mins"
-//            cell.moduleTestView.isHidden = true
-//            cell.progressViewWidthContraint.constant = 0
-//            cell.cellLeadingConstraint.constant = 0
-//            cell.progressHeight.constant = 0
-//            cell.progressWidth.constant = 0
-//
-//         if dataoflesson[indexPath.section].assignmentResponse !=  nil{
-//            print("Data inside assesments")
-//            cell.moduleTestView.isHidden = false
-//            cell.chapterNumberView.isHidden = true
-//            cell.chapterNumber.isHidden = true
-//            cell.chapterName.text = dataoflesson[indexPath.section].assignmentResponse?.assignmentName
-//            cell.chapterNumber.text = "0\(String(dataoflesson[indexPath.section].assignmentResponse?.assignmentId ?? 0))"
-//            cell.chapterDuration.text = "\(String(dataoflesson[indexPath.section].assignmentResponse?.testDuration ?? 0)) mins"
-//            cell.moduleTestView.isHidden = true
-//            cell.progressViewWidthContraint.constant = 0
-//            cell.cellLeadingConstraint.constant = 0
-//            cell.progressHeight.constant = 0
-//            cell.progressWidth.constant = 0
-//
-//        }
-//        let assignment = dataoflesson[indexPath.row].assignmentResponse?.assignmentName
-//        print(14563212,assignment)
         return cell
     }
     
@@ -210,7 +179,19 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
         
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderView") as! HeaderView
         headerView.title.text = dataoflesson[section].chapterName
-        headerView.button.setImage(#imageLiteral(resourceName: "icn_chapter maximise"), for: .normal)
+        if(dataoflesson[section].chapterCompleted) {
+            headerView.title.textColor = UIColor(red: 30/255, green: 171/255, blue: 12/255, alpha: 1)
+        }
+        else {
+            headerView.title.textColor = UIColor(red: 55/255, green: 55/255, blue: 55/255, alpha: 1)
+        }
+        if(dataoflesson[section].isExpandable) {
+            headerView.button.setImage(#imageLiteral(resourceName: "icn_chapter minimise"), for: .normal)
+        }
+        else {
+            headerView.button.setImage(#imageLiteral(resourceName: "icn_chapter maximise"), for: .normal)
+        }
+        
         headerView.delegateForHeader = self
         headerView.secIndex = section
         return headerView

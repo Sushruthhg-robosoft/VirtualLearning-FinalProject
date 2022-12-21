@@ -17,7 +17,7 @@ class HomeViewModel {
     
     func getBanners(token: String, completion: @escaping([String]) -> Void, fail: @escaping () -> Void){
         banners.removeAll()
-        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/banner")!
+        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/banner")!
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -44,7 +44,7 @@ class HomeViewModel {
     func getAllCourseDeatils(token: String,completion: @escaping([HomeCourse]) -> Void, fail: @escaping () -> Void){
         
         allCourse.removeAll()
-        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/courses?limit=5&page=1")!
+        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/courses?limit=5&page=1")!
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -82,7 +82,7 @@ class HomeViewModel {
     func getPopularCourseDetails(token: String,completion: @escaping([HomeCourse]) -> Void, fail: @escaping () -> Void){
         allCourse.removeAll()
         
-        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/popularCourse?limit=5&page=1")!
+        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/popularCourse?limit=5&page=1")!
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -118,7 +118,7 @@ class HomeViewModel {
     func getNewestCourseDetails(token: String,completion: @escaping([HomeCourse]) -> Void, fail: @escaping () -> Void){
         allCourse.removeAll()
         
-        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/newestCourse?limit=5&page=1")!
+        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/newestCourse?limit=5&page=1")!
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -156,7 +156,7 @@ class HomeViewModel {
         print("getPopularCourseCategory1Details")
         topCourseCategory1.removeAll()
         
-        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/course/category1?limit=5&page=1")!
+        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/course/category1?limit=5&page=1")!
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -193,7 +193,7 @@ class HomeViewModel {
     func getPopularCourseCategory2Details(token: String,completion: @escaping([TopCourseCategory]) -> Void, fail: @escaping () -> Void){
         topCourseCategory2.removeAll()
         
-        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/course/category2?limit=5&page=1")!
+        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/course/category2?limit=5&page=1")!
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
