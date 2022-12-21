@@ -1889,6 +1889,9 @@
                                                         <state key="normal" title="Logout" image="icn_logout_menu-Power buttom">
                                                             <color key="titleColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="onClickLogOut:" destination="Rr8-72-PnA" eventType="touchUpInside" id="znj-Rv-BvL"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -4411,6 +4414,9 @@
                                                                         <real key="value" value="4.7999999999999998"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="onclickSubmit:" destination="VzV-8G-Li0" eventType="touchUpInside" id="MwH-45-V8Q"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.16862745100000001" green="0.70980392160000005" blue="0.95686274510000002" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>

@@ -81,4 +81,10 @@ class HamburgerViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func onClickLogOut(_ sender: Any) {
+        
+        let vc = storyboard?.instantiateViewController(identifier: "ModuleTestViewController") as! ModuleTestViewController
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
