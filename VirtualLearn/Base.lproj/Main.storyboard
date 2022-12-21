@@ -2232,7 +2232,7 @@
             <objects>
                 <viewController storyboardIdentifier="NewUserMyCourseViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xN5-0k-xZF" customClass="NewUserMyCourseViewController" customModule="VirtualLearn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3lO-QP-sOL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="509"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="509.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="18f-l1-gKm">
@@ -7104,7 +7104,7 @@
                                         </constraints>
                                     </view>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJI-jT-mVi">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1643"/>
                                         <connections>
                                             <segue destination="CWZ-hf-ahz" kind="embed" identifier="switch" id="RmW-zN-Sfg"/>
                                         </connections>
@@ -7152,6 +7152,7 @@
                         <outlet property="instructorName" destination="0l0-r3-IWf" id="jla-Hl-LlT"/>
                         <outlet property="instructorOccupation" destination="6wM-l0-SG4" id="Whn-du-inD"/>
                         <outlet property="introductionDuration" destination="YAL-1U-EOk" id="x3n-bX-cFP"/>
+                        <outlet property="joinCourseButton" destination="uwR-lR-zy4" id="FZZ-8a-ryV"/>
                         <outlet property="overViewBtn" destination="Urk-x6-oj8" id="Hke-fJ-1uj"/>
                         <outlet property="overViewScrollView" destination="5cl-4O-0if" id="n3U-wd-cRh"/>
                         <outlet property="overViewUnderLineView" destination="rYX-Pl-Kdt" id="ev3-bL-G46"/>
@@ -8088,11 +8089,11 @@
             <objects>
                 <viewController storyboardIdentifier="ChaptersViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CWZ-hf-ahz" customClass="ChaptersViewController" customModule="VirtualLearn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="twS-ur-FOy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1643"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3iU-qK-2hl">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1643"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VmF-ZA-U7f">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1492"/>
