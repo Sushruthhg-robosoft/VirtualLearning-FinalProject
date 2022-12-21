@@ -16,7 +16,7 @@ class CreateNewPasswordViewController: UIViewController {
     
     var mobileNumber = ""
     override func viewDidLoad() {
- 
+        
         super.viewDidLoad()
         passwordView.isHidden = true
         passwordView.layer.cornerRadius = 10
@@ -30,23 +30,23 @@ class CreateNewPasswordViewController: UIViewController {
         passwordView.isHidden = true
     }
     
-
+    
     @IBAction func confirmPasswordChangedBegin(_ sender: Any) {
         confirmPasswordLine.backgroundColor = #colorLiteral(red: 0.01568627451, green: 0.1725490196, blue: 0.3607843137, alpha: 1)
     }
     
     @IBAction func passwordEditing(_ sender: Any) {
         if newPasswordTextField.text == confirmPasswordTextField.text {
-                   resetPasswordBtn.isEnabled = true
-                   resetPasswordBtn.backgroundColor =  #colorLiteral(red: 0.9553547502, green: 0.4519486427, blue: 0.372556448, alpha: 1)
-                   resetPasswordBtn.alpha = 1
-               }
+            resetPasswordBtn.isEnabled = true
+            resetPasswordBtn.backgroundColor =  #colorLiteral(red: 0.9553547502, green: 0.4519486427, blue: 0.372556448, alpha: 1)
+            resetPasswordBtn.alpha = 1
+        }
         else {
             resetPasswordBtn.isEnabled = false
             resetPasswordBtn.backgroundColor = #colorLiteral(red: 0.9553547502, green: 0.4519486427, blue: 0.372556448, alpha: 1)
             resetPasswordBtn.alpha = 0.7
         }
-
+        
         if let password = newPasswordTextField.text {
             if(password.count > 5)
             {
@@ -62,26 +62,26 @@ class CreateNewPasswordViewController: UIViewController {
     
     
     @IBAction func confirmPasswordEditChanged(_ sender: Any) {
-    
-    
-    if newPasswordTextField.text == confirmPasswordTextField.text {
-               resetPasswordBtn.isEnabled = true
-               resetPasswordBtn.backgroundColor =  #colorLiteral(red: 0.9553547502, green: 0.4519486427, blue: 0.372556448, alpha: 1)
-               resetPasswordBtn.alpha = 1
-           }
-    else {
-        resetPasswordBtn.isEnabled = false
-        resetPasswordBtn.backgroundColor = #colorLiteral(red: 0.9553547502, green: 0.4519486427, blue: 0.372556448, alpha: 1)
-        resetPasswordBtn.alpha = 0.7
+        
+        
+        if newPasswordTextField.text == confirmPasswordTextField.text {
+            resetPasswordBtn.isEnabled = true
+            resetPasswordBtn.backgroundColor =  #colorLiteral(red: 0.9553547502, green: 0.4519486427, blue: 0.372556448, alpha: 1)
+            resetPasswordBtn.alpha = 1
+        }
+        else {
+            resetPasswordBtn.isEnabled = false
+            resetPasswordBtn.backgroundColor = #colorLiteral(red: 0.9553547502, green: 0.4519486427, blue: 0.372556448, alpha: 1)
+            resetPasswordBtn.alpha = 0.7
+        }
     }
-}
-
+    
     @IBAction func resetPasswordButtonClicked(_ sender: Any) {
         let viewmodel = LoginViewModel()
         viewmodel.resetPassword(mobileNumber: "+91"+mobileNumber, password: "Hellllo1234"){
-
+            
         } fail: {
-
+            
         }
     }
     
@@ -89,6 +89,6 @@ class CreateNewPasswordViewController: UIViewController {
         let regular = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{6,}$"
         let predicate = NSPredicate(format: "SELF MATCHES %@", regular)
         return predicate.evaluate(with: value)
-
+        
     }
 }

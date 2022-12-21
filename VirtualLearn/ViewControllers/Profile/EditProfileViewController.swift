@@ -50,7 +50,6 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var dropDownButton: UIButton!
     @IBOutlet weak var dropDownView: UIView!
     @IBOutlet weak var maleGender: UIButton!
-    
     @IBOutlet weak var femaleGender: UIButton!
     @IBOutlet weak var otherGender: UIButton!
     
@@ -65,6 +64,10 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     var profileData: ProfileData?
     let profileViewModel = ProfileViewModel()
     let editProfileViewModel = EditProfileViewModel()
+    
+   
+    let shared = mainViewModel.mainShared
+    
     override func viewDidLoad() {
         
         emailField.text = profileData?.emailId
@@ -101,10 +104,38 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         }
     
     @IBAction func onClickSaveBtn(_ sender: Any) {
-//        editProfileViewModel.updateProfileData(profiledata: P, completion: <#T##() -> Void#>, fail: <#T##() -> Void#>)
+       // let loader = self.loader()
+        updateEditProfileData()
+        editProfileViewModel.updateProfileData(token: shared.token, profiledata: profileData!) {
+            
+            
+            DispatchQueue.main.async {
+            //self.stopLoader(loader: loader)
+                self.AlertMessagePopup(message: "Profile updated successfully")
+                            
+            }
+            } fail: {
+                
+                
+            }
     }
+       
+            func updateEditProfileData() {
+                
+                
+                
+                profileData?.emailId = emailField.text!
+                profileData?.fullName =  nameField.text!
+                profileData?.userName = userNameTextField.text!
+                profileData?.phoneNumber = mobileNoField.text!
+                profileData?.gender = genderField.text!
+                profileData?.dateOfBirth = dateOfBirth.text!
+                profileData?.facebookLink = facebookField.text!
+                profileData?.twitterLink = twitterField.text!
+                profileData?.occupation = occupationField.text!
+                
+            }
     
-   
     @IBAction func nameEdit(_ sender: Any) {
         nameView.backgroundColor = #colorLiteral(red: 0.001148699783, green: 0.2356859446, blue: 0.4366979599, alpha: 1)
     }
@@ -168,24 +199,18 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     @IBAction func backButtonTapped(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
+    
+    func AlertMessagePopup(message: String){
+        
+        let dialogMessage = UIAlertController(title: "Congrats!", message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+            self.dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
+         })
+        dialogMessage.addAction(ok)
+
+        self.present(dialogMessage, animated: true, completion: nil)
+    }
+        
+    
 }
-    
-
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
