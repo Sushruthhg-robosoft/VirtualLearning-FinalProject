@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import UIKit
 class EditProfileViewModel {
     var mainshared = mainViewModel.mainShared
     
-    func updateProfileData(token: String, profiledata: ProfileData, completion: @escaping () -> Void, fail: @escaping () -> Void) {
+    func updateProfileData(imageToUpdate: UIImage,token: String, profiledata: ProfileData, completion: @escaping () -> Void, fail: @escaping () -> Void) {
         let networkManager = NetWorkManager()
-        let urL = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/profile")!
+        guard let urL = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/profile") else{ return}
         var request = URLRequest(url: urL)
         request.httpMethod = "PATCH"
         let parameters: [String : Any] = [
