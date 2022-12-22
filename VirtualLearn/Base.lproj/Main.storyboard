@@ -545,7 +545,7 @@
                                                             <action selector="onclickSearchBtn:" destination="UYo-Eu-7OW" eventType="touchUpInside" id="pGZ-MW-Ftf"/>
                                                         </connections>
                                                     </button>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select course" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="27R-oH-LkP">
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select course" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="27R-oH-LkP" customClass="borderlessTextField" customModule="VirtualLearn" customModuleProvider="target">
                                                         <rect key="frame" x="46" y="3" width="221" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -576,11 +576,11 @@
                                                     <action selector="filterButton:" destination="UYo-Eu-7OW" eventType="touchUpInside" id="hKz-kB-q2C"/>
                                                 </connections>
                                             </button>
-                                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WCS-OY-zHF">
-                                                <rect key="frame" x="0.0" y="154" width="375" height="517"/>
+                                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WCS-OY-zHF">
+                                                <rect key="frame" x="0.0" y="154" width="375" height="770"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="517" id="cJW-cg-CgF"/>
+                                                    <constraint firstAttribute="height" constant="770" id="cJW-cg-CgF"/>
                                                 </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="92" id="gmG-RH-wv0" customClass="CourseDataTableViewCell" customModule="VirtualLearn" customModuleProvider="target">
@@ -934,6 +934,7 @@
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstItem="lFA-gf-wzK" firstAttribute="top" secondItem="1lr-gq-ite" secondAttribute="bottom" constant="8" id="CXP-2v-Yko"/>
+                                                            <constraint firstAttribute="height" constant="185" id="ErM-7X-RCP"/>
                                                             <constraint firstItem="ANM-EC-7eh" firstAttribute="leading" secondItem="lqC-By-xCA" secondAttribute="trailing" constant="5" id="I88-ih-hIf"/>
                                                             <constraint firstItem="1lr-gq-ite" firstAttribute="top" secondItem="lqC-By-xCA" secondAttribute="bottom" constant="8" id="MgY-VA-95j"/>
                                                             <constraint firstAttribute="trailing" secondItem="ANM-EC-7eh" secondAttribute="trailing" id="OtN-rh-csa"/>
@@ -998,7 +999,7 @@
                                             <constraint firstItem="OUF-63-6e9" firstAttribute="leading" secondItem="PUz-Yi-92N" secondAttribute="leading" constant="24" id="ufU-Ap-WjX"/>
                                             <constraint firstItem="WCS-OY-zHF" firstAttribute="leading" secondItem="PUz-Yi-92N" secondAttribute="leading" id="uvr-0I-BBP"/>
                                             <constraint firstItem="5aZ-0z-NRr" firstAttribute="top" secondItem="OUF-63-6e9" secondAttribute="bottom" constant="50" id="y0y-UN-FAt"/>
-                                            <constraint firstAttribute="bottom" secondItem="WCS-OY-zHF" secondAttribute="bottom" constant="253" id="zXe-jb-xfk"/>
+                                            <constraint firstAttribute="bottom" secondItem="WCS-OY-zHF" secondAttribute="bottom" id="zXe-jb-xfk"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1024,6 +1025,7 @@
                         <outlet property="CategoriesDisplayView" destination="UTh-Qw-cn5" id="cHc-5o-W1D"/>
                         <outlet property="CourseDetailsTableView" destination="WCS-OY-zHF" id="J7g-ZB-9fi"/>
                         <outlet property="InitialDisplayView" destination="03I-D2-X67" id="R75-Fu-U0N"/>
+                        <outlet property="categoriesViewHeight" destination="ErM-7X-RCP" id="VuU-Fa-X15"/>
                         <outlet property="fifthBtn" destination="MSZ-Vu-SU2" id="Yvo-rq-Bf4"/>
                         <outlet property="firstBtn" destination="0Yw-ZY-IIF" id="EW9-hU-FI3"/>
                         <outlet property="fourthBtn" destination="hYb-Gq-Aw7" id="iAv-Ea-Gxc"/>
@@ -2227,7 +2229,7 @@
             <objects>
                 <viewController storyboardIdentifier="NewUserMyCourseViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xN5-0k-xZF" customClass="NewUserMyCourseViewController" customModule="VirtualLearn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3lO-QP-sOL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="509"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="509.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="18f-l1-gKm">
