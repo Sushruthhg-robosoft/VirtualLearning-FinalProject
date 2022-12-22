@@ -231,23 +231,6 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
                 let url = URL(string: mainshared.categoriesViewModelShared.listofCategories[indexPath.row].categoryImage)
                 let data = try? Data(contentsOf: url!)
                 cell.categoryImage.image = UIImage(data: data!)
-            
-            
-//            for i in mainshared.categoriesViewModelShared.listofCategories{
-//                print(i.categotyName)
-//                cell.categoryName.text = i.categotyName
-//                let url = URL(string: i.categoryImage)
-//                let data = try? Data(contentsOf: url!)
-//                cell.categoryImage.image = UIImage(data: data!)
-//            }
-            
-            
-//            cell.cardTitle.text = mainShared.homeViewModelShared.allCourse[indexPath.row].categoryName
-//            cell.lessonName.text = mainShared.homeViewModelShared.allCourse[indexPath.row].courseName
-//            cell.numberOfChapters.text = "\(mainShared.homeViewModelShared.allCourse[indexPath.row].totalNumberOfChapters) Chapters"
-//            let url = URL(string: mainShared.homeViewModelShared.allCourse[indexPath.row].courseImage)
-//            let data = try? Data(contentsOf: url!)
-//            cell.lessonImage.image = UIImage(data: data!)
 
             return cell
             
@@ -260,6 +243,13 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         shared.delegate?.onClickChoiceofYourCourse()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
     }
     
 
