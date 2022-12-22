@@ -25,3 +25,10 @@ class ModuleTestData{
         
     }
 }
+
+struct QuestionModel {
+    var id: Int
+    var answer: String
+
+    var dictionary: [String: Any] { return ["questionId": id, "givenAnswer": answer] }
+}
