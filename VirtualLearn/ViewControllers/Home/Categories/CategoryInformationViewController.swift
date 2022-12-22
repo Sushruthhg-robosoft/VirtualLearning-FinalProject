@@ -78,6 +78,17 @@ class CategoryInformationViewController: UIViewController{
     
     }
     
+    @IBAction func onClickBack(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func onClickSearch(_ sender: Any) {
+        
+        let vc = storyboard?.instantiateViewController(identifier: "SearchViewController") as? SearchViewController
+        navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    
     private func initCollectionViewForTop(collectionView: UICollectionView) {
         let nib = UINib(nibName: "TopCourseSectionCollectionViewCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "TopCourseSectionCell")

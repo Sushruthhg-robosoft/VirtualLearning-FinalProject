@@ -23,8 +23,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6jH-R0-Xae">
                                 <rect key="frame" x="1" y="1" width="146" height="28"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhe-4F-chQ">
-                                        <rect key="frame" x="57.5" y="6.5" width="31" height="15"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhe-4F-chQ">
+                                        <rect key="frame" x="8" y="6.5" width="130" height="15"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -32,7 +32,9 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="fhe-4F-chQ" firstAttribute="leading" secondItem="6jH-R0-Xae" secondAttribute="leading" constant="8" id="7EA-lz-ZWx"/>
                                     <constraint firstItem="fhe-4F-chQ" firstAttribute="centerX" secondItem="6jH-R0-Xae" secondAttribute="centerX" id="RV6-LT-pjZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="fhe-4F-chQ" secondAttribute="trailing" constant="8" id="RZX-4d-VEW"/>
                                     <constraint firstItem="fhe-4F-chQ" firstAttribute="centerY" secondItem="6jH-R0-Xae" secondAttribute="centerY" id="iZO-n3-8Ik"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
