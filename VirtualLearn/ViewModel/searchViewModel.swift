@@ -86,5 +86,26 @@ class SearchViewModel {
             print(a)
         })
     }
+    func getAutoSearch(autoFill: String, completion: @escaping (String) -> (), fail: @escaping (Bool) ->()){
+        
+        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/autoSearch?keyWord=\(autoFill)")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        networkManeger.fetchData(request: request, completion: { (result) in
+            
+            print(result)
+            
+            guard let autoSearchResult = result as? [String] else{print("autosearchErr"); return}
+            print(autoSearchResult[0])
+            completion(autoSearchResult[0])
+            
+            
+            
+        }, failure: { (a) in
+            print(a)
+        })
+    }
     
 }

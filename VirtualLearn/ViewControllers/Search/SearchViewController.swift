@@ -74,42 +74,48 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    @IBAction func textFieldDIdChangeEditing(_ sender: Any) {
         shared.searchViewModelShared.searchOption = searchTextField.text!
-        shared.searchViewModelShared.getSearchResult { (result) in
-            DispatchQueue.main.async {
-                
-                if result.count != 0 {
-                    
-                    self.topSearchView.isHidden = true
-                    self.noDataDisplayView.isHidden = true
-                    self.CategoriesDisplayView.isHidden = true
-                    self.topSearchViewHeight.constant = 0
-                    self.noDataDisplayViewheight.constant = 0
-                    self.tableView.isHidden = false
-                    self.tableView.reloadData()
+                shared.searchViewModelShared.getSearchResult { (result) in
+                    DispatchQueue.main.async {
+                        
+                        if result.count != 0 {
+                            
+                            self.topSearchView.isHidden = true
+                            self.noDataDisplayView.isHidden = true
+                            self.CategoriesDisplayView.isHidden = true
+                            self.topSearchViewHeight.constant = 0
+                            self.noDataDisplayViewheight.constant = 0
+                            self.tableView.isHidden = false
+                            self.tableView.reloadData()
 
-                    
-                }else {
-                    self.tableView.isHidden = true
-                    self.topSearchView.isHidden = true
-                    self.topSearchViewHeight.constant = 0
-                    self.noDataDisplayView.isHidden = false
-                    self.noDataDisplayViewheight.constant = 417
-                    
+                            
+                        }else {
+                            self.tableView.isHidden = true
+                            self.topSearchView.isHidden = true
+                            self.topSearchViewHeight.constant = 0
+                            self.noDataDisplayView.isHidden = false
+                            self.noDataDisplayViewheight.constant = 417
+                            
+                        }
+                    }
+                } fail: { (fail) in
                 }
-            }
-        } fail: { (fail) in
-            DispatchQueue.main.async {
-                
-                self.topSearchView.isHidden = true
-                self.topSearchViewHeight.constant = 0
-                self.noDataDisplayView.isHidden = false
-                self.noDataDisplayViewheight.constant = 417
-            }
-            
-            
-        }
+        shared.searchViewModelShared.getAutoSearch(autoFill: self.searchTextField.text!) { (result) in
+                                  
+                                  DispatchQueue.main.async {
+                                     
+                                    self.searchTextField.placeholder = result
+                                }
+                        
+                              } fail: { (result) in
+                                  print(result)
+                              }
+    }
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
         
         
         return true
