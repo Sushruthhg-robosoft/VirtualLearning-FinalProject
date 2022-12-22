@@ -63,7 +63,7 @@ class NetWorkManager {
     
     
     func postData(url: String, requestMethod: String,profileImage:UIImage , parameters: [String: Any], token: String, headers: [String: String]?, completion: @escaping(Any? , Error?) -> Void) {
-        let imageData = profileImage.jpegData(compressionQuality: 0.1)
+        let imageData = profileImage.jpegData(compressionQuality: 0.9)
         let boundary = "Boundary-\(UUID().uuidString)"
         var request = URLRequest(url: URL(string: url)!)
         let httpBody = NSMutableData()
@@ -81,6 +81,8 @@ class NetWorkManager {
 //                      data.append(imageData)
 //                      data.append("\r\n".data(using: .utf8)!)
 //                  }
+        
+        
         if let image = imageData {
                     httpBody.append(convertFileData(fieldName: "profileImage",
                                                     fileName: "profile.jpeg",
@@ -97,10 +99,10 @@ class NetWorkManager {
             if let response = response as? HTTPURLResponse {
                 print(response.statusCode)
                 let data8 = String(data: data!, encoding: .utf8)!.components(separatedBy: .newlines)
-                print(data8)
+               print(data8,"fggh")
                 if (response.statusCode == 200 || response.statusCode == 201) {
                     let data = String(data: data!, encoding: .utf8)!.components(separatedBy: .newlines)
-                    completion(data[0],nil)
+                    completion([0],nil)
                 }
             }
             if error != nil {

@@ -52,8 +52,9 @@ class EditProfileViewModel {
 //
 //        request.setValue("Bearer \(mainshared.token)", forHTTPHeaderField: "Authorization")
 //
+        print(parameters)
         networkManager.postData(url: url, requestMethod: "PATCH", profileImage:profileImage,  parameters: parameters,token: token, headers: nil) { (result,error)  in
-            print(result)
+            print(result, "aaa")
         completion()
             
         }

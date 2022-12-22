@@ -64,8 +64,6 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     var profileData: ProfileData?
     let profileViewModel = ProfileViewModel()
     let editProfileViewModel = EditProfileViewModel()
-    
-   
     let shared = mainViewModel.mainShared
     
     override func viewDidLoad() {
@@ -75,7 +73,6 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         userNameTextField.text = profileData?.userName
         mobileNoField.text = profileData?.phoneNumber
         
-
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
         
@@ -98,7 +95,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
 
         profilePhoto.image = info[.originalImage] as? UIImage
-
+        
             self.dismiss(animated: true, completion: nil)
 
         }
@@ -120,21 +117,17 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 //            }
         editProfileViewModel.updateProfileData(profileImage: profilePhoto.image ?? #imageLiteral(resourceName: "icn_profile_menu"), token: shared.token, profiledata: profileData!) {
             
-            
             DispatchQueue.main.async {
             //self.stopLoader(loader: loader)
                 self.AlertMessagePopup(message: "Profile updated successfully")
                             
             }
             } fail: {
-                
-                
+             
             }
     }
        
             func updateEditProfileData() {
-                
-                
                 
                 profileData?.emailId = emailField.text!
                 profileData?.fullName =  nameField.text!
