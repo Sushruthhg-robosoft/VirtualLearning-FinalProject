@@ -10,17 +10,24 @@ import UIKit
 class LoadingViewController: UIViewController {
 
     private var onboardingSeen: Bool!
-     private let StorageManegr = StorageManeger()
-    
+    private let StorageManegr = StorageManeger.shared
+    private var loggedIn: Bool!
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
         onboardingSeen = StorageManegr.isOnboardingSeen()
+        loggedIn = StorageManegr.isLoggedIn()
         
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        showvc()
+        if loggedIn{
+            let vc = storyboard?.instantiateViewController(identifier: "HomeViewController") as? HomeViewController
+            navigationController?.pushViewController(vc!, animated: false)
+        }
+        else{
+            showvc()
+        }
     }
     
     private func showvc(){

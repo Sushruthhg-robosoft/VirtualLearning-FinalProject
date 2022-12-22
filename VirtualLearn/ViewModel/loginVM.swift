@@ -11,6 +11,8 @@ import UIKit
 
 class LoginViewModel {
     
+    private var storageManger = StorageManeger.shared
+    var user : String?
     func loginUser(userName: String, password: String, completion: @escaping (String) -> Void, fail: @escaping () -> Void) {
         let network = NetWorkManager()
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/auth/login")!
@@ -28,12 +30,14 @@ class LoginViewModel {
                 guard let name = tokenData?["name"] as? String else {print("tokenData error1");return}
                 guard let token = tokenData?["token"] as? String else {print("tokenData error2");return}
                 guard let  tokenInfo =  token.data(using: .utf8) else {print("tokenData error3");return}
-                
+                guard let id = tokenData?["id"] as? Int else{print("tokenData error4"); return}
                 shared.loginUserName = name
-                let keychain = KeyChain()
-                keychain.saveData(userName: userName, data: tokenInfo)
+                self.storageManger.setUsernameData(useriD: String(id))
                 
-                guard let receivedTokenData = keychain.loadData(userName: userName) else {return}
+                let keychain = KeyChain()
+                keychain.saveData(userId: String(id), data: tokenInfo)
+                
+                guard let receivedTokenData = keychain.loadData(userId: String(id)) else {return}
                 guard let receivedToken = String(data: receivedTokenData, encoding: .utf8) else { return }
                 print("token",receivedToken)
                 completion(token)
@@ -109,6 +113,40 @@ class LoginViewModel {
                 fail(userName)
             }
         
+    }
+    
+    func getUserName(authId: String, completion: @escaping () ->Void, fail: @escaping() -> Void){
+      
+        if authId == "nouserName"{
+            self.user = "Please Login"
+        }
+        else{
+            let network = NetWorkManager()
+            let url = URL(string:"https://app-virtuallearning-221207091853.azurewebsites.net/user/view/fullName")!
+            var request = URLRequest(url: url)
+            request.httpMethod = "GET"
+            request.setValue(authId, forHTTPHeaderField: "authId")
+            network.fetchData(request: request) { (data) in
+                print("yes")
+                guard let name = data as? [String] else{print("data error");return}
+                self.user = name[0]
+                completion()
+            } failure: { (failure) in
+                print(failure)
+                fail()
+            }
+        }
+
+
+        
+    }
+    
+    func logout(userId: String , token: String){
+        print(userId,token)
+        guard let  tokenInfo =  token.data(using: .utf8) else {print("tokenData error3");return}
+        
+        let keychain = KeyChain()
+        keychain.deletePassword(userId: storageManger.authId(), data: tokenInfo)
     }
     
 }

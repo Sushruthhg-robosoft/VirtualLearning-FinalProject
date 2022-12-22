@@ -2223,7 +2223,7 @@
             <objects>
                 <viewController storyboardIdentifier="NewUserMyCourseViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xN5-0k-xZF" customClass="NewUserMyCourseViewController" customModule="VirtualLearn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3lO-QP-sOL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="509"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="509.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="18f-l1-gKm">
@@ -6269,6 +6269,9 @@
                                 <state key="normal" title="Skip">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="onClickSkip:" destination="yEG-9w-pHZ" eventType="touchUpInside" id="cqr-8w-DF4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="o2o-Mm-hfe"/>

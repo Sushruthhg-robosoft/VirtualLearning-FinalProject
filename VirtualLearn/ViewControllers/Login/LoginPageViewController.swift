@@ -20,6 +20,7 @@ class LoginPageViewController: UIViewController {
     
     let loginviewModel = LoginViewModel()
     let shared = mainViewModel.mainShared
+    let storageManeger = StorageManeger.shared
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -92,6 +93,7 @@ class LoginPageViewController: UIViewController {
                 let vc = self.storyboard?.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
                 vc.mainShared.token = token
                 self.navigationController?.pushViewController(vc, animated: true)
+                self.storageManeger.setLoggedIn()
             }
         } fail: {
             self.stopLoader(loader: loader)
@@ -101,6 +103,7 @@ class LoginPageViewController: UIViewController {
                 self.passwordTextfield.text = ""
                 self.invalidMessage.text = "Invalid credentials, please try again"
                 self.passwordTextfield.becomeFirstResponder()
+                self.storageManeger.resetLoggedIn()
                 
             }
             
