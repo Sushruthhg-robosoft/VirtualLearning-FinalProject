@@ -224,7 +224,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 extension ProfileViewController: ImageUpdate {
     func updateImage(profilePhoto : UIImage) {
         
-//        self.profilePhotow.image = profilePhoto
+        self.profilePhoto.image = profilePhoto
       }
     }
 
