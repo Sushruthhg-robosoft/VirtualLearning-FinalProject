@@ -86,14 +86,15 @@ class ChaptersViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         let loader = self.loader()
         shared.chaptersDetailsViewModelShared.getChapters(token: shared.token, courseId: "3") { result in
-            if(result.joinedCourse) {
-                self.joinCourseButton.isHidden = true
-            }
-            else {
-                self.joinCourseButton.isHidden = false
-            }
+           
             DispatchQueue.main.async { [self] in
                 
+                if(result.joinedCourse) {
+                    self.joinCourseButton.isHidden = true
+                }
+                else {
+                    self.joinCourseButton.isHidden = false
+                }
                 let chapter = String(result.courseContentResponse.chapterCount) + "Chapter | "
                 let lesson = String(result.courseContentResponse.lessonCount) + "Lessons | "
                 let assesment = String(result.courseContentResponse.moduleTest) + "Assesment Test |"
@@ -103,7 +104,6 @@ class ChaptersViewController: UIViewController {
                 self.dataoflesson = result.lessonResponseList
                 self.stopLoader(loader: loader)
                 tableView.reloadData()
-         
             }
         } fail: {
             self.stopLoader(loader: loader)

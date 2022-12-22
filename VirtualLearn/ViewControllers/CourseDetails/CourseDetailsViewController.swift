@@ -153,8 +153,11 @@ class CourseDetailsViewController: UIViewController {
     @IBAction func onClickJoinCourse(_ sender: Any) {
         
         shared.courseDetailsViewModelShared.joinCourse(token: shared.token, courseId: "3"){ data in
-            DispatchQueue.main.async {
-                print(data)
+            DispatchQueue.main.async { [self] in
+                CourseChapterView.isHidden = false
+                CourseOverViewView.isHidden = true
+                overViewScrollView.isScrollEnabled = false
+                view.bringSubviewToFront(CourseChapterView)
             }
             
         }fail: {
