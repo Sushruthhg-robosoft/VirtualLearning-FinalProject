@@ -45,6 +45,11 @@
                                     <constraint firstItem="uEb-OZ-3HY" firstAttribute="leading" secondItem="Ekf-cV-7m5" secondAttribute="leading" id="yJF-Ox-pKM"/>
                                     <constraint firstAttribute="trailing" secondItem="Fvr-rE-LLo" secondAttribute="trailing" constant="2" id="zwY-tP-SXe"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.47843137254901957" green="0.47843137254901957" blue="0.47843137254901957" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
@@ -54,6 +59,11 @@
                             <constraint firstAttribute="bottom" secondItem="Ekf-cV-7m5" secondAttribute="bottom" constant="1" id="cAF-Vs-uXr"/>
                             <constraint firstAttribute="trailing" secondItem="Ekf-cV-7m5" secondAttribute="trailing" constant="1" id="dzQ-MV-iqd"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
             </view>
