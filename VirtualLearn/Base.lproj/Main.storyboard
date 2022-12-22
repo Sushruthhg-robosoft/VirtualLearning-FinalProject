@@ -1028,6 +1028,7 @@
                         <outlet property="noDataDisplayViewheight" destination="xEt-ET-OFi" id="pfI-Jr-FUi"/>
                         <outlet property="searchTextField" destination="27R-oH-LkP" id="TNh-wz-PKp"/>
                         <outlet property="secondBtn" destination="K6N-BJ-jUu" id="nMn-BF-KCR"/>
+                        <outlet property="tableView" destination="WCS-OY-zHF" id="kTV-Ka-mfA"/>
                         <outlet property="thirdBtn" destination="ej2-Fb-M7e" id="jvh-ZW-bvb"/>
                         <outlet property="topSearchView" destination="iQA-qm-YVq" id="HVu-H6-v5o"/>
                         <outlet property="topSearchViewHeight" destination="FaN-KT-3UH" id="fvq-w2-0ee"/>

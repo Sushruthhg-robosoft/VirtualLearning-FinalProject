@@ -7,9 +7,16 @@
 
 import UIKit
 
+protocol SearchResponse {
+    func modallySearchResult()
+    func modallyNil()
+}
+
 class ModallyViewController: UIViewController {
     
     let shared = mainViewModel.mainShared
+    
+    var delegate : SearchResponse?
     
     var searchField = ""
     
@@ -298,6 +305,19 @@ class ModallyViewController: UIViewController {
         shared.searchViewModelShared.searchOption = searchField
         shared.searchViewModelShared.getSearchResult { (result) in
             print(result)
+        
+            DispatchQueue.main.async {
+                
+                if result.count != 0 {
+                    
+                    self.delegate?.modallySearchResult()
+                    
+                }else {
+                  
+                    self.delegate?.modallyNil()
+                }
+            }
+            
         } fail: { (fail) in
             print(fail)
         }
