@@ -31,7 +31,8 @@ class MyCourseViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        newUserContainerView.isHidden = true
+        newUserContainerView.isHidden = false
+        newUserView.isHidden = false
         super.viewDidLoad()
         
 
