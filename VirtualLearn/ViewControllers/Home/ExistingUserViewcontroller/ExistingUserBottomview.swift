@@ -36,6 +36,7 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
     }
     
     required init?(coder: NSCoder) {
+
         super.init(coder: coder)
         UINib(nibName: "ExistingUserBottomview", bundle: nil).instantiate(withOwner: self, options: nil)
         addSubview(backView)
@@ -60,9 +61,11 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
         }
         
         mainshared.categoriesViewModelShared.getCategories(token: mainshared.token) {
-            print("insideFunction")
+            print("inside Existing Function")
             DispatchQueue.main.async {
-                print("inside Dispatch")
+                print("inside Existing Dispatch")
+                print(self.mainshared.categoriesViewModelShared.listofCategories.count)
+
 
                 self.categoriesCollectionView.reloadData()
             }

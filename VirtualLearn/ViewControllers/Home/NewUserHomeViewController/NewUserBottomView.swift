@@ -100,6 +100,7 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
             print("insideFunction")
             DispatchQueue.main.async {
                 print("inside Dispatch")
+                print(self.mainshared.categoriesViewModelShared.listofCategories.count)
 
                 self.categoriesCollectionView.reloadData()
             }

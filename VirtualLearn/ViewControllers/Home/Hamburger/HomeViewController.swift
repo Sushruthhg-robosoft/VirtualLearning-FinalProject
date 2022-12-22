@@ -25,7 +25,10 @@ class HomeViewController: UIViewController {
     var mainShared = mainViewModel.mainShared
     var hamburgerViewController: HamburgerViewController?
     override func viewDidLoad() {
+//        mainShared.categoriesViewModelShared.listofCategories.removeAll()
         
+        
+
         
        // print("sdcfewfdfeferrer\(userName)")
         self.hamburgerView.isHidden = true
