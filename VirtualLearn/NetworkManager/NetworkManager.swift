@@ -62,10 +62,13 @@ class NetWorkManager {
     }
     
     
-    func postData(url: String, requestMethod: String,profileImage:UIImage , parameters: [String: Any], token: String, headers: [String: String]?, completion: @escaping(Any? , Error?) -> Void) {
-       let imageData = profileImage.jpegData(compressionQuality: 0.9)
+    func postData(url: String, requestMethod: String, profileImage:UIImage?, parameters: [String: Any], token: String, headers: [String: String]?, completion: @escaping(Any? , Error?) -> Void) {
+       let imageData = profileImage?.jpegData(compressionQuality: 0.9)
         let boundary = "Boundary-\(UUID().uuidString)"
         var request = URLRequest(url: URL(string: url)!)
+        request.httpMethod = requestMethod
+                request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+                request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         let httpBody = NSMutableData()
         
         for (key, value) in parameters {
@@ -83,6 +86,34 @@ class NetWorkManager {
 //                  }
         
         print(httpBody)
+        
+//        let fieldName = "profileImage"
+//        if let imageData = profileImage?.jpegData(compressionQuality: 1.0) {
+//            httpBody.append("--\(boundary)\r\n".data(using: .utf8)!)
+//            httpBody.append("Content-Disposition: form-data; name=\"\(fieldName)\"; filename=\"image.jpg\"\r\n".data(using: .utf8)!)
+//            httpBody.append("Content-Type: image/jpeg\r\n\r\n".data(using: .utf8)!)
+//            httpBody.append(imageData)
+//            httpBody.append("\r\n".data(using: .utf8)!)
+//        }
+//        let fieldName = "profileImage"
+//
+//                    // Append the image to the body of the request
+//
+//                    if let imageData = profileImage!.jpegData(compressionQuality: 1) {
+//
+//                        httpBody.append("--\(boundary)\r\n".data(using: .utf8)!)
+//
+//                        httpBody.append("Content-Disposition: form-data; name=\"\(fieldName)\"; filename=\"image.jpg\"\r\n".data(using: .utf8)!)
+//
+//                        httpBody.append("Content-Type: image/jpeg\r\n\r\n".data(using: .utf8)!)
+//
+//                        httpBody.append(imageData)
+//
+//                        httpBody.append("\r\n".data(using: .utf8)!)
+//                        httpBody.appendString("--\(boundary)--")
+//
+//
+//                    }
         if let image = imageData {
                     httpBody.append(convertFileData(fieldName: "profileImage",
                                                     fileName: "profile.jpeg",
@@ -91,12 +122,13 @@ class NetWorkManager {
                                                     using: boundary))}
         let image = photoDataToFormData(data: imageData!, boundary: boundary, fileName: "profile.jpeg")
         httpBody.append(image as Data)
-        request.httpMethod = requestMethod
-        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         httpBody.appendString("--\(boundary)--")
+
+        
         request.httpBody = httpBody as Data
         request.allHTTPHeaderFields = headers
+        
+        
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let response = response as? HTTPURLResponse {
                 print(response.statusCode)
@@ -114,6 +146,7 @@ class NetWorkManager {
             }
         }.resume()
     }
+
     
     func requestData(request: URLRequest,completion: @escaping (Any) -> (), failure: @escaping (Any) -> ()) {
         URLSession.shared.dataTask(with: request) { data, response, error in

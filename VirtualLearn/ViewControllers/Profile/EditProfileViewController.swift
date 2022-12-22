@@ -118,6 +118,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         editProfileViewModel.updateProfileData(profileImage: profilePhoto.image ?? #imageLiteral(resourceName: "icn_profile_menu"), token: shared.token, profiledata: profileData!) {
             
             DispatchQueue.main.async {
+                print(self.profileData)
             //self.stopLoader(loader: loader)
                 self.AlertMessagePopup(message: "Profile updated successfully")
                             
@@ -138,7 +139,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
                 profileData?.facebookLink = facebookField.text!
                 profileData?.twitterLink = twitterField.text!
                 profileData?.occupation = occupationField.text!
-                
+//                profileData?.profilePic = String(profilePhoto.image)
+               
             }
     
     @IBAction func nameEdit(_ sender: Any) {
@@ -216,7 +218,13 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 
         self.present(dialogMessage, animated: true, completion: nil)
     }
-
-        
-    
+ 
 }
+
+extension ProfileViewController: ImageUpdate {
+    func updateImage(profilePhoto : UIImage) {
+        
+//        self.profilePhotow.image = profilePhoto
+      }
+    }
+

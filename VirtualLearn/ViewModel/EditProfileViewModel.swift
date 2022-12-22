@@ -22,7 +22,7 @@ class EditProfileViewModel {
             "emailId" : profiledata.emailId,
             "occupation" : profiledata.occupation!,
             "gender" : profiledata.gender!,
-            "dateOfBirth" : profiledata.dateOfBirth!,
+            "dateOfBirth" : "2000-05-31",
             "twitterLink" : profiledata.twitterLink!,
             "facebookLink" : profiledata.facebookLink!,
             
@@ -53,7 +53,7 @@ class EditProfileViewModel {
 //        request.setValue("Bearer \(mainshared.token)", forHTTPHeaderField: "Authorization")
 //
         print(parameters)
-        networkManager.postData(url: url, requestMethod: "PATCH", profileImage:profileImage,  parameters: parameters,token: token, headers: nil) { (result,error)  in
+        networkManager.postData(url: url, requestMethod: "PATCH", profileImage: profileImage,  parameters: parameters,token: token, headers: nil) { (result,error)  in
             print(result, "aaa")
         completion()
             
