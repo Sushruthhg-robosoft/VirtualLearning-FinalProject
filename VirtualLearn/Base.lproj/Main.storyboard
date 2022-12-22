@@ -2516,10 +2516,16 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWi-qi-6R9">
                                                         <rect key="frame" x="24" y="-3" width="22" height="22"/>
                                                         <state key="normal" image="icn_back_header-2"/>
+                                                        <connections>
+                                                            <action selector="onClickBack:" destination="hiL-pJ-uXY" eventType="touchUpInside" id="bD1-9j-hnw"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSz-oV-avA">
                                                         <rect key="frame" x="332" y="0.0" width="18" height="20"/>
                                                         <state key="normal" image="icn_search-Search"/>
+                                                        <connections>
+                                                            <action selector="onClickSearch:" destination="hiL-pJ-uXY" eventType="touchUpInside" id="Cpj-2R-34f"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
