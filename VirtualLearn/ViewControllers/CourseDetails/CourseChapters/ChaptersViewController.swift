@@ -39,6 +39,13 @@ class ChaptersViewController: UIViewController {
     @IBOutlet weak var sourseContentDescription: UILabel!
     @IBOutlet weak var joinCourseButton: UIButton!
     
+    @IBOutlet weak var certficateView: UIView!
+    @IBOutlet weak var certificateGrade: UILabel!
+    @IBOutlet weak var joinedDate: UILabel!
+    @IBOutlet weak var completedDate: UILabel!
+    @IBOutlet weak var totalDuration: UILabel!
+    @IBOutlet weak var certificateImage: UIImageView!
+    
     var delegate : switchVc?
     var dataoflesson = [LessonResponseList]()
     override func viewDidLoad() {
@@ -104,6 +111,7 @@ class ChaptersViewController: UIViewController {
                 self.sourseContentDescription.text = chapter + lesson + assesment + totalLength
                 self.dataoflesson = result.lessonResponseList
                 self.stopLoader(loader: loader)
+                
                 tableView.reloadData()
             }
         } fail: {

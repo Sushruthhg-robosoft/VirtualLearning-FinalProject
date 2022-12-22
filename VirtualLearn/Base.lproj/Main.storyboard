@@ -8567,7 +8567,7 @@
                                                                             </constraints>
                                                                         </imageView>
                                                                     </subviews>
-                                                                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="82" id="Ed4-ad-vbs"/>
                                                                         <constraint firstItem="JYh-yz-bbq" firstAttribute="leading" secondItem="8gP-MC-Cdj" secondAttribute="leading" id="YBY-4T-TXZ"/>
@@ -8889,12 +8889,17 @@
                         <outlet property="ContinuationLabelHeightContraint" destination="lOj-Hs-VQV" id="wAw-Jq-6NT"/>
                         <outlet property="ContinuationLabelconstraint" destination="91b-9Q-pTi" id="E0X-RZ-zMt"/>
                         <outlet property="CourseContentConstraint" destination="Mln-4O-IhT" id="ajy-lf-38i"/>
+                        <outlet property="certficateView" destination="CMl-lq-P4W" id="OUl-UL-lVr"/>
+                        <outlet property="certificateGrade" destination="3AI-h3-gJw" id="sR2-g1-VQC"/>
+                        <outlet property="certificateImage" destination="Jv0-5d-UcN" id="Gud-wG-ScL"/>
                         <outlet property="chaptersBtn" destination="VKp-tl-qyn" id="8bU-GS-4CZ"/>
                         <outlet property="chaptersUnderLineView" destination="U7G-DD-Jbq" id="2ch-jK-eMs"/>
+                        <outlet property="completedDate" destination="4dx-UU-1VR" id="ZFA-vQ-RIo"/>
                         <outlet property="courseCategory" destination="YNn-04-TzE" id="805-Ah-DVq"/>
                         <outlet property="courseHeading" destination="7fJ-uA-ljs" id="hep-wO-NQc"/>
                         <outlet property="courseLessonAndChapters" destination="Chv-25-5C5" id="SW1-kl-lcA"/>
                         <outlet property="joinCourseButton" destination="iTM-07-o90" id="jXc-9A-H7z"/>
+                        <outlet property="joinedDate" destination="dqv-DF-n9t" id="WO0-Ql-bxP"/>
                         <outlet property="joinedLeftView" destination="Fp5-pN-ITM" id="Kzg-Xo-etk"/>
                         <outlet property="joinedRightView" destination="iAf-lz-T32" id="NMP-DS-4e7"/>
                         <outlet property="joinedView" destination="mef-fP-wmw" id="BZw-54-4IY"/>
@@ -8902,6 +8907,7 @@
                         <outlet property="overViewUnderLineView" destination="d1i-CN-0eo" id="spp-hy-ZFB"/>
                         <outlet property="sourseContentDescription" destination="MTk-uE-osJ" id="HM6-ub-v79"/>
                         <outlet property="tableView" destination="97k-ge-eLi" id="nQv-Gz-6Av"/>
+                        <outlet property="totalDuration" destination="cm1-c3-rcs" id="EJW-pN-pCk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nGe-hV-Woi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -9016,9 +9022,6 @@
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
