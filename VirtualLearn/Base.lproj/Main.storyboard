@@ -997,7 +997,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YB9-hZ-MWM">
-                                <rect key="frame" x="24" y="282.5" width="175" height="20"/>
+                                <rect key="frame" x="24" y="288.5" width="175" height="20"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="4UF-5z-dZm">
                                         <rect key="frame" x="0.0" y="2" width="16" height="16"/>
@@ -1028,22 +1028,23 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwq-S4-ecB">
-                                <rect key="frame" x="66" y="176.5" width="285" height="72"/>
+                                <rect key="frame" x="66" y="176.5" width="285" height="78"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="49w-ND-7v5">
-                                        <rect key="frame" x="0.0" y="0.0" width="285" height="27"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="285" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Push Notification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqP-mX-we8">
-                                                <rect key="frame" x="0.0" y="0.0" width="124" height="19.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="124" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gob-gK-p8x">
-                                                <rect key="frame" x="241" y="0.0" width="36" height="27"/>
+                                                <rect key="frame" x="241" y="0.0" width="36" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="36" id="chZ-lg-nmw"/>
+                                                    <constraint firstAttribute="height" constant="30" id="zNC-6p-jCL"/>
                                                 </constraints>
                                                 <state key="normal" image="btn_on"/>
                                                 <connections>
@@ -1056,15 +1057,16 @@
                                             <constraint firstItem="Gob-gK-p8x" firstAttribute="bottom" secondItem="QKe-TN-PPX" secondAttribute="bottom" id="26m-ll-5xw"/>
                                             <constraint firstItem="QKe-TN-PPX" firstAttribute="trailing" secondItem="Gob-gK-p8x" secondAttribute="trailing" constant="8" id="30r-Yh-MpI"/>
                                             <constraint firstItem="jqP-mX-we8" firstAttribute="leading" secondItem="QKe-TN-PPX" secondAttribute="leading" id="Ae1-VJ-MJs"/>
-                                            <constraint firstItem="Gob-gK-p8x" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jqP-mX-we8" secondAttribute="trailing" constant="8" symbolic="YES" id="Fk0-ub-0zJ"/>
+                                            <constraint firstAttribute="height" constant="30" id="K1D-NY-XSN"/>
                                             <constraint firstItem="jqP-mX-we8" firstAttribute="top" secondItem="49w-ND-7v5" secondAttribute="top" id="P92-Dx-UKV"/>
                                             <constraint firstItem="Gob-gK-p8x" firstAttribute="top" secondItem="49w-ND-7v5" secondAttribute="top" id="RZi-4R-oSV"/>
-                                            <constraint firstAttribute="height" constant="27" id="cbf-pr-TZD"/>
                                             <constraint firstItem="Gob-gK-p8x" firstAttribute="top" secondItem="QKe-TN-PPX" secondAttribute="top" id="gZI-xe-Cee"/>
+                                            <constraint firstItem="Gob-gK-p8x" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jqP-mX-we8" secondAttribute="trailing" constant="8" symbolic="YES" id="pGp-e5-cDw"/>
+                                            <constraint firstItem="Gob-gK-p8x" firstAttribute="centerY" secondItem="jqP-mX-we8" secondAttribute="centerY" id="vDG-ST-byV"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i1p-GA-g92">
-                                        <rect key="frame" x="0.0" y="45" width="285" height="27"/>
+                                        <rect key="frame" x="0.0" y="48" width="285" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification Sound" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7l-6S-Dbf">
                                                 <rect key="frame" x="0.0" y="0.0" width="134.5" height="20"/>
@@ -1074,10 +1076,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nMx-86-fWu">
-                                                <rect key="frame" x="241" y="0.0" width="36" height="27"/>
+                                                <rect key="frame" x="241" y="0.0" width="36" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="36" id="0Fc-xU-kT4"/>
-                                                    <constraint firstAttribute="height" constant="27" id="1XX-Bj-WN3"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="27" id="6He-4R-6rq"/>
                                                     <constraint firstAttribute="width" constant="36" id="iFL-Ac-OiH"/>
                                                 </constraints>
                                                 <state key="normal" image="btn_on"/>
@@ -1092,7 +1094,7 @@
                                             <constraint firstItem="7HQ-sl-Z9Y" firstAttribute="bottom" secondItem="nMx-86-fWu" secondAttribute="bottom" id="Gtd-Id-tgX"/>
                                             <constraint firstItem="u7l-6S-Dbf" firstAttribute="leading" secondItem="7HQ-sl-Z9Y" secondAttribute="leading" id="HCD-4q-ffE"/>
                                             <constraint firstItem="u7l-6S-Dbf" firstAttribute="top" secondItem="7HQ-sl-Z9Y" secondAttribute="top" id="KAL-y2-Cs7"/>
-                                            <constraint firstAttribute="height" constant="27" id="gzV-Xv-tVU"/>
+                                            <constraint firstAttribute="height" constant="30" id="gzV-Xv-tVU"/>
                                             <constraint firstItem="7HQ-sl-Z9Y" firstAttribute="trailing" secondItem="nMx-86-fWu" secondAttribute="trailing" constant="8" id="hoX-z1-s1q"/>
                                             <constraint firstItem="u7l-6S-Dbf" firstAttribute="leading" secondItem="7HQ-sl-Z9Y" secondAttribute="leading" id="kh5-XI-asf"/>
                                             <constraint firstItem="nMx-86-fWu" firstAttribute="top" secondItem="i1p-GA-g92" secondAttribute="top" id="uhU-TA-89g"/>
@@ -1104,14 +1106,14 @@
                                     <constraint firstItem="i1p-GA-g92" firstAttribute="leading" secondItem="gwq-S4-ecB" secondAttribute="leading" id="NCt-gt-HyW"/>
                                     <constraint firstItem="49w-ND-7v5" firstAttribute="top" secondItem="gwq-S4-ecB" secondAttribute="top" id="WV7-Qq-ivD"/>
                                     <constraint firstItem="49w-ND-7v5" firstAttribute="leading" secondItem="gwq-S4-ecB" secondAttribute="leading" id="ad8-et-Nyl"/>
-                                    <constraint firstAttribute="height" constant="72" id="bjN-jy-GnW"/>
+                                    <constraint firstAttribute="height" constant="78" id="bjN-jy-GnW"/>
                                     <constraint firstItem="i1p-GA-g92" firstAttribute="top" secondItem="49w-ND-7v5" secondAttribute="bottom" constant="18" id="mK7-1Z-g3P"/>
                                     <constraint firstAttribute="trailing" secondItem="i1p-GA-g92" secondAttribute="trailing" id="sEC-cw-Sue"/>
                                     <constraint firstAttribute="trailing" secondItem="49w-ND-7v5" secondAttribute="trailing" id="zkX-M1-ei8"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gEw-z5-mMo">
-                                <rect key="frame" x="24" y="336.5" width="175" height="20"/>
+                                <rect key="frame" x="24" y="342.5" width="175" height="20"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_TS-File" translatesAutoresizingMaskIntoConstraints="NO" id="u5r-i3-rok">
                                         <rect key="frame" x="0.0" y="2" width="16" height="16"/>
@@ -1175,7 +1177,7 @@
                         <outlet property="notificationSoundViewHeight" destination="gzV-Xv-tVU" id="oGg-1t-Vgy"/>
                         <outlet property="pushNotificationBtn" destination="Gob-gK-p8x" id="Mh9-Q4-xTy"/>
                         <outlet property="pushNotificationView" destination="49w-ND-7v5" id="47j-Du-d5k"/>
-                        <outlet property="pushNotoficationViewheight" destination="cbf-pr-TZD" id="PHb-GV-6NB"/>
+                        <outlet property="pushNotoficationViewheight" destination="K1D-NY-XSN" id="io6-e3-6PU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="llR-9N-6II" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1773,8 +1775,8 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="PSs-ic-iUK">
                                                 <rect key="frame" x="8" y="218" width="159" height="290"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9E-He-0ZY" customClass="customHabButtons" customModule="VirtualLearn" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="59" height="20"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9E-He-0ZY" customClass="customHabButtons" customModule="VirtualLearn" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="159" height="20"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                         <state key="normal" title="Home" image="icn_home_menu-Home">
                                                             <color key="titleColor" red="0.91764705879999997" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -1783,8 +1785,8 @@
                                                             <action selector="onClickHome:" destination="Rr8-72-PnA" eventType="touchUpInside" id="HnT-8a-ItY"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHF-1E-mLy" customClass="customHabButtons" customModule="VirtualLearn" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="54" width="92" height="20"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHF-1E-mLy" customClass="customHabButtons" customModule="VirtualLearn" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="54" width="159" height="20"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                         <state key="normal" title="My Course" image="icn_course_menu-Briefcase">
                                                             <color key="titleColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
@@ -1793,8 +1795,8 @@
                                                             <action selector="onClickMyCourse:" destination="Rr8-72-PnA" eventType="touchUpInside" id="WCw-UX-N7W"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daD-yF-4kg" customClass="customHabButtons" customModule="VirtualLearn" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="108" width="88" height="20"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daD-yF-4kg" customClass="customHabButtons" customModule="VirtualLearn" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="108" width="159" height="20"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                         <state key="normal" title="My Profile" image="icn_profile_menu">
                                                             <color key="titleColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
@@ -1829,8 +1831,8 @@
                                                             </label>
                                                         </subviews>
                                                     </stackView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBi-Nc-K0O" customClass="customHabButtons" customModule="VirtualLearn" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="216" width="73" height="20"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBi-Nc-K0O" customClass="customHabButtons" customModule="VirtualLearn" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="216" width="159" height="20"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                         <state key="normal" title="Settings" image="icn_settings_menu-Settings">
                                                             <color key="titleColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
@@ -1839,8 +1841,8 @@
                                                             <action selector="onClickSettings:" destination="Rr8-72-PnA" eventType="touchUpInside" id="Ibk-hh-ADt"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Kv-Hi-Z0Y" customClass="customHabButtons" customModule="VirtualLearn" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="270" width="65" height="20"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Kv-Hi-Z0Y" customClass="customHabButtons" customModule="VirtualLearn" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="270" width="159" height="20"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                         <state key="normal" title="Logout" image="icn_logout_menu-Power buttom">
                                                             <color key="titleColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
@@ -1850,6 +1852,13 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="o9E-He-0ZY" secondAttribute="trailing" id="CwQ-3x-ChF"/>
+                                                    <constraint firstAttribute="trailing" secondItem="dHF-1E-mLy" secondAttribute="trailing" id="UJS-2U-dQw"/>
+                                                    <constraint firstAttribute="trailing" secondItem="5Kv-Hi-Z0Y" secondAttribute="trailing" id="l6t-pY-ueA"/>
+                                                    <constraint firstAttribute="trailing" secondItem="bBi-Nc-K0O" secondAttribute="trailing" id="nV2-Ia-FR3"/>
+                                                    <constraint firstAttribute="trailing" secondItem="daD-yF-4kg" secondAttribute="trailing" id="wlD-NU-mPn"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -6891,6 +6900,9 @@
                                                     <constraint firstAttribute="width" constant="14" id="at6-6F-Qkp"/>
                                                 </constraints>
                                                 <state key="normal" image="icn_close_white"/>
+                                                <connections>
+                                                    <action selector="onClickCancel:" destination="mnL-Rd-aKA" eventType="touchUpInside" id="hQy-hf-pnf"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Learn Figma - UI/UX Design Essential Training" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIS-ma-pRu">
                                                 <rect key="frame" x="24" y="108" width="335" height="62.5"/>
