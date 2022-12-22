@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 class EditProfileViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
-    @IBOutlet weak var backgroundProfile: UIView!
-    @IBOutlet weak var profilePhoto: UIImageView!
     
+    @IBOutlet weak var profilePhoto: UIImageView!
+    @IBOutlet weak var backgroundImage: UIImageView!
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
@@ -69,7 +69,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         userNameTextField.text = profileData?.userName
         mobileNoField.text = profileData?.phoneNumber
         profilePhoto.image = dummyImage
-//        backgroundProfile.image = dummyBackgroundImage
+        backgroundImage.image = dummyBackgroundImage
   
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true

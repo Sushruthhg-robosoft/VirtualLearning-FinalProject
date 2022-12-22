@@ -1725,6 +1725,15 @@
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_profile pic_menu" translatesAutoresizingMaskIntoConstraints="NO" id="8wq-de-Md0">
                                                         <rect key="frame" x="24" y="76" width="64" height="64"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="64" id="c6D-TU-67x"/>
+                                                            <constraint firstAttribute="height" constant="64" id="jv7-lR-7ec"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="6"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="yhJ-Qb-QwH">
                                                         <rect key="frame" x="106" y="89.5" width="208" height="37"/>
@@ -1878,7 +1887,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backGroundProfileImage" destination="UV2-cy-KTw" id="JmE-f8-zq8"/>
                         <outlet property="notificationCount" destination="2Ds-Hk-kWK" id="go4-qY-kY3"/>
+                        <outlet property="occupation" destination="q9L-LS-38k" id="GrG-pa-VJI"/>
+                        <outlet property="profileImage" destination="8wq-de-Md0" id="XLC-Z8-hst"/>
+                        <outlet property="userName" destination="ZLQ-Dj-yNp" id="pfs-Tb-rwW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLn-o0-rZb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2707,7 +2720,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose a topic on which you want to start a course." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEq-Zh-Qfb">
-                                                <rect key="frame" x="24" y="157.5" width="327" height="39"/>
+                                                <rect key="frame" x="24" y="157.5" width="327" height="37.5"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                 <color key="textColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2724,7 +2737,7 @@
                                                 <state key="normal" image="icn_search-Search"/>
                                             </button>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Faw-cN-05F">
-                                                <rect key="frame" x="29" y="226.5" width="317" height="423.5"/>
+                                                <rect key="frame" x="29" y="225" width="317" height="425"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="317" id="hZ7-pA-ChI"/>
@@ -2747,7 +2760,7 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="110.5" height="88"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAP-Wd-jUq">
-                                                                            <rect key="frame" x="1" y="57" width="108.5" height="15"/>
+                                                                            <rect key="frame" x="1" y="57" width="108.5" height="14"/>
                                                                             <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="12"/>
                                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
@@ -3433,9 +3446,9 @@
                                                         </constraints>
                                                         <color key="textColor" red="0.015686274509803921" green="0.17254901960784313" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                         <connections>
-                                                            <action selector="nameEdit:" destination="05D-p0-z4I" eventType="editingDidEnd" id="yFu-Cp-Q6Q"/>
+                                                            <action selector="nameEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="jOp-X0-aV1"/>
                                                         </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cKp-2w-zDD">
@@ -3452,7 +3465,7 @@
                                                         </constraints>
                                                         <color key="textColor" red="0.015686274509803921" green="0.17254901960784313" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                                                         <connections>
                                                             <action selector="facebookFieldEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="v2D-Ss-cuA"/>
                                                         </connections>
@@ -3480,9 +3493,9 @@
                                                         </constraints>
                                                         <color key="textColor" red="0.015686274509803921" green="0.17254901960784313" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                                         <connections>
-                                                            <action selector="mobileNoEdit:" destination="05D-p0-z4I" eventType="editingDidEnd" id="3yG-Cr-Xc4"/>
+                                                            <action selector="mobileNoEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="0td-Nj-zCb"/>
                                                         </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bcC-Zy-tYU">
@@ -3509,9 +3522,9 @@
                                                         </constraints>
                                                         <color key="textColor" red="0.015686274509803921" green="0.17254901960784313" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                         <connections>
-                                                            <action selector="occupationEdit:" destination="05D-p0-z4I" eventType="editingDidEnd" id="Nke-v1-kA2"/>
+                                                            <action selector="occupationEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="1v2-SH-Sbj"/>
                                                         </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FU0-TF-H8h">
@@ -3544,9 +3557,9 @@
                                                         </constraints>
                                                         <color key="textColor" red="0.015686274509803921" green="0.17254901960784313" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                         <connections>
-                                                            <action selector="genderEdit:" destination="05D-p0-z4I" eventType="editingDidEnd" id="Qqe-db-hJk"/>
+                                                            <action selector="genderEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="7uo-BY-Vii"/>
                                                         </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Birth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2J-XB-o9u">
@@ -3565,9 +3578,9 @@
                                                         </constraints>
                                                         <color key="textColor" red="0.015686274509803921" green="0.17254901960784313" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                                         <connections>
-                                                            <action selector="dateOfBirthEdit:" destination="05D-p0-z4I" eventType="editingDidEnd" id="mvR-uD-INJ"/>
+                                                            <action selector="dateOfBirthEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="xTl-v6-eB1"/>
                                                         </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="623-mX-bez">
@@ -3604,9 +3617,9 @@
                                                         </constraints>
                                                         <color key="textColor" red="0.015686274509803921" green="0.17254901960784313" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL"/>
                                                         <connections>
-                                                            <action selector="twitterFieldEdit:" destination="05D-p0-z4I" eventType="editingDidEnd" id="mjI-GK-bGd"/>
+                                                            <action selector="twitterFieldEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="bRO-yW-2X5"/>
                                                         </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hCF-Lt-34J">
@@ -3629,9 +3642,9 @@
                                                         </constraints>
                                                         <color key="textColor" red="0.015686274509803921" green="0.17254901960784313" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                         <connections>
-                                                            <action selector="userNameEdit:" destination="05D-p0-z4I" eventType="editingDidEnd" id="aOF-NG-R2Z"/>
+                                                            <action selector="userNameEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="X8F-Nk-rEO"/>
                                                         </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upW-IG-b4x">
@@ -3816,7 +3829,10 @@
                                                 </constraints>
                                                 <color key="textColor" red="0.015686274509803921" green="0.17254901960784313" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL"/>
+                                                <connections>
+                                                    <action selector="facebookFieldEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="AG7-dp-31W"/>
+                                                </connections>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KuR-K5-Bnq">
                                                 <rect key="frame" x="24" y="967" width="327" height="1"/>
@@ -3874,7 +3890,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="backgroundProfile" destination="Ax1-Yo-NEe" id="2eZ-BZ-R0T"/>
+                        <outlet property="backgroundImage" destination="O8U-mY-SX5" id="dR6-Ib-aA8"/>
                         <outlet property="cameraButton" destination="tmh-Td-bN8" id="wPt-40-ETk"/>
                         <outlet property="dateOfBirth" destination="j2J-XB-o9u" id="IXt-g0-byg"/>
                         <outlet property="dateOfBirthField" destination="bh6-l3-hQ4" id="pyU-Ze-wwM"/>

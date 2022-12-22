@@ -9,7 +9,7 @@ import UIKit
 
 protocol setProfileDetailsInHam{
     
-    func setProfileValues(profileImage: UIImageView, username: String, designation: String)
+    func setProfileValues(profileImage: UIImage, username: String, designation: String)
 }
 
 
@@ -34,11 +34,12 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var chaptersView: UIView!
     @IBOutlet weak var testView: UIView!
     @IBOutlet weak var changeYourPasswordButton: UIButton!
+    var delgate: setProfileDetailsInHam?
     
     var password = ""
     var oldpassword = ""
 
-    let profileViewModel = ProfileViewModel()
+     
     var profiledata : ProfileData?
     let shared = mainViewModel.mainShared
     
@@ -52,7 +53,7 @@ class ProfileViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         let loader = self.loader()
-        profileViewModel.getProfileData(token:shared.token) { profiledata in
+        shared.profileViewModel.getProfileData(token:shared.token) { profiledata in
             DispatchQueue.main.async {
                 self.profiledata = profiledata
                 self.stopLoader(loader: loader)
