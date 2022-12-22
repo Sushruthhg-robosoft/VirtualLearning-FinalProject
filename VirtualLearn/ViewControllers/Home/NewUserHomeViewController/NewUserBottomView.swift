@@ -11,6 +11,7 @@ protocol clickButtons {
     func onClickSeeAllCategories()
     func onClickChoiceofYourCourse()
     func onclickChooseInAllCourse()
+    func onClickCategory(categoryName: String)
 }
 
 class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -242,6 +243,21 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+       
+        
+        switch collectionView {
+        case choiceOfUrCourseCollectionView :
+            shared.delegate?.onClickChoiceofYourCourse()
+            
+        case categoriesCollectionView :
+            let cell = self.categoriesCollectionView.cellForItem(at: indexPath) as? CategoriesCellCollectionViewCell
+            shared.delegate?.onClickCategory(categoryName: (cell?.categoryName.text)!)
+            
+
+            
+        default:
+           print("Default")
+        }
         
     }
     

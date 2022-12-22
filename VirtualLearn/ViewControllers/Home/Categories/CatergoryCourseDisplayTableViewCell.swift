@@ -8,7 +8,11 @@
 import UIKit
 
 class CatergoryCourseDisplayTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var courseImage: UIImageView!
+    @IBOutlet weak var courseName: UILabel!
+    @IBOutlet weak var totalNumberOfChapters: UILabel!
+    @IBOutlet weak var categoryNAme: customCourseCategoryLable!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

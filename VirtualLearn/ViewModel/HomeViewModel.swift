@@ -18,11 +18,12 @@ class HomeViewModel {
     func getBanners(token: String, completion: @escaping([String]) -> Void, fail: @escaping () -> Void){
         banners.removeAll()
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/banner")!
-        
+        print("outside")
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         networkManger.fetchDataJson(request: request) { (data) in
+            
             
             
             guard let apiData = data as? [Any] else {print("bannerError1");return}
@@ -36,6 +37,8 @@ class HomeViewModel {
             completion(self.banners)
             
         } failure: { (error) in
+            print("banner failure")
+            
             fail()
         }
         

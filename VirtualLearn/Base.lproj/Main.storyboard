@@ -2224,7 +2224,7 @@
             <objects>
                 <viewController storyboardIdentifier="NewUserMyCourseViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xN5-0k-xZF" customClass="NewUserMyCourseViewController" customModule="VirtualLearn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3lO-QP-sOL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="509.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="509"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="18f-l1-gKm">
@@ -2704,6 +2704,12 @@
                                                                 <constraint firstAttribute="bottom" secondItem="UVf-QO-c74" secondAttribute="bottom" constant="1.5" id="yMc-7G-h35"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="categoryNAme" destination="UVf-QO-c74" id="cq8-hS-DK6"/>
+                                                            <outlet property="courseImage" destination="Dhy-Mq-A9H" id="3Xg-vw-nTM"/>
+                                                            <outlet property="courseName" destination="k3F-RI-ixA" id="kMd-Yr-I0d"/>
+                                                            <outlet property="totalNumberOfChapters" destination="Zcf-UZ-NR5" id="Tg9-2U-A4x"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                 </prototypes>
                                                 <connections>

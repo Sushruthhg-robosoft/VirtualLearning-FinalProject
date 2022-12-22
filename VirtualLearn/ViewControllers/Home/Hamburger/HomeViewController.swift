@@ -162,6 +162,12 @@ extension HomeViewController: clickButtons{
         let vc = storyboard?.instantiateViewController(identifier: "ChooseYourCourseViewController") as! ChooseYourCourseViewController
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func onClickCategory(categoryName: String) {
+        let vc = storyboard?.instantiateViewController(identifier: "CategoryInformationViewController") as! CategoryInformationViewController
+        vc.categoryName = categoryName
+        navigationController?.pushViewController(vc, animated: true)
+    }
 
     
 }
