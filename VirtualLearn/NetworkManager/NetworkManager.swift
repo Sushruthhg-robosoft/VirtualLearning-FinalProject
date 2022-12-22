@@ -63,7 +63,7 @@ class NetWorkManager {
     
     
     func postData(url: String, requestMethod: String,profileImage:UIImage , parameters: [String: Any], token: String, headers: [String: String]?, completion: @escaping(Any? , Error?) -> Void) {
-        let imageData = profileImage.jpegData(compressionQuality: 0.9)
+       let imageData = profileImage.jpegData(compressionQuality: 0.9)
         let boundary = "Boundary-\(UUID().uuidString)"
         var request = URLRequest(url: URL(string: url)!)
         let httpBody = NSMutableData()
@@ -82,13 +82,15 @@ class NetWorkManager {
 //                      data.append("\r\n".data(using: .utf8)!)
 //                  }
         
-        
-        if let image = imageData {
-                    httpBody.append(convertFileData(fieldName: "profileImage",
-                                                    fileName: "profile.jpeg",
-                                                    mimeType: "img/png",
-                                                    fileData: image,
-                                                    using: boundary))}
+        print(httpBody)
+//        if let image = imageData {
+//                    httpBody.append(convertFileData(fieldName: "profileImage",
+//                                                    fileName: "profile.jpeg",
+//                                                    mimeType: "img/png",
+//                                                    fileData: image,
+//                                                    using: boundary))}
+        let image = photoDataToFormData(data: imageData!, boundary: boundary, fileName: "profile.jpeg")
+        httpBody.append(image as Data)
         request.httpMethod = requestMethod
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
@@ -196,4 +198,38 @@ extension CharacterSet {
         allowed.remove(charactersIn: "\(generalDelimitersToEncode)\(subDelimitersToEncode)")
         return allowed
     }()
+}
+
+func photoDataToFormData(data: Data, boundary: String, fileName: String) -> NSData {
+    var fullData = NSMutableData()
+    // 1 - Boundary should start with --
+    let lineOne = "--" + boundary + "\r\n"
+    fullData.append(lineOne.data(
+                        using: String.Encoding.utf8,
+        allowLossyConversion: false)!)
+    // 2
+    let lineTwo = "Content-Disposition: form-data;  name=\"profileImage\"; filename=\"" + fileName + "\"\r\n"
+    NSLog(lineTwo)
+    fullData.append(lineTwo.data(
+                        using: String.Encoding.utf8,
+        allowLossyConversion: false)!)
+    // 3
+
+    let lineThree = "Content-Type: image/jpeg\r\n\r\n"
+    fullData.append(lineThree.data(
+                        using: String.Encoding.utf8,
+        allowLossyConversion: false)!)
+    fullData.append(data)
+    // 5
+    let lineFive = "\r\n"
+    fullData.append(lineFive.data(
+                        using: String.Encoding.utf8,
+        allowLossyConversion: false)!)
+    // 6 - The end. Notice -- at the start and at the end
+    let lineSix = "--" + boundary + "--\r\n"
+    fullData.append(lineSix.data(
+                        using: String.Encoding.utf8,
+        allowLossyConversion: false)!)
+    return fullData
+
 }
