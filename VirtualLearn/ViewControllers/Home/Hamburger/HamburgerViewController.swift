@@ -97,7 +97,7 @@ class HamburgerViewController: UIViewController {
             let storageManger = StorageManeger.shared
             self.mainShraed.loginViewModel.logout(userId: storageManger.authId() , token: self.mainShraed.token)
             storageManger.resetLoggedIn()
-            let vc = self.storyboard?.instantiateViewController(identifier: "OnboardingViewController") as? OnboardingViewController
+            let vc = self.storyboard?.instantiateViewController(identifier: "LandingViewController") as? LandingViewController
             self.navigationController?.pushViewController(vc!, animated: true)
          })
         let no = UIAlertAction(title: "Cancel", style: .default, handler: { (action) -> Void in
