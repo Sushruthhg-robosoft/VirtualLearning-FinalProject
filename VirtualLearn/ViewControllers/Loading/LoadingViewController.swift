@@ -12,6 +12,7 @@ class LoadingViewController: UIViewController {
     private var onboardingSeen: Bool!
     private let StorageManegr = StorageManeger.shared
     private var loggedIn: Bool!
+    let keychain = KeyChain()
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
@@ -23,6 +24,11 @@ class LoadingViewController: UIViewController {
         super.viewDidAppear(animated)
         if loggedIn{
             let vc = storyboard?.instantiateViewController(identifier: "HomeViewController") as? HomeViewController
+            let authId = StorageManegr.authId()
+            guard let receivedTokenData = keychain.loadData(userId: String(authId)) else {return}
+            guard let receivedToken = String(data: receivedTokenData, encoding: .utf8) else { return }
+            print("token",receivedToken)
+            vc?.mainShared.token = receivedToken
             navigationController?.pushViewController(vc!, animated: false)
         }
         else{

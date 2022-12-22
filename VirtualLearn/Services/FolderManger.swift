@@ -63,4 +63,6 @@ class StorageManeger{
         
         UserDefaults.standard.setValue("nouserName", forKey: loggingKey.userID.rawValue)
     }
+    
+    
 }
