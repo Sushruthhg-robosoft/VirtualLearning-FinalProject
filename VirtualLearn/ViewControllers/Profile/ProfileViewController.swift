@@ -7,6 +7,12 @@
 
 import UIKit
 
+protocol setProfileDetailsInHam{
+    
+    func setProfileValues(profileImage: UIImageView, username: String, designation: String)
+}
+
+
 class ProfileViewController: UIViewController {
     
     @IBOutlet weak var profilePicture: UIImageView!
