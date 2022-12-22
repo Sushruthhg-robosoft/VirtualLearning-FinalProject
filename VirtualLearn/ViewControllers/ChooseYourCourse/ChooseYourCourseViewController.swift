@@ -49,15 +49,7 @@ class ChooseYourCourseViewController: UIViewController {
         }
 
 
-//        let columnLayout = UICollectionViewLeftAlignedLayout()
-//
-//             if #available(iOS 10.0, *) {
-//                 columnLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-//             } else {
-//                 columnLayout.estimatedItemSize = CGSize(width: 41, height: 41)
-//             }
-//             categoriesCollectionView.collectionViewLayout = columnLayout
-//
+
 
     }
     
@@ -117,33 +109,4 @@ extension ChooseYourCourseViewController: UICollectionViewDelegate, UICollection
     
 }
 
-//final class UICollectionViewLeftAlignedLayout: UICollectionViewFlowLayout {
-//
-//  private var layouts: [IndexPath: UICollectionViewLayoutAttributes] = [:]
-//
-//  override func prepare() {
-//    super.prepare()
-//    layouts = [:]
-//  }
-//
-//  override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-//    var newAttributesArray = [UICollectionViewLayoutAttributes]()
-//    let superAttributesArray = super.layoutAttributesForElements(in: rect)!
-//    for (index, attributes) in superAttributesArray.enumerated() {
-//      if index == 0 || superAttributesArray[index - 1].frame.origin.y != attributes.frame.origin.y {
-//        attributes.frame.origin.x = sectionInset.left
-//      } else {
-//        let previousAttributes = superAttributesArray[index - 1]
-//        let previousFrameRight = previousAttributes.frame.origin.x + previousAttributes.frame.width
-//        attributes.frame.origin.x = previousFrameRight + minimumInteritemSpacing
-//      }
-//      newAttributesArray.append(attributes)
-//    }
-//    newAttributesArray.forEach { layouts[$0.indexPath] = $0 }
-//    return newAttributesArray
-//  }
-//
-//  override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-//    layouts[indexPath]
-//  }
-//}
+
