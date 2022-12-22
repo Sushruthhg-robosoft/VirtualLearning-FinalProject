@@ -83,12 +83,12 @@ class NetWorkManager {
 //                  }
         
         print(httpBody)
-//        if let image = imageData {
-//                    httpBody.append(convertFileData(fieldName: "profileImage",
-//                                                    fileName: "profile.jpeg",
-//                                                    mimeType: "img/png",
-//                                                    fileData: image,
-//                                                    using: boundary))}
+        if let image = imageData {
+                    httpBody.append(convertFileData(fieldName: "profileImage",
+                                                    fileName: "profile.jpeg",
+                                                    mimeType: "img/png",
+                                                    fileData: image,
+                                                    using: boundary))}
         let image = photoDataToFormData(data: imageData!, boundary: boundary, fileName: "profile.jpeg")
         httpBody.append(image as Data)
         request.httpMethod = requestMethod
@@ -104,6 +104,7 @@ class NetWorkManager {
                print(data8,"fggh")
                 if (response.statusCode == 200 || response.statusCode == 201) {
                     let data = String(data: data!, encoding: .utf8)!.components(separatedBy: .newlines)
+                    print(data)
                     completion([0],nil)
                 }
             }

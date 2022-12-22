@@ -27,24 +27,24 @@ class EditProfileViewModel {
             "facebookLink" : profiledata.facebookLink!,
             
         ]
-//        let boundary = "Boundary-\(UUID().uuidString)"
+        let boundary = "Boundary-\(UUID().uuidString)"
 //        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
-//        let data = NSMutableData()
-//        let fieldName = "file"
-//        if let imageData = profileImage.jpegData(compressionQuality: 1) {
-//
-//                      data.append("--\(boundary)\r\n".data(using: .utf8)!)
-//
-//                      data.append("Content-Disposition: form-data; name=\"\(fieldName)\"; filename=\"image.jpg\"\r\n".data(using: .utf8)!)
-//
-//                      data.append("Content-Type: image/jpeg\r\n\r\n".data(using: .utf8)!)
-//
-//                      data.append(imageData)
-//
-//                      data.append("\r\n".data(using: .utf8)!)
-//
-//                  }
-//
+        let data = NSMutableData()
+        let fieldName = "file"
+        if let imageData = profileImage.jpegData(compressionQuality: 1) {
+
+                      data.append("--\(boundary)\r\n".data(using: .utf8)!)
+
+                      data.append("Content-Disposition: form-data; name=\"\(fieldName)\"; filename=\"image.jpg\"\r\n".data(using: .utf8)!)
+
+                      data.append("Content-Type: image/jpeg\r\n\r\n".data(using: .utf8)!)
+
+                      data.append(imageData)
+
+                      data.append("\r\n".data(using: .utf8)!)
+
+                  }
+
 //        print(parameters)
 //
 //        request.httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: .fragmentsAllowed)
