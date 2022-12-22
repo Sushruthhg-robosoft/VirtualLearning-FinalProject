@@ -22,6 +22,7 @@ class CategoryViewModel{
         
         networkManger.fetchDataJson(request: request) { (data) in
             self.listofCategories.removeAll()
+
             guard let apiData = data as? [Any] else {print("error in category 2"); return}
             
             for categoryData in apiData{

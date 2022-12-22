@@ -30,12 +30,14 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var noDataDisplayView: UIView!
     @IBOutlet weak var CategoriesDisplayView: UIView!
     
+    @IBOutlet weak var categoriesViewHeight: NSLayoutConstraint!
     @IBOutlet weak var topSearchViewHeight: NSLayoutConstraint!
     @IBOutlet weak var noDataDisplayViewheight: NSLayoutConstraint!
     let shared = mainViewModel.mainShared
     
     
     override func viewDidLoad() {
+        
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -84,8 +86,10 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
                             self.topSearchView.isHidden = true
                             self.noDataDisplayView.isHidden = true
                             self.CategoriesDisplayView.isHidden = true
+                            self.InitialDisplayView.isHidden = true
                             self.topSearchViewHeight.constant = 0
                             self.noDataDisplayViewheight.constant = 0
+                            self.categoriesViewHeight.constant = 0
                             self.tableView.isHidden = false
                             self.tableView.reloadData()
 
@@ -93,9 +97,11 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
                         }else {
                             self.tableView.isHidden = true
                             self.topSearchView.isHidden = true
+                            self.InitialDisplayView.isHidden = false
                             self.topSearchViewHeight.constant = 0
                             self.noDataDisplayView.isHidden = false
                             self.noDataDisplayViewheight.constant = 417
+                            self.categoriesViewHeight.constant = 185
                             
                         }
                     }
@@ -116,7 +122,36 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
-        
+        shared.searchViewModelShared.searchOption = searchTextField.text!
+                shared.searchViewModelShared.getSearchResult { (result) in
+                    DispatchQueue.main.async {
+                        
+                        if result.count != 0 {
+                            
+                            self.topSearchView.isHidden = true
+                            self.noDataDisplayView.isHidden = true
+                            self.CategoriesDisplayView.isHidden = true
+                            self.InitialDisplayView.isHidden = true
+                            self.topSearchViewHeight.constant = 0
+                            self.noDataDisplayViewheight.constant = 0
+                            self.categoriesViewHeight.constant = 0
+                            self.tableView.isHidden = false
+                            self.tableView.reloadData()
+
+                            
+                        }else {
+                            self.tableView.isHidden = true
+                            self.topSearchView.isHidden = true
+                            self.InitialDisplayView.isHidden = false
+                            self.topSearchViewHeight.constant = 0
+                            self.noDataDisplayView.isHidden = false
+                            self.noDataDisplayViewheight.constant = 417
+                            self.categoriesViewHeight.constant = 185
+                            
+                        }
+                    }
+                } fail: { (fail) in
+                }
         
         return true
     }
@@ -205,8 +240,10 @@ extension SearchViewController: SearchResponse {
         self.topSearchView.isHidden = true
         self.noDataDisplayView.isHidden = true
         self.CategoriesDisplayView.isHidden = true
+        self.InitialDisplayView.isHidden = true
         self.topSearchViewHeight.constant = 0
         self.noDataDisplayViewheight.constant = 0
+        self.categoriesViewHeight.constant = 0
         self.tableView.isHidden = false
         self.tableView.reloadData()
     }
@@ -214,9 +251,12 @@ extension SearchViewController: SearchResponse {
     func modallyNil() {
         self.tableView.isHidden = true
         self.topSearchView.isHidden = true
+        self.InitialDisplayView.isHidden = false
         self.topSearchViewHeight.constant = 0
         self.noDataDisplayView.isHidden = false
         self.noDataDisplayViewheight.constant = 417
+        self.categoriesViewHeight.constant = 185
+
     }
     
     
