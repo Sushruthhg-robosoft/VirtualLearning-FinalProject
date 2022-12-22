@@ -54,18 +54,14 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var otherGender: UIButton!
     
     var isdropDown = false
-//    var dummyname = ""
-//    var dummyUsername = ""
-//    var dummyEmail = ""
-//    var dummyMobileNo = ""
-//    var dummydateofbirth = ""
-//    var dummyusername = ""
-     
+
     var profileData: ProfileData?
     let profileViewModel = ProfileViewModel()
     let editProfileViewModel = EditProfileViewModel()
     let shared = mainViewModel.mainShared
+    
     var dummyImage : UIImage?
+    var dummyBackgroundImage : UIImage?
     override func viewDidLoad() {
         
         emailField.text = profileData?.emailId
@@ -73,9 +69,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         userNameTextField.text = profileData?.userName
         mobileNoField.text = profileData?.phoneNumber
         profilePhoto.image = dummyImage
+//        backgroundProfile.image = dummyBackgroundImage
   
-        
-        
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
         
@@ -104,25 +99,13 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         }
     
     @IBAction func onClickSaveBtn(_ sender: Any) {
-       // let loader = self.loader()
+//        let loader = self.loader()
         updateEditProfileData()
-//        editProfileViewModel.updateProfileData(token: shared.token, profiledata: profileData!) {
-//
-//
-//            DispatchQueue.main.async {
-//            //self.stopLoader(loader: loader)
-//                self.AlertMessagePopup(message: "Profile updated successfully")
-//
-//            }
-//            } fail: {
-//
-//
-//            }
         editProfileViewModel.updateProfileData(profileImage: profilePhoto.image ?? #imageLiteral(resourceName: "icn_profile_menu"), token: shared.token, profiledata: profileData!) {
             
             DispatchQueue.main.async {
                 print(self.profileData)
-            //self.stopLoader(loader: loader)
+//            self.stopLoader(loader: loader)
                 self.AlertMessagePopup(message: "Profile updated successfully")
                             
             }
@@ -142,8 +125,6 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
                 profileData?.facebookLink = facebookField.text!
                 profileData?.twitterLink = twitterField.text!
                 profileData?.occupation = occupationField.text!
-//                profileData?.profilePic = String(profilePhoto.image)
-               
             }
     
     @IBAction func nameEdit(_ sender: Any) {
@@ -218,16 +199,9 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
             self.navigationController?.popViewController(animated: true)
          })
         dialogMessage.addAction(ok)
-
         self.present(dialogMessage, animated: true, completion: nil)
     }
- 
 }
 
-//extension ProfileViewController: ImageUpdate {
-//    func updateImage(profilePhoto : UIImage) {
-//
-//        self.profilePhoto.image = profilePhoto
-//      }
-//    }
+
 

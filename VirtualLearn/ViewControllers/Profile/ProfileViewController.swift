@@ -7,10 +7,6 @@
 
 import UIKit
 
-//protocol ImageUpdate {
-//    func updateImage(profilePhoto: UIImage)
-//}
-
 class ProfileViewController: UIViewController {
     
     @IBOutlet weak var profilePicture: UIImageView!
@@ -39,10 +35,12 @@ class ProfileViewController: UIViewController {
     let profileViewModel = ProfileViewModel()
     var profiledata : ProfileData?
     let shared = mainViewModel.mainShared
-//    var delegate: ImageUpdate?
+    
+    var image : UIImage?
+    var dummyBackgroundImage : UIImage?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.delegate?.updateImage(profilePhoto: profilePhoto)
         
     }
     
@@ -64,13 +62,13 @@ class ProfileViewController: UIViewController {
                 self.noOfTests.text = String(profiledata.numberOfTestsAttempted)
                 let url = URL(string: profiledata.profilePic!)
                 print(profiledata.profilePic)
-                let data = try? Data(contentsOf: url!)
-                self.profilePhoto.image = UIImage(data: (data!))
-               
-            
+                guard let data = try? Data(contentsOf: url!) else {return}
+                self.profilePhoto.image = UIImage(data: (data))
+                self.image = UIImage(data: data)
+                self.profilePicture.image = UIImage(data: (data))
+                self.dummyBackgroundImage = UIImage(data: (data))
+                
             }
-            
-            
         } fail: {
             
         }
@@ -86,12 +84,7 @@ class ProfileViewController: UIViewController {
     @IBAction func onClickEditProfile(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(identifier: "EditProfileViewController") as! EditProfileViewController
         navigationController?.pushViewController(vc, animated: true)
-//        vc.dummyEmail = email.text!
-//        vc.dummyname = name.text!
-//        vc.dummyusername = userName.text!
-//        vc.dummyusername = userName.text!
-//        vc.dummyMobileNo = mobileNumber.text!
-        vc.dummyImage = profilePicture.image
+        vc.dummyImage = image
         vc.profileData = profiledata
     }
     
@@ -110,7 +103,5 @@ class ProfileViewController: UIViewController {
 
         self.present(dialogMessage, animated: true, completion: nil)
     }
-
-    
 }
 
