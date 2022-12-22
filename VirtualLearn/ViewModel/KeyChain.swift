@@ -50,6 +50,7 @@ class KeyChain {
         // Any status other than errSecSuccess indicates the
         // delete operation failed.
         shared.token = ""
+        shared.isExisting = false
         print("deleted successfully", shared.token)
         
     }

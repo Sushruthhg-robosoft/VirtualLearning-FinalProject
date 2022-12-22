@@ -29,6 +29,7 @@ class LoadingViewController: UIViewController {
             guard let receivedToken = String(data: receivedTokenData, encoding: .utf8) else { return }
             print("token",receivedToken)
             vc?.mainShared.token = receivedToken
+            //vc?.mainShared.isExisting = true
             navigationController?.pushViewController(vc!, animated: false)
         }
         else{
