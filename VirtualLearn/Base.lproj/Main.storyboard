@@ -8549,7 +8549,7 @@
                                                                             </constraints>
                                                                         </imageView>
                                                                     </subviews>
-                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="82" id="Ed4-ad-vbs"/>
                                                                         <constraint firstItem="JYh-yz-bbq" firstAttribute="leading" secondItem="8gP-MC-Cdj" secondAttribute="leading" id="YBY-4T-TXZ"/>
@@ -8578,6 +8578,8 @@
                                                             <outlet property="progressHeight" destination="cLD-fe-Dye" id="WVS-Qq-kZw"/>
                                                             <outlet property="progressViewWidthContraint" destination="hal-ox-lef" id="A0C-Lu-Al9"/>
                                                             <outlet property="progressWidth" destination="5D4-Dv-R2e" id="pmT-Ym-rLy"/>
+                                                            <outlet property="timelineIndicatorImage" destination="JYh-yz-bbq" id="5cE-ek-yXD"/>
+                                                            <outlet property="videoPlayButton" destination="z8l-Xp-ZQC" id="e3u-jh-mAw"/>
                                                         </connections>
                                                     </tableViewCell>
                                                 </prototypes>
@@ -8996,6 +8998,9 @@
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -71,6 +71,7 @@ class LessonList{
     var videoLink: String
     var duration: Int
     var lessonCompleted: Bool
+    var nextPlay = false
     
     
     init(lessonId: Int, lessonName: String, videoLink: String, duration: Int,  lessonCompleted: Bool){
