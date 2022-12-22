@@ -37,9 +37,9 @@ class LoginViewModel {
                 let keychain = KeyChain()
                 keychain.saveData(userId: String(id), data: tokenInfo)
                 
-                guard let receivedTokenData = keychain.loadData(userId: String(id)) else {return}
-                guard let receivedToken = String(data: receivedTokenData, encoding: .utf8) else { return }
-                print("token",receivedToken)
+//                guard let receivedTokenData = keychain.loadData(userId: String(id)) else {return}
+//                guard let receivedToken = String(data: receivedTokenData, encoding: .utf8) else { return }
+//                print("token",receivedToken)
                 completion(token)
                 
             } failure: { failResult in
