@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 class EditProfileViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
-    @IBOutlet weak var backgroundProfile: UIView!
-    @IBOutlet weak var profilePhoto: UIImageView!
     
+    @IBOutlet weak var profilePhoto: UIImageView!
+    @IBOutlet weak var backgroundImage: UIImageView!
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
@@ -54,28 +54,23 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var otherGender: UIButton!
     
     var isdropDown = false
-//    var dummyname = ""
-//    var dummyUsername = ""
-//    var dummyEmail = ""
-//    var dummyMobileNo = ""
-//    var dummydateofbirth = ""
-//    var dummyusername = ""
-     
+
     var profileData: ProfileData?
     let profileViewModel = ProfileViewModel()
     let editProfileViewModel = EditProfileViewModel()
-    
-   
     let shared = mainViewModel.mainShared
     
+    var dummyImage : UIImage?
+    var dummyBackgroundImage : UIImage?
     override func viewDidLoad() {
         
         emailField.text = profileData?.emailId
         nameField.text = profileData?.fullName
         userNameTextField.text = profileData?.userName
         mobileNoField.text = profileData?.phoneNumber
-        
-
+        profilePhoto.image = dummyImage
+        backgroundImage.image = dummyBackgroundImage
+  
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
         
@@ -98,43 +93,28 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
 
         profilePhoto.image = info[.originalImage] as? UIImage
-
+        
             self.dismiss(animated: true, completion: nil)
 
         }
     
     @IBAction func onClickSaveBtn(_ sender: Any) {
-       // let loader = self.loader()
+//        let loader = self.loader()
         updateEditProfileData()
-//        editProfileViewModel.updateProfileData(token: shared.token, profiledata: profileData!) {
-//
-//
-//            DispatchQueue.main.async {
-//            //self.stopLoader(loader: loader)
-//                self.AlertMessagePopup(message: "Profile updated successfully")
-//
-//            }
-//            } fail: {
-//
-//
-//            }
         editProfileViewModel.updateProfileData(profileImage: profilePhoto.image ?? #imageLiteral(resourceName: "icn_profile_menu"), token: shared.token, profiledata: profileData!) {
             
-            
             DispatchQueue.main.async {
-            //self.stopLoader(loader: loader)
+                print(self.profileData)
+//            self.stopLoader(loader: loader)
                 self.AlertMessagePopup(message: "Profile updated successfully")
                             
             }
             } fail: {
-                
-                
+             
             }
     }
        
             func updateEditProfileData() {
-                
-                
                 
                 profileData?.emailId = emailField.text!
                 profileData?.fullName =  nameField.text!
@@ -145,7 +125,6 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
                 profileData?.facebookLink = facebookField.text!
                 profileData?.twitterLink = twitterField.text!
                 profileData?.occupation = occupationField.text!
-                
             }
     
     @IBAction func nameEdit(_ sender: Any) {
@@ -220,10 +199,9 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
             self.navigationController?.popViewController(animated: true)
          })
         dialogMessage.addAction(ok)
-
         self.present(dialogMessage, animated: true, completion: nil)
     }
-
-        
-    
 }
+
+
+

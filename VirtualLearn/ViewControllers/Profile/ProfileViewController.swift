@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol setProfileDetailsInHam{
+    
+    func setProfileValues(profileImage: UIImage, username: String, designation: String)
+}
 
 
 class ProfileViewController: UIViewController {
@@ -30,22 +34,26 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var chaptersView: UIView!
     @IBOutlet weak var testView: UIView!
     @IBOutlet weak var changeYourPasswordButton: UIButton!
+    var delgate: setProfileDetailsInHam?
     
     var password = ""
     var oldpassword = ""
 
-    let profileViewModel = ProfileViewModel()
+     
     var profiledata : ProfileData?
     let shared = mainViewModel.mainShared
+    
+    var image : UIImage?
+    var dummyBackgroundImage : UIImage?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         let loader = self.loader()
-        profileViewModel.getProfileData(token:shared.token) { profiledata in
+        shared.profileViewModel.getProfileData(token:shared.token) { profiledata in
             DispatchQueue.main.async {
                 self.profiledata = profiledata
                 self.stopLoader(loader: loader)
@@ -59,10 +67,15 @@ class ProfileViewController: UIViewController {
                 self.noOfChapters.text = String(profiledata.numberOfChaptersCompleted)
                 self.noOfCourses.text = String(profiledata.numberOfCoursesCompleted)
                 self.noOfTests.text = String(profiledata.numberOfTestsAttempted)
-            
+                let url = URL(string: profiledata.profilePic!)
+                print(profiledata.profilePic)
+                guard let data = try? Data(contentsOf: url!) else {return}
+                self.profilePhoto.image = UIImage(data: (data))
+                self.image = UIImage(data: data)
+                self.profilePicture.image = UIImage(data: (data))
+                self.dummyBackgroundImage = UIImage(data: (data))
+                
             }
-            
-            
         } fail: {
             
         }
@@ -78,17 +91,24 @@ class ProfileViewController: UIViewController {
     @IBAction func onClickEditProfile(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(identifier: "EditProfileViewController") as! EditProfileViewController
         navigationController?.pushViewController(vc, animated: true)
-//        vc.dummyEmail = email.text!
-//        vc.dummyname = name.text!
-//        vc.dummyusername = userName.text!
-//        vc.dummyusername = userName.text!
-//        vc.dummyMobileNo = mobileNumber.text!
+        vc.dummyImage = image
         vc.profileData = profiledata
     }
     
     @IBAction func onClickHamburger(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
-  
+    
+    func AlertMessagePopup(message: String){
+        
+        let dialogMessage = UIAlertController(title: "Please login first!", message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+            self.dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
+         })
+        dialogMessage.addAction(ok)
+
+        self.present(dialogMessage, animated: true, completion: nil)
+    }
 }
 

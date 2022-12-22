@@ -12,14 +12,18 @@ protocol HamburgerViewControllerDelegate {
 }
 
 class HamburgerViewController: UIViewController {
-
+    
+    @IBOutlet weak var occupation: UILabel!
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var backGroundProfileImage: UIImageView!
+    @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var notificationCount: customHamLable!
     var delegate: HamburgerViewControllerDelegate?
     var mainShraed = mainViewModel.mainShared
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // let loader = self.loader()
+        // let loader = self.loader()
         print("insideHamburgerMenu")
         mainShraed.notificationViewModelShared.getNotificationCount( token: mainShraed.token){
             print("slfdhoifhfdidsdnieohiodhdfhsi")
@@ -28,8 +32,23 @@ class HamburgerViewController: UIViewController {
                 self.notificationCount.text = String(self.mainShraed.notificationViewModelShared.count)
             }
         } fail: {
-           // self.stopLoader(loader: loader)
+            // self.stopLoader(loader: loader)
         }
+        
+        mainShraed.profileViewModel.getProfileData(token: mainShraed.token) { (data) in
+            DispatchQueue.main.async {
+                self.occupation.text = data.occupation
+                self.userName.text = data.fullName.capitalized
+                let url = URL(string: data.profilePic!)
+                guard let data = try? Data(contentsOf: url!) else {return}
+                self.backGroundProfileImage.image = UIImage(data: (data))
+                
+                self.profileImage.image = UIImage(data: data)
+            }
+        } fail: {
+            print("fail")
+        }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -43,7 +62,7 @@ class HamburgerViewController: UIViewController {
         } fail: {
             self.stopLoader(loader: loader)
         }
-
+        
     }
     
     @IBAction func onClickHome(_ sender: Any) {
@@ -52,7 +71,7 @@ class HamburgerViewController: UIViewController {
         self.delegate?.hideHamburgerMenu()
     }
     
-
+    
     @IBAction func onClickMyCourse(_ sender: Any) {
         
         let vc = storyboard?.instantiateViewController(identifier: "MyCourseViewController") as! MyCourseViewController
@@ -65,7 +84,7 @@ class HamburgerViewController: UIViewController {
         
         navigationController?.pushViewController(vc, animated: true)
     }
- 
+    
     
     @IBAction func onClickNotifications(_ sender: Any) {
         
@@ -83,7 +102,7 @@ class HamburgerViewController: UIViewController {
     }
     
     @IBAction func onClickLogOut(_ sender: Any) {
-       
+        
         logoutMessagePopup(message: "Do you really want to logout?")
         
         
@@ -99,13 +118,13 @@ class HamburgerViewController: UIViewController {
             storageManger.resetLoggedIn()
             let vc = self.storyboard?.instantiateViewController(identifier: "LandingViewController") as? LandingViewController
             self.navigationController?.pushViewController(vc!, animated: true)
-         })
+        })
         let no = UIAlertAction(title: "Cancel", style: .default, handler: { (action) -> Void in
             self.dismiss(animated: true, completion: nil)
-         })
+        })
         dialogMessage.addAction(ok)
         dialogMessage.addAction(no)
-
+        
         self.present(dialogMessage, animated: true, completion: nil)
     }
 }

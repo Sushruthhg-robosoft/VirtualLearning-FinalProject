@@ -12,9 +12,9 @@ class EditProfileViewModel {
     
     func updateProfileData(profileImage: UIImage,token: String, profiledata: ProfileData, completion: @escaping () -> Void, fail: @escaping () -> Void) {
         let networkManager = NetWorkManager()
-        guard let urL = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/profile") else{ return}
-        var request = URLRequest(url: urL)
-        request.httpMethod = "PATCH"
+         let url = "https://app-virtuallearning-221207091853.azurewebsites.net/user/profile"
+//        var request = URLRequest(url: urL)
+//        request.httpMethod = "PATCH"
         let parameters: [String : Any] = [
             "fullName" : profiledata.fullName,
             "userName" : profiledata.userName,
@@ -22,13 +22,13 @@ class EditProfileViewModel {
             "emailId" : profiledata.emailId,
             "occupation" : profiledata.occupation!,
             "gender" : profiledata.gender!,
-            "dateOfBirth" : profiledata.dateOfBirth!,
+            "dateOfBirth" : "2000-05-31",
             "twitterLink" : profiledata.twitterLink!,
             "facebookLink" : profiledata.facebookLink!,
             
         ]
         let boundary = "Boundary-\(UUID().uuidString)"
-        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+//        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         let data = NSMutableData()
         let fieldName = "file"
         if let imageData = profileImage.jpegData(compressionQuality: 1) {
@@ -44,20 +44,21 @@ class EditProfileViewModel {
                       data.append("\r\n".data(using: .utf8)!)
 
                   }
-        
+
+//        print(parameters)
+//
+//        request.httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: .fragmentsAllowed)
+//
+//
+//        request.setValue("Bearer \(mainshared.token)", forHTTPHeaderField: "Authorization")
+//
         print(parameters)
-        request.httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: .fragmentsAllowed)
-        
-        
-        request.setValue("Bearer \(mainshared.token)", forHTTPHeaderField: "Authorization")
-        
-        networkManager.fetchData(request: request) { result in
+        networkManager.postData(url: url, requestMethod: "PATCH", profileImage: profileImage,  parameters: parameters,token: token, headers: nil) { (result,error)  in
+            print(result, "aaa")
         completion()
             
-        } failure: { error in
-            print(error)
         }
-        
     }
 }
+
 
