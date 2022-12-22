@@ -12,7 +12,7 @@ class LandingViewController: UIViewController {
     @IBOutlet weak var registerBtn: UIButton!
     @IBOutlet weak var termsOfServices: UIButton!
     @IBOutlet weak var privacyPolicy: UIButton!
-    
+    let storageManeger = StorageManeger.shared
     
     let privacyViewModel = PrivacyPolicyViewModel()
     let termsOfServiceViewModel = TermsOfServicesViewModel()
@@ -24,7 +24,13 @@ class LandingViewController: UIViewController {
         registerBtn.setBorder()
     }
     
-
+    @IBAction func onClickSkip(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(identifier: "HomeViewController") as? HomeViewController
+        navigationController?.pushViewController(vc!, animated: true)
+        
+        storageManeger.setGuestUser()
+    }
+    
 
     @IBAction func onClickRegister(_ sender: Any) {
         

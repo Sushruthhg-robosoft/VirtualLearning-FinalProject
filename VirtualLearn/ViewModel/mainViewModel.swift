@@ -10,6 +10,7 @@ import Foundation
 class mainViewModel{
     
     static var mainShared = mainViewModel()
+    var loginViewModel = LoginViewModel()
     var notificationViewModelShared = NotificationViewModel()
     var myCourseViewModelShared = myCourseViewModel()
     var categoriesViewModelShared = CategoryViewModel()

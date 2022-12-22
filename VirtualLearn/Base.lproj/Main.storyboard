@@ -6277,6 +6277,9 @@
                                 <state key="normal" title="Skip">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="onClickSkip:" destination="yEG-9w-pHZ" eventType="touchUpInside" id="cqr-8w-DF4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="o2o-Mm-hfe"/>
