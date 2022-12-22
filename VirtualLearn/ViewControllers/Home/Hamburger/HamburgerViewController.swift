@@ -65,6 +65,7 @@ class HamburgerViewController: UIViewController {
         
         navigationController?.pushViewController(vc, animated: true)
     }
+ 
     
     @IBAction func onClickNotifications(_ sender: Any) {
         
@@ -82,9 +83,29 @@ class HamburgerViewController: UIViewController {
     }
     
     @IBAction func onClickLogOut(_ sender: Any) {
+       
+        logoutMessagePopup(message: "Do you really want to logout?")
         
-        let vc = storyboard?.instantiateViewController(identifier: "ModuleTestViewController") as! ModuleTestViewController
         
-        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    func logoutMessagePopup(message: String){
+        
+        let dialogMessage = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "Ok", style: .default, handler: { (action) -> Void in
+            let storageManger = StorageManeger.shared
+            self.mainShraed.loginViewModel.logout(userId: storageManger.authId() , token: self.mainShraed.token)
+            storageManger.resetLoggedIn()
+            let vc = self.storyboard?.instantiateViewController(identifier: "OnboardingViewController") as? OnboardingViewController
+            self.navigationController?.pushViewController(vc!, animated: true)
+         })
+        let no = UIAlertAction(title: "Cancel", style: .default, handler: { (action) -> Void in
+            self.dismiss(animated: true, completion: nil)
+         })
+        dialogMessage.addAction(ok)
+        dialogMessage.addAction(no)
+
+        self.present(dialogMessage, animated: true, completion: nil)
     }
 }

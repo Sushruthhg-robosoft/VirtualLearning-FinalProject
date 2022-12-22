@@ -17,7 +17,7 @@ class SuggestionsTopView: UIView {
     
     @IBOutlet weak var suggestionsCollectionView: UICollectionView!
     var shared = mainViewModel.mainShared
-    
+    var storageManger = StorageManeger.shared
     var userName: String?
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,7 +32,19 @@ class SuggestionsTopView: UIView {
         initCollectionView()
         userNameLabel.text = shared.loginUserName?.capitalized
         
-        
+        if storageManger.authId() == "nouserName"{
+            self.userNameLabel.text = "Please Login"
+        }
+        else{
+            shared.loginViewModel.getUserName(authId: storageManger.authId()) {
+                DispatchQueue.main.async {
+                    print("coming")
+                    self.userNameLabel.text = self.shared.loginViewModel.user?.capitalized
+                }
+            } fail: { () in
+                print("fail")
+            }
+        }
     }
 }
 
