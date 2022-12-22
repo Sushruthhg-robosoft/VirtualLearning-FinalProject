@@ -65,13 +65,17 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     let profileViewModel = ProfileViewModel()
     let editProfileViewModel = EditProfileViewModel()
     let shared = mainViewModel.mainShared
-    
+    var dummyImage : UIImage?
     override func viewDidLoad() {
         
         emailField.text = profileData?.emailId
         nameField.text = profileData?.fullName
         userNameTextField.text = profileData?.userName
         mobileNoField.text = profileData?.phoneNumber
+        
+        profilePhoto.image = dummyImage
+  
+        
         
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
@@ -221,10 +225,10 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
  
 }
 
-extension ProfileViewController: ImageUpdate {
-    func updateImage(profilePhoto : UIImage) {
-        
-        self.profilePhoto.image = profilePhoto
-      }
-    }
+//extension ProfileViewController: ImageUpdate {
+//    func updateImage(profilePhoto : UIImage) {
+//
+//        self.profilePhoto.image = profilePhoto
+//      }
+//    }
 

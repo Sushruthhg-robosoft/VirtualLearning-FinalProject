@@ -7,9 +7,9 @@
 
 import UIKit
 
-protocol ImageUpdate {
-    func updateImage(profilePhoto: UIImage)
-}
+//protocol ImageUpdate {
+//    func updateImage(profilePhoto: UIImage)
+//}
 
 class ProfileViewController: UIViewController {
     
@@ -39,10 +39,10 @@ class ProfileViewController: UIViewController {
     let profileViewModel = ProfileViewModel()
     var profiledata : ProfileData?
     let shared = mainViewModel.mainShared
-    var delegate: ImageUpdate?
+//    var delegate: ImageUpdate?
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.delegate?.updateImage(profilePhoto: profilePhoto)
+//        self.delegate?.updateImage(profilePhoto: profilePhoto)
         
     }
     
@@ -63,7 +63,7 @@ class ProfileViewController: UIViewController {
                 self.noOfCourses.text = String(profiledata.numberOfCoursesCompleted)
                 self.noOfTests.text = String(profiledata.numberOfTestsAttempted)
                 let url = URL(string: profiledata.profilePic!)
-//                print(profiledata.profilePic)
+                print(profiledata.profilePic)
                 let data = try? Data(contentsOf: url!)
                 self.profilePhoto.image = UIImage(data: (data!))
             
@@ -90,6 +90,7 @@ class ProfileViewController: UIViewController {
 //        vc.dummyusername = userName.text!
 //        vc.dummyusername = userName.text!
 //        vc.dummyMobileNo = mobileNumber.text!
+        vc.dummyImage = profilePicture.image
         vc.profileData = profiledata
     }
     
