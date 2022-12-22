@@ -149,6 +149,10 @@ class CourseDetailsViewController: UIViewController {
     }
     
     
+    @IBAction func onClickCancel(_ sender: Any) {
+        
+        navigationController?.popViewController(animated: true)
+    }
     
     @IBAction func onClickJoinCourse(_ sender: Any) {
         
