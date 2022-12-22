@@ -24,6 +24,8 @@ class TestResultViewController: UIViewController {
     
     let testviewModel = ModuleTestViewModel()
     let mainShared = mainViewModel.mainShared
+    var questionResults = [QuestionAnswer]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,7 +35,16 @@ class TestResultViewController: UIViewController {
 //            print(questionAnswerDetails)
             
             DispatchQueue.main.async {
+                self.questionResults = questionAnswerDetails.questionAnswer
+                self.courseName.text = questionAnswerDetails.courseName
+                self.ChapterName.text = questionAnswerDetails.chapterName
+                self.gradeDisplay.text = questionAnswerDetails.grade
+                self.passingGrade.text = questionAnswerDetails.passingMarks + "/100"
+                self.correctAnswer.text = questionAnswerDetails.correctAnswers + "/" + String(self.questionResults.count)
+                self.wrongAnswers.text = questionAnswerDetails.wrongAnswers + "/" + String(self.questionResults.count)
                 
+               
+                self.tableView.reloadData()
             }
         } fail: {
             print("error")
@@ -56,12 +67,12 @@ class TestResultViewController: UIViewController {
 
 extension TestResultViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 25
+        return questionResults.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! QuestionListTableViewCell
-        
+        cell.questionAnswerDisplay(data: String(indexPath.row + 1) , answer: questionResults[indexPath.row].answerStatus)
         return cell
     }
     
