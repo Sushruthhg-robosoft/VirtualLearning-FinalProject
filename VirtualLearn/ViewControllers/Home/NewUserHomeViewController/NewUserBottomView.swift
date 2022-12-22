@@ -16,7 +16,8 @@ protocol clickButtons {
 class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     
-
+    @IBOutlet weak var categoriesCollectionView: UICollectionView!
+    
     @IBOutlet var backView: UIView!
     @IBOutlet weak var allBtn: ChoiceOfCourseCustomButton!
     @IBOutlet weak var popularBtn: ChoiceOfCourseCustomButton!
@@ -94,6 +95,18 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
         } fail: {
             print("fail")
         }
+        
+        mainshared.categoriesViewModelShared.getCategories(token: mainshared.token) {
+            print("insideFunction")
+            DispatchQueue.main.async {
+                print("inside Dispatch")
+
+                self.categoriesCollectionView.reloadData()
+            }
+        } fail: {
+            print("fail")
+        }
+
 
 
 
@@ -171,31 +184,86 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
         choiceOfUrCourseCollectionView.register(nib, forCellWithReuseIdentifier: "choiceCell")
         choiceOfUrCourseCollectionView.dataSource = self
         choiceOfUrCourseCollectionView.delegate = self
+        
+        let categoryNib = UINib(nibName: "CategoriesCellCollectionViewCell", bundle: nil)
+        categoriesCollectionView.register(categoryNib, forCellWithReuseIdentifier: "cetegoryCell")
+        categoriesCollectionView.dataSource = self
+        categoriesCollectionView.delegate = self
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return mainShared.homeViewModelShared.allCourse.count
+        switch collectionView {
+        case choiceOfUrCourseCollectionView :
+            
+            return mainShared.homeViewModelShared.allCourse.count
+        case categoriesCollectionView :
+            return mainshared.categoriesViewModelShared.listofCategories.count
+        default:
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = choiceOfUrCourseCollectionView.dequeueReusableCell(withReuseIdentifier: "choiceCell", for: indexPath) as? ChoiceOfYourCourseCollectionViewCell else {
-            fatalError("can't dequeue CustomCell")
+        
+        switch collectionView {
+        case choiceOfUrCourseCollectionView :
+            guard let cell = choiceOfUrCourseCollectionView.dequeueReusableCell(withReuseIdentifier: "choiceCell", for: indexPath) as? ChoiceOfYourCourseCollectionViewCell else {
+                fatalError("can't dequeue CustomCell")
+                
+            }
             
+            cell.cardTitle.text = mainShared.homeViewModelShared.allCourse[indexPath.row].categoryName
+            cell.lessonName.text = mainShared.homeViewModelShared.allCourse[indexPath.row].courseName
+            cell.numberOfChapters.text = "\(mainShared.homeViewModelShared.allCourse[indexPath.row].totalNumberOfChapters) Chapters"
+            let url = URL(string: mainShared.homeViewModelShared.allCourse[indexPath.row].courseImage)
+            let data = try? Data(contentsOf: url!)
+            cell.lessonImage.image = UIImage(data: data!)
+
+            return cell
+            
+        case categoriesCollectionView :
+            guard let cell = categoriesCollectionView.dequeueReusableCell(withReuseIdentifier: "cetegoryCell", for: indexPath) as? CategoriesCellCollectionViewCell else {
+                fatalError("can't dequeue CustomCell")
+                
+            }
+            cell.categoryName.text = mainshared.categoriesViewModelShared.listofCategories[indexPath.row].categotyName
+                let url = URL(string: mainshared.categoriesViewModelShared.listofCategories[indexPath.row].categoryImage)
+                let data = try? Data(contentsOf: url!)
+                cell.categoryImage.image = UIImage(data: data!)
+
+            return cell
+            
+        default:
+            return UICollectionViewCell()
         }
         
-        cell.cardTitle.text = mainShared.homeViewModelShared.allCourse[indexPath.row].categoryName
-        cell.lessonName.text = mainShared.homeViewModelShared.allCourse[indexPath.row].courseName
-        cell.numberOfChapters.text = "\(mainShared.homeViewModelShared.allCourse[indexPath.row].totalNumberOfChapters) Chapters"
-        let url = URL(string: mainShared.homeViewModelShared.allCourse[indexPath.row].courseImage)
-        let data = try? Data(contentsOf: url!)
-        cell.lessonImage.image = UIImage(data: data!)
-
-        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         shared.delegate?.onClickChoiceofYourCourse()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
+        switch collectionView {
+        case categoriesCollectionView :
+            
+            return 5
+        default:
+            return 10
+        }
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        switch collectionView {
+        case categoriesCollectionView :
+            
+            return 5
+        default:
+            return 10
+        }
+        
     }
     
 

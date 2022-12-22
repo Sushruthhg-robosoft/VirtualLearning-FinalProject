@@ -15,7 +15,7 @@ class ChaptersViewModel {
     func getChapters(token: String, courseId: String,completion: @escaping(CourseChapter) -> Void, fail: @escaping () -> Void) {
         
 //        var listOfLessons = [LessonResponseList]()
-        
+        var expandStatus = 0
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/chapter?courseId=3")!
         
         var request = URLRequest(url: url)
@@ -45,7 +45,7 @@ class ChaptersViewModel {
                 guard let chapterName = lessonResponse["chapterName"] as? String else{print("chapterNameErr"); return}
                 guard let chapterId = lessonResponse["chapterId"] as? Int else{print("chapterIdErr"); return}
                 guard let chapterCompletionStatus = lessonResponse["chapterCompleted"] as? Bool else{print("chapterStatusErr"); return}
-
+                
                 guard let chapterList = lessonResponse["lessonList"] as? [[String:Any]] else{print("chapterlist Errrpr"); return}
 
                 for lesson in chapterList {
@@ -72,11 +72,16 @@ class ChaptersViewModel {
                     guard let questionCount = assesmentdetails["questionCount"] as? Int else {print("chapterCountErr3"); return}
                     guard let grade = assesmentdetails["grade"] as? Int else {print("chapterCountErr4"); return}
                     let assesment = AssignmentResponse(assignmentId: assignmentId, assignmentName: assignmentName, testDuration: testDuration, questionCount: questionCount, grade: Int(grade))
-                   
                     lessonsList.append(assesment)
                
                 }
                 let lessonResponse = LessonResponseList(chapterId: chapterId, chapterName: chapterName, chapterCompleted: chapterCompletionStatus, lessonList: lessonsList)
+                if(!chapterCompletionStatus) {
+                    if(expandStatus == 0){
+                        lessonResponse.isExpandable = true
+                        expandStatus = 1
+                    }
+                }
                 self.listOfLessons.append(lessonResponse)
                 
                 

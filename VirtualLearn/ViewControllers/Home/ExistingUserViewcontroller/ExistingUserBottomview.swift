@@ -9,7 +9,8 @@ import UIKit
 
 class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionViewDelegate {
 
-
+    @IBOutlet weak var categoriesCollectionView: UICollectionView!
+    
     @IBOutlet var backView: UIView!
     @IBOutlet weak var allBtn: ChoiceOfCourseCustomButton!
     @IBOutlet weak var popularBtn: ChoiceOfCourseCustomButton!

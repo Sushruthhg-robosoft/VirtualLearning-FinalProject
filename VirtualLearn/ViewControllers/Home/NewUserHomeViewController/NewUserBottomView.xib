@@ -20,6 +20,7 @@
             <connections>
                 <outlet property="allBtn" destination="7In-dH-CBv" id="3OY-dQ-dgc"/>
                 <outlet property="backView" destination="iN0-l3-epB" id="4X2-uX-mgu"/>
+                <outlet property="categoriesCollectionView" destination="UbW-bE-yJn" id="Go5-rT-G9O"/>
                 <outlet property="choiceOfUrCourseCollectionView" destination="dFE-mz-e0x" id="TIh-Jd-LJL"/>
                 <outlet property="newestBtn" destination="mQq-bq-rCZ" id="jtk-Ng-Lh0"/>
                 <outlet property="popularBtn" destination="2hi-Qh-WoP" id="eoF-uw-zFa"/>
@@ -38,8 +39,8 @@
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="UbW-bE-yJn">
                             <rect key="frame" x="0.0" y="0.0" width="403" height="113"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CVF-jn-TEf">
-                                <size key="itemSize" width="128" height="128"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CVF-jn-TEf">
+                                <size key="itemSize" width="137" height="30"/>
                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
