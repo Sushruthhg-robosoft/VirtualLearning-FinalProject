@@ -31,6 +31,7 @@ class CustomChapterTableViewCell: UITableViewCell {
         moduleTestView.isHidden = true
         chapterNumberView.isHidden = false
         chapterNumber.isHidden = false
+        videoPlayButton.isHidden = false
         progressStatus(data: data)
         
     }
@@ -43,7 +44,6 @@ class CustomChapterTableViewCell: UITableViewCell {
         chapterNumber.text = "0\(data.assignmentId ))"
         chapterDuration.text = "\(data.testDuration )) mins"
         videoPlayButton.isHidden = true
-        
     }
     
     func cellconstrints(joinedCourse: Bool) {

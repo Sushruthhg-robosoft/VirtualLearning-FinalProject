@@ -17,7 +17,7 @@ class ChaptersViewModel {
 //        var listOfLessons = [LessonResponseList]()
         var expandStatus = 0
         var videoPlay = 0
-        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/chapter?courseId=3")!
+        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/chapter?courseId=\(courseId)")!
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -100,7 +100,7 @@ class ChaptersViewModel {
             if(certificateGenerated) {
                 guard let certificateData = apiData["certificateResponse"] as? [String:Any] else{print("certificateResponseerr"); return}
                 
-                guard let joinedDate = certificateData["joinedDate"] as? String else {print("err1"); return}
+                guard let joinedDate = certificateData["joinDate"] as? String else {print("err1"); return}
                 guard let completedDate = certificateData["completedDate"] as? String else {print("err2"); return}
                 guard let completionDuration = certificateData["completionDuration"] as? String else {print("err3"); return}
                 guard let grade = certificateData["grade"] as? Int else {print("err4"); return}
