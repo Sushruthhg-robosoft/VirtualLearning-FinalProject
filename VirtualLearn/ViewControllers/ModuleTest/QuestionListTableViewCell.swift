@@ -8,7 +8,9 @@
 import UIKit
 
 class QuestionListTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var questionNumber: UILabel!
+    @IBOutlet weak var answerDisplay: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

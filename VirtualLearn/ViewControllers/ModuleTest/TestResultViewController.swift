@@ -14,14 +14,27 @@ class TestResultViewController: UIViewController {
     @IBOutlet weak var middleRightView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var middleView: UIView!
+    
+    @IBOutlet weak var gradeDisplay: UILabel!
+    @IBOutlet weak var courseName: UILabel!
+    @IBOutlet weak var ChapterName: UILabel!
+    @IBOutlet weak var passingGrade: UILabel!
+    @IBOutlet weak var correctAnswer: UILabel!
+    @IBOutlet weak var wrongAnswers: UILabel!
+    
     let testviewModel = ModuleTestViewModel()
     let mainShared = mainViewModel.mainShared
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        testviewModel.getAnswer(token: mainShared.token, assignnmentId: "5") {
+         
+        testviewModel.getAnswer(token: mainShared.token, assignnmentId: "5") { questionAnswerDetails in
             print("sucess")
+//            print(questionAnswerDetails)
+            
+            DispatchQueue.main.async {
+                
+            }
         } fail: {
             print("error")
         }

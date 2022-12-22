@@ -26,6 +26,53 @@ class ModuleTestData{
     }
 }
 
+class QuestionAnswerDetails {
+    var courseName: String
+    var chapterName: String
+    var grade: String
+    var passingMarks: String
+    var numberOfquestions: String
+    var correctAnswers: String
+    var wrongAnswers: String
+    var questionAnswer: [QuestionAnswer]
+    
+    init(courseName: String, chapterName: String, grade: String, passingMarks: String, numberOfquestions: String, correctAnswers: String, wrongAnswers: String, questionAnswer: [QuestionAnswer]) {
+        self.courseName = courseName
+        self.chapterName = chapterName
+        self.grade = grade
+        self.passingMarks = passingMarks
+        self.numberOfquestions = numberOfquestions
+        self.correctAnswers = correctAnswers
+        self.wrongAnswers = wrongAnswers
+        self.questionAnswer = questionAnswer
+}
+}
+
+class QuestionAnswer {
+    var questionId: String
+    var questionName: String
+    var option1: String
+    var option2: String
+    var option3: String
+    var option4: String
+    var correctAnswer: String
+    var givenAnswer: String
+    var answerStatus: Bool
+    
+    
+    init(questionId: String, questionName: String, option1: String, option2: String, option3: String, option4: String, correctAnswer: String,givenAnswer: String,answerStatus: Bool ) {
+        self.questionId = questionId
+        self.questionName = questionName
+        self.option1 = option1
+        self.option2 = option2
+        self.option3 = option3
+        self.option4 = option4
+        self.correctAnswer = correctAnswer
+        self.givenAnswer = givenAnswer
+        self.answerStatus = answerStatus
+   }
+}
+
 struct QuestionModel {
     var id: Int
     var answer: String
