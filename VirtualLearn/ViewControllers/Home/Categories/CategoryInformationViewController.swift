@@ -13,7 +13,12 @@ class CategoryInformationViewController: UIViewController{
     @IBOutlet weak var courseToGetStartedCollectionView: UICollectionView!
     @IBOutlet weak var featureCourseCollectionView: UICollectionView!
     @IBOutlet weak var subCategoryCollectionView: UICollectionView!
-    
+    @IBOutlet weak var CategoryLabel: UILabel!
+    var shared = mainViewModel.mainShared
+    var featuredCourse = [HomeCourse]()
+    var allCourses = [HomeCourse]()
+    var categoryName = ""
+    var categoryId = ""
 //    @IBOutlet weak var allCourseTableViewHeight: NSLayoutConstraint!
     
     var subCategoriesfield = [String]()
@@ -24,6 +29,52 @@ class CategoryInformationViewController: UIViewController{
         initCollectionViewForTop(collectionView: courseToGetStartedCollectionView)
         initCollectionViewForTop(collectionView: featureCourseCollectionView)
         initCollectionViewForsubCategory(collectionView:subCategoryCollectionView)
+        
+        CategoryLabel.text = categoryName
+        let loader = self.loader()
+        shared.categoriesViewModelShared.getCategegoryDetailsById(token: shared.token, categoryId: "", limit: "", page: "") {
+            
+            DispatchQueue.main.async {
+                self.stopLoader(loader: loader)
+                self.courseToGetStartedCollectionView.reloadData()
+                self.shared.categoriesViewModelShared.getSubCategoryDetails(token: self.shared.token, categoryId: "1") {
+                    DispatchQueue.main.async {
+                        self.subCategoryCollectionView.reloadData()
+                    }
+                    
+                } fail: {
+                    
+                }
+
+            }
+        } fail: {
+            self.stopLoader(loader: loader)
+        }
+        let loader2 = self.loader()
+        shared.homeViewModelShared.getNewestCourseDetails(token: shared.token) { (data) in
+            DispatchQueue.main.async {
+                self.stopLoader(loader: loader2)
+                self.featuredCourse = data
+                self.featureCourseCollectionView.reloadData()
+            }
+        } fail: {
+            self.stopLoader(loader: loader2)
+        }
+        let loader3 = self.loader()
+        shared.homeViewModelShared.getPopularCourseDetails(token: shared.token) { (data) in
+            DispatchQueue.main.async {
+                self.stopLoader(loader: loader3)
+                self.allCourses = data
+                self.allCourseTableView.reloadData()
+            }
+        } fail: {
+            self.stopLoader(loader: loader3)
+        }
+        
+      
+
+       
+        
     
     }
     
@@ -44,7 +95,17 @@ class CategoryInformationViewController: UIViewController{
 }
 extension CategoryInformationViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        switch collectionView {
+        case courseToGetStartedCollectionView :
+            return shared.categoriesViewModelShared.categoryDetails.count
+        case featureCourseCollectionView :
+            return self.featuredCourse.count
+        case subCategoryCollectionView :
+            
+            return shared.categoriesViewModelShared.subCategoryDetails.count
+        default:
+            return 20
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -55,11 +116,25 @@ extension CategoryInformationViewController: UICollectionViewDelegate, UICollect
                 fatalError("can't dequeue CustomCell")
             }
             
+            self.CategoryLabel.text = shared.categoriesViewModelShared.categoryDetails[indexPath.row].categoryName
+            cell.headingLabel.text = shared.categoriesViewModelShared.categoryDetails[indexPath.row].courseName
+            let url = URL(string: shared.categoriesViewModelShared.categoryDetails[indexPath.row].courseImage)
+            let data = try? Data(contentsOf: url!)
+            cell.courseImage.image = UIImage(data: data!)
+            cell.chapterCount.text = "\(shared.categoriesViewModelShared.categoryDetails[indexPath.row].chapterCount) Chapters"
+            cell.duration.text = "\(shared.categoriesViewModelShared.categoryDetails[indexPath.row].courseDuration) mins"
             return cell
         case featureCourseCollectionView :
             guard let cell = courseToGetStartedCollectionView.dequeueReusableCell(withReuseIdentifier: "TopCourseSectionCell", for: indexPath) as? TopCourseSectionCollectionViewCell else {
                 fatalError("can't dequeue CustomCell")
             }
+            
+            cell.headingLabel.text = self.featuredCourse[indexPath.row].courseName
+            let url = URL(string: self.featuredCourse[indexPath.row].courseImage)
+            let data = try? Data(contentsOf: url!)
+            cell.courseImage.image = UIImage(data: data!)
+            cell.chapterCount.text = "\(self.featuredCourse[indexPath.row].totalNumberOfChapters) Chapters"
+            cell.duration.text = "\(self.featuredCourse[indexPath.row].videoLength) mins"
             
             return cell
         case subCategoryCollectionView :
@@ -67,7 +142,8 @@ extension CategoryInformationViewController: UICollectionViewDelegate, UICollect
                 
                 fatalError("can't dequeue CustomCell")
             }
-            cell.subCategory.text = subCategoriesfield[indexPath.row]
+            
+            cell.subCategory.text = shared.categoriesViewModelShared.subCategoryDetails[indexPath.row].subCategotyName
             return cell
         default:
             return UICollectionViewCell()
@@ -92,11 +168,17 @@ extension CategoryInformationViewController: UITableViewDataSource, UITableViewD
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-    return 10
+        return self.allCourses.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CatergoryCourseDisplayTableViewCell
+        cell.courseName.text = self.allCourses[indexPath.row].courseName
+        cell.categoryNAme.text = self.allCourses[indexPath.row].categoryName
+        let url = URL(string: self.allCourses[indexPath.row].courseImage)
+        let data = try? Data(contentsOf: url!)
+        cell.courseImage.image = UIImage(data: data!)
+        cell.totalNumberOfChapters.text = "\(self.allCourses[indexPath.row].totalNumberOfChapters) Chapters"
         return cell
     }
 }

@@ -85,6 +85,7 @@ class ChaptersViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         let loader = self.loader()
+        dataoflesson.removeAll()
         shared.chaptersDetailsViewModelShared.getChapters(token: shared.token, courseId: "3") { result in
            
             DispatchQueue.main.async { [self] in
@@ -153,31 +154,13 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "cells") as! CustomChapterTableViewCell
    
         if let data = dataoflesson[indexPath.section].lessonList[indexPath.row] as? LessonList {
-            
-            cell.chapterName.text = data.lessonName
-            cell.chapterNumber.text = "0\(String(data.lessonId))"
-            cell.chapterDuration.text = "\(String(data.duration)) mins"
-            cell.moduleTestView.isHidden = true
-            cell.chapterNumberView.isHidden = false
-            cell.chapterNumber.isHidden = false
-            cell.progressViewWidthContraint.constant = 0
-            cell.cellLeadingConstraint.constant = 0
-            cell.progressHeight.constant = 0
-            cell.progressWidth.constant = 0
+            cell.cellconstrints(joinedCourse: self.joinCourseButton.isHidden)
+            cell.setValuesLesson(data: data)
         }
         
         if let data = dataoflesson[indexPath.section].lessonList[indexPath.row] as? AssignmentResponse {
             
-            cell.moduleTestView.isHidden = false
-            cell.chapterNumberView.isHidden = true
-            cell.chapterNumber.isHidden = true
-            cell.chapterName.text = data.assignmentName
-            cell.chapterNumber.text = "0\(data.assignmentId ))"
-            cell.chapterDuration.text = "\(data.testDuration )) mins"
-            cell.progressViewWidthContraint.constant = 0
-            cell.cellLeadingConstraint.constant = 0
-            cell.progressHeight.constant = 0
-            cell.progressWidth.constant = 0
+            cell.setValuesAssignment(data: data)
         }
         return cell
     }
