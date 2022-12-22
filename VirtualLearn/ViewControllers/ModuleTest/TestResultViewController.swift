@@ -14,9 +14,18 @@ class TestResultViewController: UIViewController {
     @IBOutlet weak var middleRightView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var middleView: UIView!
+    let testviewModel = ModuleTestViewModel()
+    let mainShared = mainViewModel.mainShared
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        testviewModel.getAnswer(token: mainShared.token, assignnmentId: "5") {
+            print("sucess")
+        } fail: {
+            print("error")
+        }
+
         middleLeftView.layer.cornerRadius = 5
         middleRightView.layer.cornerRadius = 5
        

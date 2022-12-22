@@ -5498,6 +5498,9 @@
                                                 <state key="normal" title="Result">
                                                     <color key="titleColor" red="0.93333333330000001" green="0.36078431370000003" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onclickResult:" destination="jwf-1H-9Lv" eventType="touchUpInside" id="xX6-IN-tXt"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -8804,6 +8807,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="Jv0-5d-UcN" secondAttribute="trailing" constant="24" id="hjJ-Nw-9Ja"/>
                                                     <constraint firstAttribute="trailing" secondItem="mef-fP-wmw" secondAttribute="trailing" constant="24" id="i8c-Gp-Sj4"/>
                                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YzQ-TW-ElF" secondAttribute="trailing" constant="20" symbolic="YES" id="r3J-sI-DjY"/>
+                                                    <constraint firstAttribute="height" constant="556" id="tMD-kK-ahI"/>
                                                     <constraint firstItem="mef-fP-wmw" firstAttribute="leading" secondItem="CMl-lq-P4W" secondAttribute="leading" constant="24" id="tcZ-oe-ANv"/>
                                                     <constraint firstAttribute="bottom" secondItem="Jv0-5d-UcN" secondAttribute="bottom" constant="25" id="u1N-O8-PoN"/>
                                                     <constraint firstItem="mef-fP-wmw" firstAttribute="top" secondItem="YzQ-TW-ElF" secondAttribute="bottom" constant="20" id="zCC-dB-Z62"/>
@@ -8892,6 +8896,7 @@
                         <outlet property="certficateView" destination="CMl-lq-P4W" id="OUl-UL-lVr"/>
                         <outlet property="certificateGrade" destination="3AI-h3-gJw" id="sR2-g1-VQC"/>
                         <outlet property="certificateImage" destination="Jv0-5d-UcN" id="Gud-wG-ScL"/>
+                        <outlet property="certificateViewHeight" destination="tMD-kK-ahI" id="TMF-0n-Nl7"/>
                         <outlet property="chaptersBtn" destination="VKp-tl-qyn" id="8bU-GS-4CZ"/>
                         <outlet property="chaptersUnderLineView" destination="U7G-DD-Jbq" id="2ch-jK-eMs"/>
                         <outlet property="completedDate" destination="4dx-UU-1VR" id="ZFA-vQ-RIo"/>

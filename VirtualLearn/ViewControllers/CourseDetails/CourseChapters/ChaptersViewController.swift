@@ -40,6 +40,7 @@ class ChaptersViewController: UIViewController {
     @IBOutlet weak var joinCourseButton: UIButton!
     
     @IBOutlet weak var certficateView: UIView!
+    @IBOutlet weak var certificateViewHeight: NSLayoutConstraint!
     @IBOutlet weak var certificateGrade: UILabel!
     @IBOutlet weak var joinedDate: UILabel!
     @IBOutlet weak var completedDate: UILabel!
@@ -111,7 +112,24 @@ class ChaptersViewController: UIViewController {
                 self.sourseContentDescription.text = chapter + lesson + assesment + totalLength
                 self.dataoflesson = result.lessonResponseList
                 self.stopLoader(loader: loader)
-                
+                if(result.certificateGenerated) {
+                    self.certficateView.isHidden = false
+                    certificateViewHeight.constant = 556
+                    
+                    self.certificateGrade.text = String(result.certificateResponse?.grade ?? 0) + "%"
+                    self.joinedDate.text = result.certificateResponse?.joinedData
+                    self.completedDate.text = result.certificateResponse?.completedDate
+                    self.totalDuration.text = result.certificateResponse?.completionDuration
+                    tableView.reloadData()
+                    guard let url = URL(string: result.certificateResponse?.certificateLink ?? "") else {return}
+                    guard let data = try? Data(contentsOf: url) else {return}
+                    self.certificateImage.image = UIImage(data: data)
+                }
+                else
+                {
+                self.certficateView.isHidden = true
+                certificateViewHeight.constant = 0
+                }
                 tableView.reloadData()
             }
         } fail: {
@@ -201,6 +219,20 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 36
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let data = dataoflesson[indexPath.section].lessonList[indexPath.row] as? LessonList {
+            //play video
+            //check acess to play the video using ""next play and completed chapter status""
+        }
+        
+        if let data = dataoflesson[indexPath.section].lessonList[indexPath.row] as? AssignmentResponse {
+            // check Aceess to take the test
+            guard let vc = storyboard?.instantiateViewController(identifier: "TestResultViewController") as? TestResultViewController else {return}
+            navigationController?.pushViewController(vc, animated: true)
+            
+        }
     }
 }
 

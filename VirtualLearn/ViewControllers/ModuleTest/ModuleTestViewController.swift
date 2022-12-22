@@ -87,6 +87,10 @@ class ModuleTestViewController: UIViewController {
         moduleTestViewModel.submitAnswer(token: mainShared.token, assignnmentId: "5", testAnswers: testAnswers){
             
             print("sucess")
+            DispatchQueue.main.async {
+                guard let vc = self.storyboard?.instantiateViewController(identifier: "CongratsViewController") as? CongratsViewController else {return}
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         } fail: {
             print("fail")
         }

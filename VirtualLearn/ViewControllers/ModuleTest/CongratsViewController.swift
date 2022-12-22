@@ -18,4 +18,9 @@ class CongratsViewController: UIViewController {
     }
 
 }
+    
+    @IBAction func onclickResult(_ sender: Any) {
+        guard let vc = storyboard?.instantiateViewController(identifier: "TestResultViewController") as? TestResultViewController else {return}
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
