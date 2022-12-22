@@ -100,6 +100,7 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
             print("insideFunction")
             DispatchQueue.main.async {
                 print("inside Dispatch")
+                print(self.mainshared.categoriesViewModelShared.listofCategories.count)
 
                 self.categoriesCollectionView.reloadData()
             }
@@ -242,7 +243,6 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        shared.delegate?.onClickChoiceofYourCourse()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

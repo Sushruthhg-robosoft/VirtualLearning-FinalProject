@@ -13,13 +13,14 @@ class CategoryViewModel{
     var listofCategories = [Category]()
     
     func getCategories(token: String, completion: @escaping() -> Void, fail: @escaping () -> Void){
-        listofCategories.removeAll()
+        
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/categories")
         var request = URLRequest(url: url!)
         request.httpMethod = "GET"
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         
         networkManger.fetchDataJson(request: request) { (data) in
+            self.listofCategories.removeAll()
             guard let apiData = data as? [Any] else {print("error in category 2"); return}
             
             for categoryData in apiData{

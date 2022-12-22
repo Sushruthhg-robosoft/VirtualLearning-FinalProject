@@ -48,6 +48,7 @@ class NewUserHomeView: UIView {
     func existingUser(){
         bottomView.isHidden = true
         existingUserBottomView.isHidden = false
+       
     }
     
     func newUser(){
