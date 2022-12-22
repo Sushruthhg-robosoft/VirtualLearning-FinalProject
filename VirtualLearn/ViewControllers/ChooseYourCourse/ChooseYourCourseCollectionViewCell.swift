@@ -11,4 +11,7 @@ class ChooseYourCourseCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var categoryName: UILabel!
     @IBOutlet weak var categoryImage: UIImageView!
+    
+    
+    
 }

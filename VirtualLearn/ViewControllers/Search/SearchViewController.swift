@@ -33,11 +33,15 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var categoriesViewHeight: NSLayoutConstraint!
     @IBOutlet weak var topSearchViewHeight: NSLayoutConstraint!
     @IBOutlet weak var noDataDisplayViewheight: NSLayoutConstraint!
+    @IBOutlet weak var searchCategoryCollectionView: UICollectionView!
     let shared = mainViewModel.mainShared
     
     
     override func viewDidLoad() {
-        
+        let loader = self.loader()
+
+        searchCategoryCollectionView.delegate = self
+        searchCategoryCollectionView.dataSource = self
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -68,9 +72,11 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         
         shared.categoriesViewModelShared.getCategories(token: shared.token) {
             DispatchQueue.main.async {
+                self.stopLoader(loader: loader)
+                self.searchCategoryCollectionView.reloadData()
             }
         } fail: {
-            print("error")
+            self.stopLoader(loader: loader)
         }
         
     }
@@ -197,41 +203,6 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    
-    
-    @IBAction func onClickDesign(_ sender: Any) {
-    }
-    
-    @IBAction func onClickDevelopment(_ sender: Any) {
-    }
-    
-    @IBAction func onClickBusiness(_ sender: Any) {
-    }
-    
-    @IBAction func onClickFinance(_ sender: Any) {
-    }
-    
-    @IBAction func onClickHealthFitness(_ sender: Any) {
-    }
-    
-    @IBAction func onClickMusic(_ sender: Any) {
-    }
-    
-    @IBAction func onClickIT(_ sender: Any) {
-    }
-    
-    @IBAction func onClickMarketing(_ sender: Any) {
-    }
-    
-    @IBAction func onClickLifestyle(_ sender: Any) {
-    }
-    
-    @IBAction func onClickPhotography(_ sender: Any) {
-    }
-    
-    @IBAction func onClickTeaching(_ sender: Any) {
-    }
-    
 }
 
 
@@ -259,5 +230,34 @@ extension SearchViewController: SearchResponse {
 
     }
     
+    
+}
+
+extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return shared.categoriesViewModelShared.listofCategories.count
+      }
+      
+      func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SearchCategoryCollectionViewCell
+        
+        cell.categoryName.text = shared.categoriesViewModelShared.listofCategories[indexPath.row].categotyName
+        
+        let url = URL(string: shared.categoriesViewModelShared.listofCategories[indexPath.row].categoryImage)
+        let data = try? Data(contentsOf: url!)
+        
+        cell.categoryImage.image = UIImage(data: data!)
+        
+        return cell
+      }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 25
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 3
+    }
     
 }

@@ -33,13 +33,20 @@ class NewUserHomeView: UIView {
         UINib(nibName: "NewUserHomeView", bundle: nil).instantiate(withOwner: self, options: nil)
         addSubview(BackView)
         BackView.frame = self.bounds
-        if shared.isExisting{
-            existingUser()
-        }
-        else{
-            newUser()
-        }
+       
         
+        shared.homeViewModelShared.getOngoingCourseForHome(token: shared.token) {
+            DispatchQueue.main.async {
+                if self.shared.homeViewModelShared.ongoingCourses.count != 0{
+                    self.existingUser()
+                }
+                else{
+                    self.newUser()
+                }
+            }
+        } fail: {
+            
+        }
         
 
     }

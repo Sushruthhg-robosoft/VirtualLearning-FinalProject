@@ -47,6 +47,8 @@
 		59055E3D294C6A5200608DE8 /* chaptersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59055E3C294C6A5200608DE8 /* chaptersViewModel.swift */; };
 		59055E42294C757700608DE8 /* CourseChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59055E41294C757700608DE8 /* CourseChapter.swift */; };
 		59055E47294C7F5900608DE8 /* Certificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59055E46294C7F5900608DE8 /* Certificate.swift */; };
+		590DE5A529548B2D00E90572 /* NewUserCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590DE5A429548B2D00E90572 /* NewUserCategoryCollectionViewCell.swift */; };
+		590DE5AA29548F5400E90572 /* SearchCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590DE5A929548F5400E90572 /* SearchCategoryCollectionViewCell.swift */; };
 		592B3530294CACAC00EDC10A /* AssignmentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B352F294CACAC00EDC10A /* AssignmentResponse.swift */; };
 		59D136382953491A00AFF360 /* ViewCertificateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D136372953491A00AFF360 /* ViewCertificateViewController.swift */; };
 		59FC6E8F295066F90031E719 /* TopCourseCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FC6E8E295066F90031E719 /* TopCourseCategory.swift */; };
@@ -202,6 +204,8 @@
 		59055E3C294C6A5200608DE8 /* chaptersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chaptersViewModel.swift; sourceTree = "<group>"; };
 		59055E41294C757700608DE8 /* CourseChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseChapter.swift; sourceTree = "<group>"; };
 		59055E46294C7F5900608DE8 /* Certificate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Certificate.swift; sourceTree = "<group>"; };
+		590DE5A429548B2D00E90572 /* NewUserCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		590DE5A929548F5400E90572 /* SearchCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		592B352F294CACAC00EDC10A /* AssignmentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentResponse.swift; sourceTree = "<group>"; };
 		59D136372953491A00AFF360 /* ViewCertificateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCertificateViewController.swift; sourceTree = "<group>"; };
 		59FC6E8E295066F90031E719 /* TopCourseCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCourseCategory.swift; sourceTree = "<group>"; };
@@ -340,6 +344,7 @@
 				1BF0C85F29408D93009D9030 /* HomeViewController.swift */,
 				CF032A7A2948951500D6B6D3 /* NotificationViewController.swift */,
 				CF032A8E2948972000D6B6D3 /* NotificationTableViewCell.swift */,
+				590DE5A429548B2D00E90572 /* NewUserCategoryCollectionViewCell.swift */,
 			);
 			path = Hamburger;
 			sourceTree = "<group>";
@@ -379,6 +384,7 @@
 				1B9289CF2949E6E500C66D9E /* ModallyViewController.swift */,
 				1B9289CA2949E66800C66D9E /* SearchViewController.swift */,
 				1B9289D92949E76200C66D9E /* CourseDataTableViewCell.swift */,
+				590DE5A929548F5400E90572 /* SearchCategoryCollectionViewCell.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -902,6 +908,7 @@
 				59FC6F282951E8A60031E719 /* searchViewModel.swift in Sources */,
 				CF9E07EF294B282900F90B49 /* CategoryCollectionViewCell.swift in Sources */,
 				C2ED75142949DF6300562970 /* AlertMessage.swift in Sources */,
+				590DE5A529548B2D00E90572 /* NewUserCategoryCollectionViewCell.swift in Sources */,
 				1B928A00294A1CDC00C66D9E /* CategoryInformationViewController.swift in Sources */,
 				1B3635EC29409E2500D07243 /* ForgotPasswordViewController.swift in Sources */,
 				CFBA057B2946FB9800763342 /* ChooseYourCourseTableViewCell.swift in Sources */,
@@ -999,6 +1006,7 @@
 				C21A3F8229502F2D00FDDE71 /* PrivacyPolicyModel.swift in Sources */,
 				CFEC206C29419AD200A171DA /* NewUserHomeView.swift in Sources */,
 				CF032A7B2948951500D6B6D3 /* NotificationViewController.swift in Sources */,
+				590DE5AA29548F5400E90572 /* SearchCategoryCollectionViewCell.swift in Sources */,
 				CF2EFB1D2949ADC200A7D585 /* Course.swift in Sources */,
 				CF032A852948958F00D6B6D3 /* Notification.swift in Sources */,
 				590194C6293F717300055C24 /* LandingViewController.swift in Sources */,

@@ -7,48 +7,59 @@
 
 import UIKit
 
-class NewUserMyCourseViewController: UIViewController {
+class NewUserMyCourseViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+  
+    
+    var mainShared = mainViewModel.mainShared
 
+    @IBOutlet weak var newUserCategoryCollectionView: UICollectionView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let loader = self.loader()
 
-        // Do any additional setup after loading the view.
-    }
-    
+        
+        newUserCategoryCollectionView.delegate = self
+        newUserCategoryCollectionView.dataSource = self
 
-    @IBAction func onClickDesign(_ sender: Any) {
+        mainShared.categoriesViewModelShared.getCategories(token: mainShared.token) {
+            DispatchQueue.main.async {
+                self.stopLoader(loader: loader)
+                self.newUserCategoryCollectionView.reloadData()
+            }
+        } fail: {
+            self.stopLoader(loader: loader)
+        }
+
+        
+        
     }
     
-    @IBAction func onClickDevelopment(_ sender: Any) {
-    }
-    
-    @IBAction func onClickBusiness(_ sender: Any) {
-    }
-    
-    @IBAction func onClickMusic(_ sender: Any) {
-    }
-    @IBAction func onClickFinance(_ sender: Any) {
-    }
-    
-    @IBAction func onClickFitness(_ sender: Any) {
-    }
-    
-    @IBAction func onClickIT(_ sender: Any) {
-    }
-    
-    @IBAction func OnClickMarketing(_ sender: Any) {
-    }
-    
-    @IBAction func onClickPhotography(_ sender: Any) {
-    }
-    
-    @IBAction func onClickTeaching(_ sender: Any) {
-    }
-    
-    @IBAction func onClickLifestyle(_ sender: Any) {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return mainShared.categoriesViewModelShared.listofCategories.count
+      }
+      
+      func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! NewUserCategoryCollectionViewCell
+        
+        cell.categoryName.text = mainShared.categoriesViewModelShared.listofCategories[indexPath.row].categotyName
+        
+        let url = URL(string: mainShared.categoriesViewModelShared.listofCategories[indexPath.row].categoryImage)
+        let data = try? Data(contentsOf: url!)
+        
+        cell.categoryImage.image = UIImage(data: data!)
+        
+        return cell
+      }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
     }
     
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 3
+    }
     
     
 }
