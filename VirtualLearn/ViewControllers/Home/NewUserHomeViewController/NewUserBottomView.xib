@@ -34,10 +34,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="otZ-tn-TLQ">
-                    <rect key="frame" x="24" y="38" width="403" height="113"/>
+                    <rect key="frame" x="24" y="45" width="403" height="85"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="UbW-bE-yJn">
-                            <rect key="frame" x="0.0" y="0.0" width="403" height="113"/>
+                            <rect key="frame" x="0.0" y="0.0" width="403" height="85"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CVF-jn-TEf">
                                 <size key="itemSize" width="137" height="30"/>
@@ -198,7 +198,7 @@
                 <constraint firstItem="KeY-My-dk9" firstAttribute="top" secondItem="fCU-F1-9Ha" secondAttribute="bottom" constant="30" id="3qY-bh-Fgu"/>
                 <constraint firstItem="fCU-F1-9Ha" firstAttribute="top" secondItem="dFE-mz-e0x" secondAttribute="bottom" constant="15" id="CZh-e1-Vnr"/>
                 <constraint firstItem="otZ-tn-TLQ" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="DFo-2o-EhP"/>
-                <constraint firstItem="otZ-tn-TLQ" firstAttribute="top" secondItem="SUG-Co-h4b" secondAttribute="bottom" constant="8" symbolic="YES" id="Emh-V6-LRj"/>
+                <constraint firstItem="otZ-tn-TLQ" firstAttribute="top" secondItem="SUG-Co-h4b" secondAttribute="bottom" constant="15" id="Emh-V6-LRj"/>
                 <constraint firstItem="otZ-tn-TLQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="24" id="MDP-fH-Wky"/>
                 <constraint firstItem="KeY-My-dk9" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Nn3-jt-xgh"/>
                 <constraint firstItem="KeY-My-dk9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="QPX-5Y-oqH"/>
@@ -209,7 +209,7 @@
                 <constraint firstItem="fCU-F1-9Ha" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="daN-9x-EDc"/>
                 <constraint firstItem="dFE-mz-e0x" firstAttribute="trailing" secondItem="Dfs-qZ-HX7" secondAttribute="trailing" id="eIl-NU-XPU"/>
                 <constraint firstItem="dFE-mz-e0x" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="24" id="fWM-Hi-JSw"/>
-                <constraint firstItem="Dfs-qZ-HX7" firstAttribute="top" secondItem="otZ-tn-TLQ" secondAttribute="bottom" constant="8" id="gm7-9m-yn3"/>
+                <constraint firstItem="Dfs-qZ-HX7" firstAttribute="top" secondItem="otZ-tn-TLQ" secondAttribute="bottom" constant="29" id="gm7-9m-yn3"/>
                 <constraint firstItem="dFE-mz-e0x" firstAttribute="top" secondItem="Dfs-qZ-HX7" secondAttribute="bottom" constant="10" id="iDu-ss-ZVy"/>
                 <constraint firstItem="fCU-F1-9Ha" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="ixs-vL-iBc"/>
                 <constraint firstItem="4jq-8E-mPL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="v2Q-Kk-ZZU"/>

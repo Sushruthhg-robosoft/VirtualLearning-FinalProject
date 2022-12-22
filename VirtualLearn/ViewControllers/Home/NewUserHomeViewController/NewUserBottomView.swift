@@ -11,6 +11,7 @@ protocol clickButtons {
     func onClickSeeAllCategories()
     func onClickChoiceofYourCourse()
     func onclickChooseInAllCourse()
+    func onClickCategory(categoryName: String)
 }
 
 class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -100,6 +101,7 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
             print("insideFunction")
             DispatchQueue.main.async {
                 print("inside Dispatch")
+                print(self.mainshared.categoriesViewModelShared.listofCategories.count)
 
                 self.categoriesCollectionView.reloadData()
             }
@@ -241,8 +243,22 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+       
         
-        shared.delegate?.onClickChoiceofYourCourse()
+        switch collectionView {
+        case choiceOfUrCourseCollectionView :
+            shared.delegate?.onClickChoiceofYourCourse()
+            
+        case categoriesCollectionView :
+            let cell = self.categoriesCollectionView.cellForItem(at: indexPath) as? CategoriesCellCollectionViewCell
+            shared.delegate?.onClickCategory(categoryName: (cell?.categoryName.text)!)
+            
+
+            
+        default:
+           print("Default")
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
