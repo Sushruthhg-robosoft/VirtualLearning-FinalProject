@@ -13,7 +13,8 @@ class CategoryInformationViewController: UIViewController{
     @IBOutlet weak var courseToGetStartedCollectionView: UICollectionView!
     @IBOutlet weak var featureCourseCollectionView: UICollectionView!
     @IBOutlet weak var subCategoryCollectionView: UICollectionView!
-    
+    @IBOutlet weak var CategoryLabel: UILabel!
+    var categoryName = ""
 //    @IBOutlet weak var allCourseTableViewHeight: NSLayoutConstraint!
     
     var subCategoriesfield = [String]()

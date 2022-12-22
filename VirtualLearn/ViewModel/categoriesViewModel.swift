@@ -39,4 +39,21 @@ class CategoryViewModel{
         }
         
     }
+    
+    
+    func getCategegoryDetailsById(token: String,categoryId: String,limit: String,page: String, completion: @escaping() -> Void, fail: @escaping () -> Void){
+        
+        let url = URL(string:"https://app-virtuallearning-221207091853.azurewebsites.net/user/view/category/course?categoryId=1&limit=5&page=1")
+        var request = URLRequest(url: url!)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        
+        networkManger.fetchDataJson(request: request) { (data) in
+            guard let apiData = data as? [Any] else {print("error in category details 1"); return}
+            print(12345678,apiData)
+        } failure: { (fail) in
+            print(fail)
+        }
+
+    }
 }

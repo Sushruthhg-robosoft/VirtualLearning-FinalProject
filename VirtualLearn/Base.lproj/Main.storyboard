@@ -2759,6 +2759,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="CategoryLabel" destination="Ilg-FW-qaB" id="tSV-hR-70a"/>
                         <outlet property="allCourseTableView" destination="6Jf-Cw-cSs" id="IZt-JU-2Oi"/>
                         <outlet property="courseToGetStartedCollectionView" destination="Ega-rB-cch" id="6CE-b3-l3z"/>
                         <outlet property="featureCourseCollectionView" destination="LA0-r4-dt8" id="JLc-hJ-fzb"/>
