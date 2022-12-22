@@ -72,7 +72,6 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         nameField.text = profileData?.fullName
         userNameTextField.text = profileData?.userName
         mobileNoField.text = profileData?.phoneNumber
-        
         profilePhoto.image = dummyImage
   
         

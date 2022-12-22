@@ -66,6 +66,7 @@ class ProfileViewController: UIViewController {
                 print(profiledata.profilePic)
                 let data = try? Data(contentsOf: url!)
                 self.profilePhoto.image = UIImage(data: (data!))
+               
             
             }
             
