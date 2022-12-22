@@ -173,24 +173,26 @@ class NetWorkManager {
     }
     
     func fetchDataJson(request: URLRequest, completion: @escaping (Any) -> (), failure: @escaping (Any) -> ()) {
-        
+        print("inside fetch data json")
         URLSession.shared.dataTask(with: request) { data, response, error in
             if error == nil{
+                print(1)
                 let httpResponse = response as! HTTPURLResponse
-                
+                print("sataus cpodeee", httpResponse.statusCode)
                 guard let responsedata = data else { return }
                 if(httpResponse.statusCode == 401) {
-                    
+                    print(2)
                 }
                 
                 else if(httpResponse.statusCode == 200){
+                    print(3)
                     let data = try! JSONSerialization.jsonObject(with: responsedata, options: .allowFragments)
                     
                     completion(data)
                     
                 }
                 else{
-                    
+                    print(4)
                     failure(String(data: responsedata, encoding: .utf8)!.components(separatedBy: .newlines))
                     print(httpResponse.statusCode)
                 }

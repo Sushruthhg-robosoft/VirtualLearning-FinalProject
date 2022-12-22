@@ -16,17 +16,18 @@ class ChaptersViewModel {
         
 //        var listOfLessons = [LessonResponseList]()
         var expandStatus = 0
+        var videoPlay = 0
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/chapter?courseId=3")!
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        listOfLessons.removeAll()
         networkManeger.fetchDataJson(request: request) { data in
             
             guard let apiData = data as? [String:Any] else {print("apiDataerr");return}
 
             guard let joinedCourse = apiData["joinedCourse"] as? Bool else{print("joinedCourseErr");return}
-            guard let certificateGenerated = apiData["certificateGenerated"] as? Bool else{print("certificateGeneratederr");return}
 
             
             guard let courseContentResponse = apiData["courseContentResponse"] as? [String : Int] else{print("courseContentResponseErr"); return}
@@ -54,8 +55,11 @@ class ChaptersViewModel {
                     guard let videoLink = lesson["videoLink"] as? String else {return}
                     guard let duration = lesson["duration"] as? Int else {return}
                     guard let lessonCompleted = lesson["lessonCompleted"] as? Bool else {return}
-
+                    
                     let newLesson = LessonList(lessonId: lessonId, lessonName: lessonName, videoLink: videoLink, duration: duration, lessonCompleted: lessonCompleted)
+                    if(!lessonCompleted) {
+                        if(videoPlay == 0) { newLesson.nextPlay = true; videoPlay = 1 }
+                    }
                     lessonsList.append(newLesson)
 
                 }
@@ -89,8 +93,24 @@ class ChaptersViewModel {
 
             }
             print(lessonResponseLists.count)
-            print("after array")
-            let courseChapter = CourseChapter(joinedCourse: joinedCourse, certificateResponse: nil, certificateGenerated: certificateGenerated, lessonResponseList: self.listOfLessons, courseContentResponse:CourseContentData )
+//            print("after array")
+            var certificateResponse: Certificate?
+            
+            guard let certificateGenerated = apiData["certificateGenerated"] as? Bool else{print("certificateGeneratedrr"); return}
+            if(certificateGenerated) {
+                guard let certificateData = apiData["certificateResponse"] as? [String:Any] else{print("certificateResponseerr"); return}
+                
+                guard let joinedDate = certificateData["joinedDate"] as? String else {print("err1"); return}
+                guard let completedDate = certificateData["completedDate"] as? String else {print("err2"); return}
+                guard let completionDuration = certificateData["completionDuration"] as? String else {print("err3"); return}
+                guard let grade = certificateData["grade"] as? Int else {print("err4"); return}
+                guard let certificateLink = certificateData["certificateLink"] as? String else {print("err5"); return}
+                
+                let certificate = Certificate(joinedData: joinedDate, completedDate: completedDate, completionDuration: completionDuration, grade: grade, certificateLink: certificateLink)
+                certificateResponse = certificate
+            }
+            
+            let courseChapter = CourseChapter(joinedCourse: joinedCourse, certificateResponse: certificateResponse, certificateGenerated: certificateGenerated, lessonResponseList: self.listOfLessons, courseContentResponse:CourseContentData )
             
             completion(courseChapter)
         } failure: {(error) in

@@ -25,7 +25,10 @@ class HomeViewController: UIViewController {
     var mainShared = mainViewModel.mainShared
     var hamburgerViewController: HamburgerViewController?
     override func viewDidLoad() {
+//        mainShared.categoriesViewModelShared.listofCategories.removeAll()
         
+        
+
         
        // print("sdcfewfdfeferrer\(userName)")
         self.hamburgerView.isHidden = true
@@ -157,6 +160,12 @@ extension HomeViewController: clickButtons{
     func onclickChooseInAllCourse() {
         print(90)
         let vc = storyboard?.instantiateViewController(identifier: "ChooseYourCourseViewController") as! ChooseYourCourseViewController
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func onClickCategory(categoryName: String) {
+        let vc = storyboard?.instantiateViewController(identifier: "CategoryInformationViewController") as! CategoryInformationViewController
+        vc.categoryName = categoryName
         navigationController?.pushViewController(vc, animated: true)
     }
 
