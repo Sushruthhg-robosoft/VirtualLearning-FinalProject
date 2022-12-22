@@ -246,10 +246,24 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
+        
+        switch collectionView {
+        case categoriesCollectionView :
+            
+            return 5
+        default:
+            return 10
+        }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
+        switch collectionView {
+        case categoriesCollectionView :
+            
+            return 5
+        default:
+            return 10
+        }
+        
     }
     
 
