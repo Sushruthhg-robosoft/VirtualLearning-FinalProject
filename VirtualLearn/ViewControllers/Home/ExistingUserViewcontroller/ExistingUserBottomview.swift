@@ -73,6 +73,28 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
             print("fail")
         }
         
+        mainshared.homeViewModelShared.getPopularCourseCategory1Details(token: mainshared.token) { (data) in
+            
+            DispatchQueue.main.async {
+                self.topCourse1.topCourse = data
+                self.topCourse1.topCourseCollectionView.reloadData()
+            }
+            
+            
+        } fail: {
+            print("fail")
+        }
+        
+        mainshared.homeViewModelShared.getPopularCourseCategory2Details(token: mainshared.token) { (data) in
+            
+            DispatchQueue.main.async {
+                self.topCourse2.topCourse = data
+                self.topCourse2.topCourseCollectionView.reloadData()
+            }
+        } fail: {
+            print("fail")
+        }
+        
     }
     @IBAction func design(_ sender: Any) {
         
@@ -82,6 +104,12 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
         shared.delegate?.onClickSeeAllCategories()
         
     }
+    
+    @IBAction func seeallChoiceofYourcourse(_ sender: Any) {
+        
+        shared.delegate?.onClickChoiceofYourCourse()
+    }
+    
     
     @IBAction func onClickAll(_ sender: Any) {
         allBtn.isSelected()
