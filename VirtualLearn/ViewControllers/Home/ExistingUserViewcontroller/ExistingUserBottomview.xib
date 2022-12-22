@@ -45,6 +45,9 @@
                     <state key="normal" title="See All">
                         <color key="titleColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
+                    <connections>
+                        <action selector="onClickSeeAll:" destination="-1" eventType="touchUpInside" id="KIi-6E-a5E"/>
+                    </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JLf-Q1-zc6">
                     <rect key="frame" x="24" y="49" width="390" height="82"/>
@@ -116,7 +119,7 @@
                                 <color key="titleColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
-                                <action selector="onClickSeeAll:" destination="-1" eventType="touchUpInside" id="sWM-0K-5oT"/>
+                                <action selector="seeallChoiceofYourcourse:" destination="-1" eventType="touchUpInside" id="N0K-9T-eSN"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K38-Rp-m86" customClass="ChoiceOfCourseCustomButton" customModule="VirtualLearn" customModuleProvider="target">
