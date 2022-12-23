@@ -26,7 +26,7 @@ class CustomChapterTableViewCell: UITableViewCell {
   
     func setValuesLesson(data: LessonList) {
         chapterName.text = data.lessonName
-        chapterNumber.text = "0\(String(data.lessonId))"
+        chapterNumber.text = "0\(String(data.lessonNumber))"
         chapterDuration.text = "\(String(data.duration)) mins"
         moduleTestView.isHidden = true
         chapterNumberView.isHidden = false

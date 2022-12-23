@@ -43,20 +43,22 @@ class ChaptersViewModel {
             var lessonsList = [Any]()
             for lessonResponse in lessonResponseLists {
                 lessonsList.removeAll()
-                guard let chapterName = lessonResponse["chapterName"] as? String else{print("chapterNameErr"); return fail()}
-                guard let chapterId = lessonResponse["chapterId"] as? Int else{print("chapterIdErr"); return fail()}
-                guard let chapterCompletionStatus = lessonResponse["chapterCompleted"] as? Bool else{print("chapterStatusErr"); return fail()}
+                guard let chapterName = lessonResponse["chapterName"] as? String else{print("chapterNameErr1"); return fail()}
+                guard let chapterId = lessonResponse["chapterId"] as? Int else{print("chapterIdErr2"); return fail()}
+                guard let chapterNumber = lessonResponse["chapterNumber"] as? Int else{print("chapterIdErr3"); return fail()}
+                guard let chapterCompletionStatus = lessonResponse["chapterCompleted"] as? Bool else{print("chapterStatusErr4"); return fail()}
                 
                 guard let chapterList = lessonResponse["lessonList"] as? [[String:Any]] else{print("chapterlist Errrpr"); return fail()}
 
                 for lesson in chapterList {
                     guard let lessonId = lesson["lessonId"] as? Int else {return fail()}
+                    guard let lessonNumber = lesson["lessonNumber"] as? Int else {return fail()}
                     guard let lessonName = lesson["lessonName"] as? String else {return fail()}
                     guard let videoLink = lesson["videoLink"] as? String else {return fail()}
                     guard let duration = lesson["duration"] as? Int else {return fail()}
                     guard let lessonCompleted = lesson["lessonCompleted"] as? Bool else {return fail()}
                     
-                    let newLesson = LessonList(lessonId: lessonId, lessonName: lessonName, videoLink: videoLink, duration: duration, lessonCompleted: lessonCompleted)
+                    let newLesson = LessonList(lessonId: lessonId, lessonNumber: String(lessonNumber), lessonName: lessonName, videoLink: videoLink, duration: duration, lessonCompleted: lessonCompleted)
                     if(!lessonCompleted) {
                         if(videoPlay == 0) { newLesson.nextPlay = true; videoPlay = 1 }
                     }
@@ -74,12 +76,13 @@ class ChaptersViewModel {
                     guard let assignmentName = assesmentdetails["assignmentName"] as? String else {print("chapterCountErr2"); return fail()}
                     guard let testDuration = assesmentdetails["testDuration"] as? Int else {print("hello");return fail()}
                     guard let questionCount = assesmentdetails["questionCount"] as? Int else {print("chapterCountErr3"); return fail()}
+                    guard let assignmentCompleted = assesmentdetails["assignmentCompleted"] as? Bool else {print("chapterCountErr4"); return fail()}
                     let grade = assesmentdetails["grade"] as? Int
-                    let assesment = AssignmentResponse(assignmentId: assignmentId, assignmentName: assignmentName, testDuration: testDuration, questionCount: questionCount, grade: Int(grade ?? 0))
+                    let assesment = AssignmentResponse(assignmentId: assignmentId, assinmentStatus: assignmentCompleted, assignmentName: assignmentName, testDuration: testDuration, questionCount: questionCount, grade: Int(grade ?? 0))
                     lessonsList.append(assesment)
                
                 }
-                let lessonResponse = LessonResponseList(chapterId: chapterId, chapterName: chapterName, chapterCompleted: chapterCompletionStatus, lessonList: lessonsList)
+                let lessonResponse = LessonResponseList(chapterId: chapterId, chapterNumber: String(chapterNumber), chapterName: chapterName, chapterCompleted: chapterCompletionStatus, lessonList: lessonsList)
                 if(!chapterCompletionStatus) {
                     if(expandStatus == 0){
                         lessonResponse.isExpandable = true
