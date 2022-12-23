@@ -20,10 +20,13 @@ class LoadingViewController: UIViewController {
         onboardingSeen = StorageManegr.isOnboardingSeen()
         loggedIn = StorageManegr.isLoggedIn()
         
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        loggedIn = StorageManegr.isLoggedIn()
         if loggedIn{
+            
             let vc = storyboard?.instantiateViewController(identifier: "HomeViewController") as? HomeViewController
             let authId = StorageManegr.authId()
             guard let receivedTokenData = keychain.loadData(userId: String(authId)) else {return}
