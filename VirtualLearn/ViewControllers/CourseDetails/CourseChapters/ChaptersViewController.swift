@@ -71,23 +71,7 @@ class ChaptersViewController: UIViewController {
         overViewBtn.setTitleColor(#colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1), for: .normal)
         overViewUnderLineView.backgroundColor = #colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
         
-//        shared.chaptersDetailsViewModelShared.getChapters(token: shared.token, courseId: "3") { result in
-//            let loader = self.loader()
-//            DispatchQueue.main.async { [self] in
-//                let chapter = String(result.courseContentResponse.chapterCount) + "Chapter | "
-//                let lesson = String(result.courseContentResponse.lessonCount) + "Lessons | "
-//                let assesment = String(result.courseContentResponse.moduleTest) + "Assesment Test |"
-//                let totalLength = String(result.courseContentResponse.totalVideoLength) + "h total Length"
-//
-//                self.sourseContentDescription.text = chapter + lesson + assesment + totalLength
-//                self.dataoflesson = result.lessonResponseList
-//                self.stopLoader(loader: loader)
-//                tableView.reloadData()
-//
-//            }
-//        } fail: {
-//            print("failures")
-//        }
+
  
     }
     
@@ -230,8 +214,12 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
         
         if let data = dataoflesson[indexPath.section].lessonList[indexPath.row] as? AssignmentResponse {
             // check Aceess to take the test
-            guard let vc = storyboard?.instantiateViewController(identifier: "TestResultViewController") as? TestResultViewController else {return}
+//            guard let vc = storyboard?.instantiateViewController(identifier: "TestResultViewController") as? TestResultViewController else {return}
+//            navigationController?.pushViewController(vc, animated: true)
+            guard let vc = storyboard?.instantiateViewController(identifier: "ModuleTestViewController") as? ModuleTestViewController else{return}
             navigationController?.pushViewController(vc, animated: true)
+            vc.assignmentId = String(data.assignmentId)
+            
             
         }
     }

@@ -49,6 +49,7 @@ class CourseDetailsViewController: UIViewController {
     var courseIncludes = [String]()
     var courseOutcome = [String]()
     var courseRequirment = [String]()
+    var courseId = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -68,7 +69,7 @@ class CourseDetailsViewController: UIViewController {
         
         
         
-        shared.courseDetailsViewModelShared.courseOverView(token: shared.token, courseId: "3") { courseDataOverView in
+        shared.courseDetailsViewModelShared.courseOverView(token: shared.token, courseId: courseId) { courseDataOverView in
             self.courseOverView = courseDataOverView
             DispatchQueue.main.async { [self] in
                 if(courseDataOverView.joinedCourse) {
@@ -156,7 +157,7 @@ class CourseDetailsViewController: UIViewController {
     
     @IBAction func onClickJoinCourse(_ sender: Any) {
         
-        shared.courseDetailsViewModelShared.joinCourse(token: shared.token, courseId: "3"){ data in
+        shared.courseDetailsViewModelShared.joinCourse(token: shared.token, courseId: courseId){ data in
             DispatchQueue.main.async { [self] in
                 CourseChapterView.isHidden = false
                 CourseOverViewView.isHidden = true

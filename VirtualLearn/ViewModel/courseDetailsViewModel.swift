@@ -14,7 +14,6 @@ class courseDetailsViewModel {
     
     func joinCourse(token: String, courseId: String, completion: @escaping(String) -> Void, fail: @escaping () -> Void){
         
-        print(courseId)
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/course?courseId=\(courseId)")!
         
         var request = URLRequest(url: url)
@@ -32,7 +31,7 @@ class courseDetailsViewModel {
         
     }
     
-    func courseOverView(token: String,courseId: String, completion: @escaping(CourseOverview) -> Void, fail: @escaping () -> Void) {
+    func courseOverView(token: String, courseId: String, completion: @escaping(CourseOverview) -> Void, fail: @escaping () -> Void) {
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/courseOverview?courseId=\(courseId)")!
         
         var request = URLRequest(url: url)

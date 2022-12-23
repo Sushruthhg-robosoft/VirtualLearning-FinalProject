@@ -25,12 +25,13 @@ class TestResultViewController: UIViewController {
     let testviewModel = ModuleTestViewModel()
     let mainShared = mainViewModel.mainShared
     var questionResults = [QuestionAnswer]()
+    var assignmentId = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
          
-        testviewModel.getAnswer(token: mainShared.token, assignnmentId: "5") { questionAnswerDetails in
+        testviewModel.getAnswer(token: mainShared.token, assignnmentId: assignmentId) { questionAnswerDetails in
             print("sucess")
 //            print(questionAnswerDetails)
             

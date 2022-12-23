@@ -13,6 +13,9 @@ class CategoryViewModel{
     var listofCategories = [Category]()
     var categoryDetails = [CategotyDetails]()
     var subCategoryDetails = [subCategory]()
+    
+    
+    
     func getCategories(token: String, completion: @escaping() -> Void, fail: @escaping () -> Void){
         
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/categories")
@@ -33,7 +36,6 @@ class CategoryViewModel{
                 
                 let categoty = Category(categoryId: String(categoryId), categoryImage: categoryImage, categotyName: categoryName)
                 self.listofCategories.append(categoty)
-//                print(self.listofCategories.count)
                 
                 completion()
             }
@@ -92,11 +94,9 @@ class CategoryViewModel{
                 
                 let subcategory = subCategory(subCategoryId: String(subCatID), subCategotyName: subCategoryName)
                 self.subCategoryDetails.append(subcategory)
-                print("789789789",subcategory)
             }
             
             completion()
-            //print(apiData)
         } failure: { (fail) in
             print(fail)
         }

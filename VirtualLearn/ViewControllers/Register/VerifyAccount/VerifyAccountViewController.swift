@@ -84,10 +84,11 @@ class VerifyAccountViewController: UIViewController, UITextFieldDelegate {
         guard let secondNumber = secondTextField.text else {return}
         guard let thirdNumber = thirdTextField.text else {return}
         guard let fourthNumber = fourthTextField.text else {return}
+        let mobileNumber = ""
         
         let otp = firstNumber + secondNumber + thirdNumber + fourthNumber
 
-        verificationOTP.verifyOTP(mobileNumber: "+917022011412", otp: otp){ sucess in
+        verificationOTP.verifyOTP(mobileNumber: mobileNumber, otp: otp){ sucess in
             
             DispatchQueue.main.async {
                 self.correctOtp()
@@ -131,7 +132,7 @@ class VerifyAccountViewController: UIViewController, UITextFieldDelegate {
         self.fourthDigitUnderView.backgroundColor = UIColor(red: 0, green: 255, blue: 0, alpha: 1)
     }
     @IBAction func resendOTPButtonClicked(_ sender: Any) {
-        verificationOTP.getOTP(mobileNumber: "+917022011412")
+        verificationOTP.getOTP(mobileNumber: mobileNumber)
     }
     
     @IBAction func onClickLogin(_ sender: Any) {

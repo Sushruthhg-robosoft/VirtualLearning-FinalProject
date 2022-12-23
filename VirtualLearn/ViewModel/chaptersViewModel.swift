@@ -12,9 +12,9 @@ class ChaptersViewModel {
     
     let networkManeger = NetWorkManager()
     var listOfLessons = [LessonResponseList]()
+    
     func getChapters(token: String, courseId: String,completion: @escaping(CourseChapter) -> Void, fail: @escaping () -> Void) {
         
-//        var listOfLessons = [LessonResponseList]()
         var expandStatus = 0
         var videoPlay = 0
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/chapter?courseId=\(courseId)")!

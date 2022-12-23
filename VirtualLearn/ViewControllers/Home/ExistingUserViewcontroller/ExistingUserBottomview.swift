@@ -107,7 +107,7 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
     
     @IBAction func seeallChoiceofYourcourse(_ sender: Any) {
         
-        shared.delegate?.onClickChoiceofYourCourse()
+        shared.delegate?.onclickChooseInAllCourse()
     }
     
     
@@ -197,6 +197,9 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
             let url = URL(string: mainshared.homeViewModelShared.allCourse[indexPath.row].courseImage)
             let data = try? Data(contentsOf: url!)
             cell.lessonImage.image = UIImage(data: data!)
+            print(mainshared.homeViewModelShared.allCourse[indexPath.row].courseId)
+            //cell.courseId = mainShared.homeViewModelShared.allCourse[indexPath.row].courseId
+            
        
             return cell
             
@@ -223,11 +226,12 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
         
         switch collectionView {
         case choiceOfUrCourseCollectionView :
-            shared.delegate?.onClickChoiceofYourCourse()
+            
+            shared.delegate?.onClickChoiceofYourCourse(courseId: mainshared.homeViewModelShared.allCourse[indexPath.row].courseId)
             
         case categoriesCollectionView :
             let cell = self.categoriesCollectionView.cellForItem(at: indexPath) as? CategoriesCellCollectionViewCell
-            shared.delegate?.onClickCategory(categoryName: (cell?.categoryName.text)!, categoryId: cell!.categoryId)
+            shared.delegate?.onClickCategory(categoryName: (cell?.categoryName.text)!, categoryId: mainshared.categoriesViewModelShared.listofCategories[indexPath.row].categoryId)
             
 
             

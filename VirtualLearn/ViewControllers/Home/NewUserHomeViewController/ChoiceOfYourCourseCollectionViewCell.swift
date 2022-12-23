@@ -14,6 +14,8 @@ class ChoiceOfYourCourseCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var numberOfChapters: UILabel!
     @IBOutlet weak var lessonImage: UIImageView!
     
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -8,7 +8,6 @@
 import Foundation
 
 class HomeViewModel {
-    //var shared = mainViewModel.mainShared
     var banners = [String]()
     var allCourse = [HomeCourse]()
     var topCourseCategory1 = [TopCourseCategory]()
@@ -31,7 +30,6 @@ class HomeViewModel {
                 guard let bannerdetails = bannerData as? [String:Any] else {print("bannerError2");return}
                 guard let bannerImage = bannerdetails["imageLink"] as? String else {print("bannerError3");return}
                 self.banners.append(bannerImage)
-                //print(self.banners.count)
                 
             }
             completion(self.banners)
@@ -55,7 +53,6 @@ class HomeViewModel {
         
         networkManger.fetchDataJson(request: request) { (data) in
             guard let apiData = data as? [Any] else{print("myCourseViewModel apiData array error1");return}
-            //print(apiData)
             
             for allCourseData in apiData{
                 
@@ -129,7 +126,6 @@ class HomeViewModel {
         
         networkManger.fetchDataJson(request: request) { (data) in
             guard let apiData = data as? [Any] else{print("myCourseViewModel apiData array error1");return}
-            //print(apiData)
             
             for allCourseData in apiData{
                 
@@ -167,7 +163,6 @@ class HomeViewModel {
         
         networkManger.fetchDataJson(request: request) { (data) in
             guard let apiData = data as? [Any] else{print("myCourseViewModel apiData array error1");return}
-            //print(apiData)
             
             for allCourseData in apiData{
                 
@@ -205,7 +200,6 @@ class HomeViewModel {
         networkManger.fetchDataJson(request: request) { (data) in
             print(data)
             guard let apiData = data as? [Any] else{print("myCourseViewModel apiData array error1");return}
-            //print(apiData)
             
             for allCourseData in apiData{
                 

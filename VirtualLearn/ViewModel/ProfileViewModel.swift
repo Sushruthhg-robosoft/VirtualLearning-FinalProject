@@ -7,7 +7,6 @@
 
 import Foundation
 class ProfileViewModel {
-//    static var shared = ProfileViewModel()
     let networkManager = NetWorkManager()
     var profileDataDetails = [ProfileData]()
     
@@ -23,7 +22,6 @@ class ProfileViewModel {
             print(profileData)
             guard let userId = profileData["userId"] as? Int else{print("userId error");return}
              let  profilePicture = profileData["profilePic"] as? String
-//            print(profilePicture)
             guard let name = profileData["fullName"] as? String else{print("fullName error");return}
             guard let userName = profileData["userName"] as? String else{print("userName error");return}
             guard let emailId = profileData["emailId"] as? String else{print("emailId error");return}

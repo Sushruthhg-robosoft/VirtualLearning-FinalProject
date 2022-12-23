@@ -136,6 +136,9 @@ extension MyCourseViewController: UITableViewDelegate, UITableViewDataSource {
             cell.courseImage.image = UIImage(data: data!)
             cell.myCouseStatus.text = "Ongoing"
             cell.chapters.text = "\(shared.myCourseViewModelShared.ongoingCourses[indexPath.row].completedCount)/\(shared.myCourseViewModelShared.ongoingCourses[indexPath.row].totalNumberOfChapters)"
+            cell.button.setTitle("Continue", for: .normal)
+
+            
             
         }
         else{

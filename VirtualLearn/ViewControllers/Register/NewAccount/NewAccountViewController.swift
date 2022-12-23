@@ -38,8 +38,9 @@ class NewAccountViewController: UIViewController {
                 let vc = self.storyboard?.instantiateViewController(identifier: "VerifyAccountViewController") as! VerifyAccountViewController
                 vc.mobileNumber = mobileNumber
                 self.navigationController?.pushViewController(vc, animated: true)
+                vc.mobileNumber = mobileNumber
                 
-                self.verificationOTP.getOTP(mobileNumber: "+917022011412")
+                self.verificationOTP.getOTP(mobileNumber: mobileNumber)
             }
         } fail: {
             DispatchQueue.main.async {
