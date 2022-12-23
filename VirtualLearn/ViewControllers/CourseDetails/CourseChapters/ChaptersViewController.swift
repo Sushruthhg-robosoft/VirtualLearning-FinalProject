@@ -48,9 +48,11 @@ class ChaptersViewController: UIViewController {
     @IBOutlet weak var certificateImage: UIImageView!
     
     var delegate : switchVc?
+    var courseId = ""
     var dataoflesson = [LessonResponseList]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("123456789", courseId)
         
         joinedLeftView.layer.cornerRadius = 5
         joinedRightView.layer.cornerRadius = 5
@@ -78,7 +80,7 @@ class ChaptersViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         let loader = self.loader()
         dataoflesson.removeAll()
-        shared.chaptersDetailsViewModelShared.getChapters(token: shared.token, courseId: "3") { result in
+        shared.chaptersDetailsViewModelShared.getChapters(token: shared.token, courseId: courseId) { result in
            
             DispatchQueue.main.async { [self] in
                 

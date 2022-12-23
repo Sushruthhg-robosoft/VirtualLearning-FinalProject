@@ -22,7 +22,6 @@ class ProfileViewModel {
             print(profileData)
             guard let userId = profileData["userId"] as? Int else{print("userId error");return fail()}
              let  profilePicture = profileData["profilePic"] as? String
-//            print(profilePicture)
             guard let name = profileData["fullName"] as? String else{print("fullName error");return fail()}
             guard let userName = profileData["userName"] as? String else{print("userName error");return fail()}
             guard let emailId = profileData["emailId"] as? String else{print("emailId error");return fail()}

@@ -124,6 +124,7 @@ class CourseDetailsViewController: UIViewController {
       
     }
     
+    
     @IBAction func onClickOverView(_ sender: Any) {
         
        
@@ -173,7 +174,6 @@ class CourseDetailsViewController: UIViewController {
             
         }
     }
-    
     
     
 
@@ -229,6 +229,7 @@ extension CourseDetailsViewController: UITableViewDelegate, UITableViewDataSourc
            if segue.identifier == "switch" {
                guard let vc = segue.destination as? ChaptersViewController else { return }
             vc.delegate = self
+            vc.courseId = courseId
            }
        }
 }
