@@ -38,6 +38,7 @@
 		1BF0C86229408D93009D9030 /* HamburgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF0C85E29408D92009D9030 /* HamburgerViewController.swift */; };
 		1BF0C86329408D93009D9030 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF0C85F29408D93009D9030 /* HomeViewController.swift */; };
 		1BF0C86429408D93009D9030 /* customHamburgerButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF0C86029408D93009D9030 /* customHamburgerButtons.swift */; };
+		1BFBC4B72955628600D6EFED /* AnswerDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFBC4B62955628600D6EFED /* AnswerDisplayView.swift */; };
 		590194AF293F711F00055C24 /* VerifyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590194AE293F711F00055C24 /* VerifyAccountViewController.swift */; };
 		590194B8293F714300055C24 /* NewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590194B5293F714300055C24 /* NewAccountViewController.swift */; };
 		590194BF293F715D00055C24 /* textField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590194BD293F715D00055C24 /* textField.swift */; };
@@ -195,6 +196,7 @@
 		1BF0C85E29408D92009D9030 /* HamburgerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerViewController.swift; sourceTree = "<group>"; };
 		1BF0C85F29408D93009D9030 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1BF0C86029408D93009D9030 /* customHamburgerButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customHamburgerButtons.swift; sourceTree = "<group>"; };
+		1BFBC4B62955628600D6EFED /* AnswerDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerDisplayView.swift; sourceTree = "<group>"; };
 		590194AE293F711F00055C24 /* VerifyAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyAccountViewController.swift; sourceTree = "<group>"; };
 		590194B5293F714300055C24 /* NewAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewAccountViewController.swift; sourceTree = "<group>"; };
 		590194BD293F715D00055C24 /* textField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = textField.swift; sourceTree = "<group>"; };
@@ -577,6 +579,7 @@
 				CF032A93294897DB00D6B6D3 /* activityLoader.swift */,
 				1B90BA6C294B40BC004A6D4B /* subCategoryView.swift */,
 				CF54BF612952D4A000BD4F07 /* popupViewHome.swift */,
+				1BFBC4B62955628600D6EFED /* AnswerDisplayView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -901,6 +904,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BD41653294095CC00E5334B /* CategoryViewController.swift in Sources */,
+				1BFBC4B72955628600D6EFED /* AnswerDisplayView.swift in Sources */,
 				CF416C4D294361B300A27462 /* TopCourseSectionCollectionViewCell.swift in Sources */,
 				CFF19645293F5C4F00802396 /* NetworkManager.swift in Sources */,
 				59055E47294C7F5900608DE8 /* Certificate.swift in Sources */,

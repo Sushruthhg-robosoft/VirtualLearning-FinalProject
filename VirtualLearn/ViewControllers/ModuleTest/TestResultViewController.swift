@@ -78,7 +78,8 @@ extension TestResultViewController: UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(identifier: "showQuestionResultViewController") as! showQuestionResultViewController
-        
+        vc.datatoDisplay = questionResults[indexPath.row]
+        vc.questionNumber = indexPath.row
         present(vc, animated: true, completion: nil)
     }
     

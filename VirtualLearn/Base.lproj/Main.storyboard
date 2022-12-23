@@ -5003,7 +5003,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cu0-RF-8rh">
                                                         <rect key="frame" x="24" y="185" width="327" height="244"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LgB-FV-bLM">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LgB-FV-bLM" customClass="AnswerDisplay" customModule="VirtualLearn" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="327" height="46"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_option unchecked" translatesAutoresizingMaskIntoConstraints="NO" id="AWF-HV-eRJ">
@@ -5020,6 +5020,9 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
+                                                                <accessibility key="accessibilityConfiguration">
+                                                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                                                </accessibility>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="46" id="A9e-jd-dku"/>
                                                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pyt-F3-OF3" secondAttribute="trailing" constant="20" symbolic="YES" id="Fjg-ki-p33"/>
@@ -5034,7 +5037,7 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Dm-cp-Vyf">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Dm-cp-Vyf" customClass="AnswerDisplay" customModule="VirtualLearn" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="66" width="327" height="46"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_option unchecked" translatesAutoresizingMaskIntoConstraints="NO" id="kVZ-7b-YtR">
@@ -5051,6 +5054,9 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
+                                                                <accessibility key="accessibilityConfiguration">
+                                                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                                                </accessibility>
                                                                 <constraints>
                                                                     <constraint firstItem="leZ-bX-wFW" firstAttribute="centerY" secondItem="kVZ-7b-YtR" secondAttribute="centerY" id="2vS-47-jMc"/>
                                                                     <constraint firstItem="leZ-bX-wFW" firstAttribute="leading" secondItem="kVZ-7b-YtR" secondAttribute="trailing" constant="12" id="Dco-ni-UX1"/>
@@ -5065,7 +5071,7 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C4d-gS-olE">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C4d-gS-olE" customClass="AnswerDisplay" customModule="VirtualLearn" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="132" width="327" height="46"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_option unchecked" translatesAutoresizingMaskIntoConstraints="NO" id="bRb-oQ-oeT">
@@ -5082,6 +5088,9 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
+                                                                <accessibility key="accessibilityConfiguration">
+                                                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                                                </accessibility>
                                                                 <constraints>
                                                                     <constraint firstItem="bRb-oQ-oeT" firstAttribute="centerY" secondItem="C4d-gS-olE" secondAttribute="centerY" id="13h-61-Xos"/>
                                                                     <constraint firstItem="jY8-Vz-DYa" firstAttribute="leading" secondItem="bRb-oQ-oeT" secondAttribute="trailing" constant="12" id="BDA-dE-atZ"/>
@@ -5096,7 +5105,7 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="03x-3O-K2h">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="03x-3O-K2h" customClass="AnswerDisplay" customModule="VirtualLearn" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="198" width="327" height="46"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_option unchecked" translatesAutoresizingMaskIntoConstraints="NO" id="QpC-wj-kLs">
@@ -5113,6 +5122,9 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
+                                                                <accessibility key="accessibilityConfiguration">
+                                                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                                                </accessibility>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="46" id="0UA-Qp-VwB"/>
                                                                     <constraint firstItem="QpC-wj-kLs" firstAttribute="leading" secondItem="03x-3O-K2h" secondAttribute="leading" constant="20" id="QZs-Xh-aSc"/>
