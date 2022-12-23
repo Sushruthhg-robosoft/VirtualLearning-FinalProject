@@ -103,6 +103,9 @@ class MyCourseViewController: UIViewController {
     
     @IBAction func onClickSearch(_ sender: Any) {
         
+        guard let vc = storyboard?.instantiateViewController(identifier: "SearchViewController") as? SearchViewController else{return}
+        
+        navigationController?.pushViewController(vc, animated: true)
         
     }
     

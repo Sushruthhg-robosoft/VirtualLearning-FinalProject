@@ -36,6 +36,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     
     
+    
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var nameView: UIView!
@@ -105,6 +106,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         }
     
     @IBAction func onClickSaveBtn(_ sender: Any) {
+        self.disableTextField()
 //        let loader = self.loader()
         saveLoadingButton.showLoading()
         saveLoadingButton.isEnabled = false
@@ -209,6 +211,29 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
          })
         dialogMessage.addAction(ok)
         self.present(dialogMessage, animated: true, completion: nil)
+    }
+    
+    func disableTextField(){
+        self.nameField.isEnabled = false
+        self.userNameTextField.isEnabled = false
+        self.emailField.isEnabled = false
+        self.mobileNoField.isEnabled = false
+        self.occupationField.isEnabled = false
+        self.genderField.isEnabled = false
+        self.dateOfBirthField.isEnabled = false
+        self.twitterField.isEnabled = false
+        self.facebookField.isEnabled = false
+    }
+    func enableTextField(){
+        self.nameField.isEnabled = true
+        self.userNameTextField.isEnabled = true
+        self.emailField.isEnabled = true
+        self.mobileNoField.isEnabled = true
+        self.occupationField.isEnabled = true
+        self.genderField.isEnabled = true
+        self.dateOfBirthField.isEnabled = true
+        self.twitterField.isEnabled = true
+        self.facebookField.isEnabled = true
     }
 }
 
