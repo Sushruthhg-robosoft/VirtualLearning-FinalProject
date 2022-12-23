@@ -53,6 +53,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var femaleGender: UIButton!
     @IBOutlet weak var otherGender: UIButton!
     
+    @IBOutlet weak var saveLoadingButton: LoadingButton!
     var isdropDown = false
 
     var profileData: ProfileData?
@@ -70,6 +71,11 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         mobileNoField.text = profileData?.phoneNumber
         profilePhoto.image = dummyImage
         backgroundImage.image = dummyBackgroundImage
+        occupationField.text = profileData?.occupation
+        dateOfBirthField.text = profileData?.dateOfBirth
+        genderField.text = profileData?.gender
+        twitterField.text = profileData?.twitterLink
+        facebookField.text = profileData?.facebookLink
   
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
@@ -100,11 +106,14 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     @IBAction func onClickSaveBtn(_ sender: Any) {
 //        let loader = self.loader()
+        saveLoadingButton.showLoading()
+        saveLoadingButton.isEnabled = false
         updateEditProfileData()
         editProfileViewModel.updateProfileData(profileImage: profilePhoto.image ?? #imageLiteral(resourceName: "icn_profile_menu"), token: shared.token, profiledata: profileData!) {
             
             DispatchQueue.main.async {
-                print(self.profileData)
+                self.saveLoadingButton.hideLoading()
+                self.saveLoadingButton.isEnabled = true
 //            self.stopLoader(loader: loader)
                 self.AlertMessagePopup(message: "Profile updated successfully")
                             
@@ -121,7 +130,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
                 profileData?.userName = userNameTextField.text!
                 profileData?.phoneNumber = mobileNoField.text!
                 profileData?.gender = genderField.text!
-                profileData?.dateOfBirth = dateOfBirth.text!
+                profileData?.dateOfBirth = dateOfBirthField.text!
                 profileData?.facebookLink = facebookField.text!
                 profileData?.twitterLink = twitterField.text!
                 profileData?.occupation = occupationField.text!
