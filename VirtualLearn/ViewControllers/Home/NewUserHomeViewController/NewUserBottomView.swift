@@ -10,7 +10,7 @@ import UIKit
 protocol clickButtons {
     func onClickSeeAllCategories()
     func onClickChoiceofYourCourse(courseId: String)
-    func onclickChooseInAllCourse()
+    func onclickChooseInAllCourse(isNewest: Bool , isPopular: Bool, isAllCourse: Bool)
     func onClickCategory(categoryName: String, categoryId: String)
 }
 
@@ -27,6 +27,9 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
     var mainshared = mainViewModel.mainShared
     
 
+    var allCourse = false
+    var newestCourse = false
+    var popularCourse = false
 
     @IBOutlet weak var choiceOfUrCourseCollectionView: UICollectionView!
     
@@ -151,6 +154,9 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
     }
     
     @IBAction func onClickAll(_ sender: Any) {
+        self.allCourse = true
+        self.newestCourse = false
+        self.popularCourse = false
         allBtn.isSelected()
         popularBtn.notSelected()
         newestBtn.notSelected()
@@ -174,6 +180,9 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
     
     @IBAction func onClickPopular(_ sender: Any) {
         
+        self.popularCourse = true
+        self.allCourse = false
+        self.newestCourse = false
         allBtn.notSelected()
         popularBtn.isSelected()
         newestBtn.notSelected()
@@ -195,7 +204,9 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
     }
     
     @IBAction func onClickNewest(_ sender: Any) {
-        
+        self.newestCourse = true
+        self.allCourse = false
+        self.popularCourse = false
         allBtn.notSelected()
         popularBtn.notSelected()
         newestBtn.isSelected()
@@ -220,7 +231,7 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
     @IBAction func onclickChooseInAllCourse(_ sender: Any) {
         
        
-        shared.delegate?.onclickChooseInAllCourse()
+        shared.delegate?.onclickChooseInAllCourse(isNewest: self.newestCourse, isPopular: self.popularCourse, isAllCourse: self.allCourse)
     }
     
     

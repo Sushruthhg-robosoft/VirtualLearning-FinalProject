@@ -56,7 +56,7 @@ class ChaptersViewModel {
                     guard let duration = lesson["duration"] as? Int else {return fail("data error")}
                     guard let lessonCompleted = lesson["lessonCompleted"] as? Bool else {return fail("data error")}
                     
-                    let newLesson = LessonList(lessonId: lessonId, lessonName: lessonName, videoLink: videoLink, duration: duration, lessonCompleted: lessonCompleted)
+                    let newLesson = LessonList(lessonId: lessonId, lessonNumber: String(lessonNumber), lessonName: lessonName, videoLink: videoLink, duration: duration, lessonCompleted: lessonCompleted)
                     if(!lessonCompleted) {
                         if(videoPlay == 0) { newLesson.nextPlay = true; videoPlay = 1 }
                     }
@@ -75,11 +75,11 @@ class ChaptersViewModel {
                     guard let testDuration = assesmentdetails["testDuration"] as? Int else {print("hello");return fail("data error")}
                     guard let questionCount = assesmentdetails["questionCount"] as? Int else {print("chapterCountErr3"); return fail("data error")}
                     let grade = assesmentdetails["grade"] as? Int
-                    let assesment = AssignmentResponse(assignmentId: assignmentId, assignmentName: assignmentName, testDuration: testDuration, questionCount: questionCount, grade: Int(grade ?? 0))
+                    let assesment = AssignmentResponse(assignmentId: assignmentId, assinmentStatus: assignmentCompleted, assignmentName: assignmentName, testDuration: testDuration, questionCount: questionCount, grade: Int(grade ?? 0))
                     lessonsList.append(assesment)
                
                 }
-                let lessonResponse = LessonResponseList(chapterId: chapterId, chapterName: chapterName, chapterCompleted: chapterCompletionStatus, lessonList: lessonsList)
+                let lessonResponse = LessonResponseList(chapterId: chapterId, chapterNumber: String(chapterNumber), chapterName: chapterName, chapterCompleted: chapterCompletionStatus, lessonList: lessonsList)
                 if(!chapterCompletionStatus) {
                     if(expandStatus == 0){
                         lessonResponse.isExpandable = true

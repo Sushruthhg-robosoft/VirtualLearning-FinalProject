@@ -27,6 +27,9 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
     @IBOutlet weak var topCourse1: TopCourseSectionView!
     @IBOutlet weak var topCourse2: TopCourseSectionView!
     
+    var allCourse = false
+    var newestCourse = false
+    var popularCourse = false
     let mainShared = mainViewModel()
     var courseSet: [UIImage] = [#imageLiteral(resourceName: "img_course1_bg"), #imageLiteral(resourceName: "img_course2_bg")]
     var delegate: clickButtons?
@@ -42,7 +45,7 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
         addSubview(backView)
         backView.frame = self.bounds
         
-        
+        allCourse = true
         allBtn.isSelected()
         popularBtn.notSelected()
         newestBtn.notSelected()
@@ -128,11 +131,14 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
     
     @IBAction func seeallChoiceofYourcourse(_ sender: Any) {
         
-        shared.delegate?.onclickChooseInAllCourse()
+        shared.delegate?.onclickChooseInAllCourse(isNewest: self.newestCourse, isPopular: self.popularCourse, isAllCourse: self.allCourse)
     }
     
     
     @IBAction func onClickAll(_ sender: Any) {
+        self.allCourse = true
+        self.newestCourse = false
+        self.popularCourse = false
         allBtn.isSelected()
         popularBtn.notSelected()
         newestBtn.notSelected()
@@ -157,6 +163,9 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
    
     
     @IBAction func onClickPopular(_ sender: Any) {
+        self.popularCourse = true
+        self.allCourse = false
+        self.newestCourse = false
         
         allBtn.notSelected()
         popularBtn.isSelected()
@@ -178,6 +187,9 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
     }
     
     @IBAction func onClickNewest(_ sender: Any) {
+        self.newestCourse = true
+        self.allCourse = false
+        self.popularCourse = false
         
         allBtn.notSelected()
         popularBtn.notSelected()
