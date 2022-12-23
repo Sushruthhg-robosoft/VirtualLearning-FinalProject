@@ -52,7 +52,7 @@ extension TopCourseSectionView: UICollectionViewDelegate, UICollectionViewDataSo
         cell.courseImage.image = UIImage(data: data!)
         cell.chapterCount.text = "\(topCourse[indexPath.row].totalNumberOfChapters) Chapter"
         
-        cell.duration.text = topCourse[indexPath.row].videoLength
+        cell.duration.text = "\(topCourse[indexPath.row].videoLength) mins"
         
         return cell
     }
