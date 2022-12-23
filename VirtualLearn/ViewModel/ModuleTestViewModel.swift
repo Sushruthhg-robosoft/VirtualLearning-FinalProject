@@ -73,8 +73,8 @@ class ModuleTestViewModel {
 
     }
     
-    func getAnswer(token: String, assignnmentId: String, completion: @escaping() -> Void, fail: @escaping() -> Void) {
-        
+    func getAnswer(token: String, assignnmentId: String, completion: @escaping(QuestionAnswerDetails) -> Void, fail: @escaping() -> Void) {
+        var questionAnswer = [QuestionAnswer]()
         guard let id = Int(assignnmentId) else {return}
         let network = NetWorkManager()
         guard let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/assignmentResult?assignmentId=\(id)") else {return}
@@ -95,24 +95,32 @@ class ModuleTestViewModel {
             
             guard let questionResults = apiData["questionResults"] as? [[String:Any]] else {print("err8"); return}
             
+            questionAnswer.removeAll()
             for eachQuestion in questionResults {
-                guard let questionDetails = eachQuestion as? [String:Any] else {print("err9"); return}
+//                guard let questionDetails = eachQuestion as? [String:Any] else {print("err9"); return}
                 
-                guard let givenAnswer = questionDetails["givenAnswer"] as? String else {print("err10"); return}
-                guard let correct = questionDetails["correct"] as? Bool else {print("err11"); return}
+                guard let givenAnswer = eachQuestion["givenAnswer"] as? String else {print("err10"); return}
+                guard let correct = eachQuestion["correct"] as? Bool else {print("err11"); return}
                 
-                guard let dataOfQuestion = questionDetails["assignmentQuestion"]  as? [String:Any] else {print("err12"); return}
+                guard let dataOfQuestion = eachQuestion["assignmentQuestion"]  as? [String:Any] else {print("err12"); return}
                 
-                guard let questionId = dataOfQuestion["questionId"] as? Int else {print("err11"); return}
-                guard let questionName = dataOfQuestion["questionName"] as? String else {print("err11"); return}
-                guard let assignmentId = dataOfQuestion["assignmentId"] as? Int else {print("err11"); return}
-                guard let option_1 = dataOfQuestion["option_1"] as? String else {print("err11"); return}
-                guard let option_2 = dataOfQuestion["option_2"] as? String else {print("err11"); return}
-                guard let option_3 = dataOfQuestion["option_3"] as? String else {print("err11"); return}
-                guard let option_4 = dataOfQuestion["option_4"] as? String else {print("err11"); return}
-                guard let correctAnswer = dataOfQuestion["correct"] as? String else {print("err11"); return}
+                guard let questionId = dataOfQuestion["questionId"] as? Int else {print("err13"); return}
+                guard let questionName = dataOfQuestion["questionName"] as? String else {print("err14"); return}
+//                guard let assignmentId = dataOfQuestion["assignmentId"] as? Int else {print("err11"); return}
+                guard let option_1 = dataOfQuestion["option_1"] as? String else {print("err15"); return}
+                guard let option_2 = dataOfQuestion["option_2"] as? String else {print("err16"); return}
+                guard let option_3 = dataOfQuestion["option_3"] as? String else {print("err17"); return}
+                guard let option_4 = dataOfQuestion["option_4"] as? String else {print("err18"); return}
+                guard let correctAnswer = dataOfQuestion["correctAnswer"] as? String else {print("err19"); return}
+                
+              let question = QuestionAnswer(questionId: String(questionId), questionName: questionName, option1: option_1, option2: option_2, option3: option_3, option4: option_4, correctAnswer: correctAnswer, givenAnswer: givenAnswer, answerStatus: correct)
+                questionAnswer.append(question)
                 
             }
+            
+            let questionAnswerDetails = QuestionAnswerDetails(courseName: courseName, chapterName: chapterName, grade: String(grade), passingMarks: String(passingMarks), numberOfquestions: String(numberOfQuestions), correctAnswers: String(correctAnswers), wrongAnswers: String(wrongAnswers), questionAnswer: questionAnswer)
+            
+            completion(questionAnswerDetails)
             
         } failure: { error in
             print("error",error)

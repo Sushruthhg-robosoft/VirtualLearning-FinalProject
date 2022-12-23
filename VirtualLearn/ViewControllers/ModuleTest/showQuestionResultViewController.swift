@@ -16,33 +16,20 @@ class showQuestionResultViewController: UIViewController {
     @IBOutlet weak var questionNoLabel: UILabel!
     
     @IBOutlet weak var option2View: UIView!
-    
     @IBOutlet weak var option2Image: UIImageView!
-    
     @IBOutlet weak var option2Answer: UILabel!
-    
     @IBOutlet weak var option3View: UIView!
-    
     @IBOutlet weak var option3Image: UIImageView!
-    
     @IBOutlet weak var option3Answer: UILabel!
-    
     @IBOutlet weak var option4View: UIView!
-    
     @IBOutlet weak var option4Image: UIImageView!
-    
     @IBOutlet weak var option4Answer: UILabel!
-    
-    
     @IBOutlet weak var answerStatus: UILabel!
-    
-
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
     }
     
 

@@ -4709,7 +4709,7 @@
                                                     <constraint firstItem="19J-SN-Dqg" firstAttribute="top" secondItem="IXg-dY-kHA" secondAttribute="bottom" constant="30" id="1i1-tx-nai"/>
                                                     <constraint firstAttribute="trailing" secondItem="dOE-BF-rUb" secondAttribute="trailing" constant="26" id="6Xe-Lv-eS4"/>
                                                     <constraint firstItem="IXg-dY-kHA" firstAttribute="top" secondItem="iPK-lF-g1F" secondAttribute="top" constant="74" id="Otj-qW-DuY"/>
-                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FsZ-jY-sQF" secondAttribute="trailing" symbolic="YES" id="Tha-vw-uEt"/>
+                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FsZ-jY-sQF" secondAttribute="trailing" constant="20" symbolic="YES" id="Tha-vw-uEt"/>
                                                     <constraint firstItem="dOE-BF-rUb" firstAttribute="top" secondItem="IXg-dY-kHA" secondAttribute="bottom" constant="35.700000000000003" id="Vib-zb-mwU"/>
                                                     <constraint firstItem="IXg-dY-kHA" firstAttribute="leading" secondItem="iPK-lF-g1F" secondAttribute="leading" constant="24" id="g1T-sv-Mcd"/>
                                                     <constraint firstItem="FsZ-jY-sQF" firstAttribute="top" secondItem="19J-SN-Dqg" secondAttribute="bottom" constant="24" id="hLb-W7-LWv"/>
@@ -4893,6 +4893,10 @@
                                                                 <constraint firstItem="a1K-b1-D5n" firstAttribute="leading" secondItem="wsV-vQ-qbo" secondAttribute="leading" id="uTi-a6-W4v"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="answerDisplay" destination="a1K-b1-D5n" id="t6R-xm-TaJ"/>
+                                                            <outlet property="questionNumber" destination="wsV-vQ-qbo" id="Mjb-Rn-bmA"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>
@@ -4937,10 +4941,16 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ChapterName" destination="FsZ-jY-sQF" id="2Pw-yJ-YOs"/>
+                        <outlet property="correctAnswer" destination="eJ7-C5-PfG" id="apm-rE-uMG"/>
+                        <outlet property="courseName" destination="dOE-BF-rUb" id="U2U-JV-hOu"/>
+                        <outlet property="gradeDisplay" destination="19J-SN-Dqg" id="ThY-BW-nGJ"/>
                         <outlet property="middleLeftView" destination="PdW-eH-LAC" id="eud-rO-sxv"/>
                         <outlet property="middleRightView" destination="0PB-98-nlW" id="Tjg-xl-qIj"/>
                         <outlet property="middleView" destination="xKD-Ox-qGX" id="P71-mj-IPi"/>
+                        <outlet property="passingGrade" destination="fhf-aD-2wZ" id="Ceu-b0-jhI"/>
                         <outlet property="tableView" destination="OHd-x3-fz1" id="qoJ-KS-bVk"/>
+                        <outlet property="wrongAnswers" destination="f2s-HN-bIn" id="UPp-iL-SgF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n9o-nH-w2l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -4956,10 +4966,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="law-OW-l5y">
-                                <rect key="frame" x="0.0" y="317" width="375" height="350"/>
+                                <rect key="frame" x="0.0" y="200" width="375" height="467"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RoF-3S-dOn">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="467"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQ0-fQ-3xN">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="516.5"/>
@@ -5181,7 +5191,7 @@
                             <constraint firstItem="N5d-UZ-zi4" firstAttribute="bottom" secondItem="law-OW-l5y" secondAttribute="bottom" id="Cge-81-jFx"/>
                             <constraint firstItem="N5d-UZ-zi4" firstAttribute="trailing" secondItem="law-OW-l5y" secondAttribute="trailing" id="L6U-iY-3Rw"/>
                             <constraint firstItem="law-OW-l5y" firstAttribute="leading" secondItem="N5d-UZ-zi4" secondAttribute="leading" id="f7V-yj-sgv"/>
-                            <constraint firstItem="law-OW-l5y" firstAttribute="top" secondItem="N5d-UZ-zi4" secondAttribute="top" constant="317" id="kEp-66-BVp"/>
+                            <constraint firstItem="law-OW-l5y" firstAttribute="top" secondItem="N5d-UZ-zi4" secondAttribute="top" constant="200" id="ls9-M8-coH"/>
                         </constraints>
                     </view>
                     <connections>

@@ -199,6 +199,7 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
         
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderView") as! HeaderView
         headerView.title.text = dataoflesson[section].chapterName
+        print("aggsjmgd",section)
         if(dataoflesson[section].chapterCompleted) {
             headerView.title.textColor = UIColor(red: 30/255, green: 171/255, blue: 12/255, alpha: 1)
         }
