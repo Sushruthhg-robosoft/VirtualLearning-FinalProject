@@ -11,7 +11,7 @@ protocol clickButtons {
     func onClickSeeAllCategories()
     func onClickChoiceofYourCourse()
     func onclickChooseInAllCourse()
-    func onClickCategory(categoryName: String)
+    func onClickCategory(categoryName: String, categoryId: String)
 }
 
 class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -230,6 +230,7 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
                 
             }
             cell.categoryName.text = mainshared.categoriesViewModelShared.listofCategories[indexPath.row].categotyName
+            cell.categoryId = mainshared.categoriesViewModelShared.listofCategories[indexPath.row].categoryId
                 let url = URL(string: mainshared.categoriesViewModelShared.listofCategories[indexPath.row].categoryImage)
                 let data = try? Data(contentsOf: url!)
                 cell.categoryImage.image = UIImage(data: data!)
@@ -251,7 +252,7 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
             
         case categoriesCollectionView :
             let cell = self.categoriesCollectionView.cellForItem(at: indexPath) as? CategoriesCellCollectionViewCell
-            shared.delegate?.onClickCategory(categoryName: (cell?.categoryName.text)!)
+            shared.delegate?.onClickCategory(categoryName: (cell?.categoryName.text)!, categoryId: cell!.categoryId)
             
 
             

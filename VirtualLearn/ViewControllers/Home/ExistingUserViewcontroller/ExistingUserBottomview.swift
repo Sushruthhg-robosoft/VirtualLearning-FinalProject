@@ -206,6 +206,7 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
                 
             }
             cell.categoryName.text = mainshared.categoriesViewModelShared.listofCategories[indexPath.row].categotyName
+            cell.categoryId = mainshared.categoriesViewModelShared.listofCategories[indexPath.row].categoryId
                 let url = URL(string: mainshared.categoriesViewModelShared.listofCategories[indexPath.row].categoryImage)
                 let data = try? Data(contentsOf: url!)
                 cell.categoryImage.image = UIImage(data: data!)
@@ -218,8 +219,24 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
         
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        shared.delegate?.onClickChoiceofYourCourse()
+       
+        
+        switch collectionView {
+        case choiceOfUrCourseCollectionView :
+            shared.delegate?.onClickChoiceofYourCourse()
+            
+        case categoriesCollectionView :
+            let cell = self.categoriesCollectionView.cellForItem(at: indexPath) as? CategoriesCellCollectionViewCell
+            shared.delegate?.onClickCategory(categoryName: (cell?.categoryName.text)!, categoryId: cell!.categoryId)
+            
+
+            
+        default:
+           print("Default")
+        }
+        
     }
+
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
