@@ -93,7 +93,6 @@ class ProfileViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
         vc.dummyImage = image
         vc.profileData = profiledata
-        vc.enableTextField()
     }
     
     @IBAction func onClickHamburger(_ sender: Any) {

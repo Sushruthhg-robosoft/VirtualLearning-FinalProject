@@ -66,6 +66,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     var dummyBackgroundImage : UIImage?
     override func viewDidLoad() {
         
+        self.enableTextField()
+        
         emailField.text = profileData?.emailId
         nameField.text = profileData?.fullName
         userNameTextField.text = profileData?.userName
