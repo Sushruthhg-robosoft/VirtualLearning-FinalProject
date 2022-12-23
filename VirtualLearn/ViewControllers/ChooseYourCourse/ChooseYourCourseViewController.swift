@@ -122,7 +122,7 @@ extension ChooseYourCourseViewController: UICollectionViewDelegate, UICollection
                 self.tableView.reloadData()
             }
             
-        } fail: {
+        } fail: { error in 
             print("fail")
         }
     }
@@ -134,7 +134,7 @@ extension ChooseYourCourseViewController: UICollectionViewDelegate, UICollection
                 self.tableData = data
                 self.tableView.reloadData()
             }
-        } fail: {
+        } fail: {error in
             print("fail")
         }
     }
@@ -145,7 +145,7 @@ extension ChooseYourCourseViewController: UICollectionViewDelegate, UICollection
                 self.tableData = data
                 self.tableView.reloadData()
             }
-        } fail: {
+        } fail: {error in
             print("fail")
         }
     }

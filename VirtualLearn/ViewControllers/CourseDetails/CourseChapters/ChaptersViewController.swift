@@ -118,18 +118,18 @@ class ChaptersViewController: UIViewController {
                 }
                 tableView.reloadData()
             }
-        } fail: { error in
+        } fail: {
             
-            self.stopLoader(loader: loader)
-            print("failures")
-            DispatchQueue.main.async {
-                if(error == "unauthorized") {
-                    
-                 }
-                else {
-                    self.navigationController?.popViewController(animated: true)
-                }
-            }
+//            self.stopLoader(loader: loader)
+//            print("failures")
+//            DispatchQueue.main.async {
+//                if(error == "unauthorized") {
+//                    
+//                 }
+//                else {
+//                    self.navigationController?.popViewController(animated: true)
+//                }
+//            }
         }
     }
     
