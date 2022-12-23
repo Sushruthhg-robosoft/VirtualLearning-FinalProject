@@ -140,6 +140,14 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
                 profileData?.occupation = occupationField.text!
             }
     
+    func isValidEmail(email: String) -> Bool {
+      let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+
+      let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+      return emailPredicate.evaluate(with: email)
+    }
+
+    
     @IBAction func nameEdit(_ sender: Any) {
         nameView.backgroundColor = #colorLiteral(red: 0.001148699783, green: 0.2356859446, blue: 0.4366979599, alpha: 1)
     }
@@ -237,6 +245,9 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         self.twitterField.isEnabled = true
         self.facebookField.isEnabled = true
     }
+    
+    
+    
 }
 
 
