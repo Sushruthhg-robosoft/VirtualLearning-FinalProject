@@ -26,6 +26,9 @@ class courseDetailsViewModel {
             completion(status[0])
             
         } failure: {error in
+            if error as! String == "401" {
+                print("token Expired")
+            }
             print(error)
             fail()
         }
@@ -90,6 +93,9 @@ class courseDetailsViewModel {
             completion(courseOverViewData)
             
         } failure: {error in
+            if error as? Int == 401{
+                print("in fetch data json error")
+            }
             print(error)
             fail()
         }

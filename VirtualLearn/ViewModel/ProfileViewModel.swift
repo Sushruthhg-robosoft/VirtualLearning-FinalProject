@@ -41,6 +41,7 @@ class ProfileViewModel {
             
                 } failure: { error in
             print(error)
+                    
                 }
         }
     
@@ -59,8 +60,12 @@ class ProfileViewModel {
             }
             
         } failure: { failResult in
-            fail()
+            
             print(failResult)
+            if failResult as? Int == 401{
+                print("in fetch data json error")
+            }
+            fail()
         }
     }
 }

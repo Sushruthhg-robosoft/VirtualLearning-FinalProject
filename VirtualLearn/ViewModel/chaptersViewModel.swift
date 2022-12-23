@@ -13,11 +13,11 @@ class ChaptersViewModel {
     let networkManeger = NetWorkManager()
     var listOfLessons = [LessonResponseList]()
     
-    func getChapters(token: String, courseId: String,completion: @escaping(CourseChapter) -> Void, fail: @escaping () -> Void) {
+    func getChapters(token: String, courseId: String,completion: @escaping(CourseChapter) -> Void, fail: @escaping (String) -> Void) {
         
         var expandStatus = 0
         var videoPlay = 0
-        guard let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/chapter?courseId=\(courseId)") else{ return fail()}
+        guard let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/chapter?courseId=\(courseId)") else{ return fail("url error")}
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -25,36 +25,36 @@ class ChaptersViewModel {
         listOfLessons.removeAll()
         networkManeger.fetchDataJson(request: request) { data in
             
-            guard let apiData = data as? [String:Any] else {print("apiDataerr");return fail()}
+            guard let apiData = data as? [String:Any] else {print("apiDataerr");return fail("data error")}
 
-            guard let joinedCourse = apiData["joinedCourse"] as? Bool else{print("joinedCourseErr");return fail()}
+            guard let joinedCourse = apiData["joinedCourse"] as? Bool else{print("joinedCourseErr");return fail("data error")}
 
             
-            guard let courseContentResponse = apiData["courseContentResponse"] as? [String : Int] else{print("courseContentResponseErr"); return fail()}
-            guard let courseId = courseContentResponse["courseId"] else{print("courseIdErr"); return fail()}
-            guard let chapterCount = courseContentResponse["chapterCount"] else{print("chapterCountErr"); return fail()}
-            guard let lessonCount = courseContentResponse["lessonCount"] else{print("lesscountErr"); return fail()}
-            guard let moduleTest = courseContentResponse["moduleTest"] else{print("moduleTestErr"); return fail()}
-            guard let totalVideoLength = courseContentResponse["totalVideoLength"] else{print("totalVideoLengthErr"); return fail()}
+            guard let courseContentResponse = apiData["courseContentResponse"] as? [String : Int] else{print("courseContentResponseErr"); return fail("data error")}
+            guard let courseId = courseContentResponse["courseId"] else{print("courseIdErr"); return fail("data error")}
+            guard let chapterCount = courseContentResponse["chapterCount"] else{print("chapterCountErr"); return fail("data error")}
+            guard let lessonCount = courseContentResponse["lessonCount"] else{print("lesscountErr"); return fail("data error")}
+            guard let moduleTest = courseContentResponse["moduleTest"] else{print("moduleTestErr"); return fail("data error")}
+            guard let totalVideoLength = courseContentResponse["totalVideoLength"] else{print("totalVideoLengthErr"); return fail("data error")}
             
             let CourseContentData = CourseContentResponse(courseId: courseId, chapterCount: chapterCount, lessonCount: lessonCount, moduleTest: moduleTest, totalVideoLength: totalVideoLength)
             
-            guard let lessonResponseLists = apiData["lessonResponseList"] as? [[String:Any]] else{print("lessonResponseListErr"); return fail()}
+            guard let lessonResponseLists = apiData["lessonResponseList"] as? [[String:Any]] else{print("lessonResponseListErr"); return fail("data error")}
             var lessonsList = [Any]()
             for lessonResponse in lessonResponseLists {
                 lessonsList.removeAll()
-                guard let chapterName = lessonResponse["chapterName"] as? String else{print("chapterNameErr"); return fail()}
-                guard let chapterId = lessonResponse["chapterId"] as? Int else{print("chapterIdErr"); return fail()}
-                guard let chapterCompletionStatus = lessonResponse["chapterCompleted"] as? Bool else{print("chapterStatusErr"); return fail()}
+                guard let chapterName = lessonResponse["chapterName"] as? String else{print("chapterNameErr"); return fail("data error")}
+                guard let chapterId = lessonResponse["chapterId"] as? Int else{print("chapterIdErr"); return fail("data error")}
+                guard let chapterCompletionStatus = lessonResponse["chapterCompleted"] as? Bool else{print("chapterStatusErr"); return fail("data error")}
                 
-                guard let chapterList = lessonResponse["lessonList"] as? [[String:Any]] else{print("chapterlist Errrpr"); return fail()}
+                guard let chapterList = lessonResponse["lessonList"] as? [[String:Any]] else{print("chapterlist Errrpr"); return fail("data error")}
 
                 for lesson in chapterList {
-                    guard let lessonId = lesson["lessonId"] as? Int else {return fail()}
-                    guard let lessonName = lesson["lessonName"] as? String else {return fail()}
-                    guard let videoLink = lesson["videoLink"] as? String else {return fail()}
-                    guard let duration = lesson["duration"] as? Int else {return fail()}
-                    guard let lessonCompleted = lesson["lessonCompleted"] as? Bool else {return fail()}
+                    guard let lessonId = lesson["lessonId"] as? Int else {return fail("data error")}
+                    guard let lessonName = lesson["lessonName"] as? String else {return fail("data error")}
+                    guard let videoLink = lesson["videoLink"] as? String else {return fail("data error")}
+                    guard let duration = lesson["duration"] as? Int else {return fail("data error")}
+                    guard let lessonCompleted = lesson["lessonCompleted"] as? Bool else {return fail("data error")}
                     
                     let newLesson = LessonList(lessonId: lessonId, lessonName: lessonName, videoLink: videoLink, duration: duration, lessonCompleted: lessonCompleted)
                     if(!lessonCompleted) {
@@ -70,10 +70,10 @@ class ChaptersViewModel {
                     print("inside assesment response")
                     guard let assesmentdetails = assesmentResponse else {return}
 
-                    guard let assignmentId = assesmentdetails["assignmentId"] as? Int else {print("chapterCountErr1"); return fail()}
-                    guard let assignmentName = assesmentdetails["assignmentName"] as? String else {print("chapterCountErr2"); return fail()}
-                    guard let testDuration = assesmentdetails["testDuration"] as? Int else {print("hello");return fail()}
-                    guard let questionCount = assesmentdetails["questionCount"] as? Int else {print("chapterCountErr3"); return fail()}
+                    guard let assignmentId = assesmentdetails["assignmentId"] as? Int else {print("chapterCountErr1"); return fail("data error")}
+                    guard let assignmentName = assesmentdetails["assignmentName"] as? String else {print("chapterCountErr2"); return fail("data error")}
+                    guard let testDuration = assesmentdetails["testDuration"] as? Int else {print("hello");return fail("data error")}
+                    guard let questionCount = assesmentdetails["questionCount"] as? Int else {print("chapterCountErr3"); return fail("data error")}
                     let grade = assesmentdetails["grade"] as? Int
                     let assesment = AssignmentResponse(assignmentId: assignmentId, assignmentName: assignmentName, testDuration: testDuration, questionCount: questionCount, grade: Int(grade ?? 0))
                     lessonsList.append(assesment)
@@ -96,15 +96,15 @@ class ChaptersViewModel {
 //            print("after array")
             var certificateResponse: Certificate?
             
-            guard let certificateGenerated = apiData["certificateGenerated"] as? Bool else{print("certificateGeneratedrr"); return fail()}
+            guard let certificateGenerated = apiData["certificateGenerated"] as? Bool else{print("certificateGeneratedrr"); return fail("data error")}
             if(certificateGenerated) {
-                guard let certificateData = apiData["certificateResponse"] as? [String:Any] else{print("certificateResponseerr"); return fail()}
+                guard let certificateData = apiData["certificateResponse"] as? [String:Any] else{print("certificateResponseerr"); return fail("data error")}
                 
-                guard let joinedDate = certificateData["joinDate"] as? String else {print("err1"); return fail()}
-                guard let completedDate = certificateData["completedDate"] as? String else {print("err2"); return fail()}
-                guard let completionDuration = certificateData["completionDuration"] as? String else {print("err3"); return fail()}
-                guard let grade = certificateData["grade"] as? Int else {print("err4"); return fail()}
-                guard let certificateLink = certificateData["certificateLink"] as? String else {print("err5"); return fail()}
+                guard let joinedDate = certificateData["joinDate"] as? String else {print("err1"); return fail("data error")}
+                guard let completedDate = certificateData["completedDate"] as? String else {print("err2"); return fail("data error")}
+                guard let completionDuration = certificateData["completionDuration"] as? String else {print("err3"); return fail("data error")}
+                guard let grade = certificateData["grade"] as? Int else {print("err4"); return fail("data error")}
+                guard let certificateLink = certificateData["certificateLink"] as? String else {print("err5"); return fail("data error")}
                 
                 let certificate = Certificate(joinedData: joinedDate, completedDate: completedDate, completionDuration: completionDuration, grade: grade, certificateLink: certificateLink)
                 certificateResponse = certificate
@@ -115,7 +115,11 @@ class ChaptersViewModel {
             completion(courseChapter)
         } failure: {(error) in
             print(error)
-        fail()
+            if error as? Int == 401{
+                print("unauthorized")
+                fail("unauthorized")
+            }
+        fail("load Error")
         }
 
     }

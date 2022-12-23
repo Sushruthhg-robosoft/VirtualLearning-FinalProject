@@ -56,8 +56,15 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
                 self.choiceOfUrCourseCollectionView.reloadData()
             }
             
-        } fail: {
-            print("fail")
+        } fail: {error in
+            DispatchQueue.main.async {
+                if(error == "unauthorized") {
+                    
+                }
+                else {
+                    
+                }
+            }
         }
         
         mainshared.categoriesViewModelShared.getCategories(token: mainshared.token) {
@@ -81,8 +88,15 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
             }
             
             
-        } fail: {
-            print("fail")
+        } fail: {error in
+            DispatchQueue.main.async {
+                if(error == "unauthorized") {
+                    
+                }
+                else {
+                    
+                }
+            }
         }
         
         mainshared.homeViewModelShared.getPopularCourseCategory2Details(token: mainshared.token) { (data) in
@@ -91,8 +105,15 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
                 self.topCourse2.topCourse = data
                 self.topCourse2.topCourseCollectionView.reloadData()
             }
-        } fail: {
-            print("fail")
+        } fail: {error in
+            DispatchQueue.main.async {
+                if(error == "unauthorized") {
+                    
+                }
+                else {
+                    
+                }
+            }
         }
         
     }
@@ -121,8 +142,15 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
                 self.choiceOfUrCourseCollectionView.reloadData()
             }
             
-        } fail: {
-            print("fail")
+        } fail: {error in
+            DispatchQueue.main.async {
+                if(error == "unauthorized") {
+                    
+                }
+                else {
+                    
+                }
+            }
         }
     }
     
@@ -137,8 +165,15 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
             DispatchQueue.main.async {
                 self.choiceOfUrCourseCollectionView.reloadData()
             }
-        } fail: {
-            print("fail")
+        } fail: {error in
+            DispatchQueue.main.async {
+                if(error == "unauthorized") {
+                    
+                }
+                else {
+                    
+                }
+            }
         }
     }
     
@@ -151,8 +186,15 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
             DispatchQueue.main.async {
                 self.choiceOfUrCourseCollectionView.reloadData()
             }
-        } fail: {
-            print("fail")
+        } fail: {error in
+            DispatchQueue.main.async {
+                if(error == "unauthorized") {
+                    
+                }
+                else {
+                    
+                }
+            }
         }
     }
     private func initCollectionView() {

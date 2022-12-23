@@ -44,7 +44,15 @@ class NewUserHomeView: UIView {
                     self.newUser()
                 }
             }
-        } fail: {
+        } fail: { error in
+            DispatchQueue.main.async {
+                if(error == "unauthorized") {
+                    
+                }
+                else {
+                    
+                }
+            }
             
         }
         

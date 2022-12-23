@@ -35,8 +35,16 @@ class ChooseYourCourseViewController: UIViewController {
                 self.stopLoader(loader: loader)
                 self.tableView.reloadData()
             }
-        } fail: {
-            self.stopLoader(loader: loader)
+        } fail: {error in
+            DispatchQueue.main.async {
+                self.stopLoader(loader: loader)
+                if(error == "unauthorized") {
+                    
+                }
+                else {
+                    
+                }
+            }
         }
         
         mainShared.categoriesViewModelShared.getCategories(token: mainShared.token) {

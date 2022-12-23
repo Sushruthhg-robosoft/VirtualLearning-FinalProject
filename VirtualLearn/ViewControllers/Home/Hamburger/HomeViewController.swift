@@ -65,9 +65,16 @@ class HomeViewController: UIViewController {
                 self.NewUserView.topView.suggestionsCollectionView.reloadData()
 
             }
-        } fail: {
-           self.stopLoader(loader: loader1)
-            print("fail")
+        } fail: {error in
+            DispatchQueue.main.async {
+                self.stopLoader(loader: loader1)
+                if(error == "unauthorized") {
+                    
+                }
+                else {
+                    
+                }
+            }
         }
         
         NewUserView.isHidden = false

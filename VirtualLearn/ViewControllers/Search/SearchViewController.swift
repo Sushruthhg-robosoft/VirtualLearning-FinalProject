@@ -64,7 +64,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
                 self.fifthBtn.setTitle(self.shared.searchViewModelShared.topSearches[4], for: .normal)
                 
             }
-        } fail: { (error) in
+        } fail: {  
             print("error")
         }
         
