@@ -35,19 +35,7 @@ class HamburgerViewController: UIViewController {
             // self.stopLoader(loader: loader)
         }
         
-        mainShraed.profileViewModel.getProfileData(token: mainShraed.token) { (data) in
-            DispatchQueue.main.async {
-                self.occupation.text = data.occupation
-                self.userName.text = data.fullName.capitalized
-                let url = URL(string: data.profilePic!)
-                guard let data = try? Data(contentsOf: url!) else {return}
-                self.backGroundProfileImage.image = UIImage(data: (data))
-                
-                self.profileImage.image = UIImage(data: data)
-            }
-        } fail: {
-            print("fail")
-        }
+        
         
     }
     
@@ -61,6 +49,21 @@ class HamburgerViewController: UIViewController {
             }
         } fail: {
             self.stopLoader(loader: loader)
+        }
+        
+        mainShraed.profileViewModel.getProfileData(token: mainShraed.token) { (data) in
+            DispatchQueue.main.async {
+                self.occupation.text = data.occupation
+                print(self.occupation.text , data.occupation)
+                self.userName.text = data.fullName.capitalized
+                let url = URL(string: data.profilePic!)
+                guard let data = try? Data(contentsOf: url!) else {return}
+                self.backGroundProfileImage.image = UIImage(data: (data))
+                
+                self.profileImage.image = UIImage(data: data)
+            }
+        } fail: {
+            print("fail")
         }
         
     }
