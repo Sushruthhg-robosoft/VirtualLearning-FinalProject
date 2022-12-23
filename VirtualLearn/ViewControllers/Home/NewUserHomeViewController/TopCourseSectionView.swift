@@ -45,6 +45,7 @@ extension TopCourseSectionView: UICollectionViewDelegate, UICollectionViewDataSo
         guard let cell = topCourseCollectionView.dequeueReusableCell(withReuseIdentifier: "TopCourseSectionCell", for: indexPath) as? TopCourseSectionCollectionViewCell else {
             fatalError("can't dequeue CustomCell")
         }
+        topCourseLabel.text = "Top Course in \(topCourse[indexPath.row].categoryName)"
         cell.headingLabel.text = topCourse[indexPath.row].courseName
         let url = URL(string: topCourse[indexPath.row].courseImage)
         let data = try? Data(contentsOf: url!)

@@ -70,6 +70,7 @@ class HomeViewController: UIViewController {
             print("fail")
         }
         
+        NewUserView.isHidden = false
 
     }
     @IBAction func onClickSearch(_ sender: Any) {
