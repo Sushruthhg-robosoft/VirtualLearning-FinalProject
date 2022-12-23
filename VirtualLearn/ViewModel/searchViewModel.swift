@@ -62,19 +62,22 @@ class SearchViewModel {
             
         }, failure: { (a) in
             print(a)
+            if a as? Int == 401{
+                print("fetch json error")
+            }
         })
     }
     
-    func getTopSearches(completion: @escaping (Bool) -> (), fail: @escaping (Bool) ->()){
+    func getTopSearches(completion: @escaping (Bool) -> (), fail: @escaping () ->()){
         
-        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/topSearches")!
+        guard let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/topSearches") else {return fail()}
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         networkManeger.fetchDataJson(request: request, completion: { (result) in
             
-            guard let topSearch = result as? [String] else{print("topsearchErr"); return fail(false)}
+            guard let topSearch = result as? [String] else{print("topsearchErr"); return fail()}
             for i in topSearch {
                 self.topSearches.append(i)
             }
@@ -82,8 +85,11 @@ class SearchViewModel {
             
             
             
-        }, failure: { (a) in
-            print(a)
+        }, failure: { (error) in
+            print(error)
+            fail()
+            
+            
         })
     }
     func getAutoSearch(autoFill: String, completion: @escaping (String) -> (), fail: @escaping (Bool) ->()){
@@ -105,6 +111,7 @@ class SearchViewModel {
             
         }, failure: { (a) in
             print(a)
+            fail(false)
         })
     }
     

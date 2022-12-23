@@ -123,7 +123,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
                 self.AlertMessagePopup(message: "Profile updated successfully")
                             
             }
-            } fail: {
+        } fail: { error in
              
             }
     }
