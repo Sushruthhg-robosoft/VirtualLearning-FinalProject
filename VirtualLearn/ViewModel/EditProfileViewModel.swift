@@ -22,7 +22,7 @@ class EditProfileViewModel {
             "emailId" : profiledata.emailId,
             "occupation" : profiledata.occupation!,
             "gender" : profiledata.gender!,
-            "dateOfBirth" : "2000-05-31",
+            "dateOfBirth" : profiledata.dateOfBirth!,
             "twitterLink" : profiledata.twitterLink!,
             "facebookLink" : profiledata.facebookLink!,
             
