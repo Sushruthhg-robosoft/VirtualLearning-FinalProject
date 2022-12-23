@@ -19,7 +19,7 @@ class NotificationViewModel{
     func getNotificationCount(token: String,completion: @escaping() -> Void, fail: @escaping () -> Void){
         
         print("inside get notification")
-        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/notificationCount")!
+        guard let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/notificationCount") else{return fail()}
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -27,7 +27,7 @@ class NotificationViewModel{
         
         networkManeger.fetchDataJson(request: request) { data in
             
-            guard let notificationCount = data as? Int else {print("countErr");return}
+            guard let notificationCount = data as? Int else {print("countErr");return fail()}
             //guard let Count = Int(notificationCount[0]) else {return}
             print("notificaton Count",notificationCount)
             self.count = notificationCount
@@ -42,25 +42,25 @@ class NotificationViewModel{
     
     func getNotifications(token: String, limit: String,page: String,completion: @escaping() -> Void, fail: @escaping () -> Void){
         
-        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/notification?limit=\(limit)&page=\(page)")!
+        guard let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/notification?limit=\(limit)&page=\(page)") else {return fail()}
         
         notifications.removeAll()
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         networkManeger.fetchDataJson(request: request) { [self] data in
-            guard let apiData = data as? [Any] else {print("apiDataerr");return}
-            guard let allData = apiData as? [[String:Any]] else {print("allDataerr");return}
+            guard let apiData = data as? [Any] else {print("apiDataerr");return fail()}
+            guard let allData = apiData as? [[String:Any]] else {print("allDataerr");return fail()}
             
             
             for notificationData in allData{
                                 
                 var read:Bool?
-                guard let reciever = notificationData["notification_id"] as? Int else{print("notification data parsing error1");return}
-                guard let notificationImage = notificationData["notification_image"] as? String else{print("notification data parsing error2");return}
-                guard let notificationMessage = notificationData["notification_message"] as? String else{print("notification data parsing error3");return}
-                guard let readStatus = notificationData["read_status"] as? Int else{print("notification data parsing error4");return}
-                guard let notificationTime = notificationData["notificationTime"] as? Int else{print("notification data parsing error5");return}
+                guard let reciever = notificationData["notification_id"] as? Int else{print("notification data parsing error1");return fail()}
+                guard let notificationImage = notificationData["notification_image"] as? String else{print("notification data parsing error2");return fail()}
+                guard let notificationMessage = notificationData["notification_message"] as? String else{print("notification data parsing error3");return fail()}
+                guard let readStatus = notificationData["read_status"] as? Int else{print("notification data parsing error4");return fail()}
+                guard let notificationTime = notificationData["notificationTime"] as? Int else{print("notification data parsing error5");return fail()}
                 if readStatus == 0{
                     read = false
                 }else{
@@ -97,7 +97,7 @@ class NotificationViewModel{
     func readNotification(token: String, notificationId: String, completion: @escaping(String) -> Void, fail: @escaping () -> Void){
         
         
-        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/notification?notificationId=\(notificationId)")!
+        guard let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/notification?notificationId=\(notificationId)") else{ return fail()}
         
         var request = URLRequest(url: url)
         request.httpMethod = "PUT"
@@ -105,7 +105,7 @@ class NotificationViewModel{
         networkManeger.fetchData(request: request){ data in
             
             print(data)
-            guard let status = data as? [String] else{return}
+            guard let status = data as? [String] else{return fail()}
             completion(status[0])
             
             

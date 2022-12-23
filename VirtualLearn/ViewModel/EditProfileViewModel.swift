@@ -54,7 +54,7 @@ class EditProfileViewModel {
 //
         print(parameters)
         networkManager.postData(url: url, requestMethod: "PATCH", profileImage: profileImage,  parameters: parameters,token: token, headers: nil) { (result,error)  in
-            print(result, "aaa")
+            print(result)
         completion()
             
         }

@@ -14,7 +14,7 @@ class PersonalData {
     func validatingUserName(userName: String, completion: @escaping (Bool) -> (), fail: @escaping (Bool) ->()) {
         
         let network = NetWorkManager()
-        let url = URL(string:"https://app-virtuallearning-221207091853.azurewebsites.net/auth/register/check/userName")!
+        guard let url = URL(string:"https://app-virtuallearning-221207091853.azurewebsites.net/auth/register/check/userName") else {return fail(false)}
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue(userName, forHTTPHeaderField: "userName")
@@ -25,7 +25,7 @@ class PersonalData {
             guard let response = responseData?[0]  else {
                 return
             }
-            print("sdfghjk",response)
+            print(response)
             if(response == "true")
             {
                 
@@ -47,7 +47,7 @@ class PersonalData {
     func registeringUser(user: NewUser, completion: @escaping (Bool) -> (), fail: @escaping (Bool) ->()) {
         
         let network = NetWorkManager()
-        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/auth/register")!
+        guard let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/auth/register") else {return fail(false)}
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")

@@ -15,14 +15,14 @@ class PrivacyPolicyViewModel {
     
     
     func getprivacyPolicyContent(privacyPolicyId: String, completion: @escaping(PrivacyPolicyModel) -> Void, fail: @escaping () -> Void) {
-        let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/privacy-policy")!
+        guard let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/privacy-policy") else{return fail()}
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         networkManager.fetchDataJson(request: request) { data in
-            guard let apiData = data as? [String: Any] else{ print("apiDataerror");return}
-            guard let policyId = apiData["privacyPolicyId"] as? Int else{ print("privacyPolicyIderror");return}
+            guard let apiData = data as? [String: Any] else{ print("apiDataerror");return fail()}
+            guard let policyId = apiData["privacyPolicyId"] as? Int else{ print("privacyPolicyIderror");return fail()}
             guard let content = apiData["content"] as? String else{
-                print("content error");return}
+                print("content error");return fail()}
             
             let PolicyData = PrivacyPolicyModel(privacyPolicyId: String(policyId), content: content)
             
