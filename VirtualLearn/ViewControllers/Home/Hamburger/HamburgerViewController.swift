@@ -18,8 +18,11 @@ class HamburgerViewController: UIViewController {
     @IBOutlet weak var backGroundProfileImage: UIImageView!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var notificationCount: customHamLable!
+    
     var delegate: HamburgerViewControllerDelegate?
     var mainShraed = mainViewModel.mainShared
+    @IBOutlet weak var loginBtn: customHabButtons!
+    var storageManegr = StorageManeger.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,10 +54,15 @@ class HamburgerViewController: UIViewController {
             self.stopLoader(loader: loader)
         }
         
+        if storageManegr.isLoggedIn(){
+            loginBtn.setTitle("Logout", for: .normal)
+        }
+        else{
+            loginBtn.setTitle("Login", for: .normal)
+        }
         mainShraed.profileViewModel.getProfileData(token: mainShraed.token) { (data) in
             DispatchQueue.main.async {
                 self.occupation.text = data.occupation
-                print(self.occupation.text , data.occupation)
                 self.userName.text = data.fullName.capitalized
                 let url = URL(string: data.profilePic!)
                 guard let data = try? Data(contentsOf: url!) else {return}
@@ -105,10 +113,17 @@ class HamburgerViewController: UIViewController {
     }
     
     @IBAction func onClickLogOut(_ sender: Any) {
-        let storageManger = StorageManeger.shared
-        logoutMessagePopup(message: "Do you really want to logout?")
         
-        storageManger.resetLoggedIn()
+        if loginBtn.titleLabel?.text == "Logout"{
+            let storageManger = StorageManeger.shared
+            logoutMessagePopup(message: "Do you really want to logout?")
+            
+            storageManger.resetLoggedIn()
+        }
+        else{
+            
+            navigationController?.popViewController(animated: true)
+        }
     }
     
     

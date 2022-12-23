@@ -1897,6 +1897,7 @@
                     </view>
                     <connections>
                         <outlet property="backGroundProfileImage" destination="UV2-cy-KTw" id="JmE-f8-zq8"/>
+                        <outlet property="loginBtn" destination="5Kv-Hi-Z0Y" id="zSC-VA-qF2"/>
                         <outlet property="notificationCount" destination="2Ds-Hk-kWK" id="go4-qY-kY3"/>
                         <outlet property="occupation" destination="q9L-LS-38k" id="GrG-pa-VJI"/>
                         <outlet property="profileImage" destination="8wq-de-Md0" id="XLC-Z8-hst"/>
