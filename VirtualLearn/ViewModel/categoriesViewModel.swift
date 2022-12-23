@@ -72,6 +72,9 @@ class CategoryViewModel{
             completion()
         } failure: { (fail) in
             
+            if fail as? Int == 401{
+                print("in fetch data json error")
+            }
            
             print(fail)
         }
@@ -98,6 +101,9 @@ class CategoryViewModel{
             
             completion()
         } failure: { (fail) in
+            if fail as? Int == 401{
+                print("in fetch data json error")
+            }
             print(fail)
         }
 
