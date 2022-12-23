@@ -12,6 +12,7 @@
 		1B156BE1294C7582000DC768 /* CourseOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B156BE0294C7582000DC768 /* CourseOverview.swift */; };
 		1B3635E729409E1000D07243 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3635E629409E1000D07243 /* LoginPageViewController.swift */; };
 		1B3635EC29409E2500D07243 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3635EB29409E2500D07243 /* ForgotPasswordViewController.swift */; };
+		1B4FD6032955AC52007EB4F0 /* FinalCongragulationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4FD6022955AC52007EB4F0 /* FinalCongragulationViewController.swift */; };
 		1B90BA6D294B40BC004A6D4B /* subCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B90BA6C294B40BC004A6D4B /* subCategoryView.swift */; };
 		1B9289BC2949E50900C66D9E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9289BB2949E50900C66D9E /* SettingViewController.swift */; };
 		1B9289C12949E52500C66D9E /* TermConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9289C02949E52500C66D9E /* TermConditionViewController.swift */; };
@@ -171,6 +172,7 @@
 		1B156BE0294C7582000DC768 /* CourseOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseOverview.swift; sourceTree = "<group>"; };
 		1B3635E629409E1000D07243 /* LoginPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 		1B3635EB29409E2500D07243 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		1B4FD6022955AC52007EB4F0 /* FinalCongragulationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalCongragulationViewController.swift; sourceTree = "<group>"; };
 		1B90BA6C294B40BC004A6D4B /* subCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subCategoryView.swift; sourceTree = "<group>"; };
 		1B9289BB2949E50900C66D9E /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		1B9289C02949E52500C66D9E /* TermConditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermConditionViewController.swift; sourceTree = "<group>"; };
@@ -504,6 +506,7 @@
 				CF2EFB3C2949F0B600A7D585 /* showQuestionResultViewController.swift */,
 				CF54BFE12953280000BD4F07 /* CongratsViewController.swift */,
 				59D136372953491A00AFF360 /* ViewCertificateViewController.swift */,
+				1B4FD6022955AC52007EB4F0 /* FinalCongragulationViewController.swift */,
 			);
 			path = ModuleTest;
 			sourceTree = "<group>";
@@ -986,6 +989,7 @@
 				59FC6E8F295066F90031E719 /* TopCourseCategory.swift in Sources */,
 				CF032A8A2948966000D6B6D3 /* mainViewModel.swift in Sources */,
 				1B9289D52949E75300C66D9E /* BorderButton.swift in Sources */,
+				1B4FD6032955AC52007EB4F0 /* FinalCongragulationViewController.swift in Sources */,
 				1B156BE1294C7582000DC768 /* CourseOverview.swift in Sources */,
 				CFF5C2722940B747008818EB /* HomeCategoriescustomButton.swift in Sources */,
 				CF79F1E8294217C800EEC920 /* ChoiceOfYourCourseCollectionViewCell.swift in Sources */,
