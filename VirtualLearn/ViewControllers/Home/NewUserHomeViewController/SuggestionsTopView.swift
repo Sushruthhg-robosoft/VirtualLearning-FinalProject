@@ -22,6 +22,19 @@ class SuggestionsTopView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         initCollectionView()
+        if storageManger.authId() == "nouserName"{
+            self.userNameLabel.text = "Please Login"
+        }
+        else{
+            shared.loginViewModel.getUserName(authId: storageManger.authId()) {
+                DispatchQueue.main.async {
+                    print("coming")
+                    self.userNameLabel.text = self.shared.loginViewModel.user?.capitalized
+                }
+            } fail: { () in
+                print("fail")
+            }
+        }
     }
     
     required init?(coder: NSCoder) {
