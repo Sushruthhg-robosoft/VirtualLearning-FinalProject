@@ -105,10 +105,10 @@ class HamburgerViewController: UIViewController {
     }
     
     @IBAction func onClickLogOut(_ sender: Any) {
-        
+        let storageManger = StorageManeger.shared
         logoutMessagePopup(message: "Do you really want to logout?")
         
-        
+        storageManger.resetLoggedIn()
     }
     
     
@@ -119,8 +119,11 @@ class HamburgerViewController: UIViewController {
             let storageManger = StorageManeger.shared
             self.mainShraed.loginViewModel.logout(userId: storageManger.authId() , token: self.mainShraed.token)
             storageManger.resetLoggedIn()
-            let vc = self.storyboard?.instantiateViewController(identifier: "LandingViewController") as? LandingViewController
-            self.navigationController?.pushViewController(vc!, animated: true)
+            print(123456789,storageManger.isLoggedIn())
+            let vc = self.storyboard?.instantiateViewController(identifier: "LoadingViewController") as? LoadingViewController
+           self.navigationController?.popViewController(animated: true)
+          //self.navigationController?.popToViewController(vc!, animated: true)
+            
         })
         let no = UIAlertAction(title: "Cancel", style: .default, handler: { (action) -> Void in
             self.dismiss(animated: true, completion: nil)
@@ -130,4 +133,12 @@ class HamburgerViewController: UIViewController {
         
         self.present(dialogMessage, animated: true, completion: nil)
     }
+}
+
+extension UINavigationController {
+  func popToViewController(ofClass: AnyClass, animated: Bool = true) {
+    if let vc = viewControllers.last(where: { $0.isKind(of: ofClass) }) {
+      popToViewController(vc, animated: animated)
+    }
+  }
 }

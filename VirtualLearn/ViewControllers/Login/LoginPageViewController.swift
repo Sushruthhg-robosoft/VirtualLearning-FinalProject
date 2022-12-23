@@ -94,6 +94,7 @@ class LoginPageViewController: UIViewController {
                 vc.mainShared.token = token
                 self.navigationController?.pushViewController(vc, animated: true)
                 self.storageManeger.setLoggedIn()
+                
             }
         } fail: {
             self.stopLoader(loader: loader)
