@@ -32,7 +32,7 @@ class courseDetailsViewModel {
         
     }
     
-    func courseOverView(token: String,courseId: String, completion: @escaping(CourseOverview) -> Void, fail: @escaping () -> Void) {
+    func courseOverView(token: String, courseId: String, completion: @escaping(CourseOverview) -> Void, fail: @escaping () -> Void) {
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/courseOverview?courseId=\(courseId)")!
         
         var request = URLRequest(url: url)

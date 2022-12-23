@@ -12,8 +12,7 @@ class NotificationViewModel{
     let networkManeger = NetWorkManager()
     var notifications = [Notification]()
     var count = 0
-    
-   // let token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdW1hbnRocHJhYmh1IiwiZXhwIjoxNjcxMDI3MDAxLCJpYXQiOjE2NzA5OTEwMDF9.eD99V-Mat-m3XbiIdt6y_Bm0IGTYYcVsNz2HXRcPomd4CeZwdmBlmlZxxl_gvyzSS6U34GYPIm8D4AxypeefSg"
+ 
     
     
     func getNotificationCount(token: String,completion: @escaping() -> Void, fail: @escaping () -> Void){
@@ -70,14 +69,11 @@ class NotificationViewModel{
                 let notification = Notification(id: String(reciever), notificationImage: notificationImage, notificationMessage: notificationMessage, readStatus: read!, notificationTime: String(notificationTime))
                
                 notifications.append(notification)
-                //print(notifications.count)
                 
                 completion()
 
             }
             
-            //let dataArray = allData[0]
-            //guard let arr = dataArray as? [Any] else {print("allDatArrayaerr");return}
             
             
         } failure: { error in

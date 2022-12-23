@@ -38,7 +38,7 @@ class ForgotPasswordViewController: UIViewController {
             viewmodel.checkphoneNumberForExsistingUser(mobileNumber: "+91"+mobileNumber) {
                 DispatchQueue.main.async {
                     let otpViewModel = VerificationOTP()
-                    otpViewModel.getOTP(mobileNumber: "+917022011412")
+                    otpViewModel.getOTP(mobileNumber: mobileNumber)
                     let vc = self.storyboard?.instantiateViewController(identifier: "VerifyAccountViewController") as! VerifyAccountViewController
                     vc.isForgotPassword = true
                     vc.verificationText = "Verification"

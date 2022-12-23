@@ -147,10 +147,11 @@ extension HomeViewController: HamburgerViewControllerDelegate{
 
 
 extension HomeViewController: clickButtons{
-    func onClickChoiceofYourCourse() {
+    func onClickChoiceofYourCourse(courseId: String) {
         
         let vc = storyboard?.instantiateViewController(identifier: "CourseDetailsViewController") as! CourseDetailsViewController
         navigationController?.pushViewController(vc, animated: true)
+        vc.courseId = courseId
     }
     
     func onClickSeeAllCategories() {
@@ -161,7 +162,6 @@ extension HomeViewController: clickButtons{
     }
     
     func onclickChooseInAllCourse() {
-        print(90)
         let vc = storyboard?.instantiateViewController(identifier: "ChooseYourCourseViewController") as! ChooseYourCourseViewController
         navigationController?.pushViewController(vc, animated: true)
     }

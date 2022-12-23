@@ -18,6 +18,7 @@ class ModuleTestViewController: UIViewController {
     var moduleTestViewModel = ModuleTestViewModel()
     let mainShared = mainViewModel.mainShared
     var time = ""
+    var assignmentId = ""
 
     var currentPage = 0 {
         didSet {
@@ -45,7 +46,7 @@ class ModuleTestViewController: UIViewController {
         collectionView.delegate = self
         
         previousButton.isEnabled = false
-        moduleTestViewModel.getQuestions(limit: "3", page: "1", assignnmentId: "5") {
+        moduleTestViewModel.getQuestions(limit: "3", page: "1", assignnmentId: assignmentId) {
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
                 self.timerCountdown()
@@ -90,6 +91,7 @@ class ModuleTestViewController: UIViewController {
             DispatchQueue.main.async {
                 guard let vc = self.storyboard?.instantiateViewController(identifier: "CongratsViewController") as? CongratsViewController else {return}
                 self.navigationController?.pushViewController(vc, animated: true)
+                vc.assignmentId = self.assignmentId
             }
         } fail: {
             print("fail")

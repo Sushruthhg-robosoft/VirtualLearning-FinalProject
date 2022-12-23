@@ -9,7 +9,7 @@ import UIKit
 
 protocol clickButtons {
     func onClickSeeAllCategories()
-    func onClickChoiceofYourCourse()
+    func onClickChoiceofYourCourse(courseId: String)
     func onclickChooseInAllCourse()
     func onClickCategory(categoryName: String, categoryId: String)
 }
@@ -222,6 +222,7 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
             let data = try? Data(contentsOf: url!)
             cell.lessonImage.image = UIImage(data: data!)
 
+
             return cell
             
         case categoriesCollectionView :
@@ -248,11 +249,12 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
         
         switch collectionView {
         case choiceOfUrCourseCollectionView :
-            shared.delegate?.onClickChoiceofYourCourse()
+            
+            shared.delegate?.onClickChoiceofYourCourse(courseId: mainshared.homeViewModelShared.allCourse[indexPath.row].courseId)
             
         case categoriesCollectionView :
             let cell = self.categoriesCollectionView.cellForItem(at: indexPath) as? CategoriesCellCollectionViewCell
-            shared.delegate?.onClickCategory(categoryName: (cell?.categoryName.text)!, categoryId: cell!.categoryId)
+            shared.delegate?.onClickCategory(categoryName: (cell?.categoryName.text)!, categoryId: mainshared.categoriesViewModelShared.listofCategories[indexPath.row].categoryId)
             
 
             

@@ -7,7 +7,6 @@
 
 import Foundation
 class ProfileViewModel {
-//    static var shared = ProfileViewModel()
     let networkManager = NetWorkManager()
     var profileDataDetails = [ProfileData]()
     

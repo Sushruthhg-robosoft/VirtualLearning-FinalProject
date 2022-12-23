@@ -8,7 +8,6 @@
 import Foundation
 
 class HomeViewModel {
-    //var shared = mainViewModel.mainShared
     var banners = [String]()
     var allCourse = [HomeCourse]()
     var topCourseCategory1 = [TopCourseCategory]()
@@ -31,7 +30,6 @@ class HomeViewModel {
                 guard let bannerdetails = bannerData as? [String:Any] else {print("bannerError2");return fail()}
                 guard let bannerImage = bannerdetails["imageLink"] as? String else {print("bannerError3");return fail()}
                 self.banners.append(bannerImage)
-                //print(self.banners.count)
                 
             }
             completion(self.banners)

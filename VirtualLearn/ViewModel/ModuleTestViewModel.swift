@@ -12,7 +12,7 @@ class ModuleTestViewModel {
     var mainshared = mainViewModel.mainShared
    
     func getQuestions(limit: String, page: String, assignnmentId: String ,success: @escaping() -> Void, fail: @escaping () -> Void) {
-        guard let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/questions?limit=3&page=1&assignmentId=5") else{return fail()}
+        guard let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/questions?limit=3&page=1&assignmentId=\(assignnmentId)") else{return fail()}
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.setValue("Bearer \(mainshared.token)", forHTTPHeaderField: "Authorization")

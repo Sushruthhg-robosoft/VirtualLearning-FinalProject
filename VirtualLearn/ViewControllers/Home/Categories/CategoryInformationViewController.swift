@@ -19,7 +19,6 @@ class CategoryInformationViewController: UIViewController{
     var allCourses = [HomeCourse]()
     var categoryName = ""
     var categoryId = ""
-//    @IBOutlet weak var allCourseTableViewHeight: NSLayoutConstraint!
     
     var subCategoriesfield = [String]()
     override func viewDidLoad() {

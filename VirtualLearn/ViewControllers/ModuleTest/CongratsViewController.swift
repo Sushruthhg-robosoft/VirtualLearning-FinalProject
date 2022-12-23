@@ -10,6 +10,7 @@ import UIKit
 class CongratsViewController: UIViewController {
 
     @IBOutlet weak var scrollViewHeight: NSLayoutConstraint!
+    var assignmentId = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         if(view.bounds.height > 500) {
@@ -22,5 +23,6 @@ class CongratsViewController: UIViewController {
     @IBAction func onclickResult(_ sender: Any) {
         guard let vc = storyboard?.instantiateViewController(identifier: "TestResultViewController") as? TestResultViewController else {return}
         navigationController?.pushViewController(vc, animated: true)
+        vc.assignmentId = self.assignmentId
     }
 }
