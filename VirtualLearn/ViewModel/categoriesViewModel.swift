@@ -46,7 +46,7 @@ class CategoryViewModel{
     
     func getCategegoryDetailsById(token: String,categoryId: String,limit: String,page: String, completion: @escaping() -> Void, fail: @escaping () -> Void){
         
-        let url = URL(string:"https://app-virtuallearning-221207091853.azurewebsites.net/user/view/category/course?categoryId=1&limit=5&page=1")
+        let url = URL(string:"https://app-virtuallearning-221207091853.azurewebsites.net/user/view/category/course?categoryId=\(categoryId)&limit=5&page=1")
         var request = URLRequest(url: url!)
         request.httpMethod = "GET"
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
@@ -92,6 +92,7 @@ class CategoryViewModel{
                 
                 let subcategory = subCategory(subCategoryId: String(subCatID), subCategotyName: subCategoryName)
                 self.subCategoryDetails.append(subcategory)
+                print("789789789",subcategory)
             }
             
             completion()

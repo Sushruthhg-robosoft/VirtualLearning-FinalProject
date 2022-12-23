@@ -24,7 +24,7 @@ class CategoryInformationViewController: UIViewController{
     var subCategoriesfield = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        subCategoriesfield = ["graphic", "uidesign","abc","def","egh","ghi","klm","pqr","stu","vxy","xyz","graphic","uidesign","abc","def","egh","ghi","klm","pqr","stu","vxy"]
+       print("123123123",categoryId)
         
         initCollectionViewForTop(collectionView: courseToGetStartedCollectionView)
         initCollectionViewForTop(collectionView: featureCourseCollectionView)
@@ -32,12 +32,12 @@ class CategoryInformationViewController: UIViewController{
         
         CategoryLabel.text = categoryName
         let loader = self.loader()
-        shared.categoriesViewModelShared.getCategegoryDetailsById(token: shared.token, categoryId: "", limit: "", page: "") {
+        shared.categoriesViewModelShared.getCategegoryDetailsById(token: shared.token, categoryId: categoryId, limit: "", page: "") {
             
             DispatchQueue.main.async {
                 self.stopLoader(loader: loader)
                 self.courseToGetStartedCollectionView.reloadData()
-                self.shared.categoriesViewModelShared.getSubCategoryDetails(token: self.shared.token, categoryId: "1") {
+                self.shared.categoriesViewModelShared.getSubCategoryDetails(token: self.shared.token, categoryId: self.categoryId) {
                     DispatchQueue.main.async {
                         self.subCategoryCollectionView.reloadData()
                     }
@@ -161,16 +161,16 @@ extension CategoryInformationViewController: UICollectionViewDelegate, UICollect
         }
         
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        switch collectionView {
-        case subCategoryCollectionView :
-            return CGSize(width: subCategoriesfield[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12)]).width + 20, height: 30)
-           
-        default:
-            return "String".size(withAttributes: nil)
-        }
-            
-}
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        switch collectionView {
+//        case subCategoryCollectionView :
+//            return CGSize(width: subCategoriesfield[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12)]).width + 20, height: 30)
+//
+//        default:
+//            return "String".size(withAttributes: nil)
+//        }
+//
+//}
     
 }
 

@@ -11,6 +11,7 @@ class CategoriesCellCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var categoryName: UILabel!
     @IBOutlet weak var categoryImage: UIImageView!
+    var categoryId = ""
     override func awakeFromNib() {
         super.awakeFromNib()
        
