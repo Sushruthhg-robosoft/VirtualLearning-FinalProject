@@ -147,6 +147,21 @@ extension HomeViewController: HamburgerViewControllerDelegate{
 
 
 extension HomeViewController: clickButtons{
+    func onclickChooseInAllCourse(isNewest: Bool, isPopular: Bool, isAllCourse: Bool) {
+        let vc = storyboard?.instantiateViewController(identifier: "ChooseYourCourseViewController") as! ChooseYourCourseViewController
+        
+        if isNewest{
+            vc.newestCourse()
+        }
+        else if isPopular{
+            vc.popularCourse()
+        }
+        else if isAllCourse{
+            vc.allCourse()
+        }
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func onClickChoiceofYourCourse(courseId: String) {
         
         let vc = storyboard?.instantiateViewController(identifier: "CourseDetailsViewController") as! CourseDetailsViewController
@@ -161,10 +176,7 @@ extension HomeViewController: clickButtons{
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    func onclickChooseInAllCourse() {
-        let vc = storyboard?.instantiateViewController(identifier: "ChooseYourCourseViewController") as! ChooseYourCourseViewController
-        navigationController?.pushViewController(vc, animated: true)
-    }
+    
     
     func onClickCategory(categoryName: String, categoryId: String) {
         let vc = storyboard?.instantiateViewController(identifier: "CategoryInformationViewController") as! CategoryInformationViewController
@@ -172,6 +184,7 @@ extension HomeViewController: clickButtons{
         vc.categoryId = categoryId
         navigationController?.pushViewController(vc, animated: true)
     }
+
 
     
 }

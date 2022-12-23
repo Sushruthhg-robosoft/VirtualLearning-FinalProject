@@ -12,14 +12,16 @@ class AssignmentResponse {
     
     
     var assignmentId : Int
+    var assinmentStatus : Bool
     var assignmentName: String
     var testDuration : Int
     var questionCount: Int
     var grade : Int
     
-    init(assignmentId : Int, assignmentName: String, testDuration : Int, questionCount: Int, grade : Int) {
+    init(assignmentId : Int, assinmentStatus: Bool, assignmentName: String, testDuration : Int, questionCount: Int, grade : Int) {
         
         self.assignmentId = assignmentId
+        self.assinmentStatus = assinmentStatus
         self.assignmentName = assignmentName
         self.testDuration = testDuration
         self.questionCount = questionCount

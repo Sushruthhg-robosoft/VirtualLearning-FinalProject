@@ -47,14 +47,16 @@ class CourseContentResponse {
 class LessonResponseList {
     
     var chapterId: Int
+    var chapterNumber: String
     var chapterName: String
     var chapterCompleted: Bool
     var isExpandable: Bool = false
     var lessonList: [Any]
     
     
-    init(chapterId: Int, chapterName: String, chapterCompleted: Bool, lessonList:[Any]){
+    init(chapterId: Int, chapterNumber: String, chapterName: String, chapterCompleted: Bool, lessonList:[Any]){
         self.chapterId = chapterId
+        self.chapterNumber = chapterNumber
         self.chapterName = chapterName
         self.chapterCompleted = chapterCompleted
         self.lessonList = lessonList
@@ -67,6 +69,7 @@ class LessonResponseList {
 class LessonList{
     
     var lessonId: Int
+    var lessonNumber: String
     var lessonName: String
     var videoLink: String
     var duration: Int
@@ -74,9 +77,10 @@ class LessonList{
     var nextPlay = false
     
     
-    init(lessonId: Int, lessonName: String, videoLink: String, duration: Int,  lessonCompleted: Bool){
+    init(lessonId: Int,lessonNumber: String, lessonName: String, videoLink: String, duration: Int,  lessonCompleted: Bool){
         
         self.lessonId = lessonId
+        self.lessonNumber = lessonNumber
         self.lessonName = lessonName
         self.videoLink = videoLink
         self.duration = duration

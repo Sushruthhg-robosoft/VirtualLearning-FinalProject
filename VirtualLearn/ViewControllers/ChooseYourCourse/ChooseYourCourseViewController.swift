@@ -13,6 +13,7 @@ class ChooseYourCourseViewController: UIViewController {
     @IBOutlet weak var searchView: customChooseCourseView!
     @IBOutlet weak var searchTextField: UITextField!
     var mainShared = mainViewModel.mainShared
+    var tableData = [HomeCourse]()
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -61,15 +62,15 @@ class ChooseYourCourseViewController: UIViewController {
 
 extension ChooseYourCourseViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return mainShared.homeViewModelShared.allCourse.count
+        return self.tableData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ChooseYourCourseTableViewCell
-        cell.couseName.text = mainShared.homeViewModelShared.allCourse[indexPath.row].courseName
-        cell.courseCategory.text = mainShared.homeViewModelShared.allCourse[indexPath.row].categoryName
-        cell.numberofChapters.text = "\(mainShared.homeViewModelShared.allCourse[indexPath.row].totalNumberOfChapters) chapters"
-        let url = URL(string: mainShared.homeViewModelShared.allCourse[indexPath.row].courseImage)
+        cell.couseName.text = tableData[indexPath.row].courseName
+        cell.courseCategory.text = tableData[indexPath.row].categoryName
+        cell.numberofChapters.text = "\(tableData[indexPath.row].totalNumberOfChapters) chapters"
+        let url = URL(string: tableData[indexPath.row].courseImage)
         let data = try? Data(contentsOf: url!)
         cell.courseImage.image = UIImage(data: data!)
         return cell
@@ -105,8 +106,41 @@ extension ChooseYourCourseViewController: UICollectionViewDelegate, UICollection
         return 3
     }
     
+    func allCourse(){
+        mainShared.homeViewModelShared.getAllCourseDeatils(token: mainShared.token) { (data) in
+            
+            DispatchQueue.main.async {
+                self.tableData = data
+                self.tableView.reloadData()
+            }
+            
+        } fail: {
+            print("fail")
+        }
+    }
     
     
+    func newestCourse(){
+        mainShared.homeViewModelShared.getNewestCourseDetails(token: mainShared.token) { (data) in
+            DispatchQueue.main.async {
+                self.tableData = data
+                self.tableView.reloadData()
+            }
+        } fail: {
+            print("fail")
+        }
+    }
+    
+    func popularCourse(){
+        mainShared.homeViewModelShared.getPopularCourseDetails(token: mainShared.token) { (data) in
+            DispatchQueue.main.async {
+                self.tableData = data
+                self.tableView.reloadData()
+            }
+        } fail: {
+            print("fail")
+        }
+    }
 }
 
 
