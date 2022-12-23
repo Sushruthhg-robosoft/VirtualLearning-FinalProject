@@ -257,7 +257,24 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         }
     }
     
-
+    
+    @IBAction func nameEditingChanged(_ sender: Any) {
+        guard let 
+        
+    }
+    func checAllField() {
+    
+//        if( fullNameTextField.text != "" && usernameStatus == true && emailTextField.text != "" && passwordTextField.text != "" && confirmPasswordTextField.text != "" && passwordTextField.text! == confirmPasswordTextField.text!)
+//        {
+//            RegistrayionButtonOutlet.isEnabled = true
+//            RegistrayionButtonOutlet.alpha = 1
+//        }
+//        else
+//        {
+//            RegistrayionButtonOutlet.isEnabled = false
+//            RegistrayionButtonOutlet.alpha = 0.5
+//        }
+//    }
     
  }
 
