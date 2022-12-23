@@ -24,7 +24,6 @@ class CategoryInformationViewController: UIViewController{
     var subCategoriesfield = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
-       print("123123123",categoryId)
         
         initCollectionViewForTop(collectionView: courseToGetStartedCollectionView)
         initCollectionViewForTop(collectionView: featureCourseCollectionView)
@@ -84,8 +83,9 @@ class CategoryInformationViewController: UIViewController{
     
     @IBAction func onClickSearch(_ sender: Any) {
         
-        let vc = storyboard?.instantiateViewController(identifier: "SearchViewController") as? SearchViewController
-        navigationController?.pushViewController(vc!, animated: true)
+        guard let vc = storyboard?.instantiateViewController(identifier: "SearchViewController") as? SearchViewController else{return}
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     
