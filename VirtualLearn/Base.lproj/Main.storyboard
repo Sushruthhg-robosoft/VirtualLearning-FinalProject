@@ -2168,28 +2168,28 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What will you learn first?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3U0-VG-mKE">
-                                                <rect key="frame" x="70" y="313" width="197" height="21"/>
+                                                <rect key="frame" x="73.5" y="313" width="190.5" height="22"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your courses will go here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFn-XA-jdw">
-                                                <rect key="frame" x="90.5" y="342" width="156.5" height="16.5"/>
+                                                <rect key="frame" x="91.5" y="343" width="154" height="17.5"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                                 <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x6t-JL-L17">
-                                                <rect key="frame" x="4" y="398.5" width="367" height="231.5"/>
+                                                <rect key="frame" x="4" y="400.5" width="367" height="229.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vaN-t4-Zc0">
-                                                        <rect key="frame" x="0.0" y="0.0" width="87.5" height="21"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="89" height="22"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="18"/>
                                                         <color key="textColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RGY-Se-kWl">
-                                                        <rect key="frame" x="0.0" y="31" width="367" height="200.5"/>
+                                                        <rect key="frame" x="0.0" y="32" width="367" height="197.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PAR-sS-gOh">
                                                             <size key="itemSize" width="128" height="128"/>
@@ -2199,14 +2199,14 @@
                                                         </collectionViewFlowLayout>
                                                         <cells>
                                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="6bl-We-mZo" customClass="NewUserCategoryCollectionViewCell" customModule="VirtualLearn" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="129.5" height="30"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="128" height="30"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Rsl-EK-3i6">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="129.5" height="30"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="30"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vdw-vz-j0g">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="129.5" height="30"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="30"/>
                                                                             <subviews>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_categories_design" translatesAutoresizingMaskIntoConstraints="NO" id="1dx-fE-W7T">
                                                                                     <rect key="frame" x="2" y="0.0" width="30" height="30"/>
@@ -2216,7 +2216,7 @@
                                                                                     </constraints>
                                                                                 </imageView>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Health &amp; Fitness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Yt-p0-QNV">
-                                                                                    <rect key="frame" x="42" y="7.5" width="87.5" height="15"/>
+                                                                                    <rect key="frame" x="42" y="7.5" width="86" height="15"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="height" constant="15" id="rsE-mU-Kb6"/>
                                                                                     </constraints>
@@ -4966,10 +4966,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="law-OW-l5y">
-                                <rect key="frame" x="0.0" y="317" width="375" height="350"/>
+                                <rect key="frame" x="0.0" y="200" width="375" height="467"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RoF-3S-dOn">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="467"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQ0-fQ-3xN">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="516.5"/>
@@ -5191,7 +5191,7 @@
                             <constraint firstItem="N5d-UZ-zi4" firstAttribute="bottom" secondItem="law-OW-l5y" secondAttribute="bottom" id="Cge-81-jFx"/>
                             <constraint firstItem="N5d-UZ-zi4" firstAttribute="trailing" secondItem="law-OW-l5y" secondAttribute="trailing" id="L6U-iY-3Rw"/>
                             <constraint firstItem="law-OW-l5y" firstAttribute="leading" secondItem="N5d-UZ-zi4" secondAttribute="leading" id="f7V-yj-sgv"/>
-                            <constraint firstItem="law-OW-l5y" firstAttribute="top" secondItem="N5d-UZ-zi4" secondAttribute="top" constant="317" id="kEp-66-BVp"/>
+                            <constraint firstItem="law-OW-l5y" firstAttribute="top" secondItem="N5d-UZ-zi4" secondAttribute="top" constant="200" id="ls9-M8-coH"/>
                         </constraints>
                     </view>
                     <connections>
