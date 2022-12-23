@@ -255,8 +255,10 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         }else {
             okAlertMessagePopup(message: "Enter Valid Email")
         }
-    
     }
+    
+
+    
  }
 
             
