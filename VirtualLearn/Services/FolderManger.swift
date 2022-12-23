@@ -49,7 +49,7 @@ class StorageManeger{
         
     }
     func resetLoggedIn(){
-        
+        print("resetLoggedIn")
         UserDefaults.standard.setValue(false, forKey: loggingKey.loggedIn.rawValue)
     }
     
