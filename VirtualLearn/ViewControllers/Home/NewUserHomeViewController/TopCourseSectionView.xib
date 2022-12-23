@@ -24,11 +24,8 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KJO-PR-N1k">
                     <rect key="frame" x="0.0" y="0.0" width="427" height="41"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top courses in Business" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBl-YN-urK">
-                            <rect key="frame" x="24" y="15" width="250" height="22"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="250" id="zZ5-1L-cig"/>
-                            </constraints>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top courses in Business" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBl-YN-urK">
+                            <rect key="frame" x="24" y="15" width="201" height="22"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                             <color key="textColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -48,6 +45,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="41" id="5yg-hy-P1Z"/>
+                        <constraint firstItem="tSl-YV-Xpc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="GBl-YN-urK" secondAttribute="trailing" constant="8" id="Vc1-gf-SBU"/>
                         <constraint firstAttribute="trailing" secondItem="tSl-YV-Xpc" secondAttribute="trailing" constant="24" id="eE5-wc-5nh"/>
                         <constraint firstItem="GBl-YN-urK" firstAttribute="top" secondItem="KJO-PR-N1k" secondAttribute="top" constant="15" id="fC5-GP-yVU"/>
                         <constraint firstItem="GBl-YN-urK" firstAttribute="leading" secondItem="KJO-PR-N1k" secondAttribute="leading" constant="24" id="iXe-hj-fid"/>
@@ -79,7 +77,7 @@
                 <constraint firstAttribute="trailing" secondItem="KJO-PR-N1k" secondAttribute="trailing" id="xG3-rj-VBr"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="142" y="104"/>
+            <point key="canvasLocation" x="141.30434782608697" y="103.79464285714285"/>
         </view>
     </objects>
     <resources>
