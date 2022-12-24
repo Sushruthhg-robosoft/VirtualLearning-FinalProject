@@ -75,9 +75,19 @@ class ChangeYourPasswordViewController: UIViewController {
       }
            
     }
-         fail: {
+         fail: { error in
             self.stopLoader(loader: loader)
-            self.okAlertMessagePopup(message: "something went wrong password not changed")
+            print("failures")
+            DispatchQueue.main.async {
+                if(error == "unauthorized") {
+                    
+                 }
+                else {
+                    self.okAlertMessagePopup(message: "something went wrong password not changed")
+//                    self.navigationController?.popViewController(animated: true)
+                }
+            }
+            
         }
     }
   

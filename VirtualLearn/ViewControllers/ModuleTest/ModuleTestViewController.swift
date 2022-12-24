@@ -14,12 +14,12 @@ class ModuleTestViewController: UIViewController {
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var timeLabel: UILabel!
     var testAnswers: [Int:String] = [:]
-
+    
     var moduleTestViewModel = ModuleTestViewModel()
     let mainShared = mainViewModel.mainShared
     var time = ""
     var assignmentId = ""
-
+    
     var currentPage = 0 {
         didSet {
             if currentPage == moduleTestViewModel.moduleTestData.count - 1{
@@ -50,12 +50,22 @@ class ModuleTestViewController: UIViewController {
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
                 self.timerCountdown()
-
+                
             }
-        } fail: {
-            print("fail")
+        } fail: {error in
+            
+            //            self.stopLoader(loader: loader)
+            print("failures")
+            DispatchQueue.main.async {
+                if(error == "unauthorized") {
+                    
+                }
+                else {
+                    //                    self.navigationController?.popViewController(animated: true)
+                }
+            }
         }
-
+        
         
     }
     
@@ -68,7 +78,7 @@ class ModuleTestViewController: UIViewController {
         let visibleItems: NSArray = self.collectionView.indexPathsForVisibleItems as NSArray
         let currentItem: IndexPath = visibleItems.object(at: 0) as! IndexPath
         let nextItem: IndexPath = IndexPath(item: currentItem.item + 1, section: 0)
-
+        
         if nextItem.row < moduleTestViewModel.moduleTestData.count {
             
             self.collectionView.scrollToItem(at: nextItem, at: .right, animated: true)
@@ -93,10 +103,21 @@ class ModuleTestViewController: UIViewController {
                 self.navigationController?.pushViewController(vc, animated: true)
                 vc.assignmentId = self.assignmentId
             }
-        } fail: {
-            print("fail")
+        } fail: {error in
+            
+            //            self.stopLoader(loader: loader)
+            print("failures")
+            DispatchQueue.main.async {
+                if(error == "unauthorized") {
+                    
+                }
+                else {
+                    //                    self.navigationController?.popViewController(animated: true)
+                }
+            }
+            
         }
-       
+        
     }
     
     @IBAction func onClickPrevious(_ sender: Any) {
@@ -113,9 +134,9 @@ class ModuleTestViewController: UIViewController {
             if nextItem.row == 0{
                 previousButton.isEnabled = false
             }
-          
+            
         }
-     
+        
     }
     
     
