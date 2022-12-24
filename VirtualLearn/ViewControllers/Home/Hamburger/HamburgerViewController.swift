@@ -34,8 +34,18 @@ class HamburgerViewController: UIViewController {
                 //self.stopLoader(loader: loader)
                 self.notificationCount.text = String(self.mainShraed.notificationViewModelShared.count)
             }
-        } fail: {
-            // self.stopLoader(loader: loader)
+        } fail: {error in
+            
+            //            self.stopLoader(loader: loader)
+                print("failures")
+                DispatchQueue.main.async {
+                if(error == "unauthorized") {
+                                
+                }
+                else {
+            //                    self.navigationController?.popViewController(animated: true)
+                    }
+            }
         }
         
         
@@ -50,8 +60,18 @@ class HamburgerViewController: UIViewController {
                 self.stopLoader(loader: loader)
                 self.notificationCount.text = String(self.mainShraed.notificationViewModelShared.count)
             }
-        } fail: {
-            self.stopLoader(loader: loader)
+        } fail: {error in
+                self.stopLoader(loader: loader)
+                print("failures")
+                DispatchQueue.main.async {
+                    if(error == "unauthorized") {
+                                
+                    }
+                    else {
+            //                    self.navigationController?.popViewController(animated: true)
+                }
+        }
+//            self.stopLoader(loader: loader)
         }
         
         if storageManegr.isLoggedIn(){
@@ -70,8 +90,18 @@ class HamburgerViewController: UIViewController {
                 
                 self.profileImage.image = UIImage(data: data)
             }
-        } fail: {
-            print("fail")
+        } fail: { error in
+            
+            self.stopLoader(loader: loader)
+            print("failures")
+            DispatchQueue.main.async {
+                if(error == "unauthorized") {
+                    
+                 }
+                else {
+//                    self.navigationController?.popViewController(animated: true)
+                }
+            }
         }
         
     }
@@ -91,9 +121,16 @@ class HamburgerViewController: UIViewController {
     }
     
     @IBAction func onClickMyProfile(_ sender: Any) {
-        let vc = storyboard?.instantiateViewController(identifier: "ProfileViewController") as! ProfileViewController
+        if (storageManegr.isLoggedIn() ){
+            let vc = storyboard?.instantiateViewController(identifier: "ProfileViewController") as! ProfileViewController
+            
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        else {
+            self.okAlertMessagePopupforLogin(message: "Please Login")
+        }
         
-        navigationController?.pushViewController(vc, animated: true)
+       
     }
     
     

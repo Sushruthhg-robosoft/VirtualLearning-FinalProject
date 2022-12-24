@@ -42,10 +42,19 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
                 self.tableview.reloadData()
             }
             
-        } fail: {
-            self.stopLoader(loader: loader)
-            self.okAlertMessagePopup(message: "Failed to load notification")
-            print("fail")
+        } fail: { error in
+            
+                self.stopLoader(loader: loader)
+                self.okAlertMessagePopup(message: "Failed to load notification")
+                print("failures")
+                DispatchQueue.main.async {
+                if(error == "unauthorized") {
+                                
+                }
+                else {
+            //                    self.navigationController?.popViewController(animated: true)
+                }
+            }
         }
         
         
@@ -95,8 +104,19 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
                 }
             }
             
-        } fail: {
-            print("fail")
+        } fail: {  error in
+            
+//            self.stopLoader(loader: loader)
+            self.okAlertMessagePopup(message: "Failed to load notification")
+            print("failures")
+            DispatchQueue.main.async {
+            if(error == "unauthorized") {
+                            
+            }
+            else {
+        //                    self.navigationController?.popViewController(animated: true)
+            }
+        }
         }
 
 

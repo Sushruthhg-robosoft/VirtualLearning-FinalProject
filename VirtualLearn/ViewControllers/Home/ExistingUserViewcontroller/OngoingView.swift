@@ -33,7 +33,7 @@ class OngoingView: UIView, UICollectionViewDataSource, UICollectionViewDelegate 
                 self.ongoingCollectionView.reloadData()
             }
             
-        } fail: {
+        } fail: { error in
             print("ongoing home fail")
         }
 
