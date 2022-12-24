@@ -25,7 +25,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     
     @IBOutlet weak var nameField: UITextField!
-    @IBOutlet weak var userNameTextField: UITextField!
+    
+    @IBOutlet weak var userNameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var mobileNoField: UITextField!
     @IBOutlet weak var occupationField: UITextField!
@@ -69,7 +70,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         
         emailField.text = profileData?.emailId
         nameField.text = profileData?.fullName
-        userNameTextField.text = profileData?.userName
+        userNameField.text = profileData?.userName
         mobileNoField.text = profileData?.phoneNumber
         profilePhoto.image = dummyImage
         backgroundImage.image = dummyBackgroundImage
@@ -90,9 +91,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
        
     }
     
-    
-    
-    
+
     @IBAction func onClickCameraButton(_ sender: Any) {
         let imageController = UIImagePickerController()
                 imageController.delegate = self
@@ -110,13 +109,17 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     @IBAction func onClickSaveBtn(_ sender: Any) {
         self.disableTextField()
+        
 //        let loader = self.loader()
+        
         saveLoadingButton.showLoading()
+        
         saveLoadingButton.isEnabled = false
         updateEditProfileData()
         editProfileViewModel.updateProfileData(profileImage: profilePhoto.image ?? #imageLiteral(resourceName: "icn_profile_menu"), token: shared.token, profiledata: profileData!) {
             
             DispatchQueue.main.async {
+                
                 self.saveLoadingButton.hideLoading()
                 self.saveLoadingButton.isEnabled = true
 //            self.stopLoader(loader: loader)
@@ -132,7 +135,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
                 
                 profileData?.emailId = emailField.text!
                 profileData?.fullName =  nameField.text!
-                profileData?.userName = userNameTextField.text!
+                profileData?.userName = userNameField.text!
                 profileData?.phoneNumber = mobileNoField.text!
                 profileData?.gender = genderField.text!
                 profileData?.dateOfBirth = dateOfBirthField.text!
@@ -226,7 +229,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     func disableTextField(){
         self.nameField.isEnabled = false
-        self.userNameTextField.isEnabled = false
+        self.userNameField.isEnabled = false
         self.emailField.isEnabled = false
         self.mobileNoField.isEnabled = false
         self.occupationField.isEnabled = false
@@ -237,7 +240,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     }
     func enableTextField(){
         self.nameField.isEnabled = true
-        self.userNameTextField.isEnabled = true
+        self.userNameField.isEnabled = true
         self.emailField.isEnabled = true
         self.mobileNoField.isEnabled = true
         self.occupationField.isEnabled = true
@@ -258,27 +261,80 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     
-    @IBAction func nameEditingChanged(_ sender: Any) {
-        guard let 
-        
-    }
-    func checAllField() {
-    
-//        if( fullNameTextField.text != "" && usernameStatus == true && emailTextField.text != "" && passwordTextField.text != "" && confirmPasswordTextField.text != "" && passwordTextField.text! == confirmPasswordTextField.text!)
+//    @IBAction func nameEditingChanged(_ sender: Any) {
+//        guard  nameField != nil else {
+//            return
+//        }
+//        checkAllField()
+//
+//    }
+//
+//    @IBAction func userNameEditingChanged(_ sender: Any) {
+//        guard userNameField != nil else {
+//            return
+//        }
+//        checkAllField()
+//    }
+//
+//
+//    @IBAction func emailFieldEditingChanged(_ sender: Any) {
+//        guard emailField != nil else {
+//            return
+//        }
+//        checkAllField()
+//    }
+//
+//
+//    @IBAction func mobileNumberEditingChanged(_ sender: Any) {
+//        guard mobileNoField != nil else {
+//            return
+//        }
+//        checkAllField()
+//    }
+//
+//
+//    @IBAction func occupationEditingChanged(_ sender: Any) {
+//        guard occupationField != nil else {
+//            return
+//        }
+//        checkAllField()
+//    }
+//
+//    @IBAction func genderEditingChanged(_ sender: Any) {
+//        guard genderField != nil else {
+//            return
+//        }
+//        checkAllField()
+//    }
+//
+//
+//    @IBAction func dateOfBirthEditingChanged(_ sender: Any) {
+//        guard dateOfBirthField != nil else {
+//            return
+//        }
+//        checkAllField()
+//    }
+//
+//    func checkAllField() {
+//
+//        if (nameField.text != "" && userNameField.text != "" && emailField.text != "" && mobileNoField.text != "" && occupationField.text != "" && genderField.text != "" && dateOfBirthField.text != "")
 //        {
-//            RegistrayionButtonOutlet.isEnabled = true
-//            RegistrayionButtonOutlet.alpha = 1
+//            saveLoadingButton.isEnabled = true
+//            saveLoadingButton.alpha = 1
+//
+//
 //        }
 //        else
 //        {
-//            RegistrayionButtonOutlet.isEnabled = false
-//            RegistrayionButtonOutlet.alpha = 0.5
+//           saveLoadingButton.isEnabled = false
+//            saveButton.alpha = 0.5
 //        }
 //    }
-    
- }
-
-            
-    
-        
-        
+//
+// }
+//
+//
+//
+//
+//
+}
