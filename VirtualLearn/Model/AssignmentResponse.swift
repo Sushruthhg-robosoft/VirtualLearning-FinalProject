@@ -17,6 +17,7 @@ class AssignmentResponse {
     var testDuration : Int
     var questionCount: Int
     var grade : Int
+    var nextPlay = false
     
     init(assignmentId : Int, assinmentStatus: Bool, assignmentName: String, testDuration : Int, questionCount: Int, grade : Int) {
         
