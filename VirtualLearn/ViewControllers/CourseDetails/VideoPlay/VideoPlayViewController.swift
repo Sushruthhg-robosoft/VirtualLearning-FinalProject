@@ -25,13 +25,16 @@ class VideoPlayViewController: UIViewController {
     var isLandscape = false
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
        
 
         playVideo()
         timeDisplay()
+        
         addTimeobserver()
         videoHeading.text = heading
-        print(454545,seconds)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -46,12 +49,14 @@ class VideoPlayViewController: UIViewController {
         let videoURL = URL(string: url!)
         player = AVPlayer(url: videoURL!)
         playerLayer = AVPlayerLayer(player: player)
+        
         playerLayer.frame.size.width = videoPlayView.frame.size.width
         playerLayer.frame.size.height = videoPlayView.frame.size.height
         playerLayer.videoGravity = .resizeAspectFill
         self.videoPlayView.layer.addSublayer(playerLayer)
 //        let time = CMTime(seconds: 5, preferredTimescale: 1)
 //        player.seek(to: time)
+        
         player.play()
     }
     
@@ -82,10 +87,14 @@ class VideoPlayViewController: UIViewController {
     func addTimeobserver(){
         let interval = CMTime(seconds: 0.5, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
         let mainQueue = DispatchQueue.main
+        //seconds = 4
+        //player.seek(to: CMTimeMake(value: Int64(seconds!*1000), timescale: 1000))
         DispatchQueue.main.async {
+            
             _ = self.player.addPeriodicTimeObserver(forInterval: interval, queue: mainQueue, using: { [weak self] time in
                 
                 guard let currentTime = self?.player.currentItem else {return}
+                
                 self?.timeSlider.maximumValue = Float(currentTime.duration.seconds)
                 self?.timeSlider.minimumValue = 0
                 self?.timeSlider.value = Float(currentTime.currentTime().seconds)
@@ -104,6 +113,7 @@ class VideoPlayViewController: UIViewController {
         self.timeIndicatorLabel.text = "\(minutString):\(secondString)"
         guard let currentTime = self.player.currentItem else {return}
         self.timeSlider.maximumValue = Float(currentTime.duration.seconds)
+            
         self.timeSlider.minimumValue = 0
         self.timeSlider.value = Float(currentTime.currentTime().seconds)
         
