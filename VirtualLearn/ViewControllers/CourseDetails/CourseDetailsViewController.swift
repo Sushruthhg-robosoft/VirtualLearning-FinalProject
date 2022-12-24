@@ -10,8 +10,8 @@ import UIKit
 class CourseDetailsViewController: UIViewController {
     
     var shared = mainViewModel.mainShared
-
-
+    
+    
     @IBOutlet weak var CourseHeading: UILabel!
     @IBOutlet weak var courseType: UILabel!
     @IBOutlet weak var courseChapters: UILabel!
@@ -45,6 +45,7 @@ class CourseDetailsViewController: UIViewController {
     
     @IBOutlet weak var joinCourseButton: UIButton!
     
+    var storageManager = StorageManeger.shared
     var courseOverView: CourseOverview? = nil
     var courseIncludes = [String]()
     var courseOutcome = [String]()
@@ -52,7 +53,7 @@ class CourseDetailsViewController: UIViewController {
     var courseId = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("123",courseId)
         tableView1.delegate = self
         tableView1.dataSource = self
         tableView2.delegate = self
@@ -83,7 +84,7 @@ class CourseDetailsViewController: UIViewController {
                 self.CourseHeading.text = courseDataOverView.courseHeader.courseName
                 self.courseType.text = courseDataOverView.courseHeader.categoryName
                 self.courseChapters.text = String( courseDataOverView.courseHeader.totalNumberOfChapters)+" Chapters | " + String( courseDataOverView.courseHeader.totalNumberOfChapters)+" Lessons"
-    
+                
                 self.courseIncludes.append(String(courseDataOverView.courseIncludes.totalVideoContent) + " total hours video")
                 if(courseDataOverView.courseIncludes.supportedFiles) {
                     self.courseIncludes.append("Supports Files")
@@ -98,7 +99,7 @@ class CourseDetailsViewController: UIViewController {
                 }
                 self.courseCaption.text = courseDataOverView.overView.courseDescription
                 
-//                self.courseDescriptionHeight.constant = self.courseDescription.contentSize.height
+                //                self.courseDescriptionHeight.constant = self.courseDescription.contentSize.height
                 self.courseDescription.sizeToFit()
                 self.courseDescription.text = courseDataOverView.overView.previewCourseContent
                 self.courseOutcome = courseDataOverView.overView.courseOutCome
@@ -117,17 +118,28 @@ class CourseDetailsViewController: UIViewController {
                 
             }
             
-        } fail: {
+        } fail: { error in
+            
+            //            self.stopLoader(loader: loader)
+            print("failures")
+            DispatchQueue.main.async {
+                if(error == "unauthorized") {
+                    
+                }
+                else {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
             
         }
-
-      
+        
+        
     }
     
     
     @IBAction func onClickOverView(_ sender: Any) {
         
-       
+        
         CourseChapterView.isHidden = true
         CourseOverViewView.isHidden = false
         view.bringSubviewToFront(CourseOverViewView)
@@ -137,7 +149,7 @@ class CourseDetailsViewController: UIViewController {
     
     @IBAction func onClickChapters(_ sender: Any) {
         
-
+        
         
         CourseChapterView.isHidden = false
         CourseOverViewView.isHidden = true
@@ -158,25 +170,37 @@ class CourseDetailsViewController: UIViewController {
     
     @IBAction func onClickJoinCourse(_ sender: Any) {
         
-        shared.courseDetailsViewModelShared.joinCourse(token: shared.token, courseId: courseId){ data in
-            DispatchQueue.main.async { [self] in
-                CourseChapterView.isHidden = false
-                CourseOverViewView.isHidden = true
-                overViewScrollView.isScrollEnabled = false
-                view.bringSubviewToFront(CourseChapterView)
+        if storageManager.isLoggedIn() {
+            shared.courseDetailsViewModelShared.joinCourse(token: shared.token, courseId: courseId){ data in
+                DispatchQueue.main.async { [self] in
+                    CourseChapterView.isHidden = false
+                    CourseOverViewView.isHidden = true
+                    overViewScrollView.isScrollEnabled = false
+                    view.bringSubviewToFront(CourseChapterView)
+                }
+                
+            }fail: { error in
+                print("failures")
+                DispatchQueue.main.async {
+                    if(error == "unauthorized") {
+                        self.storageManager.resetLoggedIn()
+                        self.okAlertMessagePopupforLoginforExsistingUser(message: "Your session is Expired")
+                        
+                    }
+                    else {
+                        self.okAlertMessagePopup(message: "Failed to join course")
+                    }
+                }
             }
-            
-        }fail: {
-            DispatchQueue.main.async {
-                self.okAlertMessagePopup(message: "Failed to join course")
-                print("fail")
-            }
-            
+        } else
+        {
+            self.okAlertMessagePopupforLogin(message: "Please Login")
         }
+        
     }
     
     
-
+    
 }
 
 extension CourseDetailsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -204,12 +228,12 @@ extension CourseDetailsViewController: UITableViewDelegate, UITableViewDataSourc
         case tableView2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell2") as! CourseDetailseTableViewCell
             cell.WhatYouLearnLabel.text  = courseOutcome[indexPath.row]
-                    return cell
+            return cell
             
         case tableView3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell3") as! CourseDetailseTableViewCell
             cell.courseIncludesLabel.text  = courseRequirment[indexPath.row]
-                    return cell
+            return cell
             
         default:
             
@@ -219,19 +243,19 @@ extension CourseDetailsViewController: UITableViewDelegate, UITableViewDataSourc
         
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 10
-//    }
-//
+    //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    //        return 10
+    //    }
+    //
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-           if segue.identifier == "switch" {
-               guard let vc = segue.destination as? ChaptersViewController else { return }
+        if segue.identifier == "switch" {
+            guard let vc = segue.destination as? ChaptersViewController else { return }
             vc.delegate = self
             vc.courseId = courseId
-           }
-       }
+        }
+    }
 }
 
 extension CourseDetailsViewController: switchVc{

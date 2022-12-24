@@ -63,8 +63,18 @@ class MyCourseViewController: UIViewController {
                     view.bringSubviewToFront(existingUserView)
                 }
             }
-        } fail: {
-            print("fail")
+        } fail: {error in
+            
+//            self.stopLoader(loader: loader)
+            print("failures")
+            DispatchQueue.main.async {
+                if(error == "unauthorized") {
+                    
+                 }
+                else {
+//                    self.navigationController?.popViewController(animated: true)
+                }
+            }
         }
     }
 
