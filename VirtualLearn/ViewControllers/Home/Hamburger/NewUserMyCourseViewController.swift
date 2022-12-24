@@ -12,6 +12,7 @@ class NewUserMyCourseViewController: UIViewController, UICollectionViewDelegate,
     
     var mainShared = mainViewModel.mainShared
 
+
     @IBOutlet weak var newUserCategoryCollectionView: UICollectionView!
     
     
@@ -61,5 +62,9 @@ class NewUserMyCourseViewController: UIViewController, UICollectionViewDelegate,
         return 3
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(identifier: "CategoryInformationViewController") as! CategoryInformationViewController
+        vc.categoryId = mainShared.homeViewModelShared.allCourse[indexPath.row].courseId
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
