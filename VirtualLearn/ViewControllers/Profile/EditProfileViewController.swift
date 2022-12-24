@@ -113,13 +113,15 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 //        let loader = self.loader()
         
         saveLoadingButton.showLoading()
-        
+        print(1)
         saveLoadingButton.isEnabled = false
+        print(2)
         updateEditProfileData()
+        print(3)
         editProfileViewModel.updateProfileData(profileImage: profilePhoto.image ?? #imageLiteral(resourceName: "icn_profile_menu"), token: shared.token, profiledata: profileData!) {
-            
+            print(4)
             DispatchQueue.main.async {
-                
+                print("inside dispatch que")
                 self.saveLoadingButton.hideLoading()
                 self.saveLoadingButton.isEnabled = true
 //            self.stopLoader(loader: loader)
@@ -153,6 +155,13 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 
     @IBAction func nameEdit(_ sender: Any) {
         nameView.backgroundColor = #colorLiteral(red: 0.001148699783, green: 0.2356859446, blue: 0.4366979599, alpha: 1)
+        guard nameField.text != "" else {
+            nameLabel.isHidden = true
+            nameField.placeholder = "Full Name"
+            return
+        }
+        nameLabel.isHidden = false
+        
     }
     
     
@@ -257,84 +266,164 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
            print("email is valid")
         }else {
             okAlertMessagePopup(message: "Enter Valid Email")
+            
+            guard emailField.text != "" else {
+                emailLabel.isHidden = true
+                emailField.placeholder = "Full name"
+                return
+            }
+            emailLabel.isHidden = false
         }
     }
     
     
-//    @IBAction func nameEditingChanged(_ sender: Any) {
-//        guard  nameField != nil else {
+    @IBAction func nameEditingChanged(_ sender: Any) {
+        guard  nameField != nil else {
+            return
+        }
+        checkAllField()
+
+    }
+
+    @IBAction func userNameEditingChanged(_ sender: Any) {
+        guard userNameField != nil else {
+            return
+        }
+        checkAllField()
+    }
+
+
+    @IBAction func emailFieldEditingChanged(_ sender: Any) {
+        guard emailField != nil else {
+            return
+        }
+        checkAllField()
+    }
+
+
+    @IBAction func mobileNumberEditingChanged(_ sender: Any) {
+        guard mobileNoField != nil else {
+            return
+        }
+        checkAllField()
+    }
+
+
+    @IBAction func occupationEditingChanged(_ sender: Any) {
+        guard occupationField != nil else {
+            return
+        }
+        checkAllField()
+    }
+
+    @IBAction func genderEditingChanged(_ sender: Any) {
+        guard genderField != nil else {
+            return
+        }
+        checkAllField()
+    }
+
+
+    @IBAction func dateOfBirthEditingChanged(_ sender: Any) {
+        guard dateOfBirthField != nil else {
+            return
+        }
+        checkAllField()
+    }
+
+    func checkAllField() {
+
+        if (nameField.text != "" && userNameField.text != "" && emailField.text != "" && mobileNoField.text != "" && occupationField.text != "" && genderField.text != "" && dateOfBirthField.text != "")
+        {
+            saveLoadingButton.isEnabled = true
+            saveLoadingButton.alpha = 1
+
+
+        }
+        else
+        {
+           saveLoadingButton.isEnabled = false
+            saveLoadingButton.alpha = 0.5
+        }
+    }
+    
+//    @IBAction func nameEditingEnd(_ sender: Any) {
+//        guard nameField.text != "" else {
+//            nameLabel.isHidden = true
+//            nameField.placeholder = "Full Name"
 //            return
 //        }
-//        checkAllField()
-//
+//        nameLabel.isHidden = false
 //    }
-//
-//    @IBAction func userNameEditingChanged(_ sender: Any) {
-//        guard userNameField != nil else {
-//            return
-//        }
-//        checkAllField()
-//    }
-//
-//
-//    @IBAction func emailFieldEditingChanged(_ sender: Any) {
-//        guard emailField != nil else {
-//            return
-//        }
-//        checkAllField()
-//    }
-//
-//
-//    @IBAction func mobileNumberEditingChanged(_ sender: Any) {
-//        guard mobileNoField != nil else {
-//            return
-//        }
-//        checkAllField()
-//    }
-//
-//
-//    @IBAction func occupationEditingChanged(_ sender: Any) {
-//        guard occupationField != nil else {
-//            return
-//        }
-//        checkAllField()
-//    }
-//
-//    @IBAction func genderEditingChanged(_ sender: Any) {
-//        guard genderField != nil else {
-//            return
-//        }
-//        checkAllField()
-//    }
-//
-//
-//    @IBAction func dateOfBirthEditingChanged(_ sender: Any) {
-//        guard dateOfBirthField != nil else {
-//            return
-//        }
-//        checkAllField()
-//    }
-//
-//    func checkAllField() {
-//
-//        if (nameField.text != "" && userNameField.text != "" && emailField.text != "" && mobileNoField.text != "" && occupationField.text != "" && genderField.text != "" && dateOfBirthField.text != "")
-//        {
-//            saveLoadingButton.isEnabled = true
-//            saveLoadingButton.alpha = 1
-//
-//
-//        }
-//        else
-//        {
-//           saveLoadingButton.isEnabled = false
-//            saveButton.alpha = 0.5
-//        }
-//    }
-//
-// }
-//
-//
-//
-//
-//
-}
+    
+    
+    @IBAction func userNameEditingEnd(_ sender: Any) {
+        guard userNameField.text != "" else {
+            userNameLabel.isHidden = true
+            userNameField.placeholder = "User Name"
+            return
+        }
+        userNameLabel.isHidden = false
+    }
+    
+    
+    @IBAction func mobileNoEditingEnd(_ sender: Any) {
+        guard mobileNoField.text != "" else {
+            mobileNoLabel.isHidden = true
+            mobileNoField.placeholder = "Mobile No"
+            return
+        }
+        mobileNoLabel.isHidden = false
+    }
+    
+    
+    
+    @IBAction func occupationEditingEnd(_ sender: Any) {
+        guard occupationField.text != "" else {
+           occupationLabel.isHidden = true
+            occupationField.placeholder = "Occupation"
+            return
+        }
+        occupationLabel.isHidden = false
+        
+    }
+    
+    
+    @IBAction func dateOfBirthEditingEnd(_ sender: Any) {
+        guard dateOfBirthField.text != "" else {
+           dateOfBirth.isHidden = true
+            dateOfBirthField.placeholder = "DateOfBirth"
+            return
+        }
+        dateOfBirth.isHidden = false
+        
+    }
+    
+    
+    @IBAction func twitterFieldEditingEnd(_ sender: Any) {
+        guard twitterField.text != "" else {
+           twitterLabel.isHidden = true
+            twitterField.placeholder = "Twitter Link"
+            return
+        }
+        twitterLabel.isHidden = false
+        
+    }
+    
+    @IBAction func facebookFieldEndEditing(_ sender: Any) {
+        guard facebookField.text != "" else {
+           facebookLabel.isHidden = true
+            facebookField.placeholder = "Facebook Link"
+            return
+        }
+        facebookLabel.isHidden = false
+        
+    }
+
+ }
+
+
+
+
+
+
