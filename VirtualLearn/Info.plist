@@ -68,5 +68,7 @@
 		<string>Proxima Nova Bold.otf</string>
 		<string>Biko_Bold.otf</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app requires storage Permission</string>
 </dict>
 </plist>

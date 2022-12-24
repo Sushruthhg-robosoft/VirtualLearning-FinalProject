@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Photos
 
 class ChaptersViewModel {
     
@@ -56,9 +57,10 @@ class ChaptersViewModel {
                         guard let lessonName = lesson["lessonName"] as? String else {return fail("data Error")}
                         guard let videoLink = lesson["videoLink"] as? String else {return fail("data Error")}
                         guard let duration = lesson["duration"] as? Int else {return fail("data Error")}
+                        guard let durationCompleted = lesson["durationCompleted"] as? Int else {return fail("data Error")}
                         guard let lessonCompleted = lesson["lessonCompleted"] as? Bool else {return fail("data Error")}
                         
-                        let newLesson = LessonList(lessonId: lessonId, lessonNumber: String(lessonNumber), lessonName: lessonName, videoLink: videoLink, duration: duration, lessonCompleted: lessonCompleted)
+                        let newLesson = LessonList(lessonId: lessonId, lessonNumber: String(lessonNumber), lessonName: lessonName, durationCompleted: durationCompleted, videoLink: videoLink, duration: duration, lessonCompleted: lessonCompleted)
                         if(!lessonCompleted) {
                             if(videoPlay == 0) { newLesson.nextPlay = true; videoPlay = 1 }
                         }
@@ -126,4 +128,31 @@ class ChaptersViewModel {
             }
 
         }
-    }
+    
+    func downloadCertificate(imageUrl: String) {
+        guard let imageURL = URL(string: imageUrl) else { return }
+        
+        let session = URLSession.shared
+            let task = session.dataTask(with: imageURL) { data, response, error in
+                if error != nil || data == nil {
+                    print("Error: \(String(describing: error?.localizedDescription))")
+                    return
+                }
+                guard let imageData = data else {return}
+                let image = UIImage(data: imageData)
+                guard let imagePhoto = image else {return}
+                PHPhotoLibrary.shared().performChanges({
+                    PHAssetChangeRequest.creationRequestForAsset(from: imagePhoto)
+                }, completionHandler: { success, error in
+                    if success {
+                        print("Successfully saved image to photo library.")
+                    } else {
+                        print("Error saving image to photo library: \(String(describing: error))")
+                    }
+                })
+            }
+            task.resume()
+        }
+        
+        
+}
