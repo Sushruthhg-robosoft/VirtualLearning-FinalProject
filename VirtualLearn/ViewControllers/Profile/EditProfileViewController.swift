@@ -155,47 +155,70 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 
     @IBAction func nameEdit(_ sender: Any) {
         nameView.backgroundColor = #colorLiteral(red: 0.001148699783, green: 0.2356859446, blue: 0.4366979599, alpha: 1)
-        guard nameField.text != "" else {
-            nameLabel.isHidden = true
-            nameField.placeholder = "Full Name"
-            return
-        }
         nameLabel.isHidden = false
+        nameField.placeholder = ""
+        nameLabel.isHidden = true
         
     }
     
     
     @IBAction func userNameEdit(_ sender: Any) {
         userNameView.backgroundColor = #colorLiteral(red: 0.01568627451, green: 0.1725490196, blue: 0.3607843137, alpha: 1)
+        userNameLabel.isHidden = false
+        userNameField.placeholder = ""
+        userNameLabel.isHidden = true
+        
     }
     
     @IBAction func emailEdit(_ sender: Any) {
         
         emailView.backgroundColor = #colorLiteral(red: 0.001148699783, green: 0.2356859446, blue: 0.4366979599, alpha: 1)
+        emailLabel.isHidden = false
+        emailField.placeholder = ""
+        emailLabel.isHidden = true
     }
     
     @IBAction func mobileNoEdit(_ sender: Any) {
         mobileNoView.backgroundColor = #colorLiteral(red: 0.001148699783, green: 0.2356859446, blue: 0.4366979599, alpha: 1)
+        mobileNoLabel.isHidden = false
+        mobileNoField.placeholder = ""
+       mobileNoLabel.isHidden = true
+        
     }
     
     @IBAction func occupationEdit(_ sender: Any) {
         occupationView.backgroundColor = #colorLiteral(red: 0.001148699783, green: 0.2356859446, blue: 0.4366979599, alpha: 1)
+        occupationLabel.isHidden = false
+        occupationField.placeholder = ""
+        occupationLabel.isHidden = true
     }
     
     @IBAction func genderEdit(_ sender: Any) {
         genderView.backgroundColor = #colorLiteral(red: 0.001148699783, green: 0.2356859446, blue: 0.4366979599, alpha: 1)
+        genderLabel.isHidden = false
+        genderField.placeholder = ""
+        genderLabel.isHidden = true
     }
     
     @IBAction func dateOfBirthEdit(_ sender: Any) {
         dateOfBirthView.backgroundColor = #colorLiteral(red: 0.001148699783, green: 0.2356859446, blue: 0.4366979599, alpha: 1)
+        dateOfBirth.isHidden = false
+        dateOfBirthField.placeholder = ""
+        dateOfBirth.isHidden = true
     }
     
     @IBAction func twitterFieldEdit(_ sender: Any) {
         twitterView.backgroundColor = #colorLiteral(red: 0.001148699783, green: 0.2356859446, blue: 0.4366979599, alpha: 1)
+        twitterLabel.isHidden = false
+        twitterField.placeholder = ""
+        twitterLabel.isHidden = true
     }
 
     @IBAction func facebookFieldEdit(_ sender: Any) {
         facebookView.backgroundColor = #colorLiteral(red: 0.001148699783, green: 0.2356859446, blue: 0.4366979599, alpha: 1)
+        facebookLabel.isHidden = false
+        facebookField.placeholder = ""
+        facebookLabel.isHidden = true
     }
     
     
@@ -263,16 +286,12 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         let emailId = isValidEmail(email: emailField.text!)
         
         if emailId {
-           print("email is valid")
+           print(emailId)
         }else {
             okAlertMessagePopup(message: "Enter Valid Email")
+            saveLoadingButton.isEnabled = true
             
-            guard emailField.text != "" else {
-                emailLabel.isHidden = true
-                emailField.placeholder = "Full name"
-                return
-            }
-            emailLabel.isHidden = false
+        
         }
     }
     
@@ -347,79 +366,6 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         }
     }
     
-//    @IBAction func nameEditingEnd(_ sender: Any) {
-//        guard nameField.text != "" else {
-//            nameLabel.isHidden = true
-//            nameField.placeholder = "Full Name"
-//            return
-//        }
-//        nameLabel.isHidden = false
-//    }
-    
-    
-    @IBAction func userNameEditingEnd(_ sender: Any) {
-        guard userNameField.text != "" else {
-            userNameLabel.isHidden = true
-            userNameField.placeholder = "User Name"
-            return
-        }
-        userNameLabel.isHidden = false
-    }
-    
-    
-    @IBAction func mobileNoEditingEnd(_ sender: Any) {
-        guard mobileNoField.text != "" else {
-            mobileNoLabel.isHidden = true
-            mobileNoField.placeholder = "Mobile No"
-            return
-        }
-        mobileNoLabel.isHidden = false
-    }
-    
-    
-    
-    @IBAction func occupationEditingEnd(_ sender: Any) {
-        guard occupationField.text != "" else {
-           occupationLabel.isHidden = true
-            occupationField.placeholder = "Occupation"
-            return
-        }
-        occupationLabel.isHidden = false
-        
-    }
-    
-    
-    @IBAction func dateOfBirthEditingEnd(_ sender: Any) {
-        guard dateOfBirthField.text != "" else {
-           dateOfBirth.isHidden = true
-            dateOfBirthField.placeholder = "DateOfBirth"
-            return
-        }
-        dateOfBirth.isHidden = false
-        
-    }
-    
-    
-    @IBAction func twitterFieldEditingEnd(_ sender: Any) {
-        guard twitterField.text != "" else {
-           twitterLabel.isHidden = true
-            twitterField.placeholder = "Twitter Link"
-            return
-        }
-        twitterLabel.isHidden = false
-        
-    }
-    
-    @IBAction func facebookFieldEndEditing(_ sender: Any) {
-        guard facebookField.text != "" else {
-           facebookLabel.isHidden = true
-            facebookField.placeholder = "Facebook Link"
-            return
-        }
-        facebookLabel.isHidden = false
-        
-    }
-
  }
 
 

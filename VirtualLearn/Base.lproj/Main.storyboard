@@ -3460,7 +3460,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                         <connections>
-                                                            <action selector="nameEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="Ndp-v2-DCM"/>
+                                                            <action selector="nameEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="TR5-oh-819"/>
                                                             <action selector="nameEditingChanged:" destination="05D-p0-z4I" eventType="editingChanged" id="3gs-Iu-WqP"/>
                                                         </connections>
                                                     </textField>
@@ -3481,7 +3481,7 @@
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                                                         <connections>
                                                             <action selector="emailFieldEditingChanged:" destination="05D-p0-z4I" eventType="editingChanged" id="Cci-Hd-BRE"/>
-                                                            <action selector="emailIdEditing:" destination="05D-p0-z4I" eventType="editingDidEnd" id="OuB-iY-GYd"/>
+                                                            <action selector="emailIdEditing:" destination="05D-p0-z4I" eventType="editingDidEnd" id="8ao-6c-ijs"/>
                                                             <action selector="facebookFieldEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="v2D-Ss-cuA"/>
                                                         </connections>
                                                     </textField>
@@ -3511,7 +3511,6 @@
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                                         <connections>
                                                             <action selector="mobileNoEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="0td-Nj-zCb"/>
-                                                            <action selector="mobileNoEditingEnd:" destination="05D-p0-z4I" eventType="editingDidEnd" id="3L6-6W-pn7"/>
                                                             <action selector="mobileNumberEditingChanged:" destination="05D-p0-z4I" eventType="editingChanged" id="0Ii-df-3uX"/>
                                                         </connections>
                                                     </textField>
@@ -3543,7 +3542,6 @@
                                                         <connections>
                                                             <action selector="occupationEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="1v2-SH-Sbj"/>
                                                             <action selector="occupationEditingChanged:" destination="05D-p0-z4I" eventType="editingChanged" id="Tw9-TC-TDd"/>
-                                                            <action selector="occupationEditingEnd:" destination="05D-p0-z4I" eventType="editingDidEnd" id="tY0-H9-9EF"/>
                                                         </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FU0-TF-H8h">
@@ -3601,7 +3599,7 @@
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                                         <connections>
                                                             <action selector="dateOfBirthEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="xTl-v6-eB1"/>
-                                                            <action selector="dateOfBirthEditingEnd:" destination="05D-p0-z4I" eventType="editingDidEnd" id="GWc-Ty-y52"/>
+                                                            <action selector="dateOfBirthEditingChanged:" destination="05D-p0-z4I" eventType="editingChanged" id="mRK-b5-opz"/>
                                                         </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="623-mX-bez">
@@ -3641,7 +3639,6 @@
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL"/>
                                                         <connections>
                                                             <action selector="twitterFieldEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="bRO-yW-2X5"/>
-                                                            <action selector="twitterFieldEditingEnd:" destination="05D-p0-z4I" eventType="editingDidEnd" id="c7E-4V-kd9"/>
                                                         </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hCF-Lt-34J">
@@ -3666,9 +3663,8 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                         <connections>
-                                                            <action selector="userNameEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="X8F-Nk-rEO"/>
+                                                            <action selector="userNameEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="efC-6w-MPI"/>
                                                             <action selector="userNameEditingChanged:" destination="05D-p0-z4I" eventType="editingChanged" id="P5n-Sh-2oF"/>
-                                                            <action selector="userNameEditingEnd:" destination="05D-p0-z4I" eventType="editingDidEnd" id="ZD5-wG-Oa1"/>
                                                         </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upW-IG-b4x">
@@ -3861,7 +3857,6 @@
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL"/>
                                                 <connections>
                                                     <action selector="facebookFieldEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="AG7-dp-31W"/>
-                                                    <action selector="facebookFieldEndEditing:" destination="05D-p0-z4I" eventType="editingDidEnd" id="Aqn-vj-nUD"/>
                                                 </connections>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KuR-K5-Bnq">
@@ -3920,7 +3915,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="backgroundImage" destination="O8U-mY-SX5" id="dR6-Ib-aA8"/>
+                        <outlet property="backgroundImage" destination="O8U-mY-SX5" id="286-yR-9AT"/>
                         <outlet property="cameraButton" destination="tmh-Td-bN8" id="wPt-40-ETk"/>
                         <outlet property="dateOfBirth" destination="j2J-XB-o9u" id="IXt-g0-byg"/>
                         <outlet property="dateOfBirthField" destination="bh6-l3-hQ4" id="pyU-Ze-wwM"/>
@@ -3961,7 +3956,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DEf-YP-wbv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="908" y="3143"/>
+            <point key="canvasLocation" x="975" y="3143"/>
         </scene>
         <!--Change Your Password View Controller-->
         <scene sceneID="RjZ-QQ-L5z">
