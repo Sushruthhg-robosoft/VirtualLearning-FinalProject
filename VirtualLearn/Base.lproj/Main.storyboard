@@ -2648,9 +2648,12 @@
                                             <action selector="playPauseButtonClicked:" destination="7gW-3r-P8r" eventType="touchUpInside" id="N8Z-ZH-fzN"/>
                                         </connections>
                                     </button>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="-4.9000000000000004" minValue="-4.9000000000000004" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="lXO-zh-shW">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="lXO-zh-shW">
                                         <rect key="frame" x="61" y="48" width="283" height="31"/>
                                         <color key="thumbTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="timeSliderChanged:" destination="7gW-3r-P8r" eventType="valueChanged" id="auY-QF-IAp"/>
+                                        </connections>
                                     </slider>
                                 </subviews>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="0.34498073629999998" colorSpace="custom" customColorSpace="calibratedRGB"/>

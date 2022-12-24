@@ -7,7 +7,7 @@
 
 import UIKit
 import AVFoundation
-
+import CoreMedia
 class VideoPlayViewController: UIViewController {
     
     @IBOutlet weak var videoPlayView: UIView!
@@ -24,9 +24,11 @@ class VideoPlayViewController: UIViewController {
     var isLandscape = false
     override func viewDidLoad() {
         super.viewDidLoad()
+       
 
         playVideo()
         timeDisplay()
+        addTimeobserver()
         videoHeading.text = heading
     }
     func playVideo() {
@@ -38,6 +40,8 @@ class VideoPlayViewController: UIViewController {
         playerLayer.frame.size.height = videoPlayView.frame.size.height
         playerLayer.videoGravity = .resizeAspectFill
         self.videoPlayView.layer.addSublayer(playerLayer)
+        
+        
         player.play()
     }
     
@@ -62,7 +66,24 @@ class VideoPlayViewController: UIViewController {
             isPlaying = true
         }
     }
+    @IBAction func timeSliderChanged(_ sender: UISlider) {
+        player.seek(to: CMTimeMake(value: Int64(sender.value*1000), timescale: 1000))
+    }
+    func addTimeobserver(){
+        let interval = CMTime(seconds: 0.5, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
+        let mainQueue = DispatchQueue.main
+        DispatchQueue.main.async {
+            _ = self.player.addPeriodicTimeObserver(forInterval: interval, queue: mainQueue, using: { [weak self] time in
+                
+                guard let currentTime = self?.player.currentItem else {return}
+                self?.timeSlider.maximumValue = Float(currentTime.duration.seconds)
+                self?.timeSlider.minimumValue = 0
+                self?.timeSlider.value = Float(currentTime.currentTime().seconds)
+            })
+        }
      
+    }
+    
     func timeDisplay() {
         let interval = CMTime(value: 1, timescale: 1)
         player.addPeriodicTimeObserver(forInterval: interval, queue: DispatchQueue.main, using: { (progressTime) in
@@ -102,4 +123,6 @@ class VideoPlayViewController: UIViewController {
         
         navigationController?.popViewController(animated: true)
     }
+    
+    
 }
