@@ -56,14 +56,14 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     @IBOutlet weak var saveLoadingButton: LoadingButton!
     var isdropDown = false
-
+   var emailId = false
     var profileData: ProfileData?
     let profileViewModel = ProfileViewModel()
     let editProfileViewModel = EditProfileViewModel()
     let shared = mainViewModel.mainShared
     
     var dummyImage : UIImage?
-    var dummyBackgroundImage : UIImage?
+    
     override func viewDidLoad() {
         
         self.enableTextField()
@@ -73,7 +73,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         userNameField.text = profileData?.userName
         mobileNoField.text = profileData?.phoneNumber
         profilePhoto.image = dummyImage
-        backgroundImage.image = dummyBackgroundImage
+        backgroundImage.image = dummyImage
         occupationField.text = profileData?.occupation
         dateOfBirthField.text = profileData?.dateOfBirth
         genderField.text = profileData?.gender
@@ -113,24 +113,24 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 //        let loader = self.loader()
         
         saveLoadingButton.showLoading()
-        print(1)
+        
         saveLoadingButton.isEnabled = false
-        print(2)
+        
         updateEditProfileData()
-        print(3)
-        editProfileViewModel.updateProfileData(profileImage: profilePhoto.image ?? #imageLiteral(resourceName: "icn_profile_menu"), token: shared.token, profiledata: profileData!) {
-            print(4)
-            DispatchQueue.main.async {
-                print("inside dispatch que")
-                self.saveLoadingButton.hideLoading()
-                self.saveLoadingButton.isEnabled = true
-//            self.stopLoader(loader: loader)
-                self.AlertMessagePopup(message: "Profile updated successfully")
-                            
-            }
-        } fail: { error in
-             
-            }
+       
+            editProfileViewModel.updateProfileData(profileImage: profilePhoto.image ??  #imageLiteral(resourceName: "icn_profile_menu"), token: shared.token, profiledata: profileData!) {
+                        print(4)
+                        DispatchQueue.main.async {
+                            print("inside dispatch que")
+                            self.saveLoadingButton.hideLoading()
+                            self.saveLoadingButton.isEnabled = true
+            //            self.stopLoader(loader: loader)
+                            self.AlertMessagePopup(message: "Profile updated successfully")
+                                        
+                        }
+                    } fail: { error in
+                         
+                        }
     }
        
             func updateEditProfileData() {
@@ -144,6 +144,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
                 profileData?.facebookLink = facebookField.text!
                 profileData?.twitterLink = twitterField.text!
                 profileData?.occupation = occupationField.text!
+                
             }
     
     func isValidEmail(email: String) -> Bool {
@@ -231,16 +232,19 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         
         genderField.text = maleGender.currentTitle
         dropDownView.isHidden = true
+        checkAllField()
     }
     
     @IBAction func femaleTapped(_ sender: Any) {
         genderField.text = femaleGender.currentTitle
         dropDownView.isHidden = true
+        checkAllField()
     }
     
     @IBAction func otherTapped(_ sender: Any) {
         genderField.text = otherGender.currentTitle
         dropDownView.isHidden = true
+        checkAllField()
     }
  
         
@@ -283,15 +287,12 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func emailIdEditing(_ sender: Any) {
-        let emailId = isValidEmail(email: emailField.text!)
-        
+
+//        emailId = !isValidEmail(email: emailField.text!)
         if emailId {
-           print(emailId)
-        }else {
             okAlertMessagePopup(message: "Enter Valid Email")
-            saveLoadingButton.isEnabled = true
-            
-        
+            saveLoadingButton.isEnabled = false
+
         }
     }
     
@@ -313,11 +314,20 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 
 
     @IBAction func emailFieldEditingChanged(_ sender: Any) {
-        guard emailField != nil else {
-            return
-        }
-        checkAllField()
+     emailId = isValidEmail(email: emailField.text!)
+       
+       if emailId {
+          print(emailId)
+           checkAllField()
+           
+       }
     }
+        
+//        guard emailField != nil else {
+//            return
+//        }
+//        checkAllField()
+    
 
 
     @IBAction func mobileNumberEditingChanged(_ sender: Any) {
@@ -351,8 +361,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     }
 
     func checkAllField() {
-
-        if (nameField.text != "" && userNameField.text != "" && emailField.text != "" && mobileNoField.text != "" && occupationField.text != "" && genderField.text != "" && dateOfBirthField.text != "")
+     print("email",emailId)
+        if (nameField.text != "" && userNameField.text != "" && emailId && mobileNoField.text != "" && occupationField.text != "" && genderField.text != "" && dateOfBirthField.text != "")
         {
             saveLoadingButton.isEnabled = true
             saveLoadingButton.alpha = 1
@@ -372,4 +382,4 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 
 
 
-
+    
