@@ -123,7 +123,6 @@ class ChaptersViewController: UIViewController {
         shared.chaptersDetailsViewModelShared.getChapters(token: shared.token, courseId: courseId) { result in
            
             DispatchQueue.main.async { [self] in
-                
                 if(result.joinedCourse) {
                     self.joinCourseButton.isHidden = true
                 }
