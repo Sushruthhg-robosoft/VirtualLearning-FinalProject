@@ -50,6 +50,7 @@ class ChaptersViewController: UIViewController {
     var delegate : switchVc?
     var courseId = ""
     var dataoflesson = [LessonResponseList]()
+    var imageUrl = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         print("123456789", courseId)
@@ -106,6 +107,7 @@ class ChaptersViewController: UIViewController {
                     self.joinedDate.text = result.certificateResponse?.joinedData
                     self.completedDate.text = result.certificateResponse?.completedDate
                     self.totalDuration.text = result.certificateResponse?.completionDuration
+                    self.imageUrl = result.certificateResponse?.certificateLink ?? ""
                     tableView.reloadData()
                     guard let url = URL(string: result.certificateResponse?.certificateLink ?? "") else {return}
                     guard let data = try? Data(contentsOf: url) else {return}
@@ -154,6 +156,11 @@ class ChaptersViewController: UIViewController {
     
     @IBAction func joinCourseClicked(_ sender: Any) {
         
+    }
+    
+    
+    @IBAction func onClickDownload(_ sender: Any) {
+        shared.chaptersDetailsViewModelShared.downloadCertificate(imageUrl: imageUrl )
     }
     
 }

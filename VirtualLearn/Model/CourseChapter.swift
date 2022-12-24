@@ -71,17 +71,19 @@ class LessonList{
     var lessonId: Int
     var lessonNumber: String
     var lessonName: String
+    var durationCompleted: Int
     var videoLink: String
     var duration: Int
     var lessonCompleted: Bool
     var nextPlay = false
     
     
-    init(lessonId: Int,lessonNumber: String, lessonName: String, videoLink: String, duration: Int,  lessonCompleted: Bool){
+    init(lessonId: Int,lessonNumber: String, lessonName: String, durationCompleted: Int, videoLink: String, duration: Int,  lessonCompleted: Bool){
         
         self.lessonId = lessonId
         self.lessonNumber = lessonNumber
         self.lessonName = lessonName
+        self.durationCompleted = durationCompleted
         self.videoLink = videoLink
         self.duration = duration
         self.lessonCompleted = lessonCompleted
