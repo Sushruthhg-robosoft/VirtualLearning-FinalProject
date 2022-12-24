@@ -56,6 +56,9 @@ class ChaptersViewController: UIViewController {
     var dataoflesson = [LessonResponseList]()
     var imageUrl = ""
     var storageShared = StorageManeger.shared
+    var url = ""
+    var time = 0
+
     
     
     
@@ -115,7 +118,7 @@ class ChaptersViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         let loader = self.loader()
-        
+        popUpBackView.isHidden = true
         dataoflesson.removeAll()
         shared.chaptersDetailsViewModelShared.getChapters(token: shared.token, courseId: courseId) { result in
            
@@ -136,6 +139,7 @@ class ChaptersViewController: UIViewController {
                
                 self.sourseContentDescription.text = chapter + lesson + assesment + totalLength
                 self.dataoflesson = result.lessonResponseList
+                
                 self.stopLoader(loader: loader)
                 if(result.certificateGenerated) {
                     self.certficateView.isHidden = false
@@ -174,8 +178,21 @@ class ChaptersViewController: UIViewController {
     }
     
     @IBAction func onClickContinueWatching(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(identifier: "VideoPlayViewController") as? VideoPlayViewController
+        vc?.url = url
+        vc?.seconds = time
+        if let viewController = vc{
+            navigationController?.pushViewController(viewController, animated: true)
+        }
+    
     }
     @IBAction func onClickWatchFromBeginning(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(identifier: "VideoPlayViewController") as? VideoPlayViewController
+        vc?.seconds = time
+        vc?.url = url
+        if let viewController = vc{
+            navigationController?.pushViewController(viewController, animated: true)
+        }
     }
     @IBAction func onClickOverview(_ sender: Any) {
         
@@ -255,6 +272,8 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
             
             cell.setValuesAssignment(data: data)
         }
+        cell.delegate = self
+        cell.indexPath = indexPath
         return cell
     }
     
@@ -293,6 +312,8 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
         if let data = dataoflesson[indexPath.section].lessonList[indexPath.row] as? LessonList {
             //play video
             //check acess to play the video using ""next play and completed chapter status""
+            
+            
         }
         
         if let data = dataoflesson[indexPath.section].lessonList[indexPath.row] as? AssignmentResponse {
@@ -312,6 +333,39 @@ extension ChaptersViewController: headerDelegate{
     func callHeader(idx: Int) {
         dataoflesson[idx].isExpandable = !dataoflesson[idx].isExpandable
         tableView.reloadSections([idx], with: .automatic)
+    }
+    
+
+}
+
+
+extension ChaptersViewController: playVideo{
+    func playVideo(at index: IndexPath) {
+        let vc = storyboard?.instantiateViewController(identifier: "VideoPlayViewController") as? VideoPlayViewController
+        if let data = dataoflesson[index.section].lessonList[index.row] as? LessonList{
+            
+            if data.duration > 0{
+                
+                self.popUpBackView.isHidden = false
+                popUpLabel.text = "Your lesson paused at \(data.durationCompleted) secs Do you want to continue watching?"
+                url = data.videoLink
+                time = data.durationCompleted
+            }
+            else{
+                self.popUpBackView.isHidden = true
+                vc?.url = data.videoLink
+
+                vc?.heading = "Chapter \(data.lessonNumber) - \(data.lessonName)"
+                time = data.durationCompleted
+                if let viewController = vc{
+                    navigationController?.pushViewController(viewController, animated: true)
+                }
+
+            }
+            
+            }
+           
+        
     }
     
 
