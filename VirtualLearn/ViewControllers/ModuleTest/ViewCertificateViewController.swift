@@ -22,5 +22,6 @@ class ViewCertificateViewController: UIViewController {
     }
     
     @IBAction func onClickDownload(_ sender: Any) {
+        
     }
 }
