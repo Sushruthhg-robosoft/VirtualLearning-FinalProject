@@ -20,6 +20,7 @@ class VideoPlayViewController: UIViewController {
     
     var url : String?
     var heading: String?
+    var seconds: Int?
     var isPlaying = true
     var isLandscape = false
     override func viewDidLoad() {
@@ -30,6 +31,11 @@ class VideoPlayViewController: UIViewController {
         timeDisplay()
         addTimeobserver()
         videoHeading.text = heading
+        print(454545,seconds)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
     }
     func playVideo() {
         
@@ -40,8 +46,8 @@ class VideoPlayViewController: UIViewController {
         playerLayer.frame.size.height = videoPlayView.frame.size.height
         playerLayer.videoGravity = .resizeAspectFill
         self.videoPlayView.layer.addSublayer(playerLayer)
-        
-        
+//        let time = CMTime(seconds: 5, preferredTimescale: 1)
+//        player.seek(to: time)
         player.play()
     }
     
