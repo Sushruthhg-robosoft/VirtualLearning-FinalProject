@@ -73,14 +73,6 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
             }
             
         } fail: { error in
-            DispatchQueue.main.async {
-                if(error == "unauthorized") {
-                    
-                }
-                else {
-                    
-                }
-            }
         }
 
         
@@ -94,14 +86,6 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
             
             
         } fail: { error in
-                DispatchQueue.main.async {
-                    if(error == "unauthorized") {
-                        
-                    }
-                    else {
-                        
-                    }
-                }
         }
         
         mainshared.homeViewModelShared.getPopularCourseCategory2Details(token: mainshared.token) { (data) in

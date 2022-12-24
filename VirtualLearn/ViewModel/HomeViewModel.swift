@@ -35,12 +35,7 @@ class HomeViewModel {
             completion(self.banners)
             
         } failure: { (error) in
-            print("banner failure")
             
-            if error as? Int  == 401{
-                print("fetch json error111111")
-                fail("unauthorized")
-            }
             fail("Cant Load Data")
         }
         
@@ -202,10 +197,6 @@ class HomeViewModel {
             
         } failure: { (error) in
             print(error)
-            if error as? Int  == 401{
-                print("fetch json error111111")
-                fail("unauthorized")
-            }
             fail("Cant Load Data")
         }
     
@@ -244,10 +235,6 @@ class HomeViewModel {
             
         } failure: { (error) in
             print(error)
-            if error as? Int  == 401{
-                print("fetch json error111111")
-                fail("unauthorized")
-            }
             fail("Cant Load Data")
         }
     
@@ -296,10 +283,6 @@ class HomeViewModel {
             
         } failure: { (failerror) in
             print(failerror)
-            if failerror as? Int  == 401{
-                print("fetch json error111111")
-                fail("unauthorized")
-            }
             fail("Cant Load Data")
         }
 

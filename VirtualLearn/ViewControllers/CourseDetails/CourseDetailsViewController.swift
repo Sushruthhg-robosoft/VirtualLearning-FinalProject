@@ -154,17 +154,20 @@ class CourseDetailsViewController: UIViewController {
     @IBAction func onClickChapters(_ sender: Any) {
         
         
-        
+
         CourseChapterView.isHidden = false
         CourseOverViewView.isHidden = true
         overViewScrollView.isScrollEnabled = false
         view.bringSubviewToFront(CourseChapterView)
+        
+       
         
     }
     
     @IBAction func onClickPreview(_ sender: Any) {
         
     }
+    
     
     
     @IBAction func onClickCancel(_ sender: Any) {
@@ -178,9 +181,13 @@ class CourseDetailsViewController: UIViewController {
             shared.courseDetailsViewModelShared.joinCourse(token: shared.token, courseId: courseId){ data in
                 DispatchQueue.main.async { [self] in
                     CourseChapterView.isHidden = false
+                    joinCourseButton.isHidden = true
                     CourseOverViewView.isHidden = true
                     overViewScrollView.isScrollEnabled = false
+                    overViewScrollView.setContentOffset(.zero, animated: true)
+                    //self.view.addSubview(self.CourseChapterView)
                     view.bringSubviewToFront(CourseChapterView)
+                    
                 }
                 
             }fail: { error in
@@ -203,6 +210,12 @@ class CourseDetailsViewController: UIViewController {
         
     }
     
+    func switchview(){
+        CourseChapterView.isHidden = false
+        CourseOverViewView.isHidden = true
+        overViewScrollView.isScrollEnabled = false
+        view.bringSubviewToFront(CourseChapterView)
+    }
     
     
 }
@@ -247,27 +260,15 @@ extension CourseDetailsViewController: UITableViewDelegate, UITableViewDataSourc
         
     }
     
-    //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    //        return 10
-    //    }
-    //
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "switch" {
             guard let vc = segue.destination as? ChaptersViewController else { return }
-            
-                
-                vc.delegate = self
-                vc.courseId = self.courseId
-//                vc.tempCourseHeading = (self.courseOverView?.courseHeader.courseName)!
-//                vc.tempCourseCategory = (self.courseOverView?.courseHeader.categoryName)!
-//                vc.tempCourseLessonChapters = String( (self.courseOverView?.courseHeader.totalNumberOfChapters)!)+" Chapters | " + String( (self.courseOverView?.courseHeader.totalNumberOfChapters)!)+" Lessons"
-//                let url2 = URL(string: (self.courseOverView?.courseHeader.courseImage)!)
-//                           guard let data1 = try? Data(contentsOf: url2!) else {return}
-//                           vc.tempCourseImage = UIImage(data: (data1))!
-            
-           
+            vc.delegate = self
+            vc.courseId = courseId
+            if(joinCourseButton.isHidden) {
+                vc.joinCourseButton.isHidden = true
+            }
         }
     }
 }

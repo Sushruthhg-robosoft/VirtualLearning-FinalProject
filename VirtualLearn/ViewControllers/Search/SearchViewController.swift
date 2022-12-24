@@ -260,4 +260,18 @@ extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataS
         return 3
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(identifier: "CourseDetailsViewController") as! CourseDetailsViewController
+        
+        vc.courseId = String(shared.searchViewModelShared.searchResult[indexPath.row].courseId)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let vc = storyboard?.instantiateViewController(identifier: "CategoryInformationViewController") as! CategoryInformationViewController
+        vc.categoryId = shared.homeViewModelShared.allCourse[indexPath.row].courseId
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
