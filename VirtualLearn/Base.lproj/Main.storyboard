@@ -8217,6 +8217,7 @@
                         <outlet property="RegistrayionButtonOutlet" destination="a6O-PQ-lyh" id="1ym-zG-DtC"/>
                         <outlet property="confirmPasswordLabel" destination="OAx-Ci-rFK" id="VNG-Qf-G4K"/>
                         <outlet property="confirmPasswordTextField" destination="2Gs-lt-YtT" id="4Ob-Lr-QcO"/>
+                        <outlet property="detailsScreen" destination="Xvv-p9-Oka" id="fZa-uY-krg"/>
                         <outlet property="emailLabel" destination="wTe-IC-drr" id="C8D-1i-vJx"/>
                         <outlet property="emailTextField" destination="0ga-Du-kQz" id="KiG-IT-c8B"/>
                         <outlet property="fullNameLabel" destination="y7Y-r8-BAP" id="whI-yy-mVI"/>
