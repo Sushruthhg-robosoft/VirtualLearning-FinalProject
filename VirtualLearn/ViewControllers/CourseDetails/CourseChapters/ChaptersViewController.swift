@@ -183,6 +183,8 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
             
             cell.setValuesAssignment(data: data)
         }
+        cell.delegate = self
+        cell.indexPath = indexPath
         return cell
     }
     
@@ -221,6 +223,7 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
         if let data = dataoflesson[indexPath.section].lessonList[indexPath.row] as? LessonList {
             //play video
             //check acess to play the video using ""next play and completed chapter status""
+            
         }
         
         if let data = dataoflesson[indexPath.section].lessonList[indexPath.row] as? AssignmentResponse {
@@ -243,4 +246,26 @@ extension ChaptersViewController: headerDelegate{
     }
     
 
+}
+
+
+extension ChaptersViewController: playVideo{
+    func playVideo(at index: IndexPath) {
+        let vc = storyboard?.instantiateViewController(identifier: "VideoPlayViewController") as? VideoPlayViewController
+        if let data = dataoflesson[index.section].lessonList[index.row] as? LessonList{
+            vc?.url = data.videoLink
+       // vc?.url = "https://res.cloudinary.com/dbmgzhnzv/video/upload/v1671778685/UI___UX_DESIGN-4_00-01-07_jejpgy.mp4"
+            vc?.heading = "Chapter \(data.lessonNumber) - \(data.lessonName)"
+            
+        }
+        if let viewController = vc{
+            navigationController?.pushViewController(viewController, animated: true)
+        }
+        
+    }
+    
+    
+    
+    
+    
 }

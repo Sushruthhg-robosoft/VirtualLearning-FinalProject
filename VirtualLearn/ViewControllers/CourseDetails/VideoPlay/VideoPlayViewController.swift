@@ -18,8 +18,8 @@ class VideoPlayViewController: UIViewController {
     @IBOutlet weak var viewTransitionIndicator: UIButton!
     @IBOutlet weak var timeSlider: UISlider!
     
-    
-    
+    var url : String?
+    var heading: String?
     var isPlaying = true
     var isLandscape = false
     override func viewDidLoad() {
@@ -27,11 +27,11 @@ class VideoPlayViewController: UIViewController {
 
         playVideo()
         timeDisplay()
-        
+        videoHeading.text = heading
     }
     func playVideo() {
         
-        let videoURL = URL(string: "https://player.vimeo.com/external/342571552.hd.mp4?s=6aa6f164de3812abadff3dde86d19f7a074a8a66&profile_id=175&oauth2_token_id=57447761")
+        let videoURL = URL(string: url!)
         player = AVPlayer(url: videoURL!)
         playerLayer = AVPlayerLayer(player: player)
         playerLayer.frame.size.width = videoPlayView.frame.size.width
@@ -50,6 +50,11 @@ class VideoPlayViewController: UIViewController {
             player.pause()
             sender.setImage(#imageLiteral(resourceName: "icn_play video-Play"), for: .normal)
             isPlaying = false
+            let interval = CMTime(value: 1, timescale: 1)
+            player.addPeriodicTimeObserver(forInterval: interval, queue: DispatchQueue.main, using: { (progressTime) in
+                let seconds = CMTimeGetSeconds(progressTime)
+                print(4567890,Int(seconds))
+            })
         } else{
             
             player.play()
@@ -88,6 +93,13 @@ class VideoPlayViewController: UIViewController {
     }
     
     @IBAction func backButtonClicked(_ sender: Any) {
+        player.pause()
+        let interval = CMTime(value: 1, timescale: 1)
+        player.addPeriodicTimeObserver(forInterval: interval, queue: DispatchQueue.main, using: { (progressTime) in
+            let seconds = CMTimeGetSeconds(progressTime)
+            print(2345678,Int(seconds))
+        })
         
+        navigationController?.popViewController(animated: true)
     }
 }

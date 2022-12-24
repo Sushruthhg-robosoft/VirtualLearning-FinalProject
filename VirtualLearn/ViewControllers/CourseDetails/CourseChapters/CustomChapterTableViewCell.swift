@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol playVideo{
+    func playVideo(at index: IndexPath)
+}
+
 class CustomChapterTableViewCell: UITableViewCell {
 
     @IBOutlet weak var moduleTestView: UIView!
@@ -22,8 +26,8 @@ class CustomChapterTableViewCell: UITableViewCell {
     @IBOutlet weak var timelineIndicatorImage: UIImageView!
     
     @IBOutlet weak var cellLeadingConstraint: NSLayoutConstraint!
-    
-  
+    var delegate: playVideo?
+    var indexPath: IndexPath?
     func setValuesLesson(data: LessonList) {
         chapterName.text = data.lessonName
         chapterNumber.text = "0\(String(data.lessonNumber))"
@@ -84,4 +88,12 @@ class CustomChapterTableViewCell: UITableViewCell {
         
     }
     
+    @IBAction func PlayVideo(_ sender: Any) {
+        
+        if let index = indexPath{
+            delegate?.playVideo(at: index)
+        }
+        
+        
+    }
 }
