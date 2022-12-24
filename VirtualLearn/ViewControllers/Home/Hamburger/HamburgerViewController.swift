@@ -29,7 +29,6 @@ class HamburgerViewController: UIViewController {
         // let loader = self.loader()
         print("insideHamburgerMenu")
         mainShraed.notificationViewModelShared.getNotificationCount( token: mainShraed.token){
-            print("slfdhoifhfdidsdnieohiodhdfhsi")
             DispatchQueue.main.async {
                 //self.stopLoader(loader: loader)
                 self.notificationCount.text = String(self.mainShraed.notificationViewModelShared.count)
@@ -37,14 +36,19 @@ class HamburgerViewController: UIViewController {
         } fail: {error in
             
             //            self.stopLoader(loader: loader)
-                print("failures")
-                DispatchQueue.main.async {
+            print("failures")
+            DispatchQueue.main.async {
                 if(error == "unauthorized") {
-                                
+                    print("hello12345")
+//                    self.storageManegr.resetLoggedIn()
+                    DispatchQueue.main.async {
+                        self.okAlertMessagePopupforLoginforExsistingUser(message: "Your session is Expired")
+                    }
+                    
                 }
                 else {
-            //                    self.navigationController?.popViewController(animated: true)
-                    }
+                    //                    self.navigationController?.popViewController(animated: true)
+                }
             }
         }
         
@@ -60,19 +64,11 @@ class HamburgerViewController: UIViewController {
                 self.stopLoader(loader: loader)
                 self.notificationCount.text = String(self.mainShraed.notificationViewModelShared.count)
             }
-        } fail: {error in
-                self.stopLoader(loader: loader)
-                print("failures")
-                DispatchQueue.main.async {
-                    if(error == "unauthorized") {
-                                
-                    }
-                    else {
-            //                    self.navigationController?.popViewController(animated: true)
-                }
+        } fail: { error in
+            self.stopLoader(loader: loader)
         }
-//            self.stopLoader(loader: loader)
-        }
+        //            self.stopLoader(loader: loader)
+        
         
         if storageManegr.isLoggedIn(){
             loginBtn.setTitle("Logout", for: .normal)
@@ -80,6 +76,7 @@ class HamburgerViewController: UIViewController {
         else{
             loginBtn.setTitle("Login", for: .normal)
         }
+        
         mainShraed.profileViewModel.getProfileData(token: mainShraed.token) { (data) in
             DispatchQueue.main.async {
                 self.occupation.text = data.occupation
@@ -93,15 +90,7 @@ class HamburgerViewController: UIViewController {
         } fail: { error in
             
             self.stopLoader(loader: loader)
-            print("failures")
-            DispatchQueue.main.async {
-                if(error == "unauthorized") {
-                    
-                 }
-                else {
-//                    self.navigationController?.popViewController(animated: true)
-                }
-            }
+            
         }
         
     }
@@ -130,7 +119,7 @@ class HamburgerViewController: UIViewController {
             self.okAlertMessagePopupforLogin(message: "Please Login")
         }
         
-       
+        
     }
     
     
@@ -173,8 +162,8 @@ class HamburgerViewController: UIViewController {
             storageManger.resetLoggedIn()
             print(123456789,storageManger.isLoggedIn())
             let vc = self.storyboard?.instantiateViewController(identifier: "LoadingViewController") as? LoadingViewController
-           self.navigationController?.popViewController(animated: true)
-          //self.navigationController?.popToViewController(vc!, animated: true)
+            self.navigationController?.popViewController(animated: true)
+            //self.navigationController?.popToViewController(vc!, animated: true)
             
         })
         let no = UIAlertAction(title: "Cancel", style: .default, handler: { (action) -> Void in
@@ -188,9 +177,9 @@ class HamburgerViewController: UIViewController {
 }
 
 extension UINavigationController {
-  func popToViewController(ofClass: AnyClass, animated: Bool = true) {
-    if let vc = viewControllers.last(where: { $0.isKind(of: ofClass) }) {
-      popToViewController(vc, animated: animated)
+    func popToViewController(ofClass: AnyClass, animated: Bool = true) {
+        if let vc = viewControllers.last(where: { $0.isKind(of: ofClass) }) {
+            popToViewController(vc, animated: animated)
+        }
     }
-  }
 }

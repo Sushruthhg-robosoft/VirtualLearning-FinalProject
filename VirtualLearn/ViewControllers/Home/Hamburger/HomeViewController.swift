@@ -24,6 +24,7 @@ class HomeViewController: UIViewController {
     var shared = ViewModel.shared
     var mainShared = mainViewModel.mainShared
     var hamburgerViewController: HamburgerViewController?
+    var storageShared = StorageManeger.shared
     override func viewDidLoad() {
 //        mainShared.categoriesViewModelShared.listofCategories.removeAll()
         
@@ -58,15 +59,6 @@ class HomeViewController: UIViewController {
 
             }
         } fail: {error in
-            DispatchQueue.main.async {
-                self.stopLoader(loader: loader1)
-                if(error == "unauthorized") {
-                    
-                }
-                else {
-                    
-                }
-            }
         }
         
         NewUserView.isHidden = false

@@ -55,7 +55,7 @@ class ChaptersViewController: UIViewController {
     var courseId = ""
     var dataoflesson = [LessonResponseList]()
     var imageUrl = ""
-
+    var storageShared = StorageManeger.shared
     
     
     
@@ -197,7 +197,30 @@ class ChaptersViewController: UIViewController {
     }
     
     @IBAction func joinCourseClicked(_ sender: Any) {
-        
+        if storageShared.isLoggedIn() {
+            shared.courseDetailsViewModelShared.joinCourse(token: shared.token, courseId: courseId){ data in
+                DispatchQueue.main.async { [self] in
+                    joinCourseButton.isHidden = true
+                    tableView.reloadData()
+                }
+                
+            }fail: { error in
+                print("failures")
+                DispatchQueue.main.async {
+                    if(error == "unauthorized") {
+                        self.storageShared.resetLoggedIn()
+                        self.okAlertMessagePopupforLoginforExsistingUser(message: "Your session is Expired")
+                        
+                    }
+                    else {
+                        self.okAlertMessagePopup(message: "Failed to join course")
+                    }
+                }
+            }
+        } else
+        {
+            self.okAlertMessagePopupforLogin(message: "Please Login")
+        }
     }
     
     
