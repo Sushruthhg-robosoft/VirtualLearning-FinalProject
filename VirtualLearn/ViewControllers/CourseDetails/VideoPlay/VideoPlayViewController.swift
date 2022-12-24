@@ -37,6 +37,10 @@ class VideoPlayViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         
     }
+    func seek(to seconds: Int) {
+        let targetTime:CMTime = CMTimeMake(value: Int64(seconds), timescale: 1)
+        player.seek(to: targetTime)
+    }
     func playVideo() {
         
         let videoURL = URL(string: url!)
