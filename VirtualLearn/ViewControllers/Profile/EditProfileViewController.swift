@@ -55,8 +55,10 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var otherGender: UIButton!
     
     @IBOutlet weak var saveLoadingButton: LoadingButton!
+    
     var isdropDown = false
-   var emailId = false
+    var emailId = false
+    
     var profileData: ProfileData?
     let profileViewModel = ProfileViewModel()
     let editProfileViewModel = EditProfileViewModel()
@@ -287,12 +289,12 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func emailIdEditing(_ sender: Any) {
-
-//        emailId = !isValidEmail(email: emailField.text!)
+//        var emailId = true
+        emailId = !isValidEmail(email: emailField.text!)
         if emailId {
             okAlertMessagePopup(message: "Enter Valid Email")
             saveLoadingButton.isEnabled = false
-
+            
         }
     }
     
@@ -315,13 +317,13 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 
     @IBAction func emailFieldEditingChanged(_ sender: Any) {
      emailId = isValidEmail(email: emailField.text!)
-       
+
        if emailId {
           print(emailId)
            checkAllField()
-           
        }
-    }
+       }
+    
         
 //        guard emailField != nil else {
 //            return

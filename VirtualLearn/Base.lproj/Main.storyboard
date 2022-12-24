@@ -3480,9 +3480,9 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                                                         <connections>
-                                                            <action selector="emailFieldEditingChanged:" destination="05D-p0-z4I" eventType="editingDidEnd" id="idK-ga-ryt"/>
-                                                            <action selector="emailIdEditing:" destination="05D-p0-z4I" eventType="editingDidEnd" id="9Fh-Tw-hRf"/>
-                                                            <action selector="facebookFieldEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="v2D-Ss-cuA"/>
+                                                            <action selector="emailEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="ZyP-oF-dcJ"/>
+                                                            <action selector="emailFieldEditingChanged:" destination="05D-p0-z4I" eventType="editingChanged" id="VHg-PX-QB0"/>
+                                                            <action selector="emailIdEditing:" destination="05D-p0-z4I" eventType="editingDidEnd" id="xyz-5H-e5F"/>
                                                         </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aao-NR-8SQ">
