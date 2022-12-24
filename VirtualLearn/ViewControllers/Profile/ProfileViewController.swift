@@ -34,6 +34,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var chaptersView: UIView!
     @IBOutlet weak var testView: UIView!
     @IBOutlet weak var changeYourPasswordButton: UIButton!
+    @IBOutlet weak var changePasswordView: UIView!
     var delgate: setProfileDetailsInHam?
     
     var password = ""
@@ -47,6 +48,11 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        changePasswordView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
+        changePasswordView.layer.shadowOpacity = 100
+        changePasswordView.layer.shadowRadius = 5
+        changePasswordView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        changePasswordView.layer.cornerRadius = 6
         
     }
     

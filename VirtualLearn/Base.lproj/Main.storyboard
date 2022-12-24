@@ -3313,6 +3313,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="changePasswordView" destination="91j-0c-9Ga" id="RHQ-vY-vQC"/>
                         <outlet property="changeYourPasswordButton" destination="zbj-dr-5hO" id="Ulh-8p-k0K"/>
                         <outlet property="chaptersView" destination="Wda-pU-vTS" id="K4Q-B9-VRH"/>
                         <outlet property="coursesView" destination="QIR-8B-AXz" id="cpY-92-xcK"/>
