@@ -88,7 +88,7 @@ class VerifyAccountViewController: UIViewController, UITextFieldDelegate {
         
         let otp = firstNumber + secondNumber + thirdNumber + fourthNumber
 
-        verificationOTP.verifyOTP(mobileNumber: mobileNumber, otp: otp){ sucess in
+        verificationOTP.verifyOTP(mobileNumber: "+917022011412", otp: otp){ sucess in
             
             DispatchQueue.main.async {
                 self.correctOtp()

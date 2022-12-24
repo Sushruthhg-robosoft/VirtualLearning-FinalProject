@@ -24,12 +24,14 @@ class PersonalDetailsViewController: UIViewController {
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var confirmPasswordLabel: UILabel!
+    @IBOutlet weak var detailsScreen: UIView!
     
     @IBOutlet weak var mobileNumber: UILabel!
     @IBOutlet weak var RegistrayionButtonOutlet: UIButton!
-    
+    var storagemaner = StorageManeger.shared
     @IBOutlet weak var successScreen: UIView!
     let personalData = PersonalData()
+    let mainshared = mainViewModel.mainShared
     var enterdMobileNumber = ""
     var usernameStatus = false
     override func viewDidLoad() {
@@ -37,6 +39,8 @@ class PersonalDetailsViewController: UIViewController {
         
         RegistrayionButtonOutlet.isEnabled = false
         successScreen.isHidden = true
+        detailsScreen.isHidden = false
+        view.bringSubviewToFront(detailsScreen)
         mobileNumber.text = "+91"+enterdMobileNumber
         
         fullNameTextField.removeBorder()
@@ -170,8 +174,12 @@ class PersonalDetailsViewController: UIViewController {
             DispatchQueue.main.async {
                 
                 self.stopLoader(loader: loader)
-                let vc = self.storyboard?.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
-                self.navigationController?.pushViewController(vc, animated: true)
+                
+//                let vc = self.storyboard?.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
+//                self.navigationController?.pushViewController(vc, animated: true)
+                self.detailsScreen.isHidden = true
+                self.successScreen.isHidden = false
+                self.view.bringSubviewToFront(self.successScreen)
             }
          } fail: { fail in
              print(fail)
@@ -252,10 +260,21 @@ class PersonalDetailsViewController: UIViewController {
     }
     
     @IBAction func onClickLetsGetStarted(_ sender: Any) {
+        let loader = self.loader()
+        mainshared.loginViewModel.loginUser(userName: userNameTextField.text!, password: passwordTextField.text!) { (data) in
+            DispatchQueue.main.async {
+                self.stopLoader(loader: loader)
+                self.storagemaner.setLoggedIn()
+                let vc = self.storyboard?.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
+                
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        } fail: {
+            print("fail")
+        }
+
         
-        let vc = storyboard?.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
         
-        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

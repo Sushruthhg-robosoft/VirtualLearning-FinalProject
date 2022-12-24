@@ -40,7 +40,7 @@ class NewAccountViewController: UIViewController {
                 self.navigationController?.pushViewController(vc, animated: true)
                 vc.mobileNumber = mobileNumber
                 
-                self.verificationOTP.getOTP(mobileNumber: mobileNumber)
+                self.verificationOTP.getOTP(mobileNumber: "+917022011412")
             }
         } fail: {
             DispatchQueue.main.async {

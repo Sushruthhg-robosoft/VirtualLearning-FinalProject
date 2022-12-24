@@ -7303,6 +7303,7 @@
                         <outlet property="courseCaption" destination="pfL-VH-dpE" id="nRx-Oi-QAI"/>
                         <outlet property="courseChapters" destination="deq-Il-aF8" id="81m-g1-dQt"/>
                         <outlet property="courseDescription" destination="p86-pl-bFZ" id="uWX-re-XGs"/>
+                        <outlet property="courseImage" destination="L6t-5M-aun" id="OcJ-hd-WXQ"/>
                         <outlet property="courseType" destination="Se6-ff-g1d" id="xQG-mM-6B9"/>
                         <outlet property="instructorDescription" destination="9Ce-li-aRV" id="KAT-Ff-8wR"/>
                         <outlet property="instructorImage" destination="mHb-td-XZO" id="1uY-kF-TSs"/>
@@ -8220,6 +8221,7 @@
                         <outlet property="RegistrayionButtonOutlet" destination="a6O-PQ-lyh" id="1ym-zG-DtC"/>
                         <outlet property="confirmPasswordLabel" destination="OAx-Ci-rFK" id="VNG-Qf-G4K"/>
                         <outlet property="confirmPasswordTextField" destination="2Gs-lt-YtT" id="4Ob-Lr-QcO"/>
+                        <outlet property="detailsScreen" destination="Xvv-p9-Oka" id="fZa-uY-krg"/>
                         <outlet property="emailLabel" destination="wTe-IC-drr" id="C8D-1i-vJx"/>
                         <outlet property="emailTextField" destination="0ga-Du-kQz" id="KiG-IT-c8B"/>
                         <outlet property="fullNameLabel" destination="y7Y-r8-BAP" id="whI-yy-mVI"/>
@@ -8838,13 +8840,96 @@
                                             <constraint firstItem="CMl-lq-P4W" firstAttribute="top" secondItem="97k-ge-eLi" secondAttribute="bottom" constant="70" id="yz2-5j-vVk"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UaH-R0-07j" userLabel="popUpView">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <subviews>
+                                            <view alpha="0.98999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5mb-8d-2Gl">
+                                                <rect key="frame" x="39" y="212" width="297" height="243"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="99P-Hc-tGc">
+                                                        <rect key="frame" x="14.5" y="39" width="268" height="33.5"/>
+                                                        <string key="text">Your lesson paused at 1.21
+Do you want to continue watching?</string>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sl5-Ms-Cxr">
+                                                        <rect key="frame" x="23" y="96" width="251" height="46"/>
+                                                        <color key="backgroundColor" red="0.93333333333333335" green="0.36078431372549019" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="46" id="f2G-db-wRb"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Continue Watching">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="6"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="onClickContinueWatching:" destination="CWZ-hf-ahz" eventType="touchUpInside" id="Rln-a2-N1F"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHW-V4-osQ">
+                                                        <rect key="frame" x="23" y="156" width="251" height="46"/>
+                                                        <color key="backgroundColor" red="0.015686274509803921" green="0.17254901960784313" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="46" id="d7J-hP-BXX"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Watch from Beginning">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="6"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="onClickWatchFromBeginning:" destination="CWZ-hf-ahz" eventType="touchUpInside" id="o4V-Vh-3Yy"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="VHW-V4-osQ" firstAttribute="leading" secondItem="5mb-8d-2Gl" secondAttribute="leading" constant="23" id="2Zt-V6-Llq"/>
+                                                    <constraint firstItem="Sl5-Ms-Cxr" firstAttribute="top" secondItem="99P-Hc-tGc" secondAttribute="bottom" constant="23.5" id="3KL-6k-bOg"/>
+                                                    <constraint firstItem="VHW-V4-osQ" firstAttribute="top" secondItem="Sl5-Ms-Cxr" secondAttribute="bottom" constant="14" id="E0t-S1-0jZ"/>
+                                                    <constraint firstItem="99P-Hc-tGc" firstAttribute="top" secondItem="5mb-8d-2Gl" secondAttribute="top" constant="39" id="HiW-tg-1Qr"/>
+                                                    <constraint firstAttribute="trailing" secondItem="99P-Hc-tGc" secondAttribute="trailing" constant="14.300000000000001" id="IFf-rJ-k2v"/>
+                                                    <constraint firstAttribute="trailing" secondItem="VHW-V4-osQ" secondAttribute="trailing" constant="23" id="Vhm-nX-1Vt"/>
+                                                    <constraint firstAttribute="width" constant="297" id="ai9-OK-rZj"/>
+                                                    <constraint firstAttribute="height" constant="243" id="eDi-FK-kYI"/>
+                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Sl5-Ms-Cxr" secondAttribute="trailing" id="frM-FV-k5P"/>
+                                                    <constraint firstItem="Sl5-Ms-Cxr" firstAttribute="centerX" secondItem="5mb-8d-2Gl" secondAttribute="centerX" id="gei-0p-DcN"/>
+                                                    <constraint firstItem="99P-Hc-tGc" firstAttribute="leading" secondItem="5mb-8d-2Gl" secondAttribute="leading" constant="14.300000000000001" id="lHV-8i-EJ5"/>
+                                                    <constraint firstItem="Sl5-Ms-Cxr" firstAttribute="leading" secondItem="5mb-8d-2Gl" secondAttribute="leading" constant="23" id="r4Y-Ha-MIM"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <real key="value" value="15.4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="5mb-8d-2Gl" firstAttribute="centerY" secondItem="UaH-R0-07j" secondAttribute="centerY" id="2lP-VB-xth"/>
+                                            <constraint firstItem="5mb-8d-2Gl" firstAttribute="centerX" secondItem="UaH-R0-07j" secondAttribute="centerX" id="O2Z-oJ-y51"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="VmF-ZA-U7f" firstAttribute="trailing" secondItem="3iU-qK-2hl" secondAttribute="trailing" id="8Ab-v5-1zV"/>
+                                    <constraint firstItem="0hd-nA-3J4" firstAttribute="trailing" secondItem="UaH-R0-07j" secondAttribute="trailing" id="DeK-c2-9rO"/>
+                                    <constraint firstItem="0hd-nA-3J4" firstAttribute="bottom" secondItem="UaH-R0-07j" secondAttribute="bottom" id="Gly-58-9Wq"/>
                                     <constraint firstItem="VmF-ZA-U7f" firstAttribute="bottom" secondItem="3iU-qK-2hl" secondAttribute="bottom" id="X1l-ip-7Kt"/>
                                     <constraint firstItem="VmF-ZA-U7f" firstAttribute="width" secondItem="3iU-qK-2hl" secondAttribute="width" id="aqU-Gx-jCx"/>
                                     <constraint firstItem="VmF-ZA-U7f" firstAttribute="leading" secondItem="3iU-qK-2hl" secondAttribute="leading" id="eIE-RU-xci"/>
                                     <constraint firstItem="VmF-ZA-U7f" firstAttribute="top" secondItem="3iU-qK-2hl" secondAttribute="top" id="lj7-2K-jbf"/>
+                                    <constraint firstItem="UaH-R0-07j" firstAttribute="leading" secondItem="0hd-nA-3J4" secondAttribute="leading" id="qzI-aC-Qkq"/>
+                                    <constraint firstItem="UaH-R0-07j" firstAttribute="top" secondItem="0hd-nA-3J4" secondAttribute="top" id="yq0-nC-BEk"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="Knz-5D-JGR"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="0hd-nA-3J4"/>
@@ -8872,6 +8957,7 @@
                         <outlet property="completedDate" destination="4dx-UU-1VR" id="ZFA-vQ-RIo"/>
                         <outlet property="courseCategory" destination="YNn-04-TzE" id="805-Ah-DVq"/>
                         <outlet property="courseHeading" destination="7fJ-uA-ljs" id="hep-wO-NQc"/>
+                        <outlet property="courseImage" destination="C03-4d-vNx" id="JdG-8h-nMJ"/>
                         <outlet property="courseLessonAndChapters" destination="Chv-25-5C5" id="SW1-kl-lcA"/>
                         <outlet property="joinCourseButton" destination="iTM-07-o90" id="jXc-9A-H7z"/>
                         <outlet property="joinedDate" destination="dqv-DF-n9t" id="WO0-Ql-bxP"/>
@@ -8880,6 +8966,9 @@
                         <outlet property="joinedView" destination="mef-fP-wmw" id="BZw-54-4IY"/>
                         <outlet property="overViewBtn" destination="9vI-2J-QnP" id="7wv-28-9eg"/>
                         <outlet property="overViewUnderLineView" destination="d1i-CN-0eo" id="spp-hy-ZFB"/>
+                        <outlet property="popUpBackView" destination="UaH-R0-07j" id="qYJ-tk-lBT"/>
+                        <outlet property="popUpFrontView" destination="5mb-8d-2Gl" id="X8b-Ps-gYC"/>
+                        <outlet property="popUpLabel" destination="99P-Hc-tGc" id="ccg-1Y-DIQ"/>
                         <outlet property="sourseContentDescription" destination="MTk-uE-osJ" id="HM6-ub-v79"/>
                         <outlet property="tableView" destination="97k-ge-eLi" id="nQv-Gz-6Av"/>
                         <outlet property="totalDuration" destination="cm1-c3-rcs" id="EJW-pN-pCk"/>

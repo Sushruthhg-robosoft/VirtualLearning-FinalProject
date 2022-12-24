@@ -56,7 +56,7 @@ extension UIViewController{
         let dialogMessage = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
             self.dismiss(animated: true, completion: nil)
-            
+            self.navigationController?.popToRootViewController(animated: true)
          })
         dialogMessage.addAction(ok)
 

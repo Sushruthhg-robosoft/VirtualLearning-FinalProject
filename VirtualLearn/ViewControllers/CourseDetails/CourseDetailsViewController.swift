@@ -41,6 +41,7 @@ class CourseDetailsViewController: UIViewController {
     
     @IBOutlet weak var courseDescriptionHeight: NSLayoutConstraint!
     
+    @IBOutlet weak var courseImage: UIImageView!
     @IBOutlet weak var overViewScrollView: UIScrollView!
     
     @IBOutlet weak var joinCourseButton: UIButton!
@@ -80,6 +81,9 @@ class CourseDetailsViewController: UIViewController {
                 {
                     joinCourseButton.isHidden = false
                 }
+                let url1 = URL(string: courseDataOverView.courseHeader.courseImage)
+                guard let data1 = try? Data(contentsOf: url1!) else {return}
+                self.courseImage.image = UIImage(data: (data1))
                 
                 self.CourseHeading.text = courseDataOverView.courseHeader.courseName
                 self.courseType.text = courseDataOverView.courseHeader.categoryName
@@ -99,7 +103,7 @@ class CourseDetailsViewController: UIViewController {
                 }
                 self.courseCaption.text = courseDataOverView.overView.courseDescription
                 
-                //                self.courseDescriptionHeight.constant = self.courseDescription.contentSize.height
+
                 self.courseDescription.sizeToFit()
                 self.courseDescription.text = courseDataOverView.overView.previewCourseContent
                 self.courseOutcome = courseDataOverView.overView.courseOutCome
@@ -150,17 +154,20 @@ class CourseDetailsViewController: UIViewController {
     @IBAction func onClickChapters(_ sender: Any) {
         
         
-        
+
         CourseChapterView.isHidden = false
         CourseOverViewView.isHidden = true
         overViewScrollView.isScrollEnabled = false
         view.bringSubviewToFront(CourseChapterView)
+        
+       
         
     }
     
     @IBAction func onClickPreview(_ sender: Any) {
         
     }
+    
     
     
     @IBAction func onClickCancel(_ sender: Any) {
@@ -174,9 +181,13 @@ class CourseDetailsViewController: UIViewController {
             shared.courseDetailsViewModelShared.joinCourse(token: shared.token, courseId: courseId){ data in
                 DispatchQueue.main.async { [self] in
                     CourseChapterView.isHidden = false
+                    joinCourseButton.isHidden = true
                     CourseOverViewView.isHidden = true
                     overViewScrollView.isScrollEnabled = false
+                    overViewScrollView.setContentOffset(.zero, animated: true)
+                    //self.view.addSubview(self.CourseChapterView)
                     view.bringSubviewToFront(CourseChapterView)
+                    
                 }
                 
             }fail: { error in
@@ -199,6 +210,12 @@ class CourseDetailsViewController: UIViewController {
         
     }
     
+    func switchview(){
+        CourseChapterView.isHidden = false
+        CourseOverViewView.isHidden = true
+        overViewScrollView.isScrollEnabled = false
+        view.bringSubviewToFront(CourseChapterView)
+    }
     
     
 }
@@ -243,17 +260,15 @@ extension CourseDetailsViewController: UITableViewDelegate, UITableViewDataSourc
         
     }
     
-    //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    //        return 10
-    //    }
-    //
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "switch" {
             guard let vc = segue.destination as? ChaptersViewController else { return }
             vc.delegate = self
             vc.courseId = courseId
+            if(joinCourseButton.isHidden) {
+                vc.joinCourseButton.isHidden = true
+            }
         }
     }
 }
