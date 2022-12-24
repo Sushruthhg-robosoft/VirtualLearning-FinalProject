@@ -55,8 +55,16 @@ class CategoryInformationViewController: UIViewController{
                 self.featuredCourse = data
                 self.featureCourseCollectionView.reloadData()
             }
-        } fail: {
-            self.stopLoader(loader: loader2)
+        } fail: {error in
+            DispatchQueue.main.async {
+                self.stopLoader(loader: loader2)
+                if(error == "unauthorized") {
+                    
+                }
+                else {
+                    
+                }
+            }
         }
         let loader3 = self.loader()
         shared.homeViewModelShared.getPopularCourseDetails(token: shared.token) { (data) in
@@ -65,8 +73,16 @@ class CategoryInformationViewController: UIViewController{
                 self.allCourses = data
                 self.allCourseTableView.reloadData()
             }
-        } fail: {
-            self.stopLoader(loader: loader3)
+        } fail: {error in
+            DispatchQueue.main.async {
+                self.stopLoader(loader: loader3)
+                if(error == "unauthorized") {
+                    
+                }
+                else {
+                    
+                }
+            }
         }
         
       

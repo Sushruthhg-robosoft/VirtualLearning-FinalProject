@@ -10,7 +10,7 @@ import UIKit
 class EditProfileViewModel {
     var mainshared = mainViewModel.mainShared
     
-    func updateProfileData(profileImage: UIImage,token: String, profiledata: ProfileData, completion: @escaping () -> Void, fail: @escaping () -> Void) {
+    func updateProfileData(profileImage: UIImage,token: String, profiledata: ProfileData, completion: @escaping () -> Void, fail: @escaping (String) -> Void) {
         let networkManager = NetWorkManager()
          let url = "https://app-virtuallearning-221207091853.azurewebsites.net/user/profile"
 
@@ -45,7 +45,17 @@ class EditProfileViewModel {
 
 
         networkManager.postData(url: url, requestMethod: "PATCH", profileImage: profileImage,  parameters: parameters,token: token, headers: nil) { (result,error)  in
-        completion()
+            if(error != nil) {
+                if result as? Int == 401 {
+                    fail("unauthorized")
+                }
+                else {
+                    completion()
+                }
+            } else {
+                fail("cant load data")
+            }
+            
             
         }
     }

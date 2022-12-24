@@ -40,18 +40,10 @@ class HomeViewController: UIViewController {
         NewUserView.delegate = self
         test.testDelegate = self
         popUpView.isHidden = true
-        
         shared.delegate = self
         
-        
-
-        
-
-
     }
-    
-    
-    
+
     override func viewDidAppear(_ animated: Bool) {
         
         let loader1 = self.loader()
@@ -65,9 +57,16 @@ class HomeViewController: UIViewController {
                 self.NewUserView.topView.suggestionsCollectionView.reloadData()
 
             }
-        } fail: {
-           self.stopLoader(loader: loader1)
-            print("fail")
+        } fail: {error in
+            DispatchQueue.main.async {
+                self.stopLoader(loader: loader1)
+                if(error == "unauthorized") {
+                    
+                }
+                else {
+                    
+                }
+            }
         }
         
         NewUserView.isHidden = false

@@ -17,7 +17,7 @@ class NetWorkManager {
                 let httpResponse = response as! HTTPURLResponse
                 guard let responsedata = data else { return }
                 if(httpResponse.statusCode == 401) {
-                    
+                    failure("401")
                 }
                 else if(httpResponse.statusCode == 200){
                     let data = String(data: responsedata, encoding: .utf8)!.components(separatedBy: .newlines)
@@ -131,10 +131,10 @@ class NetWorkManager {
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let response = response as? HTTPURLResponse {
-                print(response.statusCode)
-                let data8 = String(data: data!, encoding: .utf8)!.components(separatedBy: .newlines)
-               print(data8,"fggh")
-                if (response.statusCode == 200 || response.statusCode == 201) {
+                if response.statusCode == 401{
+                    completion(401, nil)
+                }
+                else if (response.statusCode == 200 || response.statusCode == 201) {
                     let data = String(data: data!, encoding: .utf8)!.components(separatedBy: .newlines)
                     print(data)
                     completion([0],nil)
@@ -154,7 +154,7 @@ class NetWorkManager {
                 
                 guard let responsedata = data else {return}
                 if(response.statusCode == 401) {
-                    
+                    failure("401")
                 }
                else if (response.statusCode == 200 || response.statusCode == 201) {
                     let reponseData = try! JSONSerialization.jsonObject(with: responsedata, options: .mutableContainers)
@@ -176,23 +176,23 @@ class NetWorkManager {
         print("inside fetch data json")
         URLSession.shared.dataTask(with: request) { data, response, error in
             if error == nil{
-                print(1)
+               
                 let httpResponse = response as! HTTPURLResponse
                 print("sataus cpodeee", httpResponse.statusCode)
                 guard let responsedata = data else { return }
                 if(httpResponse.statusCode == 401) {
-                    print(2)
+                    failure(401)
                 }
                 
                 else if(httpResponse.statusCode == 200){
-                    print(3)
+                    
                     let data = try! JSONSerialization.jsonObject(with: responsedata, options: .allowFragments)
                     
                     completion(data)
                     
                 }
                 else{
-                    print(4)
+                    
                     failure(String(data: responsedata, encoding: .utf8)!.components(separatedBy: .newlines))
                     print(httpResponse.statusCode)
                 }
