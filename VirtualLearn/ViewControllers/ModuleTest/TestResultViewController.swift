@@ -8,7 +8,7 @@
 import UIKit
 
 class TestResultViewController: UIViewController {
-
+    
     @IBOutlet weak var middleLeftView: UIView!
     
     @IBOutlet weak var middleRightView: UIView!
@@ -30,10 +30,10 @@ class TestResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         
+        
         testviewModel.getAnswer(token: mainShared.token, assignnmentId: assignmentId) { questionAnswerDetails in
             print("sucess")
-//            print(questionAnswerDetails)
+            //            print(questionAnswerDetails)
             
             DispatchQueue.main.async {
                 self.questionResults = questionAnswerDetails.questionAnswer
@@ -44,16 +44,27 @@ class TestResultViewController: UIViewController {
                 self.correctAnswer.text = questionAnswerDetails.correctAnswers + "/" + String(self.questionResults.count)
                 self.wrongAnswers.text = questionAnswerDetails.wrongAnswers + "/" + String(self.questionResults.count)
                 
-               
+                
                 self.tableView.reloadData()
             }
-        } fail: {
-            print("error")
+        } fail: { error in
+            
+            //            self.stopLoader(loader: loader)
+            print("failures")
+            DispatchQueue.main.async {
+                if(error == "unauthorized") {
+                    
+                }
+                else {
+                    //                    self.navigationController?.popViewController(animated: true)
+                }
+            }
+            
         }
-
+        
         middleLeftView.layer.cornerRadius = 5
         middleRightView.layer.cornerRadius = 5
-       
+        
         middleView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
         middleView.layer.shadowOpacity = 100
         middleView.layer.shadowRadius = 5
@@ -61,8 +72,8 @@ class TestResultViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
-
-
+    
+    
 }
 
 
