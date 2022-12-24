@@ -41,6 +41,7 @@ class CourseDetailsViewController: UIViewController {
     
     @IBOutlet weak var courseDescriptionHeight: NSLayoutConstraint!
     
+    @IBOutlet weak var courseImage: UIImageView!
     @IBOutlet weak var overViewScrollView: UIScrollView!
     
     @IBOutlet weak var joinCourseButton: UIButton!
@@ -80,6 +81,9 @@ class CourseDetailsViewController: UIViewController {
                 {
                     joinCourseButton.isHidden = false
                 }
+                let url1 = URL(string: courseDataOverView.courseHeader.courseImage)
+                guard let data1 = try? Data(contentsOf: url1!) else {return}
+                self.courseImage.image = UIImage(data: (data1))
                 
                 self.CourseHeading.text = courseDataOverView.courseHeader.courseName
                 self.courseType.text = courseDataOverView.courseHeader.categoryName
@@ -99,7 +103,7 @@ class CourseDetailsViewController: UIViewController {
                 }
                 self.courseCaption.text = courseDataOverView.overView.courseDescription
                 
-                //                self.courseDescriptionHeight.constant = self.courseDescription.contentSize.height
+
                 self.courseDescription.sizeToFit()
                 self.courseDescription.text = courseDataOverView.overView.previewCourseContent
                 self.courseOutcome = courseDataOverView.overView.courseOutCome

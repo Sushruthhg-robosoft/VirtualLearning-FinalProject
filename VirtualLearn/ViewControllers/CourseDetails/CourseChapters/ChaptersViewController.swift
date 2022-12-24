@@ -17,6 +17,7 @@ class ChaptersViewController: UIViewController {
     var shared = mainViewModel.mainShared
 
     
+    @IBOutlet weak var courseImage: UIImageView!
     @IBOutlet weak var joinedView: UIView!
     
     @IBOutlet weak var joinedLeftView: UIView!
@@ -47,11 +48,47 @@ class ChaptersViewController: UIViewController {
     @IBOutlet weak var totalDuration: UILabel!
     @IBOutlet weak var certificateImage: UIImageView!
     
+    @IBOutlet weak var popUpLabel: UILabel!
+    @IBOutlet weak var popUpFrontView: UIView!
+    @IBOutlet weak var popUpBackView: UIView!
     var delegate : switchVc?
     var courseId = ""
     var dataoflesson = [LessonResponseList]()
     var imageUrl = ""
+
+    
+    
+    
+    
     override func viewDidLoad() {
+        
+        shared.courseDetailsViewModelShared.courseOverView(token: shared.token, courseId: courseId) { courseDataOverView in
+            
+            DispatchQueue.main.async {
+                let url1 = URL(string: courseDataOverView.courseHeader.courseImage)
+                guard let data1 = try? Data(contentsOf: url1!) else {return}
+                self.courseImage.image = UIImage(data: (data1))
+                
+                self.courseHeading.text = courseDataOverView.courseHeader.courseName
+                self.courseCategory.text = courseDataOverView.courseHeader.categoryName
+                self.courseLessonAndChapters.text = String( courseDataOverView.courseHeader.totalNumberOfChapters)+" Chapters | " + String( courseDataOverView.courseHeader.totalNumberOfChapters)+" Lessons"
+            }
+            
+            
+        } fail: { error in
+                        print("failures")
+            DispatchQueue.main.async {
+                if(error == "unauthorized") {
+                    
+                }
+                else {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
+            
+        }
+        
+        popUpBackView.isHidden = true
         super.viewDidLoad()
         print("123456789", courseId)
         
@@ -78,6 +115,7 @@ class ChaptersViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         let loader = self.loader()
+        
         dataoflesson.removeAll()
         shared.chaptersDetailsViewModelShared.getChapters(token: shared.token, courseId: courseId) { result in
            
@@ -89,6 +127,8 @@ class ChaptersViewController: UIViewController {
                 else {
                     self.joinCourseButton.isHidden = false
                 }
+                
+               
                 let chapter = String(result.courseContentResponse.chapterCount) + "Chapter | "
                 let lesson = String(result.courseContentResponse.lessonCount) + "Lessons | "
                 let assesment = String(result.courseContentResponse.moduleTest) + "Assesment Test |"
@@ -133,6 +173,10 @@ class ChaptersViewController: UIViewController {
         }
     }
     
+    @IBAction func onClickContinueWatching(_ sender: Any) {
+    }
+    @IBAction func onClickWatchFromBeginning(_ sender: Any) {
+    }
     @IBAction func onClickOverview(_ sender: Any) {
         
 
