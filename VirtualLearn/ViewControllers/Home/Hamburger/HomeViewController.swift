@@ -62,6 +62,23 @@ class HomeViewController: UIViewController {
         }
         
         NewUserView.isHidden = false
+        
+        
+        mainShared.homeViewModelShared.getPersonalDetailsStatus(token: mainShared.token) { (data) in
+            DispatchQueue.main.async {
+                if data == "true"{
+                    self.popUpView.isHidden = true
+                }
+                else{
+                    self.popUpView.isHidden = false
+                }
+            }
+            
+        } fail: { (error) in
+            print("personaledetailsError",error)
+        }
+
+
 
     }
     @IBAction func onClickSearch(_ sender: Any) {
@@ -73,6 +90,9 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func onClickNext(_ sender: Any) {
+        
+        let vc = storyboard?.instantiateViewController(identifier: "ProfileViewController") as? ProfileViewController
+        navigationController?.pushViewController(vc!, animated: true)
     }
     
     

@@ -175,7 +175,7 @@ class VideoPlayViewController: UIViewController {
         player.addPeriodicTimeObserver(forInterval: interval, queue: DispatchQueue.main, using: { (progressTime) in
             let seconds = CMTimeGetSeconds(progressTime)
             print(2345678,Int(seconds))
-            player.removeObserver(self, forKeyPath: <#T##String#>)
+           // player.removeObserver(self, forKeyPath: <#T##String#>)
         })
         
         navigationController?.popViewController(animated: true)
