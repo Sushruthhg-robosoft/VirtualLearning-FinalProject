@@ -27,6 +27,8 @@ class ExistingCollectionViewCell: UICollectionViewCell {
     }
 
     @IBAction func onClickContinue(_ sender: Any) {
+        
+        print("button tapped for continue")
         guard let index = Index else{return}
         delegate?.continueCourse(indexPath: index)
     }
