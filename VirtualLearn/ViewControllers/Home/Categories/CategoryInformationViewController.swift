@@ -176,16 +176,11 @@ extension CategoryInformationViewController: UICollectionViewDelegate, UICollect
         }
         
     }
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        switch collectionView {
-//        case subCategoryCollectionView :
-//            return CGSize(width: subCategoriesfield[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12)]).width + 20, height: 30)
-//
-//        default:
-//            return "String".size(withAttributes: nil)
-//        }
-//
-//}
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(identifier: "CategoryInformationViewController") as! CategoryInformationViewController
+        vc.categoryId = shared.homeViewModelShared.allCourse[indexPath.row].courseId
+        navigationController?.pushViewController(vc, animated: true)
+    }
     
 }
 
@@ -206,6 +201,11 @@ extension CategoryInformationViewController: UITableViewDataSource, UITableViewD
         cell.courseImage.image = UIImage(data: data!)
         cell.totalNumberOfChapters.text = "\(self.allCourses[indexPath.row].totalNumberOfChapters) Chapters"
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(identifier: "CategoryInformationViewController") as! CategoryInformationViewController
+        vc.categoryId = shared.homeViewModelShared.allCourse[indexPath.row].courseId
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
