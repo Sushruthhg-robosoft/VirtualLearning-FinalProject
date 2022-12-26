@@ -20,7 +20,7 @@ class ModuleTestViewController: UIViewController {
     let mainShared = mainViewModel.mainShared
     var time = ""
     var assignmentId = ""
-    
+    var chapterDelegate : ChaptersViewController?
     var currentPage = 0 {
         didSet {
             if currentPage == moduleTestViewModel.moduleTestData.count - 1{
@@ -86,9 +86,10 @@ class ModuleTestViewController: UIViewController {
     @IBAction func onclickSubmit(_ sender: Any) {
         moduleTestViewModel.submitAnswer(token: mainShared.token, assignnmentId: assignmentId, testAnswers: testAnswers){
             
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [self] in
                 guard let vc = self.storyboard?.instantiateViewController(identifier: "CongratsViewController") as? CongratsViewController else {return}
                 self.navigationController?.pushViewController(vc, animated: true)
+                vc.chapterDelegate = chapterDelegate
                 vc.assignmentId = self.assignmentId
             }
         } fail: {error in

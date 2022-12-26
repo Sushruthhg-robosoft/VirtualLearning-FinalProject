@@ -16,8 +16,10 @@ class FinalCongragulationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        grade.isHidden = true
-        aprrovedRateLabel.isHidden = true
+//        grade.isHidden = true
+//        aprrovedRateLabel.isHidden = true
+        
+        
     }
 
     @IBAction func backButtonClicked(_ sender: Any) {

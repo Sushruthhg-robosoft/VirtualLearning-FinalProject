@@ -171,6 +171,21 @@ class ChaptersViewModel {
             }
             task.resume()
         }
+    func getCertificate(token: String, courseId: String,completion: @escaping(String) -> Void, fail: @escaping (String) -> Void) {
+        guard let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/certificate?courseId=\(courseId)") else{ return fail("url Error")}
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        networkManeger.fetchDataJson(request: request) { result in
+            guard let apiData = result as? [String:Any] else { fail("data error"); return}
+            guard let certificateLink = apiData["certificateLink"] as? String else {print("err5"); return fail("data Error")}
+            completion(certificateLink)
+        } failure: { failData in
+            fail("fail")
+        }
+
+    }
         
         
 }
