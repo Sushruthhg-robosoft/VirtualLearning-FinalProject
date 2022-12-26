@@ -217,6 +217,14 @@ class ChaptersViewController: UIViewController {
             shared.courseDetailsViewModelShared.joinCourse(token: shared.token, courseId: courseId){ data in
                 DispatchQueue.main.async { [self] in
                     joinCourseButton.isHidden = true
+                    shared.chaptersDetailsViewModelShared.getChapters(token: shared.token, courseId: courseId) { result in
+                        DispatchQueue.main.async {
+                            self.dataoflesson = result.lessonResponseList
+                            tableView.reloadData()
+                        }
+                    } fail:  { fail in
+                        print("failure")
+                    }
                     tableView.reloadData()
                 }
                 
