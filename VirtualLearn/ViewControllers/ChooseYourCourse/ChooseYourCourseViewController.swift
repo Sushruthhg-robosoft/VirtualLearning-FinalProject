@@ -20,6 +20,7 @@ class ChooseYourCourseViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         
+        initializeHideKeyboard()
         searchTextField.delegate = self
         
         tableView.delegate = self
@@ -120,6 +121,7 @@ extension ChooseYourCourseViewController: UITableViewDelegate, UITableViewDataSo
         cell.couseName.text = tableData[indexPath.row].courseName
         cell.courseCategory.text = tableData[indexPath.row].categoryName
         cell.numberofChapters.text = "\(tableData[indexPath.row].totalNumberOfChapters) chapters"
+        cell.selectionStyle = .none
         let url = URL(string: tableData[indexPath.row].courseImage)
         let data = try? Data(contentsOf: url!)
         cell.courseImage.image = UIImage(data: data!)
@@ -220,5 +222,23 @@ extension ChooseYourCourseViewController: SearchResponse {
     }
     
     
+}
+
+extension ChooseYourCourseViewController {
+    
+    func initializeHideKeyboard(){
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissMyKeyboard))
+        
+       
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissMyKeyboard(){
+        
+        view.endEditing(true)
+    }
 }
 
