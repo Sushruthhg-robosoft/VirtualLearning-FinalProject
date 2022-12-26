@@ -47,27 +47,41 @@ class HomeViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         
-        let loader1 = self.loader()
-        NewUserView.topView.bannerImage.removeAll()
-        print(NewUserView.topView.bannerImage.count)
-        mainShared.homeViewModelShared.getBanners(token: mainShared.token) { (data) in
-            DispatchQueue.main.async {
-               
-                self.NewUserView.topView.bannerImage = data
-                self.stopLoader(loader: loader1)
-                self.NewUserView.topView.suggestionsCollectionView.reloadData()
-
-            }
-        } fail: {error in
-        }
+//        let loader1 = self.loader()
+//        NewUserView.topView.bannerImage.removeAll()
+//        print(NewUserView.topView.bannerImage.count)
+//        mainShared.homeViewModelShared.getBanners(token: mainShared.token) { (data) in
+//            DispatchQueue.main.async {
+//
+//                self.NewUserView.topView.bannerImage = data
+//                self.stopLoader(loader: loader1)
+//                self.NewUserView.topView.suggestionsCollectionView.reloadData()
+//
+//            }
+//        } fail: {error in
+//        }
         
         NewUserView.isHidden = false
         
-        
+        let loader = self.loader()
         mainShared.homeViewModelShared.getPersonalDetailsStatus(token: mainShared.token) { (data) in
             DispatchQueue.main.async {
+                self.stopLoader(loader: loader)
                 if data == "true"{
                     self.popUpView.isHidden = true
+                    let loader1 = self.loader()
+                    self.NewUserView.topView.bannerImage.removeAll()
+                    print(self.NewUserView.topView.bannerImage.count)
+                    self.mainShared.homeViewModelShared.getBanners(token: self.mainShared.token) { (data) in
+                        DispatchQueue.main.async {
+                           
+                            self.NewUserView.topView.bannerImage = data
+                            self.stopLoader(loader: loader1)
+                            self.NewUserView.topView.suggestionsCollectionView.reloadData()
+
+                        }
+                    } fail: {error in
+                    }
                 }
                 else{
                     self.popUpView.isHidden = false
@@ -75,7 +89,13 @@ class HomeViewController: UIViewController {
             }
             
         } fail: { (error) in
-            print("personaledetailsError",error)
+            self.stopLoader(loader: loader)
+            DispatchQueue.main.async {
+                print()
+                if error == "401"{
+                    self.errorPopup(message: "Your session has expired, please Login")
+                }
+            }
         }
 
 
@@ -194,6 +214,21 @@ extension HomeViewController: clickButtons{
         vc.categoryName = categoryName
         vc.categoryId = categoryId
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func errorPopup(message: String){
+        
+        let dialogMessage = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+            self.dismiss(animated: true, completion: nil)
+            
+            self.navigationController?.popToRootViewController(animated: true)
+            self.storageShared.resetLoggedIn()
+         })
+        dialogMessage.addAction(ok)
+
+        self.present(dialogMessage, animated: true, completion: nil)
+        
     }
 
 
