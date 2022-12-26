@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol playVideo{
+    func playVideo(at index: IndexPath)
+}
+
 class CustomChapterTableViewCell: UITableViewCell {
 
     @IBOutlet weak var moduleTestView: UIView!
@@ -22,8 +26,8 @@ class CustomChapterTableViewCell: UITableViewCell {
     @IBOutlet weak var timelineIndicatorImage: UIImageView!
     
     @IBOutlet weak var cellLeadingConstraint: NSLayoutConstraint!
-    
-  
+    var delegate: playVideo?
+    var indexPath: IndexPath?
     func setValuesLesson(data: LessonList) {
         chapterName.text = data.lessonName
         chapterNumber.text = "0\(String(data.lessonNumber))"
@@ -41,9 +45,10 @@ class CustomChapterTableViewCell: UITableViewCell {
         chapterNumberView.isHidden = true
         chapterNumber.isHidden = true
         chapterName.text = data.assignmentName
-        chapterNumber.text = "0\(data.assignmentId ))"
-        chapterDuration.text = "\(data.testDuration )) mins"
-        videoPlayButton.isHidden = true
+        chapterNumber.text = "0\(data.assignmentId )"
+        chapterDuration.text = "\(data.testDuration )mins"
+        videoPlayButton.isHidden = false
+        assesmentProgress(data: data)
     }
     
     func cellconstrints(joinedCourse: Bool) {
@@ -79,9 +84,36 @@ class CustomChapterTableViewCell: UITableViewCell {
         }
     }
     
-    func assesmentProgress() {
+    
+    func assesmentProgress(data: AssignmentResponse) {
         
+        if(data.assinmentStatus) {
+            timelineIndicatorImage.image = #imageLiteral(resourceName: "icn_textfield_right")
+            videoPlayButton.isHidden = false
+            videoPlayButton.setImage(nil, for: .normal)
+            videoPlayButton.setTitle(String(data.grade), for: .normal)
+            videoPlayButton.setTitleColor(UIColor.green, for: .normal)
+            videoPlayButton.titleLabel?.font = .systemFont(ofSize: 30)
+        }
+        else {
+            if(data.nextPlay)  {
+                timelineIndicatorImage.image = #imageLiteral(resourceName: "icn_timeline_active")
+                videoPlayButton.isHidden = true
+                
+            } else {
+                timelineIndicatorImage.image = #imageLiteral(resourceName: "icn_timeline_inactive")
+                videoPlayButton.isHidden = true
+            }
+        }
         
     }
     
+    @IBAction func PlayVideo(_ sender: Any) {
+        
+        if let index = indexPath{
+            delegate?.playVideo(at: index)
+        }
+        
+        
+    }
 }
