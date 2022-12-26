@@ -154,14 +154,17 @@ class VideoPlayViewController: UIViewController {
     
     @IBAction func backButtonClicked(_ sender: Any) {
         player.pause()
-        let interval = CMTime(value: 1, timescale: 1)
+//        let interval = CMTime(value: 1, timescale: 1)
         
-        player.addPeriodicTimeObserver(forInterval: interval, queue: DispatchQueue.main, using: { (progressTime) in
-            let seconds = CMTimeGetSeconds(progressTime)
-            print(2345678,Int(seconds))
-            self.delegate?.sendTime(second: Int(seconds))
-        })
+//        player.addPeriodicTimeObserver(forInterval: interval, queue: DispatchQueue.main, using: { (progressTime) in
+//            let seconds = CMTimeGetSeconds(progressTime)
+//            print(2345678,Int(seconds))
+//            self.delegate?.sendTime(second: Int(seconds))
+//        })
         navigationController?.popViewController(animated: true)
+        let currentTime = player.currentTime()
+        self.delegate?.sendTime(second: Int(currentTime.seconds))
+        
     }
     
     

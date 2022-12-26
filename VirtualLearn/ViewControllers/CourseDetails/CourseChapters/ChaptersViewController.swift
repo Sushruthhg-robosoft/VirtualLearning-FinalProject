@@ -53,6 +53,7 @@ class ChaptersViewController: UIViewController {
     @IBOutlet weak var popUpBackView: UIView!
     var delegate : switchVc?
     var courseId = ""
+    var lessonId = ""
     var dataoflesson = [LessonResponseList]()
     var imageUrl = ""
     var storageShared = StorageManeger.shared
@@ -102,23 +103,9 @@ class ChaptersViewController: UIViewController {
         joinedView.layer.shadowOpacity = 100
         joinedView.layer.shadowRadius = 5
         joinedView.layer.shadowOffset = CGSize(width: 0, height: 2)
-
-        ContinuationLabelHeightContraint.constant = 0
-        ContinuationLabelconstraint.constant = 0
-        CourseContentConstraint.constant = 0
-        tableView.register(HeaderView.self, forHeaderFooterViewReuseIdentifier: "HeaderView")
-        tableView.delegate = self
-        tableView.dataSource = self
-        chaptersBtn.setTitleColor(#colorLiteral(red: 0.9333333333, green: 0.3607843137, blue: 0.3019607843, alpha: 1), for: .normal)
-        chaptersUnderLineView.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.3607843137, blue: 0.3019607843, alpha: 1)
-        overViewBtn.setTitleColor(#colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1), for: .normal)
-        overViewUnderLineView.backgroundColor = #colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
- 
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
         let loader = self.loader()
         popUpBackView.isHidden = true
+        print("view did appear ")
         dataoflesson.removeAll()
         shared.chaptersDetailsViewModelShared.getChapters(token: shared.token, courseId: courseId) { result in
            
@@ -174,6 +161,79 @@ class ChaptersViewController: UIViewController {
                 }
             }
         }
+        
+        ContinuationLabelHeightContraint.constant = 0
+        ContinuationLabelconstraint.constant = 0
+        CourseContentConstraint.constant = 0
+        tableView.register(HeaderView.self, forHeaderFooterViewReuseIdentifier: "HeaderView")
+        tableView.delegate = self
+        tableView.dataSource = self
+        chaptersBtn.setTitleColor(#colorLiteral(red: 0.9333333333, green: 0.3607843137, blue: 0.3019607843, alpha: 1), for: .normal)
+        chaptersUnderLineView.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.3607843137, blue: 0.3019607843, alpha: 1)
+        overViewBtn.setTitleColor(#colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1), for: .normal)
+        overViewUnderLineView.backgroundColor = #colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
+ 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+//        let loader = self.loader()
+//        popUpBackView.isHidden = true
+//        print("view did appear ")
+//        dataoflesson.removeAll()
+//        shared.chaptersDetailsViewModelShared.getChapters(token: shared.token, courseId: courseId) { result in
+//
+//            DispatchQueue.main.async { [self] in
+//                if(result.joinedCourse) {
+//                    self.joinCourseButton.isHidden = true
+//                }
+//                else {
+//                    self.joinCourseButton.isHidden = false
+//                }
+//
+//
+//                let chapter = String(result.courseContentResponse.chapterCount) + "Chapter | "
+//                let lesson = String(result.courseContentResponse.lessonCount) + "Lessons | "
+//                let assesment = String(result.courseContentResponse.moduleTest) + "Assesment Test |"
+//                let totalLength = String(result.courseContentResponse.totalVideoLength) + "h total Length"
+//
+//                self.sourseContentDescription.text = chapter + lesson + assesment + totalLength
+//                self.dataoflesson = result.lessonResponseList
+//
+//                self.stopLoader(loader: loader)
+//                if(result.certificateGenerated) {
+//                    self.certficateView.isHidden = false
+//                    certificateViewHeight.constant = 556
+//
+//                    self.certificateGrade.text = String(result.certificateResponse?.grade ?? 0) + "%"
+//                    self.joinedDate.text = result.certificateResponse?.joinedData
+//                    self.completedDate.text = result.certificateResponse?.completedDate
+//                    self.totalDuration.text = result.certificateResponse?.completionDuration
+//                    self.imageUrl = result.certificateResponse?.certificateLink ?? ""
+//                    tableView.reloadData()
+//                    guard let url = URL(string: result.certificateResponse?.certificateLink ?? "") else {return}
+//                    guard let data = try? Data(contentsOf: url) else {return}
+//                    self.certificateImage.image = UIImage(data: data)
+//                }
+//                else
+//                {
+//                self.certficateView.isHidden = true
+//                certificateViewHeight.constant = 0
+//                }
+//                tableView.reloadData()
+//            }
+//        } fail: { error in
+//
+//            self.stopLoader(loader: loader)
+//            print("failures")
+//            DispatchQueue.main.async {
+//                if(error == "unauthorized") {
+//
+//                 }
+//                else {
+//                    self.navigationController?.popViewController(animated: true)
+//                }
+//            }
+//        }
     }
     
     @IBAction func onClickContinueWatching(_ sender: Any) {
@@ -244,6 +304,7 @@ class ChaptersViewController: UIViewController {
     }
     
     func reloadData() {
+        dataoflesson.removeAll()
         let loader = self.loader()
         shared.chaptersDetailsViewModelShared.getChapters(token: shared.token, courseId: courseId) { result in
             DispatchQueue.main.async {
@@ -297,7 +358,6 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
         
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderView") as! HeaderView
         headerView.title.text = "Chapter \(dataoflesson[section].chapterNumber) - \(dataoflesson[section].chapterName)"
-        print("aggsjmgd",section)
         if(dataoflesson[section].chapterCompleted) {
             headerView.title.textColor = UIColor(red: 30/255, green: 171/255, blue: 12/255, alpha: 1)
         }
@@ -344,6 +404,13 @@ extension ChaptersViewController : PauseVideoStatus {
     func sendTime(second: Int) {
         print("sdfghj",second)
         self.time = second
+        shared.chaptersDetailsViewModelShared.saveLesson(lessonId: lessonId, duration: String(second), token: shared.token) {
+            print("saved Successfully")
+        } fail: { error in
+            print("error to load data")
+        }
+        
+        reloadData()
     }
 }
 
@@ -360,8 +427,8 @@ extension ChaptersViewController: headerDelegate{
 extension ChaptersViewController: playVideo{
     func playVideo(at index: IndexPath) {
         if let data = dataoflesson[index.section].lessonList[index.row] as? LessonList{
-            
-            if data.duration > 0{
+            lessonId = String(data.lessonId)
+            if data.durationCompleted > 0{
                 
                 self.popUpBackView.isHidden = false
                 popUpLabel.text = "Your lesson paused at \(data.durationCompleted) secs Do you want to continue watching?"
