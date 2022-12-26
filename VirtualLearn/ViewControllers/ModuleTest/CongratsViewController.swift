@@ -24,4 +24,10 @@ class CongratsViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
         vc.assignmentId = self.assignmentId
     }
+    
+    @IBAction func backButtonClicked(_ sender: Any) {
+        
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
+            self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
+    }
 }
