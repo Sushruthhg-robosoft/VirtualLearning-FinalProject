@@ -26,9 +26,6 @@
 		1BA47D42294700900012B8C3 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA47D41294700900012B8C3 /* KeyChain.swift */; };
 		1BA47D47294704870012B8C3 /* customChooseCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA47D46294704870012B8C3 /* customChooseCourseView.swift */; };
 		1BA47D4F294704AF0012B8C3 /* RegisterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA47D4E294704AF0012B8C3 /* RegisterUser.swift */; };
-		1BAC75482952D86700C43826 /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1BE0706B29517BB800E3894C /* ProximaNova-Regular.otf */; };
-		1BAC754C2952D87000C43826 /* Proxima Nova Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1BE0706C29517BC300E3894C /* Proxima Nova Bold.otf */; };
-		1BAC75502952D88700C43826 /* Biko_Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1BE0706D29517BE000E3894C /* Biko_Bold.otf */; };
 		1BCF5C09294AE474003E6AF0 /* SubCategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCF5C07294AE474003E6AF0 /* SubCategoriesCollectionViewCell.swift */; };
 		1BCF5C0A294AE474003E6AF0 /* SubCategoriesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BCF5C08294AE474003E6AF0 /* SubCategoriesCollectionViewCell.xib */; };
 		1BD4164A294094BD00E5334B /* CustomCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD41649294094BD00E5334B /* CustomCategoryView.swift */; };
@@ -52,6 +49,38 @@
 		590DE5A529548B2D00E90572 /* NewUserCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590DE5A429548B2D00E90572 /* NewUserCategoryCollectionViewCell.swift */; };
 		590DE5AA29548F5400E90572 /* SearchCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590DE5A929548F5400E90572 /* SearchCategoryCollectionViewCell.swift */; };
 		592B3530294CACAC00EDC10A /* AssignmentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B352F294CACAC00EDC10A /* AssignmentResponse.swift */; };
+		599461332959665500932ABA /* JSMR Biko Read Me.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5994612D2959665500932ABA /* JSMR Biko Read Me.jpg */; };
+		599461342959665500932ABA /* Biko_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5994612E2959665500932ABA /* Biko_Regular.otf */; };
+		599461352959665500932ABA /* Biko_Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5994612F2959665500932ABA /* Biko_Bold.otf */; };
+		599461362959665500932ABA /* Biko_Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 599461302959665500932ABA /* Biko_Black.otf */; };
+		599461372959665500932ABA /* Biko_Light Readme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 599461312959665500932ABA /* Biko_Light Readme.rtf */; };
+		599461382959665500932ABA /* Biko_Light-Restricted.otf in Resources */ = {isa = PBXBuildFile; fileRef = 599461322959665500932ABA /* Biko_Light-Restricted.otf */; };
+		5994614E295966C000932ABA /* Proxima Nova Alt Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 59946146295966BF00932ABA /* Proxima Nova Alt Thin.otf */; };
+		5994614F295966C000932ABA /* Proxima Nova Alt Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 59946147295966BF00932ABA /* Proxima Nova Alt Bold.otf */; };
+		59946150295966C000932ABA /* Proxima Nova Extrabold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 59946148295966BF00932ABA /* Proxima Nova Extrabold.otf */; };
+		59946151295966C000932ABA /* Proxima Nova Alt Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 59946149295966BF00932ABA /* Proxima Nova Alt Light.otf */; };
+		59946152295966C000932ABA /* Proxima Nova Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5994614A295966BF00932ABA /* Proxima Nova Black.otf */; };
+		59946153295966C000932ABA /* Proxima Nova Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5994614B295966BF00932ABA /* Proxima Nova Bold.otf */; };
+		59946154295966C000932ABA /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5994614C295966BF00932ABA /* ProximaNova-Regular.otf */; };
+		59946155295966C000932ABA /* Proxima Nova Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5994614D295966BF00932ABA /* Proxima Nova Thin.otf */; };
+		5994616C295966E900932ABA /* SF-Pro-Text-UltralightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5994615A295966E900932ABA /* SF-Pro-Text-UltralightItalic.otf */; };
+		5994616D295966E900932ABA /* SF-Pro-Text-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5994615B295966E900932ABA /* SF-Pro-Text-Heavy.otf */; };
+		5994616E295966E900932ABA /* SF-Pro-Text-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5994615C295966E900932ABA /* SF-Pro-Text-MediumItalic.otf */; };
+		5994616F295966E900932ABA /* SF-Pro-Text-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5994615D295966E900932ABA /* SF-Pro-Text-Light.otf */; };
+		59946170295966E900932ABA /* SF-Pro-Text-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5994615E295966E900932ABA /* SF-Pro-Text-BlackItalic.otf */; };
+		59946171295966E900932ABA /* SF-Pro-Text-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5994615F295966E900932ABA /* SF-Pro-Text-Black.otf */; };
+		59946172295966E900932ABA /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 59946160295966E900932ABA /* SF-Pro-Text-Regular.otf */; };
+		59946173295966E900932ABA /* SF-Pro-Text-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 59946161295966E900932ABA /* SF-Pro-Text-Ultralight.otf */; };
+		59946174295966E900932ABA /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 59946162295966E900932ABA /* SF-Pro-Text-Bold.otf */; };
+		59946175295966E900932ABA /* SF-Pro-Text-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 59946163295966E900932ABA /* SF-Pro-Text-Thin.otf */; };
+		59946176295966E900932ABA /* SF-Pro-Text-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 59946164295966E900932ABA /* SF-Pro-Text-ThinItalic.otf */; };
+		59946177295966E900932ABA /* SF-Pro-Text-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 59946165295966E900932ABA /* SF-Pro-Text-BoldItalic.otf */; };
+		59946178295966E900932ABA /* SF-Pro-Text-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 59946166295966E900932ABA /* SF-Pro-Text-RegularItalic.otf */; };
+		59946179295966E900932ABA /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 59946167295966E900932ABA /* SF-Pro-Text-Semibold.otf */; };
+		5994617A295966E900932ABA /* SF-Pro-Text-HeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 59946168295966E900932ABA /* SF-Pro-Text-HeavyItalic.otf */; };
+		5994617B295966E900932ABA /* SF-Pro-Text-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 59946169295966E900932ABA /* SF-Pro-Text-LightItalic.otf */; };
+		5994617C295966E900932ABA /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5994616A295966E900932ABA /* SF-Pro-Text-Medium.otf */; };
+		5994617D295966E900932ABA /* SF-Pro-Text-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5994616B295966E900932ABA /* SF-Pro-Text-SemiboldItalic.otf */; };
 		59D136382953491A00AFF360 /* ViewCertificateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D136372953491A00AFF360 /* ViewCertificateViewController.swift */; };
 		59FC6E8F295066F90031E719 /* TopCourseCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FC6E8E295066F90031E719 /* TopCourseCategory.swift */; };
 		59FC6F17295179420031E719 /* ChooseYourCourseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FC6F16295179420031E719 /* ChooseYourCourseCollectionViewCell.swift */; };
@@ -192,9 +221,6 @@
 		1BD41652294095CC00E5334B /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		1BDBD84F295095CC00983C10 /* VideoPlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayViewController.swift; sourceTree = "<group>"; };
 		1BDC5F4B293F771B00BE877F /* PersonalDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDetailsViewController.swift; sourceTree = "<group>"; };
-		1BE0706B29517BB800E3894C /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
-		1BE0706C29517BC300E3894C /* Proxima Nova Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Bold.otf"; sourceTree = "<group>"; };
-		1BE0706D29517BE000E3894C /* Biko_Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Biko_Bold.otf; sourceTree = "<group>"; };
 		1BF0C85D29408D92009D9030 /* customHamLable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customHamLable.swift; sourceTree = "<group>"; };
 		1BF0C85E29408D92009D9030 /* HamburgerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerViewController.swift; sourceTree = "<group>"; };
 		1BF0C85F29408D93009D9030 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -212,6 +238,38 @@
 		590DE5A429548B2D00E90572 /* NewUserCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		590DE5A929548F5400E90572 /* SearchCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		592B352F294CACAC00EDC10A /* AssignmentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentResponse.swift; sourceTree = "<group>"; };
+		5994612D2959665500932ABA /* JSMR Biko Read Me.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "JSMR Biko Read Me.jpg"; sourceTree = "<group>"; };
+		5994612E2959665500932ABA /* Biko_Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Biko_Regular.otf; sourceTree = "<group>"; };
+		5994612F2959665500932ABA /* Biko_Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Biko_Bold.otf; sourceTree = "<group>"; };
+		599461302959665500932ABA /* Biko_Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Biko_Black.otf; sourceTree = "<group>"; };
+		599461312959665500932ABA /* Biko_Light Readme.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "Biko_Light Readme.rtf"; sourceTree = "<group>"; };
+		599461322959665500932ABA /* Biko_Light-Restricted.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Biko_Light-Restricted.otf"; sourceTree = "<group>"; };
+		59946146295966BF00932ABA /* Proxima Nova Alt Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Alt Thin.otf"; sourceTree = "<group>"; };
+		59946147295966BF00932ABA /* Proxima Nova Alt Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Alt Bold.otf"; sourceTree = "<group>"; };
+		59946148295966BF00932ABA /* Proxima Nova Extrabold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Extrabold.otf"; sourceTree = "<group>"; };
+		59946149295966BF00932ABA /* Proxima Nova Alt Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Alt Light.otf"; sourceTree = "<group>"; };
+		5994614A295966BF00932ABA /* Proxima Nova Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Black.otf"; sourceTree = "<group>"; };
+		5994614B295966BF00932ABA /* Proxima Nova Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Bold.otf"; sourceTree = "<group>"; };
+		5994614C295966BF00932ABA /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
+		5994614D295966BF00932ABA /* Proxima Nova Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Thin.otf"; sourceTree = "<group>"; };
+		5994615A295966E900932ABA /* SF-Pro-Text-UltralightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-UltralightItalic.otf"; sourceTree = "<group>"; };
+		5994615B295966E900932ABA /* SF-Pro-Text-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Heavy.otf"; sourceTree = "<group>"; };
+		5994615C295966E900932ABA /* SF-Pro-Text-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-MediumItalic.otf"; sourceTree = "<group>"; };
+		5994615D295966E900932ABA /* SF-Pro-Text-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Light.otf"; sourceTree = "<group>"; };
+		5994615E295966E900932ABA /* SF-Pro-Text-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-BlackItalic.otf"; sourceTree = "<group>"; };
+		5994615F295966E900932ABA /* SF-Pro-Text-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Black.otf"; sourceTree = "<group>"; };
+		59946160295966E900932ABA /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
+		59946161295966E900932ABA /* SF-Pro-Text-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Ultralight.otf"; sourceTree = "<group>"; };
+		59946162295966E900932ABA /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
+		59946163295966E900932ABA /* SF-Pro-Text-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Thin.otf"; sourceTree = "<group>"; };
+		59946164295966E900932ABA /* SF-Pro-Text-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-ThinItalic.otf"; sourceTree = "<group>"; };
+		59946165295966E900932ABA /* SF-Pro-Text-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-BoldItalic.otf"; sourceTree = "<group>"; };
+		59946166295966E900932ABA /* SF-Pro-Text-RegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-RegularItalic.otf"; sourceTree = "<group>"; };
+		59946167295966E900932ABA /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
+		59946168295966E900932ABA /* SF-Pro-Text-HeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-HeavyItalic.otf"; sourceTree = "<group>"; };
+		59946169295966E900932ABA /* SF-Pro-Text-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-LightItalic.otf"; sourceTree = "<group>"; };
+		5994616A295966E900932ABA /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
+		5994616B295966E900932ABA /* SF-Pro-Text-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-SemiboldItalic.otf"; sourceTree = "<group>"; };
 		59D136372953491A00AFF360 /* ViewCertificateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCertificateViewController.swift; sourceTree = "<group>"; };
 		59FC6E8E295066F90031E719 /* TopCourseCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCourseCategory.swift; sourceTree = "<group>"; };
 		59FC6F16295179420031E719 /* ChooseYourCourseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseYourCourseCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -427,6 +485,7 @@
 		1BE0706829517B3A00E3894C /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				59946159295966E900932ABA /* SF Pro Text */,
 				1BE0706A29517B4E00E3894C /* Biko */,
 				1BE0706929517B4200E3894C /* Proxima-Nova */,
 			);
@@ -436,8 +495,7 @@
 		1BE0706929517B4200E3894C /* Proxima-Nova */ = {
 			isa = PBXGroup;
 			children = (
-				1BE0706C29517BC300E3894C /* Proxima Nova Bold.otf */,
-				1BE0706B29517BB800E3894C /* ProximaNova-Regular.otf */,
+				59946145295966BF00932ABA /* proxima */,
 			);
 			path = "Proxima-Nova";
 			sourceTree = "<group>";
@@ -445,7 +503,7 @@
 		1BE0706A29517B4E00E3894C /* Biko */ = {
 			isa = PBXGroup;
 			children = (
-				1BE0706D29517BE000E3894C /* Biko_Bold.otf */,
+				5994612C2959665500932ABA /* biko */,
 			);
 			path = Biko;
 			sourceTree = "<group>";
@@ -483,6 +541,59 @@
 				590194C5293F717300055C24 /* LandingViewController.swift */,
 			);
 			path = Landing;
+			sourceTree = "<group>";
+		};
+		5994612C2959665500932ABA /* biko */ = {
+			isa = PBXGroup;
+			children = (
+				5994612D2959665500932ABA /* JSMR Biko Read Me.jpg */,
+				5994612E2959665500932ABA /* Biko_Regular.otf */,
+				5994612F2959665500932ABA /* Biko_Bold.otf */,
+				599461302959665500932ABA /* Biko_Black.otf */,
+				599461312959665500932ABA /* Biko_Light Readme.rtf */,
+				599461322959665500932ABA /* Biko_Light-Restricted.otf */,
+			);
+			path = biko;
+			sourceTree = "<group>";
+		};
+		59946145295966BF00932ABA /* proxima */ = {
+			isa = PBXGroup;
+			children = (
+				59946146295966BF00932ABA /* Proxima Nova Alt Thin.otf */,
+				59946147295966BF00932ABA /* Proxima Nova Alt Bold.otf */,
+				59946148295966BF00932ABA /* Proxima Nova Extrabold.otf */,
+				59946149295966BF00932ABA /* Proxima Nova Alt Light.otf */,
+				5994614A295966BF00932ABA /* Proxima Nova Black.otf */,
+				5994614B295966BF00932ABA /* Proxima Nova Bold.otf */,
+				5994614C295966BF00932ABA /* ProximaNova-Regular.otf */,
+				5994614D295966BF00932ABA /* Proxima Nova Thin.otf */,
+			);
+			path = proxima;
+			sourceTree = "<group>";
+		};
+		59946159295966E900932ABA /* SF Pro Text */ = {
+			isa = PBXGroup;
+			children = (
+				5994615A295966E900932ABA /* SF-Pro-Text-UltralightItalic.otf */,
+				5994615B295966E900932ABA /* SF-Pro-Text-Heavy.otf */,
+				5994615C295966E900932ABA /* SF-Pro-Text-MediumItalic.otf */,
+				5994615D295966E900932ABA /* SF-Pro-Text-Light.otf */,
+				5994615E295966E900932ABA /* SF-Pro-Text-BlackItalic.otf */,
+				5994615F295966E900932ABA /* SF-Pro-Text-Black.otf */,
+				59946160295966E900932ABA /* SF-Pro-Text-Regular.otf */,
+				59946161295966E900932ABA /* SF-Pro-Text-Ultralight.otf */,
+				59946162295966E900932ABA /* SF-Pro-Text-Bold.otf */,
+				59946163295966E900932ABA /* SF-Pro-Text-Thin.otf */,
+				59946164295966E900932ABA /* SF-Pro-Text-ThinItalic.otf */,
+				59946165295966E900932ABA /* SF-Pro-Text-BoldItalic.otf */,
+				59946166295966E900932ABA /* SF-Pro-Text-RegularItalic.otf */,
+				59946167295966E900932ABA /* SF-Pro-Text-Semibold.otf */,
+				59946168295966E900932ABA /* SF-Pro-Text-HeavyItalic.otf */,
+				59946169295966E900932ABA /* SF-Pro-Text-LightItalic.otf */,
+				5994616A295966E900932ABA /* SF-Pro-Text-Medium.otf */,
+				5994616B295966E900932ABA /* SF-Pro-Text-SemiboldItalic.otf */,
+			);
+			path = "SF Pro Text";
 			sourceTree = "<group>";
 		};
 		C2ED74FC2949D38C00562970 /* Profile */ = {
@@ -867,23 +978,52 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BAC75502952D88700C43826 /* Biko_Bold.otf in Resources */,
-				1BAC754C2952D87000C43826 /* Proxima Nova Bold.otf in Resources */,
-				1BAC75482952D86700C43826 /* ProximaNova-Regular.otf in Resources */,
+				59946174295966E900932ABA /* SF-Pro-Text-Bold.otf in Resources */,
+				5994616E295966E900932ABA /* SF-Pro-Text-MediumItalic.otf in Resources */,
+				59946153295966C000932ABA /* Proxima Nova Bold.otf in Resources */,
+				59946154295966C000932ABA /* ProximaNova-Regular.otf in Resources */,
+				59946178295966E900932ABA /* SF-Pro-Text-RegularItalic.otf in Resources */,
+				599461332959665500932ABA /* JSMR Biko Read Me.jpg in Resources */,
 				CF79F1E9294217C800EEC920 /* ChoiceOfYourCourseCollectionViewCell.xib in Resources */,
+				599461352959665500932ABA /* Biko_Bold.otf in Resources */,
+				59946172295966E900932ABA /* SF-Pro-Text-Regular.otf in Resources */,
 				1BCF5C0A294AE474003E6AF0 /* SubCategoriesCollectionViewCell.xib in Resources */,
+				5994617B295966E900932ABA /* SF-Pro-Text-LightItalic.otf in Resources */,
 				CFAFC9AB293EFAA900F84288 /* LaunchScreen.storyboard in Resources */,
 				CFEC206729419A6D00A171DA /* NewUserHomeView.xib in Resources */,
+				59946152295966C000932ABA /* Proxima Nova Black.otf in Resources */,
+				59946177295966E900932ABA /* SF-Pro-Text-BoldItalic.otf in Resources */,
 				CF79F1D52941BB4400EEC920 /* NewUserBottomView.xib in Resources */,
+				5994617A295966E900932ABA /* SF-Pro-Text-HeavyItalic.otf in Resources */,
+				5994616F295966E900932ABA /* SF-Pro-Text-Light.otf in Resources */,
+				59946151295966C000932ABA /* Proxima Nova Alt Light.otf in Resources */,
+				5994614F295966C000932ABA /* Proxima Nova Alt Bold.otf in Resources */,
+				5994616C295966E900932ABA /* SF-Pro-Text-UltralightItalic.otf in Resources */,
 				CF2EFB4D294A042F00A7D585 /* ExistingUserBottomview.xib in Resources */,
+				5994617C295966E900932ABA /* SF-Pro-Text-Medium.otf in Resources */,
+				5994614E295966C000932ABA /* Proxima Nova Alt Thin.otf in Resources */,
+				59946173295966E900932ABA /* SF-Pro-Text-Ultralight.otf in Resources */,
+				59946150295966C000932ABA /* Proxima Nova Extrabold.otf in Resources */,
 				CF2EFB59294A060B00A7D585 /* ExistingCollectionViewCell.xib in Resources */,
+				59946171295966E900932ABA /* SF-Pro-Text-Black.otf in Resources */,
 				CFF13F202950A6570054697D /* CategoriesCellCollectionViewCell.xib in Resources */,
+				59946176295966E900932ABA /* SF-Pro-Text-ThinItalic.otf in Resources */,
 				CFAFC9A8293EFAA900F84288 /* Assets.xcassets in Resources */,
 				CFEC20722941A57A00A171DA /* SuggestionsTopView.xib in Resources */,
 				CF2EFB64294A125800A7D585 /* OngoingView.xib in Resources */,
+				599461362959665500932ABA /* Biko_Black.otf in Resources */,
+				5994616D295966E900932ABA /* SF-Pro-Text-Heavy.otf in Resources */,
+				5994617D295966E900932ABA /* SF-Pro-Text-SemiboldItalic.otf in Resources */,
 				CF79F1D02941AAD000EEC920 /* SuggestionsCollectionViewCell.xib in Resources */,
+				599461382959665500932ABA /* Biko_Light-Restricted.otf in Resources */,
+				59946155295966C000932ABA /* Proxima Nova Thin.otf in Resources */,
 				CFAFC9A6293EFAA700F84288 /* Main.storyboard in Resources */,
+				599461342959665500932ABA /* Biko_Regular.otf in Resources */,
+				59946179295966E900932ABA /* SF-Pro-Text-Semibold.otf in Resources */,
 				CF416C4729435E2A00A27462 /* TopCourseSectionView.xib in Resources */,
+				59946175295966E900932ABA /* SF-Pro-Text-Thin.otf in Resources */,
+				59946170295966E900932ABA /* SF-Pro-Text-BlackItalic.otf in Resources */,
+				599461372959665500932ABA /* Biko_Light Readme.rtf in Resources */,
 				CF416C4E294361B300A27462 /* TopCourseSectionCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
