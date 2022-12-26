@@ -57,7 +57,7 @@ class ChaptersViewController: UIViewController {
     var imageUrl = ""
     var storageShared = StorageManeger.shared
     var url = ""
-    var time = 0
+    var time = 12
 
     
     
@@ -180,25 +180,24 @@ class ChaptersViewController: UIViewController {
         let vc = storyboard?.instantiateViewController(identifier: "VideoPlayViewController") as? VideoPlayViewController
         vc?.url = url
         vc?.seconds = time
+        vc?.delegate = self
         if let viewController = vc{
             navigationController?.pushViewController(viewController, animated: true)
+        
         }
     
     }
     @IBAction func onClickWatchFromBeginning(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(identifier: "VideoPlayViewController") as? VideoPlayViewController
-        vc?.seconds = time
+        vc?.seconds = 0
         vc?.url = url
+        vc?.delegate = self
         if let viewController = vc{
             navigationController?.pushViewController(viewController, animated: true)
         }
     }
     @IBAction func onClickOverview(_ sender: Any) {
-        
-
         delegate?.switchVc()
-
-        
     }
     
     @IBAction func onClickChapter(_ sender: Any) {
@@ -217,7 +216,7 @@ class ChaptersViewController: UIViewController {
             shared.courseDetailsViewModelShared.joinCourse(token: shared.token, courseId: courseId){ data in
                 DispatchQueue.main.async { [self] in
                     joinCourseButton.isHidden = true
-                    tableView.reloadData()
+                    reloadData()
                 }
                 
             }fail: { error in
@@ -235,13 +234,27 @@ class ChaptersViewController: UIViewController {
             }
         } else
         {
-            self.okAlertMessagePopupforLogin(message: "Please Login")
+            self.okAlertLogin(message: "pleaseLogin")
         }
     }
     
     
     @IBAction func onClickDownload(_ sender: Any) {
         shared.chaptersDetailsViewModelShared.downloadCertificate(imageUrl: imageUrl )
+    }
+    
+    func reloadData() {
+        let loader = self.loader()
+        shared.chaptersDetailsViewModelShared.getChapters(token: shared.token, courseId: courseId) { result in
+            DispatchQueue.main.async {
+                self.stopLoader(loader: loader)
+                self.dataoflesson = result.lessonResponseList
+                self.tableView.reloadData()
+            }
+        } fail:  { fail in
+            self.stopLoader(loader: loader)
+            print("failure")
+        }
     }
     
 }
@@ -327,6 +340,12 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
         }
     }
 }
+extension ChaptersViewController : PauseVideoStatus {
+    func sendTime(second: Int) {
+        print("sdfghj",second)
+        self.time = second
+    }
+}
 
 extension ChaptersViewController: headerDelegate{
     func callHeader(idx: Int) {
@@ -340,22 +359,22 @@ extension ChaptersViewController: headerDelegate{
 
 extension ChaptersViewController: playVideo{
     func playVideo(at index: IndexPath) {
-        let vc = storyboard?.instantiateViewController(identifier: "VideoPlayViewController") as? VideoPlayViewController
         if let data = dataoflesson[index.section].lessonList[index.row] as? LessonList{
             
             if data.duration > 0{
                 
                 self.popUpBackView.isHidden = false
                 popUpLabel.text = "Your lesson paused at \(data.durationCompleted) secs Do you want to continue watching?"
+                
                 url = data.videoLink
-                time = data.durationCompleted
             }
             else{
+                let vc = storyboard?.instantiateViewController(identifier: "VideoPlayViewController") as? VideoPlayViewController
+                vc?.delegate = self
                 self.popUpBackView.isHidden = true
                 vc?.url = data.videoLink
-
+                vc?.seconds = 0
                 vc?.heading = "Chapter \(data.lessonNumber) - \(data.lessonName)"
-                time = data.durationCompleted
                 if let viewController = vc{
                     navigationController?.pushViewController(viewController, animated: true)
                 }
@@ -367,5 +386,20 @@ extension ChaptersViewController: playVideo{
         
     }
     
+    func okAlertLogin(message: String){
+        
+        let dialogMessage = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+            self.dismiss(animated: true, completion: nil)
+            
+            let vc = self.storyboard?.instantiateViewController(identifier: "LoginPageViewController") as? LoginPageViewController
+            vc?.isPresented = true
+            self.navigationController?.popToRootViewController(animated: true)
+         })
+        dialogMessage.addAction(ok)
+
+        self.present(dialogMessage, animated: true, completion: nil)
+        
+    }
 
 }
