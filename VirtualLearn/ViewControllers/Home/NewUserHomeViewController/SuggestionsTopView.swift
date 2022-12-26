@@ -65,7 +65,7 @@ class SuggestionsTopView: UIView {
 extension SuggestionsTopView : UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        print(bannerImage.count)
+        print("bannerCount",bannerImage.count)
         return bannerImage.count
     }
     
