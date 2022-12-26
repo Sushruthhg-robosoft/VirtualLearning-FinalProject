@@ -120,6 +120,7 @@ extension ChooseYourCourseViewController: UITableViewDelegate, UITableViewDataSo
         cell.couseName.text = tableData[indexPath.row].courseName
         cell.courseCategory.text = tableData[indexPath.row].categoryName
         cell.numberofChapters.text = "\(tableData[indexPath.row].totalNumberOfChapters) chapters"
+        cell.selectionStyle = .none
         let url = URL(string: tableData[indexPath.row].courseImage)
         let data = try? Data(contentsOf: url!)
         cell.courseImage.image = UIImage(data: data!)

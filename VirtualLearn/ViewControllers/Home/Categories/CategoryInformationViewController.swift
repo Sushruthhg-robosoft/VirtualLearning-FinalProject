@@ -155,6 +155,7 @@ extension CategoryInformationViewController: UICollectionViewDelegate, UICollect
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        
         switch collectionView {
         case courseToGetStartedCollectionView :
             guard let cell = courseToGetStartedCollectionView.dequeueReusableCell(withReuseIdentifier: "TopCourseSectionCell", for: indexPath) as? TopCourseSectionCollectionViewCell else {
@@ -168,6 +169,7 @@ extension CategoryInformationViewController: UICollectionViewDelegate, UICollect
             cell.courseImage.image = UIImage(data: data!)
             cell.chapterCount.text = "\(shared.categoriesViewModelShared.categoryDetails[indexPath.row].chapterCount) Chapters"
             cell.duration.text = "\(shared.categoriesViewModelShared.categoryDetails[indexPath.row].courseDuration) mins"
+            
             return cell
         case featureCourseCollectionView :
             guard let cell = courseToGetStartedCollectionView.dequeueReusableCell(withReuseIdentifier: "TopCourseSectionCell", for: indexPath) as? TopCourseSectionCollectionViewCell else {
