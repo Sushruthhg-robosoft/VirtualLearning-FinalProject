@@ -2648,7 +2648,7 @@
                                             <action selector="playPauseButtonClicked:" destination="7gW-3r-P8r" eventType="touchUpInside" id="N8Z-ZH-fzN"/>
                                         </connections>
                                     </button>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="lXO-zh-shW">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="lXO-zh-shW">
                                         <rect key="frame" x="61" y="48" width="283" height="31"/>
                                         <color key="thumbTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
