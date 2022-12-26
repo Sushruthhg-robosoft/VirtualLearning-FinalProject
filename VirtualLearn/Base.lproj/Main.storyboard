@@ -7636,6 +7636,9 @@
                                                         <rect key="frame" x="46" y="3" width="228" height="34"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="textFieldDIdChangeEditing:" destination="bpG-Zi-JXV" eventType="editingChanged" id="kZT-wx-YTx"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -7655,6 +7658,9 @@
                                                     <constraint firstAttribute="height" constant="40" id="SNu-fm-5jC"/>
                                                 </constraints>
                                                 <state key="normal" image="icn_filter_search"/>
+                                                <connections>
+                                                    <action selector="onClickFilter:" destination="bpG-Zi-JXV" eventType="touchUpInside" id="Nvg-Qv-TYX"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ygi-ia-lvH">
                                                 <rect key="frame" x="24" y="236" width="167" height="22"/>
