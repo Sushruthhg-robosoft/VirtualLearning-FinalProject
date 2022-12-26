@@ -8,7 +8,7 @@
 import UIKit
 
 class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionViewDelegate {
-
+    
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
     
     @IBOutlet var backView: UIView!
@@ -18,12 +18,12 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
     var mainshared = mainViewModel.mainShared
     @IBOutlet weak var ongoingColectionView: UICollectionView!
     
-
+    
     @IBOutlet weak var choiceOfUrCourseCollectionView: UICollectionView!
     
     @IBOutlet weak var topCourse1Label: UILabel!
     @IBOutlet weak var topCourse1CollectionView: UICollectionView!
-
+    
     @IBOutlet weak var topCourse1: TopCourseSectionView!
     @IBOutlet weak var topCourse2: TopCourseSectionView!
     
@@ -39,7 +39,7 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
     }
     
     required init?(coder: NSCoder) {
-
+        
         super.init(coder: coder)
         UINib(nibName: "ExistingUserBottomview", bundle: nil).instantiate(withOwner: self, options: nil)
         addSubview(backView)
@@ -50,7 +50,7 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
         popularBtn.notSelected()
         newestBtn.notSelected()
         initCollectionView()
-       // topCourse2.topCourseTitle.text = "Top courses in Design"
+        // topCourse2.topCourseTitle.text = "Top courses in Design"
         topCourse2.topCourseLabel.text = "Top courses in Design"
         
         mainshared.homeViewModelShared.getAllCourseDeatils(token: mainShared.token) { (data) in
@@ -75,8 +75,8 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
             DispatchQueue.main.async {
                 print("inside Existing Dispatch")
                 print(self.mainshared.categoriesViewModelShared.listofCategories.count)
-
-
+                
+                
                 self.categoriesCollectionView.reloadData()
             }
         } fail: {
@@ -124,7 +124,7 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
         
     }
     @IBAction func onClickSeeAll(_ sender: Any) {
-
+        
         shared.delegate?.onClickSeeAllCategories()
         
     }
@@ -160,7 +160,7 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
         }
     }
     
-   
+    
     
     @IBAction func onClickPopular(_ sender: Any) {
         self.popularCourse = true
@@ -230,7 +230,7 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
             
             print("Inside switch")
             return mainshared.categoriesViewModelShared.listofCategories.count
-
+            
         default:
             return 0
         }
@@ -254,7 +254,7 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
             print(mainshared.homeViewModelShared.allCourse[indexPath.row].courseId)
             //cell.courseId = mainShared.homeViewModelShared.allCourse[indexPath.row].courseId
             
-       
+            
             return cell
             
         case categoriesCollectionView :
@@ -264,19 +264,19 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
             }
             cell.categoryName.text = mainshared.categoriesViewModelShared.listofCategories[indexPath.row].categotyName
             cell.categoryId = mainshared.categoriesViewModelShared.listofCategories[indexPath.row].categoryId
-                let url = URL(string: mainshared.categoriesViewModelShared.listofCategories[indexPath.row].categoryImage)
-                let data = try? Data(contentsOf: url!)
-                cell.categoryImage.image = UIImage(data: data!)
-
+            let url = URL(string: mainshared.categoriesViewModelShared.listofCategories[indexPath.row].categoryImage)
+            let data = try? Data(contentsOf: url!)
+            cell.categoryImage.image = UIImage(data: data!)
+            
             return cell
         default:
             return UICollectionViewCell()
         }
-        }
-        
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-       
+        
         
         switch collectionView {
         case choiceOfUrCourseCollectionView :
@@ -287,14 +287,14 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
             let cell = self.categoriesCollectionView.cellForItem(at: indexPath) as? CategoriesCellCollectionViewCell
             shared.delegate?.onClickCategory(categoryName: (cell?.categoryName.text)!, categoryId: mainshared.categoriesViewModelShared.listofCategories[indexPath.row].categoryId)
             
-
+            
             
         default:
-           print("Default")
+            print("Default")
         }
         
     }
-
+    
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -316,5 +316,8 @@ class ExistingUserBottomview: UIView, UICollectionViewDataSource, UICollectionVi
             return 10
         }
     }
-   
+    
 }
+
+
+
