@@ -86,7 +86,7 @@ class ProfileViewController: UIViewController {
             print("failures")
             DispatchQueue.main.async {
                 if(error == "unauthorized") {
-                    self.okAlertMessagePopup(message: "your session is expired")
+                    self.logoutmessagepopup(message: "your session is expired")
                 }
                 else {
                     self.navigationController?.popViewController(animated: true)
@@ -124,6 +124,19 @@ class ProfileViewController: UIViewController {
         })
         dialogMessage.addAction(ok)
         
+        self.present(dialogMessage, animated: true, completion: nil)
+    }
+    
+    func logoutmessagepopup(message: String){
+        let storageManegr = StorageManeger.shared
+        let dialogMessage = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+            storageManegr.resetLoggedIn()
+            self.navigationController?.popToRootViewController(animated: true)
+            self.dismiss(animated: true, completion: nil)
+         })
+        dialogMessage.addAction(ok)
+
         self.present(dialogMessage, animated: true, completion: nil)
     }
 }

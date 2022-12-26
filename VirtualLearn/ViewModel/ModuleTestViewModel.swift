@@ -71,6 +71,7 @@ class ModuleTestViewModel {
         
         network.fetchData(request: request) { result in
             print("result",result)
+            completion()
         } failure: { (failerror) in
             print(failerror)
             if failerror as? Int  == 401{

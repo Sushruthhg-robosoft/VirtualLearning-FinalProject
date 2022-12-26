@@ -31,7 +31,7 @@ class CustomChapterTableViewCell: UITableViewCell {
     func setValuesLesson(data: LessonList) {
         chapterName.text = data.lessonName
         chapterNumber.text = "0\(String(data.lessonNumber))"
-        chapterDuration.text = "\(String(data.duration)) mins"
+        chapterDuration.text = "\(convertsectomins(seconds:data.duration)) mins"
         moduleTestView.isHidden = true
         chapterNumberView.isHidden = false
         chapterNumber.isHidden = false
@@ -46,11 +46,16 @@ class CustomChapterTableViewCell: UITableViewCell {
         chapterNumber.isHidden = true
         chapterName.text = data.assignmentName
         chapterNumber.text = "0\(data.assignmentId )"
-        chapterDuration.text = "\(data.testDuration )mins"
+        chapterDuration.text = "\(convertsectomins(seconds: data.testDuration))mins"
         videoPlayButton.isHidden = false
         assesmentProgress(data: data)
     }
-    
+    func convertsectomins(seconds: Int) -> String {
+        let minutes = seconds / 60
+        let second = seconds % 60
+        let minsAndSecond = String(minutes) + ":" + String(second)
+        return minsAndSecond
+    }
     func cellconstrints(joinedCourse: Bool) {
         if(joinedCourse) {
             cellLeadingConstraint.constant = 13

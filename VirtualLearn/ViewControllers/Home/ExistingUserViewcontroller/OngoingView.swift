@@ -70,14 +70,14 @@ class OngoingView: UIView, UICollectionViewDataSource, UICollectionViewDelegate 
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        shared.delegate?.onClickChoiceofYourCourse(courseId: mainShared.homeViewModelShared.allCourse[indexPath.row].courseId)
+        shared.delegate?.onClickChoiceofYourCourse(courseId: mainShared.homeViewModelShared.ongoingCourses[indexPath.row].courseId)
 
     }
 }
 
 extension OngoingView: CourseContinue {
     func continueCourse(indexPath: IndexPath) {
-        shared.delegate?.onClickChoiceofYourCourse(courseId: mainShared.homeViewModelShared.allCourse[indexPath.row].courseId)
+        shared.delegate?.onClickChoiceofYourCourse(courseId: mainShared.homeViewModelShared.ongoingCourses[indexPath.row].courseId)
     }
     
     
