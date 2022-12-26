@@ -332,9 +332,11 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
 }
 extension ChaptersViewController : PauseVideoStatus {
     func sendTime(second: Int) {
+        let loader = self.loader()
         print("sdfghj",second)
         self.time = second
         shared.chaptersDetailsViewModelShared.saveLesson(lessonId: lessonId, duration: String(second), token: shared.token) {
+            self.stopLoader(loader: loader)
             print("saved Successfully")
             DispatchQueue.main.async {
                 self.dataLoading()
