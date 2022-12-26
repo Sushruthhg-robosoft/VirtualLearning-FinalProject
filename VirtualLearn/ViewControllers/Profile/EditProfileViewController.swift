@@ -36,7 +36,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     
     
-    @IBOutlet weak var saveButton: UIButton!
+    
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var nameView: UIView!
     @IBOutlet weak var userNameView: UIView!
@@ -101,6 +101,13 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         dropDownView.layer.cornerRadius = 5
         dropDownView.layer.borderWidth = 1
         dropDownView.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        checkAllField()
+        
+        occupationLabel.isHidden = true
+        genderLabel.isHidden = true
+        dateOfBirth.isHidden = true
+        twitterLabel.isHidden = true
+        facebookLabel.isHidden = true
         
     }
     
@@ -171,7 +178,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         nameView.backgroundColor = #colorLiteral(red: 0.001148699783, green: 0.2356859446, blue: 0.4366979599, alpha: 1)
         nameLabel.isHidden = false
         nameField.placeholder = ""
-        nameLabel.isHidden = true
+        
         
     }
     
@@ -180,7 +187,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         userNameView.backgroundColor = #colorLiteral(red: 0.01568627451, green: 0.1725490196, blue: 0.3607843137, alpha: 1)
         userNameLabel.isHidden = false
         userNameField.placeholder = ""
-        userNameLabel.isHidden = true
+        
         
     }
     
@@ -189,21 +196,32 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         emailView.backgroundColor = #colorLiteral(red: 0.001148699783, green: 0.2356859446, blue: 0.4366979599, alpha: 1)
         emailLabel.isHidden = false
         emailField.placeholder = ""
-        emailLabel.isHidden = true
+        emailId = !isValidEmail(email: emailField.text!)
+        if emailId {
+            okAlertMessagePopup(message: "Enter Valid Email")
+            saveLoadingButton.isEnabled = false
+            
+        }
+        
     }
     
     @IBAction func mobileNoEdit(_ sender: Any) {
         mobileNoView.backgroundColor = #colorLiteral(red: 0.001148699783, green: 0.2356859446, blue: 0.4366979599, alpha: 1)
         mobileNoLabel.isHidden = false
         mobileNoField.placeholder = ""
-        mobileNoLabel.isHidden = true
+        
         
     }
     
     @IBAction func occupationEdit(_ sender: Any) {
-        occupationView.backgroundColor = #colorLiteral(red: 0.001148699783, green: 0.2356859446, blue: 0.4366979599, alpha: 1)
         occupationLabel.isHidden = false
+        occupationView.backgroundColor = #colorLiteral(red: 0.001148699783, green: 0.2356859446, blue: 0.4366979599, alpha: 1)
+        occupationLabel.text = "Occupation"
         occupationField.placeholder = ""
+        
+    }
+    @IBAction func occupationEndEditing(_ sender: Any) {
+        occupationField.placeholder = "Occupation"
         occupationLabel.isHidden = true
     }
     
@@ -211,30 +229,47 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         genderView.backgroundColor = #colorLiteral(red: 0.001148699783, green: 0.2356859446, blue: 0.4366979599, alpha: 1)
         genderLabel.isHidden = false
         genderField.placeholder = ""
-        genderLabel.isHidden = true
+       
     }
     
+    @IBAction func genderEndEditing(_ sender: Any) {
+        genderField.placeholder = "Gender"
+        genderLabel.isHidden = true
+    }
     @IBAction func dateOfBirthEdit(_ sender: Any) {
         dateOfBirthView.backgroundColor = #colorLiteral(red: 0.001148699783, green: 0.2356859446, blue: 0.4366979599, alpha: 1)
         dateOfBirth.isHidden = false
         dateOfBirthField.placeholder = ""
-        dateOfBirth.isHidden = true
+        
     }
     
+    @IBAction func dataOfBirthDidEndEditing(_ sender: Any) {
+        
+        dateOfBirthField.placeholder = "Date Of Birth (YYYY-MM-DD)"
+        dateOfBirth.isHidden = true
+    }
     @IBAction func twitterFieldEdit(_ sender: Any) {
         twitterView.backgroundColor = #colorLiteral(red: 0.001148699783, green: 0.2356859446, blue: 0.4366979599, alpha: 1)
         twitterLabel.isHidden = false
         twitterField.placeholder = ""
-        twitterLabel.isHidden = true
+        
     }
     
+    @IBAction func twitterDidEndEditing(_ sender: Any) {
+        twitterField.placeholder = "Twitter link"
+        twitterLabel.isHidden = true
+    }
     @IBAction func facebookFieldEdit(_ sender: Any) {
         facebookView.backgroundColor = #colorLiteral(red: 0.001148699783, green: 0.2356859446, blue: 0.4366979599, alpha: 1)
         facebookLabel.isHidden = false
         facebookField.placeholder = ""
-        facebookLabel.isHidden = true
+        
     }
     
+    @IBAction func faceBookDidEndEditing(_ sender: Any) {
+        facebookField.placeholder = "Facebook link"
+        facebookLabel.isHidden = true
+    }
     
     @IBAction func onClickDropdown(_ sender: Any) {
         
@@ -300,12 +335,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func emailIdEditing(_ sender: Any) {
-        emailId = !isValidEmail(email: emailField.text!)
-        if emailId {
-            okAlertMessagePopup(message: "Enter Valid Email")
-            saveLoadingButton.isEnabled = false
-            
-        }
+        
     }
     
     
@@ -330,6 +360,9 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         if emailId {
             print(emailId)
             checkAllField()
+        }
+        else{
+            saveLoadingButton.isEnabled = false
         }
         
         //        guard emailField != nil else {
@@ -372,7 +405,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     func checkAllField() {
         print("email",emailId)
-        if (nameField.text != "" && userNameField.text != "" && emailId && mobileNoField.text != "" && occupationField.text != "" && genderField.text != "" && dateOfBirthField.text != "")
+        
+        if (nameField.text != "" && userNameField.text != "" && emailField.text != "" && mobileNoField.text != "" && occupationField.text != "" && genderField.text != "" && dateOfBirthField.text != "")
         {
             saveLoadingButton.isEnabled = true
             saveLoadingButton.alpha = 1
