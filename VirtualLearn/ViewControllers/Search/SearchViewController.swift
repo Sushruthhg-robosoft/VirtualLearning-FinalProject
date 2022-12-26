@@ -33,6 +33,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     
     
     override func viewDidLoad() {
+        
+        initializeHideKeyboard()
         let loader = self.loader()
 
         searchCategoryCollectionView.delegate = self
@@ -269,4 +271,23 @@ extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataS
         navigationController?.pushViewController(vc, animated: true)
     }
     
+}
+
+
+extension SearchViewController {
+    
+    func initializeHideKeyboard(){
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissMyKeyboard))
+        
+       
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissMyKeyboard(){
+        
+        view.endEditing(true)
+    }
 }
