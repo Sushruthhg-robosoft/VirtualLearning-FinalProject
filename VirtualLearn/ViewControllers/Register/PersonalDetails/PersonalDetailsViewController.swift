@@ -271,7 +271,7 @@ class PersonalDetailsViewController: UIViewController, UITextFieldDelegate {
                 self.stopLoader(loader: loader)
                 self.storagemaner.setLoggedIn()
                 let vc = self.storyboard?.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
-                
+                vc.mainShared.token = data
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         } fail: {

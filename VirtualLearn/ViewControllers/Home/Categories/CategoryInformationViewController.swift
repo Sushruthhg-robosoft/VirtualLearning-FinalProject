@@ -8,7 +8,7 @@
 import UIKit
 
 class CategoryInformationViewController: UIViewController{
-
+    
     @IBOutlet weak var allCourseTableView: UITableView!
     @IBOutlet weak var courseToGetStartedCollectionView: UICollectionView!
     @IBOutlet weak var featureCourseCollectionView: UICollectionView!
@@ -26,7 +26,7 @@ class CategoryInformationViewController: UIViewController{
         
         initCollectionViewForTop(collectionView: courseToGetStartedCollectionView)
         initCollectionViewForTop(collectionView: featureCourseCollectionView)
-//        initCollectionViewForsubCategory(collectionView:subCategoryCollectionView)
+        //        initCollectionViewForsubCategory(collectionView:subCategoryCollectionView)
         
         CategoryLabel.text = categoryName
         let loader = self.loader()
@@ -43,19 +43,36 @@ class CategoryInformationViewController: UIViewController{
                 } fail: {
                     
                 }
-
+                
             }
         } fail: {
             self.stopLoader(loader: loader)
         }
         let loader2 = self.loader()
-        shared.homeViewModelShared.getNewestCourseDetails(token: shared.token) { (data) in
+        //        shared.homeViewModelShared.getNewestCourseDetails(token: shared.token) { (data) in
+        //            DispatchQueue.main.async {
+        //                self.stopLoader(loader: loader2)
+        //                self.featuredCourse = data
+        //                self.featureCourseCollectionView.reloadData()
+        //            }
+        //        } fail: {error in
+        //            DispatchQueue.main.async {
+        //                self.stopLoader(loader: loader2)
+        //                if(error == "unauthorized") {
+        //
+        //                }
+        //                else {
+        //
+        //                }
+        //            }
+        //        }
+        shared.categoriesViewModelShared.getFeaturedCourseDetails(categoryId: categoryId, token: shared.token) { (data) in
             DispatchQueue.main.async {
                 self.stopLoader(loader: loader2)
                 self.featuredCourse = data
                 self.featureCourseCollectionView.reloadData()
             }
-        } fail: {error in
+        } fail: { (error) in
             DispatchQueue.main.async {
                 self.stopLoader(loader: loader2)
                 if(error == "unauthorized") {
@@ -66,6 +83,7 @@ class CategoryInformationViewController: UIViewController{
                 }
             }
         }
+        
         let loader3 = self.loader()
         shared.homeViewModelShared.getPopularCourseDetails(token: shared.token) { (data) in
             DispatchQueue.main.async {
@@ -85,11 +103,11 @@ class CategoryInformationViewController: UIViewController{
             }
         }
         
-      
-
-       
         
-    
+        
+        
+        
+        
     }
     
     @IBAction func onClickBack(_ sender: Any) {
@@ -110,12 +128,12 @@ class CategoryInformationViewController: UIViewController{
         collectionView.dataSource = self
         collectionView.delegate = self
     }
-//    private func initCollectionViewForsubCategory(collectionView: UICollectionView) {
-//        let nib = UINib(nibName: "SubCategoriesCollectionViewCell", bundle: nil)
-//        collectionView.register(nib, forCellWithReuseIdentifier: "subCategoriesCell")
-//        collectionView.dataSource = self
-//        collectionView.delegate = self
-//    }
+    //    private func initCollectionViewForsubCategory(collectionView: UICollectionView) {
+    //        let nib = UINib(nibName: "SubCategoriesCollectionViewCell", bundle: nil)
+    //        collectionView.register(nib, forCellWithReuseIdentifier: "subCategoriesCell")
+    //        collectionView.dataSource = self
+    //        collectionView.delegate = self
+    //    }
     
     
 }
@@ -177,12 +195,28 @@ extension CategoryInformationViewController: UICollectionViewDelegate, UICollect
         
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = storyboard?.instantiateViewController(identifier: "CategoryInformationViewController") as! CategoryInformationViewController
-        vc.categoryId = shared.homeViewModelShared.allCourse[indexPath.row].courseId
+        switch collectionView{
+        
+        case courseToGetStartedCollectionView:
+            let vc = storyboard?.instantiateViewController(identifier: "CourseDetailsViewController") as! CourseDetailsViewController
+            vc.courseId = shared.categoriesViewModelShared.categoryDetails[indexPath.row].courseId
+            
+            navigationController?.pushViewController(vc, animated: true)
+        
+        case featureCourseCollectionView:
+        let vc = storyboard?.instantiateViewController(identifier: "CourseDetailsViewController") as! CourseDetailsViewController
+            vc.courseId = self.featuredCourse[indexPath.row].courseId
         navigationController?.pushViewController(vc, animated: true)
+            
+        default:
+            let vc = storyboard?.instantiateViewController(identifier: "CourseDetailsViewController") as! CourseDetailsViewController
+                vc.courseId = "1"
+        }
+
+        
     }
     
-  
+    
     
 }
 
@@ -205,8 +239,8 @@ extension CategoryInformationViewController: UITableViewDataSource, UITableViewD
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = storyboard?.instantiateViewController(identifier: "CategoryInformationViewController") as! CategoryInformationViewController
-        vc.categoryId = shared.homeViewModelShared.allCourse[indexPath.row].courseId
+        let vc = storyboard?.instantiateViewController(identifier: "CourseDetailsViewController") as! CourseDetailsViewController
+        vc.courseId = shared.homeViewModelShared.allCourse[indexPath.row].courseId
         navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -250,3 +284,9 @@ extension CategoryInformationViewController: UITableViewDataSource, UITableViewD
 //    }
 
 //}
+
+
+    
+    
+    
+
