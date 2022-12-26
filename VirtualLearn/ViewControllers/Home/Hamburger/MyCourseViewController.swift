@@ -187,6 +187,6 @@ extension MyCourseViewController: gotoVideoOrCertificate{
     }
     
     
-    
+    }
     
 }
