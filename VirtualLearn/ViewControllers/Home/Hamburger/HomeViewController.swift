@@ -61,7 +61,7 @@ class HomeViewController: UIViewController {
 //        } fail: {error in
 //        }
         
-        NewUserView.isHidden = false
+        //   NewUserView.isHidden = false
         
         let loader = self.loader()
         mainShared.homeViewModelShared.getPersonalDetailsStatus(token: mainShared.token) { (data) in
@@ -71,7 +71,7 @@ class HomeViewController: UIViewController {
                     self.popUpView.isHidden = true
                     let loader1 = self.loader()
                     self.NewUserView.topView.bannerImage.removeAll()
-                    print(self.NewUserView.topView.bannerImage.count)
+                  
                     self.mainShared.homeViewModelShared.getBanners(token: self.mainShared.token) { (data) in
                         DispatchQueue.main.async {
                            
@@ -85,6 +85,19 @@ class HomeViewController: UIViewController {
                 }
                 else{
                     self.popUpView.isHidden = false
+                    let loader1 = self.loader()
+                    self.NewUserView.topView.bannerImage.removeAll()
+                   
+                    self.mainShared.homeViewModelShared.getBanners(token: self.mainShared.token) { (data) in
+                        DispatchQueue.main.async {
+                           
+                            self.NewUserView.topView.bannerImage = data
+                            self.stopLoader(loader: loader1)
+                            self.NewUserView.topView.suggestionsCollectionView.reloadData()
+
+                        }
+                    } fail: {error in
+                    }
                 }
             }
             
@@ -97,6 +110,7 @@ class HomeViewController: UIViewController {
                 }
             }
         }
+        NewUserView.isHidden = false
 
 
 

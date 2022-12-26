@@ -65,6 +65,7 @@ class OngoingView: UIView, UICollectionViewDataSource, UICollectionViewDelegate 
         let data = try? Data(contentsOf: url!)
         cell.ongoingImage.image = UIImage(data: data!)
         cell.Index = indexPath
+        cell.delegate = self
        
         return cell
     }
