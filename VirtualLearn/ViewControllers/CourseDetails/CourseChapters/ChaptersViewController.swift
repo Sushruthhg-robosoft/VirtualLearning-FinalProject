@@ -40,6 +40,7 @@ class ChaptersViewController: UIViewController {
     @IBOutlet weak var sourseContentDescription: UILabel!
     @IBOutlet weak var joinCourseButton: UIButton!
     
+    @IBOutlet weak var contunuationLabel: UILabel!
     @IBOutlet weak var certficateView: UIView!
     @IBOutlet weak var certificateViewHeight: NSLayoutConstraint!
     @IBOutlet weak var certificateGrade: UILabel!
