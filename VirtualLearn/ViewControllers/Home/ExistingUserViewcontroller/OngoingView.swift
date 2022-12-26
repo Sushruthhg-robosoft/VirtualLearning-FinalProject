@@ -14,6 +14,8 @@ class OngoingView: UIView, UICollectionViewDataSource, UICollectionViewDelegate 
     
     @IBOutlet weak var ongoingCollectionView: UICollectionView!
     var mainShared = mainViewModel.mainShared
+    var shared = ViewModel.shared
+
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -64,5 +66,9 @@ class OngoingView: UIView, UICollectionViewDataSource, UICollectionViewDelegate 
         cell.ongoingImage.image = UIImage(data: data!)
        
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        shared.delegate?.onClickChoiceofYourCourse(courseId: mainShared.homeViewModelShared.allCourse[indexPath.row].courseId)
+
     }
 }
