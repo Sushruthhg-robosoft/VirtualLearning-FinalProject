@@ -3991,8 +3991,8 @@
                         <outlet property="twitterField" destination="pGL-EK-OGq" id="Hdg-Sv-hwj"/>
                         <outlet property="twitterLabel" destination="H6J-TA-ZiZ" id="dii-RB-tJf"/>
                         <outlet property="twitterView" destination="hCF-Lt-34J" id="O3g-6v-mx0"/>
+                        <outlet property="userNameField" destination="0Lv-f1-hO0" id="9P9-bA-sC0"/>
                         <outlet property="userNameLabel" destination="Mqb-Pa-uW1" id="fZb-se-TdO"/>
-                        <outlet property="userNameTextField" destination="0Lv-f1-hO0" id="agJ-fj-B9Q"/>
                         <outlet property="userNameView" destination="5OM-7M-YMo" id="TRo-RK-Oz1"/>
                     </connections>
                 </viewController>
