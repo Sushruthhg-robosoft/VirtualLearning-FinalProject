@@ -15,6 +15,8 @@ class NewAccountViewController: UIViewController {
     let verificationOTP = VerificationOTP()
     override func viewDidLoad() {
         super.viewDidLoad()
+        initializeHideKeyboard()
+        
         if(view.bounds.height > 500) {
             
             viewHeight.constant = view.bounds.height - 50
@@ -60,3 +62,22 @@ class NewAccountViewController: UIViewController {
     }
     
 }
+
+
+extension NewAccountViewController {
+func initializeHideKeyboard(){
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissMyKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissMyKeyboard(){
+        view.endEditing(true)
+    }
+    
+
+
+}
+
