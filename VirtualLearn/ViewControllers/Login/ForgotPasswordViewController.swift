@@ -17,6 +17,8 @@ class ForgotPasswordViewController: UIViewController {
     let viewmodel = LoginViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        initializeHideKeyboard()
 
         virificationIcon.isHidden = true
         // Do any additional setup after loading the view.
@@ -73,6 +75,22 @@ class ForgotPasswordViewController: UIViewController {
             virificationIcon.image = #imageLiteral(resourceName: "icn_textfield_wrong")
         }
     }
+}
+
+    extension ForgotPasswordViewController {
+    func initializeHideKeyboard(){
+            
+            let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+                target: self,
+                action: #selector(dismissMyKeyboard))
+            view.addGestureRecognizer(tap)
+        }
+        
+        @objc func dismissMyKeyboard(){
+            view.endEditing(true)
+        }
+        
     
     
 }
+

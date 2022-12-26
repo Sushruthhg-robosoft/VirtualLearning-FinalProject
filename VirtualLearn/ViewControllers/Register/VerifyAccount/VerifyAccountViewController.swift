@@ -32,6 +32,9 @@ class VerifyAccountViewController: UIViewController, UITextFieldDelegate {
     let verificationOTP = VerificationOTP()
     
     override func viewDidLoad() {
+        
+        initializeHideKeyboard()
+        
         invalidVerificationView.isHidden = true
         firstTextField.removeBorder()
         secondTextField.removeBorder()
@@ -146,21 +149,15 @@ class VerifyAccountViewController: UIViewController, UITextFieldDelegate {
     
     @objc func textFieldDidChange(textField: UITextField){
            guard let text = textField.text else {
-
                return
-
            }
 
            print(text)
-
-
-
            if text.count == 1 {
 
                switch textField
 
                {
-
                case firstTextField:
 
                    secondTextField.becomeFirstResponder()
@@ -178,17 +175,26 @@ class VerifyAccountViewController: UIViewController, UITextFieldDelegate {
                    fourthTextField.resignFirstResponder()
 
                default:
-
                    break
-
                }
-
            }else{
-
-
-
            }
-
        }
+}
+extension VerifyAccountViewController {
+func initializeHideKeyboard(){
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissMyKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissMyKeyboard(){
+        view.endEditing(true)
+    }
+    
+
+
 }
 

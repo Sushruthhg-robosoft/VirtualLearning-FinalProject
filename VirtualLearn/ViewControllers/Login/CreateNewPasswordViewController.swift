@@ -18,6 +18,9 @@ class CreateNewPasswordViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        initializeHideKeyboard()
+        
         passwordView.isHidden = true
         passwordView.layer.cornerRadius = 10
         passwordView.layer.borderWidth = 1
@@ -90,5 +93,22 @@ class CreateNewPasswordViewController: UIViewController {
         let predicate = NSPredicate(format: "SELF MATCHES %@", regular)
         return predicate.evaluate(with: value)
         
+    }
+}
+
+extension CreateNewPasswordViewController {
+    func initializeHideKeyboard(){
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissMyKeyboard))
+        
+       
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissMyKeyboard(){
+        
+        view.endEditing(true)
     }
 }

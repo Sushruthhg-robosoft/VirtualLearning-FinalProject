@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginPageViewController: UIViewController {
+class LoginPageViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
@@ -23,6 +23,11 @@ class LoginPageViewController: UIViewController {
     let storageManeger = StorageManeger.shared
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        userNameTextField.delegate = self
+        passwordTextfield.delegate = self
+        
+        initializeHideKeyboard()
         
         loginButton.isEnabled = false
         loginButton.alpha = 0.5
@@ -136,4 +141,31 @@ class LoginPageViewController: UIViewController {
         
         navigationController?.pushViewController(vc, animated: true)
     }
+}
+
+func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == userNameTextField {
+            passwordTextfield.becomeFirstResponder()
+        
+        return true
+    }
+}
+
+extension LoginPageViewController {
+    
+    func initializeHideKeyboard(){
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissMyKeyboard))
+        
+       
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissMyKeyboard(){
+        
+        view.endEditing(true)
+    }
+    
 }
