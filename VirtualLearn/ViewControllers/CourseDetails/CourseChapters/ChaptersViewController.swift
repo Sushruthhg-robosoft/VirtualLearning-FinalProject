@@ -53,6 +53,7 @@ class ChaptersViewController: UIViewController {
     @IBOutlet weak var popUpBackView: UIView!
     var delegate : switchVc?
     var courseId = ""
+    var lessonId = ""
     var dataoflesson = [LessonResponseList]()
     var imageUrl = ""
     var storageShared = StorageManeger.shared
@@ -94,7 +95,7 @@ class ChaptersViewController: UIViewController {
         popUpBackView.isHidden = true
         super.viewDidLoad()
         print("123456789", courseId)
-        
+        dataLoading()
         joinedLeftView.layer.cornerRadius = 5
         joinedRightView.layer.cornerRadius = 5
        
@@ -116,9 +117,78 @@ class ChaptersViewController: UIViewController {
  
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    @IBAction func onClickContinueWatching(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(identifier: "VideoPlayViewController") as? VideoPlayViewController
+        vc?.url = url
+        vc?.seconds = time
+        vc?.delegate = self
+        if let viewController = vc{
+            navigationController?.pushViewController(viewController, animated: true)
+        
+        }
+    
+    }
+    @IBAction func onClickWatchFromBeginning(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(identifier: "VideoPlayViewController") as? VideoPlayViewController
+        vc?.seconds = 0
+        vc?.url = url
+        vc?.delegate = self
+        if let viewController = vc{
+            navigationController?.pushViewController(viewController, animated: true)
+        }
+    }
+    @IBAction func onClickOverview(_ sender: Any) {
+        delegate?.switchVc()
+    }
+    
+    @IBAction func onClickChapter(_ sender: Any) {
+        
+        
+    }
+    
+    
+    @IBAction func onClickClose(_ sender: Any) {
+       
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func joinCourseClicked(_ sender: Any) {
+        if storageShared.isLoggedIn() {
+            shared.courseDetailsViewModelShared.joinCourse(token: shared.token, courseId: courseId){ data in
+                DispatchQueue.main.async { [self] in
+                    joinCourseButton.isHidden = true
+                    dataLoading()
+                }
+                
+            }fail: { error in
+                print("failures")
+                DispatchQueue.main.async {
+                    if(error == "unauthorized") {
+                        self.storageShared.resetLoggedIn()
+                        self.okAlertMessagePopupforLoginforExsistingUser(message: "Your session is Expired")
+                        
+                    }
+                    else {
+                        self.okAlertMessagePopup(message: "Failed to join course")
+                    }
+                }
+            }
+        } else
+        {
+            self.okAlertLogin(message: "pleaseLogin")
+        }
+    }
+    
+    
+    @IBAction func onClickDownload(_ sender: Any) {
+        shared.chaptersDetailsViewModelShared.downloadCertificate(imageUrl: imageUrl )
+    }
+    
+    func dataLoading() {
         let loader = self.loader()
         popUpBackView.isHidden = true
+       
+        print("view did appear ")
         dataoflesson.removeAll()
         shared.chaptersDetailsViewModelShared.getChapters(token: shared.token, courseId: courseId) { result in
            
@@ -130,7 +200,6 @@ class ChaptersViewController: UIViewController {
                     self.joinCourseButton.isHidden = false
                 }
                 
-               
                 let chapter = String(result.courseContentResponse.chapterCount) + "Chapter | "
                 let lesson = String(result.courseContentResponse.lessonCount) + "Lessons | "
                 let assesment = String(result.courseContentResponse.moduleTest) + "Assesment Test |"
@@ -176,87 +245,6 @@ class ChaptersViewController: UIViewController {
         }
     }
     
-    @IBAction func onClickContinueWatching(_ sender: Any) {
-        let vc = storyboard?.instantiateViewController(identifier: "VideoPlayViewController") as? VideoPlayViewController
-        vc?.url = url
-        vc?.seconds = time
-        vc?.delegate = self
-        if let viewController = vc{
-            navigationController?.pushViewController(viewController, animated: true)
-        
-        }
-    
-    }
-    @IBAction func onClickWatchFromBeginning(_ sender: Any) {
-        let vc = storyboard?.instantiateViewController(identifier: "VideoPlayViewController") as? VideoPlayViewController
-        vc?.seconds = 0
-        vc?.url = url
-        vc?.delegate = self
-        if let viewController = vc{
-            navigationController?.pushViewController(viewController, animated: true)
-        }
-    }
-    @IBAction func onClickOverview(_ sender: Any) {
-        delegate?.switchVc()
-    }
-    
-    @IBAction func onClickChapter(_ sender: Any) {
-        
-        
-    }
-    
-    
-    @IBAction func onClickClose(_ sender: Any) {
-       
-        navigationController?.popViewController(animated: true)
-    }
-    
-    @IBAction func joinCourseClicked(_ sender: Any) {
-        if storageShared.isLoggedIn() {
-            shared.courseDetailsViewModelShared.joinCourse(token: shared.token, courseId: courseId){ data in
-                DispatchQueue.main.async { [self] in
-                    joinCourseButton.isHidden = true
-                    reloadData()
-                }
-                
-            }fail: { error in
-                print("failures")
-                DispatchQueue.main.async {
-                    if(error == "unauthorized") {
-                        self.storageShared.resetLoggedIn()
-                        self.okAlertMessagePopupforLoginforExsistingUser(message: "Your session is Expired")
-                        
-                    }
-                    else {
-                        self.okAlertMessagePopup(message: "Failed to join course")
-                    }
-                }
-            }
-        } else
-        {
-            self.okAlertLogin(message: "pleaseLogin")
-        }
-    }
-    
-    
-    @IBAction func onClickDownload(_ sender: Any) {
-        shared.chaptersDetailsViewModelShared.downloadCertificate(imageUrl: imageUrl )
-    }
-    
-    func reloadData() {
-        let loader = self.loader()
-        shared.chaptersDetailsViewModelShared.getChapters(token: shared.token, courseId: courseId) { result in
-            DispatchQueue.main.async {
-                self.stopLoader(loader: loader)
-                self.dataoflesson = result.lessonResponseList
-                self.tableView.reloadData()
-            }
-        } fail:  { fail in
-            self.stopLoader(loader: loader)
-            print("failure")
-        }
-    }
-    
 }
 
 extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
@@ -297,7 +285,6 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
         
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderView") as! HeaderView
         headerView.title.text = "Chapter \(dataoflesson[section].chapterNumber) - \(dataoflesson[section].chapterName)"
-        print("aggsjmgd",section)
         if(dataoflesson[section].chapterCompleted) {
             headerView.title.textColor = UIColor(red: 30/255, green: 171/255, blue: 12/255, alpha: 1)
         }
@@ -344,6 +331,13 @@ extension ChaptersViewController : PauseVideoStatus {
     func sendTime(second: Int) {
         print("sdfghj",second)
         self.time = second
+        shared.chaptersDetailsViewModelShared.saveLesson(lessonId: lessonId, duration: String(second), token: shared.token) {
+            print("saved Successfully")
+        } fail: { error in
+            print("error to load data")
+        }
+        
+        dataLoading()
     }
 }
 
@@ -360,8 +354,8 @@ extension ChaptersViewController: headerDelegate{
 extension ChaptersViewController: playVideo{
     func playVideo(at index: IndexPath) {
         if let data = dataoflesson[index.section].lessonList[index.row] as? LessonList{
-            
-            if data.duration > 0{
+            lessonId = String(data.lessonId)
+            if data.durationCompleted > 0{
                 
                 self.popUpBackView.isHidden = false
                 popUpLabel.text = "Your lesson paused at \(data.durationCompleted) secs Do you want to continue watching?"

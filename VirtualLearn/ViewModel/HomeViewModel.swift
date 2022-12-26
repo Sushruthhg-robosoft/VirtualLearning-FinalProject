@@ -134,8 +134,6 @@ class HomeViewModel {
         
         networkManger.fetchDataJson(request: request) { (data) in
             guard let apiData = data as? [Any] else{print("myCourseViewModel apiData array error1");return fail("data error")}
-            //print(apiData)
-            
             for allCourseData in apiData{
                 
                 guard let allData = allCourseData as? [String: Any] else{print("myCourseViewModel apiData array error2");return fail("data error")}

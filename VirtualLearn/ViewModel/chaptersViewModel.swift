@@ -131,6 +131,21 @@ class ChaptersViewModel {
             }
 
         }
+    func saveLesson(lessonId: String, duration: String, token: String, completion: @escaping() -> Void, fail: @escaping (String) -> Void) {
+        guard let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/lesson?lessonId=\(lessonId)&duration=\(duration)") else{ return fail("url Error")}
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        networkManeger.fetchData(request: request) { result in
+            print(result)
+            completion()
+        } failure: { error in
+            print(error)
+            fail("Cant save data")
+        }
+
+    }
     
     func downloadCertificate(imageUrl: String) {
         guard let imageURL = URL(string: imageUrl) else { return }
