@@ -28,7 +28,9 @@ class VideoPlayViewController: UIViewController {
         
         
        
-
+//        let time: CMTime = CMTimeMakeWithSeconds(10, preferredTimescale: 1)
+//        player.seek(to: time)
+        //player.play()
         playVideo()
         timeDisplay()
         
@@ -39,6 +41,9 @@ class VideoPlayViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         
+//        let time: CMTime = CMTimeMakeWithSeconds(10, preferredTimescale: 1)
+//        player.seek(to: time)
+        playVideo()
     }
     func seek(to seconds: Int) {
         let targetTime:CMTime = CMTimeMake(value: Int64(seconds), timescale: 1)
@@ -47,6 +52,7 @@ class VideoPlayViewController: UIViewController {
     func playVideo() {
         
         let videoURL = URL(string: url!)
+       
         player = AVPlayer(url: videoURL!)
         playerLayer = AVPlayerLayer(player: player)
         
@@ -56,6 +62,7 @@ class VideoPlayViewController: UIViewController {
         self.videoPlayView.layer.addSublayer(playerLayer)
 //        let time = CMTime(seconds: 5, preferredTimescale: 1)
 //        player.seek(to: time)
+        
         
         player.play()
     }
@@ -81,6 +88,31 @@ class VideoPlayViewController: UIViewController {
             isPlaying = true
         }
     }
+    
+    private func skipBy(percentage: Float64) {
+
+        guard let durationTime = player.currentItem?.duration else { return }
+
+        // Percentage of duration
+        let percentageTime = CMTimeMultiplyByFloat64(durationTime, multiplier: percentage)
+
+        guard percentageTime.isValid && percentageTime.isNumeric else { return }
+
+        // Percentage plust current time
+        var targetTime = player.currentTime() + percentageTime
+        targetTime = targetTime.convertScale(durationTime.timescale, method: .default)
+
+        // Sanity checks
+        guard targetTime.isValid && targetTime.isNumeric else { return }
+
+        if targetTime > durationTime {
+            targetTime = durationTime // seek to end
+        }
+
+        player.seek(to: targetTime)
+    }
+    
+    
     @IBAction func timeSliderChanged(_ sender: UISlider) {
         player.seek(to: CMTimeMake(value: Int64(sender.value*1000), timescale: 1000))
     }
@@ -97,7 +129,7 @@ class VideoPlayViewController: UIViewController {
                 
                 self?.timeSlider.maximumValue = Float(currentTime.duration.seconds)
                 self?.timeSlider.minimumValue = 0
-                self?.timeSlider.value = Float(currentTime.currentTime().seconds)
+                self?.timeSlider.value = Float(currentTime.currentTime().seconds )
             })
         }
      
