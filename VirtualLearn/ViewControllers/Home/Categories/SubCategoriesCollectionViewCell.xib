@@ -11,20 +11,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" reuseIdentifier="subCategoriesCell" id="gTV-IL-0wX" customClass="SubCategoriesCollectionViewCell" customModule="VirtualLearn" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="148" height="30"/>
+            <rect key="frame" x="0.0" y="0.0" width="79" height="20"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="148" height="30"/>
+                <rect key="frame" x="0.0" y="0.0" width="79" height="20"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KDJ-mF-QYV">
-                        <rect key="frame" x="0.0" y="0.0" width="148" height="30"/>
+                        <rect key="frame" x="0.0" y="0.0" width="79" height="20"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6jH-R0-Xae">
-                                <rect key="frame" x="1" y="1" width="146" height="28"/>
+                                <rect key="frame" x="1" y="1" width="77" height="18"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhe-4F-chQ">
-                                        <rect key="frame" x="8" y="6.5" width="130" height="15"/>
+                                        <rect key="frame" x="8" y="1.5" width="61" height="15"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -66,11 +66,11 @@
                 <constraint firstAttribute="trailing" secondItem="KDJ-mF-QYV" secondAttribute="trailing" id="hVH-1V-C1T"/>
                 <constraint firstAttribute="bottom" secondItem="KDJ-mF-QYV" secondAttribute="bottom" id="r8u-k5-h3Z"/>
             </constraints>
-            <size key="customSize" width="145" height="18"/>
+            <size key="customSize" width="96" height="18"/>
             <connections>
                 <outlet property="subCategory" destination="fhe-4F-chQ" id="OSY-OM-4qx"/>
             </connections>
-            <point key="canvasLocation" x="208.69565217391306" y="81.026785714285708"/>
+            <point key="canvasLocation" x="173.18840579710147" y="81.026785714285708"/>
         </collectionViewCell>
     </objects>
     <resources>

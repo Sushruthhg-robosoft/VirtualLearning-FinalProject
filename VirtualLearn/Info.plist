@@ -64,9 +64,17 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Proxima Nova Extrabold.otf</string>
 		<string>ProximaNova-Regular.otf</string>
 		<string>Proxima Nova Bold.otf</string>
+		<string>Proxima Nova Black.otf</string>
+		<string>SF-Pro-Text-Regular.otf</string>
+		<string>SF-Pro-Text-Black.otf</string>
+		<string>SF-Pro-Text-Bold.otf</string>
+		<string>SF-Pro-Text-Medium.otf</string>
+		<string>Biko_Black.otf</string>
 		<string>Biko_Bold.otf</string>
+		<string>Biko_Regular.otf</string>
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>This app requires storage Permission</string>
