@@ -96,8 +96,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         
         initializeHideKeyboard()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIResponder.keyboardWillHideNotification, object: nil)
         
         navigationController?.navigationBar.isHidden = true
         
@@ -114,11 +114,14 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         twitterLabel.isHidden = true
         facebookLabel.isHidden = true
         
+        
+        
+        
     }
     
     @objc func keyboardWillShow(notification:NSNotification){
         guard let userInfo = notification.userInfo else { return }
-            var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
             keyboardFrame = self.view.convert(keyboardFrame, from: nil)
 
             var contentInset:UIEdgeInsets = self.scrollView.contentInset
@@ -128,8 +131,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 
         @objc func keyboardWillHide(notification:NSNotification) {
 
-            let contentInset:UIEdgeInsets = UIEdgeInsets.zero
-            scrollView.contentInset = contentInset
+            scrollView.contentOffset = .zero
         }
 
        
