@@ -323,7 +323,7 @@
                                         <rect key="frame" x="22" y="8" width="120" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="16" id="0Pa-gr-mmc"/>
-                                            <constraint firstAttribute="width" constant="120" id="oQZ-5L-J5v"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="oQZ-5L-J5v"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Biko-Bold" family="Biko" pointSize="16"/>
                                         <color key="textColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
@@ -336,8 +336,10 @@
                                     <constraint firstAttribute="height" constant="60" id="2fW-jb-SvH"/>
                                     <constraint firstAttribute="trailing" secondItem="h3I-Mi-UJi" secondAttribute="trailing" constant="12" id="4lP-Jh-l9a"/>
                                     <constraint firstItem="h3I-Mi-UJi" firstAttribute="top" secondItem="bzd-i6-6uW" secondAttribute="top" constant="16" id="9NU-uz-9XX"/>
+                                    <constraint firstItem="h3I-Mi-UJi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xLn-fl-Rjb" secondAttribute="trailing" constant="8" symbolic="YES" id="AYu-Yb-7p5"/>
                                     <constraint firstItem="XlW-VY-dJD" firstAttribute="top" secondItem="bzd-i6-6uW" secondAttribute="top" constant="8" id="OcC-2h-kHq"/>
                                     <constraint firstItem="xLn-fl-Rjb" firstAttribute="top" secondItem="XlW-VY-dJD" secondAttribute="bottom" constant="8" id="QY7-vh-H3v"/>
+                                    <constraint firstItem="h3I-Mi-UJi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XlW-VY-dJD" secondAttribute="trailing" constant="8" symbolic="YES" id="Sg4-Ha-5ln"/>
                                     <constraint firstItem="xLn-fl-Rjb" firstAttribute="leading" secondItem="bzd-i6-6uW" secondAttribute="leading" constant="22" id="h9E-Ue-UhP"/>
                                 </constraints>
                             </view>
@@ -5378,13 +5380,13 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="01d-ri-yOY">
-                                                <rect key="frame" x="70" y="462" width="235.5" height="37.5"/>
+                                                <rect key="frame" x="65.5" y="462" width="244" height="32"/>
                                                 <fontDescription key="fontDescription" name="Biko-Bold" family="Biko" pointSize="32"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have completed Chapter 3 - Setting up a new project from Course: Learn Figma - UI/UX Design Essential Training" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bd-dJ-hN9">
-                                                <rect key="frame" x="30" y="510.5" width="325" height="56"/>
+                                                <rect key="frame" x="30" y="505" width="325" height="58.5"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                 <color key="textColor" red="0.47843137254901957" green="0.47843137254901957" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>

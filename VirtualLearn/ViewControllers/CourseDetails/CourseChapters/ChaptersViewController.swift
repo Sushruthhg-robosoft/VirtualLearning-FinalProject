@@ -321,12 +321,12 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let data = dataoflesson[indexPath.section].lessonList[indexPath.row] as? LessonList {
-            //play video
-            //check acess to play the video using ""next play and completed chapter status""
-            
-            
-        }
+//        if let data = dataoflesson[indexPath.section].lessonList[indexPath.row] as? LessonList {
+//            //play video
+//            //check acess to play the video using ""next play and completed chapter status""
+//
+//
+//        }
         
         if let data = dataoflesson[indexPath.section].lessonList[indexPath.row] as? AssignmentResponse {
             // check Aceess to take the test
