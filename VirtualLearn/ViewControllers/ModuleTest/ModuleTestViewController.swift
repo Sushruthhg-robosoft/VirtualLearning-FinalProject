@@ -25,14 +25,11 @@ class ModuleTestViewController: UIViewController {
             if currentPage == moduleTestViewModel.moduleTestData.count - 1{
                 nextButton.isHidden = true
                 submitButton.isHidden = false
-                //  nextButton.isHidden = false
-                //  submitButton.isHidden = true
+
             }else{
                 nextButton.isHidden = false
                 submitButton.isHidden = true
-                
-                //  nextButton.isHidden = true
-                //  submitButton.isHidden = false
+
             }
         }
     }
@@ -54,16 +51,8 @@ class ModuleTestViewController: UIViewController {
             }
         } fail: {error in
             
-            //            self.stopLoader(loader: loader)
-            print("failures")
-            DispatchQueue.main.async {
-                if(error == "unauthorized") {
-                    
-                }
-                else {
-                    //                    self.navigationController?.popViewController(animated: true)
-                }
-            }
+            print("get questions failures")
+        
         }
         
         
@@ -85,7 +74,6 @@ class ModuleTestViewController: UIViewController {
             
         }
         if nextItem.row == moduleTestViewModel.moduleTestData.count - 1{
-            print(nextItem.row)
             submitButton.isHidden = false
             nextButton.isHidden = true
         }
@@ -95,9 +83,8 @@ class ModuleTestViewController: UIViewController {
     }
     
     @IBAction func onclickSubmit(_ sender: Any) {
-        moduleTestViewModel.submitAnswer(token: mainShared.token, assignnmentId: "5", testAnswers: testAnswers){
+        moduleTestViewModel.submitAnswer(token: mainShared.token, assignnmentId: assignmentId, testAnswers: testAnswers){
             
-            print("sucess")
             DispatchQueue.main.async {
                 guard let vc = self.storyboard?.instantiateViewController(identifier: "CongratsViewController") as? CongratsViewController else {return}
                 self.navigationController?.pushViewController(vc, animated: true)
@@ -105,17 +92,8 @@ class ModuleTestViewController: UIViewController {
             }
         } fail: {error in
             
-            //            self.stopLoader(loader: loader)
-            print("failures")
-            DispatchQueue.main.async {
-                if(error == "unauthorized") {
-                    
-                }
-                else {
-                    //                    self.navigationController?.popViewController(animated: true)
-                }
-            }
-            
+            print("submit answer failures")
+
         }
         
     }
@@ -125,7 +103,6 @@ class ModuleTestViewController: UIViewController {
         let visibleItems: NSArray = self.collectionView.indexPathsForVisibleItems as NSArray
         let currentItem: IndexPath = visibleItems.object(at: 0) as! IndexPath
         let nextItem: IndexPath = IndexPath(item: currentItem.item - 1, section: 0)
-        // This part here
         if nextItem.row < moduleTestViewModel.moduleTestData.count {
             previousButton.isEnabled = true
             submitButton.isHidden = true

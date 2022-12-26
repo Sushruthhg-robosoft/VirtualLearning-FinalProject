@@ -32,8 +32,6 @@ class TestResultViewController: UIViewController {
         
         
         testviewModel.getAnswer(token: mainShared.token, assignnmentId: assignmentId) { questionAnswerDetails in
-            print("sucess")
-            //            print(questionAnswerDetails)
             
             DispatchQueue.main.async {
                 self.questionResults = questionAnswerDetails.questionAnswer
@@ -49,14 +47,13 @@ class TestResultViewController: UIViewController {
             }
         } fail: { error in
             
-            //            self.stopLoader(loader: loader)
             print("failures")
             DispatchQueue.main.async {
                 if(error == "unauthorized") {
                     
                 }
                 else {
-                    //                    self.navigationController?.popViewController(animated: true)
+                    
                 }
             }
             

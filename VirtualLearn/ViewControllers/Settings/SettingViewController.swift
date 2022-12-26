@@ -8,7 +8,7 @@
 import UIKit
 
 class SettingViewController: UIViewController {
-
+    
     @IBOutlet weak var notificationSettingViewHeight: NSLayoutConstraint!
     @IBOutlet weak var notificationSettingPopUpView: UIView!
     
@@ -30,7 +30,7 @@ class SettingViewController: UIViewController {
     let privacyPolicyModel = [PrivacyPolicyModel]()
     let termsOfServiceViewModel = TermsOfServicesViewModel()
     let termsOfServiceModel = [TermsOfServicesModel]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.notificationSettingPopUpView.isHidden = true
@@ -40,13 +40,12 @@ class SettingViewController: UIViewController {
         self.notificationSoundView.isHidden = true
         self.notificationSoundViewHeight.constant = 0
         PopUpViewTopViewHeight.constant = 0
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func notificationSettingClicked(_ sender: Any) {
         if(notificationSettingPopUpView.isHidden) {
             notificationSettingPopUpView.isHidden = false
-        self.notificationSettingViewHeight.constant = 62
+            self.notificationSettingViewHeight.constant = 62
             self.pushNotificationView.isHidden = false
             self.pushNotoficationViewheight.constant = 22
             self.notificationSoundView.isHidden = false
@@ -69,34 +68,33 @@ class SettingViewController: UIViewController {
         let loader = self.loader()
         
         privacyViewModel.getprivacyPolicyContent(privacyPolicyId: "1") { PolicyData in
-        DispatchQueue.main.async {
-            self.stopLoader(loader: loader)
-            let vc = self.storyboard?.instantiateViewController(identifier: "TermConditionViewController") as! TermConditionViewController
-            vc.label = "Privacy Policy"
-            vc.content = PolicyData.content
-            self.navigationController?.pushViewController(vc, animated: true)
+            DispatchQueue.main.async {
+                self.stopLoader(loader: loader)
+                let vc = self.storyboard?.instantiateViewController(identifier: "TermConditionViewController") as! TermConditionViewController
+                vc.label = "Privacy Policy"
+                vc.content = PolicyData.content
+                self.navigationController?.pushViewController(vc, animated: true)
+                
+            }
             
-        }
-
         } fail: {
             print("error")
         }
     }
-
-
+    
+    
     @IBAction func termsandConditionCliked(_ sender: Any) {
         let loader = self.loader()
         termsOfServiceViewModel.gettermsofServicesContent(termsOfServicesId: "1") { ServiceData in
-        DispatchQueue.main.async {
-            self.stopLoader(loader: loader)
-            let vc = self.storyboard?.instantiateViewController(identifier: "TermConditionViewController") as! TermConditionViewController
-            vc.label = "Terms Of Services"
-            vc.content = ServiceData.content
-        self.navigationController?.pushViewController(vc, animated: true)
-       
-        
-    }
-    } fail: {
+            DispatchQueue.main.async {
+                self.stopLoader(loader: loader)
+                let vc = self.storyboard?.instantiateViewController(identifier: "TermConditionViewController") as! TermConditionViewController
+                vc.label = "Terms Of Services"
+                vc.content = ServiceData.content
+                self.navigationController?.pushViewController(vc, animated: true)
+      
+            }
+        } fail: {
             print("error")
         }
     }

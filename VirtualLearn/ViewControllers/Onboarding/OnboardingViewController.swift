@@ -32,8 +32,6 @@ class OnboardingViewController: UIViewController {
         storageMaaneger.setOnboardingseen()
         
         navigationController?.navigationBar.isHidden = true
-        //titleTxt.lineBreakMode = .byWordWrapping
-        //titleTxt.numberOfLines = 2
         
         onboardingCollectionView.delegate = self
         onboardingCollectionView.dataSource = self
@@ -41,7 +39,7 @@ class OnboardingViewController: UIViewController {
         slides = [OnboardingSlide(title: "Learner Engagement", onboardingDescription: "Interactive features mirror the traditional classroom experience and learners receive feedback to increase long-term retention, tripling learning efficacy over standard video.", onboardingImage: #imageLiteral(resourceName: "img_onboarding_illustration1")) , OnboardingSlide(title: "Accountable Tracking", onboardingDescription: "Receive immediate, accessible data (both performance and behavior-based) to effectively remediate concepts, automatically assign grades, and address deficiencies.", onboardingImage: #imageLiteral(resourceName: "img_onboarding_illustration2")), OnboardingSlide(title: "Seamless Workflow", onboardingDescription: "Sync rosters, create and assign impactful video experiences, enrich your flipped classroom, and streamline tedious grading.", onboardingImage: #imageLiteral(resourceName: "img_onboarding_illustration3"))]
         
         pageControl.transform = CGAffineTransform(scaleX: 1, y: 1)
-      
+        
     }
     
     @IBAction func onClickNext(_ sender: Any) {
@@ -57,14 +55,14 @@ class OnboardingViewController: UIViewController {
             
             currentPage += 1
             pageControl.currentPage = currentPage
-           
-        
+            
+            
             self.onboardingCollectionView.contentOffset.x += onboardingCollectionView.frame.width
-
+            
             UIView.animate(withDuration: 0.2, delay: 0, options: UIView.AnimationOptions.curveEaseOut, animations: {
                 self.view.layoutIfNeeded()
-
-                    }, completion: nil)
+                
+            }, completion: nil)
         }
         
     }
@@ -105,10 +103,8 @@ extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDa
             + flowLayout.sectionInset.right
             + (flowLayout.minimumInteritemSpacing * CGFloat(noOfCellsInRow - 1))
         
-        let size = (collectionView.bounds.width - totalSpace) / CGFloat(noOfCellsInRow)
         return CGSize(width: onboardingCollectionView.frame.width , height: onboardingCollectionView.frame.height)
         
-        //return CGSize(width: size, height: onboardingCollectionView.frame.height)
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -119,11 +115,11 @@ extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-         
+        
         let width = scrollView.frame.width
         currentPage = Int(scrollView.contentOffset.x / width)
         pageControl.currentPage = currentPage
-    
+        
         
     }
 }

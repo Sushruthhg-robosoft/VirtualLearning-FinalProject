@@ -54,7 +54,6 @@ class CourseDetailsViewController: UIViewController {
     var courseId = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("123",courseId)
         tableView1.delegate = self
         tableView1.dataSource = self
         tableView2.delegate = self
@@ -103,7 +102,7 @@ class CourseDetailsViewController: UIViewController {
                 }
                 self.courseCaption.text = courseDataOverView.overView.courseDescription
                 
-
+                
                 self.courseDescription.sizeToFit()
                 self.courseDescription.text = courseDataOverView.overView.previewCourseContent
                 self.courseOutcome = courseDataOverView.overView.courseOutCome
@@ -124,7 +123,6 @@ class CourseDetailsViewController: UIViewController {
             
         } fail: { error in
             
-            //            self.stopLoader(loader: loader)
             print("failures")
             DispatchQueue.main.async {
                 if(error == "unauthorized") {
@@ -154,13 +152,13 @@ class CourseDetailsViewController: UIViewController {
     @IBAction func onClickChapters(_ sender: Any) {
         
         
-
+        
         CourseChapterView.isHidden = false
         CourseOverViewView.isHidden = true
         overViewScrollView.isScrollEnabled = false
         view.bringSubviewToFront(CourseChapterView)
         
-       
+        
         
     }
     
@@ -185,7 +183,6 @@ class CourseDetailsViewController: UIViewController {
                     CourseOverViewView.isHidden = true
                     overViewScrollView.isScrollEnabled = false
                     overViewScrollView.setContentOffset(.zero, animated: true)
-                    //self.view.addSubview(self.CourseChapterView)
                     view.bringSubviewToFront(CourseChapterView)
                     
                 }

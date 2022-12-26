@@ -8,7 +8,7 @@
 import UIKit
 
 class showQuestionResultViewController: UIViewController {
-
+    
     @IBOutlet weak var option1Answer: UILabel!
     @IBOutlet weak var option1Image: UIImageView!
     @IBOutlet weak var option1View: UIView!
@@ -30,7 +30,7 @@ class showQuestionResultViewController: UIViewController {
     var questionNumber = 1
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         answerDisplay(datatoDisplay: datatoDisplay, questionNumber: questionNumber)
     }
     
@@ -42,7 +42,7 @@ class showQuestionResultViewController: UIViewController {
         option2Answer.text = dataDisplay.option2
         option3Answer.text = dataDisplay.option3
         option4Answer.text = dataDisplay.option4
-            
+        
         if(dataDisplay.correctAnswer == option1Answer.text) {
             option1Answer.textColor = UIColor(red: 255, green: 255, blue: 255, alpha: 1)
             option1View.backgroundColor = UIColor(red: 30/255, green: 171/255, blue: 13/255, alpha: 1)
@@ -96,7 +96,7 @@ class showQuestionResultViewController: UIViewController {
         }
     }
     
-
+    
     @IBAction func onCancelTapped(_ sender: Any) {
         
         dismiss(animated: true, completion: nil)

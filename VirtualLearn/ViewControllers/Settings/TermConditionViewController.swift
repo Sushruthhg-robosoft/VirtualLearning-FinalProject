@@ -13,15 +13,15 @@ class TermConditionViewController: UIViewController {
     var label = ""
     var content = ""
     
-
+    
     override func viewDidLoad() {
         privacyPolicyLabel.text = label
         textView.text = content
-
+        
         super.viewDidLoad()
         
     }
-
+    
     @IBAction func onClickBack(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
