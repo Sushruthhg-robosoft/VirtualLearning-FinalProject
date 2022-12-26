@@ -81,6 +81,9 @@ class ChaptersViewModel {
                         guard let assignmentCompleted = assesmentdetails["assignmentCompleted"] as? Bool else {print("chapterCountErr4"); return fail("data Error")}
                         let grade = assesmentdetails["grade"] as? Int
                         let assesment = AssignmentResponse(assignmentId: assignmentId, assinmentStatus: assignmentCompleted, assignmentName: assignmentName, testDuration: testDuration, questionCount: questionCount, grade: Int(grade ?? 0))
+                        if(!assignmentCompleted){
+                            if(videoPlay == 0) {assesment.nextPlay = true; videoPlay = 1}
+                        }
                         lessonsList.append(assesment)
                    
                     }
