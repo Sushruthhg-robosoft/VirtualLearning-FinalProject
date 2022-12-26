@@ -70,6 +70,9 @@ class TestResultViewController: UIViewController {
         tableView.dataSource = self
     }
     
+    @IBAction func backButtonClicked(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
     
 }
 
