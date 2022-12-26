@@ -96,6 +96,10 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         
         initializeHideKeyboard()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(Keyboard), name: Notification.Name.UIKeyboardWillHide, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboard), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
+        
         navigationController?.navigationBar.isHidden = true
         
         dropDownView.isHidden = true
@@ -110,6 +114,24 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         dateOfBirth.isHidden = true
         twitterLabel.isHidden = true
         facebookLabel.isHidden = true
+        
+    }
+    
+     @objc func keyboard(notification: Notification) {
+        let userInfo = notification.userInfo!
+        
+        let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NsValue).cgRectValue
+        
+        let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
+        
+        if notification.name == Notification.Name.UIkeyboardWillHide {
+            scrollView.contentInset = UIEdgeInsets.zero
+        } else {
+            scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height, right: 0)
+        }
+        
+        scrollView.scrollIndicatorInsets = scrollView.contentInset
+        
         
     }
     
@@ -463,27 +485,6 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
             return true
         }
     }
-
-func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    let visibleRect = CGRect(origin: scrollView.contentOffset, size: scrollView.bounds.size)
-    let activeField: UITextField? = findFirstResponder(in: scrollView)
-    if let activeField = activeField, !visibleRect.contains(activeField.frame.origin) {
-        let scrollPoint = CGPoint(x: 0, y: activeField.frame.origin.y - activeField.frame.height)
-        scrollView.setContentOffset(scrollPoint, animated: true)
-    }
-}
-
-func findFirstResponder(in view: UIView) -> UITextField? {
-    for subView in view.subviews {
-        if subView.isFirstResponder {
-            return subView as? UITextField
-        }
-        if let firstResponder = findFirstResponder(in: subView) {
-            return firstResponder
-        }
-    }
-    return nil
-}
 
 extension EditProfileViewController {
     func initializeHideKeyboard(){
