@@ -225,6 +225,9 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         genderLabel.isHidden = true
     }
     
+    @IBAction func genderEndEditing(_ sender: Any) {
+        genderField.placeholder = "Gender"
+    }
     @IBAction func dateOfBirthEdit(_ sender: Any) {
         dateOfBirthView.backgroundColor = #colorLiteral(red: 0.001148699783, green: 0.2356859446, blue: 0.4366979599, alpha: 1)
         dateOfBirth.isHidden = false
@@ -232,6 +235,10 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         dateOfBirth.isHidden = true
     }
     
+    @IBAction func dataOfBirthDidEndEditing(_ sender: Any) {
+        
+        dateOfBirthField.placeholder = "Date Of Birth (YYYY-MM-DD)"
+    }
     @IBAction func twitterFieldEdit(_ sender: Any) {
         twitterView.backgroundColor = #colorLiteral(red: 0.001148699783, green: 0.2356859446, blue: 0.4366979599, alpha: 1)
         twitterLabel.isHidden = false
@@ -239,6 +246,9 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         twitterLabel.isHidden = true
     }
     
+    @IBAction func twitterDidEndEditing(_ sender: Any) {
+        twitterField.placeholder = "Twitter link"
+    }
     @IBAction func facebookFieldEdit(_ sender: Any) {
         facebookView.backgroundColor = #colorLiteral(red: 0.001148699783, green: 0.2356859446, blue: 0.4366979599, alpha: 1)
         facebookLabel.isHidden = false
@@ -246,6 +256,9 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         facebookLabel.isHidden = true
     }
     
+    @IBAction func faceBookDidEndEditing(_ sender: Any) {
+        facebookField.placeholder = "Facebook link"
+    }
     
     @IBAction func onClickDropdown(_ sender: Any) {
         

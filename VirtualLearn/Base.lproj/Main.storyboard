@@ -3527,7 +3527,7 @@
                                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                                                         <connections>
-                                                            <action selector="facebookFieldEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="v2D-Ss-cuA"/>
+                                                            <action selector="emailEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="Qaz-pO-CH1"/>
                                                         </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aao-NR-8SQ">
@@ -3621,6 +3621,7 @@
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                                         <connections>
                                                             <action selector="genderEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="7uo-BY-Vii"/>
+                                                            <action selector="genderEndEditing:" destination="05D-p0-z4I" eventType="editingDidEnd" id="6GI-Kx-CtV"/>
                                                         </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Birth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2J-XB-o9u">
@@ -3632,7 +3633,7 @@
                                                         <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date Of Birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bh6-l3-hQ4" customClass="borderlessTextField" customModule="VirtualLearn" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date Of Birth (YYYY-MM-DD)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bh6-l3-hQ4" customClass="borderlessTextField" customModule="VirtualLearn" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="444" width="327" height="17"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="17" id="pzX-7a-1xv"/>
@@ -3641,6 +3642,7 @@
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                                         <connections>
+                                                            <action selector="dataOfBirthDidEndEditing:" destination="05D-p0-z4I" eventType="editingDidEnd" id="Xue-sa-vMW"/>
                                                             <action selector="dateOfBirthEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="xTl-v6-eB1"/>
                                                         </connections>
                                                     </textField>
@@ -3680,6 +3682,7 @@
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL"/>
                                                         <connections>
+                                                            <action selector="twitterDidEndEditing:" destination="05D-p0-z4I" eventType="editingDidEnd" id="hfe-2j-KtE"/>
                                                             <action selector="twitterFieldEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="bRO-yW-2X5"/>
                                                         </connections>
                                                     </textField>
@@ -3897,6 +3900,7 @@
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL"/>
                                                 <connections>
+                                                    <action selector="faceBookDidEndEditing:" destination="05D-p0-z4I" eventType="editingDidEnd" id="TxY-jZ-mI9"/>
                                                     <action selector="facebookFieldEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="AG7-dp-31W"/>
                                                 </connections>
                                             </textField>
