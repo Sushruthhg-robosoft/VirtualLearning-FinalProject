@@ -95,7 +95,7 @@ class ChaptersViewController: UIViewController {
         popUpBackView.isHidden = true
         super.viewDidLoad()
         print("123456789", courseId)
-        
+        dataLoading()
         joinedLeftView.layer.cornerRadius = 5
         joinedRightView.layer.cornerRadius = 5
        
@@ -103,65 +103,7 @@ class ChaptersViewController: UIViewController {
         joinedView.layer.shadowOpacity = 100
         joinedView.layer.shadowRadius = 5
         joinedView.layer.shadowOffset = CGSize(width: 0, height: 2)
-        let loader = self.loader()
-        popUpBackView.isHidden = true
-        print("view did appear ")
-        dataoflesson.removeAll()
-        shared.chaptersDetailsViewModelShared.getChapters(token: shared.token, courseId: courseId) { result in
-           
-            DispatchQueue.main.async { [self] in
-                if(result.joinedCourse) {
-                    self.joinCourseButton.isHidden = true
-                }
-                else {
-                    self.joinCourseButton.isHidden = false
-                }
-                
-               
-                let chapter = String(result.courseContentResponse.chapterCount) + "Chapter | "
-                let lesson = String(result.courseContentResponse.lessonCount) + "Lessons | "
-                let assesment = String(result.courseContentResponse.moduleTest) + "Assesment Test |"
-                let totalLength = String(result.courseContentResponse.totalVideoLength) + "h total Length"
-               
-                self.sourseContentDescription.text = chapter + lesson + assesment + totalLength
-                self.dataoflesson = result.lessonResponseList
-                
-                self.stopLoader(loader: loader)
-                if(result.certificateGenerated) {
-                    self.certficateView.isHidden = false
-                    certificateViewHeight.constant = 556
-                    
-                    self.certificateGrade.text = String(result.certificateResponse?.grade ?? 0) + "%"
-                    self.joinedDate.text = result.certificateResponse?.joinedData
-                    self.completedDate.text = result.certificateResponse?.completedDate
-                    self.totalDuration.text = result.certificateResponse?.completionDuration
-                    self.imageUrl = result.certificateResponse?.certificateLink ?? ""
-                    tableView.reloadData()
-                    guard let url = URL(string: result.certificateResponse?.certificateLink ?? "") else {return}
-                    guard let data = try? Data(contentsOf: url) else {return}
-                    self.certificateImage.image = UIImage(data: data)
-                }
-                else
-                {
-                self.certficateView.isHidden = true
-                certificateViewHeight.constant = 0
-                }
-                tableView.reloadData()
-            }
-        } fail: { error in
-            
-            self.stopLoader(loader: loader)
-            print("failures")
-            DispatchQueue.main.async {
-                if(error == "unauthorized") {
-                    
-                 }
-                else {
-                    self.navigationController?.popViewController(animated: true)
-                }
-            }
-        }
-        
+
         ContinuationLabelHeightContraint.constant = 0
         ContinuationLabelconstraint.constant = 0
         CourseContentConstraint.constant = 0
@@ -173,67 +115,6 @@ class ChaptersViewController: UIViewController {
         overViewBtn.setTitleColor(#colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1), for: .normal)
         overViewUnderLineView.backgroundColor = #colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
  
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-//        let loader = self.loader()
-//        popUpBackView.isHidden = true
-//        print("view did appear ")
-//        dataoflesson.removeAll()
-//        shared.chaptersDetailsViewModelShared.getChapters(token: shared.token, courseId: courseId) { result in
-//
-//            DispatchQueue.main.async { [self] in
-//                if(result.joinedCourse) {
-//                    self.joinCourseButton.isHidden = true
-//                }
-//                else {
-//                    self.joinCourseButton.isHidden = false
-//                }
-//
-//
-//                let chapter = String(result.courseContentResponse.chapterCount) + "Chapter | "
-//                let lesson = String(result.courseContentResponse.lessonCount) + "Lessons | "
-//                let assesment = String(result.courseContentResponse.moduleTest) + "Assesment Test |"
-//                let totalLength = String(result.courseContentResponse.totalVideoLength) + "h total Length"
-//
-//                self.sourseContentDescription.text = chapter + lesson + assesment + totalLength
-//                self.dataoflesson = result.lessonResponseList
-//
-//                self.stopLoader(loader: loader)
-//                if(result.certificateGenerated) {
-//                    self.certficateView.isHidden = false
-//                    certificateViewHeight.constant = 556
-//
-//                    self.certificateGrade.text = String(result.certificateResponse?.grade ?? 0) + "%"
-//                    self.joinedDate.text = result.certificateResponse?.joinedData
-//                    self.completedDate.text = result.certificateResponse?.completedDate
-//                    self.totalDuration.text = result.certificateResponse?.completionDuration
-//                    self.imageUrl = result.certificateResponse?.certificateLink ?? ""
-//                    tableView.reloadData()
-//                    guard let url = URL(string: result.certificateResponse?.certificateLink ?? "") else {return}
-//                    guard let data = try? Data(contentsOf: url) else {return}
-//                    self.certificateImage.image = UIImage(data: data)
-//                }
-//                else
-//                {
-//                self.certficateView.isHidden = true
-//                certificateViewHeight.constant = 0
-//                }
-//                tableView.reloadData()
-//            }
-//        } fail: { error in
-//
-//            self.stopLoader(loader: loader)
-//            print("failures")
-//            DispatchQueue.main.async {
-//                if(error == "unauthorized") {
-//
-//                 }
-//                else {
-//                    self.navigationController?.popViewController(animated: true)
-//                }
-//            }
-//        }
     }
     
     @IBAction func onClickContinueWatching(_ sender: Any) {
@@ -276,7 +157,7 @@ class ChaptersViewController: UIViewController {
             shared.courseDetailsViewModelShared.joinCourse(token: shared.token, courseId: courseId){ data in
                 DispatchQueue.main.async { [self] in
                     joinCourseButton.isHidden = true
-                    reloadData()
+                    dataLoading()
                 }
                 
             }fail: { error in
@@ -303,18 +184,64 @@ class ChaptersViewController: UIViewController {
         shared.chaptersDetailsViewModelShared.downloadCertificate(imageUrl: imageUrl )
     }
     
-    func reloadData() {
-        dataoflesson.removeAll()
+    func dataLoading() {
         let loader = self.loader()
+        popUpBackView.isHidden = true
+       
+        print("view did appear ")
+        dataoflesson.removeAll()
         shared.chaptersDetailsViewModelShared.getChapters(token: shared.token, courseId: courseId) { result in
-            DispatchQueue.main.async {
-                self.stopLoader(loader: loader)
+           
+            DispatchQueue.main.async { [self] in
+                if(result.joinedCourse) {
+                    self.joinCourseButton.isHidden = true
+                }
+                else {
+                    self.joinCourseButton.isHidden = false
+                }
+                
+                let chapter = String(result.courseContentResponse.chapterCount) + "Chapter | "
+                let lesson = String(result.courseContentResponse.lessonCount) + "Lessons | "
+                let assesment = String(result.courseContentResponse.moduleTest) + "Assesment Test |"
+                let totalLength = String(result.courseContentResponse.totalVideoLength) + "h total Length"
+               
+                self.sourseContentDescription.text = chapter + lesson + assesment + totalLength
                 self.dataoflesson = result.lessonResponseList
-                self.tableView.reloadData()
+                
+                self.stopLoader(loader: loader)
+                if(result.certificateGenerated) {
+                    self.certficateView.isHidden = false
+                    certificateViewHeight.constant = 556
+                    
+                    self.certificateGrade.text = String(result.certificateResponse?.grade ?? 0) + "%"
+                    self.joinedDate.text = result.certificateResponse?.joinedData
+                    self.completedDate.text = result.certificateResponse?.completedDate
+                    self.totalDuration.text = result.certificateResponse?.completionDuration
+                    self.imageUrl = result.certificateResponse?.certificateLink ?? ""
+                    tableView.reloadData()
+                    guard let url = URL(string: result.certificateResponse?.certificateLink ?? "") else {return}
+                    guard let data = try? Data(contentsOf: url) else {return}
+                    self.certificateImage.image = UIImage(data: data)
+                }
+                else
+                {
+                self.certficateView.isHidden = true
+                certificateViewHeight.constant = 0
+                }
+                tableView.reloadData()
             }
-        } fail:  { fail in
+        } fail: { error in
+            
             self.stopLoader(loader: loader)
-            print("failure")
+            print("failures")
+            DispatchQueue.main.async {
+                if(error == "unauthorized") {
+                    
+                 }
+                else {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
         }
     }
     
@@ -410,7 +337,7 @@ extension ChaptersViewController : PauseVideoStatus {
             print("error to load data")
         }
         
-        reloadData()
+        dataLoading()
     }
 }
 
