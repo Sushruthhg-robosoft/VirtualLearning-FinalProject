@@ -20,6 +20,7 @@ class ChooseYourCourseViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         
+        initializeHideKeyboard()
         searchTextField.delegate = self
         
         tableView.delegate = self
@@ -221,5 +222,23 @@ extension ChooseYourCourseViewController: SearchResponse {
     }
     
     
+}
+
+extension ChooseYourCourseViewController {
+    
+    func initializeHideKeyboard(){
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissMyKeyboard))
+        
+       
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissMyKeyboard(){
+        
+        view.endEditing(true)
+    }
 }
 

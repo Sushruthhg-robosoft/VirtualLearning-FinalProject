@@ -63,6 +63,8 @@ class ChaptersViewController: UIViewController {
 
     override func viewDidLoad() {
         
+        initializeHideView()
+        
         shared.courseDetailsViewModelShared.courseOverView(token: shared.token, courseId: courseId) { courseDataOverView in
             
             DispatchQueue.main.async {
@@ -403,4 +405,23 @@ extension ChaptersViewController: playVideo{
         
     }
 
+}
+
+
+extension ChaptersViewController {
+    
+    func initializeHideView(){
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissMyKeyboard))
+        
+       
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissMyKeyboard(){
+        
+        self.popUpBackView.isHidden = true
+    }
 }
