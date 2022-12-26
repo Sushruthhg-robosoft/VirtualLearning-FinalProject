@@ -36,7 +36,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     
     
-    @IBOutlet weak var saveButton: UIButton!
+    
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var nameView: UIView!
     @IBOutlet weak var userNameView: UIView!
@@ -101,6 +101,13 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         dropDownView.layer.cornerRadius = 5
         dropDownView.layer.borderWidth = 1
         dropDownView.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        checkAllField()
+        
+        occupationLabel.isHidden = true
+        genderLabel.isHidden = true
+        dateOfBirth.isHidden = true
+        twitterLabel.isHidden = true
+        facebookLabel.isHidden = true
         
     }
     
@@ -201,10 +208,14 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func occupationEdit(_ sender: Any) {
+        occupationLabel.isHidden = false
         occupationView.backgroundColor = #colorLiteral(red: 0.001148699783, green: 0.2356859446, blue: 0.4366979599, alpha: 1)
         occupationLabel.isHidden = false
         occupationField.placeholder = ""
         occupationLabel.isHidden = true
+    }
+    @IBAction func occupationEndEditing(_ sender: Any) {
+        occupationField.placeholder = "Occupation"
     }
     
     @IBAction func genderEdit(_ sender: Any) {

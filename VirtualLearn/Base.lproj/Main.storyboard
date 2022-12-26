@@ -3585,6 +3585,7 @@
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                         <connections>
                                                             <action selector="occupationEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="1v2-SH-Sbj"/>
+                                                            <action selector="occupationEndEditing:" destination="05D-p0-z4I" eventType="editingDidEnd" id="H5Z-IX-Shc"/>
                                                         </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FU0-TF-H8h">
@@ -3984,7 +3985,6 @@
                         <outlet property="occupationView" destination="FU0-TF-H8h" id="vVf-qj-4YN"/>
                         <outlet property="otherGender" destination="gd3-Hg-klZ" id="8kn-gH-qDE"/>
                         <outlet property="profilePhoto" destination="blz-Pm-c6A" id="Zaf-L6-P4Y"/>
-                        <outlet property="saveButton" destination="Jaq-Gt-Tyt" id="L7f-Gt-DWR"/>
                         <outlet property="saveLoadingButton" destination="Jaq-Gt-Tyt" id="NnZ-wt-VSZ"/>
                         <outlet property="twitterField" destination="pGL-EK-OGq" id="Hdg-Sv-hwj"/>
                         <outlet property="twitterLabel" destination="H6J-TA-ZiZ" id="dii-RB-tJf"/>
@@ -5378,13 +5378,13 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="01d-ri-yOY">
-                                                <rect key="frame" x="70" y="462" width="235.5" height="37.5"/>
+                                                <rect key="frame" x="65.5" y="462" width="244" height="32"/>
                                                 <fontDescription key="fontDescription" name="Biko-Bold" family="Biko" pointSize="32"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have completed Chapter 3 - Setting up a new project from Course: Learn Figma - UI/UX Design Essential Training" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bd-dJ-hN9">
-                                                <rect key="frame" x="30" y="510.5" width="325" height="56"/>
+                                                <rect key="frame" x="30" y="505" width="325" height="58.5"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                 <color key="textColor" red="0.47843137254901957" green="0.47843137254901957" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
