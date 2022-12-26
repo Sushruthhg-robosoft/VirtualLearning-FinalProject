@@ -16,12 +16,12 @@ class FinalCongragulationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         grade.isHidden = true
         aprrovedRateLabel.isHidden = true
     }
 
     @IBAction func backButtonClicked(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
         
     }
     

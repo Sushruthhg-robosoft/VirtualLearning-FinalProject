@@ -7,10 +7,11 @@
 
 import UIKit
 
-class ChangeYourPasswordViewController: UIViewController {
+class ChangeYourPasswordViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var currentPasswordTextField: UITextField!
     @IBOutlet weak var newPasswordTextField: UITextField!
     @IBOutlet weak var confirmNewPasswordTextField: UITextField!
+    
     @IBOutlet weak var resetPassword: UIButton!
     @IBOutlet weak var invalidPasswordView: UIView!
     @IBOutlet weak var passwordView: UIView!
@@ -23,6 +24,13 @@ class ChangeYourPasswordViewController: UIViewController {
     let shared  = mainViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        initializeHideKeyboard()
+        
+        currentPasswordTextField.delegate = self
+        newPasswordTextField.delegate = self
+        confirmNewPasswordTextField.delegate = self
+        
         navigationController?.navigationBar.isHidden = true
         currentPasswordTextField.removeBorder()
         newPasswordTextField.removeBorder()
@@ -31,7 +39,7 @@ class ChangeYourPasswordViewController: UIViewController {
         invalidPasswordView.isHidden = true
         
     }
-
+    
     @IBAction func newPasswordEditingBegin(_ sender: Any) {
         passwordView.isHidden = false
     }
@@ -54,7 +62,7 @@ class ChangeYourPasswordViewController: UIViewController {
         let regular = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{6,}$"
         let predicate = NSPredicate(format: "SELF MATCHES %@", regular)
         return predicate.evaluate(with: value)
-
+        
     }
     
     
@@ -68,31 +76,61 @@ class ChangeYourPasswordViewController: UIViewController {
         let loader = self.loader()
         profileViewModel.changePasswordForExistingUser(token: shared.token, password: newpassword, oldpassword: currentpassword) {
             
-          DispatchQueue.main.async {
-          self.stopLoader(loader: loader)
-          self.navigationController?.popViewController(animated: true)
-
-      }
-           
-    }
-         fail: { error in
+            DispatchQueue.main.async {
+                self.stopLoader(loader: loader)
+                self.navigationController?.popViewController(animated: true)
+                
+            }
+            
+        }
+        fail: { error in
             self.stopLoader(loader: loader)
             print("failures")
             DispatchQueue.main.async {
                 if(error == "unauthorized") {
                     
-                 }
+                }
                 else {
                     self.okAlertMessagePopup(message: "something went wrong password not changed")
-//                    self.navigationController?.popViewController(animated: true)
                 }
             }
             
         }
     }
   
+
+
+func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == currentPasswordTextField {
+            textField.resignFirstResponder()
+            newPasswordTextField.becomeFirstResponder()
+        }
+        else if textField == newPasswordTextField {
+               textField.resignFirstResponder()
+            confirmNewPasswordTextField.becomeFirstResponder()
+        }
+        else if textField == confirmNewPasswordTextField {
+               textField.resignFirstResponder()
+        }
+        return true
+    }
 }
 
+
+extension ChangeYourPasswordViewController {
+    func initializeHideKeyboard(){
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissMyKeyboard))
+    
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissMyKeyboard(){
+        
+        view.endEditing(true)
+    }
+}
     
     
 

@@ -64,6 +64,7 @@ class OngoingView: UIView, UICollectionViewDataSource, UICollectionViewDelegate 
         let url = URL(string: mainShared.myCourseViewModelShared.ongoingCourses[indexPath.row].courseImage)
         let data = try? Data(contentsOf: url!)
         cell.ongoingImage.image = UIImage(data: data!)
+        cell.Index = indexPath
        
         return cell
     }
@@ -71,4 +72,12 @@ class OngoingView: UIView, UICollectionViewDataSource, UICollectionViewDelegate 
         shared.delegate?.onClickChoiceofYourCourse(courseId: mainShared.homeViewModelShared.allCourse[indexPath.row].courseId)
 
     }
+}
+
+extension OngoingView: CourseContinue {
+    func continueCourse(indexPath: IndexPath) {
+        shared.delegate?.onClickChoiceofYourCourse(courseId: mainShared.homeViewModelShared.allCourse[indexPath.row].courseId)
+    }
+    
+    
 }

@@ -14,6 +14,7 @@ class ModuleTestViewController: UIViewController {
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var timeLabel: UILabel!
     var testAnswers: [Int:String] = [:]
+    var questionNo = 0
     
     var moduleTestViewModel = ModuleTestViewModel()
     let mainShared = mainViewModel.mainShared
@@ -25,14 +26,11 @@ class ModuleTestViewController: UIViewController {
             if currentPage == moduleTestViewModel.moduleTestData.count - 1{
                 nextButton.isHidden = true
                 submitButton.isHidden = false
-                //  nextButton.isHidden = false
-                //  submitButton.isHidden = true
+
             }else{
                 nextButton.isHidden = false
                 submitButton.isHidden = true
-                
-                //  nextButton.isHidden = true
-                //  submitButton.isHidden = false
+
             }
         }
     }
@@ -54,16 +52,8 @@ class ModuleTestViewController: UIViewController {
             }
         } fail: {error in
             
-            //            self.stopLoader(loader: loader)
-            print("failures")
-            DispatchQueue.main.async {
-                if(error == "unauthorized") {
-                    
-                }
-                else {
-                    //                    self.navigationController?.popViewController(animated: true)
-                }
-            }
+            print("get questions failures")
+        
         }
         
         
@@ -85,7 +75,6 @@ class ModuleTestViewController: UIViewController {
             
         }
         if nextItem.row == moduleTestViewModel.moduleTestData.count - 1{
-            print(nextItem.row)
             submitButton.isHidden = false
             nextButton.isHidden = true
         }
@@ -95,27 +84,27 @@ class ModuleTestViewController: UIViewController {
     }
     
     @IBAction func onclickSubmit(_ sender: Any) {
-        moduleTestViewModel.submitAnswer(token: mainShared.token, assignnmentId: "5", testAnswers: testAnswers){
+        moduleTestViewModel.submitAnswer(token: mainShared.token, assignnmentId: assignmentId, testAnswers: testAnswers){
             
-            print("sucess")
             DispatchQueue.main.async {
                 guard let vc = self.storyboard?.instantiateViewController(identifier: "CongratsViewController") as? CongratsViewController else {return}
                 self.navigationController?.pushViewController(vc, animated: true)
                 vc.assignmentId = self.assignmentId
             }
         } fail: {error in
-            
-            //            self.stopLoader(loader: loader)
+        
             print("failures")
             DispatchQueue.main.async {
                 if(error == "unauthorized") {
                     
                 }
                 else {
-                    //                    self.navigationController?.popViewController(animated: true)
+                    //                   self.navigationController?.popViewController(animated: true)
                 }
             }
             
+            print("submit answer failures")
+
         }
         
     }
@@ -125,7 +114,6 @@ class ModuleTestViewController: UIViewController {
         let visibleItems: NSArray = self.collectionView.indexPathsForVisibleItems as NSArray
         let currentItem: IndexPath = visibleItems.object(at: 0) as! IndexPath
         let nextItem: IndexPath = IndexPath(item: currentItem.item - 1, section: 0)
-        // This part here
         if nextItem.row < moduleTestViewModel.moduleTestData.count {
             previousButton.isEnabled = true
             submitButton.isHidden = true
@@ -178,13 +166,14 @@ extension ModuleTestViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? ModuleTestCollectionViewCell
         cell?.question.text = moduleTestViewModel.moduleTestData[indexPath.row].questionName
-        cell?.questionNoLabel.text = moduleTestViewModel.moduleTestData[indexPath.row].questionId
+//        cell?.questionNoLabel.text = moduleTestViewModel.moduleTestData[indexPath.row].questionId
         cell?.QuestionInd = Int(moduleTestViewModel.moduleTestData[indexPath.row].questionId)
         cell?.delegate = self
         cell?.option1Label.text = moduleTestViewModel.moduleTestData[indexPath.row].option_1
         cell?.option2Label.text = moduleTestViewModel.moduleTestData[indexPath.row].option_2
         cell?.option3Label.text = moduleTestViewModel.moduleTestData[indexPath.row].option_3
         cell?.option4Label.text = moduleTestViewModel.moduleTestData[indexPath.row].option_4
+        cell?.questionNoLabel.text = "Question \(indexPath.row + 1) of \(moduleTestViewModel.moduleTestData.count) remaining"
         return cell!
     }
     

@@ -32,6 +32,9 @@ class VerifyAccountViewController: UIViewController, UITextFieldDelegate {
     let verificationOTP = VerificationOTP()
     
     override func viewDidLoad() {
+        
+        initializeHideKeyboard()
+        
         invalidVerificationView.isHidden = true
         firstTextField.removeBorder()
         secondTextField.removeBorder()
@@ -39,28 +42,27 @@ class VerifyAccountViewController: UIViewController, UITextFieldDelegate {
         fourthTextField.removeBorder()
         
         firstTextField.becomeFirstResponder()
-
+        
         super.viewDidLoad()
         
         successScreen.isHidden = true
         verifyScreen.isHidden = false
-//        view.bringSubviewToFront(verifyScreen)
         
         firstTextField.delegate = self
         secondTextField.delegate = self
-       thirdTextField.delegate = self
-
-       fourthTextField.delegate = self
-
-                
-
-                firstTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
-
-                secondTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
-
-                thirdTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
-
-                fourthTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+        thirdTextField.delegate = self
+        
+        fourthTextField.delegate = self
+        
+        
+        
+        firstTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+        
+        secondTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+        
+        thirdTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+        
+        fourthTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         if isForgotPassword {
             verifylabel.text = verificationText
         }
@@ -68,7 +70,7 @@ class VerifyAccountViewController: UIViewController, UITextFieldDelegate {
         
         
         
-
+        
     }
     
     
@@ -84,27 +86,26 @@ class VerifyAccountViewController: UIViewController, UITextFieldDelegate {
         guard let secondNumber = secondTextField.text else {return}
         guard let thirdNumber = thirdTextField.text else {return}
         guard let fourthNumber = fourthTextField.text else {return}
-        let mobileNumber = ""
         
         let otp = firstNumber + secondNumber + thirdNumber + fourthNumber
-
+        
         verificationOTP.verifyOTP(mobileNumber: "+917022011412", otp: otp){ sucess in
             
             DispatchQueue.main.async {
                 self.correctOtp()
                 self.stopLoader(loader: loader)
-            if self.isForgotPassword {
+                if self.isForgotPassword {
+                    
+                    let vc = self.storyboard?.instantiateViewController(identifier: "CreateNewPasswordViewController") as! CreateNewPasswordViewController
+                    vc.mobileNumber = self.mobileNumber
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
                 
-                let vc = self.storyboard?.instantiateViewController(identifier: "CreateNewPasswordViewController") as! CreateNewPasswordViewController
-                vc.mobileNumber = self.mobileNumber
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
-            
-            else{
-                let vc = self.storyboard?.instantiateViewController(identifier: "PersonalDetailsViewController") as! PersonalDetailsViewController
-                vc.enterdMobileNumber = self.mobileNumber
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
+                else{
+                    let vc = self.storyboard?.instantiateViewController(identifier: "PersonalDetailsViewController") as! PersonalDetailsViewController
+                    vc.enterdMobileNumber = self.mobileNumber
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
             }
             
         } fail: {fail in
@@ -145,50 +146,50 @@ class VerifyAccountViewController: UIViewController, UITextFieldDelegate {
     
     
     @objc func textFieldDidChange(textField: UITextField){
-           guard let text = textField.text else {
+        guard let text = textField.text else {
+            
+            return
+        }
+        if text.count == 1 {
+            switch textField
+            {
+            
+            case firstTextField:
+                secondTextField.becomeFirstResponder()
+                
+            case secondTextField:
+                thirdTextField.becomeFirstResponder()
+                
+            case thirdTextField:
+                fourthTextField.becomeFirstResponder()
+                
+            case fourthTextField:
+                fourthTextField.resignFirstResponder()
+                
+            default:
+                
+                break
+                
+            }
+            
+        }
+        
+    }
+}
+extension VerifyAccountViewController {
+func initializeHideKeyboard(){
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissMyKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissMyKeyboard(){
+        view.endEditing(true)
+    }
+    
 
-               return
 
-           }
-
-           print(text)
-
-
-
-           if text.count == 1 {
-
-               switch textField
-
-               {
-
-               case firstTextField:
-
-                   secondTextField.becomeFirstResponder()
-
-               case secondTextField:
-
-                   thirdTextField.becomeFirstResponder()
-
-               case thirdTextField:
-
-                   fourthTextField.becomeFirstResponder()
-
-               case fourthTextField:
-
-                   fourthTextField.resignFirstResponder()
-
-               default:
-
-                   break
-
-               }
-
-           }else{
-
-
-
-           }
-
-       }
 }
 

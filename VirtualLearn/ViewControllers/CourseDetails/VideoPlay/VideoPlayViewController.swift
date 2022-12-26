@@ -34,22 +34,13 @@ class VideoPlayViewController: UIViewController {
         super.viewDidLoad()
         
         
-       
-//        let time: CMTime = CMTimeMakeWithSeconds(10, preferredTimescale: 1)
-//        player.seek(to: time)
-//        player.play()
-//        playVideo()
-//        timeDisplay()
-//        print("hello",seconds)
-//        addTimeobserver()
-//        videoHeading.text = heading
+        
         
     }
     override func viewDidAppear(_ animated: Bool) {
         playVideo()
         timeDisplay()
-        print("hello",seconds)
-//        addTimeobserver()
+        //        addTimeobserver()
         player.play()
         videoHeading.text = heading
     }
@@ -58,9 +49,8 @@ class VideoPlayViewController: UIViewController {
         player.seek(to: targetTime)
     }
     func playVideo() {
-        print(url)
         let videoURL = URL(string: url!)
-       
+        
         player = AVPlayer(url: videoURL!)
         playerLayer = AVPlayerLayer(player: player)
         
@@ -81,14 +71,12 @@ class VideoPlayViewController: UIViewController {
     
     @IBAction func playPauseButtonClicked(_ sender: UIButton) {
         if isPlaying{
-            print("1233333",player.pause())
             player.pause()
             sender.setImage(#imageLiteral(resourceName: "icn_play video-Play"), for: .normal)
             isPlaying = false
             let interval = CMTime(value: 1, timescale: 1)
             player.addPeriodicTimeObserver(forInterval: interval, queue: DispatchQueue.main, using: { (progressTime) in
                 let seconds = CMTimeGetSeconds(progressTime)
-                print(4567890,Int(seconds))
             })
         } else{
             
@@ -116,28 +104,28 @@ class VideoPlayViewController: UIViewController {
                 self?.timeSlider.value = Float(currentTime.currentTime().seconds )
             })
         }
-     
+        
     }
     
     func timeDisplay() {
         let interval = CMTime(value: 1, timescale: 1)
         player.addPeriodicTimeObserver(forInterval: interval, queue: DispatchQueue.main, using: { (progressTime) in
-
-        let seconds = CMTimeGetSeconds(progressTime)
-        let secondString = String(format: "%02d", Int(seconds) % 60)
-        let minutString = String(format: "%02d", Int(seconds) / 60)
-        self.timeIndicatorLabel.text = "\(minutString):\(secondString)"
-        guard let currentTime = self.player.currentItem else {return}
-        guard currentTime.duration >= .zero, !currentTime.duration.seconds.isNaN else {
-            return
-            }
-        self.timeSlider.maximumValue = Float(currentTime.duration.seconds)
             
-        self.timeSlider.minimumValue = 0
-        self.timeSlider.value = Float(currentTime.currentTime().seconds)
-        
-    } )
-}
+            let seconds = CMTimeGetSeconds(progressTime)
+            let secondString = String(format: "%02d", Int(seconds) % 60)
+            let minutString = String(format: "%02d", Int(seconds) / 60)
+            self.timeIndicatorLabel.text = "\(minutString):\(secondString)"
+            guard let currentTime = self.player.currentItem else {return}
+            guard currentTime.duration >= .zero, !currentTime.duration.seconds.isNaN else {
+                return
+            }
+            self.timeSlider.maximumValue = Float(currentTime.duration.seconds)
+            
+            self.timeSlider.minimumValue = 0
+            self.timeSlider.value = Float(currentTime.currentTime().seconds)
+            
+        } )
+    }
     @IBAction func rotateTapped(_ sender: Any) {
         if isLandscape{
             let value = UIInterfaceOrientation.portrait.rawValue
@@ -145,7 +133,7 @@ class VideoPlayViewController: UIViewController {
             isLandscape = false
         }
         else{
-        
+            
             let value = UIInterfaceOrientation.landscapeLeft.rawValue
             UIDevice.current.setValue(value, forKey: "orientation")
             isLandscape = true
