@@ -3511,6 +3511,7 @@
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                         <connections>
                                                             <action selector="nameEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="jOp-X0-aV1"/>
+                                                            <action selector="nameEditingChanged:" destination="05D-p0-z4I" eventType="editingChanged" id="1IO-um-meT"/>
                                                         </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cKp-2w-zDD">
@@ -3529,7 +3530,8 @@
                                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                                                         <connections>
-                                                            <action selector="facebookFieldEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="v2D-Ss-cuA"/>
+                                                            <action selector="emailEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="Qaz-pO-CH1"/>
+                                                            <action selector="emailFieldEditingChanged:" destination="05D-p0-z4I" eventType="editingChanged" id="fam-w7-7sD"/>
                                                         </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aao-NR-8SQ">
@@ -3558,6 +3560,7 @@
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                                         <connections>
                                                             <action selector="mobileNoEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="0td-Nj-zCb"/>
+                                                            <action selector="mobileNumberEditingChanged:" destination="05D-p0-z4I" eventType="editingChanged" id="x2F-75-NbK"/>
                                                         </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bcC-Zy-tYU">
@@ -3587,6 +3590,8 @@
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                         <connections>
                                                             <action selector="occupationEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="1v2-SH-Sbj"/>
+                                                            <action selector="occupationEditingChanged:" destination="05D-p0-z4I" eventType="editingChanged" id="GSZ-rG-deD"/>
+                                                            <action selector="occupationEndEditing:" destination="05D-p0-z4I" eventType="editingDidEnd" id="H5Z-IX-Shc"/>
                                                         </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FU0-TF-H8h">
@@ -3622,6 +3627,8 @@
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                                         <connections>
                                                             <action selector="genderEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="7uo-BY-Vii"/>
+                                                            <action selector="genderEditingChanged:" destination="05D-p0-z4I" eventType="editingChanged" id="EBs-Ul-SJz"/>
+                                                            <action selector="genderEndEditing:" destination="05D-p0-z4I" eventType="editingDidEnd" id="6GI-Kx-CtV"/>
                                                         </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Birth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2J-XB-o9u">
@@ -3633,7 +3640,7 @@
                                                         <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date Of Birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bh6-l3-hQ4" customClass="borderlessTextField" customModule="VirtualLearn" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date Of Birth (YYYY-MM-DD)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bh6-l3-hQ4" customClass="borderlessTextField" customModule="VirtualLearn" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="444" width="327" height="17"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="17" id="pzX-7a-1xv"/>
@@ -3642,7 +3649,9 @@
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                                         <connections>
+                                                            <action selector="dataOfBirthDidEndEditing:" destination="05D-p0-z4I" eventType="editingDidEnd" id="Xue-sa-vMW"/>
                                                             <action selector="dateOfBirthEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="xTl-v6-eB1"/>
+                                                            <action selector="dateOfBirthEditingChanged:" destination="05D-p0-z4I" eventType="editingChanged" id="S3V-JJ-z1q"/>
                                                         </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="623-mX-bez">
@@ -3681,6 +3690,7 @@
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL"/>
                                                         <connections>
+                                                            <action selector="twitterDidEndEditing:" destination="05D-p0-z4I" eventType="editingDidEnd" id="hfe-2j-KtE"/>
                                                             <action selector="twitterFieldEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="bRO-yW-2X5"/>
                                                         </connections>
                                                     </textField>
@@ -3707,6 +3717,7 @@
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                         <connections>
                                                             <action selector="userNameEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="X8F-Nk-rEO"/>
+                                                            <action selector="userNameEditingChanged:" destination="05D-p0-z4I" eventType="editingChanged" id="GuY-If-Kt6"/>
                                                         </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upW-IG-b4x">
@@ -3898,6 +3909,7 @@
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL"/>
                                                 <connections>
+                                                    <action selector="faceBookDidEndEditing:" destination="05D-p0-z4I" eventType="editingDidEnd" id="TxY-jZ-mI9"/>
                                                     <action selector="facebookFieldEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="AG7-dp-31W"/>
                                                 </connections>
                                             </textField>
@@ -3986,7 +3998,6 @@
                         <outlet property="occupationView" destination="FU0-TF-H8h" id="vVf-qj-4YN"/>
                         <outlet property="otherGender" destination="gd3-Hg-klZ" id="8kn-gH-qDE"/>
                         <outlet property="profilePhoto" destination="blz-Pm-c6A" id="Zaf-L6-P4Y"/>
-                        <outlet property="saveButton" destination="Jaq-Gt-Tyt" id="L7f-Gt-DWR"/>
                         <outlet property="saveLoadingButton" destination="Jaq-Gt-Tyt" id="NnZ-wt-VSZ"/>
                         <outlet property="twitterField" destination="pGL-EK-OGq" id="Hdg-Sv-hwj"/>
                         <outlet property="twitterLabel" destination="H6J-TA-ZiZ" id="dii-RB-tJf"/>
