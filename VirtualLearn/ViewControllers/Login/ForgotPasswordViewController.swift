@@ -78,7 +78,6 @@ class ForgotPasswordViewController: UIViewController {
 }
 
 
-
     extension ForgotPasswordViewController {
     func initializeHideKeyboard(){
             
