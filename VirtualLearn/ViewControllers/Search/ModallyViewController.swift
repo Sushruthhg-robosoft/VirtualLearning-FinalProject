@@ -303,7 +303,6 @@ class ModallyViewController: UIViewController {
             DispatchQueue.main.async {
                 
                 if result.count != 0 {
-                    
                     self.delegate?.modallySearchResult()
                     
                 }else {

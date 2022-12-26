@@ -43,7 +43,7 @@ class HomeViewModel {
     
     func getAllCourseDeatils(token: String,completion: @escaping([HomeCourse]) -> Void, fail: @escaping (String) -> Void){
         
-        allCourse.removeAll()
+        
         guard let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/courses?limit=5&page=1") else{return fail("url error")}
         
         var request = URLRequest(url: url)
@@ -51,6 +51,7 @@ class HomeViewModel {
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         
         networkManger.fetchDataJson(request: request) { (data) in
+           self.allCourse.removeAll()
             guard let apiData = data as? [Any] else{print("myCourseViewModel apiData array error1");return fail("data error")}
             //print(apiData)
             
