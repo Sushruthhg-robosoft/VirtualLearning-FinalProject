@@ -13,9 +13,9 @@ protocol switchVc{
 }
 
 class ChaptersViewController: UIViewController {
-
+    
     var shared = mainViewModel.mainShared
-
+    
     
     @IBOutlet weak var courseImage: UIImageView!
     @IBOutlet weak var joinedView: UIView!
@@ -60,7 +60,7 @@ class ChaptersViewController: UIViewController {
     var storageShared = StorageManeger.shared
     var url = ""
     var time = 12
-
+    
     override func viewDidLoad() {
         
         initializeHideView()
@@ -79,7 +79,7 @@ class ChaptersViewController: UIViewController {
             
             
         } fail: { error in
-                        print("failures")
+            print("failures")
             DispatchQueue.main.async {
                 if(error == "unauthorized") {
                     
@@ -94,10 +94,10 @@ class ChaptersViewController: UIViewController {
         popUpBackView.isHidden = true
         super.viewDidLoad()
         print("123456789", courseId)
-//        dataLoading()
+        //        dataLoading()
         joinedLeftView.layer.cornerRadius = 5
         joinedRightView.layer.cornerRadius = 5
-       
+        
         joinedView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
         joinedView.layer.shadowOpacity = 100
         joinedView.layer.shadowRadius = 5
@@ -113,11 +113,11 @@ class ChaptersViewController: UIViewController {
         chaptersUnderLineView.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.3607843137, blue: 0.3019607843, alpha: 1)
         overViewBtn.setTitleColor(#colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1), for: .normal)
         overViewUnderLineView.backgroundColor = #colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
- 
+        
     }
-//    override func viewDidAppear(_ animated: Bool) {
-//        dataLoading()
-//    }
+    //    override func viewDidAppear(_ animated: Bool) {
+    //        dataLoading()
+    //    }
     
     @IBAction func onClickContinueWatching(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(identifier: "VideoPlayViewController") as? VideoPlayViewController
@@ -127,9 +127,9 @@ class ChaptersViewController: UIViewController {
         self.popUpBackView.isHidden = true
         if let viewController = vc{
             navigationController?.pushViewController(viewController, animated: true)
-        
+            
         }
-    
+        
     }
     @IBAction func onClickWatchFromBeginning(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(identifier: "VideoPlayViewController") as? VideoPlayViewController
@@ -152,7 +152,7 @@ class ChaptersViewController: UIViewController {
     
     
     @IBAction func onClickClose(_ sender: Any) {
-       
+        
         navigationController?.popViewController(animated: true)
     }
     
@@ -191,10 +191,10 @@ class ChaptersViewController: UIViewController {
     func dataLoading() {
         let loader = self.loader()
         popUpBackView.isHidden = true
-       
+        
         print("view did appear ")
         shared.chaptersDetailsViewModelShared.getChapters(token: shared.token, courseId: courseId) { result in
-           
+            
             DispatchQueue.main.async { [self] in
                 if(result.joinedCourse) {
                     self.joinCourseButton.isHidden = true
@@ -207,7 +207,7 @@ class ChaptersViewController: UIViewController {
                 let lesson = String(result.courseContentResponse.lessonCount) + "Lessons | "
                 let assesment = String(result.courseContentResponse.moduleTest) + "Assesment Test |"
                 let totalLength = String(result.courseContentResponse.totalVideoLength) + "h total Length"
-               
+                
                 self.sourseContentDescription.text = chapter + lesson + assesment + totalLength
                 dataoflesson.removeAll()
                 self.dataoflesson = result.lessonResponseList
@@ -229,8 +229,8 @@ class ChaptersViewController: UIViewController {
                 }
                 else
                 {
-                self.certficateView.isHidden = true
-                certificateViewHeight.constant = 0
+                    self.certficateView.isHidden = true
+                    certificateViewHeight.constant = 0
                 }
                 tableView.reloadData()
             }
@@ -241,7 +241,7 @@ class ChaptersViewController: UIViewController {
             DispatchQueue.main.async {
                 if(error == "unauthorized") {
                     
-                 }
+                }
                 else {
                     self.navigationController?.popViewController(animated: true)
                 }
@@ -254,7 +254,7 @@ class ChaptersViewController: UIViewController {
 extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-
+        
         if dataoflesson[section].isExpandable {
             return dataoflesson[section].lessonList.count
         }
@@ -266,7 +266,7 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cells") as! CustomChapterTableViewCell
-   
+        
         if let data = dataoflesson[indexPath.section].lessonList[indexPath.row] as? LessonList {
             cell.cellconstrints(joinedCourse: self.joinCourseButton.isHidden)
             cell.setValuesLesson(data: data)
@@ -312,17 +312,35 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let last = dataoflesson[indexPath.section].lessonList.last as? AssignmentResponse else {return}
         
         if let data = dataoflesson[indexPath.section].lessonList[indexPath.row] as? AssignmentResponse {
-            if(data.assinmentStatus) {
-               guard let vc = storyboard?.instantiateViewController(identifier: "TestResultViewController") as? TestResultViewController else {return}
-               navigationController?.pushViewController(vc, animated: true)
-            }else if (data.nextPlay) {
-                guard let vc = storyboard?.instantiateViewController(identifier: "ModuleTestViewController") as? ModuleTestViewController else{return}
-                navigationController?.pushViewController(vc, animated: true)
-                vc.assignmentId = String(data.assignmentId)
-            } else if(!data.assinmentStatus) {
-                self.okAlertMessagePopup(message: "please complete previous all Chapters")
+            if(last.assignmentId == data.assignmentId) {
+                if(data.assinmentStatus) {
+                    guard let vc = storyboard?.instantiateViewController(identifier: "FinalCongragulationViewController") as? FinalCongragulationViewController else {return}
+                    navigationController?.pushViewController(vc, animated: true)
+                }
+                else if (data.nextPlay) {
+                    guard let vc = storyboard?.instantiateViewController(identifier: "ModuleTestViewController") as? ModuleTestViewController else{return}
+                    vc.chapterDelegate = self
+                    navigationController?.pushViewController(vc, animated: true)
+                    vc.assignmentId = String(data.assignmentId)
+                } else if(!data.assinmentStatus) {
+                    self.okAlertMessagePopup(message: "please complete previous all Chapters")
+                }
+            }
+            else {
+                if(data.assinmentStatus) {
+                    guard let vc = storyboard?.instantiateViewController(identifier: "TestResultViewController") as? TestResultViewController else {return}
+                    navigationController?.pushViewController(vc, animated: true)
+                }else if (data.nextPlay) {
+                    guard let vc = storyboard?.instantiateViewController(identifier: "ModuleTestViewController") as? ModuleTestViewController else{return}
+                    navigationController?.pushViewController(vc, animated: true)
+                    vc.chapterDelegate = self
+                    vc.assignmentId = String(data.assignmentId)
+                } else if(!data.assinmentStatus) {
+                    self.okAlertMessagePopup(message: "please complete previous all Chapters")
+                }
             }
         }
     }
@@ -352,7 +370,14 @@ extension ChaptersViewController: headerDelegate{
         tableView.reloadSections([idx], with: .automatic)
     }
     
-
+    
+}
+extension ChaptersViewController: ReloadData {
+    func reloadData() {
+        dataLoading()
+    }
+    
+    
 }
 
 
@@ -361,31 +386,31 @@ extension ChaptersViewController: playVideo{
         
         if let data = dataoflesson[index.section].lessonList[index.row] as? LessonList{
             if(data.lessonCompleted || data.nextPlay) {
-            lessonId = String(data.lessonId)
+                lessonId = String(data.lessonId)
                 if (data.durationCompleted > 0 && ((data.durationCompleted)+3 < data.duration )){
-                
-                self.popUpBackView.isHidden = false
-                popUpLabel.text = "Your lesson paused at \(data.durationCompleted) secs Do you want to continue watching?"
-                time = data.durationCompleted
-                url = data.videoLink
-            }
-            else{
-                let vc = storyboard?.instantiateViewController(identifier: "VideoPlayViewController") as? VideoPlayViewController
-                vc?.delegate = self
-                self.popUpBackView.isHidden = true
-                vc?.url = data.videoLink
-                vc?.seconds = 0
-                vc?.heading = "Chapter \(data.lessonNumber) - \(data.lessonName)"
-                if let viewController = vc{
-                    navigationController?.pushViewController(viewController, animated: true)
+                    
+                    self.popUpBackView.isHidden = false
+                    popUpLabel.text = "Your lesson paused at \(data.durationCompleted) secs Do you want to continue watching?"
+                    time = data.durationCompleted
+                    url = data.videoLink
                 }
-
-            }
-            
+                else{
+                    let vc = storyboard?.instantiateViewController(identifier: "VideoPlayViewController") as? VideoPlayViewController
+                    vc?.delegate = self
+                    self.popUpBackView.isHidden = true
+                    vc?.url = data.videoLink
+                    vc?.seconds = 0
+                    vc?.heading = "Chapter \(data.lessonNumber) - \(data.lessonName)"
+                    if let viewController = vc{
+                        navigationController?.pushViewController(viewController, animated: true)
+                    }
+                    
+                }
+                
             } else if(!data.lessonCompleted) {
                 self.okAlertMessagePopup(message: "please complete previous Videos")
             }
-           
+            
         }
     }
     
@@ -398,13 +423,13 @@ extension ChaptersViewController: playVideo{
             let vc = self.storyboard?.instantiateViewController(identifier: "LoginPageViewController") as? LoginPageViewController
             vc?.isPresented = true
             self.navigationController?.popToRootViewController(animated: true)
-         })
+        })
         dialogMessage.addAction(ok)
-
+        
         self.present(dialogMessage, animated: true, completion: nil)
         
     }
-
+    
 }
 
 
