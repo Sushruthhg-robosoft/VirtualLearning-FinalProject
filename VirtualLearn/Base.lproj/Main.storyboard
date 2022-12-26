@@ -4455,9 +4455,9 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="376" height="362"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question 5 of 25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEk-5u-lkG">
-                                                                                    <rect key="frame" x="25" y="-8" width="104" height="37"/>
+                                                                                    <rect key="frame" x="25" y="0.0" width="104" height="29"/>
                                                                                     <constraints>
-                                                                                        <constraint firstAttribute="height" constant="37" id="vjR-SF-9eO"/>
+                                                                                        <constraint firstAttribute="height" constant="29" id="vjR-SF-9eO"/>
                                                                                     </constraints>
                                                                                     <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                                                                     <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
@@ -4610,7 +4610,7 @@
                                                                                 <constraint firstItem="JcF-xK-Dfc" firstAttribute="top" secondItem="6RM-QO-LfK" secondAttribute="bottom" constant="20" id="TiK-fH-8M5"/>
                                                                                 <constraint firstItem="Kin-CG-tf0" firstAttribute="leading" secondItem="QeT-tz-gaX" secondAttribute="trailing" constant="12" id="Xxb-nb-dzB"/>
                                                                                 <constraint firstItem="0YA-6w-Etf" firstAttribute="top" secondItem="yo2-G9-1cr" secondAttribute="top" id="ZUi-D0-p0J"/>
-                                                                                <constraint firstItem="mEk-5u-lkG" firstAttribute="top" secondItem="RQS-t4-4I2" secondAttribute="top" constant="-8" id="aqb-wb-g93"/>
+                                                                                <constraint firstItem="mEk-5u-lkG" firstAttribute="top" secondItem="RQS-t4-4I2" secondAttribute="top" id="aqb-wb-g93"/>
                                                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Kin-CG-tf0" secondAttribute="trailing" constant="20" symbolic="YES" id="cOG-Hm-gk3"/>
                                                                                 <constraint firstItem="JkD-sH-yuL" firstAttribute="centerY" secondItem="Afm-A7-JSf" secondAttribute="centerY" id="gCl-P3-M1P"/>
                                                                                 <constraint firstItem="6RM-QO-LfK" firstAttribute="top" secondItem="6ps-u7-7Aw" secondAttribute="bottom" constant="20" id="h9u-ed-7TP"/>
@@ -5386,6 +5386,9 @@
                                                     <constraint firstAttribute="height" constant="15" id="iC9-SB-Wjh"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="icn_close_show answer"/>
+                                                <connections>
+                                                    <action selector="backButtonClicked:" destination="jwf-1H-9Lv" eventType="touchUpInside" id="7xW-eh-jXr"/>
+                                                </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_moduletest_success_illustration" translatesAutoresizingMaskIntoConstraints="NO" id="Lbe-r4-uZH">
                                                 <rect key="frame" x="30" y="178" width="315" height="230"/>
