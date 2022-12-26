@@ -58,43 +58,42 @@ class ProfileViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         let loader = self.loader()
-            shared.profileViewModel.getProfileData(token:shared.token) { profiledata in
-                DispatchQueue.main.async {
-                    self.profiledata = profiledata
-                    self.stopLoader(loader: loader)
-                    self.profileName.text = profiledata.fullName
-                    self.name.text = profiledata.fullName
-                    self.userName.text = profiledata.userName
-                    self.email.text = profiledata.emailId
-                    self.mobileNumber.text = profiledata.phoneNumber
-                    self.dateOfBirth.text = profiledata.dateOfBirth
-                    self.occupation.text = profiledata.occupation
-                    self.noOfChapters.text = String(profiledata.numberOfChaptersCompleted)
-                    self.noOfCourses.text = String(profiledata.numberOfCoursesCompleted)
-                    self.noOfTests.text = String(profiledata.numberOfTestsAttempted)
-                    let url = URL(string: profiledata.profilePic!)
-                    print(profiledata.profilePic)
-                    guard let data = try? Data(contentsOf: url!) else {return}
-                    self.profilePhoto.image = UIImage(data: (data))
-                    self.image = UIImage(data: data)
-                    self.profilePicture.image = UIImage(data: (data))
-                    self.dummyBackgroundImage = UIImage(data: (data))
-                    
-                }
-            } fail: {   error in
-                
+        shared.profileViewModel.getProfileData(token:shared.token) { profiledata in
+            DispatchQueue.main.async {
+                self.profiledata = profiledata
                 self.stopLoader(loader: loader)
-                print("failures")
-                DispatchQueue.main.async {
-                    if(error == "unauthorized") {
-                        self.okAlertMessagePopup(message: "your session is expired")
-                    }
-                    else {
-                        self.navigationController?.popViewController(animated: true)
-                    }
+                self.profileName.text = profiledata.fullName
+                self.name.text = profiledata.fullName
+                self.userName.text = profiledata.userName
+                self.email.text = profiledata.emailId
+                self.mobileNumber.text = profiledata.phoneNumber
+                self.dateOfBirth.text = profiledata.dateOfBirth
+                self.occupation.text = profiledata.occupation
+                self.noOfChapters.text = String(profiledata.numberOfChaptersCompleted)
+                self.noOfCourses.text = String(profiledata.numberOfCoursesCompleted)
+                self.noOfTests.text = String(profiledata.numberOfTestsAttempted)
+                let url = URL(string: profiledata.profilePic!)
+                guard let data = try? Data(contentsOf: url!) else {return}
+                self.profilePhoto.image = UIImage(data: (data))
+                self.image = UIImage(data: data)
+                self.profilePicture.image = UIImage(data: (data))
+                self.dummyBackgroundImage = UIImage(data: (data))
+                
+            }
+        } fail: {   error in
+            
+            self.stopLoader(loader: loader)
+            print("failures")
+            DispatchQueue.main.async {
+                if(error == "unauthorized") {
+                    self.okAlertMessagePopup(message: "your session is expired")
+                }
+                else {
+                    self.navigationController?.popViewController(animated: true)
                 }
             }
         }
+    }
     
     
     

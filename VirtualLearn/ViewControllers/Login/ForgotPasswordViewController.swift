@@ -8,7 +8,7 @@
 import UIKit
 
 class ForgotPasswordViewController: UIViewController {
-
+    
     @IBOutlet weak var enteredMobileNumber: borderlessTextField!
     @IBOutlet weak var virificationIcon: UIImageView!
     @IBOutlet weak var phoneNumberUnderLineView: UIView!
@@ -17,9 +17,8 @@ class ForgotPasswordViewController: UIViewController {
     let viewmodel = LoginViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         virificationIcon.isHidden = true
-        // Do any additional setup after loading the view.
         phoneNumberUnderLineView.backgroundColor = #colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
         errorView.isHidden = true
         enteredMobileNumber.becomeFirstResponder()
@@ -45,15 +44,14 @@ class ForgotPasswordViewController: UIViewController {
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
             } fail: {
-                //alert message
                 DispatchQueue.main.async {
                     self.okAlertMessagePopup(message: "Your Not A Registered User, Please Register")
                 }
             }
-
+            
         }
-
-       
+        
+        
         
     }
     

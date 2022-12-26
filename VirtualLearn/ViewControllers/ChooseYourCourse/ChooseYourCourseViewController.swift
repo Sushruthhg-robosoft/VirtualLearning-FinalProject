@@ -8,7 +8,7 @@
 import UIKit
 
 class ChooseYourCourseViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchView: customChooseCourseView!
     @IBOutlet weak var searchTextField: UITextField!
@@ -18,7 +18,7 @@ class ChooseYourCourseViewController: UIViewController {
     
     override func viewDidLoad() {
         
-     
+        
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -56,10 +56,10 @@ class ChooseYourCourseViewController: UIViewController {
         } fail: {
             self.stopLoader(loader: loader)
         }
-
-
-
-
+        
+        
+        
+        
     }
     
     @IBAction func onclickBack(_ sender: Any) {
@@ -123,7 +123,7 @@ extension ChooseYourCourseViewController: UICollectionViewDelegate, UICollection
             }
             
         } fail: { error in 
-            print("fail")
+            print("getAllCourseDeatils fail")
         }
     }
     
@@ -135,7 +135,7 @@ extension ChooseYourCourseViewController: UICollectionViewDelegate, UICollection
                 self.tableView.reloadData()
             }
         } fail: {error in
-            print("fail")
+            print("getNewestCourseDetails fail")
         }
     }
     
@@ -146,7 +146,7 @@ extension ChooseYourCourseViewController: UICollectionViewDelegate, UICollection
                 self.tableView.reloadData()
             }
         } fail: {error in
-            print("fail")
+            print("getPopularCourseDetails fail")
         }
     }
 }

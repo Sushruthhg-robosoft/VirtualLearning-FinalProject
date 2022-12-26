@@ -31,7 +31,7 @@ class ChangeYourPasswordViewController: UIViewController {
         invalidPasswordView.isHidden = true
         
     }
-
+    
     @IBAction func newPasswordEditingBegin(_ sender: Any) {
         passwordView.isHidden = false
     }
@@ -54,7 +54,7 @@ class ChangeYourPasswordViewController: UIViewController {
         let regular = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{6,}$"
         let predicate = NSPredicate(format: "SELF MATCHES %@", regular)
         return predicate.evaluate(with: value)
-
+        
     }
     
     
@@ -68,34 +68,33 @@ class ChangeYourPasswordViewController: UIViewController {
         let loader = self.loader()
         profileViewModel.changePasswordForExistingUser(token: shared.token, password: newpassword, oldpassword: currentpassword) {
             
-          DispatchQueue.main.async {
-          self.stopLoader(loader: loader)
-          self.navigationController?.popViewController(animated: true)
-
-      }
-           
-    }
-         fail: { error in
+            DispatchQueue.main.async {
+                self.stopLoader(loader: loader)
+                self.navigationController?.popViewController(animated: true)
+                
+            }
+            
+        }
+        fail: { error in
             self.stopLoader(loader: loader)
             print("failures")
             DispatchQueue.main.async {
                 if(error == "unauthorized") {
                     
-                 }
+                }
                 else {
                     self.okAlertMessagePopup(message: "something went wrong password not changed")
-//                    self.navigationController?.popViewController(animated: true)
                 }
             }
             
         }
     }
-  
+    
 }
 
-    
-    
 
-    
+
+
+
 
 

@@ -78,7 +78,7 @@ class CreateNewPasswordViewController: UIViewController {
     
     @IBAction func resetPasswordButtonClicked(_ sender: Any) {
         let viewmodel = LoginViewModel()
-        viewmodel.resetPassword(mobileNumber: "+91"+mobileNumber, password: "Hellllo1234"){
+        viewmodel.resetPassword(mobileNumber: "+91"+mobileNumber, password: confirmPasswordTextField.text!){
             
         } fail: {
             
