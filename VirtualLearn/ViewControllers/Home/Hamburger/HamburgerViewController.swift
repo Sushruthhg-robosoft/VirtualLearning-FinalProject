@@ -58,14 +58,14 @@ class HamburgerViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         
-        let loader = self.loader()
+        //let loader = self.loader()
         mainShraed.notificationViewModelShared.getNotificationCount(token: mainShraed.token){
             DispatchQueue.main.async {
-                self.stopLoader(loader: loader)
+                //self.stopLoader(loader: loader)
                 self.notificationCount.text = String(self.mainShraed.notificationViewModelShared.count)
             }
         } fail: { error in
-            self.stopLoader(loader: loader)
+            //self.stopLoader(loader: loader)
         }
         //            self.stopLoader(loader: loader)
         
@@ -89,7 +89,7 @@ class HamburgerViewController: UIViewController {
             }
         } fail: { error in
             
-            self.stopLoader(loader: loader)
+            //self.stopLoader(loader: loader)
             
         }
         

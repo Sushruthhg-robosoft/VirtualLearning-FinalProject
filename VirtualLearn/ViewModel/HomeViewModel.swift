@@ -288,5 +288,24 @@ class HomeViewModel {
 
     }
     
+    func getPersonalDetailsStatus(token: String,completion: @escaping(String) -> Void, fail: @escaping (String) -> Void){
+        
+        guard let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/complete-profile") else{return fail("url error")}
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        
+        networkManger.fetchData(request: request) { (data) in
+            let status = data
+            guard let profileStaus = status as? [String] else{print("error in personale details 2");return}
+            //print(profileStaus[0])
+            completion(profileStaus[0])
+        } failure: { (error) in
+            print(error)
+            fail(error as! String)
+        }
+
+    }
     
 }
