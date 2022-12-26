@@ -121,6 +121,7 @@ class ChaptersViewController: UIViewController {
         vc?.url = url
         vc?.seconds = time
         vc?.delegate = self
+        self.popUpBackView.isHidden = true
         if let viewController = vc{
             navigationController?.pushViewController(viewController, animated: true)
         
@@ -132,6 +133,7 @@ class ChaptersViewController: UIViewController {
         vc?.seconds = 0
         vc?.url = url
         vc?.delegate = self
+        self.popUpBackView.isHidden = true
         if let viewController = vc{
             navigationController?.pushViewController(viewController, animated: true)
         }
@@ -334,11 +336,14 @@ extension ChaptersViewController : PauseVideoStatus {
         self.time = second
         shared.chaptersDetailsViewModelShared.saveLesson(lessonId: lessonId, duration: String(second), token: shared.token) {
             print("saved Successfully")
+            DispatchQueue.main.async {
+                self.dataLoading()
+            }
         } fail: { error in
             print("error to load data")
         }
         
-        dataLoading()
+        
     }
 }
 
@@ -358,11 +363,11 @@ extension ChaptersViewController: playVideo{
         if let data = dataoflesson[index.section].lessonList[index.row] as? LessonList{
             if(data.lessonCompleted || data.nextPlay) {
             lessonId = String(data.lessonId)
-                if (data.durationCompleted > 0 && ((data.durationCompleted)+3 > data.duration )){
+                if (data.durationCompleted > 0 && ((data.durationCompleted)+3 < data.duration )){
                 
                 self.popUpBackView.isHidden = false
                 popUpLabel.text = "Your lesson paused at \(data.durationCompleted) secs Do you want to continue watching?"
-                
+                time = data.durationCompleted
                 url = data.videoLink
             }
             else{
