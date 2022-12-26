@@ -141,15 +141,21 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
         
         navigationController?.pushViewController(vc, animated: true)
     }
-}
+
+    
 
 func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == userNameTextField {
+            textField.resignFirstResponder()
             passwordTextfield.becomeFirstResponder()
-        
+        }
+        else if textField == passwordTextfield {
+               textField.resignFirstResponder()
+        }
         return true
     }
 }
+
 
 extension LoginPageViewController {
     

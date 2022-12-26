@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PersonalDetailsViewController: UIViewController {
+class PersonalDetailsViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var fullNameTextField: UITextField!
     @IBOutlet weak var userNameTextField: UITextField!
@@ -38,6 +38,12 @@ class PersonalDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         initializeHideKeyboard()
+        
+        fullNameTextField.delegate = self
+        userNameTextField.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        confirmPasswordTextField.delegate = self
         
         RegistrayionButtonOutlet.isEnabled = false
         successScreen.isHidden = true
@@ -277,6 +283,31 @@ class PersonalDetailsViewController: UIViewController {
 
         
         
+    }
+
+func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == fullNameTextField {
+            textField.resignFirstResponder()
+            userNameTextField.becomeFirstResponder()
+        }
+        else if textField == userNameTextField {
+               textField.resignFirstResponder()
+            emailTextField.becomeFirstResponder()
+        }
+        else if textField == emailTextField {
+               textField.resignFirstResponder()
+              passwordTextField.becomeFirstResponder()
+        }
+        else if textField == passwordTextField {
+               textField.resignFirstResponder()
+            confirmPasswordTextField.becomeFirstResponder()
+        }
+        else if textField == confirmPasswordTextField {
+               textField.resignFirstResponder()
+            
+        }
+
+        return true
     }
 }
 

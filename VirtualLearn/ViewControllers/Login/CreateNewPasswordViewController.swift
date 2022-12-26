@@ -6,7 +6,7 @@
 //
 
 import UIKit
-class CreateNewPasswordViewController: UIViewController {
+class CreateNewPasswordViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var newPasswordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var passwordView: UIView!
@@ -20,6 +20,8 @@ class CreateNewPasswordViewController: UIViewController {
         super.viewDidLoad()
         
         initializeHideKeyboard()
+        newPasswordTextField.delegate = self
+        confirmPasswordTextField.delegate = self
         
         passwordView.isHidden = true
         passwordView.layer.cornerRadius = 10
@@ -94,7 +96,20 @@ class CreateNewPasswordViewController: UIViewController {
         return predicate.evaluate(with: value)
         
     }
+
+
+func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == newPasswordTextField {
+            textField.resignFirstResponder()
+            confirmPasswordTextField.becomeFirstResponder()
+        }
+        else if textField == confirmPasswordTextField {
+               textField.resignFirstResponder()
+        }
+        return true
+    }
 }
+
 
 extension CreateNewPasswordViewController {
     func initializeHideKeyboard(){

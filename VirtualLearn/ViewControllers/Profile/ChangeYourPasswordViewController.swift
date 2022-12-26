@@ -7,10 +7,11 @@
 
 import UIKit
 
-class ChangeYourPasswordViewController: UIViewController {
+class ChangeYourPasswordViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var currentPasswordTextField: UITextField!
     @IBOutlet weak var newPasswordTextField: UITextField!
     @IBOutlet weak var confirmNewPasswordTextField: UITextField!
+    
     @IBOutlet weak var resetPassword: UIButton!
     @IBOutlet weak var invalidPasswordView: UIView!
     @IBOutlet weak var passwordView: UIView!
@@ -23,6 +24,13 @@ class ChangeYourPasswordViewController: UIViewController {
     let shared  = mainViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        initializeHideKeyboard()
+        
+        currentPasswordTextField.delegate = self
+        newPasswordTextField.delegate = self
+        confirmNewPasswordTextField.delegate = self
+        
         navigationController?.navigationBar.isHidden = true
         currentPasswordTextField.removeBorder()
         newPasswordTextField.removeBorder()
@@ -91,8 +99,39 @@ class ChangeYourPasswordViewController: UIViewController {
         }
     }
   
+
+
+func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == currentPasswordTextField {
+            textField.resignFirstResponder()
+            newPasswordTextField.becomeFirstResponder()
+        }
+        else if textField == newPasswordTextField {
+               textField.resignFirstResponder()
+            confirmNewPasswordTextField.becomeFirstResponder()
+        }
+        else if textField == confirmNewPasswordTextField {
+               textField.resignFirstResponder()
+        }
+        return true
+    }
 }
 
+
+extension ChangeYourPasswordViewController {
+    func initializeHideKeyboard(){
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissMyKeyboard))
+    
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissMyKeyboard(){
+        
+        view.endEditing(true)
+    }
+}
     
     
 

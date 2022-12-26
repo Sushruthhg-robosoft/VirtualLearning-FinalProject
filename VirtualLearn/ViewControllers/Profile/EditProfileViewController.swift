@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-class EditProfileViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class EditProfileViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var profilePhoto: UIImageView!
     @IBOutlet weak var backgroundImage: UIImageView!
@@ -25,7 +25,6 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     
     @IBOutlet weak var nameField: UITextField!
-    
     @IBOutlet weak var userNameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var mobileNoField: UITextField!
@@ -67,6 +66,15 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     var dummyImage : UIImage?
     
     override func viewDidLoad() {
+        
+        nameField.delegate = self
+        userNameField.delegate = self
+        emailField.delegate = self
+        genderField.delegate = self
+        dateOfBirthField.delegate = self
+        occupationField.delegate = self
+        twitterField.delegate = self
+        facebookField.delegate = self
         
         self.enableTextField()
         
@@ -378,7 +386,47 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         }
     }
     
-}
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            if textField == nameField {
+                textField.resignFirstResponder()
+                userNameField.becomeFirstResponder()
+            }
+            else if textField == userNameField {
+                   textField.resignFirstResponder()
+                emailField.becomeFirstResponder()
+            }
+            else if textField == emailField {
+                   textField.resignFirstResponder()
+                  mobileNoField.becomeFirstResponder()
+            }
+            else if textField == mobileNoField {
+                   textField.resignFirstResponder()
+                  occupationField.becomeFirstResponder()
+            }
+            else if textField == occupationField {
+                   textField.resignFirstResponder()
+                  genderField.becomeFirstResponder()
+            }
+            else if textField == genderField {
+                   textField.resignFirstResponder()
+                  dateOfBirthField.becomeFirstResponder()
+            }
+            else if textField == dateOfBirthField {
+                   textField.resignFirstResponder()
+                  twitterField.becomeFirstResponder()
+            }
+            
+            else if textField == twitterField {
+                   textField.resignFirstResponder()
+                  facebookField.becomeFirstResponder()
+            }
+            else if textField == facebookField {
+            textField.resignFirstResponder()
+        }
+        
+            return true
+        }
+    }
 
 extension EditProfileViewController {
     func initializeHideKeyboard(){
