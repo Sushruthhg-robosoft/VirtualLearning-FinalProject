@@ -66,6 +66,7 @@ class CategoryInformationViewController: UIViewController{
         //                }
         //            }
         //        }
+        
         shared.categoriesViewModelShared.getFeaturedCourseDetails(categoryId: categoryId, token: shared.token) { (data) in
             DispatchQueue.main.async {
                 self.stopLoader(loader: loader2)
