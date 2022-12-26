@@ -7,6 +7,7 @@
 
 import UIKit
 import AVFoundation
+import AVKit
 import CoreMedia
 class VideoPlayViewController: UIViewController {
     
@@ -20,7 +21,7 @@ class VideoPlayViewController: UIViewController {
     
     var url : String?
     var heading: String?
-    var seconds: Int?
+    var seconds: Int = 0
     var isPlaying = true
     var isLandscape = false
     override func viewDidLoad() {
@@ -33,7 +34,7 @@ class VideoPlayViewController: UIViewController {
         //player.play()
         playVideo()
         timeDisplay()
-        
+        print("hello",seconds)
         addTimeobserver()
         videoHeading.text = heading
         
@@ -44,6 +45,8 @@ class VideoPlayViewController: UIViewController {
 //        let time: CMTime = CMTimeMakeWithSeconds(10, preferredTimescale: 1)
 //        player.seek(to: time)
         playVideo()
+        timeDisplay()
+        addTimeobserver()
     }
     func seek(to seconds: Int) {
         let targetTime:CMTime = CMTimeMake(value: Int64(seconds), timescale: 1)
@@ -124,7 +127,7 @@ class VideoPlayViewController: UIViewController {
         DispatchQueue.main.async {
             
             _ = self.player.addPeriodicTimeObserver(forInterval: interval, queue: mainQueue, using: { [weak self] time in
-                
+                print("data123",self?.player.currentItem?.duration.seconds)
                 guard let currentTime = self?.player.currentItem else {return}
                 
                 self?.timeSlider.maximumValue = Float(currentTime.duration.seconds)
@@ -168,9 +171,11 @@ class VideoPlayViewController: UIViewController {
     @IBAction func backButtonClicked(_ sender: Any) {
         player.pause()
         let interval = CMTime(value: 1, timescale: 1)
+        
         player.addPeriodicTimeObserver(forInterval: interval, queue: DispatchQueue.main, using: { (progressTime) in
             let seconds = CMTimeGetSeconds(progressTime)
             print(2345678,Int(seconds))
+            player.removeObserver(self, forKeyPath: <#T##String#>)
         })
         
         navigationController?.popViewController(animated: true)
