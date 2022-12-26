@@ -6,6 +6,9 @@
 //
 
 import UIKit
+protocol gotoVideoOrCertificate{
+    func doVc(index: IndexPath, courseId: String)
+}
 
 class MyCourseTableViewCell: UITableViewCell {
 
@@ -18,4 +21,13 @@ class MyCourseTableViewCell: UITableViewCell {
     @IBOutlet weak var chapters: UILabel!
     
     @IBOutlet weak var button: UIButton!
+    
+    var delegate: gotoVideoOrCertificate?
+    var index: IndexPath?
+    var courseId: String?
+    @IBOutlet weak var onClickContinueOrCertificate: UIButton!
+    @IBAction func onClickNext(_ sender: Any) {
+        
+        delegate?.doVc(index: index!, courseId: courseId!)
+    }
 }
