@@ -57,7 +57,7 @@ class PersonalDetailsViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.removeBorder()
         confirmPasswordTextField.removeBorder()
         
-  
+        
         fullNameTextField.lineheight()
         userNameTextField.lineheight()
         emailTextField.lineheight()
@@ -94,7 +94,7 @@ class PersonalDetailsViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func passwordIButtonCliked(_ sender: Any) {
-
+        
         passwordView.isHidden = !(passwordView.isHidden)
     }
     
@@ -103,7 +103,7 @@ class PersonalDetailsViewController: UIViewController, UITextFieldDelegate {
         confirmPasswordTextField.placeholder = ""
     }
     
-
+    
     @IBAction func passwordTextBeginning(_ sender: Any) {
         passwordTextField.placeholder = ""
         passwordLabel.isHidden = false
@@ -123,20 +123,18 @@ class PersonalDetailsViewController: UIViewController, UITextFieldDelegate {
             return
         }
         if (userName.count > 4) {
-        personalData.validatingUserName(userName: userName) { sucess in
-            DispatchQueue.main.async {
-                self.usernameStatus = true
-                self.checAllField()
+            personalData.validatingUserName(userName: userName) { sucess in
+                DispatchQueue.main.async {
+                    self.usernameStatus = true
+                    self.checAllField()
+                }
+            } fail: { fail in
+                self.usernameStatus = false
+                DispatchQueue.main.async {
+                    self.alertPopup(message: "Username Already exist.")
+                }
+                
             }
-        } fail: { fail in
-            //alertMessage
-            print("change userName")
-            self.usernameStatus = false
-            DispatchQueue.main.async {
-                self.alertPopup(message: "Username Already exist.")
-            }
-            
-        }
         }
     }
     
@@ -160,7 +158,7 @@ class PersonalDetailsViewController: UIViewController, UITextFieldDelegate {
             {
                 if(passwordMatched(password)) {
                     
-                   passwordView.isHidden = true
+                    passwordView.isHidden = true
                 }
                 else {
                     passwordView.isHidden = false
@@ -177,23 +175,22 @@ class PersonalDetailsViewController: UIViewController, UITextFieldDelegate {
         
         let loader = self.loader()
         let currentUser =  personalData.assignCurrentRegisterValue(fullName: fullNameTextField.text!, userName: userNameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, mobileNumber: mobileNumber.text!)
-         personalData.registeringUser(user: currentUser) { sucess in
-             print("sucessfull")
+        personalData.registeringUser(user: currentUser) { sucess in
             DispatchQueue.main.async {
                 
                 self.stopLoader(loader: loader)
                 
-//                let vc = self.storyboard?.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
-//                self.navigationController?.pushViewController(vc, animated: true)
+                //                let vc = self.storyboard?.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
+                //                self.navigationController?.pushViewController(vc, animated: true)
                 self.detailsScreen.isHidden = true
                 self.successScreen.isHidden = false
                 self.view.bringSubviewToFront(self.successScreen)
             }
-         } fail: { fail in
-             print(fail)
-         }
-
-         
+        } fail: { fail in
+            print(fail)
+        }
+        
+        
     }
     
     // endTextField
@@ -254,7 +251,7 @@ class PersonalDetailsViewController: UIViewController, UITextFieldDelegate {
         return predicate.evaluate(with: value)
     }
     func checAllField() {
-    
+        
         if( fullNameTextField.text != "" && usernameStatus == true && emailTextField.text != "" && passwordTextField.text != "" && confirmPasswordTextField.text != "" && passwordTextField.text! == confirmPasswordTextField.text!)
         {
             RegistrayionButtonOutlet.isEnabled = true
@@ -278,9 +275,9 @@ class PersonalDetailsViewController: UIViewController, UITextFieldDelegate {
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         } fail: {
-            print("fail")
+            print("Login user fail")
         }
-
+        
         
         
     }
@@ -318,9 +315,9 @@ extension PersonalDetailsViewController{
         let dialogMessage = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
             self.dismiss(animated: true, completion: nil)
-         })
+        })
         dialogMessage.addAction(ok)
-
+        
         self.present(dialogMessage, animated: true, completion: nil)
     }
     

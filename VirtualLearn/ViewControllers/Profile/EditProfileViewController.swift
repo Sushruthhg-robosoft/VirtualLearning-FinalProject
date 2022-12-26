@@ -142,7 +142,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
                 
             }
         } fail: { error in
-            
+            print("profile update error")
         }
     }
     

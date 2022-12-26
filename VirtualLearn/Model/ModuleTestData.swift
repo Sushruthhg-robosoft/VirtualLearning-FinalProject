@@ -45,7 +45,7 @@ class QuestionAnswerDetails {
         self.correctAnswers = correctAnswers
         self.wrongAnswers = wrongAnswers
         self.questionAnswer = questionAnswer
-}
+    }
 }
 
 class QuestionAnswer {
@@ -70,12 +70,12 @@ class QuestionAnswer {
         self.correctAnswer = correctAnswer
         self.givenAnswer = givenAnswer
         self.answerStatus = answerStatus
-   }
+    }
 }
 
 struct QuestionModel {
     var id: Int
     var answer: String
-
+    
     var dictionary: [String: Any] { return ["questionId": id, "givenAnswer": answer] }
 }

@@ -42,11 +42,6 @@ extension UIViewController {
         }
     }
     
-    
-//    func alertAction(controller: UIViewController, message: String) {
-//        let alert = UIAlertController(title: "Alert", message: "\(message)", preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: "Quit", style: .default, handler: nil))
-//        controller.present(alert, animated: true, completion: nil)
-//    }
+
 }
 

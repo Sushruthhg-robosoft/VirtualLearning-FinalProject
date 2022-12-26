@@ -34,8 +34,6 @@ class ModallyViewController: UIViewController {
     @IBOutlet weak var teachingBtn: CustomBorderButton!
     
     
-
-    
     var isdesign = true
     var isdevelopment = true
     var isbusiness = true
@@ -55,8 +53,6 @@ class ModallyViewController: UIViewController {
     var isFourtyFifty = true
 
     
-    
-    
     @IBOutlet weak var fiveTenBtn: CustomBorderButton!
     @IBOutlet weak var tenTwentyBtn: CustomBorderButton!
     @IBOutlet weak var twentyThirtyBtn: CustomBorderButton!
@@ -64,14 +60,12 @@ class ModallyViewController: UIViewController {
     @IBOutlet weak var fourtyFiftyBtn: CustomBorderButton!
     
     
-    
-    
     let duration1 = ["stratDuration" : 5, "EndDuration" : 10]
     let duration2 = ["stratDuration" : 10, "EndDuration" : 20]
     let duration3 = ["stratDuration" : 20, "EndDuration" : 30]
     let duration4 = ["stratDuration" : 30, "EndDuration" : 40]
     let duration5 = ["stratDuration" : 40, "EndDuration" : 50]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -88,7 +82,7 @@ class ModallyViewController: UIViewController {
             designBtn.deselected()
             let id = returnCategoryID(currentTitle: designBtn.currentTitle ?? "")
             shared.searchViewModelShared.categories = shared.searchViewModelShared.categories.filter{$0 != id}
-
+            
             isdesign = !isdesign
         }
         
@@ -305,7 +299,7 @@ class ModallyViewController: UIViewController {
         shared.searchViewModelShared.searchOption = searchField
         shared.searchViewModelShared.getSearchResult { (result) in
             print(result)
-        
+            
             DispatchQueue.main.async {
                 
                 if result.count != 0 {
@@ -313,7 +307,7 @@ class ModallyViewController: UIViewController {
                     self.delegate?.modallySearchResult()
                     
                 }else {
-                  
+                    
                     self.delegate?.modallyNil()
                 }
             }
@@ -324,7 +318,7 @@ class ModallyViewController: UIViewController {
         shared.searchViewModelShared.duration.removeAll()
         shared.searchViewModelShared.categories.removeAll()
         dismiss(animated: true, completion: nil)
-
+        
         
     }
     
@@ -349,14 +343,13 @@ class ModallyViewController: UIViewController {
         thirtyFourtyBtn.deselected()
         fourtyFiftyBtn.deselected()
         
- 
+        
     }
     
     
     
     
     func getCategoryID(currentTitle: String){
-        print("function called")
         for i in shared.categoriesViewModelShared.listofCategories{
             if currentTitle == i.categotyName {
                 shared.searchViewModelShared.categories.append(Int(i.categoryId) ?? 0)
