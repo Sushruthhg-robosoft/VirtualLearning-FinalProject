@@ -67,24 +67,23 @@ class CategoryInformationViewController: UIViewController{
         //            }
         //        }
         
-        
-//        shared.categoriesViewModelShared.getFeaturedCourseDetails(categoryId: categoryId, token: shared.token) { (data) in
-//            DispatchQueue.main.async {
-//                self.stopLoader(loader: loader2)
-//                self.featuredCourse = data
-//                self.featureCourseCollectionView.reloadData()
-//            }
-//        } fail: { (error) in
-//            DispatchQueue.main.async {
-//                self.stopLoader(loader: loader2)
-//                if(error == "unauthorized") {
-//
-//                }
-//                else {
-//
-//                }
-//            }
-//        }
+        shared.categoriesViewModelShared.getFeaturedCourseDetails(categoryId: categoryId, token: shared.token) { (data) in
+            DispatchQueue.main.async {
+                self.stopLoader(loader: loader2)
+                self.featuredCourse = data
+                self.featureCourseCollectionView.reloadData()
+            }
+        } fail: { (error) in
+            DispatchQueue.main.async {
+                self.stopLoader(loader: loader2)
+                if(error == "unauthorized") {
+                    
+                }
+                else {
+                    
+                }
+            }
+        }
         
         let loader3 = self.loader()
         shared.homeViewModelShared.getPopularCourseDetails(token: shared.token) { (data) in
