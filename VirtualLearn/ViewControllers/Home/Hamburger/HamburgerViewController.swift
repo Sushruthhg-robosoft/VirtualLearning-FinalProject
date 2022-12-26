@@ -161,7 +161,7 @@ class HamburgerViewController: UIViewController {
             self.mainShraed.loginViewModel.logout(userId: storageManger.authId() , token: self.mainShraed.token)
             storageManger.resetLoggedIn()
             print(123456789,storageManger.isLoggedIn())
-            let vc = self.storyboard?.instantiateViewController(identifier: "LoadingViewController") as? LoadingViewController
+//            let vc = self.storyboard?.instantiateViewController(identifier: "LoadingViewController") as? LoadingViewController
             self.navigationController?.popViewController(animated: true)
             //self.navigationController?.popToViewController(vc!, animated: true)
             

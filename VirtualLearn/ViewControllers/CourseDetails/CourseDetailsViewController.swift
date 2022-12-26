@@ -164,6 +164,14 @@ class CourseDetailsViewController: UIViewController {
     
     @IBAction func onClickPreview(_ sender: Any) {
         
+        guard let vc = storyboard?.instantiateViewController(identifier: "VideoPlayViewController") as? VideoPlayViewController else{return}
+        
+        
+        let url = courseOverView?.overView.videoLink
+        
+        vc.url = url
+        navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     

@@ -237,7 +237,7 @@ extension CharacterSet {
 }
 
 func photoDataToFormData(data: Data, boundary: String, fileName: String) -> NSData {
-    var fullData = NSMutableData()
+    let fullData = NSMutableData()
     // 1 - Boundary should start with --
     let lineOne = "--" + boundary + "\r\n"
     fullData.append(lineOne.data(

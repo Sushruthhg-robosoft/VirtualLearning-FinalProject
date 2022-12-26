@@ -46,7 +46,7 @@ class EditProfileViewModel {
 
         networkManager.postData(url: url, requestMethod: "PATCH", profileImage: profileImage,  parameters: parameters,token: token, headers: nil) { (result,error)  in
             if(error == nil) {
-                print(result)
+//                print(result)
                 if result as? Int == 401 {
                     fail("unauthorized")
                 }
