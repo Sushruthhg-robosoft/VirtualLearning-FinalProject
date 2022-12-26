@@ -99,7 +99,7 @@ extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDa
         
         let noOfCellsInRow = 1   //number of column you want
         let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
-        let totalSpace = flowLayout.sectionInset.left
+        _ = flowLayout.sectionInset.left
             + flowLayout.sectionInset.right
             + (flowLayout.minimumInteritemSpacing * CGFloat(noOfCellsInRow - 1))
         
