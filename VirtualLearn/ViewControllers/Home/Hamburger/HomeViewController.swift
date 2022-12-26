@@ -60,9 +60,20 @@ class HomeViewController: UIViewController {
 //            }
 //        } fail: {error in
 //        }
-        
+        let loader3 = self.loader()
         //   NewUserView.isHidden = false
-        
+        if !storageShared.isLoggedIn(){
+            self.mainShared.homeViewModelShared.getBanners(token: self.mainShared.token) { (data) in
+                DispatchQueue.main.async {
+                   
+                    self.NewUserView.topView.bannerImage = data
+                    self.stopLoader(loader: loader3)
+                    self.NewUserView.topView.suggestionsCollectionView.reloadData()
+
+                }
+            } fail: {error in
+            }
+        }
         let loader = self.loader()
         mainShared.homeViewModelShared.getPersonalDetailsStatus(token: mainShared.token) { (data) in
             DispatchQueue.main.async {
@@ -106,7 +117,10 @@ class HomeViewController: UIViewController {
             DispatchQueue.main.async {
                 print()
                 if error == "401"{
-                    self.errorPopup(message: "Your session has expired, please Login")
+                    if self.storageShared.isLoggedIn(){
+                        self.errorPopup(message: "Your session has expired, please Login")
+                    }
+                    
                 }
             }
         }
