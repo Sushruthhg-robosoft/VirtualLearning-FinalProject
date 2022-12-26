@@ -81,7 +81,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         genderField.text = profileData?.gender
         twitterField.text = profileData?.twitterLink
         facebookField.text = profileData?.facebookLink
-  
+        
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
         
@@ -90,72 +90,72 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         dropDownView.layer.cornerRadius = 5
         dropDownView.layer.borderWidth = 1
         dropDownView.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
-       
+        
     }
     
-
+    
     @IBAction func onClickCameraButton(_ sender: Any) {
         let imageController = UIImagePickerController()
-                imageController.delegate = self
-                imageController.sourceType = .photoLibrary
-                self.present(imageController, animated: true, completion: nil)
+        imageController.delegate = self
+        imageController.sourceType = .photoLibrary
+        self.present(imageController, animated: true, completion: nil)
         
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-
+        
         profilePhoto.image = info[.originalImage] as? UIImage
         
-            self.dismiss(animated: true, completion: nil)
-
-        }
+        self.dismiss(animated: true, completion: nil)
+        
+    }
     
     @IBAction func onClickSaveBtn(_ sender: Any) {
         self.disableTextField()
         
-//        let loader = self.loader()
+        //        let loader = self.loader()
         
         saveLoadingButton.showLoading()
         
         saveLoadingButton.isEnabled = false
         
         updateEditProfileData()
-       
-            editProfileViewModel.updateProfileData(profileImage: profilePhoto.image ??  #imageLiteral(resourceName: "icn_profile_menu"), token: shared.token, profiledata: profileData!) {
-                        print(4)
-                        DispatchQueue.main.async {
-                            print("inside dispatch que")
-                            self.saveLoadingButton.hideLoading()
-                            self.saveLoadingButton.isEnabled = true
-            //            self.stopLoader(loader: loader)
-                            self.AlertMessagePopup(message: "Profile updated successfully")
-                                        
-                        }
-                    } fail: { error in
-                         
-                        }
-    }
-       
-            func updateEditProfileData() {
-                
-                profileData?.emailId = emailField.text!
-                profileData?.fullName =  nameField.text!
-                profileData?.userName = userNameField.text!
-                profileData?.phoneNumber = mobileNoField.text!
-                profileData?.gender = genderField.text!
-                profileData?.dateOfBirth = dateOfBirthField.text!
-                profileData?.facebookLink = facebookField.text!
-                profileData?.twitterLink = twitterField.text!
-                profileData?.occupation = occupationField.text!
+        
+        editProfileViewModel.updateProfileData(profileImage: profilePhoto.image ??  #imageLiteral(resourceName: "icn_profile_menu"), token: shared.token, profiledata: profileData!) {
+            print(4)
+            DispatchQueue.main.async {
+                print("inside dispatch que")
+                self.saveLoadingButton.hideLoading()
+                self.saveLoadingButton.isEnabled = true
+                //            self.stopLoader(loader: loader)
+                self.AlertMessagePopup(message: "Profile updated successfully")
                 
             }
+        } fail: { error in
+            
+        }
+    }
+    
+    func updateEditProfileData() {
+        
+        profileData?.emailId = emailField.text!
+        profileData?.fullName =  nameField.text!
+        profileData?.userName = userNameField.text!
+        profileData?.phoneNumber = mobileNoField.text!
+        profileData?.gender = genderField.text!
+        profileData?.dateOfBirth = dateOfBirthField.text!
+        profileData?.facebookLink = facebookField.text!
+        profileData?.twitterLink = twitterField.text!
+        profileData?.occupation = occupationField.text!
+        
+    }
     
     func isValidEmail(email: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailPredicate.evaluate(with: email)
-      }
-
-
+    }
+    
+    
     @IBAction func nameEdit(_ sender: Any) {
         nameView.backgroundColor = #colorLiteral(red: 0.001148699783, green: 0.2356859446, blue: 0.4366979599, alpha: 1)
         nameLabel.isHidden = false
@@ -185,7 +185,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         mobileNoView.backgroundColor = #colorLiteral(red: 0.001148699783, green: 0.2356859446, blue: 0.4366979599, alpha: 1)
         mobileNoLabel.isHidden = false
         mobileNoField.placeholder = ""
-       mobileNoLabel.isHidden = true
+        mobileNoLabel.isHidden = true
         
     }
     
@@ -216,7 +216,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         twitterField.placeholder = ""
         twitterLabel.isHidden = true
     }
-
+    
     @IBAction func facebookFieldEdit(_ sender: Any) {
         facebookView.backgroundColor = #colorLiteral(red: 0.001148699783, green: 0.2356859446, blue: 0.4366979599, alpha: 1)
         facebookLabel.isHidden = false
@@ -229,7 +229,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         
         dropDownView.isHidden = false
     }
-
+    
     @IBAction func maleTapped(_ sender: Any) {
         
         genderField.text = maleGender.currentTitle
@@ -248,8 +248,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         dropDownView.isHidden = true
         checkAllField()
     }
- 
-        
+    
+    
     @IBAction func backButtonTapped(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
@@ -260,7 +260,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
             self.dismiss(animated: true, completion: nil)
             self.navigationController?.popViewController(animated: true)
-         })
+        })
         dialogMessage.addAction(ok)
         self.present(dialogMessage, animated: true, completion: nil)
     }
@@ -289,7 +289,6 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func emailIdEditing(_ sender: Any) {
-//        var emailId = true
         emailId = !isValidEmail(email: emailField.text!)
         if emailId {
             okAlertMessagePopup(message: "Enter Valid Email")
@@ -304,84 +303,82 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
             return
         }
         checkAllField()
-
+        
     }
-
+    
     @IBAction func userNameEditingChanged(_ sender: Any) {
         guard userNameField != nil else {
             return
         }
         checkAllField()
     }
-
-
+    
+    
     @IBAction func emailFieldEditingChanged(_ sender: Any) {
-     emailId = isValidEmail(email: emailField.text!)
-
-       if emailId {
-          print(emailId)
-           checkAllField()
-       }
-       }
-    
+        emailId = isValidEmail(email: emailField.text!)
+        if emailId {
+            print(emailId)
+            checkAllField()
+        }
         
-//        guard emailField != nil else {
-//            return
-//        }
-//        checkAllField()
+        //        guard emailField != nil else {
+        //            return
+        //        }
+        //        checkAllField()
+    }
     
-
-
+    
+    
     @IBAction func mobileNumberEditingChanged(_ sender: Any) {
         guard mobileNoField != nil else {
             return
         }
         checkAllField()
     }
-
-
+    
+    
     @IBAction func occupationEditingChanged(_ sender: Any) {
         guard occupationField != nil else {
             return
         }
         checkAllField()
     }
-
+    
     @IBAction func genderEditingChanged(_ sender: Any) {
         guard genderField != nil else {
             return
         }
         checkAllField()
     }
-
-
+    
+    
     @IBAction func dateOfBirthEditingChanged(_ sender: Any) {
         guard dateOfBirthField != nil else {
             return
         }
         checkAllField()
     }
-
+    
     func checkAllField() {
-     print("email",emailId)
+        print("email",emailId)
         if (nameField.text != "" && userNameField.text != "" && emailId && mobileNoField.text != "" && occupationField.text != "" && genderField.text != "" && dateOfBirthField.text != "")
         {
             saveLoadingButton.isEnabled = true
             saveLoadingButton.alpha = 1
-
-
+            
+            
         }
         else
         {
-           saveLoadingButton.isEnabled = false
+            saveLoadingButton.isEnabled = false
             saveLoadingButton.alpha = 0.5
         }
     }
     
- }
+}
 
 
 
 
 
-    
+
