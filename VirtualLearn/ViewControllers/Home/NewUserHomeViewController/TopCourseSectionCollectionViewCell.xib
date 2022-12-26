@@ -81,6 +81,9 @@
                                     <constraint firstAttribute="width" constant="48" id="oPj-ab-w1f"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="icn_play-play-button2"/>
+                                <connections>
+                                    <action selector="onClickPlay:" destination="gTV-IL-0wX" eventType="touchUpInside" id="zvf-U7-z17"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
