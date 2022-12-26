@@ -3511,6 +3511,7 @@
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                         <connections>
                                                             <action selector="nameEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="jOp-X0-aV1"/>
+                                                            <action selector="nameEditingChanged:" destination="05D-p0-z4I" eventType="editingChanged" id="1IO-um-meT"/>
                                                         </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cKp-2w-zDD">
@@ -3530,6 +3531,7 @@
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                                                         <connections>
                                                             <action selector="emailEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="Qaz-pO-CH1"/>
+                                                            <action selector="emailFieldEditingChanged:" destination="05D-p0-z4I" eventType="editingChanged" id="fam-w7-7sD"/>
                                                         </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aao-NR-8SQ">
@@ -3558,6 +3560,7 @@
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                                         <connections>
                                                             <action selector="mobileNoEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="0td-Nj-zCb"/>
+                                                            <action selector="mobileNumberEditingChanged:" destination="05D-p0-z4I" eventType="editingChanged" id="x2F-75-NbK"/>
                                                         </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bcC-Zy-tYU">
@@ -3587,6 +3590,7 @@
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                         <connections>
                                                             <action selector="occupationEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="1v2-SH-Sbj"/>
+                                                            <action selector="occupationEditingChanged:" destination="05D-p0-z4I" eventType="editingChanged" id="GSZ-rG-deD"/>
                                                             <action selector="occupationEndEditing:" destination="05D-p0-z4I" eventType="editingDidEnd" id="H5Z-IX-Shc"/>
                                                         </connections>
                                                     </textField>
@@ -3623,6 +3627,7 @@
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                                         <connections>
                                                             <action selector="genderEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="7uo-BY-Vii"/>
+                                                            <action selector="genderEditingChanged:" destination="05D-p0-z4I" eventType="editingChanged" id="EBs-Ul-SJz"/>
                                                             <action selector="genderEndEditing:" destination="05D-p0-z4I" eventType="editingDidEnd" id="6GI-Kx-CtV"/>
                                                         </connections>
                                                     </textField>
@@ -3646,6 +3651,7 @@
                                                         <connections>
                                                             <action selector="dataOfBirthDidEndEditing:" destination="05D-p0-z4I" eventType="editingDidEnd" id="Xue-sa-vMW"/>
                                                             <action selector="dateOfBirthEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="xTl-v6-eB1"/>
+                                                            <action selector="dateOfBirthEditingChanged:" destination="05D-p0-z4I" eventType="editingChanged" id="S3V-JJ-z1q"/>
                                                         </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="623-mX-bez">
@@ -3711,6 +3717,7 @@
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                         <connections>
                                                             <action selector="userNameEdit:" destination="05D-p0-z4I" eventType="editingDidBegin" id="X8F-Nk-rEO"/>
+                                                            <action selector="userNameEditingChanged:" destination="05D-p0-z4I" eventType="editingChanged" id="GuY-If-Kt6"/>
                                                         </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upW-IG-b4x">
