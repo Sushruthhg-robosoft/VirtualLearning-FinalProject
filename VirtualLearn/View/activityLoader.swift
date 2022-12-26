@@ -28,9 +28,11 @@ extension UIViewController{
     
     
     func okAlertMessagePopup(message: String){
-        
+        let storageManegr = StorageManeger.shared
         let dialogMessage = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+            storageManegr.resetLoggedIn()
+            self.navigationController?.popToRootViewController(animated: true)
             self.dismiss(animated: true, completion: nil)
          })
         dialogMessage.addAction(ok)

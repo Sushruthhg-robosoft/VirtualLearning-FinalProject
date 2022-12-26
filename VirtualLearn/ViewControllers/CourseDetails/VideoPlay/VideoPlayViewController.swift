@@ -76,7 +76,7 @@ class VideoPlayViewController: UIViewController {
             isPlaying = false
             let interval = CMTime(value: 1, timescale: 1)
             player.addPeriodicTimeObserver(forInterval: interval, queue: DispatchQueue.main, using: { (progressTime) in
-                let seconds = CMTimeGetSeconds(progressTime)
+//                let seconds = CMTimeGetSeconds(progressTime)
             })
         } else{
             
