@@ -96,8 +96,6 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         
         initializeHideKeyboard()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIResponder.keyboardWillHideNotification, object: nil)
         
         navigationController?.navigationBar.isHidden = true
         
@@ -482,6 +480,10 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
             else if textField == facebookField {
             textField.resignFirstResponder()
         }
+        let visibleRect = CGRect(x: 0, y: textField.frame.origin.y, width: 1, height: 1)
+                scrollView.scrollRectToVisible(visibleRect, animated: true)
+
+        
         
             return true
         }
