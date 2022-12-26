@@ -53,7 +53,9 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var femaleGender: UIButton!
     @IBOutlet weak var otherGender: UIButton!
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var saveLoadingButton: LoadingButton!
+    
     
     var isdropDown = false
     var emailId = false
