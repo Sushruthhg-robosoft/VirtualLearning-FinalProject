@@ -96,9 +96,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         
         initializeHideKeyboard()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(Keyboard), name: Notification.Name.UIKeyboardWillHide, object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboard), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
         
         navigationController?.navigationBar.isHidden = true
         
@@ -117,23 +116,23 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         
     }
     
-     @objc func keyboard(notification: Notification) {
-        let userInfo = notification.userInfo!
-        
-        let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NsValue).cgRectValue
-        
-        let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
-        
-        if notification.name == Notification.Name.UIkeyboardWillHide {
-            scrollView.contentInset = UIEdgeInsets.zero
-        } else {
-            scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height, right: 0)
+    @objc func keyboardWillShow(notification:NSNotification){
+        guard let userInfo = notification.userInfo else { return }
+            var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+            keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+
+            var contentInset:UIEdgeInsets = self.scrollView.contentInset
+            contentInset.bottom = keyboardFrame.size.height + 20
+            scrollView.contentInset = contentInset
         }
-        
-        scrollView.scrollIndicatorInsets = scrollView.contentInset
-        
-        
-    }
+
+        @objc func keyboardWillHide(notification:NSNotification) {
+
+            let contentInset:UIEdgeInsets = UIEdgeInsets.zero
+            scrollView.contentInset = contentInset
+        }
+
+       
     
     
     @IBAction func onClickCameraButton(_ sender: Any) {
