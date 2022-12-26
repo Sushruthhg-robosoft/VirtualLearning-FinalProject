@@ -428,6 +428,27 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         }
     }
 
+func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    let visibleRect = CGRect(origin: scrollView.contentOffset, size: scrollView.bounds.size)
+    let activeField: UITextField? = findFirstResponder(in: scrollView)
+    if let activeField = activeField, !visibleRect.contains(activeField.frame.origin) {
+        let scrollPoint = CGPoint(x: 0, y: activeField.frame.origin.y - activeField.frame.height)
+        scrollView.setContentOffset(scrollPoint, animated: true)
+    }
+}
+
+func findFirstResponder(in view: UIView) -> UITextField? {
+    for subView in view.subviews {
+        if subView.isFirstResponder {
+            return subView as? UITextField
+        }
+        if let firstResponder = findFirstResponder(in: subView) {
+            return firstResponder
+        }
+    }
+    return nil
+}
+
 extension EditProfileViewController {
     func initializeHideKeyboard(){
         
