@@ -6,7 +6,7 @@
 //
 
 import UIKit
-class CreateNewPasswordViewController: UIViewController {
+class CreateNewPasswordViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var newPasswordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var passwordView: UIView!
@@ -18,6 +18,11 @@ class CreateNewPasswordViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        initializeHideKeyboard()
+        newPasswordTextField.delegate = self
+        confirmPasswordTextField.delegate = self
+        
         passwordView.isHidden = true
         passwordView.layer.cornerRadius = 10
         passwordView.layer.borderWidth = 1
@@ -90,5 +95,35 @@ class CreateNewPasswordViewController: UIViewController {
         let predicate = NSPredicate(format: "SELF MATCHES %@", regular)
         return predicate.evaluate(with: value)
         
+    }
+
+
+func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == newPasswordTextField {
+            textField.resignFirstResponder()
+            confirmPasswordTextField.becomeFirstResponder()
+        }
+        else if textField == confirmPasswordTextField {
+               textField.resignFirstResponder()
+        }
+        return true
+    }
+}
+
+
+extension CreateNewPasswordViewController {
+    func initializeHideKeyboard(){
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissMyKeyboard))
+        
+       
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissMyKeyboard(){
+        
+        view.endEditing(true)
     }
 }

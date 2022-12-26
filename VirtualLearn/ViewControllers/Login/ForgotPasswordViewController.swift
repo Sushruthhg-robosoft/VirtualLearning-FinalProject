@@ -18,6 +18,8 @@ class ForgotPasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        initializeHideKeyboard()
+
         virificationIcon.isHidden = true
         phoneNumberUnderLineView.backgroundColor = #colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
         errorView.isHidden = true
@@ -71,6 +73,23 @@ class ForgotPasswordViewController: UIViewController {
             virificationIcon.image = #imageLiteral(resourceName: "icn_textfield_wrong")
         }
     }
+}
+
+
+    extension ForgotPasswordViewController {
+    func initializeHideKeyboard(){
+            
+            let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+                target: self,
+                action: #selector(dismissMyKeyboard))
+            view.addGestureRecognizer(tap)
+        }
+        
+        @objc func dismissMyKeyboard(){
+            view.endEditing(true)
+        }
+        
     
     
 }
+

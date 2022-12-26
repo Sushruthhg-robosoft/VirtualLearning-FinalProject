@@ -4021,7 +4021,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Atv-4b-AhL">
-                                                <rect key="frame" x="24" y="121" width="261" height="26"/>
+                                                <rect key="frame" x="24" y="121" width="271.5" height="30.5"/>
                                                 <string key="text">Change your Password
 
 </string>
@@ -4030,13 +4030,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your password must have at least 6 or more characters" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="noH-jf-9Ve">
-                                                <rect key="frame" x="24" y="157" width="327" height="39"/>
+                                                <rect key="frame" x="24" y="161.5" width="327" height="37.5"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                 <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ql2-X5-jvo">
-                                                <rect key="frame" x="24" y="230" width="109.5" height="22"/>
+                                                <rect key="frame" x="24" y="233" width="112" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="22" id="165-sB-SxP"/>
                                                 </constraints>
@@ -4045,7 +4045,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jtP-mI-Mxp" customClass="borderlessTextField" customModule="VirtualLearn" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="264" width="327" height="24"/>
+                                                <rect key="frame" x="24" y="267" width="327" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="nhR-cN-o5v"/>
                                                 </constraints>
@@ -4053,7 +4053,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j15-1b-AxH">
-                                                <rect key="frame" x="24" y="298" width="327" height="1"/>
+                                                <rect key="frame" x="24" y="301" width="327" height="1"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="Hpp-hB-45Q"/>
@@ -4061,7 +4061,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rw8-Pl-2jy">
-                                                <rect key="frame" x="24" y="312" width="91.5" height="22"/>
+                                                <rect key="frame" x="24" y="315" width="93.5" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="22" id="Nq7-j3-XEc"/>
                                                 </constraints>
@@ -4070,7 +4070,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iuV-AS-n9L" customClass="borderlessTextField" customModule="VirtualLearn" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="347" width="327" height="24"/>
+                                                <rect key="frame" x="24" y="350" width="327" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="8PP-P6-mMF"/>
                                                 </constraints>
@@ -4082,7 +4082,7 @@
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm new password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdF-PW-exr">
-                                                <rect key="frame" x="24" y="392" width="141" height="22"/>
+                                                <rect key="frame" x="24" y="395" width="145" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="22" id="1kL-Cw-y9a"/>
                                                 </constraints>
@@ -4091,19 +4091,19 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gSI-k0-ixx" customClass="borderlessTextField" customModule="VirtualLearn" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="421.5" width="327" height="34"/>
+                                                <rect key="frame" x="24" y="424.5" width="327" height="34"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pj7-x4-MbS">
-                                                <rect key="frame" x="24" y="458" width="327" height="1"/>
+                                                <rect key="frame" x="24" y="461" width="327" height="1"/>
                                                 <color key="backgroundColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="d0x-85-6ir"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VTl-Ag-7U9">
-                                                <rect key="frame" x="24" y="539" width="327" height="46"/>
+                                                <rect key="frame" x="24" y="542" width="327" height="46"/>
                                                 <color key="backgroundColor" red="0.93333333330000001" green="0.36078431370000003" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="46" id="2Ov-Cb-dJ4"/>
@@ -4118,21 +4118,21 @@
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_textfield_right" translatesAutoresizingMaskIntoConstraints="NO" id="qad-fQ-LP3">
-                                                <rect key="frame" x="331" y="264" width="20" height="24"/>
+                                                <rect key="frame" x="331" y="267" width="20" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="20" id="3e0-em-2Uf"/>
                                                     <constraint firstAttribute="height" constant="24" id="TvB-fh-VeP"/>
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wOT-VI-lYq">
-                                                <rect key="frame" x="24" y="379" width="327" height="1"/>
+                                                <rect key="frame" x="24" y="382" width="327" height="1"/>
                                                 <color key="backgroundColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="iub-Qu-NiQ"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8oF-ri-OSr">
-                                                <rect key="frame" x="24" y="383" width="327" height="81"/>
+                                                <rect key="frame" x="24" y="386" width="327" height="81"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Our minimum Requirment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8D-Xb-1UF">
                                                         <rect key="frame" x="16" y="12" width="144" height="15"/>
@@ -4224,7 +4224,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invalid password, please try again" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcU-hU-PuV">
-                                                <rect key="frame" x="60" y="12" width="297" height="19.5"/>
+                                                <rect key="frame" x="60" y="12" width="297" height="19"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -4404,14 +4404,14 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_test duration" translatesAutoresizingMaskIntoConstraints="NO" id="LhB-ee-9Tb">
-                                                        <rect key="frame" x="226.5" y="136.5" width="14" height="15"/>
+                                                        <rect key="frame" x="217" y="136.5" width="14" height="15"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="15" id="9Op-J5-yM2"/>
                                                             <constraint firstAttribute="width" constant="14" id="atV-dz-VBI"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8mins remaining" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jv3-li-DYe">
-                                                        <rect key="frame" x="246.5" y="136.5" width="106.5" height="15"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 mins remaining" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jv3-li-DYe">
+                                                        <rect key="frame" x="237" y="136.5" width="116" height="15"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="15" id="9fO-Rj-ldY"/>
                                                         </constraints>
@@ -4443,9 +4443,9 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="376" height="362"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question 5 of 25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEk-5u-lkG">
-                                                                                    <rect key="frame" x="25" y="0.0" width="103.5" height="17"/>
+                                                                                    <rect key="frame" x="25" y="-8" width="104" height="37"/>
                                                                                     <constraints>
-                                                                                        <constraint firstAttribute="height" constant="17" id="vjR-SF-9eO"/>
+                                                                                        <constraint firstAttribute="height" constant="37" id="vjR-SF-9eO"/>
                                                                                     </constraints>
                                                                                     <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                                                                     <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
@@ -4580,7 +4580,7 @@
                                                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vtV-B0-G3y" secondAttribute="trailing" constant="16" id="3BL-vK-r80"/>
                                                                                 <constraint firstAttribute="trailing" secondItem="TaI-sm-YDi" secondAttribute="trailing" constant="24" id="3vc-9y-NOX"/>
                                                                                 <constraint firstItem="JcF-xK-Dfc" firstAttribute="leading" secondItem="RQS-t4-4I2" secondAttribute="leading" constant="25" id="59g-g6-fM3"/>
-                                                                                <constraint firstItem="vtV-B0-G3y" firstAttribute="top" secondItem="mEk-5u-lkG" secondAttribute="bottom" constant="20" id="5ZN-n9-5vi"/>
+                                                                                <constraint firstItem="vtV-B0-G3y" firstAttribute="top" secondItem="mEk-5u-lkG" secondAttribute="bottom" constant="8" id="5ZN-n9-5vi"/>
                                                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Afm-A7-JSf" secondAttribute="trailing" constant="20" symbolic="YES" id="5gM-Ca-nKn"/>
                                                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mEk-5u-lkG" secondAttribute="trailing" constant="20" symbolic="YES" id="8Pe-vP-TVT"/>
                                                                                 <constraint firstItem="JcF-xK-Dfc" firstAttribute="top" secondItem="6RM-QO-LfK" secondAttribute="bottom" constant="20" id="9Gl-U3-D0S"/>
@@ -4598,7 +4598,7 @@
                                                                                 <constraint firstItem="JcF-xK-Dfc" firstAttribute="top" secondItem="6RM-QO-LfK" secondAttribute="bottom" constant="20" id="TiK-fH-8M5"/>
                                                                                 <constraint firstItem="Kin-CG-tf0" firstAttribute="leading" secondItem="QeT-tz-gaX" secondAttribute="trailing" constant="12" id="Xxb-nb-dzB"/>
                                                                                 <constraint firstItem="0YA-6w-Etf" firstAttribute="top" secondItem="yo2-G9-1cr" secondAttribute="top" id="ZUi-D0-p0J"/>
-                                                                                <constraint firstItem="mEk-5u-lkG" firstAttribute="top" secondItem="RQS-t4-4I2" secondAttribute="top" id="aqb-wb-g93"/>
+                                                                                <constraint firstItem="mEk-5u-lkG" firstAttribute="top" secondItem="RQS-t4-4I2" secondAttribute="top" constant="-8" id="aqb-wb-g93"/>
                                                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Kin-CG-tf0" secondAttribute="trailing" constant="20" symbolic="YES" id="cOG-Hm-gk3"/>
                                                                                 <constraint firstItem="JkD-sH-yuL" firstAttribute="centerY" secondItem="Afm-A7-JSf" secondAttribute="centerY" id="gCl-P3-M1P"/>
                                                                                 <constraint firstItem="6RM-QO-LfK" firstAttribute="top" secondItem="6ps-u7-7Aw" secondAttribute="bottom" constant="20" id="h9u-ed-7TP"/>

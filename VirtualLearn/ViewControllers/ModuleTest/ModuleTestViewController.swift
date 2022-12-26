@@ -14,6 +14,7 @@ class ModuleTestViewController: UIViewController {
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var timeLabel: UILabel!
     var testAnswers: [Int:String] = [:]
+    var questionNo = 0
     
     var moduleTestViewModel = ModuleTestViewModel()
     let mainShared = mainViewModel.mainShared
@@ -91,6 +92,16 @@ class ModuleTestViewController: UIViewController {
                 vc.assignmentId = self.assignmentId
             }
         } fail: {error in
+        
+            print("failures")
+            DispatchQueue.main.async {
+                if(error == "unauthorized") {
+                    
+                }
+                else {
+                    //                   self.navigationController?.popViewController(animated: true)
+                }
+            }
             
             print("submit answer failures")
 
@@ -155,13 +166,14 @@ extension ModuleTestViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? ModuleTestCollectionViewCell
         cell?.question.text = moduleTestViewModel.moduleTestData[indexPath.row].questionName
-        cell?.questionNoLabel.text = moduleTestViewModel.moduleTestData[indexPath.row].questionId
+//        cell?.questionNoLabel.text = moduleTestViewModel.moduleTestData[indexPath.row].questionId
         cell?.QuestionInd = Int(moduleTestViewModel.moduleTestData[indexPath.row].questionId)
         cell?.delegate = self
         cell?.option1Label.text = moduleTestViewModel.moduleTestData[indexPath.row].option_1
         cell?.option2Label.text = moduleTestViewModel.moduleTestData[indexPath.row].option_2
         cell?.option3Label.text = moduleTestViewModel.moduleTestData[indexPath.row].option_3
         cell?.option4Label.text = moduleTestViewModel.moduleTestData[indexPath.row].option_4
+        cell?.questionNoLabel.text = "Question \(indexPath.row + 1) of \(moduleTestViewModel.moduleTestData.count) remaining"
         return cell!
     }
     
