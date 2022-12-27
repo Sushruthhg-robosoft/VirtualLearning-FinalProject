@@ -12,6 +12,9 @@ class CourseDetailsViewController: UIViewController {
     var shared = mainViewModel.mainShared
     
     
+    @IBOutlet weak var tableView3Height: NSLayoutConstraint! //128
+    @IBOutlet weak var tableView1Height: NSLayoutConstraint! //210
+    @IBOutlet weak var tableView2Height: NSLayoutConstraint! //178
     @IBOutlet weak var CourseHeading: UILabel!
     @IBOutlet weak var courseType: UILabel!
     @IBOutlet weak var courseChapters: UILabel!
@@ -105,9 +108,26 @@ class CourseDetailsViewController: UIViewController {
                 
                 self.courseDescription.sizeToFit()
                 self.courseDescription.text = courseDataOverView.overView.previewCourseContent
-                self.courseOutcome = courseDataOverView.overView.courseOutCome
-                self.courseRequirment = courseDataOverView.overView.requirments
                 
+            
+                self.courseOutcome = courseDataOverView.overView.courseOutCome
+
+                if courseOutcome.count == 0{
+                    self.tableView2Height.constant = 0
+                } else {
+                    self.tableView2Height.constant = 178
+                }
+                
+                self.courseRequirment = courseDataOverView.overView.requirments
+                if courseRequirment.count == 0 {
+                    self.tableView3Height.constant = 0
+                } else {
+                    
+                    self.tableView3Height.constant = 128
+
+                }
+                
+
                 self.instructorName.text = courseDataOverView.Instructor.instructorName
                 self.instructorOccupation.text = courseDataOverView.Instructor.occupation
                 self.instructorDescription.text = courseDataOverView.Instructor.about
@@ -136,7 +156,10 @@ class CourseDetailsViewController: UIViewController {
         }
         
         
+       
+        
     }
+    
     
     
     @IBAction func onClickOverView(_ sender: Any) {
