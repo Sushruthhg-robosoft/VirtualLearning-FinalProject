@@ -125,7 +125,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
+        resignFirstResponder()
         shared.searchViewModelShared.searchOption = searchTextField.text!
                 shared.searchViewModelShared.getSearchResult { (result) in
                     DispatchQueue.main.async {
