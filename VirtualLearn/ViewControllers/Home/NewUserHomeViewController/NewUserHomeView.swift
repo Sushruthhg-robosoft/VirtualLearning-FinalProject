@@ -37,7 +37,7 @@ class NewUserHomeView: UIView {
         
         shared.homeViewModelShared.getOngoingCourseForHome(token: shared.token) {
             DispatchQueue.main.async {
-                if self.shared.homeViewModelShared.ongoingCourses.count != 0{
+                if self.shared.homeViewModelShared.ongoingCourses.count > 0{
                     self.existingUser()
                 }
                 else{

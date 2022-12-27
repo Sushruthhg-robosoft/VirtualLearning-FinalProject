@@ -61,12 +61,13 @@ class ChaptersViewController: UIViewController {
     var url = ""
     var time = 12
     var courseName = ""
-    
+    var joinedCourse = false
     override func viewDidLoad() {
         
 //        initializeHideView()
         //initializeHideView()
-        
+        self.certficateView.isHidden = true
+        certificateViewHeight.constant = 0
         shared.courseDetailsViewModelShared.courseOverView(token: shared.token, courseId: courseId) { courseDataOverView in
             
             DispatchQueue.main.async { [self] in
@@ -94,6 +95,15 @@ class ChaptersViewController: UIViewController {
                 }
             }
             
+            
+            
+        }
+        
+        if joinedCourse{
+            joinCourseButton.isHidden = false
+        }
+        else{
+            joinCourseButton.isHidden = true
         }
         
         popUpBackView.isHidden = true
@@ -221,9 +231,9 @@ class ChaptersViewController: UIViewController {
                     self.joinCourseButton.isHidden = false
                 }
                 
-                let chapter = String(result.courseContentResponse.chapterCount) + "Chapter | "
-                let lesson = String(result.courseContentResponse.lessonCount) + "Lessons | "
-                let assesment = String(result.courseContentResponse.moduleTest) + "Assesment Test |"
+                let chapter = String(result.courseContentResponse.chapterCount) + " Chapters | "
+                let lesson = String(result.courseContentResponse.lessonCount) + " Lessons | "
+                let assesment = String(result.courseContentResponse.moduleTest) + " Assesment Test |"
                 let totalLength = String(result.courseContentResponse.totalVideoLength) + "h total Length"
                 
                 self.sourseContentDescription.text = chapter + lesson + assesment + totalLength
@@ -257,12 +267,7 @@ class ChaptersViewController: UIViewController {
             self.stopLoader(loader: loader)
             print("failures")
             DispatchQueue.main.async {
-                if(error == "unauthorized") {
-                    
-                }
-                else {
-                    self.navigationController?.popViewController(animated: true)
-                }
+                self.okAlertMessagePopup(message: "Course Data Not Loaded")
             }
         }
     }
@@ -291,7 +296,7 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
         }
         
         if let data = dataoflesson[indexPath.section].lessonList[indexPath.row] as? AssignmentResponse {
-            
+            cell.cellconstrints(joinedCourse: self.joinCourseButton.isHidden)
             cell.setValuesAssignment(data: data)
         }
         cell.delegate = self
@@ -330,7 +335,7 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+//        if()
         if let data = dataoflesson[indexPath.section].lessonList[indexPath.row] as? AssignmentResponse {
                 if(data.assinmentStatus) {
                     guard let vc = storyboard?.instantiateViewController(identifier: "TestResultViewController") as? TestResultViewController else {return}
@@ -361,6 +366,8 @@ extension ChaptersViewController : PauseVideoStatus {
                 self.dataLoading()
             }
         } fail: { error in
+            self.stopLoader(loader: loader)
+            self.okAlertMessagePopup(message: "Time Not saved")
             print("error to load data")
         }
         

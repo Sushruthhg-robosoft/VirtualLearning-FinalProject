@@ -41,6 +41,7 @@ class CategoryViewModel{
             }
         } failure: { (error) in
             print("Fail")
+            fail()
         }
         
     }

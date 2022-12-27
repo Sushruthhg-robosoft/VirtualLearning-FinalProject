@@ -13,6 +13,7 @@ class ModuleTestViewController: UIViewController {
     @IBOutlet weak var previousButton: UIButton!
     @IBOutlet weak var submitButton: LoadingButton!
     @IBOutlet weak var timeLabel: UILabel!
+    var storageShared = StorageManeger.shared
     var testAnswers: [Int:String] = [:]
     var questionNo = 0
     
@@ -52,14 +53,36 @@ class ModuleTestViewController: UIViewController {
                 
             }
         } fail: {error in
+            DispatchQueue.main.async {
+                if(error == "unauthorized") {
+                    self.errorPopup(message: "Your session has been expired")
+                }
+                
+                print("get questions failures")
+                self.okAlertMessagePopupforPop(message: "No Assesment found or Not joined the course")
+            }
             
-            print("get questions failures")
-        
         }
         
         
     }
     
+    func errorPopup(message: String){
+        
+        let dialogMessage = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+            self.dismiss(animated: true, completion: nil)
+            
+            self.navigationController?.popToRootViewController(animated: true)
+            self.storageShared.resetLoggedIn()
+         })
+        dialogMessage.addAction(ok)
+
+        self.present(dialogMessage, animated: true, completion: nil)
+        
+    }
+
+
     
     
     @IBAction func onClickNext(_ sender: Any) {
@@ -101,10 +124,10 @@ class ModuleTestViewController: UIViewController {
             print("failures")
             DispatchQueue.main.async {
                 if(error == "unauthorized") {
-                    
+                    self.errorPopup(message: "Your session has expired")
                 }
                 else {
-                    //                   self.navigationController?.popViewController(animated: true)
+                    self.okAlertMessagePopupforPop(message: "Unable to submit. Please try again later")
                 }
             }
             

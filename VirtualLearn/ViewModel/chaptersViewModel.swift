@@ -100,8 +100,7 @@ class ChaptersViewModel {
                     
 
                 }
-                print(lessonResponseLists.count)
-    //            print("after array")
+//                print(lessonResponseLists.count)
                 var certificateResponse: Certificate?
                 
                 guard let certificateGenerated = apiData["certificateGenerated"] as? Bool else{print("certificateGeneratedrr"); return fail("data Error")}

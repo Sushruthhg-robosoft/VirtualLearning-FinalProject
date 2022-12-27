@@ -179,16 +179,16 @@ class NetWorkManager {
                
                 let httpResponse = response as! HTTPURLResponse
                 print("sataus cpodeee", httpResponse.statusCode)
-                guard let responsedata = data else { return }
+                guard let responsedata = data else { return failure("Not loaded") }
                 if(httpResponse.statusCode == 401) {
                     failure(401)
                 }
                 
                 else if(httpResponse.statusCode == 200){
                     
-                    let data = try! JSONSerialization.jsonObject(with: responsedata, options: .allowFragments)
+                    let data = try? JSONSerialization.jsonObject(with: responsedata, options: .allowFragments)
                     
-                    completion(data)
+                    completion(data ?? "")
                     
                 }
                 else{

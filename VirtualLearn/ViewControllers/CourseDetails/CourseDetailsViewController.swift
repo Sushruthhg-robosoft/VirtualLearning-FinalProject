@@ -52,6 +52,7 @@ class CourseDetailsViewController: UIViewController {
     var courseOutcome = [String]()
     var courseRequirment = [String]()
     var courseId = ""
+    var hideJoinCourse = false
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView1.delegate = self
@@ -75,10 +76,12 @@ class CourseDetailsViewController: UIViewController {
             DispatchQueue.main.async { [self] in
                 if(courseDataOverView.joinedCourse) {
                     joinCourseButton.isHidden = true
+                    self.hideJoinCourse = true
                 }
                 else
                 {
                     joinCourseButton.isHidden = false
+                    self.hideJoinCourse = false
                 }
                 let url1 = URL(string: courseDataOverView.courseHeader.courseImage)
                 guard let data1 = try? Data(contentsOf: url1!) else {return}
@@ -271,6 +274,7 @@ extension CourseDetailsViewController: UITableViewDelegate, UITableViewDataSourc
             guard let vc = segue.destination as? ChaptersViewController else { return }
             vc.delegate = self
             vc.courseId = courseId
+            vc.joinedCourse = self.hideJoinCourse
             if(joinCourseButton.isHidden) {
                 vc.joinCourseButton.isHidden = true
             }

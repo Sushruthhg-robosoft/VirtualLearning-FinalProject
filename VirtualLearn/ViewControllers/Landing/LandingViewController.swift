@@ -60,6 +60,7 @@ class LandingViewController: UIViewController {
                 
             }
         } fail: {
+            self.stopLoader(loader: loader)
             print("gettermsofServicesContent error")
         }
         
@@ -80,6 +81,7 @@ class LandingViewController: UIViewController {
             }
             
         } fail: {
+            self.stopLoader(loader: loader)
             print("getprivacyPolicyContent error")
         }
     }

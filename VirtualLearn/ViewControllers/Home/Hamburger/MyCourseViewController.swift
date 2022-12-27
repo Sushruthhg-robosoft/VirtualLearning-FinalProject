@@ -67,6 +67,7 @@ class MyCourseViewController: UIViewController {
             
 //            self.stopLoader(loader: loader)
             print("failures")
+            self.stopLoader(loader: loder)
             DispatchQueue.main.async {
                 if(error == "unauthorized") {
                     

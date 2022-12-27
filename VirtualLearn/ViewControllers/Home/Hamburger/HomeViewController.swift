@@ -93,6 +93,7 @@ class HomeViewController: UIViewController {
 
                         }
                     } fail: {error in
+                        self.stopLoader(loader: loader1)
                     }
                 }
                 else{
@@ -109,6 +110,7 @@ class HomeViewController: UIViewController {
 
                         }
                     } fail: {error in
+                        self.stopLoader(loader: loader1)
                     }
                 }
             }

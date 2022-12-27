@@ -61,6 +61,7 @@ class LoginViewModel {
                 print(response[0])
             } failure: { failResult in
                 print(failResult)
+                fail()
             }
         
     }
