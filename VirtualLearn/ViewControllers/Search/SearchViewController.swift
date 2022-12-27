@@ -156,8 +156,9 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
                 } fail: { (fail) in
                     print(fail)
                 }
-        
+        textField.resignFirstResponder()
         return true
+        
     }
     
     
