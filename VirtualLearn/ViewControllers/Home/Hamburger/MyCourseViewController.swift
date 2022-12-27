@@ -180,8 +180,8 @@ extension MyCourseViewController: gotoVideoOrCertificate{
         else{
             let vc = storyboard?.instantiateViewController(identifier: "ViewCertificateViewController") as? ViewCertificateViewController
             if let viewController = vc{
-              //  viewController.
-              //  navigationController?.pushViewController(viewController, animated: true)
+                viewController.courseId = courseId
+              navigationController?.pushViewController(viewController, animated: true)
         }
         
     }
