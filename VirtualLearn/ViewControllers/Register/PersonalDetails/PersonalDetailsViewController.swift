@@ -30,10 +30,15 @@ class PersonalDetailsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var RegistrayionButtonOutlet: UIButton!
     var storagemaner = StorageManeger.shared
     @IBOutlet weak var successScreen: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     let personalData = PersonalData()
     let mainshared = mainViewModel.mainShared
     var enterdMobileNumber = ""
     var usernameStatus = false
+    var activeTextField : UITextField? = nil
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -73,10 +78,48 @@ class PersonalDetailsViewController: UIViewController, UITextFieldDelegate {
         emailLabel.isHidden = true
         passwordLabel.isHidden = true
         confirmPasswordLabel.isHidden = true
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+       
+        self.activeTextField = textField
+      }
+        
+      
+      func textFieldDidEndEditing(_ textField: UITextField) {
+        self.activeTextField = nil
+      }
     
-    // begin textfield
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+           else {
+            
+             return
+           }
+
+           let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height , right: 0.0)
+           scrollView.contentInset = contentInsets
+           scrollView.scrollIndicatorInsets = contentInsets
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+    
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
+               
+          scrollView.contentInset = contentInsets
+           scrollView.scrollIndicatorInsets = contentInsets
+    }
+ 
+
+       
+    
+  
     
     @IBAction func fullNameTextBeginning(_ sender: Any) {
         fullNameLabel.isHidden = false
@@ -179,9 +222,6 @@ class PersonalDetailsViewController: UIViewController, UITextFieldDelegate {
             DispatchQueue.main.async {
                 
                 self.stopLoader(loader: loader)
-                
-                //                let vc = self.storyboard?.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
-                //                self.navigationController?.pushViewController(vc, animated: true)
                 self.detailsScreen.isHidden = true
                 self.successScreen.isHidden = false
                 self.view.bringSubviewToFront(self.successScreen)

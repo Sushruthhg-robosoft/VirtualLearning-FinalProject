@@ -121,11 +121,11 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        // set the activeTextField to the selected textfield
+       
         self.activeTextField = textField
       }
         
-      // when user click 'done' or dismiss the keyboard
+      
       func textFieldDidEndEditing(_ textField: UITextField) {
         self.activeTextField = nil
       }
@@ -133,7 +133,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     @objc func keyboardWillShow(notification: NSNotification) {
         guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
            else {
-             // if keyboard size is not available for some reason, dont do anything
+             
              return
            }
 
@@ -143,11 +143,9 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
-      // move back the root view origin to zero
+     
         let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
-               
-           
-           // reset back the content inset to zero after keyboard is gone
+            
            scrollView.contentInset = contentInsets
            scrollView.scrollIndicatorInsets = contentInsets
     }
