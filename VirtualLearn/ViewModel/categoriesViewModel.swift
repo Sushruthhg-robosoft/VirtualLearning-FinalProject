@@ -97,8 +97,9 @@ class CategoryViewModel{
             }
             
             completion()
-        } failure: { (fail) in
-            print(fail)
+        } failure: { (error) in
+            print(error)
+            fail()
         }
 
     }

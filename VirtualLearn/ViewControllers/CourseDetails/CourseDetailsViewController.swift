@@ -94,7 +94,7 @@ class CourseDetailsViewController: UIViewController {
                 self.courseType.text = courseDataOverView.courseHeader.categoryName
                 self.courseChapters.text = String( courseDataOverView.courseHeader.totalNumberOfChapters)+" Chapters | " + String( courseDataOverView.courseHeader.totalNumberOfChapters)+" Lessons"
                 
-                self.courseIncludes.append(String(courseDataOverView.courseIncludes.totalVideoContent) + " total hours video")
+                self.courseIncludes.append(convertsectomins(seconds: courseDataOverView.courseIncludes.totalVideoContent) + " total hours video")
                 if(courseDataOverView.courseIncludes.supportedFiles) {
                     self.courseIncludes.append("Supports Files")
                 }
@@ -162,7 +162,13 @@ class CourseDetailsViewController: UIViewController {
        
         
     }
-    
+    func convertsectomins(seconds: Int) -> String {
+        let hours = seconds / 3600
+        let minutes = (seconds % 3600) / 60
+        let second = (seconds % 3600) % 60
+        let minsAndSecond = String(hours) + ":" + String(minutes) + ":" + String(second)
+        return minsAndSecond
+    }
     
     
     @IBAction func onClickOverView(_ sender: Any) {

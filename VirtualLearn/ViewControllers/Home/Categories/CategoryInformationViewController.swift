@@ -42,6 +42,9 @@ class CategoryInformationViewController: UIViewController{
                     }
                 } fail: {
 //                    self.stopLoader(loader: loader)
+                    DispatchQueue.main.async {
+                        self.subCategoryView.constant = 0
+                    }
                 }
             }
         } fail: {
