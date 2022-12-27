@@ -331,30 +331,31 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("hello1111")
-        guard let last = dataoflesson[indexPath.section].lessonList.last as? AssignmentResponse else {return}
+//        guard let last = dataoflesson[indexPath.section].lessonList.last as? AssignmentResponse else {return}
         print("bello")
         if let data = dataoflesson[indexPath.section].lessonList[indexPath.row] as? AssignmentResponse {
             
-            if(last.assignmentId == data.assignmentId) {
-                if(data.assinmentStatus) {
-                    guard let vc = storyboard?.instantiateViewController(identifier: "FinalCongragulationViewController") as? FinalCongragulationViewController else {return}
-                    vc.courseId = courseId
-                    vc.coursename = courseName
-                    navigationController?.pushViewController(vc, animated: true)
-                }
-                else if (data.nextPlay) {
-                    guard let vc = storyboard?.instantiateViewController(identifier: "ModuleTestViewController") as? ModuleTestViewController else{return}
-                    vc.chapterDelegate = self
-                    vc.courseName = courseName
-                    navigationController?.pushViewController(vc, animated: true)
-                    vc.assignmentId = String(data.assignmentId)
-                } else if(!data.assinmentStatus) {
-                    self.okAlertMessagePopup(message: "please complete previous all Chapters")
-                }
-            }
-            else {
+//            if(last.assignmentId == data.assignmentId) {
+//                if(data.assinmentStatus) {
+//                    guard let vc = storyboard?.instantiateViewController(identifier: "FinalCongragulationViewController") as? FinalCongragulationViewController else {return}
+//                    vc.courseId = courseId
+//                    vc.coursename = courseName
+//                    navigationController?.pushViewController(vc, animated: true)
+//                }
+//                else if (data.nextPlay) {
+//                    guard let vc = storyboard?.instantiateViewController(identifier: "ModuleTestViewController") as? ModuleTestViewController else{return}
+//                    vc.chapterDelegate = self
+//                    vc.courseName = courseName
+//                    navigationController?.pushViewController(vc, animated: true)
+//                    vc.assignmentId = String(data.assignmentId)
+//                } else if(!data.assinmentStatus) {
+//                    self.okAlertMessagePopup(message: "please complete previous all Chapters")
+//                }
+//            }
+//            else {
                 if(data.assinmentStatus) {
                     guard let vc = storyboard?.instantiateViewController(identifier: "TestResultViewController") as? TestResultViewController else {return}
+                    vc.assignmentId = String(data.assignmentId)
                     navigationController?.pushViewController(vc, animated: true)
                 }else if (data.nextPlay) {
                    
@@ -366,7 +367,7 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
                 } else if(!data.assinmentStatus) {
                     self.okAlertMessagePopup(message: "please complete previous all Chapters")
                 }
-            }
+//            }
         }
     }
 }
