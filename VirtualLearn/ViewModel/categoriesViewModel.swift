@@ -49,7 +49,7 @@ class CategoryViewModel{
     
     func getCategegoryDetailsById(token: String,categoryId: String,limit: String,page: String, completion: @escaping() -> Void, fail: @escaping () -> Void){
         
-        guard let url = URL(string:"https://app-virtuallearning-221207091853.azurewebsites.net/user/view/courses/started?categoryId=\(categoryId)&limit=5&page=1") else{return fail()}
+        guard let url = URL(string:"https://app-virtuallearning-221207091853.azurewebsites.net/user/view/courses/started?categoryId=\(categoryId)&limit=100&page=1") else{return fail()}
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")

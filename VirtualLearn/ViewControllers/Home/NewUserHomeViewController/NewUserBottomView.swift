@@ -77,10 +77,12 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
 
         
         
-        mainshared.homeViewModelShared.getPopularCourseCategory1Details(token: mainshared.token) { (data) in
+        mainshared.homeViewModelShared.getPopularCourseCategory1Details(token: mainshared.token) { (data, id) in
             
             DispatchQueue.main.async {
                 self.topCourse1.topCourse = data
+                
+                self.topCourse1.categoryId = id
                 self.topCourse1.topCourseCollectionView.reloadData()
             }
             
@@ -88,10 +90,12 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
         } fail: { error in
         }
         
-        mainshared.homeViewModelShared.getPopularCourseCategory2Details(token: mainshared.token) { (data) in
+        mainshared.homeViewModelShared.getPopularCourseCategory2Details(token: mainshared.token) { (data, id) in
             
             DispatchQueue.main.async {
                 self.topCourse2.topCourse = data
+                
+                self.topCourse2.categoryId = id
                 self.topCourse2.topCourseCollectionView.reloadData()
             }
         } fail: {
