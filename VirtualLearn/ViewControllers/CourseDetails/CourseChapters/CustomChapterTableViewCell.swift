@@ -98,7 +98,7 @@ class CustomChapterTableViewCell: UITableViewCell {
             videoPlayButton.setImage(nil, for: .normal)
             videoPlayButton.setTitle(String(data.grade), for: .normal)
             videoPlayButton.setTitleColor(UIColor.green, for: .normal)
-            videoPlayButton.titleLabel?.font = .systemFont(ofSize: 20)
+            videoPlayButton.titleLabel?.font = .systemFont(ofSize: 15)
         }
         else {
             if(data.nextPlay)  {
