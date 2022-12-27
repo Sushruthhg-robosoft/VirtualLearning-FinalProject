@@ -46,7 +46,6 @@ class SearchViewModel {
                 completion(self.searchResult)
             }else{
                 for searchData in searchdata{
-                    print("sjgknsjgdbawghoikjfhuhgj")
                     guard let courseId = searchData["courseId"] as? Int else{print("courseIdErr"); return fail(false)}
                     guard let courseName = searchData["courseName"] as? String else{print("courseNameErr"); return fail(false)}
                     guard let categoryName = searchData["categoryName"] as? String else{print("categoryNameErr"); return fail(false)}

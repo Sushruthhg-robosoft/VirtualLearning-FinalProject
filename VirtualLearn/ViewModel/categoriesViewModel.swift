@@ -112,7 +112,7 @@ class CategoryViewModel{
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        
+        featuredCourse.removeAll()
         networkManger.fetchDataJson(request: request) { (data) in
             guard let apiData = data as? [Any] else{print("myCourseViewModel apiData array error1");return fail("data error")}
             //print(apiData)

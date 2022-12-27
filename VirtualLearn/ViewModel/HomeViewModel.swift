@@ -302,7 +302,6 @@ class HomeViewModel {
         networkManger.fetchData(request: request) { (data) in
             let status = data
             guard let profileStaus = status as? [String] else{print("error in personale details 2");return}
-            //print(profileStaus[0])
             completion(profileStaus[0])
         } failure: { (error) in
             print(error)
