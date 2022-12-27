@@ -8,7 +8,7 @@
 import UIKit
 
 protocol SearchResponse {
-    func modallySearchResult()
+    func modallySearchResult(data: [Search])
     func modallyNil()
 }
 
@@ -303,7 +303,7 @@ class ModallyViewController: UIViewController {
             DispatchQueue.main.async {
                 
                 if result.count != 0 {
-                    self.delegate?.modallySearchResult()
+                    self.delegate?.modallySearchResult(data: result)
                     
                 }else {
                     

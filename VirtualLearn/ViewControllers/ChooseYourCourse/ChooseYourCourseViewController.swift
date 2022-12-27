@@ -111,7 +111,7 @@ extension ChooseYourCourseViewController: UITableViewDelegate, UITableViewDataSo
                 
             cell.couseName.text = self.mainShared.searchViewModelShared.searchResult[indexPath.row].courseName
                 cell.courseCategory.text = self.mainShared.searchViewModelShared.searchResult[indexPath.row].categoryName
-                cell.numberofChapters.text = String(self.mainShared.searchViewModelShared.searchResult[indexPath.row].noOfChapters)
+                cell.numberofChapters.text = String("\(self.mainShared.searchViewModelShared.searchResult[indexPath.row].noOfChapters) Chapters")
                 let url = URL(string: self.mainShared.searchViewModelShared.searchResult[indexPath.row].courseImage)
                             let data = try? Data(contentsOf: url!)
                             cell.courseImage.image = UIImage(data: data!)
@@ -209,7 +209,7 @@ extension ChooseYourCourseViewController: UICollectionViewDelegate, UICollection
 
 
 extension ChooseYourCourseViewController: SearchResponse {
-    func modallySearchResult() {
+    func modallySearchResult(data: [Search]) {
         self.isSearch = true
         self.tableView.isHidden = false
         self.tableView.reloadData()
