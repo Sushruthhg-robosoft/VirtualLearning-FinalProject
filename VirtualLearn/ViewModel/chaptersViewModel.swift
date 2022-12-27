@@ -147,7 +147,7 @@ class ChaptersViewModel {
 
     }
     
-    func downloadCertificate(imageUrl: String) {
+    func downloadCertificate(imageUrl: String,completion: @escaping() -> Void, fail: @escaping () -> Void) {
         guard let imageURL = URL(string: imageUrl) else { return }
         
         let session = URLSession.shared
@@ -164,8 +164,10 @@ class ChaptersViewModel {
                 }, completionHandler: { success, error in
                     if success {
                         print("Successfully saved image to photo library.")
+                        completion()
                     } else {
                         print("Error saving image to photo library: \(String(describing: error))")
+                        fail()
                     }
                 })
             }
@@ -179,6 +181,7 @@ class ChaptersViewModel {
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         networkManeger.fetchDataJson(request: request) { result in
             guard let apiData = result as? [String:Any] else { fail("data error"); return}
+            print(apiData)
             guard let certificateLink = apiData["certificateLink"] as? String else {print("err5"); return fail("data Error")}
             completion(certificateLink)
         } failure: { failData in

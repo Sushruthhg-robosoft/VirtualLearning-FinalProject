@@ -60,19 +60,21 @@ class ChaptersViewController: UIViewController {
     var storageShared = StorageManeger.shared
     var url = ""
     var time = 12
+    var courseName = ""
     
     override func viewDidLoad() {
         
-        initializeHideView()
+//        initializeHideView()
         
         shared.courseDetailsViewModelShared.courseOverView(token: shared.token, courseId: courseId) { courseDataOverView in
             
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [self] in
                 let url1 = URL(string: courseDataOverView.courseHeader.courseImage)
                 guard let data1 = try? Data(contentsOf: url1!) else {return}
                 self.courseImage.image = UIImage(data: (data1))
                 
                 self.courseHeading.text = courseDataOverView.courseHeader.courseName
+                self.courseName = courseDataOverView.courseHeader.courseName
                 self.courseCategory.text = courseDataOverView.courseHeader.categoryName
                 self.courseLessonAndChapters.text = String( courseDataOverView.courseHeader.totalNumberOfChapters)+" Chapters | " + String( courseDataOverView.courseHeader.totalNumberOfChapters)+" Lessons"
                 
@@ -187,7 +189,17 @@ class ChaptersViewController: UIViewController {
     
     
     @IBAction func onClickDownload(_ sender: Any) {
-        shared.chaptersDetailsViewModelShared.downloadCertificate(imageUrl: imageUrl )
+        
+        shared.chaptersDetailsViewModelShared.downloadCertificate(imageUrl: imageUrl) {
+            DispatchQueue.main.async {
+                self.okAlertMessagePopup(message: "Successfully saved in your gallery")
+            }
+        } fail: {
+            DispatchQueue.main.async {
+                self.okAlertMessagePopup(message: "unable to save")
+            }
+        }
+
     }
     
     func dataLoading() {
@@ -322,11 +334,14 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
             if(last.assignmentId == data.assignmentId) {
                 if(data.assinmentStatus) {
                     guard let vc = storyboard?.instantiateViewController(identifier: "FinalCongragulationViewController") as? FinalCongragulationViewController else {return}
+                    vc.courseId = courseId
+                    vc.coursename = courseName
                     navigationController?.pushViewController(vc, animated: true)
                 }
                 else if (data.nextPlay) {
                     guard let vc = storyboard?.instantiateViewController(identifier: "ModuleTestViewController") as? ModuleTestViewController else{return}
                     vc.chapterDelegate = self
+                    vc.courseName = courseName
                     navigationController?.pushViewController(vc, animated: true)
                     vc.assignmentId = String(data.assignmentId)
                 } else if(!data.assinmentStatus) {
@@ -341,6 +356,7 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
                    
                     guard let vc = storyboard?.instantiateViewController(identifier: "ModuleTestViewController") as? ModuleTestViewController else{return}
                     navigationController?.pushViewController(vc, animated: true)
+                    vc.courseName = "You have completed" + dataoflesson[indexPath.section].chapterName + " - Conclusion, Final Test from Course: " + courseName
                     vc.chapterDelegate = self
                     vc.assignmentId = String(data.assignmentId)
                 } else if(!data.assinmentStatus) {
@@ -440,15 +456,15 @@ extension ChaptersViewController: playVideo{
 
 extension ChaptersViewController {
     
-    func initializeHideView(){
-        
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
-            target: self,
-            action: #selector(dismissMyKeyboard))
-        
-       
-        view.addGestureRecognizer(tap)
-    }
+//    func initializeHideView(){
+//
+//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+//            target: self,
+//            action: #selector(dismissMyKeyboard))
+//
+//
+//        view.addGestureRecognizer(tap)
+//    }
     
     @objc func dismissMyKeyboard(){
         

@@ -20,6 +20,7 @@ class ModuleTestViewController: UIViewController {
     let mainShared = mainViewModel.mainShared
     var time = ""
     var assignmentId = ""
+    var courseName = ""
     var chapterDelegate : ChaptersViewController?
     var currentPage = 0 {
         didSet {
@@ -90,7 +91,8 @@ class ModuleTestViewController: UIViewController {
                 guard let vc = self.storyboard?.instantiateViewController(identifier: "CongratsViewController") as? CongratsViewController else {return}
                 self.navigationController?.pushViewController(vc, animated: true)
                 vc.chapterDelegate = chapterDelegate
-                vc.assignmentId = self.assignmentId
+                vc.coursename = courseName
+                vc.assignmentId = assignmentId
             }
         } fail: {error in
         

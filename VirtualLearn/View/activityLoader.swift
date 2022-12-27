@@ -64,5 +64,18 @@ extension UIViewController{
         self.present(dialogMessage, animated: true, completion: nil)
         
     }
+    func okAlertMessagePopupforPop(message: String){
+        
+        let dialogMessage = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+            self.dismiss(animated: true, completion: nil)
+            
+            self.navigationController?.popViewController(animated: true)
+         })
+        dialogMessage.addAction(ok)
+
+        self.present(dialogMessage, animated: true, completion: nil)
+        
+    }
 
 }

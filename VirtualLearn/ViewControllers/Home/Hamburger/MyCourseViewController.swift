@@ -148,7 +148,7 @@ extension MyCourseViewController: UITableViewDelegate, UITableViewDataSource {
             cell.chapters.text = "\(shared.myCourseViewModelShared.ongoingCourses[indexPath.row].completedCount)/\(shared.myCourseViewModelShared.ongoingCourses[indexPath.row].totalNumberOfChapters)"
             cell.button.setTitle("Continue", for: .normal)
 
-            cell.index = [indexPath.row]
+            cell.index = indexPath
             cell.courseId = shared.myCourseViewModelShared.ongoingCourses[indexPath.row].courseId
             
         }
@@ -160,6 +160,7 @@ extension MyCourseViewController: UITableViewDelegate, UITableViewDataSource {
             cell.myCouseStatus.text = "Completed"
             cell.chapters.text = "\(shared.myCourseViewModelShared.ongoingCourses[indexPath.row].completedCount)/\(shared.myCourseViewModelShared.completedCourses[indexPath.row].totalNumberOfChapters)"
             cell.button.setTitle("View Certificate", for: .normal)
+            cell.index = indexPath
         }
         
         return cell
@@ -173,14 +174,15 @@ extension MyCourseViewController: gotoVideoOrCertificate{
         if isOngoing{
             let vc = storyboard?.instantiateViewController(identifier: "CourseDetailsViewController") as? CourseDetailsViewController
             if let viewController = vc{
-                viewController.courseId = courseId
+                viewController.courseId = shared.myCourseViewModelShared.ongoingCourses[index.row].courseId
                 navigationController?.pushViewController(viewController, animated: true)
             }
         }
         else{
             let vc = storyboard?.instantiateViewController(identifier: "ViewCertificateViewController") as? ViewCertificateViewController
             if let viewController = vc{
-                viewController.courseId = courseId
+                viewController.courseId = shared.myCourseViewModelShared.completedCourses[index.row].courseId
+                
               navigationController?.pushViewController(viewController, animated: true)
         }
         

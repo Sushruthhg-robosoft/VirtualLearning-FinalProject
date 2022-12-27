@@ -23,7 +23,7 @@ class ViewCertificateViewController: UIViewController {
             }
         } fail: { error in
             DispatchQueue.main.async {
-                self.navigationController?.popViewController(animated: true)
+                self.okAlertMessagePopupforPop(message: "Certificate Not avilable")
             }
             
         }
@@ -37,6 +37,16 @@ class ViewCertificateViewController: UIViewController {
     }
     
     @IBAction func onClickDownload(_ sender: Any) {
-        shared.chaptersDetailsViewModelShared.downloadCertificate(imageUrl: imageUrl)
+        //shared.chaptersDetailsViewModelShared.downloadCertificate(imageUrl: imageUrl)
+        shared.chaptersDetailsViewModelShared.downloadCertificate(imageUrl: imageUrl) {
+            DispatchQueue.main.async {
+                self.okAlertMessagePopup(message: "Successfully saved in your gallery")
+            }
+        } fail: {
+            DispatchQueue.main.async {
+                self.okAlertMessagePopup(message: "unable to save")
+            }
+        }
+
     }
 }

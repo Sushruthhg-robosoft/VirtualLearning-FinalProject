@@ -13,6 +13,8 @@ class FinalCongragulationViewController: UIViewController {
     @IBOutlet weak var courseName: UILabel!
     @IBOutlet weak var grade: UILabel!
     @IBOutlet weak var aprrovedRateLabel: UILabel!
+    var coursename = ""
+    var courseId = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,7 +30,12 @@ class FinalCongragulationViewController: UIViewController {
     }
     
     @IBAction func viewCerticateCliked(_ sender: Any) {
-        
+    
+        let vc = storyboard?.instantiateViewController(identifier: "ViewCertificateViewController") as? ViewCertificateViewController
+        if let viewController = vc{
+            viewController.courseId = courseId
+          navigationController?.pushViewController(viewController, animated: true)
     }
     
+}
 }

@@ -26,6 +26,7 @@ class MyCourseTableViewCell: UITableViewCell {
     var index: IndexPath?
     var courseId: String?
     @IBOutlet weak var onClickContinueOrCertificate: UIButton!
+    
     @IBAction func onClickNext(_ sender: Any) {
         
         delegate?.doVc(index: index!, courseId: courseId!)
