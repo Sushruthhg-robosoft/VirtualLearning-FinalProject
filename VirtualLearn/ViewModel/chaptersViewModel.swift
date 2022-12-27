@@ -23,9 +23,9 @@ class ChaptersViewModel {
             var request = URLRequest(url: url)
             request.httpMethod = "GET"
             request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-            listOfLessons.removeAll()
+            
             networkManeger.fetchDataJson(request: request) { data in
-                
+                self.listOfLessons.removeAll()
                 guard let apiData = data as? [String:Any] else {print("apiDataerr");return fail("data Error")}
 
                 guard let joinedCourse = apiData["joinedCourse"] as? Bool else{print("joinedCourseErr");return fail("data Error")}

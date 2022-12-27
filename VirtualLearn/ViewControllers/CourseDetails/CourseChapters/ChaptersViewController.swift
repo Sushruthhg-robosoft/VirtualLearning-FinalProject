@@ -78,11 +78,8 @@ class ChaptersViewController: UIViewController {
                 self.courseHeading.text = courseDataOverView.courseHeader.courseName
                 self.courseName = courseDataOverView.courseHeader.courseName
                 self.courseCategory.text = courseDataOverView.courseHeader.categoryName
-                self.courseLessonAndChapters.text = String( courseDataOverView.courseHeader.totalNumberOfChapters)+" Chapters | " + String( courseDataOverView.courseHeader.totalNumberOfChapters)+" Lessons"
-                
-                
+                self.courseLessonAndChapters.text = String( courseDataOverView.courseHeader.totalNumberOfChapters)+" Chapters | " + String( courseDataOverView.courseHeader.totalNumberOfChapters)+" Lessons"     
             }
-            
             
         } fail: { error in
             print("failures")
@@ -94,9 +91,6 @@ class ChaptersViewController: UIViewController {
                     self.navigationController?.popViewController(animated: true)
                 }
             }
-            
-            
-            
         }
         
         if joinedCourse{

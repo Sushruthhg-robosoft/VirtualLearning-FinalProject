@@ -48,7 +48,7 @@ class CourseDetailsViewController: UIViewController {
     @IBOutlet weak var overViewScrollView: UIScrollView!
     
     @IBOutlet weak var joinCourseButton: UIButton!
-    
+    var chapterVc: ChaptersViewController?
     var storageManager = StorageManeger.shared
     var courseOverView: CourseOverview? = nil
     var courseIncludes = [String]()
@@ -81,8 +81,7 @@ class CourseDetailsViewController: UIViewController {
                     joinCourseButton.isHidden = true
                     self.hideJoinCourse = true
                 }
-                else
-                {
+                else {
                     joinCourseButton.isHidden = false
                     self.hideJoinCourse = false
                 }
@@ -223,6 +222,7 @@ class CourseDetailsViewController: UIViewController {
                     CourseOverViewView.isHidden = true
                     overViewScrollView.isScrollEnabled = false
                     overViewScrollView.setContentOffset(.zero, animated: true)
+                    chapterVc?.dataLoading()
                     view.bringSubviewToFront(CourseChapterView)
                     
                 }
@@ -301,6 +301,7 @@ extension CourseDetailsViewController: UITableViewDelegate, UITableViewDataSourc
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "switch" {
             guard let vc = segue.destination as? ChaptersViewController else { return }
+            chapterVc = vc
             vc.delegate = self
             vc.courseId = courseId
             vc.joinedCourse = self.hideJoinCourse
