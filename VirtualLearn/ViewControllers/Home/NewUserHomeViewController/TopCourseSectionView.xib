@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TopCourseSectionView" customModule="VirtualLearn" customModuleProvider="target">
             <connections>
-                <outlet property="skipBtn" destination="tSl-YV-Xpc" id="3wu-yY-MGu"/>
+                <outlet property="seeAllbtn" destination="tSl-YV-Xpc" id="Ecn-le-Wab"/>
                 <outlet property="topCourseCollectionView" destination="Bak-K3-c96" id="d1q-qb-hSf"/>
                 <outlet property="topCourseLabel" destination="GBl-YN-urK" id="NCw-5A-NRX"/>
                 <outlet property="view" destination="iN0-l3-epB" id="6cN-Es-Rep"/>
@@ -40,6 +40,9 @@
                             <state key="normal" title="See All">
                                 <color key="titleColor" red="0.47843137254901957" green="0.47843137254901957" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
+                            <connections>
+                                <action selector="onClickseeall:" destination="-1" eventType="touchUpInside" id="vRB-Na-Uyv"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
