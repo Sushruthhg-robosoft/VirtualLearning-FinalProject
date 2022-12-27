@@ -18,6 +18,9 @@ class TopCourseSectionView: UIView {
     var mainShared = mainViewModel.mainShared
     var array = [String]()
     var topCourse = [TopCourseCategory]()
+    var topcourse1 = false
+    var categoryId: String?
+    var categoryId2: String?
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -33,7 +36,12 @@ class TopCourseSectionView: UIView {
     }
 
     @IBAction func onClickseeall(_ sender: Any) {
-        shared.delegate?.onclickChooseInAllCourse(isNewest: false, isPopular: false, isAllCourse: true)
+        print("saaaaand", categoryId)
+        print(12345678)
+       
+            shared.delegate?.onClickCategory(categoryName: "", categoryId: categoryId!)
+        
+        
     }
 }
 

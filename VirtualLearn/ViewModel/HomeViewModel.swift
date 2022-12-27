@@ -44,7 +44,7 @@ class HomeViewModel {
     func getAllCourseDeatils(token: String,completion: @escaping([HomeCourse]) -> Void, fail: @escaping (String) -> Void){
         
         
-        guard let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/courses?limit=5&page=1") else{return fail("url error")}
+        guard let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/courses?limit=100&page=1") else{return fail("url error")}
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -87,7 +87,7 @@ class HomeViewModel {
     func getPopularCourseDetails(token: String,completion: @escaping([HomeCourse]) -> Void, fail: @escaping (String) -> Void){
         allCourse.removeAll()
         
-        guard let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/popularCourse?limit=5&page=1") else{return fail("url error")}
+        guard let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/popularCourse?limit=100&page=1") else{return fail("url error")}
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -127,7 +127,7 @@ class HomeViewModel {
     func getNewestCourseDetails(token: String,completion: @escaping([HomeCourse]) -> Void, fail: @escaping (String) -> Void){
         allCourse.removeAll()
         
-        guard let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/newestCourse?limit=5&page=1") else{return fail("url Error")}
+        guard let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/newestCourse?limit=100&page=1") else{return fail("url Error")}
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -162,12 +162,12 @@ class HomeViewModel {
     
     }
     
-    func getPopularCourseCategory1Details(token: String,completion: @escaping([TopCourseCategory]) -> Void, fail: @escaping (String) -> Void){
+    func getPopularCourseCategory1Details(token: String,completion: @escaping([TopCourseCategory], String) -> Void, fail: @escaping (String) -> Void){
         
         print("getPopularCourseCategory1Details")
         topCourseCategory1.removeAll()
         
-        guard let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/course/category1?limit=5&page=1") else{ return fail("url data")}
+        guard let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/course/category1?limit=100&page=1") else{ return fail("url data")}
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -176,7 +176,7 @@ class HomeViewModel {
         networkManger.fetchDataJson(request: request) { (data) in
             guard let apiData = data as? [Any] else{print("myCourseViewModel apiData array error1");return fail("data error")}
             //print(apiData)
-            
+            var Id = ""
             for allCourseData in apiData{
                 
                 guard let allData = allCourseData as? [String: Any] else{print("myCourseViewModel apiData array error2");return fail("data error")}
@@ -188,11 +188,13 @@ class HomeViewModel {
                 guard let videoLength = allData["totalVideoLength"] as? Int else{print("myCourseViewModel apiData array error8");return fail("data error")}
                 guard let totalnumberOfChapters = allData["chapter_count"] as? Int else{print("myCourseViewModel apiData array error8");return fail("data error")}
                 guard let lessonCount = allData["lesson_count"] as? Int else {print("lessonCountErr");return fail("data error")}
+                guard let categoryId = allData["categoryId"] as? Int else {print("categotyIderror"); return fail("data error")}
                 let course = TopCourseCategory(courseId: String(courseId), courseImage: courseImage, courseName: courseName, completedCount: String(completedChapterCount), totalNumberOfChapters: String(totalnumberOfChapters), categoryName: categoryName, videoLength: String(videoLength), lessonCount: String(lessonCount))
                 self.topCourseCategory1.append(course)
+                Id = String(categoryId)
             }
 
-            completion(self.topCourseCategory1)
+            completion(self.topCourseCategory1, Id)
             
         } failure: { (error) in
             print(error)
@@ -201,10 +203,10 @@ class HomeViewModel {
     
     }
     
-    func getPopularCourseCategory2Details(token: String,completion: @escaping([TopCourseCategory]) -> Void, fail: @escaping (String) -> Void){
+    func getPopularCourseCategory2Details(token: String,completion: @escaping([TopCourseCategory], String) -> Void, fail: @escaping (String) -> Void){
         topCourseCategory2.removeAll()
         
-        guard let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/course/category2?limit=5&page=1") else{ return fail("url error")}
+        guard let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/view/course/category2?limit=100&page=1") else{ return fail("url error")}
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -214,7 +216,7 @@ class HomeViewModel {
             print(data)
             guard let apiData = data as? [Any] else{print("myCourseViewModel apiData array error1");return fail("dataerror")}
             //print(apiData)
-            
+            var Id = ""
             for allCourseData in apiData{
                 
                 guard let allData = allCourseData as? [String: Any] else{print("myCourseViewModel apiData array error2");return fail("dataerror")}
@@ -226,11 +228,13 @@ class HomeViewModel {
                 guard let videoLength = allData["totalVideoLength"] as? Int else{print("myCourseViewModel apiData array error8");return fail("dataerror")}
                 guard let totalnumberOfChapters = allData["chapter_count"] as? Int else{print("myCourseViewModel apiData array error8");return fail("dataerror")}
                 guard let lessonCount = allData["lesson_count"] as? Int else {print("lessonCountErr");return fail("dataerror")}
+                guard let categoryId = allData["categoryId"] as? Int else {print("categotyIderror"); return fail("data error")}
                 let course = TopCourseCategory(courseId: String(courseId), courseImage: courseImage, courseName: courseName, completedCount: String(completedChapterCount), totalNumberOfChapters: String(totalnumberOfChapters), categoryName: categoryName, videoLength: String(videoLength), lessonCount: String(lessonCount))
+                Id = String(categoryId)
                 self.topCourseCategory2.append(course)
             }
 
-            completion(self.topCourseCategory2)
+            completion(self.topCourseCategory2, Id)
             
         } failure: { (error) in
             print(error)
