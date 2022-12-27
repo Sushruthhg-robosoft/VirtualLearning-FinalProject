@@ -22,6 +22,11 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
     let loginviewModel = LoginViewModel()
     let shared = mainViewModel.mainShared
     let storageManeger = StorageManeger.shared
+    
+    var activeTextField : UITextField? = nil
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,8 +42,47 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
         verifiedImg.isHidden = true
         userNameUnderLineView.backgroundColor = #colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
         passwordUnderLineView.backgroundColor = #colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
+        
+
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     
     }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+       
+        self.activeTextField = textField
+      }
+        
+      
+      func textFieldDidEndEditing(_ textField: UITextField) {
+        self.activeTextField = nil
+      }
+    
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+           else {
+             
+             return
+           }
+
+           let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height , right: 0.0)
+           scrollView.contentInset = contentInsets
+           scrollView.scrollIndicatorInsets = contentInsets
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+     
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
+               
+    
+           scrollView.contentInset = contentInsets
+           scrollView.scrollIndicatorInsets = contentInsets
+    }
+ 
+
     
     @IBAction func userNameTextChangeOutlet(_ sender: Any) {
         invalidPopup.isHidden = true
@@ -62,8 +106,7 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
                         self.userNameUnderLineView.backgroundColor = #colorLiteral(red: 0.9176470588, green: 0.1490196078, blue: 0.1490196078, alpha: 1)
                         self.verifiedImg.image = #imageLiteral(resourceName: "icn_textfield_wrong-1")
                     }
-                    
-                    
+                
                 }
                 
             }

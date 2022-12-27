@@ -176,6 +176,7 @@ class VerifyAccountViewController: UIViewController, UITextFieldDelegate {
         
     }
 }
+
 extension VerifyAccountViewController {
 func initializeHideKeyboard(){
         

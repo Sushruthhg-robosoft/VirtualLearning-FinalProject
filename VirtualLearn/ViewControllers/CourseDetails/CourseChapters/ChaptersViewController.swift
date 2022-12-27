@@ -65,6 +65,7 @@ class ChaptersViewController: UIViewController {
     override func viewDidLoad() {
         
 //        initializeHideView()
+        //initializeHideView()
         
         shared.courseDetailsViewModelShared.courseOverView(token: shared.token, courseId: courseId) { courseDataOverView in
             
@@ -187,6 +188,9 @@ class ChaptersViewController: UIViewController {
         }
     }
     
+    @IBAction func onClickClosePopup(_ sender: Any) {
+        popUpBackView.isHidden = true
+    }
     
     @IBAction func onClickDownload(_ sender: Any) {
         
@@ -465,9 +469,9 @@ extension ChaptersViewController {
 //
 //        view.addGestureRecognizer(tap)
 //    }
-    
-    @objc func dismissMyKeyboard(){
-        
-        self.popUpBackView.isHidden = true
-    }
+//
+//    @objc func dismissMyKeyboard(){
+//
+//        self.popUpBackView.isHidden = true
+//    }
 }

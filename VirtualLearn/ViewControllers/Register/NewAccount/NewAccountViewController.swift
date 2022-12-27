@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NewAccountViewController: UIViewController {
+class NewAccountViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var enteredMobileNumber: UITextField!
     
@@ -15,10 +15,13 @@ class NewAccountViewController: UIViewController {
     let verificationOTP = VerificationOTP()
     override func viewDidLoad() {
         super.viewDidLoad()
+        initializeHideKeyboard()
+        
+        enteredMobileNumber.delegate = self
+        
         if(view.bounds.height > 500) {
             
             viewHeight.constant = view.bounds.height - 50
-            
         }
         enteredMobileNumber.removeBorder()
         
@@ -59,4 +62,29 @@ class NewAccountViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+
+
+func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == enteredMobileNumber {
+            textField.resignFirstResponder()
+            
+        }
+    return true
 }
+}
+
+extension NewAccountViewController {
+func initializeHideKeyboard(){
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissMyKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissMyKeyboard(){
+        view.endEditing(true)
+    }
+}
+
+

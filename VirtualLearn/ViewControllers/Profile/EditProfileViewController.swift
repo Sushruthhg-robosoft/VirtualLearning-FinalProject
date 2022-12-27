@@ -53,7 +53,9 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var femaleGender: UIButton!
     @IBOutlet weak var otherGender: UIButton!
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var saveLoadingButton: LoadingButton!
+    
     
     var isdropDown = false
     var emailId = false
@@ -64,7 +66,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     let shared = mainViewModel.mainShared
     
     var dummyImage : UIImage?
-    
+    var activeTextField : UITextField? = nil
     override func viewDidLoad() {
         
         nameField.delegate = self
@@ -75,6 +77,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         occupationField.delegate = self
         twitterField.delegate = self
         facebookField.delegate = self
+        
         
         self.enableTextField()
         
@@ -94,6 +97,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         
         initializeHideKeyboard()
         
+        
         navigationController?.navigationBar.isHidden = true
         
         dropDownView.isHidden = true
@@ -109,7 +113,45 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         twitterLabel.isHidden = true
         facebookLabel.isHidden = true
         
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
     }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+       
+        self.activeTextField = textField
+      }
+        
+      
+      func textFieldDidEndEditing(_ textField: UITextField) {
+        self.activeTextField = nil
+      }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+           else {
+             
+             return
+           }
+
+           let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height , right: 0.0)
+           scrollView.contentInset = contentInsets
+           scrollView.scrollIndicatorInsets = contentInsets
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+     
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
+            
+           scrollView.contentInset = contentInsets
+           scrollView.scrollIndicatorInsets = contentInsets
+    }
+ 
+
+       
     
     
     @IBAction func onClickCameraButton(_ sender: Any) {
@@ -457,6 +499,9 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
             else if textField == facebookField {
             textField.resignFirstResponder()
         }
+      
+
+        
         
             return true
         }
