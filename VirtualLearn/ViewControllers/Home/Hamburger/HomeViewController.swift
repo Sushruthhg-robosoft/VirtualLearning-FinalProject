@@ -60,9 +60,10 @@ class HomeViewController: UIViewController {
 //            }
 //        } fail: {error in
 //        }
-        let loader3 = self.loader()
+        
         //   NewUserView.isHidden = false
         if !storageShared.isLoggedIn(){
+            let loader3 = self.loader()
             self.mainShared.homeViewModelShared.getBanners(token: self.mainShared.token) { (data) in
                 DispatchQueue.main.async {
                    
@@ -85,9 +86,9 @@ class HomeViewController: UIViewController {
                   
                     self.mainShared.homeViewModelShared.getBanners(token: self.mainShared.token) { (data) in
                         DispatchQueue.main.async {
-                           
-                            self.NewUserView.topView.bannerImage = data
                             self.stopLoader(loader: loader1)
+                            self.NewUserView.topView.bannerImage = data
+                            
                             self.NewUserView.topView.suggestionsCollectionView.reloadData()
 
                         }
@@ -101,9 +102,9 @@ class HomeViewController: UIViewController {
                    
                     self.mainShared.homeViewModelShared.getBanners(token: self.mainShared.token) { (data) in
                         DispatchQueue.main.async {
-                           
-                            self.NewUserView.topView.bannerImage = data
                             self.stopLoader(loader: loader1)
+                            self.NewUserView.topView.bannerImage = data
+                            
                             self.NewUserView.topView.suggestionsCollectionView.reloadData()
 
                         }

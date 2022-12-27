@@ -40,6 +40,7 @@ class ChaptersViewController: UIViewController {
     @IBOutlet weak var sourseContentDescription: UILabel!
     @IBOutlet weak var joinCourseButton: UIButton!
     
+    @IBOutlet weak var contunuationLabel: UILabel!
     @IBOutlet weak var certficateView: UIView!
     @IBOutlet weak var certificateViewHeight: NSLayoutConstraint!
     @IBOutlet weak var certificateGrade: UILabel!
@@ -74,6 +75,8 @@ class ChaptersViewController: UIViewController {
                 self.courseHeading.text = courseDataOverView.courseHeader.courseName
                 self.courseCategory.text = courseDataOverView.courseHeader.categoryName
                 self.courseLessonAndChapters.text = String( courseDataOverView.courseHeader.totalNumberOfChapters)+" Chapters | " + String( courseDataOverView.courseHeader.totalNumberOfChapters)+" Lessons"
+                
+                
             }
             
             
