@@ -2236,28 +2236,28 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What will you learn first?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3U0-VG-mKE">
-                                                <rect key="frame" x="70" y="313" width="197" height="21"/>
+                                                <rect key="frame" x="73.5" y="313" width="190.5" height="22"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your courses will go here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFn-XA-jdw">
-                                                <rect key="frame" x="90.5" y="342" width="156.5" height="16.5"/>
+                                                <rect key="frame" x="91.5" y="343" width="154" height="17.5"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                                 <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x6t-JL-L17">
-                                                <rect key="frame" x="4" y="398.5" width="367" height="231.5"/>
+                                                <rect key="frame" x="4" y="400.5" width="367" height="229.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vaN-t4-Zc0">
-                                                        <rect key="frame" x="0.0" y="0.0" width="87.5" height="21"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="89" height="22"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="18"/>
                                                         <color key="textColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RGY-Se-kWl">
-                                                        <rect key="frame" x="0.0" y="31" width="367" height="200.5"/>
+                                                        <rect key="frame" x="0.0" y="32" width="367" height="197.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PAR-sS-gOh">
                                                             <size key="itemSize" width="128" height="128"/>
@@ -2267,14 +2267,14 @@
                                                         </collectionViewFlowLayout>
                                                         <cells>
                                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="6bl-We-mZo" customClass="NewUserCategoryCollectionViewCell" customModule="VirtualLearn" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="129.5" height="30"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="128" height="30"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Rsl-EK-3i6">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="129.5" height="30"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="30"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vdw-vz-j0g">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="129.5" height="30"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="30"/>
                                                                             <subviews>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_categories_design" translatesAutoresizingMaskIntoConstraints="NO" id="1dx-fE-W7T">
                                                                                     <rect key="frame" x="2" y="0.0" width="30" height="30"/>
@@ -2284,7 +2284,7 @@
                                                                                     </constraints>
                                                                                 </imageView>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Health &amp; Fitness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Yt-p0-QNV">
-                                                                                    <rect key="frame" x="42" y="7.5" width="87.5" height="15"/>
+                                                                                    <rect key="frame" x="42" y="7.5" width="86" height="15"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="height" constant="15" id="rsE-mU-Kb6"/>
                                                                                     </constraints>
@@ -9033,6 +9033,17 @@ Do you want to continue watching?</string>
                                                             <action selector="onClickWatchFromBeginning:" destination="CWZ-hf-ahz" eventType="touchUpInside" id="o4V-Vh-3Yy"/>
                                                         </connections>
                                                     </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zU3-bM-FbP">
+                                                        <rect key="frame" x="14.5" y="12" width="20" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="20" id="nNz-0E-Vzk"/>
+                                                            <constraint firstAttribute="height" constant="20" id="sjN-lm-Gco"/>
+                                                        </constraints>
+                                                        <state key="normal" backgroundImage="icn_option wrong"/>
+                                                        <connections>
+                                                            <action selector="onClickClosePopup:" destination="CWZ-hf-ahz" eventType="touchUpInside" id="GjB-V6-GIh"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -9042,6 +9053,8 @@ Do you want to continue watching?</string>
                                                     <constraint firstItem="99P-Hc-tGc" firstAttribute="top" secondItem="5mb-8d-2Gl" secondAttribute="top" constant="39" id="HiW-tg-1Qr"/>
                                                     <constraint firstAttribute="trailing" secondItem="99P-Hc-tGc" secondAttribute="trailing" constant="14.300000000000001" id="IFf-rJ-k2v"/>
                                                     <constraint firstAttribute="trailing" secondItem="VHW-V4-osQ" secondAttribute="trailing" constant="23" id="Vhm-nX-1Vt"/>
+                                                    <constraint firstItem="zU3-bM-FbP" firstAttribute="top" secondItem="5mb-8d-2Gl" secondAttribute="top" constant="12" id="WOZ-0o-ZmC"/>
+                                                    <constraint firstItem="zU3-bM-FbP" firstAttribute="leading" secondItem="5mb-8d-2Gl" secondAttribute="leading" constant="14.300000000000001" id="XgH-Yq-bzM"/>
                                                     <constraint firstAttribute="width" constant="297" id="ai9-OK-rZj"/>
                                                     <constraint firstAttribute="height" constant="243" id="eDi-FK-kYI"/>
                                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Sl5-Ms-Cxr" secondAttribute="trailing" id="frM-FV-k5P"/>
@@ -9189,6 +9202,7 @@ Do you want to continue watching?</string>
         <image name="icn_notification settings-Settings" width="16" height="16"/>
         <image name="icn_notification_menu" width="18" height="18"/>
         <image name="icn_option unchecked" width="20" height="20"/>
+        <image name="icn_option wrong" width="20" height="20"/>
         <image name="icn_play_orange" width="48" height="48"/>
         <image name="icn_previewgo" width="8" height="14"/>
         <image name="icn_privacy" width="40" height="40"/>

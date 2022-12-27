@@ -171,6 +171,9 @@ class ChaptersViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func onClickClosePopup(_ sender: Any) {
+        self.popUpBackView.isHidden = true
+    }
     @IBAction func joinCourseClicked(_ sender: Any) {
         if storageShared.isLoggedIn() {
             shared.courseDetailsViewModelShared.joinCourse(token: shared.token, courseId: courseId){ data in
@@ -198,10 +201,7 @@ class ChaptersViewController: UIViewController {
         }
     }
     
-    @IBAction func onClickClosePopup(_ sender: Any) {
-        popUpBackView.isHidden = true
-    }
-    
+  
     @IBAction func onClickDownload(_ sender: Any) {
         
         shared.chaptersDetailsViewModelShared.downloadCertificate(imageUrl: imageUrl) {
