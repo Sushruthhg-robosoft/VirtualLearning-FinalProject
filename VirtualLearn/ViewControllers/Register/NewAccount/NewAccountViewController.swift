@@ -32,7 +32,7 @@ class NewAccountViewController: UIViewController, UITextFieldDelegate {
     @IBAction func continueButton(_ sender: Any) {
         guard let mobileNumber = enteredMobileNumber.text else {return}
         if mobileNumber.count != 10 {
-            
+            self.okAlertMessagePopup(message: "Phone number should be 10 digits")
             return
         }
         verificationOTP.checkphoneNumberForNewUser(mobileNumber: "+91"+mobileNumber) {
