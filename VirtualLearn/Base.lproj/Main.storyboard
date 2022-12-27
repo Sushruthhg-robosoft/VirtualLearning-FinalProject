@@ -685,6 +685,9 @@
                                                                         <integer key="value" value="4"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="onClickFirstBtn:" destination="UYo-Eu-7OW" eventType="touchUpInside" id="5Dn-kD-WoN"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSZ-Vu-SU2">
                                                                 <rect key="frame" x="0.0" y="70" width="82" height="24"/>
@@ -702,6 +705,9 @@
                                                                         <integer key="value" value="4"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="onClickFifthBtn:" destination="UYo-Eu-7OW" eventType="touchUpInside" id="Qcy-Cs-g7c"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K6N-BJ-jUu">
                                                                 <rect key="frame" x="69" y="36" width="48" height="24"/>
@@ -719,6 +725,9 @@
                                                                         <integer key="value" value="4"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="onClickSecondBtn:" destination="UYo-Eu-7OW" eventType="touchUpInside" id="Xmc-8b-p2a"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ej2-Fb-M7e">
                                                                 <rect key="frame" x="127" y="36" width="78" height="24"/>
@@ -736,6 +745,9 @@
                                                                         <integer key="value" value="4"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="onClickThirdBtn:" destination="UYo-Eu-7OW" eventType="touchUpInside" id="XlO-js-gRU"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYb-Gq-Aw7">
                                                                 <rect key="frame" x="215" y="35" width="78" height="24"/>
@@ -753,6 +765,9 @@
                                                                         <integer key="value" value="4"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="onClickFourthBtn:" destination="UYo-Eu-7OW" eventType="touchUpInside" id="eOB-Yk-UrV"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1711,6 +1726,11 @@
                                     <constraint firstAttribute="bottom" secondItem="3R0-FY-y7G" secondAttribute="bottom" id="mkY-zq-Tkv"/>
                                     <constraint firstItem="3R0-FY-y7G" firstAttribute="leading" secondItem="m1X-uE-fny" secondAttribute="leading" id="ysJ-dI-1UR"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4tf-nm-jmv"/>
@@ -7691,9 +7711,6 @@
                                                         <rect key="frame" x="46" y="3" width="228" height="34"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
-                                                        <connections>
-                                                            <action selector="textFieldDIdChangeEditing:" destination="bpG-Zi-JXV" eventType="editingChanged" id="kZT-wx-YTx"/>
-                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
