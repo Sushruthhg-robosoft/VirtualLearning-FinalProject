@@ -175,6 +175,7 @@ class NetWorkManager {
     func fetchDataJson(request: URLRequest, completion: @escaping (Any) -> (), failure: @escaping (Any) -> ()) {
         print("inside fetch data json")
         URLSession.shared.dataTask(with: request) { data, response, error in
+            
             if error == nil{
                
                 let httpResponse = response as! HTTPURLResponse

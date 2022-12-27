@@ -20,6 +20,7 @@ class CategoryInformationViewController: UIViewController{
     var categoryName = ""
     var categoryId = ""
     
+    @IBOutlet weak var subCategoryView: NSLayoutConstraint!
     var subCategoriesfield = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
