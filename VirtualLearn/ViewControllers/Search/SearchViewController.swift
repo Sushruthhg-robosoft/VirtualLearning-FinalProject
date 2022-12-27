@@ -31,6 +31,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var searchCategoryCollectionView: UICollectionView!
     let shared = mainViewModel.mainShared
     
+    var searchResult = [Search]()
+    
     
     override func viewDidLoad() {
         
@@ -81,7 +83,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         shared.searchViewModelShared.searchOption = searchTextField.text!
                 shared.searchViewModelShared.getSearchResult { (result) in
                     DispatchQueue.main.async {
-                        
+                        self.searchResult = result
                         if result.count != 0 {
                             
                             self.topSearchView.isHidden = true
@@ -183,19 +185,22 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return shared.searchViewModelShared.searchResult.count
+        print(searchResult.count)
+        return searchResult.count
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CourseDataTableViewCell
+        if searchResult.count > 0 {
+            cell.categoryName.text = searchResult[indexPath.row].categoryName
+                    cell.courseName.text = searchResult[indexPath.row].courseName
+                    cell.noOfChapters.text = String("\(searchResult[indexPath.row].noOfChapters) Chapters")
+                    let url = URL(string: searchResult[indexPath.row].courseImage)
+                    let data = try? Data(contentsOf: url!)
+                    cell.courseImage.image = UIImage(data: data!)
+        }
         
-        cell.categoryName.text = shared.searchViewModelShared.searchResult[indexPath.row].categoryName
-        cell.courseName.text = shared.searchViewModelShared.searchResult[indexPath.row].courseName
-        cell.noOfChapters.text = String("\(shared.searchViewModelShared.searchResult[indexPath.row].noOfChapters) Chapters")
-        let url = URL(string: shared.searchViewModelShared.searchResult[indexPath.row].courseImage)
-        let data = try? Data(contentsOf: url!)
-        cell.courseImage.image = UIImage(data: data!)
         
         return cell
     }

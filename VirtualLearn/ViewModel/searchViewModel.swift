@@ -26,7 +26,6 @@ class SearchViewModel {
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        self.searchResult.removeAll()
         let parameters: [String : Any] = [
             
             "searchOption" : searchOption,
@@ -37,7 +36,8 @@ class SearchViewModel {
         request.httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: .fragmentsAllowed)
         
         networkManeger.fetchDataJson(request: request, completion: { (result) in
-            
+            self.searchResult.removeAll()
+
             
             guard let searchdata = result as? [[String : Any]] else{print("searchDataErr"); return fail(false)}
             
