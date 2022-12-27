@@ -34,7 +34,8 @@ class SearchViewModel {
         ]
         print(parameters)
         request.httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: .fragmentsAllowed)
-        
+        self.searchResult.removeAll()
+
         networkManeger.fetchDataJson(request: request, completion: { (result) in
             self.searchResult.removeAll()
 

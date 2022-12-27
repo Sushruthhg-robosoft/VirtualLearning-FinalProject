@@ -36,7 +36,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         
-        initializeHideKeyboard()
+//        initializeHideKeyboard()
         let loader = self.loader()
 
         searchCategoryCollectionView.delegate = self
@@ -180,23 +180,39 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func onclickSearchBtn(_ sender: Any) {
+        
+    }
+    
+    @IBAction func onClickFirstBtn(_ sender: Any) {
+    }
+    
+    @IBAction func onClickSecondBtn(_ sender: Any) {
+    }
+    
+    @IBAction func onClickThirdBtn(_ sender: Any) {
+    }
+    
+    @IBAction func onClickFourthBtn(_ sender: Any) {
+    }
+    
+    
+    @IBAction func onClickFifthBtn(_ sender: Any) {
     }
 }
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(searchResult.count)
-        return searchResult.count
+        return self.searchResult.count
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CourseDataTableViewCell
-        if searchResult.count > 0 {
-            cell.categoryName.text = searchResult[indexPath.row].categoryName
-                    cell.courseName.text = searchResult[indexPath.row].courseName
-                    cell.noOfChapters.text = String("\(searchResult[indexPath.row].noOfChapters) Chapters")
-                    let url = URL(string: searchResult[indexPath.row].courseImage)
+        if self.searchResult.count > 0 {
+            cell.categoryName.text = self.searchResult[indexPath.row].categoryName
+            cell.courseName.text = self.searchResult[indexPath.row].courseName
+            cell.noOfChapters.text = String("\(self.searchResult[indexPath.row].noOfChapters) Chapters")
+            let url = URL(string: self.searchResult[indexPath.row].courseImage)
                     let data = try? Data(contentsOf: url!)
                     cell.courseImage.image = UIImage(data: data!)
         }
@@ -209,7 +225,8 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 
 
 extension SearchViewController: SearchResponse {
-    func modallySearchResult() {
+    func modallySearchResult(data: [Search]) {
+        self.searchResult = data
         self.topSearchView.isHidden = true
         self.noDataDisplayView.isHidden = true
         self.CategoriesDisplayView.isHidden = true
@@ -270,29 +287,29 @@ extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        print(123123)
         let vc = storyboard?.instantiateViewController(identifier: "CategoryInformationViewController") as! CategoryInformationViewController
-        vc.categoryId = shared.homeViewModelShared.allCourse[indexPath.row].courseId
+        vc.categoryId = shared.categoriesViewModelShared.listofCategories[indexPath.row].categoryId
         navigationController?.pushViewController(vc, animated: true)
     }
     
 }
 
 
-extension SearchViewController {
-    
-    func initializeHideKeyboard(){
-        
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
-            target: self,
-            action: #selector(dismissMyKeyboard))
-        
-       
-        view.addGestureRecognizer(tap)
-    }
-    
-    @objc func dismissMyKeyboard(){
-        
-        view.endEditing(true)
-    }
-}
+//extension SearchViewController {
+//
+//    func initializeHideKeyboard(){
+//
+//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+//            target: self,
+//            action: #selector(dismissMyKeyboard))
+//
+//
+//        view.addGestureRecognizer(tap)
+//    }
+//
+//    @objc func dismissMyKeyboard(){
+//
+//        view.endEditing(true)
+//    }
+//}
