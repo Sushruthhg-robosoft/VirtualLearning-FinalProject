@@ -158,7 +158,7 @@ extension MyCourseViewController: UITableViewDelegate, UITableViewDataSource {
             let data = try? Data(contentsOf: url!)
             cell.courseImage.image = UIImage(data: data!)
             cell.myCouseStatus.text = "Completed"
-            cell.chapters.text = "\(shared.myCourseViewModelShared.ongoingCourses[indexPath.row].completedCount)/\(shared.myCourseViewModelShared.completedCourses[indexPath.row].totalNumberOfChapters)"
+            cell.chapters.text = "\(shared.myCourseViewModelShared.completedCourses[indexPath.row].totalNumberOfChapters)/\(shared.myCourseViewModelShared.completedCourses[indexPath.row].totalNumberOfChapters)"
             cell.button.setTitle("View Certificate", for: .normal)
             cell.index = indexPath
         }
