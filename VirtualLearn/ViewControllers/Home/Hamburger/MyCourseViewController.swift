@@ -138,7 +138,7 @@ extension MyCourseViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! MyCourseTableViewCell
-        
+        cell.delegate = self
         if isOngoing{
             cell.courseName.text = shared.myCourseViewModelShared.ongoingCourses[indexPath.row].courseName
             let url = URL(string: shared.myCourseViewModelShared.ongoingCourses[indexPath.row].courseImage)
@@ -148,7 +148,8 @@ extension MyCourseViewController: UITableViewDelegate, UITableViewDataSource {
             cell.chapters.text = "\(shared.myCourseViewModelShared.ongoingCourses[indexPath.row].completedCount)/\(shared.myCourseViewModelShared.ongoingCourses[indexPath.row].totalNumberOfChapters)"
             cell.button.setTitle("Continue", for: .normal)
 
-            
+            cell.index = [indexPath.row]
+            cell.courseId = shared.myCourseViewModelShared.ongoingCourses[indexPath.row].courseId
             
         }
         else{
@@ -167,3 +168,25 @@ extension MyCourseViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
+extension MyCourseViewController: gotoVideoOrCertificate{
+    func doVc(index: IndexPath, courseId: String) {
+        if isOngoing{
+            let vc = storyboard?.instantiateViewController(identifier: "CourseDetailsViewController") as? CourseDetailsViewController
+            if let viewController = vc{
+                viewController.courseId = courseId
+                navigationController?.pushViewController(viewController, animated: true)
+            }
+        }
+        else{
+            let vc = storyboard?.instantiateViewController(identifier: "ViewCertificateViewController") as? ViewCertificateViewController
+            if let viewController = vc{
+                viewController.courseId = courseId
+              navigationController?.pushViewController(viewController, animated: true)
+        }
+        
+    }
+    
+    
+    }
+    
+}

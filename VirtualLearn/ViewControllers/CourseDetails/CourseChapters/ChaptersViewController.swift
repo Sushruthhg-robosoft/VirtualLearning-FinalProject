@@ -40,6 +40,7 @@ class ChaptersViewController: UIViewController {
     @IBOutlet weak var sourseContentDescription: UILabel!
     @IBOutlet weak var joinCourseButton: UIButton!
     
+    @IBOutlet weak var contunuationLabel: UILabel!
     @IBOutlet weak var certficateView: UIView!
     @IBOutlet weak var certificateViewHeight: NSLayoutConstraint!
     @IBOutlet weak var certificateGrade: UILabel!
@@ -74,6 +75,8 @@ class ChaptersViewController: UIViewController {
                 self.courseHeading.text = courseDataOverView.courseHeader.courseName
                 self.courseCategory.text = courseDataOverView.courseHeader.categoryName
                 self.courseLessonAndChapters.text = String( courseDataOverView.courseHeader.totalNumberOfChapters)+" Chapters | " + String( courseDataOverView.courseHeader.totalNumberOfChapters)+" Lessons"
+                
+                
             }
             
             
@@ -311,9 +314,11 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("hello1111")
         guard let last = dataoflesson[indexPath.section].lessonList.last as? AssignmentResponse else {return}
-        
+        print("bello")
         if let data = dataoflesson[indexPath.section].lessonList[indexPath.row] as? AssignmentResponse {
+            
             if(last.assignmentId == data.assignmentId) {
                 if(data.assinmentStatus) {
                     guard let vc = storyboard?.instantiateViewController(identifier: "FinalCongragulationViewController") as? FinalCongragulationViewController else {return}
@@ -333,6 +338,7 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
                     guard let vc = storyboard?.instantiateViewController(identifier: "TestResultViewController") as? TestResultViewController else {return}
                     navigationController?.pushViewController(vc, animated: true)
                 }else if (data.nextPlay) {
+                   
                     guard let vc = storyboard?.instantiateViewController(identifier: "ModuleTestViewController") as? ModuleTestViewController else{return}
                     navigationController?.pushViewController(vc, animated: true)
                     vc.chapterDelegate = self
