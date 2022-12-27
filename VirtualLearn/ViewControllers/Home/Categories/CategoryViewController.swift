@@ -17,16 +17,9 @@ class CategoryViewController: UIViewController {
 
         collectionView.delegate = self
         collectionView.dataSource = self
-        
-        
 
-        
         super.viewDidLoad()
-       
-       
-
-        
-        
+    
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -70,6 +63,13 @@ extension CategoryViewController: UICollectionViewDelegate, UICollectionViewData
         return item!
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(identifier: "CategoryInformationViewController") as? CategoryInformationViewController
+        if let viewController = vc{
+            viewController.categoryId = shared.categoriesViewModelShared.listofCategories[indexPath.row].categoryId
+            navigationController?.pushViewController(viewController, animated: true)
+        }
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 12

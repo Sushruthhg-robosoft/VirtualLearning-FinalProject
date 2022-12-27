@@ -63,7 +63,7 @@ class ChaptersViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        initializeHideView()
+        //initializeHideView()
         
         shared.courseDetailsViewModelShared.courseOverView(token: shared.token, courseId: courseId) { courseDataOverView in
             
@@ -185,6 +185,9 @@ class ChaptersViewController: UIViewController {
         }
     }
     
+    @IBAction func onClickClosePopup(_ sender: Any) {
+        popUpBackView.isHidden = true
+    }
     
     @IBAction func onClickDownload(_ sender: Any) {
         shared.chaptersDetailsViewModelShared.downloadCertificate(imageUrl: imageUrl )
@@ -440,18 +443,18 @@ extension ChaptersViewController: playVideo{
 
 extension ChaptersViewController {
     
-    func initializeHideView(){
-        
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
-            target: self,
-            action: #selector(dismissMyKeyboard))
-        
-       
-        view.addGestureRecognizer(tap)
-    }
-    
-    @objc func dismissMyKeyboard(){
-        
-        self.popUpBackView.isHidden = true
-    }
+//    func initializeHideView(){
+//
+//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+//            target: self,
+//            action: #selector(dismissMyKeyboard))
+//
+//
+//        view.addGestureRecognizer(tap)
+//    }
+//
+//    @objc func dismissMyKeyboard(){
+//
+//        self.popUpBackView.isHidden = true
+//    }
 }
