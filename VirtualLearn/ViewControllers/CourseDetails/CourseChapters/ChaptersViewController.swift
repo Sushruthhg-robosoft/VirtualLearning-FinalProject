@@ -75,6 +75,8 @@ class ChaptersViewController: UIViewController {
                 self.courseHeading.text = courseDataOverView.courseHeader.courseName
                 self.courseCategory.text = courseDataOverView.courseHeader.categoryName
                 self.courseLessonAndChapters.text = String( courseDataOverView.courseHeader.totalNumberOfChapters)+" Chapters | " + String( courseDataOverView.courseHeader.totalNumberOfChapters)+" Lessons"
+                
+                
             }
             
             

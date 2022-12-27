@@ -2784,7 +2784,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose a topic on which you want to start a course." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEq-Zh-Qfb">
-                                                <rect key="frame" x="24" y="157.5" width="327" height="39"/>
+                                                <rect key="frame" x="24" y="157.5" width="327" height="37.5"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                 <color key="textColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2804,7 +2804,7 @@
                                                 </connections>
                                             </button>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Faw-cN-05F">
-                                                <rect key="frame" x="29" y="226.5" width="317" height="423.5"/>
+                                                <rect key="frame" x="29" y="225" width="317" height="425"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="317" id="hZ7-pA-ChI"/>
@@ -2827,7 +2827,7 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="110.5" height="88"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAP-Wd-jUq">
-                                                                            <rect key="frame" x="1" y="57" width="108.5" height="15"/>
+                                                                            <rect key="frame" x="1" y="57" width="108.5" height="14"/>
                                                                             <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="12"/>
                                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
@@ -3427,13 +3427,13 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfo-ru-BpD">
-                                                        <rect key="frame" x="20" y="108" width="131.5" height="26"/>
+                                                        <rect key="frame" x="20" y="108" width="131.5" height="30.5"/>
                                                         <fontDescription key="fontDescription" name="Biko-Bold" family="Biko" pointSize="26"/>
                                                         <color key="textColor" red="0.99607843139999996" green="0.99607843139999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ln-ql-LVP">
-                                                        <rect key="frame" x="132" y="155.5" width="111" height="110"/>
+                                                        <rect key="frame" x="132" y="160" width="111" height="110"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="blz-Pm-c6A">
                                                                 <rect key="frame" x="0.5" y="0.0" width="110" height="110"/>
@@ -3497,7 +3497,7 @@
                                                 <rect key="frame" x="24" y="354" width="327" height="641"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Bt-MH-gSw">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="17"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="61" height="17"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="17" id="ec7-Lk-q3i"/>
                                                         </constraints>
@@ -3546,7 +3546,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKz-wb-6W4">
-                                                        <rect key="frame" x="0.0" y="199" width="92.5" height="16"/>
+                                                        <rect key="frame" x="0.0" y="199" width="94.5" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="16" id="rOo-Ti-qpG"/>
                                                         </constraints>
@@ -3636,7 +3636,7 @@
                                                         </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Birth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2J-XB-o9u">
-                                                        <rect key="frame" x="0.0" y="417" width="77" height="17"/>
+                                                        <rect key="frame" x="0.0" y="417" width="79" height="17"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="17" id="xcU-3X-u2w"/>
                                                         </constraints>
@@ -3677,7 +3677,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Twitter Link" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6J-TA-ZiZ">
-                                                        <rect key="frame" x="0.0" y="488" width="70.5" height="19"/>
+                                                        <rect key="frame" x="0.0" y="488" width="71.5" height="19"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="19" id="FBx-64-f6J"/>
                                                         </constraints>
@@ -3706,7 +3706,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mqb-Pa-uW1">
-                                                        <rect key="frame" x="0.0" y="69" width="63.5" height="12"/>
+                                                        <rect key="frame" x="0.0" y="69" width="64.5" height="12"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                                         <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -3725,7 +3725,7 @@
                                                         </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upW-IG-b4x">
-                                                        <rect key="frame" x="0.0" y="131" width="33" height="17"/>
+                                                        <rect key="frame" x="0.0" y="131" width="34.5" height="17"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="17" id="7oK-xH-ycQ"/>
                                                         </constraints>
