@@ -333,6 +333,7 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
                     guard let vc = storyboard?.instantiateViewController(identifier: "TestResultViewController") as? TestResultViewController else {return}
                     navigationController?.pushViewController(vc, animated: true)
                 }else if (data.nextPlay) {
+                    print("hello1111")
                     guard let vc = storyboard?.instantiateViewController(identifier: "ModuleTestViewController") as? ModuleTestViewController else{return}
                     navigationController?.pushViewController(vc, animated: true)
                     vc.chapterDelegate = self
