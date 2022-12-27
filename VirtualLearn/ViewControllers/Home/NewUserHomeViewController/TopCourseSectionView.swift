@@ -10,7 +10,8 @@ import UIKit
 class TopCourseSectionView: UIView {
     @IBOutlet var view: UIView!
     @IBOutlet weak var topCourseLabel: UILabel!
-    @IBOutlet weak var skipBtn: UIButton!
+    @IBOutlet weak var seeAllbtn: UIButton!
+    
     @IBOutlet weak var topCourseCollectionView: UICollectionView!
     
     var shared = ViewModel.shared
@@ -31,6 +32,9 @@ class TopCourseSectionView: UIView {
         initCollectionView()
     }
 
+    @IBAction func onClickseeall(_ sender: Any) {
+        shared.delegate?.onclickChooseInAllCourse(isNewest: false, isPopular: false, isAllCourse: true)
+    }
 }
 
 
@@ -51,10 +55,16 @@ extension TopCourseSectionView: UICollectionViewDelegate, UICollectionViewDataSo
         let data = try? Data(contentsOf: url!)
         cell.courseImage.image = UIImage(data: data!)
         cell.chapterCount.text = "\(topCourse[indexPath.row].totalNumberOfChapters) Chapter"
+        if let  duration = Int(topCourse[indexPath.row].videoLength){
+            cell.duration.text = "\( duration / 60) mins"
+        }
         
-        cell.duration.text = "\(topCourse[indexPath.row].videoLength) mins"
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        shared.delegate?.onClickChoiceofYourCourse(courseId:topCourse[indexPath.row].courseId )
     }
     
     private func initCollectionView() {
