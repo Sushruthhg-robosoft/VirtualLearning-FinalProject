@@ -212,6 +212,7 @@ class PersonalDetailsViewController: UIViewController, UITextFieldDelegate {
                 passwordView.isHidden = false
             }
         }
+        checAllField()
     }
     
     @IBAction func RegistrationButtonClick(_ sender: Any) {

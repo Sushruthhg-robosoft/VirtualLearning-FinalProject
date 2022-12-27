@@ -126,7 +126,7 @@ class VerifyAccountViewController: UIViewController, UITextFieldDelegate {
     }
     
     func correctOtp(){
-        self.invalidVerificationView.isHidden = false
+        self.invalidVerificationView.isHidden = true
         self.firstDigitUnderView.backgroundColor = UIColor(red: 0, green: 255, blue: 0, alpha: 1)
         self.secondDigitUnderView.backgroundColor = UIColor(red: 0, green: 255, blue: 0, alpha: 1)
         self.thirdDigitUnderView.backgroundColor = UIColor(red: 0, green: 255, blue: 0, alpha: 1)
