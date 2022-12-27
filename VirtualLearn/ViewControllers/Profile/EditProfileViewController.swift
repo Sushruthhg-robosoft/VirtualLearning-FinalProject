@@ -66,7 +66,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     let shared = mainViewModel.mainShared
     
     var dummyImage : UIImage?
-    
+    var activeTextField : UITextField? = nil
     override func viewDidLoad() {
         
         nameField.delegate = self
@@ -77,6 +77,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         occupationField.delegate = self
         twitterField.delegate = self
         facebookField.delegate = self
+        
         
         self.enableTextField()
         
@@ -113,24 +114,44 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         facebookLabel.isHidden = true
         
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
     }
     
-    @objc func keyboardWillShow(notification:NSNotification){
-        guard let userInfo = notification.userInfo else { return }
-        var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
-            keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        // set the activeTextField to the selected textfield
+        self.activeTextField = textField
+      }
+        
+      // when user click 'done' or dismiss the keyboard
+      func textFieldDidEndEditing(_ textField: UITextField) {
+        self.activeTextField = nil
+      }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+           else {
+             // if keyboard size is not available for some reason, dont do anything
+             return
+           }
 
-            var contentInset:UIEdgeInsets = self.scrollView.contentInset
-            contentInset.bottom = keyboardFrame.size.height + 20
-            scrollView.contentInset = contentInset
-        }
+           let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height , right: 0.0)
+           scrollView.contentInset = contentInsets
+           scrollView.scrollIndicatorInsets = contentInsets
+    }
 
-        @objc func keyboardWillHide(notification:NSNotification) {
-
-            scrollView.contentOffset = .zero
-        }
+    @objc func keyboardWillHide(notification: NSNotification) {
+      // move back the root view origin to zero
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
+               
+           
+           // reset back the content inset to zero after keyboard is gone
+           scrollView.contentInset = contentInsets
+           scrollView.scrollIndicatorInsets = contentInsets
+    }
+ 
 
        
     
@@ -480,8 +501,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
             else if textField == facebookField {
             textField.resignFirstResponder()
         }
-        let visibleRect = CGRect(x: 0, y: textField.frame.origin.y, width: 1, height: 1)
-                scrollView.scrollRectToVisible(visibleRect, animated: true)
+      
 
         
         
