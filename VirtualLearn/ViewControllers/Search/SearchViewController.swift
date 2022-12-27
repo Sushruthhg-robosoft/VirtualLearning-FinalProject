@@ -192,7 +192,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.categoryName.text = shared.searchViewModelShared.searchResult[indexPath.row].categoryName
         cell.courseName.text = shared.searchViewModelShared.searchResult[indexPath.row].courseName
-        
+        cell.noOfChapters.text = String("\(shared.searchViewModelShared.searchResult[indexPath.row].noOfChapters) Chapters")
         let url = URL(string: shared.searchViewModelShared.searchResult[indexPath.row].courseImage)
         let data = try? Data(contentsOf: url!)
         cell.courseImage.image = UIImage(data: data!)
