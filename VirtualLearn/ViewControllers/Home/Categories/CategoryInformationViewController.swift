@@ -41,12 +41,15 @@ class CategoryInformationViewController: UIViewController{
                     }
                     
                 } fail: {
+                    self.stopLoader(loader: loader)
                     
                 }
                 
             }
         } fail: {
             self.stopLoader(loader: loader)
+            
+            self.okAlertMessagePopup(message: "Course Not found ")
         }
         let loader2 = self.loader()
         //        shared.homeViewModelShared.getNewestCourseDetails(token: shared.token) { (data) in
