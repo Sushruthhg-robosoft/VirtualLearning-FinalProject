@@ -11,7 +11,7 @@ class ModuleTestViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var previousButton: UIButton!
-    @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var submitButton: LoadingButton!
     @IBOutlet weak var timeLabel: UILabel!
     var testAnswers: [Int:String] = [:]
     var questionNo = 0
@@ -85,9 +85,11 @@ class ModuleTestViewController: UIViewController {
     }
     
     @IBAction func onclickSubmit(_ sender: Any) {
+        submitButton.showLoading()
         moduleTestViewModel.submitAnswer(token: mainShared.token, assignnmentId: assignmentId, testAnswers: testAnswers){
             
             DispatchQueue.main.async { [self] in
+                self.submitButton.hideLoading()
                 guard let vc = self.storyboard?.instantiateViewController(identifier: "CongratsViewController") as? CongratsViewController else {return}
                 self.navigationController?.pushViewController(vc, animated: true)
                 vc.chapterDelegate = chapterDelegate

@@ -4357,7 +4357,7 @@
                                                                     <action selector="onClickNext:" destination="VzV-8G-Li0" eventType="touchUpInside" id="a6s-fW-bf1"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQR-g5-zQP">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQR-g5-zQP" customClass="LoadingButton" customModule="VirtualLearn" customModuleProvider="target">
                                                                 <rect key="frame" x="290" y="29" width="65" height="32"/>
                                                                 <color key="backgroundColor" red="0.93333333330000001" green="0.36078431370000003" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
@@ -5643,7 +5643,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p41-F5-T7P">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p41-F5-T7P" customClass="LoadingButton" customModule="VirtualLearn" customModuleProvider="target">
                                                 <rect key="frame" x="24" y="297.5" width="327" height="46"/>
                                                 <color key="backgroundColor" red="0.93333333330000001" green="0.36078431370000003" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -5770,6 +5770,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="continueBtn" destination="p41-F5-T7P" id="C2H-Rt-7N2"/>
                         <outlet property="enteredMobileNumber" destination="h46-sx-ve6" id="M2I-8W-sCy"/>
                         <outlet property="viewHeight" destination="LdK-LZ-W11" id="DrD-AI-b4d"/>
                     </connections>

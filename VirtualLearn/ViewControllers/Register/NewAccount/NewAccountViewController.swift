@@ -10,6 +10,7 @@ import UIKit
 class NewAccountViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var enteredMobileNumber: UITextField!
+    @IBOutlet weak var continueBtn: LoadingButton!
     
     @IBOutlet weak var viewHeight: NSLayoutConstraint!
     let verificationOTP = VerificationOTP()
@@ -30,13 +31,16 @@ class NewAccountViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func continueButton(_ sender: Any) {
+        
         guard let mobileNumber = enteredMobileNumber.text else {return}
         if mobileNumber.count != 10 {
             self.okAlertMessagePopup(message: "Phone number should be 10 digits")
             return
         }
+        continueBtn.showLoading()
         verificationOTP.checkphoneNumberForNewUser(mobileNumber: "+91"+mobileNumber) {
             DispatchQueue.main.async {
+                self.continueBtn.hideLoading()
                 let vc = self.storyboard?.instantiateViewController(identifier: "VerifyAccountViewController") as! VerifyAccountViewController
                 vc.mobileNumber = mobileNumber
                 self.navigationController?.pushViewController(vc, animated: true)
@@ -46,6 +50,7 @@ class NewAccountViewController: UIViewController, UITextFieldDelegate {
             }
         } fail: {
             DispatchQueue.main.async {
+                self.continueBtn.hideLoading()
                 self.okAlertMessagePopup(message: "Your already registered, Please Login")
             }
         }
