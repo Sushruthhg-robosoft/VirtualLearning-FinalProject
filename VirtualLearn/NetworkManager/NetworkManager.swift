@@ -157,8 +157,8 @@ class NetWorkManager {
                     failure("401")
                 }
                else if (response.statusCode == 200 || response.statusCode == 201) {
-                    let reponseData = try! JSONSerialization.jsonObject(with: responsedata, options: .mutableContainers)
-                    completion(reponseData)
+                    let reponseData = try? JSONSerialization.jsonObject(with: responsedata, options: .mutableContainers)
+                    completion(reponseData ?? "")
                 }
                 else{
                     failure("Fail")

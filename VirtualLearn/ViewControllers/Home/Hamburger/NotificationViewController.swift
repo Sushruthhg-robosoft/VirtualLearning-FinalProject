@@ -29,11 +29,6 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
-//        shared.notificationViewModelShared.getNotificationCount {
-//            self.tableview.reloadData()
-//        } fail: {
-//        }
 
         let loader =   self.loader()
         shared.notificationViewModelShared.getNotifications(token: shared.token , limit: "30", page: "1") {
@@ -57,10 +52,6 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
                 }
             }
         }
-        
-        
-        
-
     }
     
     

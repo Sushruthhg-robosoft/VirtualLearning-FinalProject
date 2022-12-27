@@ -29,8 +29,8 @@ class TestResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        tableView.delegate = self
+        tableView.dataSource = self
         testviewModel.getAnswer(token: mainShared.token, assignnmentId: assignmentId) { questionAnswerDetails in
             
             DispatchQueue.main.async {
@@ -42,7 +42,7 @@ class TestResultViewController: UIViewController {
                 self.correctAnswer.text = questionAnswerDetails.correctAnswers + "/" + String(self.questionResults.count)
                 self.wrongAnswers.text = questionAnswerDetails.wrongAnswers + "/" + String(self.questionResults.count)
                 
-                
+            
                 self.tableView.reloadData()
             }
         } fail: { error in
@@ -66,8 +66,7 @@ class TestResultViewController: UIViewController {
         middleView.layer.shadowOpacity = 100
         middleView.layer.shadowRadius = 5
         middleView.layer.shadowOffset = CGSize(width: 0, height: 2)
-        tableView.delegate = self
-        tableView.dataSource = self
+       
     }
     
     @IBAction func backButtonClicked(_ sender: Any) {
@@ -89,6 +88,7 @@ extension TestResultViewController: UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("inside did select")
         let vc = storyboard?.instantiateViewController(identifier: "showQuestionResultViewController") as! showQuestionResultViewController
         vc.datatoDisplay = questionResults[indexPath.row]
         vc.questionNumber = indexPath.row

@@ -17,11 +17,13 @@ class ModuleTestViewController: UIViewController {
     var testAnswers: [Int:String] = [:]
     var questionNo = 0
     
+    @IBOutlet weak var testName: UILabel!
     var moduleTestViewModel = ModuleTestViewModel()
     let mainShared = mainViewModel.mainShared
     var time = ""
     var assignmentId = ""
     var courseName = ""
+    var assignmentName = ""
     var chapterDelegate : ChaptersViewController?
     var currentPage = 0 {
         didSet {

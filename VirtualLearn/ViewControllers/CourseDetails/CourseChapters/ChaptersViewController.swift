@@ -345,8 +345,9 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
                    
                     guard let vc = storyboard?.instantiateViewController(identifier: "ModuleTestViewController") as? ModuleTestViewController else{return}
                     navigationController?.pushViewController(vc, animated: true)
-                    vc.courseName = "You have completed" + dataoflesson[indexPath.section].chapterName + " - Conclusion, Final Test from Course: " + courseName
+                    vc.courseName = "You have completed" + dataoflesson[indexPath.section].chapterName + " - Conclusion, For Course: " + courseName
                     vc.chapterDelegate = self
+                    vc.assignmentName = data.assignmentName
                     vc.assignmentId = String(data.assignmentId)
                 } else if(!data.assinmentStatus) {
                     self.okAlertMessagePopup(message: "please complete previous all Chapters")

@@ -17,16 +17,11 @@ class FinalCongragulationViewController: UIViewController {
     var courseId = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        grade.isHidden = true
-//        aprrovedRateLabel.isHidden = true
-        
-        
+        courseName.text = coursename
     }
 
     @IBAction func backButtonClicked(_ sender: Any) {
         navigationController?.popViewController(animated: true)
-        
     }
     
     @IBAction func viewCerticateCliked(_ sender: Any) {

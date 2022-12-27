@@ -65,6 +65,7 @@ class SearchViewModel {
             if a as? Int == 401{
                 print("fetch json error")
             }
+            fail(false)
         })
     }
     

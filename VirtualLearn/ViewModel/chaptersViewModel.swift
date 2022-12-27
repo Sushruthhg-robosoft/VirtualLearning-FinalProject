@@ -73,7 +73,6 @@ class ChaptersViewModel {
                     if(assesmentResponse != nil) {
                         print("inside assesment response")
                         guard let assesmentdetails = assesmentResponse else {return}
-
                         guard let assignmentId = assesmentdetails["assignmentId"] as? Int else {print("chapterCountErr1"); return fail("data Error")}
                         guard let assignmentName = assesmentdetails["assignmentName"] as? String else {print("chapterCountErr2"); return fail("data Error")}
                         guard let testDuration = assesmentdetails["testDuration"] as? Int else {print("hello");return fail("data Error")}
@@ -172,6 +171,7 @@ class ChaptersViewModel {
             }
             task.resume()
         }
+    
     func getCertificate(token: String, courseId: String,completion: @escaping(String) -> Void, fail: @escaping (String) -> Void) {
         guard let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/certificate?courseId=\(courseId)") else{ return fail("url Error")}
         
@@ -183,9 +183,11 @@ class ChaptersViewModel {
             print(apiData)
             guard let certificateLink = apiData["certificateLink"] as? String else {print("err5"); return fail("data Error")}
             completion(certificateLink)
-        } failure: { failData in
-            fail("fail")
-        }
+            
+               } failure: { failData in
+                
+                 fail("fail")
+            }
 
     }
         

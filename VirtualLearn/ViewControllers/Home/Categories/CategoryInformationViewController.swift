@@ -40,37 +40,18 @@ class CategoryInformationViewController: UIViewController{
                     DispatchQueue.main.async {
                         self.subCategoryCollectionView.reloadData()
                     }
-                    
                 } fail: {
-                    self.stopLoader(loader: loader)
-                    
+//                    self.stopLoader(loader: loader)
                 }
-                
             }
         } fail: {
             self.stopLoader(loader: loader)
+            DispatchQueue.main.async {
+                self.okAlertMessagePopup(message: "Course Not found ")
+            }
             
-            self.okAlertMessagePopup(message: "Course Not found ")
         }
         let loader2 = self.loader()
-        //        shared.homeViewModelShared.getNewestCourseDetails(token: shared.token) { (data) in
-        //            DispatchQueue.main.async {
-        //                self.stopLoader(loader: loader2)
-        //                self.featuredCourse = data
-        //                self.featureCourseCollectionView.reloadData()
-        //            }
-        //        } fail: {error in
-        //            DispatchQueue.main.async {
-        //                self.stopLoader(loader: loader2)
-        //                if(error == "unauthorized") {
-        //
-        //                }
-        //                else {
-        //
-        //                }
-        //            }
-        //        }
-        
         shared.categoriesViewModelShared.getFeaturedCourseDetails(categoryId: categoryId, token: shared.token) { (data) in
             DispatchQueue.main.async {
                 self.stopLoader(loader: loader2)
@@ -107,12 +88,7 @@ class CategoryInformationViewController: UIViewController{
                 }
             }
         }
-        
-        
-        
-        
-        
-        
+
     }
     
     @IBAction func onClickBack(_ sender: Any) {

@@ -43,6 +43,7 @@ class VideoPlayViewController: UIViewController {
         //        addTimeobserver()
         player.play()
         videoHeading.text = heading
+       
     }
     func seek(to seconds: Int) {
         let targetTime:CMTime = CMTimeMake(value: Int64(seconds), timescale: 1)
@@ -69,6 +70,10 @@ class VideoPlayViewController: UIViewController {
         playerLayer.frame = videoPlayView.bounds
     }
     
+    func playerDidFinishPlaying(){
+        print("Video Finished playing in style")
+    }
+    
     @IBAction func playPauseButtonClicked(_ sender: UIButton) {
         if isPlaying{
             player.pause()
@@ -89,9 +94,14 @@ class VideoPlayViewController: UIViewController {
     @IBAction func timeSliderChanged(_ sender: UISlider) {
         player.seek(to: CMTimeMake(value: Int64(sender.value*1000), timescale: 1000))
     }
+    
+    @objc func playerDidFinishPlaying(notification: NSNotification) {
+      player.pause()
+    }
     func addTimeobserver(){
         let interval = CMTime(seconds: 0.5, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
         let mainQueue = DispatchQueue.main
+       
         DispatchQueue.main.async {
             
             _ = self.player.addPeriodicTimeObserver(forInterval: interval, queue: mainQueue, using: { [weak self] time in
@@ -99,6 +109,12 @@ class VideoPlayViewController: UIViewController {
                 guard currentTime.duration >= .zero, !currentTime.duration.seconds.isNaN else {
                     return
                 }
+//                if let currenttime = self?.player.currentTime(), let duration = self?.player.currentItem?.duration {
+//                let remainingTime = CMTimeGetSeconds(duration) - CMTimeGetSeconds(currenttime)
+//                if remainingTime < 0.01 {
+//                    self?.player.pause()
+//                }
+//                }
                 self?.timeSlider.maximumValue = Float(currentTime.duration.seconds)
                 self?.timeSlider.minimumValue = 0
                 self?.timeSlider.value = Float(currentTime.currentTime().seconds )

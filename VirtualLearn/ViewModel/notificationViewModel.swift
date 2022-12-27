@@ -23,7 +23,6 @@ class NotificationViewModel{
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        
         networkManeger.fetchDataJson(request: request) { data in
             
             guard let notificationCount = data as? Int else {print("countErr");return fail("data error")}

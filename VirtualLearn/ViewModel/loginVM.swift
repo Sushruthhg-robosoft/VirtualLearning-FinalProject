@@ -36,10 +36,6 @@ class LoginViewModel {
                 
                 let keychain = KeyChain()
                 keychain.saveData(userId: String(id), data: tokenInfo)
-                
-//                guard let receivedTokenData = keychain.loadData(userId: String(id)) else {return}
-//                guard let receivedToken = String(data: receivedTokenData, encoding: .utf8) else { return }
-//                print("token",receivedToken)
                 completion(token)
                 
             } failure: { failResult in
@@ -75,13 +71,10 @@ class LoginViewModel {
             network.fetchData(request: request as URLRequest) { result in
                 
                 guard let response = result as? [String] else {return fail()}
-                
-                if(response[0] == "true")
-                {
+                if(response[0] == "true") {
                     completion()
                 }
-                else
-                {
+                else {
                     fail()
                 }
             } failure: { failResult in
@@ -101,12 +94,10 @@ class LoginViewModel {
                 
                 guard let response = result as? [String] else {return fail(userName)}
                 
-                if(response[0] == "true")
-                {
+                if(response[0] == "true") {
                     completion(userName)
                 }
-                else
-                {
+                else {
                     fail(userName)
                 }
             } failure: { failResult in

@@ -26,18 +26,14 @@ class PersonalData {
                 return
             }
             print(response)
-            if(response == "true")
-            {
-                
+            if(response == "true"){
                 completion(true)
             }
-            else
-            {
+            else{
                 //alertmessage "User Already Exist"
                 fail(false)
             }
-            
-            
+   
         } failure: { data in
             fail(false)
             print(data)

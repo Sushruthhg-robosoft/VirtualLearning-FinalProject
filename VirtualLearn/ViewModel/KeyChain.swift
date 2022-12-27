@@ -65,8 +65,6 @@ class KeyChain {
 
         let status = SecItemDelete(query as CFDictionary)
         print(status)
-        // Any status other than errSecSuccess indicates the
-        // delete operation failed.
         shared.token = ""
         shared.isExisting = false
         print("deleted successfully", shared.token)
