@@ -37,7 +37,7 @@ class PersonalDetailsViewController: UIViewController, UITextFieldDelegate {
     var enterdMobileNumber = ""
     var usernameStatus = false
     var activeTextField : UITextField? = nil
-    
+    var emailId = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -260,7 +260,13 @@ class PersonalDetailsViewController: UIViewController, UITextFieldDelegate {
             emailTextField.placeholder = "Email"
             return
         }
-        userNameLabel.isHidden = false
+        emailId = !isValidEmail(email: emailTextField.text!)
+        if emailId {
+            okAlertMessagePopup(message: "Enter Valid Email")
+            RegistrayionButtonOutlet.isEnabled = false
+            
+        }
+        emailLabel.isHidden = false
     }
     
     @IBAction func passwordTextEnd(_ sender: Any) {
@@ -281,6 +287,7 @@ class PersonalDetailsViewController: UIViewController, UITextFieldDelegate {
             return
         }
         confirmPasswordLabel.isHidden = false
+        
     }
     
     func passwordMatched(_ value: String) -> Bool{
@@ -289,6 +296,11 @@ class PersonalDetailsViewController: UIViewController, UITextFieldDelegate {
         let predicate = NSPredicate(format: "SELF MATCHES %@", regular)
         
         return predicate.evaluate(with: value)
+    }
+    func isValidEmail(email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPredicate.evaluate(with: email)
     }
     func checAllField() {
         
