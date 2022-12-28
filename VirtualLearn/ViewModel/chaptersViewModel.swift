@@ -13,7 +13,14 @@ class ChaptersViewModel {
     
     let networkManeger = NetWorkManager()
     var listOfLessons = [LessonResponseList]()
-    
+    var url = ""
+    var time : Int = 0
+    var courseName = ""
+    var joinedCourse = false
+    var courseId = ""
+    var lessonId = ""
+    var dataoflesson = [LessonResponseList]()
+    var imageUrl = ""
     func getChapters(token: String, courseId: String,completion: @escaping(CourseChapter) -> Void, fail: @escaping (String) -> Void) {
             
             var expandStatus = 0

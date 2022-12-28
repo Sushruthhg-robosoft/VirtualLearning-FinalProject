@@ -2,7 +2,7 @@
 //  CustomChaptersCellView.swift
 //  Chapters
 //
-//  Created by Manish R T on 12/12/22.
+//  Created by Santhosh Patkar on 12/12/22.
 //
 
 import Foundation

@@ -24,10 +24,10 @@ class CustomChapterTableViewCell: UITableViewCell {
     @IBOutlet weak var progressHeight: NSLayoutConstraint!
     @IBOutlet weak var videoPlayButton: UIButton!
     @IBOutlet weak var timelineIndicatorImage: UIImageView!
-    
     @IBOutlet weak var cellLeadingConstraint: NSLayoutConstraint!
     var delegate: playVideo?
     var indexPath: IndexPath?
+    
     func setValuesLesson(data: LessonList) {
         chapterName.text = data.lessonName
         chapterNumber.text = "0\(String(data.lessonNumber))"
@@ -50,12 +50,14 @@ class CustomChapterTableViewCell: UITableViewCell {
         videoPlayButton.isHidden = false
         assesmentProgress(data: data)
     }
+    
     func convertsectomins(seconds: Int) -> String {
         let minutes = seconds / 60
         let second = seconds % 60
         let minsAndSecond = String(minutes) + ":" + String(second)
         return minsAndSecond
     }
+    
     func cellconstrints(joinedCourse: Bool) {
         if(joinedCourse) {
             cellLeadingConstraint.constant = 13
@@ -70,6 +72,7 @@ class CustomChapterTableViewCell: UITableViewCell {
             progressWidth.constant = 0
         }
     }
+    
     func progressStatus(data: LessonList) {
         if(data.lessonCompleted) {
             
