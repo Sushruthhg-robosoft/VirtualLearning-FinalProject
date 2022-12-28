@@ -19,7 +19,7 @@ class NewUserHomeView: UIView {
     var delegate: clickButtons?
     @IBOutlet weak var topView: SuggestionsTopView!
     var testDelegate : test?
-    var bannerImages = [String]()
+    //var bannerImages = [String]()
     var shared = mainViewModel.mainShared
     @IBOutlet weak var existingUserBottomView: ExistingUserBottomview!
     
