@@ -190,21 +190,3 @@ func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 }
 
 
-extension LoginPageViewController {
-    
-    func initializeHideKeyboard(){
-        
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
-            target: self,
-            action: #selector(dismissMyKeyboard))
-        
-       
-        view.addGestureRecognizer(tap)
-    }
-    
-    @objc func dismissMyKeyboard(){
-        
-        view.endEditing(true)
-    }
-    
-}

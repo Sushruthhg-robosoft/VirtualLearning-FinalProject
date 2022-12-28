@@ -95,9 +95,6 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         
         super.viewDidLoad()
         
-        initializeHideKeyboard()
-        
-        
         navigationController?.navigationBar.isHidden = true
         
         dropDownView.isHidden = true

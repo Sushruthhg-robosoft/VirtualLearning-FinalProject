@@ -13,7 +13,7 @@ extension ChangeYourPasswordViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(
             target: self,
             action: #selector(dismissMyKeyboard))
-    
+        
         view.addGestureRecognizer(tap)
     }
     
@@ -22,30 +22,14 @@ extension ChangeYourPasswordViewController {
         view.endEditing(true)
     }
 }
-    
+
 extension EditProfileViewController {
     func initializeHideKeyboard(){
-
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
-            target: self,
-            action: #selector(dismissMyKeyboard))
-
-
-        view.addGestureRecognizer(tap)
-    }
-
-    @objc func dismissMyKeyboard(){
-
-        view.endEditing(true)
-    }
-}
-
-extension 
-func initializeHideKeyboard(){
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(
             target: self,
             action: #selector(dismissMyKeyboard))
+        
         
         view.addGestureRecognizer(tap)
     }
@@ -54,9 +38,74 @@ func initializeHideKeyboard(){
         
         view.endEditing(true)
     }
+}
+
+extension PersonalDetailsViewController {
+    func initializeHideKeyboard(){
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissMyKeyboard))
+        
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissMyKeyboard(){
+        
+        view.endEditing(true)
+    }
     
 }
 
-
+extension CreateNewPasswordViewController {
+    func initializeHideKeyboard(){
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissMyKeyboard))
+        
+        
+        view.addGestureRecognizer(tap)
+    }
     
+    @objc func dismissMyKeyboard(){
+        
+        view.endEditing(true)
+    }
+}
+
+extension LoginPageViewController {
+    
+    func initializeHideKeyboard(){
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissMyKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissMyKeyboard(){
+        
+        view.endEditing(true)
+    }
+    
+}
+
+extension ForgotPasswordViewController {
+    func initializeHideKeyboard(){
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissMyKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissMyKeyboard(){
+        view.endEditing(true)
+    }
+}
+
+
+
+
+
 
