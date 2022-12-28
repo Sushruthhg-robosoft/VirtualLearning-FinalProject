@@ -30,7 +30,6 @@ class ChooseYourCourseViewController: UIViewController, UITextFieldDelegate {
         categoriesCollectionView.dataSource = self
         
         self.searchView.setBorder()
-        self.searchTextField.removeBorder()
         super.viewDidLoad()
         let loader = self.loader()
 

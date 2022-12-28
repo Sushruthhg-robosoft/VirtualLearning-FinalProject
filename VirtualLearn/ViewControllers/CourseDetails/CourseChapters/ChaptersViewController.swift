@@ -59,17 +59,10 @@ class ChaptersViewController: UIViewController {
         
         popUpBackView.isHidden = true
         
-//        joinedLeftView.layer.cornerRadius = 5
-//        joinedRightView.layer.cornerRadius = 5
-//        
-//        joinedView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
-//        joinedView.layer.shadowOpacity = 100
-//        joinedView.layer.shadowRadius = 5
-//        joinedView.layer.shadowOffset = CGSize(width: 0, height: 2)
-        
         ContinuationLabelHeightContraint.constant = 0
         ContinuationLabelconstraint.constant = 0
         CourseContentConstraint.constant = 0
+        
         tableView.register(HeaderView.self, forHeaderFooterViewReuseIdentifier: "HeaderView")
         tableView.delegate = self
         tableView.dataSource = self

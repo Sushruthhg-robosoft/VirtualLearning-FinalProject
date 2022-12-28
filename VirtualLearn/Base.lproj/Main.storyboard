@@ -2001,13 +2001,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Course" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONP-s4-YM8">
-                                <rect key="frame" x="24" y="118" width="127" height="30.5"/>
+                                <rect key="frame" x="24" y="118" width="123.5" height="26"/>
                                 <fontDescription key="fontDescription" name="Biko-Bold" family="Biko" pointSize="26"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zc9-In-EHo">
-                                <rect key="frame" x="0.0" y="157" width="375" height="510"/>
+                                <rect key="frame" x="0.0" y="152.5" width="375" height="514.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="N3S-xZ-xh6">
                                         <rect key="frame" x="24" y="30" width="175" height="27"/>
@@ -2055,7 +2055,7 @@
                                         </subviews>
                                     </stackView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="176" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6UT-gi-DeI">
-                                        <rect key="frame" x="0.0" y="87" width="375" height="423"/>
+                                        <rect key="frame" x="0.0" y="87" width="375" height="427.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="K7Z-QP-Xc0" customClass="MyCourseTableViewCell" customModule="VirtualLearn" customModuleProvider="target">
@@ -2080,7 +2080,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Art &amp; Illustration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tir-GX-85W">
-                                                            <rect key="frame" x="48" y="76" width="113.5" height="20.5"/>
+                                                            <rect key="frame" x="48" y="76" width="111" height="20.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20.5" id="fbM-qv-bXb"/>
                                                             </constraints>
@@ -2089,7 +2089,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15/20 Chapters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCK-M9-cSp">
-                                                            <rect key="frame" x="48" y="96.5" width="83.5" height="15.5"/>
+                                                            <rect key="frame" x="48" y="96.5" width="80" height="15.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="15.666666666666671" id="uLI-UT-IWb"/>
                                                             </constraints>
@@ -2161,7 +2161,7 @@
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vox-eg-5WM">
-                                <rect key="frame" x="0.0" y="156.5" width="375" height="510.5"/>
+                                <rect key="frame" x="0.0" y="152" width="375" height="515"/>
                                 <connections>
                                     <segue destination="xN5-0k-xZF" kind="embed" destinationCreationSelector="categoryName:" id="ooZ-0a-3eL"/>
                                 </connections>
@@ -2204,11 +2204,11 @@
             <objects>
                 <viewController storyboardIdentifier="NewUserMyCourseViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xN5-0k-xZF" customClass="NewUserMyCourseViewController" customModule="VirtualLearn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3lO-QP-sOL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="510.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="515"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="18f-l1-gKm">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="510.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="515"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rsL-QN-9RZ">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="710"/>
@@ -4075,7 +4075,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Atv-4b-AhL">
-                                                <rect key="frame" x="24" y="121" width="271.5" height="30.5"/>
+                                                <rect key="frame" x="24" y="121" width="261" height="26"/>
                                                 <string key="text">Change your Password
 
 </string>
@@ -4084,13 +4084,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your password must have at least 6 or more characters" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="noH-jf-9Ve">
-                                                <rect key="frame" x="24" y="161.5" width="327" height="37.5"/>
+                                                <rect key="frame" x="24" y="157" width="327" height="39"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                 <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ql2-X5-jvo">
-                                                <rect key="frame" x="24" y="233" width="112" height="22"/>
+                                                <rect key="frame" x="24" y="230" width="109.5" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="22" id="165-sB-SxP"/>
                                                 </constraints>
@@ -4099,7 +4099,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jtP-mI-Mxp" customClass="borderlessTextField" customModule="VirtualLearn" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="267" width="327" height="24"/>
+                                                <rect key="frame" x="24" y="264" width="327" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="nhR-cN-o5v"/>
                                                 </constraints>
@@ -4107,7 +4107,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j15-1b-AxH">
-                                                <rect key="frame" x="24" y="301" width="327" height="1"/>
+                                                <rect key="frame" x="24" y="298" width="327" height="1"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="Hpp-hB-45Q"/>
@@ -4115,7 +4115,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rw8-Pl-2jy">
-                                                <rect key="frame" x="24" y="315" width="93.5" height="22"/>
+                                                <rect key="frame" x="24" y="312" width="91.5" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="22" id="Nq7-j3-XEc"/>
                                                 </constraints>
@@ -4124,7 +4124,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iuV-AS-n9L" customClass="borderlessTextField" customModule="VirtualLearn" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="350" width="327" height="24"/>
+                                                <rect key="frame" x="24" y="347" width="327" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="8PP-P6-mMF"/>
                                                 </constraints>
@@ -4136,7 +4136,7 @@
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm new password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdF-PW-exr">
-                                                <rect key="frame" x="24" y="395" width="145" height="22"/>
+                                                <rect key="frame" x="24" y="392" width="141" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="22" id="1kL-Cw-y9a"/>
                                                 </constraints>
@@ -4145,19 +4145,19 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gSI-k0-ixx" customClass="borderlessTextField" customModule="VirtualLearn" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="424.5" width="327" height="34"/>
+                                                <rect key="frame" x="24" y="421.5" width="327" height="34"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pj7-x4-MbS">
-                                                <rect key="frame" x="24" y="461" width="327" height="1"/>
+                                                <rect key="frame" x="24" y="458" width="327" height="1"/>
                                                 <color key="backgroundColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="d0x-85-6ir"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VTl-Ag-7U9">
-                                                <rect key="frame" x="24" y="542" width="327" height="46"/>
+                                                <rect key="frame" x="24" y="539" width="327" height="46"/>
                                                 <color key="backgroundColor" red="0.93333333330000001" green="0.36078431370000003" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="46" id="2Ov-Cb-dJ4"/>
@@ -4172,21 +4172,21 @@
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_textfield_right" translatesAutoresizingMaskIntoConstraints="NO" id="qad-fQ-LP3">
-                                                <rect key="frame" x="331" y="267" width="20" height="24"/>
+                                                <rect key="frame" x="331" y="264" width="20" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="20" id="3e0-em-2Uf"/>
                                                     <constraint firstAttribute="height" constant="24" id="TvB-fh-VeP"/>
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wOT-VI-lYq">
-                                                <rect key="frame" x="24" y="382" width="327" height="1"/>
+                                                <rect key="frame" x="24" y="379" width="327" height="1"/>
                                                 <color key="backgroundColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="iub-Qu-NiQ"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8oF-ri-OSr">
-                                                <rect key="frame" x="24" y="386" width="327" height="81"/>
+                                                <rect key="frame" x="24" y="383" width="327" height="81"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Our minimum Requirment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8D-Xb-1UF">
                                                         <rect key="frame" x="16" y="12" width="144" height="15"/>
@@ -5648,31 +5648,31 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Account" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ra4-3V-vG7">
-                                                <rect key="frame" x="24" y="64" width="156.5" height="30.5"/>
+                                                <rect key="frame" x="24" y="64" width="154" height="26"/>
                                                 <fontDescription key="fontDescription" name="Biko-Bold" family="Biko" pointSize="26"/>
                                                 <color key="textColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a new account to get access to all courses by entering your mobile number." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Eg-oV-GVh">
-                                                <rect key="frame" x="24" y="104.5" width="327" height="37.5"/>
+                                                <rect key="frame" x="24" y="100" width="327" height="39"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                 <color key="textColor" red="0.47843137254901957" green="0.47843137254901957" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QG4-Iw-uV2">
-                                                <rect key="frame" x="24" y="172" width="94.5" height="16.5"/>
+                                                <rect key="frame" x="24" y="169" width="92.5" height="17.5"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                                 <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your mobile number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h46-sx-ve6" customClass="borderlessTextField" customModule="VirtualLearn" customModuleProvider="target">
-                                                <rect key="frame" x="71.5" y="202.5" width="213.5" height="34"/>
+                                                <rect key="frame" x="67" y="200.5" width="210" height="34"/>
                                                 <color key="textColor" red="0.015686274510000001" green="0.17254901959999999" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jny-u3-SPV">
-                                                <rect key="frame" x="24" y="245.5" width="327" height="0.5"/>
+                                                <rect key="frame" x="24" y="243.5" width="327" height="0.5"/>
                                                 <color key="backgroundColor" red="0.015686274510000001" green="0.17254901959999999" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="0.5" id="PZF-sr-aic"/>
@@ -5682,7 +5682,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p41-F5-T7P" customClass="LoadingButton" customModule="VirtualLearn" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="299.5" width="327" height="46"/>
+                                                <rect key="frame" x="24" y="297.5" width="327" height="46"/>
                                                 <color key="backgroundColor" red="0.93333333330000001" green="0.36078431370000003" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="46" id="knX-vD-22I"/>
@@ -5702,16 +5702,16 @@
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="MkI-5s-IjL">
-                                                <rect key="frame" x="72.5" y="369.5" width="230.5" height="31"/>
+                                                <rect key="frame" x="75" y="367.5" width="225" height="32"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayc-MR-4C8">
-                                                        <rect key="frame" x="0.0" y="0.0" width="185.5" height="31"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="181" height="32"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                         <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cG7-NY-z5H">
-                                                        <rect key="frame" x="190.5" y="0.0" width="40" height="31"/>
+                                                        <rect key="frame" x="186" y="0.0" width="39" height="32"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                         <state key="normal" title="Login">
                                                             <color key="titleColor" red="0.93333333330000001" green="0.36078431370000003" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -5723,7 +5723,7 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+91" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXE-W0-WTp">
-                                                <rect key="frame" x="24" y="202.5" width="27.5" height="34"/>
+                                                <rect key="frame" x="24" y="200.5" width="23" height="34"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -5944,7 +5944,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bAD-DU-9rQ">
                                                         <rect key="frame" x="81" y="200" width="200" height="34"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Grk-eW-x00">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Grk-eW-x00" customClass="borderlessTextField" customModule="VirtualLearn" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="35" height="34"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="35" id="5gm-oM-hWj"/>
@@ -5954,7 +5954,7 @@
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
                                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bla-Yq-kra">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bla-Yq-kra" customClass="borderlessTextField" customModule="VirtualLearn" customModuleProvider="target">
                                                                 <rect key="frame" x="55" y="0.0" width="35" height="34"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="35" id="o5S-eB-zbG"/>
@@ -5964,7 +5964,7 @@
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
                                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DtG-gp-MMA">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DtG-gp-MMA" customClass="borderlessTextField" customModule="VirtualLearn" customModuleProvider="target">
                                                                 <rect key="frame" x="110" y="0.0" width="35" height="34"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="34" id="Mrn-zQ-eBD"/>
@@ -5974,7 +5974,7 @@
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
                                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cJr-RB-Dh8">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cJr-RB-Dh8" customClass="borderlessTextField" customModule="VirtualLearn" customModuleProvider="target">
                                                                 <rect key="frame" x="165" y="0.0" width="35" height="34"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="35" id="TdL-fb-4pA"/>
@@ -6707,7 +6707,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create New Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gib-7x-c9F">
-                                                <rect key="frame" x="24" y="108" width="259" height="35"/>
+                                                <rect key="frame" x="24" y="108" width="260" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="9j1-2M-RoH"/>
                                                     <constraint firstAttribute="height" constant="35" id="aMb-pV-rrT"/>
@@ -6727,7 +6727,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jhs-Zn-tGK" customClass="borderlessTextField" customModule="VirtualLearn" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="251.5" width="315" height="34"/>
+                                                <rect key="frame" x="24" y="252.5" width="315" height="34"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
@@ -6737,7 +6737,7 @@
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GC1-vL-mGK">
-                                                <rect key="frame" x="24" y="228" width="120" height="16.5"/>
+                                                <rect key="frame" x="24" y="228" width="120" height="17.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="Ibh-Wh-8fF"/>
                                                 </constraints>
@@ -6746,7 +6746,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm new password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rOj-xt-pxC">
-                                                <rect key="frame" x="24" y="335.5" width="172" height="22"/>
+                                                <rect key="frame" x="24" y="336.5" width="172" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="172" id="Okj-Gx-JEI"/>
                                                     <constraint firstAttribute="height" constant="22" id="bly-XJ-rLs"/>
@@ -6756,7 +6756,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKQ-nY-SGe">
-                                                <rect key="frame" x="24" y="294.5" width="327" height="1"/>
+                                                <rect key="frame" x="24" y="295.5" width="327" height="1"/>
                                                 <color key="backgroundColor" red="0.015686274510000001" green="0.17254901959999999" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="Ijo-Vx-P7p"/>
@@ -6764,7 +6764,7 @@
                                                 </constraints>
                                             </view>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pCn-fM-TF3" userLabel="Confirm new password" customClass="borderlessTextField" customModule="VirtualLearn" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="366.5" width="315" height="34"/>
+                                                <rect key="frame" x="24" y="367.5" width="315" height="34"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES"/>
                                                 <connections>
@@ -6773,7 +6773,7 @@
                                                 </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="heB-bX-Ixg">
-                                                <rect key="frame" x="24" y="501.5" width="327" height="46"/>
+                                                <rect key="frame" x="24" y="502.5" width="327" height="46"/>
                                                 <color key="backgroundColor" red="0.93333333330000001" green="0.36078431370000003" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="327" id="9fS-CO-zUS"/>
@@ -6793,17 +6793,17 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DTo-UC-aS9">
-                                                <rect key="frame" x="24" y="409.5" width="327" height="1"/>
+                                                <rect key="frame" x="24" y="410.5" width="327" height="1"/>
                                                 <color key="backgroundColor" red="0.015686274510000001" green="0.17254901959999999" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="ed3-2e-CV3"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KfJ-x3-yKU" customClass="customPasswordView" customModule="VirtualLearn" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="295.5" width="335" height="70"/>
+                                                <rect key="frame" x="24" y="296.5" width="335" height="70"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Our minimum Requirment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjb-Yh-GW0">
-                                                        <rect key="frame" x="16" y="12" width="138.5" height="15"/>
+                                                        <rect key="frame" x="16" y="12" width="135" height="15"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="15" id="nNF-XU-jAn"/>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="135" id="w5l-7r-KEl"/>
@@ -7692,7 +7692,7 @@
                                                         </constraints>
                                                         <state key="normal" image="icn_search-Search"/>
                                                     </button>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select course" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E80-7S-33p">
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select course" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E80-7S-33p" customClass="borderlessTextField" customModule="VirtualLearn" customModuleProvider="target">
                                                         <rect key="frame" x="46" y="3" width="228" height="34"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -8066,7 +8066,7 @@
                                                         <color key="textColor" red="0.47843137254901957" green="0.47843137254901957" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="253" verticalCompressionResistancePriority="758" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full name" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="Vti-05-j60">
+                                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="253" verticalCompressionResistancePriority="758" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full name" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="Vti-05-j60" customClass="RemoveBorder" customModule="VirtualLearn" customModuleProvider="target">
                                                         <rect key="frame" x="24" y="241.5" width="327" height="34"/>
                                                         <color key="textColor" red="0.015686274509803921" green="0.17254901960784313" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
@@ -8075,6 +8075,7 @@
                                                             <action selector="firstNameChanged:" destination="o5Y-FY-a79" eventType="editingDidEnd" id="TbJ-G9-Z31"/>
                                                             <action selector="fullNameTextBeginning:" destination="o5Y-FY-a79" eventType="editingDidBegin" id="cqW-Rw-M1I"/>
                                                             <action selector="fullnameTextEnd:" destination="o5Y-FY-a79" eventType="editingDidEnd" id="YGI-Xc-uTm"/>
+                                                            <outlet property="delegate" destination="o5Y-FY-a79" id="qk2-qu-May"/>
                                                         </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="759" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPy-J7-kDT">
@@ -8101,7 +8102,7 @@
                                                         <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="753" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="M1r-vq-iz7">
+                                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="753" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="M1r-vq-iz7" customClass="RemoveBorder" customModule="VirtualLearn" customModuleProvider="target">
                                                         <rect key="frame" x="24" y="331" width="327" height="34"/>
                                                         <color key="textColor" red="0.015686274509803921" green="0.17254901960784313" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -8110,9 +8111,10 @@
                                                             <action selector="userNameChanged:" destination="o5Y-FY-a79" eventType="editingChanged" id="1OE-vL-89r"/>
                                                             <action selector="userNameTextBeginning:" destination="o5Y-FY-a79" eventType="editingDidBegin" id="WQz-kA-Vbw"/>
                                                             <action selector="userNameTextEnd:" destination="o5Y-FY-a79" eventType="editingDidEnd" id="Puu-Pn-Bq1"/>
+                                                            <outlet property="delegate" destination="o5Y-FY-a79" id="4ag-H9-0lL"/>
                                                         </connections>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="754" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="0ga-Du-kQz">
+                                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="754" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="0ga-Du-kQz" customClass="RemoveBorder" customModule="VirtualLearn" customModuleProvider="target">
                                                         <rect key="frame" x="24" y="420.5" width="327" height="34"/>
                                                         <color key="textColor" red="0.015686274509803921" green="0.17254901960784313" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -8121,9 +8123,10 @@
                                                             <action selector="emailChanged:" destination="o5Y-FY-a79" eventType="editingDidEnd" id="FZ8-jt-lsd"/>
                                                             <action selector="emailTextEnd:" destination="o5Y-FY-a79" eventType="editingDidEnd" id="HKq-Mk-liL"/>
                                                             <action selector="emailtextBeginning:" destination="o5Y-FY-a79" eventType="editingDidBegin" id="6f3-zo-PH9"/>
+                                                            <outlet property="delegate" destination="o5Y-FY-a79" id="U6p-qb-AIN"/>
                                                         </connections>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="756" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="7ZB-IV-te7">
+                                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="756" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="7ZB-IV-te7" customClass="RemoveBorder" customModule="VirtualLearn" customModuleProvider="target">
                                                         <rect key="frame" x="24" y="510" width="327" height="34"/>
                                                         <color key="textColor" red="0.015686274509803921" green="0.17254901960784313" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -8132,6 +8135,7 @@
                                                             <action selector="passwordTextBeginning:" destination="o5Y-FY-a79" eventType="editingDidBegin" id="eXf-RX-foq"/>
                                                             <action selector="passwordTextEditing:" destination="o5Y-FY-a79" eventType="editingChanged" id="4ry-ko-HJf"/>
                                                             <action selector="passwordTextEnd:" destination="o5Y-FY-a79" eventType="editingDidEnd" id="vd5-mq-Lip"/>
+                                                            <outlet property="delegate" destination="o5Y-FY-a79" id="iAu-JQ-iNa"/>
                                                         </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIE-o1-7GB">
@@ -8204,7 +8208,7 @@
                                                             <action selector="RegistrationButtonClick:" destination="o5Y-FY-a79" eventType="touchUpInside" id="LyR-Rt-jM9"/>
                                                         </connections>
                                                     </button>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="2Gs-lt-YtT">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="2Gs-lt-YtT" customClass="RemoveBorder" customModule="VirtualLearn" customModuleProvider="target">
                                                         <rect key="frame" x="24" y="599.5" width="327" height="34"/>
                                                         <color key="textColor" red="0.015686274509803921" green="0.17254901960784313" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -8213,6 +8217,7 @@
                                                             <action selector="confirmPasswordChanged:" destination="o5Y-FY-a79" eventType="editingChanged" id="Lo9-wk-gIr"/>
                                                             <action selector="confirmTextBeginning:" destination="o5Y-FY-a79" eventType="editingDidBegin" id="5qk-q8-MIB"/>
                                                             <action selector="confirmpasswordTextEnd:" destination="o5Y-FY-a79" eventType="editingDidEnd" id="YK5-CB-SX2"/>
+                                                            <outlet property="delegate" destination="o5Y-FY-a79" id="9Go-JA-wF0"/>
                                                         </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RMF-5h-nse">
@@ -8967,7 +8972,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UaH-R0-07j" userLabel="popUpView">
-                                        <rect key="frame" x="0.0" y="428" width="375" height="667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <view alpha="0.98999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5mb-8d-2Gl">
                                                 <rect key="frame" x="39" y="212" width="297" height="243"/>

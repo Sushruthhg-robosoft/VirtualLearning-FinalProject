@@ -44,45 +44,33 @@ class showQuestionResultViewController: UIViewController {
         option4Answer.text = dataDisplay.option4
         
         if(dataDisplay.correctAnswer == option1Answer.text) {
-            option1Answer.textColor = UIColor(red: 255, green: 255, blue: 255, alpha: 1)
-            option1View.backgroundColor = UIColor(red: 30/255, green: 171/255, blue: 13/255, alpha: 1)
-            option1Image.image = #imageLiteral(resourceName: "icn_option checked")
+            changeView(label: option1Answer, image: option1Image, view: option1View)
         }
+        
         else if(dataDisplay.correctAnswer == option2Answer.text) {
-            option2Answer.textColor = UIColor(red: 255, green: 255, blue: 255, alpha: 1)
-            option2View.backgroundColor = UIColor(red: 30/255, green: 171/255, blue: 13/255, alpha: 1)
-            option2Image.image = #imageLiteral(resourceName: "icn_option checked")
+            changeView(label: option2Answer, image: option2Image, view: option2View)
         }
+        
         else if(dataDisplay.correctAnswer == option3Answer.text) {
-            option3Answer.textColor = UIColor(red: 255, green: 255, blue: 255, alpha: 1)
-            option3View.backgroundColor = UIColor(red: 30/255, green: 171/255, blue: 13/255, alpha: 1)
-            option3Image.image = #imageLiteral(resourceName: "icn_option checked")
+            changeView(label: option3Answer, image: option3Image, view: option3View)
         }
+        
         else if(dataDisplay.correctAnswer == option4Answer.text) {
-            option4Answer.textColor = UIColor(red: 255, green: 255, blue: 255, alpha: 1)
-            option4View.backgroundColor = UIColor(red: 30/255, green: 171/255, blue: 13/255, alpha: 1)
-            option4Image.image = #imageLiteral(resourceName: "icn_option checked")
+            changeView(label: option4Answer, image: option4Image, view: option4View)
         }
+        
         if(dataDisplay.correctAnswer != dataDisplay.givenAnswer) {
             if(dataDisplay.givenAnswer == option1Answer.text) {
-                option1Answer.textColor = UIColor(red: 255, green: 255, blue: 255, alpha: 1)
-                option1View.backgroundColor = UIColor(red: 234/255, green: 38/255, blue: 38/255, alpha: 1)
-                option1Image.image = #imageLiteral(resourceName: "icn_option wrong-1")
+                changeWrongView(label: option1Answer, image: option1Image, view: option1View)
             }
             else if(dataDisplay.givenAnswer == option2Answer.text) {
-                option2Answer.textColor = UIColor(red: 255, green: 255, blue: 255, alpha: 1)
-                option2View.backgroundColor = UIColor(red: 234/255, green: 38/255, blue: 38/255, alpha: 1)
-                option2Image.image = #imageLiteral(resourceName: "icn_option wrong")
+                changeWrongView(label: option2Answer, image: option2Image, view: option2View)
             }
             else if(dataDisplay.givenAnswer == option3Answer.text) {
-                option3Answer.textColor = UIColor(red: 255, green: 255, blue: 255, alpha: 1)
-                option3View.backgroundColor = UIColor(red: 234/255, green: 38/255, blue: 38/255, alpha: 1)
-                option3Image.image = #imageLiteral(resourceName: "icn_option wrong")
+                changeWrongView(label: option3Answer, image: option3Image, view: option3View)
             }
             else if(dataDisplay.givenAnswer == option4Answer.text) {
-                option4Answer.textColor = UIColor(red: 255, green: 255, blue: 255, alpha: 1)
-                option4View.backgroundColor = UIColor(red: 234/255, green: 38/255, blue: 38/255, alpha: 1)
-                option4Image.image = #imageLiteral(resourceName: "icn_option wrong")
+                changeWrongView(label: option4Answer, image: option4Image, view: option4View)
             }
         }
         
@@ -96,6 +84,16 @@ class showQuestionResultViewController: UIViewController {
         }
     }
     
+    func changeView(label: UILabel, image: UIImageView, view: UIView) {
+        label.textColor = UIColor(red: 255, green: 255, blue: 255, alpha: 1)
+        view.backgroundColor = UIColor(red: 30/255, green: 171/255, blue: 13/255, alpha: 1)
+        image.image = #imageLiteral(resourceName: "icn_option checked")
+    }
+    func changeWrongView(label: UILabel, image: UIImageView, view: UIView) {
+        label.textColor = UIColor(red: 255, green: 255, blue: 255, alpha: 1)
+        view.backgroundColor = UIColor(red: 234/255, green: 38/255, blue: 38/255, alpha: 1)
+        image.image = #imageLiteral(resourceName: "icn_option wrong")
+    }
     
     @IBAction func onCancelTapped(_ sender: Any) {
         

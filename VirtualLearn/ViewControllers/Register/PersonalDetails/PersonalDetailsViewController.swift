@@ -14,24 +14,20 @@ class PersonalDetailsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
-    
     @IBOutlet weak var passwordIButton: UIButton!
-    
     @IBOutlet weak var passwordView: UIView!
-    
     @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var confirmPasswordLabel: UILabel!
     @IBOutlet weak var detailsScreen: UIView!
-    
     @IBOutlet weak var mobileNumber: UILabel!
     @IBOutlet weak var RegistrayionButtonOutlet: UIButton!
-    var storagemaner = StorageManeger.shared
     @IBOutlet weak var successScreen: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    var storagemaner = StorageManeger.shared
     let personalData = PersonalData()
     let mainshared = mainViewModel.mainShared
     var enterdMobileNumber = ""

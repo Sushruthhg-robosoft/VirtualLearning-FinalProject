@@ -10,6 +10,7 @@ import UIKit
 class ViewCertificateViewController: UIViewController {
     var courseId = ""
     var imageUrl = ""
+    
     let shared = mainViewModel.mainShared
     @IBOutlet weak var certificateImage: UIImageView!
     override func viewDidLoad() {
@@ -37,7 +38,6 @@ class ViewCertificateViewController: UIViewController {
     }
     
     @IBAction func onClickDownload(_ sender: Any) {
-        //shared.chaptersDetailsViewModelShared.downloadCertificate(imageUrl: imageUrl)
         shared.chaptersDetailsViewModelShared.downloadCertificate(imageUrl: imageUrl) {
             DispatchQueue.main.async {
                 self.okAlertMessagePopup(message: "Successfully saved in your gallery")
