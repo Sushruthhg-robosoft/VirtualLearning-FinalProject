@@ -10,7 +10,7 @@ import UIKit
 class SuggestionsTopView: UIView {
     
     
-    var arrImages : [UIImage] = [#imageLiteral(resourceName: "img_banner1_home"), #imageLiteral(resourceName: "img_mycourse_completed3")]
+    
     var bannerImage: [String] = []
     @IBOutlet var view: UIView!
     @IBOutlet weak var userNameLabel: UILabel!
@@ -65,7 +65,6 @@ class SuggestionsTopView: UIView {
 extension SuggestionsTopView : UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        print("bannerCount",bannerImage.count)
         return bannerImage.count
     }
     
