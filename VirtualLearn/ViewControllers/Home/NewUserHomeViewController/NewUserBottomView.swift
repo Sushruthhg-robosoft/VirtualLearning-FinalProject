@@ -39,13 +39,15 @@ class NewUserBottomView: UIView, UICollectionViewDataSource, UICollectionViewDel
     @IBOutlet weak var topCourse1: TopCourseSectionView!
     @IBOutlet weak var topCourse2: TopCourseSectionView!
     
-
+    
+    var courseSet: [UIImage] = [#imageLiteral(resourceName: "img_course1_bg"), #imageLiteral(resourceName: "img_course2_bg")]
     var delegate: clickButtons?
     var toCourse1Obj: UIView?
     var toCourse2Obj: UIView?
     var shared = ViewModel.shared
     var mainShared = mainViewModel.mainShared
-
+    var array = ["nbvhj", "afka", "aef", "nbvhj", "afka", "aef", "nbvhj", "afka", "aef"]
+    var array2 = ["123", "7456", "67", "nbvhj", "afka", "aef", "nbvhj", "afka", "aef"]
     override init(frame: CGRect) {
         super.init(frame: frame)
     }

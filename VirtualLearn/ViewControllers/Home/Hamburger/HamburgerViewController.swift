@@ -26,21 +26,28 @@ class HamburgerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // let loader = self.loader()
+        print("insideHamburgerMenu")
         mainShraed.notificationViewModelShared.getNotificationCount( token: mainShraed.token){
             DispatchQueue.main.async {
+                //self.stopLoader(loader: loader)
                 self.notificationCount.text = String(self.mainShraed.notificationViewModelShared.count)
             }
         } fail: {error in
             
+            //            self.stopLoader(loader: loader)
             print("failures")
             DispatchQueue.main.async {
                 if(error == "unauthorized") {
+                    print("hello12345")
+//                    self.storageManegr.resetLoggedIn()
                     DispatchQueue.main.async {
                         self.okAlertMessagePopupforLoginforExsistingUser(message: "Your session is Expired")
                     }
                     
                 }
                 else {
+                    //                    self.navigationController?.popViewController(animated: true)
                 }
             }
         }
@@ -90,6 +97,7 @@ class HamburgerViewController: UIViewController {
     
     @IBAction func onClickHome(_ sender: Any) {
         
+        print("Clicked")
         self.delegate?.hideHamburgerMenu()
     }
     
@@ -152,9 +160,10 @@ class HamburgerViewController: UIViewController {
             let storageManger = StorageManeger.shared
             self.mainShraed.loginViewModel.logout(userId: storageManger.authId() , token: self.mainShraed.token)
             storageManger.resetLoggedIn()
-            
+            print(123456789,storageManger.isLoggedIn())
+//            let vc = self.storyboard?.instantiateViewController(identifier: "LoadingViewController") as? LoadingViewController
             self.navigationController?.popViewController(animated: true)
-            
+            //self.navigationController?.popToViewController(vc!, animated: true)
             
         })
         let no = UIAlertAction(title: "Cancel", style: .default, handler: { (action) -> Void in

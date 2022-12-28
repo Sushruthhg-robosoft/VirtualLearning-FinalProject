@@ -8,7 +8,7 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    
+
     @IBOutlet weak var hamburgerView: UIView!
     @IBOutlet weak var leadingConstraintForHamburgerView: NSLayoutConstraint!
     
@@ -26,12 +26,17 @@ class HomeViewController: UIViewController {
     var hamburgerViewController: HamburgerViewController?
     var storageShared = StorageManeger.shared
     override func viewDidLoad() {
+//        mainShared.categoriesViewModelShared.listofCategories.removeAll()
         
+        
+
+        
+       // print("sdcfewfdfeferrer\(userName)")
         self.hamburgerView.isHidden = true
         super.viewDidLoad()
-        
+        // Do any additional setup after loading the view.
         hamburgerViewController?.delegate = self
-        
+
         newUserDelegate.delegate = self
         NewUserView.delegate = self
         test.testDelegate = self
@@ -39,18 +44,33 @@ class HomeViewController: UIViewController {
         shared.delegate = self
         
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         
+//        let loader1 = self.loader()
+//        NewUserView.topView.bannerImage.removeAll()
+//        print(NewUserView.topView.bannerImage.count)
+//        mainShared.homeViewModelShared.getBanners(token: mainShared.token) { (data) in
+//            DispatchQueue.main.async {
+//
+//                self.NewUserView.topView.bannerImage = data
+//                self.stopLoader(loader: loader1)
+//                self.NewUserView.topView.suggestionsCollectionView.reloadData()
+//
+//            }
+//        } fail: {error in
+//        }
+        
+        //   NewUserView.isHidden = false
         if !storageShared.isLoggedIn(){
             let loader3 = self.loader()
             self.mainShared.homeViewModelShared.getBanners(token: self.mainShared.token) { (data) in
                 DispatchQueue.main.async {
-                    
+                   
                     self.NewUserView.topView.bannerImage = data
                     self.stopLoader(loader: loader3)
                     self.NewUserView.topView.suggestionsCollectionView.reloadData()
-                    
+
                 }
             } fail: {error in
             }
@@ -63,14 +83,14 @@ class HomeViewController: UIViewController {
                     self.popUpView.isHidden = true
                     let loader1 = self.loader()
                     self.NewUserView.topView.bannerImage.removeAll()
-                    
+                  
                     self.mainShared.homeViewModelShared.getBanners(token: self.mainShared.token) { (data) in
                         DispatchQueue.main.async {
                             self.stopLoader(loader: loader1)
                             self.NewUserView.topView.bannerImage = data
                             
                             self.NewUserView.topView.suggestionsCollectionView.reloadData()
-                            
+
                         }
                     } fail: {error in
                         self.stopLoader(loader: loader1)
@@ -80,14 +100,14 @@ class HomeViewController: UIViewController {
                     self.popUpView.isHidden = false
                     let loader1 = self.loader()
                     self.NewUserView.topView.bannerImage.removeAll()
-                    
+                   
                     self.mainShared.homeViewModelShared.getBanners(token: self.mainShared.token) { (data) in
                         DispatchQueue.main.async {
                             self.stopLoader(loader: loader1)
                             self.NewUserView.topView.bannerImage = data
                             
                             self.NewUserView.topView.suggestionsCollectionView.reloadData()
-                            
+
                         }
                     } fail: {error in
                         self.stopLoader(loader: loader1)
@@ -108,16 +128,16 @@ class HomeViewController: UIViewController {
             }
         }
         NewUserView.isHidden = false
-        
-        
-        
+
+
+
     }
     @IBAction func onClickSearch(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(identifier: "SearchViewController") as? SearchViewController
         
         navigationController?.pushViewController(vc!, animated: true)
         
-        
+
     }
     
     @IBAction func onClickNext(_ sender: Any) {
@@ -134,16 +154,16 @@ class HomeViewController: UIViewController {
             self.leadingConstraintForHamburgerView.constant = 10
             self.view.layoutIfNeeded()
         } completion: { (status) in
-            
+           // self.backViewForHamburger.alpha = 0.75
             UIView.animate(withDuration: 0.1) {
                 self.leadingConstraintForHamburgerView.constant = 0
                 self.view.layoutIfNeeded()
             } completion: { (status) in
-                
+//                self.isHamburgerMenuShown = true
             }
-            
+
         }
-        
+
         
     }
     
@@ -175,12 +195,13 @@ extension HomeViewController: HamburgerViewControllerDelegate{
             self.leadingConstraintForHamburgerView.constant = 10
             self.view.layoutIfNeeded()
         } completion: { (status) in
-            
+            //self.backViewForHamburger.alpha = 0.0
             UIView.animate(withDuration: 0.1) {
                 self.leadingConstraintForHamburgerView.constant = -312
                 self.view.layoutIfNeeded()
             } completion: { (status) in
-                
+               // self.backViewForHamburger.isHidden = true
+                //self.isHamburgerMenuShown = false
             }
         }
     }
@@ -211,8 +232,8 @@ extension HomeViewController: clickButtons{
     }
     
     func onClickSeeAllCategories() {
-        
-        // newUserDelegate.delegate = self
+       
+       // newUserDelegate.delegate = self
         let vc = storyboard?.instantiateViewController(identifier: "CategoryViewController") as! CategoryViewController
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -234,22 +255,22 @@ extension HomeViewController: clickButtons{
             
             self.navigationController?.popToRootViewController(animated: true)
             self.storageShared.resetLoggedIn()
-        })
+         })
         dialogMessage.addAction(ok)
-        
+
         self.present(dialogMessage, animated: true, completion: nil)
         
     }
-    
-    
+
+
     
 }
 
 extension HomeViewController: test{
-    
+   
     
     func printHome() {
-        
+        print("yessss calledddd")
     }
     
     
