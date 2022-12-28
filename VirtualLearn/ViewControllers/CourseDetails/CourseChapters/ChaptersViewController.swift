@@ -53,16 +53,12 @@ class ChaptersViewController: UIViewController {
         
         self.certficateView.isHidden = true
         certificateViewHeight.constant = 0
-        
         headerLoadinng()
         dataLoading()
-        
         popUpBackView.isHidden = true
-        
         ContinuationLabelHeightContraint.constant = 0
         ContinuationLabelconstraint.constant = 0
         CourseContentConstraint.constant = 0
-        
         tableView.register(HeaderView.self, forHeaderFooterViewReuseIdentifier: "HeaderView")
         tableView.delegate = self
         tableView.dataSource = self
@@ -72,7 +68,10 @@ class ChaptersViewController: UIViewController {
         overViewUnderLineView.backgroundColor = #colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
         
     }
-    
+    override func viewWillDisappear(_ animated: Bool) {
+//        chapterViewModel.dataoflesson.removeAll()
+    }
+ 
     @IBAction func onClickContinueWatching(_ sender: Any) {
         
         let vc = storyboard?.instantiateViewController(identifier: "VideoPlayViewController") as? VideoPlayViewController
@@ -82,9 +81,7 @@ class ChaptersViewController: UIViewController {
         self.popUpBackView.isHidden = true
         if let viewController = vc{
             navigationController?.pushViewController(viewController, animated: true)
-            
         }
-        
     }
     @IBAction func onClickWatchFromBeginning(_ sender: Any) {
         
@@ -157,6 +154,7 @@ class ChaptersViewController: UIViewController {
         }
         
     }
+    
     func headerLoadinng() {
         
         mainShared.courseDetailsViewModelShared.courseOverView(token: mainShared.token, courseId: chapterViewModel.courseId) { courseDataOverView in
@@ -164,18 +162,15 @@ class ChaptersViewController: UIViewController {
                 let url1 = URL(string: courseDataOverView.courseHeader.courseImage)
                 guard let data1 = try? Data(contentsOf: url1!) else {return}
                 self.courseImage.image = UIImage(data: (data1))
-                
                 self.courseHeading.text = courseDataOverView.courseHeader.courseName
                 self.chapterViewModel.courseName = courseDataOverView.courseHeader.courseName
                 self.courseCategory.text = courseDataOverView.courseHeader.categoryName
                 self.courseLessonAndChapters.text = String( courseDataOverView.courseHeader.totalNumberOfChapters)+" Chapters | " + String( courseDataOverView.courseHeader.totalNumberOfChapters)+" Lessons"
             }
-            
         } fail: { error in
             DispatchQueue.main.async {
                 if(error == "unauthorized") {
-                    
-                }
+                 }
                 else {
                     self.navigationController?.popViewController(animated: true)
                 }
@@ -184,6 +179,7 @@ class ChaptersViewController: UIViewController {
     }
     
     func dataLoading() {
+        
         let loader = self.loader()
         popUpBackView.isHidden = true
         mainShared.chaptersDetailsViewModelShared.getChapters(token: mainShared.token, courseId: chapterViewModel.courseId) { result in
@@ -195,7 +191,6 @@ class ChaptersViewController: UIViewController {
                 else {
                     self.joinCourseButton.isHidden = false
                 }
-                
                 let chapter = String(result.courseContentResponse.chapterCount) + " Chapters | "
                 let lesson = String(result.courseContentResponse.lessonCount) + " Lessons | "
                 let assesment = String(result.courseContentResponse.moduleTest) + " Assesment Test |"
@@ -207,9 +202,9 @@ class ChaptersViewController: UIViewController {
                 
                 self.stopLoader(loader: loader)
                 if(result.certificateGenerated) {
+                    
                     self.certficateView.isHidden = false
                     certificateViewHeight.constant = 556
-                    
                     self.certificateGrade.text = String(result.certificateResponse?.grade ?? 0) + "%"
                     self.joinedDate.text = result.certificateResponse?.joinedData
                     self.completedDate.text = result.certificateResponse?.completedDate
@@ -220,8 +215,7 @@ class ChaptersViewController: UIViewController {
                     guard let data = try? Data(contentsOf: url) else {return}
                     self.certificateImage.image = UIImage(data: data)
                 }
-                else
-                {
+                else {
                     self.certficateView.isHidden = true
                     certificateViewHeight.constant = 0
                 }
@@ -240,7 +234,6 @@ class ChaptersViewController: UIViewController {
 
 extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         
         if chapterViewModel.dataoflesson[section].isExpandable {
             return chapterViewModel.dataoflesson[section].lessonList.count
@@ -322,6 +315,7 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
 
 extension ChaptersViewController : PauseVideoStatus {
     func sendTime(second: Int) {
+        print(second)
         let loader = self.loader()
         self.chapterViewModel.time = second
         mainShared.chaptersDetailsViewModelShared.saveLesson(lessonId: chapterViewModel.lessonId, duration: String(second), token: mainShared.token) {
@@ -346,11 +340,10 @@ extension ChaptersViewController: headerDelegate{
 }
 
 extension ChaptersViewController: ReloadData {
+    
     func reloadData() {
         dataLoading()
     }
-    
-    
 }
 
 extension ChaptersViewController: playVideo{
@@ -376,13 +369,10 @@ extension ChaptersViewController: playVideo{
                     if let viewController = vc{
                         navigationController?.pushViewController(viewController, animated: true)
                     }
-                    
                 }
-                
             } else if(!data.lessonCompleted) {
                 self.okAlertMessagePopup(message: "please complete previous Videos")
-            }
-            
+                }
         }
     }
     
@@ -391,13 +381,12 @@ extension ChaptersViewController: playVideo{
         let dialogMessage = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
             self.dismiss(animated: true, completion: nil)
-            
             let vc = self.storyboard?.instantiateViewController(identifier: "LoginPageViewController") as? LoginPageViewController
             vc?.isPresented = true
             self.navigationController?.popToRootViewController(animated: true)
         })
-        dialogMessage.addAction(ok)
         
+        dialogMessage.addAction(ok)
         self.present(dialogMessage, animated: true, completion: nil)
         
     }

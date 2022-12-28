@@ -58,7 +58,6 @@ class PersonalDetailsViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.removeBorder()
         confirmPasswordTextField.removeBorder()
         
-        
         fullNameTextField.lineheight()
         userNameTextField.lineheight()
         emailTextField.lineheight()
@@ -75,9 +74,7 @@ class PersonalDetailsViewController: UIViewController, UITextFieldDelegate {
         passwordLabel.isHidden = true
         confirmPasswordLabel.isHidden = true
         
-        
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
@@ -86,36 +83,21 @@ class PersonalDetailsViewController: UIViewController, UITextFieldDelegate {
         self.activeTextField = textField
       }
         
-      
       func textFieldDidEndEditing(_ textField: UITextField) {
         self.activeTextField = nil
       }
     
-    
     @objc func keyboardWillShow(notification: NSNotification) {
         guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
            else {
-            
              return
            }
-
            let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height , right: 0.0)
            scrollView.contentInset = contentInsets
            scrollView.scrollIndicatorInsets = contentInsets
     }
-
-    @objc func keyboardWillHide(notification: NSNotification) {
-    
-        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
-               
-          scrollView.contentInset = contentInsets
-           scrollView.scrollIndicatorInsets = contentInsets
-    }
  
-
-       
-    
-  
+// Text Beggining
     
     @IBAction func fullNameTextBeginning(_ sender: Any) {
         fullNameLabel.isHidden = false
@@ -141,7 +123,6 @@ class PersonalDetailsViewController: UIViewController, UITextFieldDelegate {
         confirmPasswordLabel.isHidden = false
         confirmPasswordTextField.placeholder = ""
     }
-    
     
     @IBAction func passwordTextBeginning(_ sender: Any) {
         passwordTextField.placeholder = ""
@@ -172,7 +153,6 @@ class PersonalDetailsViewController: UIViewController, UITextFieldDelegate {
                 DispatchQueue.main.async {
                     self.alertPopup(message: "Username Already exist.")
                 }
-                
             }
         }
     }
@@ -193,8 +173,7 @@ class PersonalDetailsViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func passwordTextEditing(_ sender: Any) {
         if let password = passwordTextField.text {
-            if(password.count > 5)
-            {
+            if(password.count > 5) {
                 if(passwordMatched(password)) {
                     
                     passwordView.isHidden = true
@@ -203,8 +182,7 @@ class PersonalDetailsViewController: UIViewController, UITextFieldDelegate {
                     passwordView.isHidden = false
                 }
             }
-            else
-            {
+            else {
                 passwordView.isHidden = false
             }
         }
@@ -261,7 +239,6 @@ class PersonalDetailsViewController: UIViewController, UITextFieldDelegate {
         if emailId {
             okAlertMessagePopup(message: "Enter Valid Email")
             RegistrayionButtonOutlet.isEnabled = false
-            
         }
         emailLabel.isHidden = false
     }
@@ -294,20 +271,20 @@ class PersonalDetailsViewController: UIViewController, UITextFieldDelegate {
         
         return predicate.evaluate(with: value)
     }
+    
     func isValidEmail(email: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailPredicate.evaluate(with: email)
     }
+    
     func checAllField() {
         
-        if( fullNameTextField.text != "" && usernameStatus == true && emailTextField.text != "" && passwordTextField.text != "" && confirmPasswordTextField.text != "" && passwordTextField.text! == confirmPasswordTextField.text!)
-        {
+        if( fullNameTextField.text != "" && usernameStatus == true && emailTextField.text != "" && passwordTextField.text != "" && confirmPasswordTextField.text != "" && passwordTextField.text! == confirmPasswordTextField.text!) {
             RegistrayionButtonOutlet.isEnabled = true
             RegistrayionButtonOutlet.alpha = 1
         }
-        else
-        {
+        else {
             RegistrayionButtonOutlet.isEnabled = false
             RegistrayionButtonOutlet.alpha = 0.5
         }
@@ -326,9 +303,6 @@ class PersonalDetailsViewController: UIViewController, UITextFieldDelegate {
         } fail: {
             print("Login user fail")
         }
-        
-        
-        
     }
 
 func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -352,8 +326,15 @@ func textFieldShouldReturn(_ textField: UITextField) -> Bool {
                textField.resignFirstResponder()
             
         }
-
         return true
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+    
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
+               
+          scrollView.contentInset = contentInsets
+           scrollView.scrollIndicatorInsets = contentInsets
     }
 }
 
@@ -366,7 +347,6 @@ extension PersonalDetailsViewController{
             self.dismiss(animated: true, completion: nil)
         })
         dialogMessage.addAction(ok)
-        
         self.present(dialogMessage, animated: true, completion: nil)
     }
     

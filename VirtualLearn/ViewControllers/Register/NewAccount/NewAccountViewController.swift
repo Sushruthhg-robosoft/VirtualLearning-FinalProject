@@ -11,21 +11,17 @@ class NewAccountViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var enteredMobileNumber: UITextField!
     @IBOutlet weak var continueBtn: LoadingButton!
-    
     @IBOutlet weak var viewHeight: NSLayoutConstraint!
     let verificationOTP = VerificationOTP()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeHideKeyboard()
-        
         enteredMobileNumber.delegate = self
-        
         if(view.bounds.height > 500) {
-            
             viewHeight.constant = view.bounds.height - 50
         }
         enteredMobileNumber.removeBorder()
-        
     }
     
     
@@ -44,8 +40,6 @@ class NewAccountViewController: UIViewController, UITextFieldDelegate {
                 let vc = self.storyboard?.instantiateViewController(identifier: "VerifyAccountViewController") as! VerifyAccountViewController
                 vc.mobileNumber = mobileNumber
                 self.navigationController?.pushViewController(vc, animated: true)
-                vc.mobileNumber = mobileNumber
-                
                 self.verificationOTP.getOTP(mobileNumber: "+917022011412")
             }
         } fail: {
@@ -54,28 +48,21 @@ class NewAccountViewController: UIViewController, UITextFieldDelegate {
                 self.okAlertMessagePopup(message: "Your already registered, Please Login")
             }
         }
-        
-        
-        
     }
     
     @IBAction func loginButton(_ sender: Any) {
         
         let vc = storyboard?.instantiateViewController(identifier: "LoginPageViewController") as! LoginPageViewController
-        
-        
         navigationController?.pushViewController(vc, animated: true)
     }
     
-
-
-func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == enteredMobileNumber {
             textField.resignFirstResponder()
             
         }
     return true
-}
+   }
 }
 
 extension NewAccountViewController {
@@ -86,7 +73,6 @@ func initializeHideKeyboard(){
             action: #selector(dismissMyKeyboard))
         view.addGestureRecognizer(tap)
     }
-    
     @objc func dismissMyKeyboard(){
         view.endEditing(true)
     }

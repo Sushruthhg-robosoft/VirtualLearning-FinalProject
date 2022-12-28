@@ -9,9 +9,9 @@ import UIKit
 
 class CourseDetailsViewController: UIViewController {
     
-    @IBOutlet weak var tableView3Height: NSLayoutConstraint! //128
-    @IBOutlet weak var tableView1Height: NSLayoutConstraint! //210
-    @IBOutlet weak var tableView2Height: NSLayoutConstraint! //178
+    @IBOutlet weak var tableView3Height: NSLayoutConstraint!
+    @IBOutlet weak var tableView1Height: NSLayoutConstraint!
+    @IBOutlet weak var tableView2Height: NSLayoutConstraint!
     @IBOutlet weak var CourseHeading: UILabel!
     @IBOutlet weak var courseType: UILabel!
     @IBOutlet weak var courseChapters: UILabel!
@@ -31,7 +31,6 @@ class CourseDetailsViewController: UIViewController {
     @IBOutlet weak var instructorDescription: UITextView!
     @IBOutlet weak var CourseOverViewView: UIView!
     @IBOutlet weak var CourseChapterView: UIView!
-    @IBOutlet weak var courseDescriptionHeight: NSLayoutConstraint!
     @IBOutlet weak var courseImage: UIImageView!
     @IBOutlet weak var overViewScrollView: UIScrollView!
     @IBOutlet weak var joinCourseButton: UIButton!
@@ -62,10 +61,7 @@ class CourseDetailsViewController: UIViewController {
         chaptersBtn.setTitleColor(#colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1), for: .normal)
         chaptersUnderLineView.backgroundColor = #colorLiteral(red: 0.4784313725, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
         
-        
-        
     }
-    
     func convertsectomins(seconds: Int) -> String {
         let hours = seconds / 3600
         let minutes = (seconds % 3600) / 60

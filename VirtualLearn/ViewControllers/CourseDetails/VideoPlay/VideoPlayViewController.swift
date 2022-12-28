@@ -30,25 +30,39 @@ class VideoPlayViewController: UIViewController {
     var isPlaying = true
     var isLandscape = false
     var delegate: PauseVideoStatus?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlay), name: .AVPlayerItemDidPlayToEndTime, object: nil)
     }
     override func viewDidAppear(_ animated: Bool) {
         playVideo()
         timeDisplay()
-        //        addTimeobserver()
         player.play()
         videoHeading.text = heading
        
     }
+    //added
+    override func viewWillDisappear(_ animated: Bool) {
+        print("viewWillDisappear")
+        player.pause()
+        let currentTime = player.currentTime()
+        self.delegate?.sendTime(second: Int(currentTime.seconds))
+    }
+   //added
     func seek(to seconds: Int) {
         let targetTime:CMTime = CMTimeMake(value: Int64(seconds), timescale: 1)
         player.seek(to: targetTime)
     }
+    
+  
+    @objc func playerDidFinishPlay() {
+        navigationController?.popViewController(animated: true)
+//        player.pause()
+//        let currentTime = player.currentTime()
+//        self.delegate?.sendTime(second: Int(currentTime.seconds))
+    }
+    
     func playVideo() {
         let videoURL = URL(string: url!)
         
@@ -59,6 +73,7 @@ class VideoPlayViewController: UIViewController {
         playerLayer.frame.size.height = videoPlayView.frame.size.height
         playerLayer.videoGravity = .resizeAspectFill
         self.videoPlayView.layer.addSublayer(playerLayer)
+        
         let time = CMTime(seconds: Double(seconds ?? 0), preferredTimescale: 1)
         let toleranceBefore = CMTime(seconds: 0.1, preferredTimescale: 1)
         let toleranceAfter = CMTime(seconds: 0.1, preferredTimescale: 1)
@@ -70,21 +85,16 @@ class VideoPlayViewController: UIViewController {
         playerLayer.frame = videoPlayView.bounds
     }
     
-    func playerDidFinishPlaying(){
-        print("Video Finished playing in style")
-    }
-    
     @IBAction func playPauseButtonClicked(_ sender: UIButton) {
+        
         if isPlaying{
             player.pause()
             sender.setImage(#imageLiteral(resourceName: "icn_play video-Play"), for: .normal)
             isPlaying = false
             let interval = CMTime(value: 1, timescale: 1)
             player.addPeriodicTimeObserver(forInterval: interval, queue: DispatchQueue.main, using: { (progressTime) in
-//                let seconds = CMTimeGetSeconds(progressTime)
             })
         } else{
-            
             player.play()
             sender.setImage(#imageLiteral(resourceName: "Rotate Pause"), for: .normal)
             isPlaying = true
@@ -94,14 +104,11 @@ class VideoPlayViewController: UIViewController {
     @IBAction func timeSliderChanged(_ sender: UISlider) {
         player.seek(to: CMTimeMake(value: Int64(sender.value*1000), timescale: 1000))
     }
-    
-    @objc func playerDidFinishPlaying(notification: NSNotification) {
-      player.pause()
-    }
+
     func addTimeobserver(){
         let interval = CMTime(seconds: 0.5, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
         let mainQueue = DispatchQueue.main
-       
+        
         DispatchQueue.main.async {
             
             _ = self.player.addPeriodicTimeObserver(forInterval: interval, queue: mainQueue, using: { [weak self] time in
@@ -109,18 +116,11 @@ class VideoPlayViewController: UIViewController {
                 guard currentTime.duration >= .zero, !currentTime.duration.seconds.isNaN else {
                     return
                 }
-//                if let currenttime = self?.player.currentTime(), let duration = self?.player.currentItem?.duration {
-//                let remainingTime = CMTimeGetSeconds(duration) - CMTimeGetSeconds(currenttime)
-//                if remainingTime < 0.01 {
-//                    self?.player.pause()
-//                }
-//                }
                 self?.timeSlider.maximumValue = Float(currentTime.duration.seconds)
                 self?.timeSlider.minimumValue = 0
                 self?.timeSlider.value = Float(currentTime.currentTime().seconds )
             })
         }
-        
     }
     
     func timeDisplay() {
@@ -136,12 +136,12 @@ class VideoPlayViewController: UIViewController {
                 return
             }
             self.timeSlider.maximumValue = Float(currentTime.duration.seconds)
-            
             self.timeSlider.minimumValue = 0
             self.timeSlider.value = Float(currentTime.currentTime().seconds)
             
         } )
     }
+    
     @IBAction func rotateTapped(_ sender: Any) {
         if isLandscape{
             let value = UIInterfaceOrientation.portrait.rawValue
@@ -157,17 +157,10 @@ class VideoPlayViewController: UIViewController {
     }
     
     @IBAction func backButtonClicked(_ sender: Any) {
-        player.pause()
-//        let interval = CMTime(value: 1, timescale: 1)
-        
-//        player.addPeriodicTimeObserver(forInterval: interval, queue: DispatchQueue.main, using: { (progressTime) in
-//            let seconds = CMTimeGetSeconds(progressTime)
-//            print(2345678,Int(seconds))
-//            self.delegate?.sendTime(second: Int(seconds))
-//        })
+//        player.pause()
         navigationController?.popViewController(animated: true)
-        let currentTime = player.currentTime()
-        self.delegate?.sendTime(second: Int(currentTime.seconds))
+//        let currentTime = player.currentTime()
+//        self.delegate?.sendTime(second: Int(currentTime.seconds))
         
     }
     

@@ -30,7 +30,7 @@ class NetWorkManager {
                     failure("course does not exist")
                 }
                 else{
-                    
+                    print("statuussss")
                     failure(String(data: responsedata, encoding: .utf8)!.components(separatedBy: .newlines))
                     print(httpResponse.statusCode)
                 }
