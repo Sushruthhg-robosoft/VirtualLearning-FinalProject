@@ -17,10 +17,8 @@ class ModuleTestViewModel {
         request.httpMethod = "GET"
         request.setValue("Bearer \(mainshared.token)", forHTTPHeaderField: "Authorization")
         networkManager.fetchDataJson(request: request) { data in
-//        print(data)
             guard let questionData = data as? [[String: Any]] else {return fail("data error")}
             for apiQuestionData in questionData {
-//            guard let apiQuestionData = questionData as? [String: Any] else {return}
                 guard let questionId = apiQuestionData["questionId"] as? Int else {print("questionViewModel error1");return fail("data error")}
                 guard let questionName = apiQuestionData["questionName"] as? String else {print("questionViewModel error2");return fail("data error")}
                 guard let option1 = apiQuestionData["option_1"] as? String else {print("questionViewModel error3");return fail("data error")}
@@ -28,7 +26,6 @@ class ModuleTestViewModel {
                 guard let option3 = apiQuestionData["option_3"] as? String else {print("questionViewModel error5");return fail("data error")}
                 guard let option4 = apiQuestionData["option_4"] as? String else {print("questionViewModel error6");return fail("data error")}
            
-                
             let questionData = ModuleTestData(questionId: String(questionId), questionName: questionName, option_1: option1, option_2: option2, option_3: option3, option_4: option4)
                 self.moduleTestData.append(questionData)
             }
@@ -38,7 +35,6 @@ class ModuleTestViewModel {
         } failure: { failerror in
                       print(failerror)
                       if failerror as? Int  == 401{
-                          print("fetch json error111111")
                           fail("unauthorized")
                       }
                       fail("Cant Load Data")
@@ -61,7 +57,7 @@ class ModuleTestViewModel {
 
            ]
         let network = NetWorkManager()
-        print(parameter)
+
         let url = URL(string: "https://app-virtuallearning-221207091853.azurewebsites.net/user/assignment")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -70,12 +66,10 @@ class ModuleTestViewModel {
         request.httpBody = try? JSONSerialization.data(withJSONObject: parameter, options: .fragmentsAllowed)
         
         network.fetchData(request: request) { result in
-            print("result",result)
             completion()
         } failure: { (failerror) in
             print(failerror)
             if failerror as? Int  == 401{
-                print("fetch json error111111")
                 fail("unauthorized")
             }
             fail("Cant Load Data")
@@ -107,16 +101,14 @@ class ModuleTestViewModel {
             
             questionAnswer.removeAll()
             for eachQuestion in questionResults {
-//                guard let questionDetails = eachQuestion as? [String:Any] else {print("err9"); return}
                 
                 guard let givenAnswer = eachQuestion["givenAnswer"] as? String else {print("err10"); return fail("data error")}
                 guard let correct = eachQuestion["correct"] as? Bool else {print("err11"); return fail("data error")}
                 
                 guard let dataOfQuestion = eachQuestion["assignmentQuestion"]  as? [String:Any] else {print("err12"); return fail("data error")}
-                
                 guard let questionId = dataOfQuestion["questionId"] as? Int else {print("err13"); return fail("data error")}
                 guard let questionName = dataOfQuestion["questionName"] as? String else {print("err14"); return fail("data error")}
-//                guard let assignmentId = dataOfQuestion["assignmentId"] as? Int else {print("err11"); return}
+        
                 guard let option_1 = dataOfQuestion["option_1"] as? String else {print("err15"); return fail("data error")}
                 guard let option_2 = dataOfQuestion["option_2"] as? String else {print("err16"); return fail("data error")}
                 guard let option_3 = dataOfQuestion["option_3"] as? String else {print("err17"); return fail("data error")}
@@ -127,7 +119,7 @@ class ModuleTestViewModel {
                 questionAnswer.append(question)
                 
             }
-            
+        
             let questionAnswerDetails = QuestionAnswerDetails(courseName: courseName, chapterName: chapterName, grade: String(grade), passingMarks: String(passingMarks), numberOfquestions: String(numberOfQuestions), correctAnswers: String(correctAnswers), wrongAnswers: String(wrongAnswers), questionAnswer: questionAnswer)
             
             completion(questionAnswerDetails)
@@ -135,7 +127,6 @@ class ModuleTestViewModel {
         } failure: { (failerror) in
             print(failerror)
             if failerror as? Int  == 401{
-                print("fetch json error111111")
                 fail("unauthorized")
             }
             fail("Cant Load Data")

@@ -46,8 +46,7 @@ class TestResultViewController: UIViewController {
                 self.tableView.reloadData()
             }
         } fail: { error in
-            
-            print("failures")
+
             DispatchQueue.main.async {
                 if(error == "unauthorized") {
                     
@@ -88,7 +87,6 @@ extension TestResultViewController: UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("inside did select")
         let vc = storyboard?.instantiateViewController(identifier: "showQuestionResultViewController") as! showQuestionResultViewController
         vc.datatoDisplay = questionResults[indexPath.row]
         vc.questionNumber = indexPath.row

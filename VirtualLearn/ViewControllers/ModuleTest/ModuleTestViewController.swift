@@ -59,8 +59,6 @@ class ModuleTestViewController: UIViewController {
                 if(error == "unauthorized") {
                     self.errorPopup(message: "Your session has been expired")
                 }
-                
-                print("get questions failures")
                 self.okAlertMessagePopupforPop(message: "No Assesment found or Not joined the course")
             }
             
@@ -122,8 +120,6 @@ class ModuleTestViewController: UIViewController {
                 vc.assignmentId = assignmentId
             }
         } fail: {error in
-        
-            print("failures")
             DispatchQueue.main.async {
                 if(error == "unauthorized") {
                     self.errorPopup(message: "Your session has expired")
@@ -196,7 +192,6 @@ extension ModuleTestViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? ModuleTestCollectionViewCell
         cell?.question.text = moduleTestViewModel.moduleTestData[indexPath.row].questionName
-//        cell?.questionNoLabel.text = moduleTestViewModel.moduleTestData[indexPath.row].questionId
         cell?.QuestionInd = Int(moduleTestViewModel.moduleTestData[indexPath.row].questionId)
         cell?.delegate = self
         cell?.option1Label.text = moduleTestViewModel.moduleTestData[indexPath.row].option_1

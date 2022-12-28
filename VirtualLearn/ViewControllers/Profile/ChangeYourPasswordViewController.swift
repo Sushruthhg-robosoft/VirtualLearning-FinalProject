@@ -35,9 +35,6 @@ class ChangeYourPasswordViewController: UIViewController, UITextFieldDelegate {
         confirmNewPasswordTextField.delegate = self
         
         navigationController?.navigationBar.isHidden = true
-        currentPasswordTextField.removeBorder()
-        newPasswordTextField.removeBorder()
-        confirmNewPasswordTextField.removeBorder()
         passwordView.isHidden = true
         invalidPasswordView.isHidden = true
         

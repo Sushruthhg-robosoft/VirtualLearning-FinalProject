@@ -21,9 +21,6 @@ class CongratsViewController: UIViewController {
         
         super.viewDidLoad()
         courseName.text = coursename
-        
-        
-
 }
     
     @IBAction func onclickResult(_ sender: Any) {
