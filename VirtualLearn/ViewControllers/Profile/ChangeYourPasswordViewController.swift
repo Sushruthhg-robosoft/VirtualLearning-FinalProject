@@ -133,8 +133,6 @@ class ChangeYourPasswordViewController: UIViewController, UITextFieldDelegate {
         }
     }
   
-
-
 func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == currentPasswordTextField {
             textField.resignFirstResponder()
