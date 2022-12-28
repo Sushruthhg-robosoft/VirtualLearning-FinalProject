@@ -18,9 +18,6 @@ class ModallyViewController: UIViewController {
     
     var delegate : SearchResponse?
     
-    var searchField = ""
-    
-    
     @IBOutlet weak var designBtn: CustomBorderButton!
     @IBOutlet weak var developmentBtn: CustomBorderButton!
     @IBOutlet weak var businessBtn: CustomBorderButton!
@@ -296,7 +293,6 @@ class ModallyViewController: UIViewController {
     
     
     @IBAction func onClickApplyFilter(_ sender: Any) {
-        shared.searchViewModelShared.searchOption = searchField
         shared.searchViewModelShared.getSearchResult { (result) in
             print(result)
             

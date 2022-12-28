@@ -36,9 +36,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         
-//        initializeHideKeyboard()
         let loader = self.loader()
-
+        
         searchCategoryCollectionView.delegate = self
         searchCategoryCollectionView.dataSource = self
         
@@ -81,81 +80,53 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func textFieldDIdChangeEditing(_ sender: Any) {
         shared.searchViewModelShared.searchOption = searchTextField.text!
-                shared.searchViewModelShared.getSearchResult { (result) in
-                    DispatchQueue.main.async {
-                        self.searchResult = result
-                        if result.count != 0 {
-                            
-                            self.topSearchView.isHidden = true
-                            self.noDataDisplayView.isHidden = true
-                            self.CategoriesDisplayView.isHidden = true
-                            self.InitialDisplayView.isHidden = true
-                            self.topSearchViewHeight.constant = 0
-                            self.noDataDisplayViewheight.constant = 0
-                            self.categoriesViewHeight.constant = 0
-                            self.tableView.isHidden = false
-                            self.tableView.reloadData()
-
-                            
-                        }else {
-                            self.tableView.isHidden = true
-                            self.topSearchView.isHidden = true
-                            self.InitialDisplayView.isHidden = false
-                            self.topSearchViewHeight.constant = 0
-                            self.noDataDisplayView.isHidden = false
-                            self.noDataDisplayViewheight.constant = 417
-                            self.categoriesViewHeight.constant = 185
-                            
-                        }
-                    }
-                } fail: { (fail) in
-                    print(fail)
+        shared.searchViewModelShared.getSearchResult { (result) in
+            DispatchQueue.main.async {
+                self.searchResult = result
+                if result.count != 0 {
+                    
+                    self.showResult()
+                    
+                }else {
+                    
+                    self.showNil()
+                    
                 }
+            }
+        } fail: { (fail) in
+            print(fail)
+        }
         shared.searchViewModelShared.getAutoSearch(autoFill: self.searchTextField.text!) { (result) in
-                                  
-                                  DispatchQueue.main.async {
-                                     
-                                    self.searchTextField.placeholder = result
-                                }
-                        
-                              } fail: { (result) in
-                                  print(result)
-                              }
+            
+            DispatchQueue.main.async {
+                
+                self.searchTextField.placeholder = result
+            }
+            
+        } fail: { (result) in
+            print(result)
+        }
     }
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         shared.searchViewModelShared.searchOption = searchTextField.text!
-                shared.searchViewModelShared.getSearchResult { (result) in
-                    DispatchQueue.main.async {
-                        
-                        if result.count != 0 {
-                            
-                            self.topSearchView.isHidden = true
-                            self.noDataDisplayView.isHidden = true
-                            self.CategoriesDisplayView.isHidden = true
-                            self.InitialDisplayView.isHidden = true
-                            self.topSearchViewHeight.constant = 0
-                            self.noDataDisplayViewheight.constant = 0
-                            self.categoriesViewHeight.constant = 0
-                            self.tableView.isHidden = false
-                            self.tableView.reloadData()
-
-                            
-                        }else {
-                            self.tableView.isHidden = true
-                            self.topSearchView.isHidden = true
-                            self.InitialDisplayView.isHidden = false
-                            self.topSearchViewHeight.constant = 0
-                            self.noDataDisplayView.isHidden = false
-                            self.noDataDisplayViewheight.constant = 417
-                            self.categoriesViewHeight.constant = 185
-                            
-                        }
-                    }
-                } fail: { (fail) in
-                    print(fail)
+        shared.searchViewModelShared.getSearchResult { (result) in
+            DispatchQueue.main.async {
+                
+                if result.count != 0 {
+                    
+                    self.showResult()
+                    
+                    
+                }else {
+                    self.showNil()
+                    
                 }
+            }
+        } fail: { (fail) in
+            print(fail)
+        }
         textField.resignFirstResponder()
         return true
         
@@ -169,7 +140,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         
         present(vc!, animated: true, completion: nil)
         
-        vc?.searchField = searchTextField.text!
+        shared.searchViewModelShared.searchOption = searchTextField.text!
         vc?.delegate = self
         
     }
@@ -179,25 +150,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    @IBAction func onclickSearchBtn(_ sender: Any) {
-        
-    }
-    
-    @IBAction func onClickFirstBtn(_ sender: Any) {
-    }
-    
-    @IBAction func onClickSecondBtn(_ sender: Any) {
-    }
-    
-    @IBAction func onClickThirdBtn(_ sender: Any) {
-    }
-    
-    @IBAction func onClickFourthBtn(_ sender: Any) {
-    }
-    
-    
-    @IBAction func onClickFifthBtn(_ sender: Any) {
-    }
+
 }
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
@@ -213,20 +166,24 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             cell.courseName.text = self.searchResult[indexPath.row].courseName
             cell.noOfChapters.text = String("\(self.searchResult[indexPath.row].noOfChapters) Chapters")
             let url = URL(string: self.searchResult[indexPath.row].courseImage)
-                    let data = try? Data(contentsOf: url!)
-                    cell.courseImage.image = UIImage(data: data!)
+            let data = try? Data(contentsOf: url!)
+            cell.courseImage.image = UIImage(data: data!)
         }
         
         
         return cell
     }
     
-}
-
-
-extension SearchViewController: SearchResponse {
-    func modallySearchResult(data: [Search]) {
-        self.searchResult = data
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(identifier: "CourseDetailsViewController") as! CourseDetailsViewController
+        
+        vc.courseId = String(shared.searchViewModelShared.searchResult[indexPath.row].courseId)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    func showResult(){
         self.topSearchView.isHidden = true
         self.noDataDisplayView.isHidden = true
         self.CategoriesDisplayView.isHidden = true
@@ -238,7 +195,8 @@ extension SearchViewController: SearchResponse {
         self.tableView.reloadData()
     }
     
-    func modallyNil() {
+    func showNil(){
+        
         self.tableView.isHidden = true
         self.topSearchView.isHidden = true
         self.InitialDisplayView.isHidden = false
@@ -246,7 +204,19 @@ extension SearchViewController: SearchResponse {
         self.noDataDisplayView.isHidden = false
         self.noDataDisplayViewheight.constant = 417
         self.categoriesViewHeight.constant = 185
+    }
+    
+}
 
+
+extension SearchViewController: SearchResponse {
+    func modallySearchResult(data: [Search]) {
+        self.showResult()
+    }
+    
+    func modallyNil() {
+        self.showNil()
+        
     }
     
     
@@ -256,9 +226,9 @@ extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return shared.categoriesViewModelShared.listofCategories.count
-      }
-      
-      func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SearchCategoryCollectionViewCell
         
         cell.categoryName.text = shared.categoriesViewModelShared.listofCategories[indexPath.row].categotyName
@@ -269,7 +239,7 @@ extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataS
         cell.categoryImage.image = UIImage(data: data!)
         
         return cell
-      }
+    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 25
     }
@@ -279,15 +249,9 @@ extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataS
         return 3
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = storyboard?.instantiateViewController(identifier: "CourseDetailsViewController") as! CourseDetailsViewController
-        
-        vc.courseId = String(shared.searchViewModelShared.searchResult[indexPath.row].courseId)
-        navigationController?.pushViewController(vc, animated: true)
-    }
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(123123)
         let vc = storyboard?.instantiateViewController(identifier: "CategoryInformationViewController") as! CategoryInformationViewController
         vc.categoryId = shared.categoriesViewModelShared.listofCategories[indexPath.row].categoryId
         navigationController?.pushViewController(vc, animated: true)
@@ -296,20 +260,4 @@ extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataS
 }
 
 
-//extension SearchViewController {
-//
-//    func initializeHideKeyboard(){
-//
-//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
-//            target: self,
-//            action: #selector(dismissMyKeyboard))
-//
-//
-//        view.addGestureRecognizer(tap)
-//    }
-//
-//    @objc func dismissMyKeyboard(){
-//
-//        view.endEditing(true)
-//    }
-//}
+
