@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension ChangeYourPasswordViewController, EditProfileViewController,PersonalDetailsViewController, CreateNewPasswordViewController: UIViewController {
+extension ChangeYourPasswordViewController {
     func initializeHideKeyboard(){
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(
             target: self,
@@ -21,4 +21,42 @@ extension ChangeYourPasswordViewController, EditProfileViewController,PersonalDe
         
         view.endEditing(true)
     }
+}
+    
+extension EditProfileViewController {
+    func initializeHideKeyboard(){
+
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissMyKeyboard))
+
+
+        view.addGestureRecognizer(tap)
+    }
+
+    @objc func dismissMyKeyboard(){
+
+        view.endEditing(true)
+    }
+}
+
+extension 
+func initializeHideKeyboard(){
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissMyKeyboard))
+        
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissMyKeyboard(){
+        
+        view.endEditing(true)
+    }
+    
+}
+
+
+    
 
