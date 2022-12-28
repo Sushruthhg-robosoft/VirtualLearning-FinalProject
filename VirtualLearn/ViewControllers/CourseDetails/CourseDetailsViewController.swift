@@ -318,10 +318,7 @@ extension CourseDetailsViewController: switchVc{
         CourseOverViewView.isHidden = false
         overViewScrollView.isScrollEnabled = true
         view.bringSubviewToFront(CourseOverViewView)
-    }
-    
-    
-    
+    }  
 }
 
 extension CourseDetailsViewController: UITextViewDelegate{

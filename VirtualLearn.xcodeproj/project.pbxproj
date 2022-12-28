@@ -92,6 +92,7 @@
 		C21A3F942950925500FDDE71 /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21A3F932950925500FDDE71 /* EditProfileViewModel.swift */; };
 		C25014C22947218D004A6711 /* CreateNewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25014C12947218D004A6711 /* CreateNewPasswordViewController.swift */; };
 		C25014C7294721B6004A6711 /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25014C6294721B6004A6711 /* Shadow.swift */; };
+		C2572426295BEE2100043A0C /* Keyboard handling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2572425295BEE2100043A0C /* Keyboard handling.swift */; };
 		C26BA487295172070068C7CE /* ModuleTestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26BA486295172060068C7CE /* ModuleTestCollectionViewCell.swift */; };
 		C26BA48C2951721F0068C7CE /* ModuleTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26BA48B2951721F0068C7CE /* ModuleTestViewModel.swift */; };
 		C26BA491295172550068C7CE /* ModuleTestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26BA490295172550068C7CE /* ModuleTestData.swift */; };
@@ -281,6 +282,7 @@
 		C21A3F932950925500FDDE71 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
 		C25014C12947218D004A6711 /* CreateNewPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewPasswordViewController.swift; sourceTree = "<group>"; };
 		C25014C6294721B6004A6711 /* Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
+		C2572425295BEE2100043A0C /* Keyboard handling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keyboard handling.swift"; sourceTree = "<group>"; };
 		C26BA486295172060068C7CE /* ModuleTestCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleTestCollectionViewCell.swift; sourceTree = "<group>"; };
 		C26BA48B2951721F0068C7CE /* ModuleTestViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleTestViewModel.swift; sourceTree = "<group>"; };
 		C26BA490295172550068C7CE /* ModuleTestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleTestData.swift; sourceTree = "<group>"; };
@@ -697,6 +699,7 @@
 				CF54BF612952D4A000BD4F07 /* popupViewHome.swift */,
 				CFABD68D29556BC700C5D001 /* loadingButton.swift */,
 				1BFBC4B62955628600D6EFED /* AnswerDisplayView.swift */,
+				C2572425295BEE2100043A0C /* Keyboard handling.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1117,6 +1120,7 @@
 				CF032A94294897DB00D6B6D3 /* activityLoader.swift in Sources */,
 				CF54BF622952D4A000BD4F07 /* popupViewHome.swift in Sources */,
 				1B9289BC2949E50900C66D9E /* SettingViewController.swift in Sources */,
+				C2572426295BEE2100043A0C /* Keyboard handling.swift in Sources */,
 				CF032A472948332400D6B6D3 /* ChaptersViewController.swift in Sources */,
 				CFBA05622946F60300763342 /* CourseDetailsViewController.swift in Sources */,
 				CF032A452948332400D6B6D3 /* CustomContinueChapterView.swift in Sources */,
