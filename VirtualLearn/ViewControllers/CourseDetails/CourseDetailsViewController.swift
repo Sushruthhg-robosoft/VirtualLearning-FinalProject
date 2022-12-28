@@ -9,9 +9,6 @@ import UIKit
 
 class CourseDetailsViewController: UIViewController {
     
-    var shared = mainViewModel.mainShared
-    
-    
     @IBOutlet weak var tableView3Height: NSLayoutConstraint! //128
     @IBOutlet weak var tableView1Height: NSLayoutConstraint! //210
     @IBOutlet weak var tableView2Height: NSLayoutConstraint! //178
@@ -23,31 +20,23 @@ class CourseDetailsViewController: UIViewController {
     @IBOutlet weak var chaptersUnderLineView: UIView!
     @IBOutlet weak var chaptersBtn: UIButton!
     @IBOutlet weak var tableView1: UITableView!
-    
     @IBOutlet weak var tableView3: UITableView!
     @IBOutlet weak var tableView2: UITableView!
     @IBOutlet weak var courseCaption: UILabel!
     @IBOutlet weak var introductionDuration: UILabel!
-    
     @IBOutlet weak var courseDescription: UITextView!
     @IBOutlet weak var instructorImage: UIImageView!
-    
     @IBOutlet weak var instructorName: UILabel!
-    
     @IBOutlet weak var instructorOccupation: UILabel!
-    
     @IBOutlet weak var instructorDescription: UITextView!
-    
     @IBOutlet weak var CourseOverViewView: UIView!
-    
     @IBOutlet weak var CourseChapterView: UIView!
-    
     @IBOutlet weak var courseDescriptionHeight: NSLayoutConstraint!
-    
     @IBOutlet weak var courseImage: UIImageView!
     @IBOutlet weak var overViewScrollView: UIScrollView!
-    
     @IBOutlet weak var joinCourseButton: UIButton!
+    
+    var shared = mainViewModel.mainShared
     var chapterVc: ChaptersViewController?
     var storageManager = StorageManeger.shared
     var courseOverView: CourseOverview? = nil
@@ -55,7 +44,7 @@ class CourseDetailsViewController: UIViewController {
     var courseOutcome = [String]()
     var courseRequirment = [String]()
     var courseId = ""
-    var hideJoinCourse = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView1.delegate = self
@@ -65,6 +54,7 @@ class CourseDetailsViewController: UIViewController {
         tableView3.delegate = self
         tableView3.dataSource = self
         
+        loadData()
         CourseOverViewView.isHidden = false
         CourseChapterView.isHidden = true
         overViewBtn.setTitleColor(#colorLiteral(red: 0.9333333333, green: 0.3607843137, blue: 0.3019607843, alpha: 1), for: .normal)
@@ -74,16 +64,93 @@ class CourseDetailsViewController: UIViewController {
         
         
         
+    }
+    
+    func convertsectomins(seconds: Int) -> String {
+        let hours = seconds / 3600
+        let minutes = (seconds % 3600) / 60
+        let second = (seconds % 3600) % 60
+        let minsAndSecond = String(hours) + ":" + String(minutes) + ":" + String(second)
+        return minsAndSecond
+    }
+
+    @IBAction func onClickOverView(_ sender: Any) {
+        
+        CourseChapterView.isHidden = true
+        CourseOverViewView.isHidden = false
+        view.bringSubviewToFront(CourseOverViewView)
+        
+    }
+    
+    @IBAction func onClickChapters(_ sender: Any) {
+        
+        CourseChapterView.isHidden = false
+        CourseOverViewView.isHidden = true
+        overViewScrollView.isScrollEnabled = false
+        view.bringSubviewToFront(CourseChapterView)
+    }
+    
+    @IBAction func onClickPreview(_ sender: Any) {
+        
+        guard let vc = storyboard?.instantiateViewController(identifier: "VideoPlayViewController") as? VideoPlayViewController else{return}
+        let url = courseOverView?.overView.videoLink
+        vc.url = url
+        navigationController?.pushViewController(vc, animated: true)
+    }
+
+    @IBAction func onClickCancel(_ sender: Any) {
+        
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func onClickJoinCourse(_ sender: Any) {
+        
+        if storageManager.isLoggedIn() {
+            shared.courseDetailsViewModelShared.joinCourse(token: shared.token, courseId: courseId){ data in
+                DispatchQueue.main.async { [self] in
+                    CourseChapterView.isHidden = false
+                    joinCourseButton.isHidden = true
+                    CourseOverViewView.isHidden = true
+                    overViewScrollView.isScrollEnabled = false
+                    overViewScrollView.setContentOffset(.zero, animated: true)
+                    chapterVc?.dataLoading()
+                    view.bringSubviewToFront(CourseChapterView)
+                }
+                
+            }fail: { error in
+                print("failures")
+                DispatchQueue.main.async {
+                    if(error == "unauthorized") {
+                        self.storageManager.resetLoggedIn()
+                        self.okAlertMessagePopupforLoginforExsistingUser(message: "Your session is Expired")
+                    }
+                    else {
+                        self.okAlertMessagePopup(message: "Failed to join course")
+                    }
+                }
+            }
+        } else {
+            self.okAlertMessagePopupforLogin(message: "Please Login")
+        }
+        
+    }
+    
+    func switchview(){
+        CourseChapterView.isHidden = false
+        CourseOverViewView.isHidden = true
+        overViewScrollView.isScrollEnabled = false
+        view.bringSubviewToFront(CourseChapterView)
+    }
+    
+    func loadData() {
         shared.courseDetailsViewModelShared.courseOverView(token: shared.token, courseId: courseId) { courseDataOverView in
             self.courseOverView = courseDataOverView
             DispatchQueue.main.async { [self] in
                 if(courseDataOverView.joinedCourse) {
                     joinCourseButton.isHidden = true
-                    self.hideJoinCourse = true
                 }
                 else {
                     joinCourseButton.isHidden = false
-                    self.hideJoinCourse = false
                 }
                 let url1 = URL(string: courseDataOverView.courseHeader.courseImage)
                 guard let data1 = try? Data(contentsOf: url1!) else {return}
@@ -119,21 +186,17 @@ class CourseDetailsViewController: UIViewController {
                 } else {
                     self.tableView2Height.constant = 178
                 }
-                
+    
                 self.courseRequirment = courseDataOverView.overView.requirments
                 if courseRequirment.count == 0 {
                     self.tableView3Height.constant = 0
                 } else {
-                    
                     self.tableView3Height.constant = 128
 
                 }
-                
-
                 self.instructorName.text = courseDataOverView.Instructor.instructorName
                 self.instructorOccupation.text = courseDataOverView.Instructor.occupation
                 self.instructorDescription.text = courseDataOverView.Instructor.about
-                
                 let url = URL(string: courseDataOverView.Instructor.profilePic)
                 let data = try? Data(contentsOf: url!)
                 self.instructorImage.image = UIImage(data: data!)
@@ -144,8 +207,6 @@ class CourseDetailsViewController: UIViewController {
             }
             
         } fail: { error in
-            
-            print("failures")
             DispatchQueue.main.async {
                 if(error == "unauthorized") {
                     
@@ -154,107 +215,8 @@ class CourseDetailsViewController: UIViewController {
                     self.navigationController?.popViewController(animated: true)
                 }
             }
-            
         }
-        
-        
-       
-        
     }
-    func convertsectomins(seconds: Int) -> String {
-        let hours = seconds / 3600
-        let minutes = (seconds % 3600) / 60
-        let second = (seconds % 3600) % 60
-        let minsAndSecond = String(hours) + ":" + String(minutes) + ":" + String(second)
-        return minsAndSecond
-    }
-    
-    
-    @IBAction func onClickOverView(_ sender: Any) {
-        
-        
-        CourseChapterView.isHidden = true
-        CourseOverViewView.isHidden = false
-        view.bringSubviewToFront(CourseOverViewView)
-        
-    }
-    
-    
-    @IBAction func onClickChapters(_ sender: Any) {
-        
-        
-        
-        CourseChapterView.isHidden = false
-        CourseOverViewView.isHidden = true
-        overViewScrollView.isScrollEnabled = false
-        view.bringSubviewToFront(CourseChapterView)
-        
-        
-        
-    }
-    
-    @IBAction func onClickPreview(_ sender: Any) {
-        
-        guard let vc = storyboard?.instantiateViewController(identifier: "VideoPlayViewController") as? VideoPlayViewController else{return}
-        
-        
-        let url = courseOverView?.overView.videoLink
-        
-        vc.url = url
-        navigationController?.pushViewController(vc, animated: true)
-        
-    }
-    
-    
-    
-    @IBAction func onClickCancel(_ sender: Any) {
-        
-        navigationController?.popViewController(animated: true)
-    }
-    
-    @IBAction func onClickJoinCourse(_ sender: Any) {
-        
-        if storageManager.isLoggedIn() {
-            shared.courseDetailsViewModelShared.joinCourse(token: shared.token, courseId: courseId){ data in
-                DispatchQueue.main.async { [self] in
-                    CourseChapterView.isHidden = false
-                    joinCourseButton.isHidden = true
-                    CourseOverViewView.isHidden = true
-                    overViewScrollView.isScrollEnabled = false
-                    overViewScrollView.setContentOffset(.zero, animated: true)
-                    chapterVc?.dataLoading()
-                    view.bringSubviewToFront(CourseChapterView)
-                    
-                }
-                
-            }fail: { error in
-                print("failures")
-                DispatchQueue.main.async {
-                    if(error == "unauthorized") {
-                        self.storageManager.resetLoggedIn()
-                        self.okAlertMessagePopupforLoginforExsistingUser(message: "Your session is Expired")
-                        
-                    }
-                    else {
-                        self.okAlertMessagePopup(message: "Failed to join course")
-                    }
-                }
-            }
-        } else
-        {
-            self.okAlertMessagePopupforLogin(message: "Please Login")
-        }
-        
-    }
-    
-    func switchview(){
-        CourseChapterView.isHidden = false
-        CourseOverViewView.isHidden = true
-        overViewScrollView.isScrollEnabled = false
-        view.bringSubviewToFront(CourseChapterView)
-    }
-    
-    
 }
 
 extension CourseDetailsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -271,8 +233,7 @@ extension CourseDetailsViewController: UITableViewDelegate, UITableViewDataSourc
             return 1
         }
     }
-    
-    
+ 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch tableView {
         case tableView1:
@@ -293,18 +254,14 @@ extension CourseDetailsViewController: UITableViewDelegate, UITableViewDataSourc
             
             return UITableViewCell()
         }
-        
-        
     }
-    
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "switch" {
             guard let vc = segue.destination as? ChaptersViewController else { return }
             chapterVc = vc
             vc.delegate = self
-            vc.courseId = courseId
-            vc.joinedCourse = self.hideJoinCourse
+            vc.chapterViewModel.courseId = courseId
             if(joinCourseButton.isHidden) {
                 vc.joinCourseButton.isHidden = true
             }
@@ -318,7 +275,7 @@ extension CourseDetailsViewController: switchVc{
         CourseOverViewView.isHidden = false
         overViewScrollView.isScrollEnabled = true
         view.bringSubviewToFront(CourseOverViewView)
-    }  
+    }
 }
 
 extension CourseDetailsViewController: UITextViewDelegate{

@@ -16,7 +16,6 @@ class SearchViewModel {
     var searchOption = ""
     var categories = [Int]()
     var searchResult = [Search]()
-    
     var topSearches = [String]()
     
     
