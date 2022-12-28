@@ -507,22 +507,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         }
     }
 
-//extension EditProfileViewController {
-//    func initializeHideKeyboard(){
-//        
-//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
-//            target: self,
-//            action: #selector(dismissMyKeyboard))
-//        
-//       
-//        view.addGestureRecognizer(tap)
-//    }
-//    
-//    @objc func dismissMyKeyboard(){
-//        
-//        view.endEditing(true)
-//    }
-//}
+
 
 
 
