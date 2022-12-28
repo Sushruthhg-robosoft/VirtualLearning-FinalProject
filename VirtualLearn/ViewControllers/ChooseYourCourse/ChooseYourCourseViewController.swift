@@ -88,7 +88,7 @@ class ChooseYourCourseViewController: UIViewController, UITextFieldDelegate {
         
         present(vc!, animated: true, completion: nil)
         
-        vc?.searchField = searchTextField.text!
+        mainShared.searchViewModelShared.searchOption = searchTextField.text!
         vc?.delegate = self
         
     }

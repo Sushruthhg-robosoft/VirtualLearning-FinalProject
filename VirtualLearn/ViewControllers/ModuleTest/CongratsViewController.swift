@@ -18,10 +18,8 @@ class CongratsViewController: UIViewController {
     @IBOutlet weak var courseName: UILabel!
     var chapterDelegate : ChaptersViewController?
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        if(view.bounds.height > 500) {
-            scrollViewHeight.constant = view.bounds.height
-    }
         courseName.text = coursename
         
         
