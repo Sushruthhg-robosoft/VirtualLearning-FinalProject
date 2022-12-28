@@ -33,8 +33,6 @@ class VerifyAccountViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         
-        initializeHideKeyboard()
-        
         invalidVerificationView.isHidden = true
         firstTextField.removeBorder()
         secondTextField.removeBorder()
@@ -44,6 +42,7 @@ class VerifyAccountViewController: UIViewController, UITextFieldDelegate {
         firstTextField.becomeFirstResponder()
         
         super.viewDidLoad()
+        initializeHideKeyboard()
         
         successScreen.isHidden = true
         verifyScreen.isHidden = false
@@ -175,22 +174,5 @@ class VerifyAccountViewController: UIViewController, UITextFieldDelegate {
         }
         
     }
-}
-
-extension VerifyAccountViewController {
-func initializeHideKeyboard(){
-        
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
-            target: self,
-            action: #selector(dismissMyKeyboard))
-        view.addGestureRecognizer(tap)
-    }
-    
-    @objc func dismissMyKeyboard(){
-        view.endEditing(true)
-    }
-    
-
-
 }
 

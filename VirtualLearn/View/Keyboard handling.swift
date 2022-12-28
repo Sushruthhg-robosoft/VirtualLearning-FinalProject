@@ -104,6 +104,23 @@ extension ForgotPasswordViewController {
     }
 }
 
+extension VerifyAccountViewController {
+func initializeHideKeyboard(){
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissMyKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissMyKeyboard(){
+        view.endEditing(true)
+    }
+    
+
+
+}
+
 
 
 
