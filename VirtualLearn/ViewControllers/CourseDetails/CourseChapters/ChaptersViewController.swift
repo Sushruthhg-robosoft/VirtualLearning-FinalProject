@@ -59,13 +59,13 @@ class ChaptersViewController: UIViewController {
         
         popUpBackView.isHidden = true
         
-        joinedLeftView.layer.cornerRadius = 5
-        joinedRightView.layer.cornerRadius = 5
-        
-        joinedView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
-        joinedView.layer.shadowOpacity = 100
-        joinedView.layer.shadowRadius = 5
-        joinedView.layer.shadowOffset = CGSize(width: 0, height: 2)
+//        joinedLeftView.layer.cornerRadius = 5
+//        joinedRightView.layer.cornerRadius = 5
+//        
+//        joinedView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
+//        joinedView.layer.shadowOpacity = 100
+//        joinedView.layer.shadowRadius = 5
+//        joinedView.layer.shadowOffset = CGSize(width: 0, height: 2)
         
         ContinuationLabelHeightContraint.constant = 0
         ContinuationLabelconstraint.constant = 0
@@ -119,19 +119,20 @@ class ChaptersViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    
     @IBAction func onClickClosePopup(_ sender: Any) {
         self.popUpBackView.isHidden = true
     }
+    
     @IBAction func joinCourseClicked(_ sender: Any) {
         if storageShared.isLoggedIn() {
             mainShared.courseDetailsViewModelShared.joinCourse(token: mainShared.token, courseId: chapterViewModel.courseId){ data in
                 DispatchQueue.main.async { [self] in
+                    
                     joinCourseButton.isHidden = true
                     dataLoading()
                 }
-                
             }fail: { error in
-                print("failures")
                 DispatchQueue.main.async {
                     if(error == "unauthorized") {
                         self.storageShared.resetLoggedIn()
@@ -178,7 +179,6 @@ class ChaptersViewController: UIViewController {
             }
             
         } fail: { error in
-            print("failures")
             DispatchQueue.main.async {
                 if(error == "unauthorized") {
                     
@@ -193,8 +193,6 @@ class ChaptersViewController: UIViewController {
     func dataLoading() {
         let loader = self.loader()
         popUpBackView.isHidden = true
-        
-        print("view did appear ")
         mainShared.chaptersDetailsViewModelShared.getChapters(token: mainShared.token, courseId: chapterViewModel.courseId) { result in
             
             DispatchQueue.main.async { [self] in
@@ -239,7 +237,6 @@ class ChaptersViewController: UIViewController {
         } fail: { error in
             
             self.stopLoader(loader: loader)
-            print("failures")
             DispatchQueue.main.async {
                 self.okAlertMessagePopup(message: "Course Data Not Loaded")
             }
@@ -333,18 +330,15 @@ extension ChaptersViewController: UITableViewDelegate,UITableViewDataSource{
 extension ChaptersViewController : PauseVideoStatus {
     func sendTime(second: Int) {
         let loader = self.loader()
-        print("sdfghj",second)
         self.chapterViewModel.time = second
         mainShared.chaptersDetailsViewModelShared.saveLesson(lessonId: chapterViewModel.lessonId, duration: String(second), token: mainShared.token) {
             self.stopLoader(loader: loader)
-            print("saved Successfully")
             DispatchQueue.main.async {
                 self.dataLoading()
             }
         } fail: { error in
             self.stopLoader(loader: loader)
             self.okAlertMessagePopup(message: "Time Not saved")
-            print("error to load data")
         }
         
         
