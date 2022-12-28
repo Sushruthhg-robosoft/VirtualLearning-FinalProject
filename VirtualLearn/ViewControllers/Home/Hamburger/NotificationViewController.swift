@@ -9,7 +9,7 @@ import UIKit
 
 
 class NotificationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     
     var shared = mainViewModel.mainShared
     @IBOutlet weak var tableview: UITableView!
@@ -21,7 +21,7 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
         tableview.delegate = self
         
         
-    
+        
     }
     
     @IBAction func onClickBack(_ sender: Any) {
@@ -29,10 +29,10 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     override func viewDidAppear(_ animated: Bool) {
-
+        
         let loader =   self.loader()
         shared.notificationViewModelShared.getNotifications(token: shared.token , limit: "30", page: "1") {
-           
+            
             DispatchQueue.main.async {
                 self.stopLoader(loader: loader)
                 self.tableview.reloadData()
@@ -40,15 +40,14 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
             
         } fail: { error in
             
-                self.stopLoader(loader: loader)
-                self.okAlertMessagePopup(message: "Failed to load notification")
-                print("failures")
-                DispatchQueue.main.async {
+            self.stopLoader(loader: loader)
+            self.okAlertMessagePopup(message: "Failed to load notification")
+            DispatchQueue.main.async {
                 if(error == "unauthorized") {
-                                
+                    
                 }
                 else {
-            //                    self.navigationController?.popViewController(animated: true)
+                    
                 }
             }
         }
@@ -56,7 +55,7 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //print(shared.notifications.count)
+        
         return shared.notificationViewModelShared.notifications.count
     }
     
@@ -79,10 +78,10 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
         return cell!
     }
     
-
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        
         shared.notificationViewModelShared.readNotification(token: shared.token, notificationId: shared.notificationViewModelShared.fetchDataToNotificationCell(index: indexPath.row).id) { (data) in
             
             DispatchQueue.main.async {
@@ -98,20 +97,20 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
             
         } fail: {  error in
             
-//            self.stopLoader(loader: loader)
+            
             self.okAlertMessagePopup(message: "Failed to load notification")
             print("failures")
             DispatchQueue.main.async {
-            if(error == "unauthorized") {
-                            
-            }
-            else {
-        //                    self.navigationController?.popViewController(animated: true)
+                if(error == "unauthorized") {
+                    
+                }
+                else {
+                    
+                }
             }
         }
-        }
-
-
-
+        
+        
+        
     }
 }

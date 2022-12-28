@@ -16,7 +16,6 @@ class TopCourseSectionView: UIView {
     
     var shared = ViewModel.shared
     var mainShared = mainViewModel.mainShared
-    var array = [String]()
     var topCourse = [TopCourseCategory]()
     var topcourse1 = false
     var categoryId: String?
@@ -24,7 +23,7 @@ class TopCourseSectionView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
-
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
@@ -34,12 +33,11 @@ class TopCourseSectionView: UIView {
         
         initCollectionView()
     }
-
+    
     @IBAction func onClickseeall(_ sender: Any) {
-        print("saaaaand", categoryId)
-        print(12345678)
-       
-            shared.delegate?.onClickCategory(categoryName: "", categoryId: categoryId!)
+        
+        
+        shared.delegate?.onClickCategory(categoryName: "", categoryId: categoryId!)
         
         
     }
@@ -48,7 +46,7 @@ class TopCourseSectionView: UIView {
 
 extension TopCourseSectionView: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       
+        
         return topCourse.count
     }
     
