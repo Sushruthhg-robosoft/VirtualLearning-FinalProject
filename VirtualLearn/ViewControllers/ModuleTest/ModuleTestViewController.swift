@@ -198,7 +198,7 @@ extension ModuleTestViewController: UICollectionViewDelegate, UICollectionViewDa
         cell?.option2Label.text = moduleTestViewModel.moduleTestData[indexPath.row].option_2
         cell?.option3Label.text = moduleTestViewModel.moduleTestData[indexPath.row].option_3
         cell?.option4Label.text = moduleTestViewModel.moduleTestData[indexPath.row].option_4
-        cell?.questionNoLabel.text = "Question \(indexPath.row + 1) of \(moduleTestViewModel.moduleTestData.count) remaining"
+        cell?.questionNoLabel.text = "Question \(indexPath.row + 1) of \(moduleTestViewModel.moduleTestData.count)"
         return cell!
     }
     
